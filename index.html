@@ -343,6 +343,13 @@
       <button class="btn-cancel-settings" onclick="closeSettings()">Cancel</button>
       <button class="btn-save-settings"   onclick="saveSettings()">Save Settings</button>
     </div>
+    <div id="backup-restore-row" style="display:none;align-items:center;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1.5px dashed var(--border);gap:8px;">
+      <span style="font-size:.7rem;font-weight:700;color:var(--muted);">📦 Previous version backup available</span>
+      <div style="display:flex;gap:6px;">
+        <button onclick="restoreBackup()" style="padding:5px 12px;border-radius:8px;border:1.5px solid #fde68a;background:#fffbeb;color:#b45309;font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:800;cursor:pointer;">↩ Restore</button>
+        <button onclick="clearBackup()"   style="padding:5px 10px;border-radius:8px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;">✕ Discard</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -600,6 +607,10 @@ function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); sche
 function load() {
   const s = localStorage.getItem(STORAGE_KEY);
   if (s) {
+    // Snapshot data before any migration runs so users can recover from a bad update
+    if (!localStorage.getItem(STORAGE_KEY + '-backup')) {
+      localStorage.setItem(STORAGE_KEY + '-backup', s);
+    }
     const parsed = JSON.parse(s);
     if (!parsed.activities) parsed.activities = DEFAULT_ACTIVITIES;
     if (!parsed.currency) parsed.currency = 'EUR';
@@ -610,6 +621,31 @@ function load() {
     parsed.activities.forEach((a,i)=>{ if(!a.color) a.color=_dc[i%_dc.length]; });
     state = parsed;
   }
+}
+
+function restoreBackup() {
+  const backup = localStorage.getItem(STORAGE_KEY + '-backup');
+  if (!backup) { alert('No backup found.'); return; }
+  if (!confirm('Restore your backup? Your current data will be replaced.')) return;
+  localStorage.setItem(STORAGE_KEY, backup);
+  localStorage.removeItem(STORAGE_KEY + '-backup');
+  load();
+  closeSettings();
+  renderAll();
+  alert('✅ Backup restored!');
+}
+
+function clearBackup() {
+  if (!confirm('Clear the backup snapshot? You won\'t be able to restore to the previous version.')) return;
+  localStorage.removeItem(STORAGE_KEY + '-backup');
+  renderBackupRow();
+}
+
+function renderBackupRow() {
+  const row = document.getElementById('backup-restore-row');
+  if (!row) return;
+  const hasBackup = !!localStorage.getItem(STORAGE_KEY + '-backup');
+  row.style.display = hasBackup ? 'flex' : 'none';
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -677,6 +713,7 @@ function openSettings() {
   // populate interest rate
   document.getElementById('setting-interest').value = state.interestRate ?? 1;
   document.getElementById('setting-kidname').value = state.kidName || '';
+  renderBackupRow();
   document.getElementById('settings-modal').classList.add('open');
 }
 function closeSettings() {
