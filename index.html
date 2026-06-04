@@ -2798,7 +2798,7 @@ async function loadAuditLog() {
   listEl.innerHTML = '<div style="font-size:.76rem;color:var(--muted);font-weight:600;padding:6px 0;">Loading…</div>';
   try {
     const since = new Date(Date.now() - 7*24*60*60*1000).toISOString();
-    const entries = await supabaseFetch(`audit_log?household_id=eq.${appData.householdId}&created_at=gte.${encodeURIComponent(since)}&order=created_at.desc&limit=50`);
+    const entries = await supabaseFetch(`audit_log?household_id=eq.${appData.householdId}&user_id=neq.${authSession.user.id}&created_at=gte.${encodeURIComponent(since)}&order=created_at.desc&limit=50`);
     if (!entries || !entries.length) {
       listEl.innerHTML = '<div style="font-size:.76rem;color:var(--muted);font-weight:600;padding:6px 0;">No activity in the last 7 days.</div>';
       return;
