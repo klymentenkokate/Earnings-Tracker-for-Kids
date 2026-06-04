@@ -3094,6 +3094,15 @@ async function pullFromCloud() {
   } catch(e) {
     console.error('Pull failed:', e);
     setSyncStatus('error');
+    // If cached data exists, don't wipe the session — show stale data rather than Create Household
+    if (appData.householdId) {
+      if (appData.kids.length > 0) {
+        const active = appData.kids.find(k => k.id === appData.activeKidId) || appData.kids[0];
+        appData.activeKidId = active.id;
+        state = active;
+      }
+      return true;
+    }
     return false;
   }
 }
