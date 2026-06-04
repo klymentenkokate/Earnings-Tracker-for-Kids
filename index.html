@@ -1906,6 +1906,8 @@ function buildSummary(){
   const shieldAvail = !!(state.chest?.streakShield);
   let shieldUsed = false;
   let checkDate=new Date();
+  // If today has no activity yet, start from yesterday so an in-progress day doesn't break the streak
+  if(!actDays.includes(today)) checkDate.setDate(checkDate.getDate()-1);
   while(true){
     const k=`${checkDate.getFullYear()}-${pad(checkDate.getMonth()+1)}-${pad(checkDate.getDate())}`;
     if(actDays.includes(k)){ streak++; checkDate.setDate(checkDate.getDate()-1); }
@@ -2938,13 +2940,26 @@ function updateMembersTab() {
 async function checkInviteParam() {
   const params = new URLSearchParams(window.location.search);
   const token  = params.get('invite');
-  if (!token || !syncConfig) return false;
+  if (!syncConfig) return false;
+  if (!token) {
+    const stored = localStorage.getItem('pendingInvite');
+    if (!stored) return false;
+    try {
+      const inv = JSON.parse(stored);
+      if (inv.accepted) { localStorage.removeItem('pendingInvite'); return false; }
+      pendingInvite = inv;
+      const subEl = document.getElementById('auth-sub');
+      if (subEl) subEl.innerHTML = `<strong>${inv.inviter_alias||'Someone'}</strong> has invited you to join as <strong>${inv.invitee_alias}</strong>. Sign in or create an account to continue.`;
+      return true;
+    } catch(e) { localStorage.removeItem('pendingInvite'); return false; }
+  }
   try {
     const rows = await supabaseFetch(`household_invites?id=eq.${token}&select=*`);
     if (!rows || !rows.length) { alert('Invite link not found or already used.'); return false; }
     const inv = rows[0];
     if (inv.accepted) { alert('This invite link has already been used.'); history.replaceState(null,'',window.location.pathname); return false; }
     pendingInvite = inv;
+    localStorage.setItem('pendingInvite', JSON.stringify(inv));
     // Update auth modal subtitle
     const subEl = document.getElementById('auth-sub');
     if (subEl) subEl.innerHTML = `<strong>${inv.inviter_alias||'Someone'}</strong> has invited you to join as <strong>${inv.invitee_alias}</strong>. Sign in or create an account to continue.`;
@@ -2966,6 +2981,7 @@ async function acceptPendingInvite() {
     await supabaseFetch(`household_invites?id=eq.${pendingInvite.id}`, 'PATCH', { accepted: true });
   } catch(e) { console.error('Failed to accept invite:', e); }
   pendingInvite = null;
+  localStorage.removeItem('pendingInvite');
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -3441,6 +3457,8 @@ function buildOverview() {
     for (let i=BADGES.length-1;i>=0;i--) { if(totalHrs>=BADGES[i].hrs){curBadge=BADGES[i];break;} }
     const actDays=[...new Set(k.sessions.filter(s=>s.type!=='interest'&&s.type!=='withdrawal').map(s=>s.date))].sort();
     let streak=0, checkDate=new Date();
+    const todayKk=`${checkDate.getFullYear()}-${pad(checkDate.getMonth()+1)}-${pad(checkDate.getDate())}`;
+    if(!actDays.includes(todayKk)) checkDate.setDate(checkDate.getDate()-1);
     while(true){ const kk=`${checkDate.getFullYear()}-${pad(checkDate.getMonth()+1)}-${pad(checkDate.getDate())}`; if(actDays.includes(kk)){streak++;checkDate.setDate(checkDate.getDate()-1);}else break; }
     const c=CURRENCIES.find(c=>c.code===(appData.currency||k.currency||'EUR')); const ksym=c?c.sym:'€';
     const interestLbl = k.interestRate != null ? `${k.interestRate}% interest` : '';
