@@ -2771,8 +2771,15 @@ function buildHhMembersList() {
 }
 
 async function removeHhMember(userId) {
-  await removeMember(userId); // reuse existing
-  buildHhMembersList();
+  const m = appData.members.find(m => m.userId === userId);
+  if (!m || !confirm(`Remove ${m.alias} from the household?\nThey will lose access and need a new invite to rejoin.`)) return;
+  try {
+    await supabaseFetch(`household_members?household_id=eq.${appData.householdId}&user_id=eq.${userId}`, 'DELETE');
+    appData.members = appData.members.filter(m => m.userId !== userId);
+    save();
+    buildHhMembersList();
+    buildMembersPanel();
+  } catch(e) { alert('Failed to remove member. Please try again.'); }
 }
 
 async function generateHhInviteLink() {
@@ -3052,12 +3059,16 @@ async function pullFromCloud() {
     const { household_id: householdId, alias, role } = memberships[0];
     currentMember = { userId: authSession.user.id, email: authSession.user.email || '', alias, role };
 
-    // Step 2: load household state
+    // Step 2: fetch all household members fresh from the source of truth
+    const allMembers = await supabaseFetch(`household_members?household_id=eq.${householdId}&select=*`);
+    const freshMembers = (allMembers || []).map(r => ({ userId: r.user_id, email: r.email || '', alias: r.alias, role: r.role }));
+
+    // Step 3: load household state
     const rows = await supabaseFetch(`tracker_state?id=eq.${householdId}&select=state`);
     if (rows && rows.length && rows[0].state && Object.keys(rows[0].state).length) {
       const remote = rows[0].state;
       remote.householdId = householdId;
-      if (!remote.members) remote.members = [currentMember];
+      remote.members = freshMembers.length ? freshMembers : [currentMember];
       if (!remote.householdName) remote.householdName = 'My Family';
       if (!Array.isArray(remote.kids)) remote.kids = [];
       remote.kids.forEach(k => migrateKidState(k));
@@ -3069,7 +3080,7 @@ async function pullFromCloud() {
     } else {
       // Household in members table but no state yet
       if (!appData.householdId) appData.householdId = householdId;
-      if (!appData.members) appData.members = [currentMember];
+      appData.members = freshMembers.length ? freshMembers : [currentMember];
     }
     localStorage.setItem(STORAGE_KEY_V4, JSON.stringify(appData));
     setSyncStatus('ok');
