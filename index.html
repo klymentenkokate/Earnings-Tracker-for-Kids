@@ -618,10 +618,10 @@
         <div class="section-title">Combined Earnings</div>
         <div class="chart-controls">
           <div class="chart-tabs" id="hh-chart-tabs">
-            <button class="chart-tab active" onclick="setHouseholdChartView('daily')">Daily</button>
+            <button class="chart-tab active" onclick="setHouseholdChartView('pie')">Breakdown</button>
+            <button class="chart-tab"        onclick="setHouseholdChartView('daily')">Daily</button>
             <button class="chart-tab"        onclick="setHouseholdChartView('monthly')">Monthly</button>
             <button class="chart-tab"        onclick="setHouseholdChartView('yearly')">Yearly</button>
-            <button class="chart-tab"        onclick="setHouseholdChartView('pie')">Breakdown</button>
           </div>
         </div>
         <div class="chart-wrap">
@@ -882,10 +882,10 @@
   <div class="section-title">Earnings Chart</div>
   <div class="chart-controls">
     <div class="chart-tabs">
-      <button class="chart-tab active" onclick="setChartView('daily')">Daily</button>
+      <button class="chart-tab active" onclick="setChartView('pie')">Breakdown</button>
+      <button class="chart-tab"        onclick="setChartView('daily')">Daily</button>
       <button class="chart-tab"        onclick="setChartView('monthly')">Monthly</button>
       <button class="chart-tab"        onclick="setChartView('yearly')">Yearly</button>
-      <button class="chart-tab"        onclick="setChartView('pie')">Breakdown</button>
     </div>
     <div class="chart-filters" id="chart-filters"></div>
   </div>
@@ -1151,7 +1151,7 @@ const CHEST_REWARDS = [
 let appData = { kids: [], activeKidId: null };
 let state   = null; // reference to the active kid object within appData.kids
 let viewMode = 'overview'; // 'overview' | 'dashboard'
-let calYear, calMonth, chartView='daily', chartInstance=null;
+let calYear, calMonth, chartView='pie', chartInstance=null;
 let timers = {};
 
 function save() { localStorage.setItem(STORAGE_KEY_V4, JSON.stringify(appData)); schedulePush(); }
@@ -2385,7 +2385,7 @@ function setDashTab(tab) {
     const el = document.getElementById('tab-' + t);
     if (el) el.style.display = t === tab ? 'block' : 'none';
   });
-  if (tab === 'charts' && state) { buildChart(); buildProjections(); }
+  if (tab === 'charts' && state) { setChartView('pie'); buildProjections(); }
   if (tab === 'log'    && state) buildUnifiedLog();
 }
 
@@ -3335,7 +3335,7 @@ function resetAll(){
 // HOUSEHOLD TABS (overview screen)
 // ─────────────────────────────────────────────────────────────
 let activeHouseholdTab = 'ov-overview';
-let householdChartView = 'daily';
+let householdChartView = 'pie';
 let householdLogFilter = 'all';
 let hhChartInstance    = null;
 let hhPieInstance      = null;
@@ -3348,7 +3348,7 @@ function setHouseholdTab(tab) {
     const el = document.getElementById('tab-' + t);
     if (el) el.style.display = t === tab ? 'block' : 'none';
   });
-  if (tab === 'ov-charts') buildHouseholdChart();
+  if (tab === 'ov-charts') setHouseholdChartView('pie');
   if (tab === 'ov-log')    buildHouseholdLog();
 }
 
