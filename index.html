@@ -2836,9 +2836,9 @@ async function undoAuditEntry(entryId, btn) {
     save();
     await pushToCloud();
     await supabaseFetch(`audit_log?id=eq.${entryId}`, 'DELETE');
+    btn.closest('.audit-entry').remove();
     buildKidSwitcher();
     if (viewMode === 'dashboard') renderAll(); else buildOverview();
-    loadAuditLog();
     alert('✅ Action undone successfully.');
   } catch(e) {
     console.error('Undo failed:', e);
