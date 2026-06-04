@@ -512,6 +512,16 @@
   /* SECTION DIVIDER */
   .hh-section-divider{height:1px;background:var(--border);margin:16px 0;}
   .hh-section-label{font-size:.68rem;font-weight:800;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:10px;}
+
+  /* AUDIT LOG */
+  .audit-list{display:flex;flex-direction:column;gap:6px;max-height:300px;overflow-y:auto;margin-top:4px;}
+  .audit-entry{background:var(--soft);border:1.5px solid var(--border);border-radius:10px;padding:9px 11px;display:flex;align-items:flex-start;gap:8px;}
+  .audit-entry-info{flex:1;min-width:0;}
+  .audit-entry-who{font-size:.78rem;font-weight:800;color:var(--text);}
+  .audit-entry-desc{font-size:.72rem;color:var(--muted);font-weight:600;margin-top:1px;line-height:1.4;}
+  .audit-entry-time{font-size:.62rem;color:var(--muted);font-weight:700;margin-top:3px;}
+  .btn-audit-undo{background:#eff6ff;border:1.5px solid #bfdbfe;color:#2563eb;border-radius:7px;padding:4px 10px;font-size:.7rem;font-weight:800;cursor:pointer;flex-shrink:0;white-space:nowrap;transition:.15s;}
+  .btn-audit-undo:hover{background:#dbeafe;}
 </style>
 </head>
 <body>
@@ -1047,6 +1057,13 @@
 
     <div class="hh-section-divider"></div>
     <button class="btn-hh-primary" onclick="saveHouseholdSettings()">Save Settings</button>
+
+    <!-- Activity Log (admin only) -->
+    <div id="hh-activity-section" style="display:none;">
+      <div class="hh-section-divider"></div>
+      <div class="hh-section-label">📋 Activity Log</div>
+      <div class="audit-list" id="hh-audit-list"></div>
+    </div>
   </div>
 </div>
 
@@ -1403,6 +1420,7 @@ function logManual(actId) {
 }
 
 function logSession(actId, minutes, manual) {
+  const prev = JSON.parse(JSON.stringify(appData));
   let earnMins   = minutes;
   let multiplier = 1;
   let chestTag   = null;
@@ -1427,13 +1445,20 @@ function logSession(actId, minutes, manual) {
   state.sessions.push({ id:uid(), type:actId, date:todayStr(), minutes:+minutes.toFixed(2), earned:e, manual, doneBy: currentUserRef(), ...(chestTag?{chestReward:chestTag}:{}) });
   state.balance = +(state.balance+e).toFixed(4);
   save(); renderAll();
+  writeAuditLog('log_session', `${currentMember?.alias||'Someone'} logged ${minsToHM(minutes)} of ${getActivity(actId)?.name||actId} for ${kid()}`, prev);
 }
 
 function deleteSession(id) {
   const s=state.sessions.find(x=>x.id===id); if(!s) return;
+  const prev = JSON.parse(JSON.stringify(appData));
   state.balance=Math.max(0,+(state.balance-s.earned).toFixed(4));
   state.sessions=state.sessions.filter(x=>x.id!==id);
   save(); renderAll();
+  const typeName = s.type==='withdrawal' ? 'withdrawal' : s.type==='interest' ? 'interest' : (getActivity(s.type)?.name||s.type);
+  const desc = s.type==='withdrawal'
+    ? `${currentMember?.alias||'Someone'} deleted withdrawal of ${fmtAmt(Math.abs(s.earned))} for ${kid()}`
+    : `${currentMember?.alias||'Someone'} deleted ${minsToHM(s.minutes)} of ${typeName} for ${kid()}`;
+  writeAuditLog('delete_session', desc, prev);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -1441,6 +1466,7 @@ function deleteSession(id) {
 // ─────────────────────────────────────────────────────────────
 function applyInterestNow(silent) {
   if(state.balance<=0) return false;
+  const prev = JSON.parse(JSON.stringify(appData));
   const rate=(state.interestRate??1)/100;
   const i=+(state.balance*rate).toFixed(4);
   state.interestApplied=+((state.interestApplied||0)+i).toFixed(4);
@@ -1448,6 +1474,7 @@ function applyInterestNow(silent) {
   state.lastInterestMonth=monthKey(new Date());
   state.sessions.push({id:uid(),type:'interest',date:todayStr(),minutes:0,earned:i,manual:false,doneBy:currentUserRef()});
   save();
+  writeAuditLog('interest', `${currentMember?.alias||'Auto'} applied ${state.interestRate??1}% interest (+${fmtAmt(i)}) for ${kid()}`, prev);
   if(!silent) { renderAll(); alert(`✅ +${fmtAmt(i)} interest added for ${kid()}! New balance: ${fmtAmt(state.balance)}`); }
   return true;
 }
@@ -2480,9 +2507,11 @@ function confirmWithdraw() {
   const reason = document.getElementById('withdraw-reason').value.trim();
   if(!reason){ alert('Please enter what you are spending the money on.'); return; }
   const rounded = +amt.toFixed(2);
+  const prev = JSON.parse(JSON.stringify(appData));
   state.balance = +Math.max(0, state.balance - rounded).toFixed(4);
   state.sessions.push({ id:uid(), type:'withdrawal', date:todayStr(), minutes:0, earned:-rounded, manual:false, reason, doneBy: currentUserRef() });
   save(); closeWithdraw(); renderAll();
+  writeAuditLog('withdraw', `${currentMember?.alias||'Someone'} withdrew ${fmtAmt(rounded)} for "${reason}" (${kid()})`, prev);
   alert(`✅ ${fmtAmt(rounded)} redeemed for "${reason}"${state.kidName?' — great choice, '+state.kidName:''}! Show this to a parent to collect your cash. 🎉`);
 }
 
@@ -2731,11 +2760,86 @@ function openHouseholdSettings() {
   document.getElementById('hh-invite-section').style.display = isAdmin() && syncConfig ? 'block' : 'none';
   document.getElementById('hh-invite-result').style.display = 'none';
   if (document.getElementById('hh-invite-alias')) document.getElementById('hh-invite-alias').value = '';
+  // Activity log: admin only
+  const actSec = document.getElementById('hh-activity-section');
+  if (isAdmin() && syncConfig) { actSec.style.display = 'block'; loadAuditLog(); }
+  else actSec.style.display = 'none';
   document.getElementById('household-settings-modal').classList.add('open');
 }
 
 function closeHouseholdSettings() {
   document.getElementById('household-settings-modal').classList.remove('open');
+}
+
+// ── Audit Log ────────────────────────────────────────────────
+async function writeAuditLog(action, description, prevAppData) {
+  if (!syncConfig || !authSession || !appData.householdId) return;
+  try {
+    await supabaseFetch('audit_log', 'POST', {
+      id: uid(),
+      household_id: appData.householdId,
+      user_id: authSession.user.id,
+      alias: currentMember?.alias || '',
+      action,
+      description,
+      undo_state: prevAppData
+    });
+  } catch(e) { console.warn('Audit log write failed:', e); }
+}
+
+async function loadAuditLog() {
+  const listEl = document.getElementById('hh-audit-list');
+  if (!listEl) return;
+  listEl.innerHTML = '<div style="font-size:.76rem;color:var(--muted);font-weight:600;padding:6px 0;">Loading…</div>';
+  try {
+    const since = new Date(Date.now() - 7*24*60*60*1000).toISOString();
+    const entries = await supabaseFetch(`audit_log?household_id=eq.${appData.householdId}&created_at=gte.${encodeURIComponent(since)}&order=created_at.desc&limit=50`);
+    if (!entries || !entries.length) {
+      listEl.innerHTML = '<div style="font-size:.76rem;color:var(--muted);font-weight:600;padding:6px 0;">No activity in the last 7 days.</div>';
+      return;
+    }
+    listEl.innerHTML = entries.map(e => {
+      const d = new Date(e.created_at);
+      const timeStr = d.toLocaleDateString([], {month:'short', day:'numeric'}) + ' · ' + d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+      return `<div class="audit-entry">
+        <div class="audit-entry-info">
+          <div class="audit-entry-who">${e.alias}</div>
+          <div class="audit-entry-desc">${e.description}</div>
+          <div class="audit-entry-time">${timeStr}</div>
+        </div>
+        <button class="btn-audit-undo" onclick="undoAuditEntry('${e.id}', this)">Undo</button>
+      </div>`;
+    }).join('');
+  } catch(err) {
+    listEl.innerHTML = '<div style="font-size:.76rem;color:var(--muted);font-weight:600;padding:6px 0;">Could not load activity log.</div>';
+    console.warn('Audit log load failed:', err);
+  }
+}
+
+async function undoAuditEntry(entryId, btn) {
+  if (!confirm('Undo this action? This will restore the previous state for all family members.')) return;
+  btn.disabled = true; btn.textContent = 'Undoing…';
+  try {
+    const rows = await supabaseFetch(`audit_log?id=eq.${entryId}&select=undo_state`);
+    if (!rows || !rows.length || !rows[0].undo_state) { alert('Undo data not available.'); btn.disabled=false; btn.textContent='Undo'; return; }
+    appData = rows[0].undo_state;
+    appData.kids.forEach(k => migrateKidState(k));
+    if (appData.kids.length > 0) {
+      const active = appData.kids.find(k => k.id === appData.activeKidId) || appData.kids[0];
+      appData.activeKidId = active.id; state = active;
+    }
+    save();
+    await pushToCloud();
+    await supabaseFetch(`audit_log?id=eq.${entryId}`, 'DELETE');
+    buildKidSwitcher();
+    if (viewMode === 'dashboard') renderAll(); else buildOverview();
+    loadAuditLog();
+    alert('✅ Action undone successfully.');
+  } catch(e) {
+    console.error('Undo failed:', e);
+    alert('Failed to undo. Please try again.');
+    btn.disabled = false; btn.textContent = 'Undo';
+  }
 }
 
 function saveHouseholdSettings() {
@@ -3097,6 +3201,11 @@ async function pullFromCloud() {
       appData.members = freshMembers.length ? freshMembers : [currentMember];
     }
     localStorage.setItem(STORAGE_KEY_V4, JSON.stringify(appData));
+    // Auto-prune audit entries older than 7 days (admin only, fire-and-forget)
+    if (isAdmin() && appData.householdId) {
+      const cutoff = new Date(Date.now() - 7*24*60*60*1000).toISOString();
+      supabaseFetch(`audit_log?household_id=eq.${appData.householdId}&created_at=lt.${encodeURIComponent(cutoff)}`, 'DELETE').catch(()=>{});
+    }
     setSyncStatus('ok');
     return true;
   } catch(e) {
@@ -3563,12 +3672,14 @@ function closeKidModal() {
 function saveKidModal() {
   const name = document.getElementById('kid-modal-name').value.trim();
   if (!name) { alert('Please enter a name.'); return; }
+  const prev = JSON.parse(JSON.stringify(appData));
   if (editingKidId) {
     const k = appData.kids.find(k=>k.id===editingKidId);
     if (k) { k.name=name; k.avatar=newKidAvatar; k.color=newKidColor; }
     save(); closeKidModal();
     buildKidSwitcher();
     if (viewMode==='overview') buildOverview(); else renderAll();
+    writeAuditLog('edit_kid', `${currentMember?.alias||'Someone'} edited kid profile: ${name}`, prev);
   } else {
     const newKid = {
       id: 'kid-'+Date.now(), name, avatar:newKidAvatar, color:newKidColor,
@@ -3579,6 +3690,7 @@ function saveKidModal() {
     appData.kids.push(newKid);
     save(); closeKidModal();
     switchToKid(newKid.id);
+    writeAuditLog('add_kid', `${currentMember?.alias||'Someone'} added ${name}`, prev);
   }
 }
 
@@ -3586,9 +3698,12 @@ function deleteKid(id) {
   const k = appData.kids.find(k=>k.id===id); if(!k) return;
   if (appData.kids.length<=1) { alert('You must have at least one kid.'); return; }
   if (!confirm(`Delete ${k.name}?\n\nAll their sessions and earnings will be permanently deleted.`)) return;
+  const kidName = k.name;
+  const prev = JSON.parse(JSON.stringify(appData));
   appData.kids = appData.kids.filter(k=>k.id!==id);
   state = null; viewMode='overview';
   save(); closeKidModal(); showOverview();
+  writeAuditLog('delete_kid', `${currentMember?.alias||'Someone'} deleted ${kidName}`, prev);
 }
 
 // ─────────────────────────────────────────────────────────────
