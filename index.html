@@ -2773,7 +2773,10 @@ function closeHouseholdSettings() {
 
 // ── Audit Log ────────────────────────────────────────────────
 async function writeAuditLog(action, description, prevAppData) {
-  if (!syncConfig || !authSession || !appData.householdId) return;
+  if (!syncConfig || !authSession || !appData.householdId) {
+    console.error('writeAuditLog skipped:', { hasSyncConfig: !!syncConfig, hasAuth: !!authSession, householdId: appData.householdId });
+    return;
+  }
   try {
     await supabaseFetch('audit_log', 'POST', {
       id: uid(),
@@ -2784,7 +2787,9 @@ async function writeAuditLog(action, description, prevAppData) {
       description,
       undo_state: prevAppData
     });
-  } catch(e) { console.warn('Audit log write failed:', e); }
+  } catch(e) {
+    console.error('Audit log write failed — action:', action, '| household:', appData.householdId, '| error:', e.message);
+  }
 }
 
 async function loadAuditLog() {
