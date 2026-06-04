@@ -2778,14 +2778,14 @@ async function writeAuditLog(action, description, prevAppData) {
     return;
   }
   try {
-    await supabaseFetch('audit_log', 'POST', {
-      id: uid(),
-      household_id: appData.householdId,
-      user_id: authSession.user.id,
-      alias: currentMember?.alias || '',
-      action,
-      description,
-      undo_state: prevAppData
+    await supabaseFetch('rpc/insert_audit_log', 'POST', {
+      p_id: uid(),
+      p_household_id: appData.householdId,
+      p_user_id: authSession.user.id,
+      p_alias: currentMember?.alias || '',
+      p_action: action,
+      p_description: description,
+      p_undo_state: prevAppData
     });
   } catch(e) {
     console.error('Audit log write failed — action:', action, '| household:', appData.householdId, '| error:', e.message);
