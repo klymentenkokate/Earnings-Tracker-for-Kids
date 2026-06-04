@@ -3060,8 +3060,14 @@ async function pullFromCloud() {
     currentMember = { userId: authSession.user.id, email: authSession.user.email || '', alias, role };
 
     // Step 2: fetch all household members via SECURITY DEFINER RPC (bypasses RLS)
-    const allMembers = await supabaseFetch(`rpc/get_household_members?hh_id=${encodeURIComponent(householdId)}`);
-    const freshMembers = (allMembers || []).map(r => ({ userId: r.user_id, email: r.email || '', alias: r.alias, role: r.role }));
+    // Falls back to [currentMember] if the function doesn't exist yet
+    let freshMembers = [currentMember];
+    try {
+      const allMembers = await supabaseFetch(`rpc/get_household_members?hh_id=${encodeURIComponent(householdId)}`);
+      if (Array.isArray(allMembers) && allMembers.length) {
+        freshMembers = allMembers.map(r => ({ userId: r.user_id, email: r.email || '', alias: r.alias, role: r.role }));
+      }
+    } catch(e) { console.warn('get_household_members RPC not available, falling back:', e); }
 
     // Step 3: load household state
     const rows = await supabaseFetch(`tracker_state?id=eq.${householdId}&select=state`);
