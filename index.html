@@ -3059,8 +3059,8 @@ async function pullFromCloud() {
     const { household_id: householdId, alias, role } = memberships[0];
     currentMember = { userId: authSession.user.id, email: authSession.user.email || '', alias, role };
 
-    // Step 2: fetch all household members fresh from the source of truth
-    const allMembers = await supabaseFetch(`household_members?household_id=eq.${householdId}&select=*`);
+    // Step 2: fetch all household members via SECURITY DEFINER RPC (bypasses RLS)
+    const allMembers = await supabaseFetch(`rpc/get_household_members?hh_id=${encodeURIComponent(householdId)}`);
     const freshMembers = (allMembers || []).map(r => ({ userId: r.user_id, email: r.email || '', alias: r.alias, role: r.role }));
 
     // Step 3: load household state
