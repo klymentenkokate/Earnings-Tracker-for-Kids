@@ -1058,7 +1058,6 @@
   <button class="action-btn log-btn"  onclick="openLogModal()">📋 Log</button>
   <button class="action-btn save"     onclick="exportData()">💾 Save Backup</button>
   <button class="action-btn load"     onclick="importData()">📂 Load Backup</button>
-  <button class="action-btn reset"    onclick="resetAll()">🗑 Reset All</button>
 </div>
 <input type="file" id="import-input" accept=".json" style="display:none" onchange="handleImport(event)">
 
@@ -3314,7 +3313,6 @@ function applyRoleUI() {
   const show = (sel, visible) => document.querySelectorAll(sel).forEach(el => el.style.display = visible ? '' : 'none');
   show('.action-btn.interest', can('applyInterest'));
   show('.action-btn.tax',      can('applyTax'));
-  show('.action-btn.reset',    can('resetAll'));
   show('.action-btn.save',     can('resetAll')); // backup = admin level
   show('.action-btn.load',     can('resetAll'));
   show('.action-btn.withdraw', can('redeem'));
@@ -4274,13 +4272,6 @@ function handleImport(e){
     e.target.value='';
   };
   r.readAsText(file);
-}
-function resetAll(){
-  if (!state) return;
-  if (!can('resetAll')) { alert('Only admins can reset data.'); return; }
-  if(!confirm(`⚠️ WARNING!\n\nThis will permanently delete ALL of ${kid('the kid')}'s sessions, earnings and balance. Every ${sym()} they worked for will be gone forever!\n\nAre you absolutely sure?`))return;
-  state.balance=0; state.interestApplied=0; state.sessions=[]; state.lastInterestMonth=null;
-  save(); renderAll();
 }
 
 // ─────────────────────────────────────────────────────────────
