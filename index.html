@@ -430,7 +430,22 @@
   .member-email{font-size:.65rem;font-weight:700;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .member-role-tag{font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:4px;flex-shrink:0;}
   .member-role-tag.admin{background:#fef9c3;color:#854d0e;}
+  .member-role-tag.editor{background:#dcfce7;color:#166534;}
+  .member-role-tag.champion{background:#ede9fe;color:#5b21b6;}
   .member-role-tag.member{background:#e0f2fe;color:#0369a1;}
+  .member-role-select{font-size:.7rem;font-weight:800;padding:2px 6px;border-radius:6px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);cursor:pointer;outline:none;}
+  .role-invite-select{width:100%;padding:8px 10px;border-radius:10px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;outline:none;margin-bottom:12px;}
+  .pending-quest-card{background:linear-gradient(135deg,#fef9c3,#fefce8);border:1.5px dashed #fbbf24;border-radius:14px;padding:13px 16px;margin-bottom:9px;}
+  .pending-label{font-size:.6rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#b45309;background:#fef3c7;border:1px solid #fbbf24;border-radius:4px;padding:1px 6px;display:inline-block;margin-bottom:6px;}
+  .pending-actions{display:flex;gap:7px;margin-top:10px;}
+  .btn-approve-quest{flex:1;padding:7px;border-radius:9px;border:none;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:800;cursor:pointer;}
+  .btn-reject-quest{padding:7px 12px;border-radius:9px;border:1.5px solid #fca5a5;background:transparent;color:#dc2626;font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:800;cursor:pointer;}
+  .btn-edit-quest{padding:7px 12px;border-radius:9px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:800;cursor:pointer;}
+  .pending-section-label{font-size:.68rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#b45309;margin-bottom:8px;margin-top:4px;}
+  .cap-warning{font-size:.7rem;font-weight:700;color:#dc2626;margin-top:6px;text-align:center;display:none;}
+  .role-badge{display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:50px;margin-left:6px;}
+  .role-badge.editor{background:#dcfce7;color:#166534;border:1px solid #86efac;}
+  .role-badge.champion{background:#ede9fe;color:#5b21b6;border:1px solid #c4b5fd;}
   .btn-member-remove{background:#fff5f5;border:1.5px solid #fecaca;color:#ef4444;border-radius:7px;padding:3px 9px;font-size:.72rem;font-weight:800;cursor:pointer;flex-shrink:0;transition:.15s;}
   .btn-member-remove:hover{background:#fee2e2;}
   .invite-section{margin-top:14px;padding-top:14px;border-top:1.5px dashed var(--border);}
@@ -532,9 +547,60 @@
   .hh-budget-chip .lbl{font-size:.6rem;font-weight:800;color:#99000088;letter-spacing:1px;text-transform:uppercase;}
   .hh-budget-kid-row{display:flex;justify-content:space-between;align-items:center;padding:5px 2px;font-size:.74rem;font-weight:700;color:var(--muted);border-bottom:1px solid #fca5a522;}
   .hh-budget-kid-row:last-child{border-bottom:none;}
+  /* EARNINGS SOURCES */
+  .source-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .source-icon{font-size:1.3rem;flex-shrink:0;width:28px;text-align:center;}
+  .source-info{flex:1;min-width:0;}
+  .source-label{font-size:.78rem;font-weight:800;color:var(--text);display:flex;justify-content:space-between;margin-bottom:4px;}
+  .source-label span{font-family:'Fredoka One',cursive;color:var(--green);}
+  .source-bar-track{height:6px;border-radius:99px;background:var(--border);overflow:hidden;}
+  .source-bar-fill{height:100%;border-radius:99px;transition:width .4s ease;}
+  .source-bar-fill.activities{background:linear-gradient(90deg,#6366f1,#818cf8);}
+  .source-bar-fill.quests{background:linear-gradient(90deg,#8b5cf6,#a78bfa);}
+  .source-bar-fill.interest{background:linear-gradient(90deg,#f59e0b,#fbbf24);}
+  .source-bar-fill.other{background:var(--muted);}
+  .sponsor-list{margin:8px 0 14px 38px;border-left:2px solid var(--border);padding-left:12px;}
+  .sponsor-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;}
+  .sponsor-name{font-size:.72rem;font-weight:700;color:var(--muted);}
+  .sponsor-bar-wrap{flex:1;margin:0 10px;height:4px;border-radius:99px;background:var(--border);overflow:hidden;}
+  .sponsor-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#8b5cf6,#c4b5fd);}
+  .sponsor-amt{font-size:.72rem;font-family:'Fredoka One',cursive;color:#8b5cf6;flex-shrink:0;}
+  .sponsor-quest-row{display:flex;justify-content:space-between;align-items:center;padding:2px 0 2px 14px;margin-bottom:2px;}
+  .sponsor-quest-name{font-size:.68rem;font-weight:700;color:var(--muted);}
+
   /* LOG TAX */
   .log-tax{color:#dc2626;font-family:'Fredoka One',cursive;font-size:.86rem;}
   .action-btn.tax:hover{border-color:#ef4444;color:#ef4444;}
+  .action-btn.log-btn:hover{border-color:#6366f1;color:#6366f1;}
+
+  /* QUESTS */
+  .quest-card{background:var(--card);border:1.5px solid var(--border);border-left:4px solid #8b5cf6;border-radius:14px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 10px var(--shadow);transition:box-shadow .2s;}
+  .quest-card:hover{box-shadow:0 4px 18px var(--shadow);}
+  .quest-card.done{border-left-color:var(--border);opacity:.6;}
+  .quest-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:5px;}
+  .quest-header-left{display:flex;align-items:center;gap:8px;min-width:0;flex:1;}
+  .quest-title{font-family:'Fredoka One',cursive;font-size:.98rem;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .quest-reward{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--green);flex-shrink:0;}
+  .quest-freq-badge{font-size:.58rem;font-weight:800;padding:2px 8px;border-radius:50px;background:#ede9fe;color:#6366f1;border:1px solid #c4b5fd;letter-spacing:.5px;text-transform:uppercase;flex-shrink:0;white-space:nowrap;}
+  .quest-desc{font-size:.75rem;font-weight:600;color:var(--muted);margin-bottom:10px;line-height:1.4;}
+  .quest-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .quest-meta-actions{display:flex;gap:5px;}
+  .quest-edit-btn,.quest-delete-btn{background:none;border:1.5px solid var(--border);border-radius:7px;padding:4px 9px;font-size:.7rem;font-weight:700;cursor:pointer;transition:.15s;}
+  .quest-edit-btn{color:var(--muted);}
+  .quest-edit-btn:hover{border-color:#6366f1;color:#6366f1;}
+  .quest-delete-btn{color:#ef444466;}
+  .quest-delete-btn:hover{color:#ef4444;border-color:#ef4444;}
+  .quest-complete-btn{padding:7px 16px;border-radius:10px;border:none;background:linear-gradient(135deg,#8b5cf6,#6366f1);color:white;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:all .15s;flex-shrink:0;}
+  .quest-complete-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 12px #6366f144;}
+  .quest-complete-btn.done-btn{background:var(--soft);color:var(--muted);border:1.5px solid var(--border);cursor:default;}
+  .add-quest-btn-main{width:100%;padding:11px;border-radius:14px;border:1.5px dashed #c4b5fd;background:transparent;color:#8b5cf6;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:800;cursor:pointer;transition:.15s;margin-bottom:14px;display:block;}
+  .add-quest-btn-main:hover{background:#ede9fe22;border-color:#8b5cf6;}
+  .no-quests{text-align:center;color:var(--muted);font-size:.82rem;font-weight:600;padding:28px 0;line-height:1.8;}
+  .quest-kid-chip{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:50px;border:1.5px solid var(--border);background:var(--soft);font-size:.75rem;font-weight:800;cursor:pointer;transition:.15s;user-select:none;}
+  .quest-kid-chip.selected{border-color:#8b5cf6;background:#ede9fe;color:#6366f1;}
+
+  /* LOG MODAL */
+  .log-modal-content{max-height:60vh;overflow-y:auto;margin-top:10px;}
 
   /* AUDIT LOG */
   .audit-list{display:flex;flex-direction:column;gap:6px;max-height:300px;overflow-y:auto;margin-top:4px;}
@@ -666,6 +732,7 @@
         <div class="log-filters">
           <button class="log-filter-btn active" data-filter="all"      onclick="setHouseholdLogFilter('all')">All</button>
           <button class="log-filter-btn"        data-filter="activity" onclick="setHouseholdLogFilter('activity')">⏱ Activities</button>
+          <button class="log-filter-btn"        data-filter="quest"    onclick="setHouseholdLogFilter('quest')">⚔️ Quests</button>
           <button class="log-filter-btn"        data-filter="redeem"   onclick="setHouseholdLogFilter('redeem')">🛍️ Redeemed</button>
           <button class="log-filter-btn"        data-filter="interest" onclick="setHouseholdLogFilter('interest')">📈 Interest</button>
           <button class="log-filter-btn"        data-filter="tax"      onclick="setHouseholdLogFilter('tax')">🏛️ Tax</button>
@@ -839,7 +906,7 @@
 <div class="dash-tabs" id="dash-tabs">
   <button class="dash-tab active" data-tab="overview" onclick="setDashTab('overview')">📊 Overview</button>
   <button class="dash-tab" data-tab="charts" onclick="setDashTab('charts')">📈 Charts</button>
-  <button class="dash-tab" data-tab="log" onclick="setDashTab('log')">📋 Log</button>
+  <button class="dash-tab" data-tab="quests" onclick="setDashTab('quests')">⚔️ Quests</button>
 </div>
 
 <!-- TAB: OVERVIEW -->
@@ -850,7 +917,7 @@
   <div class="balance-main">
     <div class="balance-label" id="balance-label-text">Total Balance</div>
     <div class="balance-amount" id="balance-display">€0.00</div>
-    <div class="balance-sub"   id="balance-sub">Earned: €0.00 · Interest: €0.00</div>
+    <div class="balance-sub" id="balance-sub">Earned: €0.00 · Interest: €0.00</div>
   </div>
   <div class="interest-badge">
     <div class="rate" id="interest-rate-badge">+1%</div>
@@ -965,34 +1032,126 @@
   </div>
 </div>
 
+<!-- EARNINGS SOURCES -->
+<div class="section">
+  <div class="section-title">💰 Earnings Sources</div>
+  <div id="earnings-sources"></div>
+</div>
+
 </div><!-- /tab-charts -->
 
-<!-- TAB: LOG -->
-<div id="tab-log" style="display:none;">
+<!-- TAB: QUESTS -->
+<div id="tab-quests" style="display:none;">
 <div class="section">
-  <div class="section-title">Activity Log</div>
-  <div class="log-filters" id="log-filters">
-    <button class="log-filter-btn active" data-filter="all"      onclick="setLogFilter('all')">All</button>
-    <button class="log-filter-btn"        data-filter="activity" onclick="setLogFilter('activity')">⏱ Activities</button>
-    <button class="log-filter-btn"        data-filter="redeem"   onclick="setLogFilter('redeem')">🛍️ Redeemed</button>
-    <button class="log-filter-btn"        data-filter="interest" onclick="setLogFilter('interest')">📈 Interest</button>
-    <button class="log-filter-btn"        data-filter="tax"      onclick="setLogFilter('tax')">🏛️ Tax</button>
-  </div>
-  <div id="unified-log"></div>
-  <div id="log-summary" style="display:none;"></div>
+  <div class="section-title">⚔️ Quests</div>
+  <button class="add-quest-btn-main" onclick="openQuestModal()">+ Add New Quest</button>
+  <div id="quests-container"></div>
 </div>
-</div><!-- /tab-log -->
+</div><!-- /tab-quests -->
 
 <!-- ACTIONS -->
 <div class="action-btns">
   <button class="action-btn withdraw" onclick="openWithdraw()">💸 Redeem</button>
   <button class="action-btn interest" onclick="applyInterest()">📈 Apply Interest</button>
   <button class="action-btn tax"      onclick="applyTax()">🏛️ Apply Tax</button>
+  <button class="action-btn log-btn"  onclick="openLogModal()">📋 Log</button>
   <button class="action-btn save"     onclick="exportData()">💾 Save Backup</button>
   <button class="action-btn load"     onclick="importData()">📂 Load Backup</button>
   <button class="action-btn reset"    onclick="resetAll()">🗑 Reset All</button>
 </div>
 <input type="file" id="import-input" accept=".json" style="display:none" onchange="handleImport(event)">
+
+<!-- QUEST MODAL -->
+<div class="hh-overlay" id="quest-modal">
+  <div class="hh-box" style="max-width:440px;">
+    <div class="members-header">
+      <div>
+        <div class="hh-title" id="quest-modal-title">⚔️ New Quest</div>
+        <div style="font-size:.73rem;color:var(--muted);font-weight:600;">Household quest — assigned to a kid to complete</div>
+      </div>
+      <button class="members-close-btn" onclick="closeQuestModal()">✕</button>
+    </div>
+    <input type="hidden" id="quest-edit-id">
+
+    <div class="hh-section-label" style="margin-top:14px;">Quest Title *</div>
+    <input type="text" id="quest-title-inp" placeholder="e.g. Clean your room" maxlength="60"
+      style="width:100%;padding:9px 12px;border-radius:10px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:700;outline:none;margin-bottom:14px;box-sizing:border-box;"
+      onfocus="this.style.borderColor='#8b5cf6'" onblur="this.style.borderColor='var(--border)'">
+
+    <div class="hh-section-label">Description</div>
+    <textarea id="quest-desc-inp" placeholder="What needs to be done?" rows="2"
+      style="width:100%;padding:9px 12px;border-radius:10px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;outline:none;resize:vertical;min-height:55px;margin-bottom:14px;box-sizing:border-box;"
+      onfocus="this.style.borderColor='#8b5cf6'" onblur="this.style.borderColor='var(--border)'"></textarea>
+
+    <div style="display:flex;gap:12px;margin-bottom:14px;">
+      <div style="flex:1;">
+        <div class="hh-section-label">Reward *</div>
+        <div style="position:relative;">
+          <span id="quest-sym" style="position:absolute;left:11px;top:50%;transform:translateY(-50%);font-weight:900;font-size:1rem;color:var(--gold);pointer-events:none;">€</span>
+          <input type="number" id="quest-reward-inp" placeholder="0.00" min="0" step="0.01"
+            style="width:100%;padding:9px 12px 9px 28px;border-radius:10px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);font-family:'Fredoka One',cursive;font-size:1.1rem;outline:none;box-sizing:border-box;"
+            onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+        </div>
+      </div>
+      <div style="flex:1;">
+        <div class="hh-section-label">Frequency</div>
+        <select id="quest-freq-inp"
+          style="width:100%;padding:9px 10px;border-radius:10px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;outline:none;">
+          <option value="unlimited">Every time it happens</option>
+          <option value="once">Once (one-time)</option>
+          <option value="daily">Once per day</option>
+          <option value="2perweek">2× per week</option>
+          <option value="weekly">Once per week</option>
+          <option value="monthly">Once per month</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="quest-assign-group">
+      <div class="hh-section-divider"></div>
+      <div class="hh-section-label" style="margin-top:12px;">Assign to</div>
+      <div id="quest-kid-checkboxes" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;"></div>
+    </div>
+
+    <div class="hh-section-divider"></div>
+    <div style="display:flex;gap:9px;margin-top:14px;">
+      <button class="btn-cancel-withdraw" onclick="closeQuestModal()" style="flex:0 0 auto;">Cancel</button>
+      <button id="quest-delete-btn" style="display:none;flex:0 0 auto;padding:11px 16px;border-radius:12px;border:1.5px solid #fca5a5;background:#fee2e2;color:#dc2626;font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:800;cursor:pointer;" onclick="deleteQuest(document.getElementById('quest-edit-id').value)">🗑 Delete</button>
+      <button onclick="saveQuest()" style="flex:1;padding:11px;border-radius:12px;border:none;background:linear-gradient(135deg,#8b5cf6,#6366f1);color:white;font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:800;cursor:pointer;transition:.15s;" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">⚔️ Save Quest</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOG MODAL -->
+<div class="hh-overlay" id="log-modal">
+  <div class="hh-box" style="max-width:540px;">
+    <div class="members-header">
+      <div>
+        <div class="hh-title">📋 Activity Log</div>
+        <div id="log-modal-kid-name" style="font-size:.73rem;color:var(--muted);font-weight:600;"></div>
+      </div>
+      <button class="members-close-btn" onclick="closeLogModal()">✕</button>
+    </div>
+
+    <!-- Kid filter (multi-kid only) -->
+    <div id="log-modal-kid-filter" style="display:none;margin:10px 0 4px;">
+      <div class="hh-section-label">Filter by kid</div>
+      <div id="log-modal-kid-tabs" class="log-filters" style="flex-wrap:wrap;"></div>
+    </div>
+
+    <!-- Type filter -->
+    <div class="log-filters" id="log-modal-filters" style="margin:10px 0 0;">
+      <button class="log-filter-btn active" data-filter="all"      onclick="setLogModalFilter('all')">All</button>
+      <button class="log-filter-btn"        data-filter="activity" onclick="setLogModalFilter('activity')">⏱ Activities</button>
+      <button class="log-filter-btn"        data-filter="quest"    onclick="setLogModalFilter('quest')">⚔️ Quests</button>
+      <button class="log-filter-btn"        data-filter="redeem"   onclick="setLogModalFilter('redeem')">🛍️ Redeemed</button>
+      <button class="log-filter-btn"        data-filter="interest" onclick="setLogModalFilter('interest')">📈 Interest</button>
+      <button class="log-filter-btn"        data-filter="tax"      onclick="setLogModalFilter('tax')">🏛️ Tax</button>
+    </div>
+
+    <div class="log-modal-content" id="log-modal-content" style="max-height:55vh;overflow-y:auto;margin-top:12px;"></div>
+  </div>
+</div>
 
 </div><!-- /dashboard-screen -->
 
@@ -1033,6 +1192,14 @@
       <div class="hh-field">
         <label>Their name in the app</label>
         <input class="hh-input" id="invite-alias" type="text" placeholder="e.g. Dad, Grandma" maxlength="20">
+      </div>
+      <div class="hh-field">
+        <label>Their role</label>
+        <select class="role-invite-select" id="invite-role">
+          <option value="editor">✏️ Editor — starts timers, completes quests, creates activities</option>
+          <option value="champion">🏆 Champion — creates quests &amp; view only</option>
+          <option value="admin">👑 Admin — full access</option>
+        </select>
       </div>
       <button class="btn-hh-primary" onclick="generateAndShowInviteLink()" style="margin-bottom:0;">Generate Invite Link →</button>
       <div class="invite-result" id="invite-result" style="display:none;">
@@ -1084,6 +1251,14 @@
       <div class="hh-field">
         <label>Their name in the app</label>
         <input class="hh-input" id="hh-invite-alias" placeholder="e.g. Dad, Grandma" maxlength="20">
+      </div>
+      <div class="hh-field">
+        <label>Their role</label>
+        <select class="role-invite-select" id="hh-invite-role">
+          <option value="editor">✏️ Editor — starts timers, completes quests, creates activities</option>
+          <option value="champion">🏆 Champion — creates quests &amp; view only</option>
+          <option value="admin">👑 Admin — full access</option>
+        </select>
       </div>
       <button class="btn-hh-primary" onclick="generateHhInviteLink()" style="margin-bottom:0;">Generate Invite Link →</button>
       <div class="invite-result" id="hh-invite-result" style="display:none;margin-top:10px;">
@@ -1218,7 +1393,9 @@ function load() {
     try {
       appData = JSON.parse(v4);
       appData.kids.forEach(k => migrateKidState(k));
-    } catch(e) { appData = { kids:[], activeKidId:null }; }
+      if (!appData.quests) appData.quests = [];
+      appData.quests.forEach(q => { if (!q.status) q.status = 'approved'; });
+    } catch(e) { appData = { kids:[], activeKidId:null, quests:[] }; }
   } else {
     // Migrate from v3 (single-kid legacy format)
     const v3 = localStorage.getItem(STORAGE_KEY);
@@ -1270,6 +1447,12 @@ function actColorById(id){ const i=state.activities.findIndex(a=>a.id===id); ret
 function kid(fallback)   { return state && state.name && state.name.trim() ? state.name.trim() : (fallback||'your kid'); }
 function sym()           { const code=appData.currency||(state&&state.currency)||'EUR'; const c=CURRENCIES.find(c=>c.code===code); return c?c.sym:'€'; }
 function fmtAmt(n)       { return `${sym()}${Math.abs(n).toFixed(2)}`; }
+function questLogLabel(s) {
+  const title = s.questTitle || 'Quest';
+  const quest = (appData.quests || []).find(q => q.id === s.questId);
+  const sponsor = quest?.createdBy?.alias;
+  return sponsor ? `${title} · 🎖️ ${sponsor}` : title;
+}
 function fmtAmtFull(n)   { return `${sym()}${Math.abs(n).toFixed(4)}`; }
 
 
@@ -1420,6 +1603,7 @@ function ensureTimer(id) {
 }
 
 function toggleTimer(actId) {
+  if (!can('startTimer')) { alert('You don\'t have permission to start timers.'); return; }
   const t = ensureTimer(actId);
   if (!t.running) {
     t.running=true; t.startTs=Date.now()-t.elapsed;
@@ -1462,6 +1646,12 @@ function logManual(actId) {
 }
 
 function logSession(actId, minutes, manual) {
+  if (!can('createActivity')) { alert('You don\'t have permission to log activities.'); return; }
+  // Editor daily cap
+  if (isEditor()) {
+    const used = countMyActionsToday('activity');
+    if (used >= EDITOR_DAILY_CAP) { alert(`Daily activity limit reached (${EDITOR_DAILY_CAP}/day). Try again tomorrow!`); return; }
+  }
   const prev = JSON.parse(JSON.stringify(appData));
   let earnMins   = minutes;
   let multiplier = 1;
@@ -1523,6 +1713,7 @@ function applyInterestNow(silent) {
 
 function applyInterest() {
   if (!state) return;
+  if (!can('applyInterest')) { alert('Only admins can apply interest.'); return; }
   const mk = monthKey(new Date());
   if(state.lastInterestMonth===mk){ alert('Interest already applied for this month! 📅'); return; }
   if(state.balance<=0){ alert('No balance yet!'); return; }
@@ -1553,6 +1744,7 @@ function applyTaxNow(silent) {
 
 function applyTax() {
   if (!state) return;
+  if (!can('applyTax')) { alert('Only admins can apply tax.'); return; }
   const rate = appData.taxRate || 0;
   if (rate <= 0) { alert('No household tax rate set.\nConfigure it in ⚙️ Household Settings.'); return; }
   const mk = monthKey(new Date());
@@ -1782,6 +1974,87 @@ function setChartView(v){
     filtersEl.style.display='flex';
   }
   buildChart();
+  buildEarningsSources();
+}
+
+function buildEarningsSources() {
+  const el = document.getElementById('earnings-sources');
+  if (!el || !state) return;
+
+  const sessions = state.sessions;
+
+  const activityTotal = sessions
+    .filter(s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax' && s.type !== 'quest' && s.earned > 0)
+    .reduce((a, s) => a + s.earned, 0);
+
+  const questTotal = sessions
+    .filter(s => s.type === 'quest' && s.earned > 0)
+    .reduce((a, s) => a + s.earned, 0);
+
+  const interestTotal = sessions
+    .filter(s => (s.type === 'interest' || s.type === 'chest_bonus') && s.earned > 0)
+    .reduce((a, s) => a + s.earned, 0);
+
+  const grandTotal = activityTotal + questTotal + interestTotal;
+  if (grandTotal === 0) { el.innerHTML = '<div class="no-quests" style="padding:14px 0;">No earnings yet.</div>'; return; }
+
+  const pct = v => grandTotal > 0 ? Math.round(v / grandTotal * 100) : 0;
+
+  // Quest breakdown: group by sponsor, then list individual quests under each
+  const bySponsors = {}; // sponsor -> { total, quests: { questTitle -> total } }
+  sessions.filter(s => s.type === 'quest' && s.earned > 0).forEach(s => {
+    const quest = (appData.quests || []).find(q => q.id === s.questId);
+    const sponsor = quest?.createdBy?.alias || 'Unknown';
+    const title   = s.questTitle || 'Quest';
+    if (!bySponsors[sponsor]) bySponsors[sponsor] = { total: 0, quests: {} };
+    bySponsors[sponsor].total += s.earned;
+    bySponsors[sponsor].quests[title] = (bySponsors[sponsor].quests[title] || 0) + s.earned;
+  });
+  const sponsorEntries = Object.entries(bySponsors).sort((a, b) => b[1].total - a[1].total);
+
+  const sponsorRows = sponsorEntries.length > 0 && questTotal > 0
+    ? `<div class="sponsor-list">${sponsorEntries.map(([name, data]) => {
+        const questEntries = Object.entries(data.quests).sort((a,b) => b[1]-a[1]);
+        const multipleQuests = questEntries.length > 1;
+        // Single quest: merge sponsor + quest name into one row, no duplicate amount
+        if (!multipleQuests) {
+          const [title] = questEntries[0];
+          return `<div class="sponsor-row">
+            <span class="sponsor-name">🎖️ ${name} · <span style="font-weight:600;color:var(--text);">⚔️ ${title}</span></span>
+            <div class="sponsor-bar-wrap"><div class="sponsor-bar-fill" style="width:${Math.round(data.total/questTotal*100)}%"></div></div>
+            <span class="sponsor-amt">+${fmtAmt(data.total)}</span>
+          </div>`;
+        }
+        // Multiple quests: show sponsor total, then each quest indented
+        const questLines = questEntries.map(([title, amt]) =>
+          `<div class="sponsor-quest-row">
+            <span class="sponsor-quest-name">⚔️ ${title}</span>
+            <span class="sponsor-amt">+${fmtAmt(amt)}</span>
+          </div>`
+        ).join('');
+        return `<div class="sponsor-row">
+          <span class="sponsor-name">🎖️ ${name}</span>
+          <div class="sponsor-bar-wrap"><div class="sponsor-bar-fill" style="width:${Math.round(data.total/questTotal*100)}%"></div></div>
+          <span class="sponsor-amt">+${fmtAmt(data.total)}</span>
+        </div>${questLines}`;
+      }).join('')}</div>`
+    : '';
+
+  const rows = [
+    { icon:'⏱️', label:'Activities',        key:'activities', total:activityTotal, sub:'' },
+    { icon:'⚔️', label:'Quests',             key:'quests',     total:questTotal,    sub:sponsorRows },
+    { icon:'📈', label:'Interest & Bonuses', key:'interest',   total:interestTotal, sub:'' },
+  ].filter(r => r.total > 0);
+
+  el.innerHTML = rows.map(r =>
+    `<div class="source-row">
+      <span class="source-icon">${r.icon}</span>
+      <div class="source-info">
+        <div class="source-label">${r.label}<span>+${fmtAmt(r.total)} · ${pct(r.total)}%</span></div>
+        <div class="source-bar-track"><div class="source-bar-fill ${r.key}" style="width:${pct(r.total)}%"></div></div>
+      </div>
+    </div>${r.sub}`
+  ).join('');
 }
 
 function buildFilterPills(){
@@ -2489,12 +2762,12 @@ let logFilter     = 'all';
 function setDashTab(tab) {
   activeDashTab = tab;
   document.querySelectorAll('.dash-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
-  ['overview','charts','log'].forEach(t => {
+  ['overview','charts','quests'].forEach(t => {
     const el = document.getElementById('tab-' + t);
     if (el) el.style.display = t === tab ? 'block' : 'none';
   });
   if (tab === 'charts' && state) { setChartView('pie'); buildProjections(); }
-  if (tab === 'log'    && state) buildUnifiedLog();
+  if (tab === 'quests' && state) buildQuestsTab();
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -2512,8 +2785,9 @@ function buildUnifiedLog() {
   if (!el || !state) return;
 
   let sessions = [...state.sessions].reverse();
-  const isActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax';
+  const isActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax' && s.type !== 'quest';
   if      (logFilter === 'activity') sessions = sessions.filter(isActivity);
+  else if (logFilter === 'quest')    sessions = sessions.filter(s => s.type === 'quest');
   else if (logFilter === 'redeem')   sessions = sessions.filter(s => s.type === 'withdrawal');
   else if (logFilter === 'interest') sessions = sessions.filter(s => s.type === 'interest' || s.type === 'chest_bonus');
   else if (logFilter === 'tax')      sessions = sessions.filter(s => s.type === 'tax');
@@ -2552,6 +2826,12 @@ function buildUnifiedLog() {
         <span class="log-withdraw">-${fmtAmt(Math.abs(s.earned))}</span>
       </div>`;
     }
+    if (s.type === 'quest') {
+      return `<div class="log-entry">
+        <div class="log-left"><span>⚔️</span><span>${questLogLabel(s)} · ${s.date} ${byTag(s)}</span></div>
+        <span class="log-earn">+${fmtAmt(s.earned)}</span>
+      </div>`;
+    }
     const act = getActivity(s.type);
     const icon = act ? act.emoji : '?';
     const name = act ? act.name : s.type;
@@ -2586,8 +2866,481 @@ function buildUnifiedLog() {
 }
 
 // ─────────────────────────────────────────────────────────────
+// LOG MODAL
+// ─────────────────────────────────────────────────────────────
+let logModalFilter  = 'all';
+let logModalKidId   = null; // null = current kid (state), or a specific kid id for multi-kid view
+
+function openLogModal() {
+  logModalFilter = 'all';
+  logModalKidId  = null;
+  document.querySelectorAll('#log-modal-filters .log-filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
+  buildLogModalKidTabs();
+  buildLogModalContent();
+  document.getElementById('log-modal').classList.add('open');
+}
+
+function closeLogModal() {
+  document.getElementById('log-modal').classList.remove('open');
+}
+
+function buildLogModalKidTabs() {
+  const kids = appData.kids || [];
+  const kidFilter = document.getElementById('log-modal-kid-filter');
+  const kidTabs   = document.getElementById('log-modal-kid-tabs');
+  if (!kidFilter || !kidTabs) return;
+
+  if (kids.length <= 1) { kidFilter.style.display = 'none'; return; }
+  kidFilter.style.display = 'block';
+
+  const activeKid = logModalKidId || (state && state.id);
+  kidTabs.innerHTML = kids.map(k =>
+    `<button class="log-filter-btn${k.id === activeKid ? ' active' : ''}" onclick="setLogModalKid('${k.id}')">${k.avatar} ${k.name}</button>`
+  ).join('');
+}
+
+function setLogModalKid(kidId) {
+  logModalKidId = kidId;
+  document.querySelectorAll('#log-modal-kid-tabs .log-filter-btn').forEach(b =>
+    b.classList.toggle('active', b.textContent.trim() === ((appData.kids||[]).find(k=>k.id===kidId)||{}).name + ' ' + ((appData.kids||[]).find(k=>k.id===kidId)||{}).avatar)
+  );
+  // simpler: re-render the tabs
+  buildLogModalKidTabs();
+  buildLogModalContent();
+}
+
+function setLogModalFilter(f) {
+  logModalFilter = f;
+  document.querySelectorAll('#log-modal-filters .log-filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
+  buildLogModalContent();
+}
+
+function buildLogModalContent() {
+  const el = document.getElementById('log-modal-content');
+  if (!el) return;
+
+  // Determine which kid's sessions to show
+  const kid = logModalKidId ? (appData.kids||[]).find(k => k.id === logModalKidId) : state;
+  if (!kid) { el.innerHTML = '<div class="no-log">No kid selected.</div>'; return; }
+
+  // Update subtitle
+  const nameEl = document.getElementById('log-modal-kid-name');
+  if (nameEl) nameEl.textContent = `${kid.avatar} ${kid.name}'s log`;
+
+  let sessions = [...kid.sessions].reverse();
+  const isActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax' && s.type !== 'quest';
+  if      (logModalFilter === 'activity') sessions = sessions.filter(isActivity);
+  else if (logModalFilter === 'quest')    sessions = sessions.filter(s => s.type === 'quest');
+  else if (logModalFilter === 'redeem')   sessions = sessions.filter(s => s.type === 'withdrawal');
+  else if (logModalFilter === 'interest') sessions = sessions.filter(s => s.type === 'interest' || s.type === 'chest_bonus');
+  else if (logModalFilter === 'tax')      sessions = sessions.filter(s => s.type === 'tax');
+
+  if (!sessions.length) {
+    el.innerHTML = `<div class="no-log">No entries yet.</div>`;
+    return;
+  }
+
+  const byTag = s => (s.doneBy && s.doneBy.alias) ? `<span class="by-tag">by ${s.doneBy.alias}</span> ` : '';
+
+  el.innerHTML = sessions.map(s => {
+    if (s.type === 'chest_bonus') return `<div class="log-entry">
+      <div class="log-left"><span>🎁</span><span>Surprise Bonus · ${s.date} ${byTag(s)}</span></div>
+      <span class="log-earn">+${fmtAmt(s.earned)}</span></div>`;
+    if (s.type === 'tax') return `<div class="log-entry">
+      <div class="log-left"><span>🏛️</span><span>Household Tax · ${s.date} ${byTag(s)}</span></div>
+      <span class="log-tax">-${fmtAmt(Math.abs(s.earned))}</span></div>`;
+    if (s.type === 'interest') return `<div class="log-entry">
+      <div class="log-left"><span>📈</span><span>Interest · ${s.date} ${byTag(s)}</span></div>
+      <span class="log-earn">+${fmtAmt(s.earned)}</span></div>`;
+    if (s.type === 'withdrawal') { const reason = s.reason || '—'; return `<div class="log-entry">
+      <div class="log-left"><span>🛍️</span><span>${reason} · ${s.date} ${byTag(s)}</span></div>
+      <span class="log-withdraw">-${fmtAmt(Math.abs(s.earned))}</span></div>`; }
+    if (s.type === 'quest') return `<div class="log-entry">
+      <div class="log-left"><span>⚔️</span><span>${questLogLabel(s)} · ${s.date} ${byTag(s)}</span></div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <span class="log-earn">+${fmtAmt(s.earned)}</span>
+        <button class="log-delete" onclick="deleteSessionFromModal('${kid.id}','${s.id}')" title="Delete">✕</button>
+      </div></div>`;
+    // Activity session — with edit + delete
+    const act = kid.activities ? kid.activities.find(a => a.id === s.type) : getActivity(s.type);
+    const editTag = s.manual ? ' ✏' : '';
+    return `<div class="log-entry">
+      <div class="log-left"><span>${act ? act.emoji : '?'}</span><span>${act ? act.name : s.type} · ${minsToHM(s.minutes)}${editTag} · ${s.date} ${byTag(s)}</span></div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <span class="log-earn">+${fmtAmt(s.earned)}</span>
+        <button class="log-edit"   onclick="openEditFromModal('${kid.id}','${s.id}')" title="Edit">✏️</button>
+        <button class="log-delete" onclick="deleteSessionFromModal('${kid.id}','${s.id}')" title="Delete">✕</button>
+      </div></div>`;
+  }).join('');
+}
+
+function deleteSessionFromModal(kidId, sessionId) {
+  const kid = (appData.kids||[]).find(k => k.id === kidId);
+  if (!kid) return;
+  const s = kid.sessions.find(x => x.id === sessionId);
+  if (!s) return;
+  if (!confirm('Delete this entry?')) return;
+  kid.balance = Math.round((kid.balance - s.earned) * 100) / 100;
+  kid.sessions = kid.sessions.filter(x => x.id !== sessionId);
+  save();
+  if (kid === state) renderAll();
+  buildLogModalContent();
+}
+
+function openEditFromModal(kidId, sessionId) {
+  const kid = (appData.kids||[]).find(k => k.id === kidId);
+  if (!kid) return;
+  if (kid !== state) { switchToKid(kid.id); }
+  closeLogModal();
+  openEdit(sessionId);
+}
+
+// ─────────────────────────────────────────────────────────────
+// QUESTS
+// ─────────────────────────────────────────────────────────────
+const FREQ_LABELS = { unlimited:'Every time', once:'One-time', daily:'Daily', '2perweek':'2× / week', weekly:'Weekly', monthly:'Monthly' };
+
+function getWeekStart(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  const day = d.getDay(); // 0=Sun
+  const diff = (day === 0) ? -6 : 1 - day;
+  const mon = new Date(d);
+  mon.setDate(d.getDate() + diff);
+  return mon.toISOString().slice(0, 10);
+}
+
+function canCompleteQuest(quest) {
+  if (!state) return false;
+  const today = todayStr();
+  const completions = state.sessions.filter(s => s.type === 'quest' && s.questId === quest.id);
+
+  if (quest.frequency === 'unlimited') {
+    return true;
+  }
+  if (quest.frequency === 'once') {
+    return completions.length === 0;
+  }
+  if (quest.frequency === 'daily') {
+    return !completions.some(s => s.date === today);
+  }
+  if (quest.frequency === '2perweek') {
+    const ws = getWeekStart(today);
+    const thisWeek = completions.filter(s => getWeekStart(s.date) === ws);
+    return thisWeek.length < 2;
+  }
+  if (quest.frequency === 'weekly') {
+    const ws = getWeekStart(today);
+    return !completions.some(s => getWeekStart(s.date) === ws);
+  }
+  if (quest.frequency === 'monthly') {
+    const mk = today.slice(0, 7);
+    return !completions.some(s => s.date.slice(0, 7) === mk);
+  }
+  return true;
+}
+
+function questAssignedToKid(q, kidId) {
+  const ids = q.kidIds || ['all'];
+  return ids.includes('all') || ids.includes(kidId);
+}
+
+function buildQuestsTab() {
+  const container = document.getElementById('quests-container');
+  if (!container || !state) return;
+
+  const allQuests = (appData.quests || []).filter(q => q.active !== false);
+  // Migrate old quests that have no status — treat as approved
+  allQuests.forEach(q => { if (!q.status) q.status = 'approved'; });
+
+  const pendingQuests  = allQuests.filter(q => q.status === 'pending');
+  const approvedForKid = allQuests.filter(q => q.status === 'approved' && questAssignedToKid(q, state.id));
+
+  let html = '';
+
+  // ── Pending queue — admin only ──────────────────────────────
+  if (isAdmin() && pendingQuests.length) {
+    html += `<div class="pending-section-label">⏳ Pending Approval (${pendingQuests.length})</div>`;
+    html += pendingQuests.map(q => {
+      const by = q.createdBy?.alias ? `by ${q.createdBy.alias}` : '';
+      const assignedNames = (() => {
+        const ids = q.kidIds || ['all'];
+        if (ids.includes('all')) return 'All Kids';
+        return ids.map(id => (appData.kids||[]).find(k=>k.id===id)?.name||'?').join(', ');
+      })();
+      return `<div class="pending-quest-card">
+        <div class="pending-label">⏳ Pending</div>
+        <div class="quest-header" style="margin-bottom:4px;">
+          <div class="quest-header-left">
+            <span class="quest-title">⚔️ ${q.title}</span>
+            <span class="quest-freq-badge">${FREQ_LABELS[q.frequency]||q.frequency}</span>
+          </div>
+          <span class="quest-reward">+${fmtAmt(q.reward)}</span>
+        </div>
+        ${q.description ? `<div class="quest-desc">${q.description}</div>` : ''}
+        <div style="font-size:.65rem;color:var(--muted);font-weight:700;">For: ${assignedNames} ${by ? '· Suggested ' + by : ''}</div>
+        <div class="pending-actions">
+          <button class="btn-edit-quest" onclick="openQuestModal('${q.id}')">✏️ Edit</button>
+          <button class="btn-approve-quest" onclick="approveQuest('${q.id}')">✓ Approve</button>
+          <button class="btn-reject-quest" onclick="rejectQuest('${q.id}')">✕ Reject</button>
+        </div>
+      </div>`;
+    }).join('');
+    html += `<div class="hh-section-divider" style="margin-bottom:14px;"></div>`;
+  }
+
+  // ── Approved quests for this kid ────────────────────────────
+  const canCreate = can('createQuest');
+  if (!approvedForKid.length) {
+    html += `<div class="no-quests">${allQuests.length ? 'No approved quests for ' + state.name + ' yet.' : 'No quests yet!'}<br>${canCreate ? 'Create one with the button above.' : 'Ask an admin or editor to create a quest.'}<br>🗡️ Complete quests to earn coins.</div>`;
+  } else {
+    const canComplete = can('completeQuest');
+    html += approvedForKid.map(q => {
+      const canDo = canComplete && canCompleteQuest(q);
+      const editBtns = isAdmin()
+        ? `<button class="quest-edit-btn" onclick="openQuestModal('${q.id}')">✏️ Edit</button>
+           <button class="quest-delete-btn" onclick="deleteQuest('${q.id}')">✕</button>`
+        : '';
+      const completeBtn = canComplete
+        ? (canDo
+            ? `<button class="quest-complete-btn" onclick="completeQuest('${q.id}')">✓ Complete</button>`
+            : `<button class="quest-complete-btn done-btn" disabled>Done ✓</button>`)
+        : '';
+      const sponsor = q.createdBy?.alias || null;
+      return `<div class="quest-card${canDo ? '' : ' done'}">
+        <div class="quest-header">
+          <div class="quest-header-left">
+            <span class="quest-title">⚔️ ${q.title}</span>
+            <span class="quest-freq-badge">${FREQ_LABELS[q.frequency]||q.frequency}</span>
+          </div>
+          <span class="quest-reward">+${fmtAmt(q.reward)}</span>
+        </div>
+        ${q.description ? `<div class="quest-desc">${q.description}</div>` : ''}
+        ${sponsor ? `<div style="font-size:.63rem;font-weight:700;color:var(--muted);margin-bottom:8px;">🎖️ Sponsored by ${sponsor}</div>` : ''}
+        <div class="quest-footer">
+          <div class="quest-meta-actions">${editBtns}</div>
+          ${completeBtn}
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  container.innerHTML = html;
+}
+
+function renderQuestKidChips(selectedIds) {
+  const kids = appData.kids || [];
+  const wrap = document.getElementById('quest-kid-checkboxes');
+  const group = document.getElementById('quest-assign-group');
+  if (!wrap) return;
+
+  // Hide the whole assign group if only one kid
+  if (kids.length <= 1) { group.style.display = 'none'; return; }
+  group.style.display = 'block';
+
+  // selectedIds: array of kid ids, or ['all']
+  const sel = selectedIds || ['all'];
+
+  const chips = [{ id: 'all', name: 'All Kids', avatar: '👨‍👩‍👧' }, ...kids.map(k => ({ id: k.id, name: k.name, avatar: k.avatar }))];
+
+  wrap.innerHTML = chips.map(c => {
+    const checked = (c.id === 'all' && sel.includes('all')) || (c.id !== 'all' && sel.includes(c.id));
+    return `<label class="quest-kid-chip${checked ? ' selected' : ''}">
+      <input type="checkbox" value="${c.id}" style="display:none;" ${checked ? 'checked' : ''} onchange="handleQuestKidChip(this)">
+      ${c.avatar} ${c.name}
+    </label>`;
+  }).join('');
+}
+
+function handleQuestKidChip(inp) {
+  const wrap = document.getElementById('quest-kid-checkboxes');
+  const allBoxes = [...wrap.querySelectorAll('input[type=checkbox]')];
+  const allChip = allBoxes.find(b => b.value === 'all');
+
+  if (inp.value === 'all') {
+    // "All Kids" toggled — set all others to match
+    allBoxes.forEach(b => { b.checked = inp.checked; b.closest('label').classList.toggle('selected', inp.checked); });
+    // Ensure at least "All" stays checked if nothing else
+    if (!inp.checked) { inp.checked = true; inp.closest('label').classList.add('selected'); }
+  } else {
+    inp.closest('label').classList.toggle('selected', inp.checked);
+    // If all individual kids are checked, switch to "all"
+    const kidBoxes = allBoxes.filter(b => b.value !== 'all');
+    const allKidsChecked = kidBoxes.every(b => b.checked);
+    const noneChecked = kidBoxes.every(b => !b.checked);
+    if (allKidsChecked) { allChip.checked = true; allChip.closest('label').classList.add('selected'); }
+    else { allChip.checked = false; allChip.closest('label').classList.remove('selected'); }
+    // Prevent unchecking last chip
+    if (noneChecked) { inp.checked = true; inp.closest('label').classList.add('selected'); }
+  }
+}
+
+function getQuestKidIds() {
+  const wrap = document.getElementById('quest-kid-checkboxes');
+  if (!wrap || !wrap.querySelector('input')) return ['all'];
+  const checked = [...wrap.querySelectorAll('input:checked')].map(b => b.value);
+  if (checked.includes('all')) return ['all'];
+  return checked.length ? checked : ['all'];
+}
+
+function openQuestModal(id) {
+  const modal = document.getElementById('quest-modal');
+  const editIdInp = document.getElementById('quest-edit-id');
+  const deleteBtn = document.getElementById('quest-delete-btn');
+
+  if (id) {
+    const q = (appData.quests || []).find(x => x.id === id);
+    if (!q) return;
+    document.getElementById('quest-modal-title').textContent = '⚔️ Edit Quest';
+    editIdInp.value = q.id;
+    document.getElementById('quest-title-inp').value = q.title;
+    document.getElementById('quest-desc-inp').value = q.description || '';
+    document.getElementById('quest-reward-inp').value = q.reward;
+    document.getElementById('quest-freq-inp').value = q.frequency;
+    renderQuestKidChips(q.kidIds || ['all']);
+    deleteBtn.style.display = 'inline-block';
+  } else {
+    document.getElementById('quest-modal-title').textContent = '⚔️ New Quest';
+    editIdInp.value = '';
+    document.getElementById('quest-title-inp').value = '';
+    document.getElementById('quest-desc-inp').value = '';
+    document.getElementById('quest-reward-inp').value = '';
+    document.getElementById('quest-freq-inp').value = 'once';
+    renderQuestKidChips(['all']);
+    deleteBtn.style.display = 'none';
+  }
+  // Update currency symbol in reward field
+  const symEl = document.getElementById('quest-sym');
+  if (symEl) symEl.textContent = sym();
+
+  modal.classList.add('open');
+  setTimeout(() => document.getElementById('quest-title-inp').focus(), 100);
+}
+
+function closeQuestModal() {
+  document.getElementById('quest-modal').classList.remove('open');
+}
+
+function saveQuest() {
+  if (!can('createQuest')) { alert('You don\'t have permission to create quests.'); return; }
+
+  const title  = document.getElementById('quest-title-inp').value.trim();
+  const desc   = document.getElementById('quest-desc-inp').value.trim();
+  const reward = parseFloat(document.getElementById('quest-reward-inp').value);
+  const freq   = document.getElementById('quest-freq-inp').value;
+  const editId = document.getElementById('quest-edit-id').value;
+  const kidIds = getQuestKidIds();
+
+  if (!title)        { alert('Please enter a quest title.'); return; }
+  if (isNaN(reward) || reward < 0) { alert('Please enter a valid reward amount.'); return; }
+
+  if (!appData.quests) appData.quests = [];
+
+  // Admins can edit existing quests freely; non-admins can only edit their own pending quests
+  if (editId) {
+    const q = appData.quests.find(x => x.id === editId);
+    if (!q) return;
+    if (!isAdmin() && q.status === 'approved') { alert('Only an admin can edit an approved quest.'); return; }
+    q.title = title; q.description = desc; q.reward = reward; q.frequency = freq; q.kidIds = kidIds;
+    // If admin edits a pending quest, auto-approve it
+    if (isAdmin() && q.status === 'pending') q.status = 'approved';
+  } else {
+    // New quest — check daily cap for non-admins
+    if (!isAdmin()) {
+      const cap = isChampion() ? CHAMPION_DAILY_CAP : EDITOR_DAILY_CAP;
+      const used = countMyActionsToday('quest');
+      if (used >= cap) {
+        alert(`You've reached your daily quest limit (${cap} quests per day). Try again tomorrow!`);
+        return;
+      }
+    }
+    const status = isAdmin() ? 'approved' : 'pending';
+    appData.quests.push({ id: uid(), title, description: desc, reward, frequency: freq, kidIds, active: true, status, createdBy: currentUserRef(), createdAt: todayStr() });
+  }
+
+  save();
+  closeQuestModal();
+  if (!isAdmin()) showChestToast('⚔️', 'Quest submitted! Waiting for admin approval.');
+  if (activeDashTab === 'quests') buildQuestsTab();
+}
+
+function approveQuest(id) {
+  const q = (appData.quests || []).find(x => x.id === id);
+  if (!q) return;
+  q.status = 'approved';
+  save();
+  buildQuestsTab();
+}
+
+function rejectQuest(id) {
+  if (!confirm('Reject and delete this quest suggestion?')) return;
+  appData.quests = (appData.quests || []).filter(q => q.id !== id);
+  save();
+  buildQuestsTab();
+}
+
+function deleteQuest(id) {
+  if (!confirm('Delete this quest?')) return;
+  appData.quests = (appData.quests || []).filter(q => q.id !== id);
+  save();
+  closeQuestModal();
+  if (activeDashTab === 'quests') buildQuestsTab();
+}
+
+function completeQuest(id) {
+  if (!state) return;
+  if (!can('completeQuest')) { alert('You don\'t have permission to complete quests.'); return; }
+  const q = (appData.quests || []).find(x => x.id === id);
+  if (!q) return;
+  if (q.status !== 'approved') { alert('This quest hasn\'t been approved yet.'); return; }
+  if (!canCompleteQuest(q)) { alert('Quest limit reached for now. Try again later!'); return; }
+
+  // Check editor activity cap (quest completions count as activity)
+  if (isEditor()) {
+    const used = countMyActionsToday('activity');
+    if (used >= EDITOR_DAILY_CAP) {
+      alert(`You've reached your daily activity limit (${EDITOR_DAILY_CAP} per day). Try again tomorrow!`);
+      return;
+    }
+  }
+
+  const session = { id: uid(), type: 'quest', questId: q.id, questTitle: q.title, date: todayStr(), minutes: 0, earned: q.reward, manual: false, doneBy: currentUserRef() };
+  state.sessions.push(session);
+  state.balance = Math.round((state.balance + q.reward) * 100) / 100;
+
+  save();
+  showChestToast('⚔️', `Quest complete! +${fmtAmt(q.reward)}`);
+  renderAll();
+  if (activeDashTab === 'quests') buildQuestsTab();
+}
+
+// ─────────────────────────────────────────────────────────────
 // RENDER ALL
 // ─────────────────────────────────────────────────────────────
+function applyRoleUI() {
+  // Show/hide action buttons based on role
+  const show = (sel, visible) => document.querySelectorAll(sel).forEach(el => el.style.display = visible ? '' : 'none');
+  show('.action-btn.interest', can('applyInterest'));
+  show('.action-btn.tax',      can('applyTax'));
+  show('.action-btn.reset',    can('resetAll'));
+  show('.action-btn.save',     can('resetAll')); // backup = admin level
+  show('.action-btn.load',     can('resetAll'));
+  show('.action-btn.withdraw', can('redeem'));
+  // Add Quest button — visible to anyone who can create quests
+  const addQuestBtn = document.querySelector('.add-quest-btn-main');
+  if (addQuestBtn) addQuestBtn.style.display = can('createQuest') ? '' : 'none';
+  // Role badge in header for non-admins
+  const kidNameEl = document.getElementById('kid-name-display');
+  if (kidNameEl && currentMember && !isAdmin()) {
+    const existing = kidNameEl.querySelector('.role-badge');
+    if (!existing) {
+      const badge = document.createElement('span');
+      badge.className = `role-badge ${currentMember.role}`;
+      badge.textContent = isEditor() ? '✏️ Editor' : '🏆 Champion';
+      kidNameEl.appendChild(badge);
+    }
+  }
+}
+
 function renderAll(){
   if(!state) return;
   buildSummary();
@@ -2595,8 +3348,9 @@ function renderAll(){
   buildGoalCard();
   buildTimers();
   buildCalendar();
-  if (activeDashTab === 'charts') { buildChart(); buildProjections(); }
-  else if (activeDashTab === 'log') buildUnifiedLog();
+  applyRoleUI();
+  if (activeDashTab === 'charts') { buildChart(); buildProjections(); buildEarningsSources(); }
+  else if (activeDashTab === 'quests') buildQuestsTab();
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -2604,6 +3358,7 @@ function renderAll(){
 // ─────────────────────────────────────────────────────────────
 function openWithdraw() {
   if(!state) return;
+  if (!can('redeem')) { alert('Only admins and editors can process redemptions.'); return; }
   if(state.balance<=0){alert('No balance to redeem yet!');return;}
   document.getElementById('withdraw-avail').textContent = `Available: ${fmtAmt(state.balance)}`;
   document.getElementById('withdraw-sym').textContent = sym();
@@ -2849,7 +3604,50 @@ function dataRowId() {
 let currentMember = null; // { userId, email, alias, role } — the logged-in user's membership
 let pendingInvite  = null; // invite being accepted from URL param
 
-function isAdmin() { return currentMember && currentMember.role === 'admin'; }
+function isAdmin()    { return currentMember && currentMember.role === 'admin'; }
+function isEditor()   { return currentMember && currentMember.role === 'editor'; }
+function isChampion() { return currentMember && currentMember.role === 'champion'; }
+
+// Permission checks
+function can(action) {
+  if (!currentMember) return true; // local mode — no restrictions
+  const role = currentMember.role || 'member';
+  const rules = {
+    startTimer:       ['admin','editor'],
+    completeQuest:    ['admin','editor'],
+    redeem:           ['admin','editor'],
+    applyInterest:    ['admin'],
+    applyTax:         ['admin'],
+    resetAll:         ['admin'],
+    kidSettings:      ['admin'],
+    householdSettings:['admin'],
+    addKid:           ['admin'],
+    createQuest:      ['admin','editor','champion'],
+    createActivity:   ['admin','editor'], // logging sessions; champions cannot
+  };
+  return (rules[action] || ['admin']).includes(role);
+}
+
+// Count actions logged by current user today (for daily cap enforcement)
+function countMyActionsToday(type) {
+  if (!currentMember || !authSession) return 0;
+  const uid = authSession.user.id;
+  const today = todayStr();
+  if (type === 'quest') {
+    return (appData.quests || []).filter(q =>
+      q.createdAt === today && q.createdBy && q.createdBy.userId === uid
+    ).length;
+  }
+  // 'activity' — count timer sessions logged by this user today
+  return (appData.kids || []).reduce((sum, k) =>
+    sum + k.sessions.filter(s =>
+      s.date === today && s.doneBy && s.doneBy.userId === uid &&
+      s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax' && s.type !== 'quest'
+    ).length, 0);
+}
+
+const EDITOR_DAILY_CAP = 10;
+const CHAMPION_DAILY_CAP = 5;
 
 function currentUserRef() {
   if (currentMember) return { userId: currentMember.userId, alias: currentMember.alias };
@@ -2948,6 +3746,7 @@ async function undoAuditEntry(entryId, btn) {
     if (!rows || !rows.length || !rows[0].undo_state) { alert('Undo data not available.'); btn.disabled=false; btn.textContent='Undo'; return; }
     appData = rows[0].undo_state;
     appData.kids.forEach(k => migrateKidState(k));
+    if (!appData.quests) appData.quests = [];
     if (appData.kids.length > 0) {
       const active = appData.kids.find(k => k.id === appData.activeKidId) || appData.kids[0];
       appData.activeKidId = active.id; state = active;
@@ -2979,6 +3778,11 @@ function saveHouseholdSettings() {
   else buildOverview();
 }
 
+function roleLabelHtml(role) {
+  const labels = { admin:'👑 Admin', editor:'✏️ Editor', champion:'🏆 Champion', member:'Member' };
+  return `<span class="member-role-tag ${role}">${labels[role]||role}</span>`;
+}
+
 function buildHhMembersList() {
   const el = document.getElementById('hh-members-list'); if (!el) return;
   const members = appData.members || [];
@@ -2991,16 +3795,33 @@ function buildHhMembersList() {
     const youTag = isMe ? `<span class="member-you">you</span>` : '';
     const removeBtn = isAdmin() && !isMe
       ? `<button class="btn-member-remove" onclick="removeHhMember('${m.userId}')">Remove</button>` : '';
-    const roleTag = `<span class="member-role-tag ${m.role}">${m.role === 'admin' ? '👑 admin' : 'member'}</span>`;
+    const roleEl = isAdmin() && !isMe
+      ? `<select class="member-role-select" onchange="changeHhMemberRole('${m.userId}',this.value)">
+          <option value="admin"    ${m.role==='admin'    ?'selected':''}>👑 Admin</option>
+          <option value="editor"   ${m.role==='editor'   ?'selected':''}>✏️ Editor</option>
+          <option value="champion" ${m.role==='champion' ?'selected':''}>🏆 Champion</option>
+        </select>`
+      : roleLabelHtml(m.role);
     return `<div class="member-row">
       <span style="font-size:1.3rem">👤</span>
       <div class="member-info">
         <div class="member-alias">${m.alias}${youTag}</div>
         <div class="member-email">${m.email||''}</div>
       </div>
-      ${roleTag}${removeBtn}
+      ${roleEl}${removeBtn}
     </div>`;
   }).join('');
+}
+
+async function changeHhMemberRole(userId, newRole) {
+  const m = appData.members.find(x => x.userId === userId);
+  if (!m) return;
+  const prev = m.role;
+  m.role = newRole;
+  try {
+    await supabaseFetch(`household_members?household_id=eq.${appData.householdId}&user_id=eq.${userId}`, 'PATCH', { role: newRole });
+    save();
+  } catch(e) { m.role = prev; alert('Failed to update role.'); buildHhMembersList(); }
 }
 
 async function removeHhMember(userId) {
@@ -3017,6 +3838,7 @@ async function removeHhMember(userId) {
 
 async function generateHhInviteLink() {
   const alias = document.getElementById('hh-invite-alias').value.trim();
+  const role  = document.getElementById('hh-invite-role')?.value || 'editor';
   if (!alias) { alert('Please enter a name for the person you are inviting.'); return; }
   if (!appData.householdId) return;
   try {
@@ -3024,7 +3846,7 @@ async function generateHhInviteLink() {
     await supabaseFetch('household_invites', 'POST', {
       id: token, household_id: appData.householdId,
       invitee_alias: alias, inviter_alias: currentMember?.alias||'',
-      email: null, accepted: false
+      invitee_role: role, email: null, accepted: false
     });
     const url = `${window.location.origin}${window.location.pathname}?invite=${token}`;
     document.getElementById('hh-invite-link-input').value = url;
@@ -3117,14 +3939,13 @@ function buildMembersPanel() {
     const youTag = isMe ? `<span class="member-you">you</span>` : '';
     const removeBtn = isAdmin() && !isMe
       ? `<button class="btn-member-remove" onclick="removeMember('${m.userId}')">Remove</button>` : '';
-    const roleTag = `<span class="member-role-tag ${m.role}">${m.role === 'admin' ? '👑 admin' : 'member'}</span>`;
     return `<div class="member-row">
       <span style="font-size:1.3rem">👤</span>
       <div class="member-info">
         <div class="member-alias">${m.alias}${youTag}</div>
         <div class="member-email">${m.email || ''}</div>
       </div>
-      ${roleTag}
+      ${roleLabelHtml(m.role)}
       ${removeBtn}
     </div>`;
   }).join('');
@@ -3146,6 +3967,7 @@ async function removeMember(userId) {
 
 async function generateAndShowInviteLink() {
   const alias = document.getElementById('invite-alias').value.trim();
+  const role  = document.getElementById('invite-role')?.value || 'editor';
   if (!alias) { alert('Please enter a name for the person you are inviting.'); return; }
   if (!appData.householdId) return;
   try {
@@ -3155,6 +3977,7 @@ async function generateAndShowInviteLink() {
       household_id: appData.householdId,
       invitee_alias: alias,
       inviter_alias: currentMember?.alias || '',
+      invitee_role: role,
       email: null,
       accepted: false
     });
@@ -3216,7 +4039,7 @@ async function acceptPendingInvite() {
       user_id: authSession.user.id,
       email: authSession.user.email || '',
       alias: pendingInvite.invitee_alias,
-      role: 'member'
+      role: pendingInvite.invitee_role || 'editor'
     });
     await supabaseFetch(`household_invites?id=eq.${pendingInvite.id}`, 'PATCH', { accepted: true });
   } catch(e) { console.error('Failed to accept invite:', e); }
@@ -3319,6 +4142,8 @@ async function pullFromCloud() {
       if (!remote.householdName) remote.householdName = 'My Family';
       if (!Array.isArray(remote.kids)) remote.kids = [];
       remote.kids.forEach(k => migrateKidState(k));
+      if (!remote.quests) remote.quests = [];
+      remote.quests.forEach(q => { if (!q.status) q.status = 'approved'; });
       appData = remote;
       if (appData.kids.length > 0) {
         const active = appData.kids.find(k=>k.id===appData.activeKidId) || appData.kids[0];
@@ -3450,6 +4275,7 @@ function handleImport(e){
 }
 function resetAll(){
   if (!state) return;
+  if (!can('resetAll')) { alert('Only admins can reset data.'); return; }
   if(!confirm(`⚠️ WARNING!\n\nThis will permanently delete ALL of ${kid('the kid')}'s sessions, earnings and balance. Every ${sym()} they worked for will be gone forever!\n\nAre you absolutely sure?`))return;
   state.balance=0; state.interestApplied=0; state.sessions=[]; state.lastInterestMonth=null;
   save(); renderAll();
@@ -3638,8 +4464,9 @@ function buildHouseholdLog() {
   // Sort newest first
   all.sort((a, b) => b.date.localeCompare(a.date) || (b.id||'').localeCompare(a.id||''));
 
-  const hhIsActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax';
+  const hhIsActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax' && s.type !== 'quest';
   if      (householdLogFilter === 'activity') all = all.filter(hhIsActivity);
+  else if (householdLogFilter === 'quest')    all = all.filter(s => s.type === 'quest');
   else if (householdLogFilter === 'redeem')   all = all.filter(s => s.type === 'withdrawal');
   else if (householdLogFilter === 'interest') all = all.filter(s => s.type === 'interest' || s.type === 'chest_bonus');
   else if (householdLogFilter === 'tax')      all = all.filter(s => s.type === 'tax');
@@ -3666,6 +4493,9 @@ function buildHouseholdLog() {
     if (s.type === 'withdrawal') return `<div class="log-entry">
       <div class="log-left"><span>🛍️</span><span>${s.reason||'Redeemed'} · ${s.date} ${kidChip(s)} ${byChip(s)}</span></div>
       <span class="log-withdraw">-${fmtAmt(Math.abs(s.earned))}</span></div>`;
+    if (s.type === 'quest') return `<div class="log-entry">
+      <div class="log-left"><span>⚔️</span><span>${questLogLabel(s)} · ${s.date} ${kidChip(s)} ${byChip(s)}</span></div>
+      <span class="log-earn">+${fmtAmt(s.earned)}</span></div>`;
     const act  = s.kidActs.find(a => a.id === s.type);
     const icon = act ? act.emoji : '?';
     const name = act ? act.name  : s.type;
