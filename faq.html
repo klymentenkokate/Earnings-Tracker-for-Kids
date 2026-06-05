@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>FAQ — Earnings Tracker for Kids</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f8f7ff;
+      --card: #ffffff;
+      --border: #e8e4f0;
+      --text: #1e1b4b;
+      --muted: #6b7280;
+      --soft: #f3f2ff;
+      --green: #16a34a;
+      --gold: #d97706;
+      --shadow: rgba(99,102,241,0.08);
+      --purple: #6366f1;
+      --purple-light: #ede9fe;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 0 0 60px;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #1e1b4b, #312e81);
+      padding: 28px 24px 32px;
+      text-align: center;
+    }
+    .header-logo { font-size: 2.4rem; margin-bottom: 8px; }
+    .header-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.9rem;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+    .header-sub { font-size: .82rem; color: #a5b4fc; font-weight: 700; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 16px; padding: 7px 16px;
+      border-radius: 50px; border: 1.5px solid #4f46e5;
+      background: transparent; color: #a5b4fc;
+      font-family: 'Nunito', sans-serif; font-size: .8rem; font-weight: 800;
+      text-decoration: none; transition: .15s;
+    }
+    .back-link:hover { background: #4f46e522; color: white; }
+
+    /* ── Layout ── */
+    .container { max-width: 720px; margin: 0 auto; padding: 32px 20px 0; }
+
+    /* ── Section headers ── */
+    .section-header {
+      display: flex; align-items: center; gap: 10px;
+      margin: 36px 0 14px;
+    }
+    .section-icon {
+      font-size: 1.4rem; width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--purple-light); border-radius: 12px; flex-shrink: 0;
+    }
+    .section-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.25rem; color: var(--purple);
+    }
+
+    /* ── FAQ items ── */
+    .faq-item {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+    .faq-q {
+      width: 100%; text-align: left;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 15px 18px;
+      background: none; border: none; cursor: pointer;
+      font-family: 'Nunito', sans-serif; font-size: .88rem; font-weight: 800;
+      color: var(--text); line-height: 1.4;
+      transition: background .15s;
+    }
+    .faq-q:hover { background: var(--soft); }
+    .faq-q .chevron {
+      font-size: .7rem; color: var(--muted); flex-shrink: 0;
+      transition: transform .2s ease;
+    }
+    .faq-item.open .chevron { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      padding: 0 18px 16px;
+      font-size: .82rem; font-weight: 700; color: var(--muted);
+      line-height: 1.75; border-top: 1px solid var(--border);
+    }
+    .faq-a.show { display: block; }
+    .faq-a p { margin-top: 12px; }
+    .faq-a ul { margin: 10px 0 0 18px; }
+    .faq-a li { margin-bottom: 5px; }
+    .faq-a strong { color: var(--text); }
+    .faq-a .pill {
+      display: inline-block; padding: 1px 8px; border-radius: 50px;
+      font-size: .7rem; font-weight: 800; letter-spacing: .4px;
+    }
+    .pill.admin    { background: #fef9c3; color: #854d0e; }
+    .pill.editor   { background: #dcfce7; color: #166534; }
+    .pill.champion { background: #ede9fe; color: #5b21b6; }
+    .pill.purple   { background: #ede9fe; color: #6366f1; }
+    .pill.gold     { background: #fef9c3; color: #92400e; }
+    .pill.red      { background: #fee2e2; color: #991b1b; }
+
+    /* ── Role table ── */
+    .role-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: .76rem; }
+    .role-table th {
+      background: var(--soft); color: var(--purple);
+      font-weight: 800; padding: 7px 10px; text-align: left;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .role-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); }
+    .role-table tr:last-child td { border-bottom: none; }
+    .check { color: #16a34a; font-size: .9rem; }
+    .cross { color: #dc2626; font-size: .9rem; }
+
+    /* ── Intro card ── */
+    .intro-card {
+      background: linear-gradient(135deg, #ede9fe, #e0e7ff);
+      border: 1.5px solid #c4b5fd;
+      border-radius: 18px; padding: 20px 22px; margin-bottom: 8px;
+    }
+    .intro-card p { font-size: .84rem; font-weight: 700; color: #3730a3; line-height: 1.7; }
+
+    /* ── Footer ── */
+    .footer { text-align: center; margin-top: 48px; font-size: .72rem; color: var(--muted); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-logo">🪙</div>
+  <div class="header-title">Earnings Tracker — FAQ</div>
+  <div class="header-sub">Everything you need to know</div>
+  <a class="back-link" href="index.html">← Back to App</a>
+</div>
+
+<div class="container">
+
+  <div class="intro-card">
+    <p>Earnings Tracker for Kids is a household tool where kids earn real money by doing activities and completing quests. Parents set the rules — interest rates, tax, quests — and the app keeps an honest, transparent record of everything.</p>
+  </div>
+
+  <!-- ── GETTING STARTED ── -->
+  <div class="section-header">
+    <div class="section-icon">🚀</div>
+    <div class="section-title">Getting Started</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How do I set up the app for my family? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>When you first open the app, sign in or create an account. You'll be prompted to <strong>Create Your Household</strong> — give it a family name and your name in the app. You become the Admin automatically.</p>
+      <p>From there, add kids using the <strong>+ Add Kid</strong> button, set their avatar, name, and color. Then invite other family members via <strong>⚙️ Household Settings → Invite a Member</strong>.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Can multiple people use the app on different devices? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Yes. The app syncs across devices in real time using cloud sync. Any family member with an account and a household invite can open the app and see the same data. Actions by other members appear automatically and are tracked in the activity log with the person's name.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How do I add another kid? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>From the home screen, click <strong>+ Add Kid</strong> in the top navigation bar. You can set the kid's name, avatar emoji, and a colour theme. Each kid has their own balance, activities, quests, and log — completely separate from siblings.</p>
+    </div>
+  </div>
+
+  <!-- ── ACTIVITIES & EARNING ── -->
+  <div class="section-header">
+    <div class="section-icon">⏱️</div>
+    <div class="section-title">Activities & Earning</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How does a kid earn money? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Kids earn through two main ways:</p>
+      <ul>
+        <li><strong>Activities</strong> — timed tasks like reading, maths, or chores. Each activity has an hourly rate. Start the timer when the activity begins, stop it when it ends. Earnings are calculated automatically.</li>
+        <li><strong>Quests</strong> — one-off or recurring tasks with a flat reward (e.g. "Score a goal — €10"). Complete a quest to earn the reward instantly.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How do I set up activities and their rates? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Open a kid's dashboard and tap the <strong>⚙️ gear icon</strong> (Kid Settings). You can add, rename, and set the hourly rate for each activity. You can also change the emoji and colour for each one. Activities are per kid, so siblings can have different sets.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Can I log time manually without using the timer? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Yes. On each activity card there is a <strong>manual entry option</strong> where you can type in hours and minutes directly. Manual entries are marked with a ✏️ in the log so you can tell them apart from timer sessions.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Can I edit or delete a logged session? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Yes. Open the <strong>📋 Log</strong> (button in the action bar at the bottom). Each activity session has an ✏️ edit button and a ✕ delete button. Deleting a session adjusts the balance automatically. Admins can also undo any action from the audit log in Household Settings.</p>
+    </div>
+  </div>
+
+  <!-- ── QUESTS ── -->
+  <div class="section-header">
+    <div class="section-icon">⚔️</div>
+    <div class="section-title">Quests</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">What is a quest? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>A quest is a task created at the household level with a flat cash reward. Unlike timed activities, quests pay a fixed amount when completed — for example <em>"Score a goal in a match → €10"</em> or <em>"Do 20 push-ups → €0.50"</em>.</p>
+      <p>Every quest has a <strong>sponsor</strong> — the family member who created it. The sponsor's name is shown on the quest card and in the activity log.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">What frequency options are available for quests? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <ul>
+        <li><strong>Every time it happens</strong> — unlimited completions, no cooldown (e.g. "Score a goal")</li>
+        <li><strong>Once (one-time)</strong> — can only be completed once ever</li>
+        <li><strong>Once per day</strong> — resets at midnight each day</li>
+        <li><strong>2× per week</strong> — up to two completions per calendar week</li>
+        <li><strong>Once per week</strong> — one completion per calendar week</li>
+        <li><strong>Once per month</strong> — one completion per calendar month</li>
+      </ul>
+      <p>When the limit is reached, the Complete button greys out until the next period.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Who can create quests, and do they go live immediately? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p><strong>Admins</strong> create quests and they go live immediately.</p>
+      <p><strong>Editors</strong> and <strong>Champions</strong> can suggest quests, but these go into a <span class="pill red">⏳ Pending</span> queue. An admin must approve, edit, or reject them before kids can see and complete the quest. Admins see the pending queue at the top of the Quests tab.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Can a quest be assigned to specific kids? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Yes. When creating a quest with multiple kids in the household, you can assign it to <strong>All Kids</strong> or select specific kids. Each kid completes quests independently — one sibling finishing a quest doesn't affect another's access to it.</p>
+    </div>
+  </div>
+
+  <!-- ── ROLES ── -->
+  <div class="section-header">
+    <div class="section-icon">👥</div>
+    <div class="section-title">Roles & Permissions</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">What are the three roles? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <table class="role-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th><span class="pill admin">👑 Admin</span></th>
+            <th><span class="pill editor">✏️ Editor</span></th>
+            <th><span class="pill champion">🏆 Champion</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Start timers</td><td class="check">✓</td><td class="check">✓</td><td class="cross">✗</td></tr>
+          <tr><td>Complete quests</td><td class="check">✓</td><td class="check">✓</td><td class="cross">✗</td></tr>
+          <tr><td>Redeem earnings</td><td class="check">✓</td><td class="check">✓</td><td class="cross">✗</td></tr>
+          <tr><td>Create quests</td><td>✓ live</td><td>✓ pending</td><td>✓ pending</td></tr>
+          <tr><td>Approve quests</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
+          <tr><td>Apply interest / tax</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
+          <tr><td>Kid & Household Settings</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
+          <tr><td>View balance, log, goals</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Undo any action</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Who is the Admin, and can there be more than one? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>The person who creates the household is automatically the Admin. Admins can promote any other member to Admin from <strong>⚙️ Household Settings → Members</strong> using the role dropdown next to their name.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Who is the Champion role designed for? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p><span class="pill champion">🏆 Champion</span> is ideal for extended family — grandparents, aunts, uncles, family friends — who want to follow a kid's progress and suggest quests to reward them for achievements, without being able to change any settings or log time themselves. They can view everything but only interact by proposing quests for admin approval.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Is there a daily limit on what Editors and Champions can do? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Yes, to prevent accidental spam:</p>
+      <ul>
+        <li><span class="pill editor">✏️ Editor</span> — up to <strong>10 activity sessions</strong> and <strong>10 quest suggestions</strong> per day across the whole household</li>
+        <li><span class="pill champion">🏆 Champion</span> — up to <strong>5 quest suggestions</strong> per day</li>
+      </ul>
+      <p>Limits reset at midnight. Admins have no daily limits.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How do I invite someone and set their role? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Go to <strong>⚙️ Household Settings → Invite a Member</strong>. Enter their name as it will appear in the app, choose their role (Editor, Champion, or Admin), then click <strong>Generate Invite Link</strong>. Share the link with them — it works once and assigns the role automatically when they sign in.</p>
+    </div>
+  </div>
+
+  <!-- ── BALANCE & REWARDS ── -->
+  <div class="section-header">
+    <div class="section-icon">💰</div>
+    <div class="section-title">Balance & Rewards</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How does a kid spend their earnings? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Tap <strong>💸 Redeem</strong> in the action bar. Enter the amount and what it's being spent on (e.g. "New toy", "Savings"). The balance is reduced immediately and the redemption appears in the activity log. A parent then gives the actual cash.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Where can I see a breakdown of where the money came from? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Go to the <strong>📈 Charts</strong> tab on a kid's dashboard and scroll to <strong>Earnings Sources</strong>. It shows a breakdown of:</p>
+      <ul>
+        <li><strong>Activities</strong> — total from timed tasks</li>
+        <li><strong>Quests</strong> — total from quests, with each sponsor listed and their individual quests and amounts</li>
+        <li><strong>Interest & Bonuses</strong> — monthly interest and surprise bonuses</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">What is the Surprise Chest? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>The Surprise Chest is a bonus system that occasionally rewards kids with extras like a cash bonus or a double-earnings multiplier on their next session. It's designed to keep things exciting and unpredictable — kids never know exactly when or what they'll get.</p>
+    </div>
+  </div>
+
+  <!-- ── INTEREST & TAX ── -->
+  <div class="section-header">
+    <div class="section-icon">🏛️</div>
+    <div class="section-title">Interest & Tax</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">What is monthly interest and how do I set it? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Interest is a percentage added to a kid's balance each month — a reward for saving. Set the rate in <strong>⚙️ Kid Settings → Monthly Interest %</strong>. The default is 1%. Apply it manually with <strong>📈 Apply Interest</strong>, or it applies automatically at the start of a new month.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">What is household tax? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Household tax is a percentage deducted from a kid's balance each month — their share of keeping the household running (rent, food, bills). Set the rate in <strong>⚙️ Household Settings → Household Tax</strong>. Hovering over the 🏛️ badge on a kid's dashboard explains this to them in kid-friendly language.</p>
+      <p>Tax is applied manually with <strong>🏛️ Apply Tax</strong> or automatically at month rollover. It appears in the log and in the gross vs. net breakdown.</p>
+    </div>
+  </div>
+
+  <!-- ── ACTIVITY LOG ── -->
+  <div class="section-header">
+    <div class="section-icon">📋</div>
+    <div class="section-title">Activity Log</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How do I view the full activity log? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Tap the <strong>📋 Log</strong> button in the action bar at the bottom of any kid's dashboard. The log modal shows all entries for that kid with filters by type: Activities, Quests, Redeemed, Interest, and Tax. If there are multiple kids in the household, you can switch between kids using the kid filter at the top.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Can I undo a mistake? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Yes. Admins can undo any action from the <strong>Activity Log</strong> section inside <strong>⚙️ Household Settings</strong>. Each entry has an Undo button that restores the previous state for the whole household — including balance adjustments. The log also shows which family member performed each action.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How do I see the household log (all kids together)? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>From the <strong>🏠 Home</strong> screen, go to the <strong>📋 Log</strong> tab. This shows a combined log of all kids in the household, with colour-coded kid chips on each entry. You can filter by type including a dedicated <span class="pill purple">⚔️ Quests</span> filter.</p>
+    </div>
+  </div>
+
+  <!-- ── CHARTS ── -->
+  <div class="section-header">
+    <div class="section-icon">📈</div>
+    <div class="section-title">Charts & Projections</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">What does the Charts tab show? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>The <strong>📈 Charts</strong> tab on a kid's dashboard has four views:</p>
+      <ul>
+        <li><strong>Breakdown</strong> — a pie chart of earnings by activity type</li>
+        <li><strong>Daily</strong> — a bar chart of earnings per day</li>
+        <li><strong>Monthly</strong> — earnings per month</li>
+        <li><strong>Yearly</strong> — earnings per year</li>
+      </ul>
+      <p>Below the chart, <strong>Revenue Projections</strong> estimate end-of-month and end-of-year balances based on recent activity. And the <strong>Earnings Sources</strong> section breaks down earnings into Activities, Quests (with per-sponsor detail), and Interest.</p>
+    </div>
+  </div>
+
+  <!-- ── DATA & SYNC ── -->
+  <div class="section-header">
+    <div class="section-icon">☁️</div>
+    <div class="section-title">Data & Sync</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">Is my data saved automatically? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Yes. Every action saves locally to your browser immediately. If you are signed in and connected to the internet, changes also sync to the cloud automatically so all family members on any device see the latest data.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">How do I back up or restore data? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>Use the <strong>💾 Save Backup</strong> button in the action bar to download a JSON file of a kid's data. Use <strong>📂 Load Backup</strong> to restore it. Backups are per kid, not the whole household. Cloud sync is the recommended way to keep data safe across devices.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">What happens if I clear my browser data? <span class="chevron">▼</span></button>
+    <div class="faq-a">
+      <p>If you are signed in with cloud sync enabled, your data is safe — just sign in again and it will reload. If you were using the app in local-only mode without an account, clearing browser data will erase everything. We strongly recommend creating an account to protect your data.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Earnings Tracker for Kids · <a href="index.html" style="color:var(--purple);">Back to App</a>
+  </div>
+
+</div>
+
+<script>
+  function toggle(btn) {
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-a').classList.remove('show');
+    });
+    // Open clicked if it was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.classList.add('show');
+    }
+  }
+</script>
+</body>
+</html>
