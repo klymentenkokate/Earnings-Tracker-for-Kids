@@ -1312,6 +1312,9 @@ const STORAGE_KEY    = 'kids-tracker-v3'; // legacy — for migration only
 const STORAGE_KEY_V4 = 'kids-tracker-v4';
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const PALETTE = ['#6366f1','#f97316','#22c55e','#ec4899','#f59e0b'];
+function esc(str) {
+  return String(str ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
 const CURRENCIES = [
   {code:'EUR', sym:'€', name:'Euro'},
   {code:'USD', sym:'$', name:'US Dollar'},
@@ -3072,12 +3075,12 @@ function buildQuestsTab() {
         <div class="pending-label">⏳ Pending</div>
         <div class="quest-header" style="margin-bottom:4px;">
           <div class="quest-header-left">
-            <span class="quest-title">⚔️ ${q.title}</span>
+            <span class="quest-title">⚔️ ${esc(q.title)}</span>
             <span class="quest-freq-badge">${FREQ_LABELS[q.frequency]||q.frequency}</span>
           </div>
           <span class="quest-reward">+${fmtAmt(q.reward)}</span>
         </div>
-        ${q.description ? `<div class="quest-desc">${q.description}</div>` : ''}
+        ${q.description ? `<div class="quest-desc">${esc(q.description)}</div>` : ''}
         <div style="font-size:.65rem;color:var(--muted);font-weight:700;">For: ${assignedNames} ${by ? '· Suggested ' + by : ''}</div>
         <div class="pending-actions">
           <button class="btn-edit-quest" onclick="openQuestModal('${q.id}')">✏️ Edit</button>
@@ -3110,12 +3113,12 @@ function buildQuestsTab() {
       return `<div class="quest-card${canDo ? '' : ' done'}">
         <div class="quest-header">
           <div class="quest-header-left">
-            <span class="quest-title">⚔️ ${q.title}</span>
+            <span class="quest-title">⚔️ ${esc(q.title)}</span>
             <span class="quest-freq-badge">${FREQ_LABELS[q.frequency]||q.frequency}</span>
           </div>
           <span class="quest-reward">+${fmtAmt(q.reward)}</span>
         </div>
-        ${q.description ? `<div class="quest-desc">${q.description}</div>` : ''}
+        ${q.description ? `<div class="quest-desc">${esc(q.description)}</div>` : ''}
         ${sponsor ? `<div style="font-size:.63rem;font-weight:700;color:var(--muted);margin-bottom:8px;">🎖️ Sponsored by ${sponsor}</div>` : ''}
         <div class="quest-footer">
           <div class="quest-meta-actions">${editBtns}</div>
@@ -3733,8 +3736,8 @@ async function loadAuditLog() {
       const timeStr = d.toLocaleDateString([], {month:'short', day:'numeric'}) + ' · ' + d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
       return `<div class="audit-entry">
         <div class="audit-entry-info">
-          <div class="audit-entry-who">${e.alias}</div>
-          <div class="audit-entry-desc">${e.description}</div>
+          <div class="audit-entry-who">${esc(e.alias)}</div>
+          <div class="audit-entry-desc">${esc(e.description)}</div>
           <div class="audit-entry-time">${timeStr}</div>
         </div>
         <button class="btn-audit-undo" onclick="undoAuditEntry('${e.id}', this)">Undo</button>
@@ -3813,8 +3816,8 @@ function buildHhMembersList() {
     return `<div class="member-row">
       <span style="font-size:1.3rem">👤</span>
       <div class="member-info">
-        <div class="member-alias">${m.alias}${youTag}</div>
-        <div class="member-email">${m.email||''}</div>
+        <div class="member-alias">${esc(m.alias)}${youTag}</div>
+        <div class="member-email">${esc(m.email||'')}</div>
       </div>
       ${roleEl}${removeBtn}
     </div>`;
@@ -3950,8 +3953,8 @@ function buildMembersPanel() {
     return `<div class="member-row">
       <span style="font-size:1.3rem">👤</span>
       <div class="member-info">
-        <div class="member-alias">${m.alias}${youTag}</div>
-        <div class="member-email">${m.email || ''}</div>
+        <div class="member-alias">${esc(m.alias)}${youTag}</div>
+        <div class="member-email">${esc(m.email || '')}</div>
       </div>
       ${roleLabelHtml(m.role)}
       ${removeBtn}
@@ -4020,7 +4023,7 @@ async function checkInviteParam() {
       if (inv.accepted) { localStorage.removeItem('pendingInvite'); return false; }
       pendingInvite = inv;
       const subEl = document.getElementById('auth-sub');
-      if (subEl) subEl.innerHTML = `<strong>${inv.inviter_alias||'Someone'}</strong> has invited you to join as <strong>${inv.invitee_alias}</strong>. Sign in or create an account to continue.`;
+      if (subEl) subEl.innerHTML = `<strong>${esc(inv.inviter_alias||'Someone')}</strong> has invited you to join as <strong>${esc(inv.invitee_alias)}</strong>. Sign in or create an account to continue.`;
       return true;
     } catch(e) { localStorage.removeItem('pendingInvite'); return false; }
   }
@@ -4033,7 +4036,7 @@ async function checkInviteParam() {
     localStorage.setItem('pendingInvite', JSON.stringify(inv));
     // Update auth modal subtitle
     const subEl = document.getElementById('auth-sub');
-    if (subEl) subEl.innerHTML = `<strong>${inv.inviter_alias||'Someone'}</strong> has invited you to join as <strong>${inv.invitee_alias}</strong>. Sign in or create an account to continue.`;
+    if (subEl) subEl.innerHTML = `<strong>${esc(inv.inviter_alias||'Someone')}</strong> has invited you to join as <strong>${esc(inv.invitee_alias)}</strong>. Sign in or create an account to continue.`;
     history.replaceState(null, '', window.location.pathname);
     return true;
   } catch(e) { console.error('Failed to load invite:', e); return false; }
@@ -4347,7 +4350,7 @@ function buildHouseholdSummary() {
       const taxPaid = k.sessions.filter(s => s.type === 'tax').reduce((a, s) => a + Math.abs(s.earned), 0);
       const exp = taxRate > 0 ? +(k.balance * taxRate / 100).toFixed(2) : 0;
       return `<div class="hh-budget-kid-row">
-        <span style="color:${k.color};font-weight:800;">${k.avatar} ${k.name}</span>
+        <span style="color:${k.color};font-weight:800;">${k.avatar} ${esc(k.name)}</span>
         <span>Gross ${fmtAmt(gross)} · Net ${fmtAmt(k.balance)} · Tax paid ${fmtAmt(taxPaid)}${taxRate > 0 ? ` · Due ${fmtAmt(exp)}` : ''}</span>
       </div>`;
     }).join('');
@@ -4610,7 +4613,7 @@ function buildOverview() {
       <button class="kid-card-edit" onclick="event.stopPropagation();openEditKid('${k.id}')" title="Edit name & avatar">✏️</button>
       <button class="kid-card-cfg"  onclick="event.stopPropagation();openKidSettings('${k.id}')" title="Configure settings">⚙️</button>
       <div class="kid-card-avatar">${k.avatar}</div>
-      <div class="kid-card-name">${k.name}</div>
+      <div class="kid-card-name">${esc(k.name)}</div>
       <div class="kid-card-balance">${ksym}${Math.abs(k.balance).toFixed(2)}</div>
       <div class="kid-card-sub">${minsToHM(totalMins)} worked · ${interestLbl}</div>
       <div class="kid-card-badge" style="background:${curBadge.bg};color:${curBadge.color};border-color:${curBadge.border}">${curBadge.emoji} ${curBadge.label}</div>
