@@ -1098,12 +1098,10 @@
         <div class="hh-section-label">Frequency</div>
         <select id="quest-freq-inp"
           style="width:100%;padding:9px 10px;border-radius:10px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;outline:none;">
-          <option value="unlimited">Every time it happens</option>
-          <option value="once">Once (one-time)</option>
+          <option value="every">Every time it happens</option>
+          <option value="once" selected>Once (one-time)</option>
           <option value="daily">Once per day</option>
-          <option value="2perweek">2× per week</option>
           <option value="weekly">Once per week</option>
-          <option value="monthly">Once per month</option>
         </select>
       </div>
     </div>
@@ -3002,7 +3000,7 @@ function openEditFromModal(kidId, sessionId) {
 // ─────────────────────────────────────────────────────────────
 // QUESTS
 // ─────────────────────────────────────────────────────────────
-const FREQ_LABELS = { unlimited:'Every time', once:'One-time', daily:'Daily', '2perweek':'2× / week', weekly:'Weekly', monthly:'Monthly' };
+const FREQ_LABELS = { every:'Every time', once:'One-time', daily:'Daily', weekly:'Weekly' };
 
 function getWeekStart(dateStr) {
   const d = new Date(dateStr + 'T00:00:00');
@@ -3018,7 +3016,7 @@ function canCompleteQuest(quest) {
   const today = todayStr();
   const completions = state.sessions.filter(s => s.type === 'quest' && s.questId === quest.id);
 
-  if (quest.frequency === 'unlimited') {
+  if (quest.frequency === 'every' || quest.frequency === 'unlimited') {
     return true;
   }
   if (quest.frequency === 'once') {
@@ -3027,18 +3025,9 @@ function canCompleteQuest(quest) {
   if (quest.frequency === 'daily') {
     return !completions.some(s => s.date === today);
   }
-  if (quest.frequency === '2perweek') {
-    const ws = getWeekStart(today);
-    const thisWeek = completions.filter(s => getWeekStart(s.date) === ws);
-    return thisWeek.length < 2;
-  }
   if (quest.frequency === 'weekly') {
     const ws = getWeekStart(today);
     return !completions.some(s => getWeekStart(s.date) === ws);
-  }
-  if (quest.frequency === 'monthly') {
-    const mk = today.slice(0, 7);
-    return !completions.some(s => s.date.slice(0, 7) === mk);
   }
   return true;
 }
