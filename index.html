@@ -3873,10 +3873,6 @@ function copyHhInviteLink() {
   if (btn) { btn.textContent='✅ Copied!'; setTimeout(()=>btn.textContent='📋 Copy', 2000); }
 }
 
-// Redirect legacy members modal to household settings
-function openMembersModal() { openHouseholdSettings(); }
-function closeMembersModal() { closeHouseholdSettings(); }
-
 // ── Create Household ────────────────────────────────────────
 function openCreateHousehold() {
   document.getElementById('hh-name').value  = '';
