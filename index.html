@@ -3407,9 +3407,16 @@ async function authFetch(path, method='POST', body=null, token=null) {
   headers['Authorization'] = 'Bearer ' + (token || syncConfig.anonKey);
   const opts = { method, headers };
   if (body) opts.body = JSON.stringify(body);
-  const res = await fetch(syncConfig.url + '/auth/v1/' + path, opts);
+  const url = syncConfig.url + '/auth/v1/' + path;
+  console.log('[authFetch] URL:', url);
+  console.log('[authFetch] Headers:', JSON.parse(JSON.stringify(headers)));
+  const res = await fetch(url, opts);
   const data = await res.json().catch(()=>({}));
-  if (!res.ok) throw new Error(data.error_description || data.msg || data.error || 'Auth error');
+  if (!res.ok) {
+    console.error('[authFetch] Error response status:', res.status);
+    console.error('[authFetch] Error response body:', JSON.parse(JSON.stringify(data)));
+    throw new Error(data.error_description || data.msg || data.error || 'Auth error');
+  }
   return data;
 }
 
