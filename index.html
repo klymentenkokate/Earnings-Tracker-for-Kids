@@ -3511,7 +3511,13 @@ async function submitAuth() {
   const email    = document.getElementById('auth-email').value.trim();
   const password = document.getElementById('auth-password').value;
   if (!email || !email.includes('@')) { setAuthError('Please enter a valid email address.'); return; }
-  if (password.length < 6) { setAuthError('Password must be at least 6 characters.'); return; }
+  if (authMode === 'signup') {
+    if (password.length < 8) { setAuthError('Password must be at least 8 characters and include an uppercase letter, a lowercase letter, a number, and a special character.'); return; }
+    if (!/[A-Z]/.test(password)) { setAuthError('Password must include at least one uppercase letter.'); return; }
+    if (!/[a-z]/.test(password)) { setAuthError('Password must include at least one lowercase letter.'); return; }
+    if (!/[0-9]/.test(password)) { setAuthError('Password must include at least one number.'); return; }
+    if (!/[^A-Za-z0-9]/.test(password)) { setAuthError('Password must include at least one special character (e.g. !@#$%).'); return; }
+  }
   const btn = document.getElementById('auth-submit-btn');
   btn.disabled = true; btn.textContent = authMode === 'login' ? 'Signing in…' : 'Creating account…';
   clearAuthError();
