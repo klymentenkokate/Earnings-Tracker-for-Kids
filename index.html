@@ -593,6 +593,11 @@
   .quest-complete-btn{padding:7px 16px;border-radius:10px;border:none;background:linear-gradient(135deg,#8b5cf6,#6366f1);color:white;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:all .15s;flex-shrink:0;}
   .quest-complete-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 12px #6366f144;}
   .quest-complete-btn.done-btn{background:var(--soft);color:var(--muted);border:1.5px solid var(--border);cursor:default;}
+  .quest-card.expired{border-left-color:#d1d5db;opacity:.55;}
+  .quest-expiry-badge{font-size:.58rem;font-weight:800;padding:2px 8px;border-radius:50px;background:#f0fdf4;color:#16a34a;border:1px solid #86efac;letter-spacing:.3px;flex-shrink:0;white-space:nowrap;}
+  .quest-expiry-badge.soon{background:#fff7ed;color:#c2410c;border-color:#fdba74;}
+  .quest-expiry-badge.expired{background:#fef2f2;color:#dc2626;border-color:#fca5a5;}
+  .expired-section-label{font-size:.68rem;font-weight:800;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin:14px 0 8px;}
   .add-quest-btn-main{width:100%;padding:11px;border-radius:14px;border:1.5px dashed #c4b5fd;background:transparent;color:#8b5cf6;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:800;cursor:pointer;transition:.15s;margin-bottom:14px;display:block;}
   .add-quest-btn-main:hover{background:#ede9fe22;border-color:#8b5cf6;}
   .no-quests{text-align:center;color:var(--muted);font-size:.82rem;font-weight:600;padding:28px 0;line-height:1.8;}
@@ -1109,6 +1114,22 @@
       <div class="hh-section-divider"></div>
       <div class="hh-section-label" style="margin-top:12px;">Assign to</div>
       <div id="quest-kid-checkboxes" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;"></div>
+    </div>
+
+    <div class="hh-section-divider"></div>
+    <div style="margin-bottom:14px;">
+      <div class="hh-section-label" style="margin-top:12px;">Valid until</div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <select id="quest-expiry-sel" onchange="updateQuestExpiryPicker()"
+          style="flex:1;padding:9px 10px;border-radius:10px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;outline:none;">
+          <option value="">No expiry</option>
+          <option value="today">End of today</option>
+          <option value="week">End of this week</option>
+          <option value="month">End of this month</option>
+          <option value="custom">Custom date…</option>
+        </select>
+        <input type="date" id="quest-expiry-date" style="display:none;flex:1;padding:9px 10px;border-radius:10px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;outline:none;">
+      </div>
     </div>
 
     <div class="hh-section-divider"></div>
@@ -3012,6 +3033,7 @@ function getWeekStart(dateStr) {
 
 function canCompleteQuest(quest) {
   if (!state) return false;
+  if (isQuestExpired(quest)) return false;
   const today = todayStr();
   const completions = state.sessions.filter(s => s.type === 'quest' && s.questId === quest.id);
 
@@ -3029,6 +3051,42 @@ function canCompleteQuest(quest) {
     return !completions.some(s => getWeekStart(s.date) === ws);
   }
   return true;
+}
+
+function questExpiryDate(sel, customVal) {
+  if (sel === 'today') return todayStr();
+  if (sel === 'week') {
+    const d = new Date(); const day = d.getDay();
+    d.setDate(d.getDate() + (day === 0 ? 0 : 7 - day));
+    return d.toISOString().slice(0, 10);
+  }
+  if (sel === 'month') {
+    const d = new Date(); const last = new Date(d.getFullYear(), d.getMonth() + 1, 0);
+    return last.toISOString().slice(0, 10);
+  }
+  if (sel === 'custom') return customVal || null;
+  return null;
+}
+
+function isQuestExpired(q) {
+  return !!(q.expiresAt && todayStr() > q.expiresAt);
+}
+
+function questExpiryBadgeHtml(expiresAt) {
+  if (!expiresAt) return '';
+  const today = todayStr();
+  if (today > expiresAt) return `<span class="quest-expiry-badge expired">Expired</span>`;
+  const diff = Math.round((new Date(expiresAt + 'T00:00:00') - new Date(today + 'T00:00:00')) / 86400000);
+  if (diff === 0) return `<span class="quest-expiry-badge soon">Expires today</span>`;
+  if (diff <= 3) return `<span class="quest-expiry-badge soon">Expires in ${diff}d</span>`;
+  const label = new Date(expiresAt + 'T00:00:00').toLocaleDateString([], {month:'short', day:'numeric'});
+  return `<span class="quest-expiry-badge">Until ${label}</span>`;
+}
+
+function updateQuestExpiryPicker() {
+  const sel = document.getElementById('quest-expiry-sel').value;
+  const dateInp = document.getElementById('quest-expiry-date');
+  if (dateInp) dateInp.style.display = sel === 'custom' ? 'block' : 'none';
 }
 
 function questAssignedToKid(q, kidId) {
@@ -3082,27 +3140,34 @@ function buildQuestsTab() {
 
   // ── Approved quests for this kid ────────────────────────────
   const canCreate = can('createQuest');
+  const activeForKid   = approvedForKid.filter(q => !isQuestExpired(q));
+  const expiredForKid  = approvedForKid.filter(q => isQuestExpired(q));
+
   if (!approvedForKid.length) {
     html += `<div class="no-quests">${allQuests.length ? 'No approved quests for ' + state.name + ' yet.' : 'No quests yet!'}<br>${canCreate ? 'Create one with the button above.' : 'Ask an admin or editor to create a quest.'}<br>🗡️ Complete quests to earn coins.</div>`;
   } else {
     const canComplete = can('completeQuest');
-    html += approvedForKid.map(q => {
-      const canDo = canComplete && canCompleteQuest(q);
+    const renderQuestCard = (q, forceExpired) => {
+      const expired = forceExpired || isQuestExpired(q);
+      const canDo = !expired && canComplete && canCompleteQuest(q);
       const editBtns = isAdmin()
         ? `<button class="quest-edit-btn" onclick="openQuestModal('${q.id}')">✏️ Edit</button>
            <button class="quest-delete-btn" onclick="deleteQuest('${q.id}')">✕</button>`
         : '';
-      const completeBtn = canComplete
-        ? (canDo
-            ? `<button class="quest-complete-btn" onclick="completeQuest('${q.id}')">✓ Complete</button>`
-            : `<button class="quest-complete-btn done-btn" disabled>Done ✓</button>`)
-        : '';
+      const completeBtn = expired
+        ? `<button class="quest-complete-btn done-btn" disabled>Expired</button>`
+        : canComplete
+          ? (canDo
+              ? `<button class="quest-complete-btn" onclick="completeQuest('${q.id}')">✓ Complete</button>`
+              : `<button class="quest-complete-btn done-btn" disabled>Done ✓</button>`)
+          : '';
       const sponsor = q.createdBy?.alias || null;
-      return `<div class="quest-card${canDo ? '' : ' done'}">
+      return `<div class="quest-card${expired ? ' expired' : canDo ? '' : ' done'}">
         <div class="quest-header">
           <div class="quest-header-left">
             <span class="quest-title">⚔️ ${esc(q.title)}</span>
             <span class="quest-freq-badge">${FREQ_LABELS[q.frequency]||q.frequency}</span>
+            ${questExpiryBadgeHtml(q.expiresAt)}
           </div>
           <span class="quest-reward">+${fmtAmt(q.reward)}</span>
         </div>
@@ -3113,7 +3178,12 @@ function buildQuestsTab() {
           ${completeBtn}
         </div>
       </div>`;
-    }).join('');
+    };
+    html += activeForKid.map(q => renderQuestCard(q, false)).join('');
+    if (expiredForKid.length) {
+      html += `<div class="expired-section-label">Expired</div>`;
+      html += expiredForKid.map(q => renderQuestCard(q, true)).join('');
+    }
   }
 
   container.innerHTML = html;
@@ -3188,6 +3258,16 @@ function openQuestModal(id) {
     document.getElementById('quest-desc-inp').value = q.description || '';
     document.getElementById('quest-reward-inp').value = q.reward;
     document.getElementById('quest-freq-inp').value = q.frequency;
+    // Populate expiry
+    const expSel = document.getElementById('quest-expiry-sel');
+    const expDate = document.getElementById('quest-expiry-date');
+    if (q.expiresAt) {
+      const week = questExpiryDate('week', null); const month = questExpiryDate('month', null);
+      if (q.expiresAt === todayStr())  { expSel.value = 'today'; }
+      else if (q.expiresAt === week)   { expSel.value = 'week'; }
+      else if (q.expiresAt === month)  { expSel.value = 'month'; }
+      else { expSel.value = 'custom'; expDate.value = q.expiresAt; expDate.style.display = 'block'; }
+    } else { expSel.value = ''; expDate.style.display = 'none'; }
     renderQuestKidChips(q.kidIds || ['all']);
     deleteBtn.style.display = 'inline-block';
   } else {
@@ -3197,6 +3277,8 @@ function openQuestModal(id) {
     document.getElementById('quest-desc-inp').value = '';
     document.getElementById('quest-reward-inp').value = '';
     document.getElementById('quest-freq-inp').value = 'once';
+    document.getElementById('quest-expiry-sel').value = '';
+    document.getElementById('quest-expiry-date').style.display = 'none';
     renderQuestKidChips(['all']);
     deleteBtn.style.display = 'none';
   }
@@ -3221,9 +3303,13 @@ function saveQuest() {
   const freq   = document.getElementById('quest-freq-inp').value;
   const editId = document.getElementById('quest-edit-id').value;
   const kidIds = getQuestKidIds();
+  const expirySel  = document.getElementById('quest-expiry-sel').value;
+  const expiryCustom = document.getElementById('quest-expiry-date').value;
+  const expiresAt  = questExpiryDate(expirySel, expiryCustom) || null;
 
   if (!title)        { alert('Please enter a quest title.'); return; }
   if (isNaN(reward) || reward < 0) { alert('Please enter a valid reward amount.'); return; }
+  if (expirySel === 'custom' && !expiryCustom) { alert('Please pick a custom expiry date.'); return; }
 
   if (!appData.quests) appData.quests = [];
 
@@ -3232,7 +3318,7 @@ function saveQuest() {
     const q = appData.quests.find(x => x.id === editId);
     if (!q) return;
     if (!isAdmin() && q.status === 'approved') { alert('Only an admin can edit an approved quest.'); return; }
-    q.title = title; q.description = desc; q.reward = reward; q.frequency = freq; q.kidIds = kidIds;
+    q.title = title; q.description = desc; q.reward = reward; q.frequency = freq; q.kidIds = kidIds; q.expiresAt = expiresAt;
     // If admin edits a pending quest, auto-approve it
     if (isAdmin() && q.status === 'pending') q.status = 'approved';
   } else {
@@ -3246,7 +3332,7 @@ function saveQuest() {
       }
     }
     const status = isAdmin() ? 'approved' : 'pending';
-    appData.quests.push({ id: uid(), title, description: desc, reward, frequency: freq, kidIds, active: true, status, createdBy: currentUserRef(), createdAt: todayStr() });
+    appData.quests.push({ id: uid(), title, description: desc, reward, frequency: freq, kidIds, expiresAt, active: true, status, createdBy: currentUserRef(), createdAt: todayStr() });
   }
 
   save();
