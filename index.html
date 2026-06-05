@@ -513,6 +513,26 @@
   .hh-section-divider{height:1px;background:var(--border);margin:16px 0;}
   .hh-section-label{font-size:.68rem;font-weight:800;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:10px;}
 
+  /* TAX BADGE */
+  .tax-badge{background:#fef2f2;border:1.5px solid #fca5a5;border-radius:12px;padding:8px 13px;text-align:center;position:relative;cursor:default;}
+  .tax-badge .rate{font-family:'Fredoka One',cursive;font-size:1.2rem;color:#ef4444;}
+  .tax-badge .rate-label{font-size:.64rem;color:#ef444499;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+  .tax-tooltip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1e1b4b;color:white;font-size:.7rem;font-weight:600;padding:8px 12px;border-radius:10px;width:200px;text-align:center;line-height:1.5;opacity:0;visibility:hidden;transition:opacity .18s ease,visibility .18s ease;z-index:60;pointer-events:none;}
+  .tax-badge:hover .tax-tooltip{opacity:1;visibility:visible;}
+  .tax-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#1e1b4b;}
+  /* HOUSEHOLD BUDGET */
+  .hh-budget-card{background:linear-gradient(135deg,#fff5f5,#fef2f2);border:1.5px solid #fca5a5;border-radius:18px;padding:16px 18px;margin-bottom:14px;box-shadow:0 3px 12px rgba(239,68,68,.08);}
+  .hh-budget-title{font-family:'Fredoka One',cursive;font-size:.95rem;color:#dc2626;margin-bottom:10px;}
+  .hh-budget-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
+  .hh-budget-chip{background:#fff;border:1.5px solid #fca5a5;border-radius:10px;padding:10px 12px;text-align:center;}
+  .hh-budget-chip .val{font-family:'Fredoka One',cursive;font-size:1.1rem;color:#dc2626;}
+  .hh-budget-chip .lbl{font-size:.6rem;font-weight:800;color:#99000088;letter-spacing:1px;text-transform:uppercase;}
+  .hh-budget-kid-row{display:flex;justify-content:space-between;align-items:center;padding:5px 2px;font-size:.74rem;font-weight:700;color:var(--muted);border-bottom:1px solid #fca5a522;}
+  .hh-budget-kid-row:last-child{border-bottom:none;}
+  /* LOG TAX */
+  .log-tax{color:#dc2626;font-family:'Fredoka One',cursive;font-size:.86rem;}
+  .action-btn.tax:hover{border-color:#ef4444;color:#ef4444;}
+
   /* AUDIT LOG */
   .audit-list{display:flex;flex-direction:column;gap:6px;max-height:300px;overflow-y:auto;margin-top:4px;}
   .audit-entry{background:var(--soft);border:1.5px solid var(--border);border-radius:10px;padding:9px 11px;display:flex;align-items:flex-start;gap:8px;}
@@ -645,6 +665,7 @@
           <button class="log-filter-btn"        data-filter="activity" onclick="setHouseholdLogFilter('activity')">⏱ Activities</button>
           <button class="log-filter-btn"        data-filter="redeem"   onclick="setHouseholdLogFilter('redeem')">🛍️ Redeemed</button>
           <button class="log-filter-btn"        data-filter="interest" onclick="setHouseholdLogFilter('interest')">📈 Interest</button>
+          <button class="log-filter-btn"        data-filter="tax"      onclick="setHouseholdLogFilter('tax')">🏛️ Tax</button>
         </div>
         <div id="household-log"></div>
         <div id="household-log-summary" style="display:none;"></div>
@@ -832,6 +853,11 @@
     <div class="rate" id="interest-rate-badge">+1%</div>
     <div class="rate-label">monthly<br>interest</div>
   </div>
+  <div class="tax-badge" id="tax-badge-wrap" style="display:none;">
+    <div class="tax-tooltip">🏛️ Household tax is your share of keeping the home running — like rent, food &amp; bills. Parents decide the rate.</div>
+    <div class="rate" id="tax-rate-badge">0%</div>
+    <div class="rate-label">household<br>tax</div>
+  </div>
   <div class="badge-wrap">
     <div class="badge-pill" id="badge-pill">🌱 Apprentice</div>
     <div class="badge-progress-bar"><div class="badge-progress-fill" id="badge-fill" style="width:0%"></div></div>
@@ -947,6 +973,7 @@
     <button class="log-filter-btn"        data-filter="activity" onclick="setLogFilter('activity')">⏱ Activities</button>
     <button class="log-filter-btn"        data-filter="redeem"   onclick="setLogFilter('redeem')">🛍️ Redeemed</button>
     <button class="log-filter-btn"        data-filter="interest" onclick="setLogFilter('interest')">📈 Interest</button>
+    <button class="log-filter-btn"        data-filter="tax"      onclick="setLogFilter('tax')">🏛️ Tax</button>
   </div>
   <div id="unified-log"></div>
   <div id="log-summary" style="display:none;"></div>
@@ -957,6 +984,7 @@
 <div class="action-btns">
   <button class="action-btn withdraw" onclick="openWithdraw()">💸 Redeem</button>
   <button class="action-btn interest" onclick="applyInterest()">📈 Apply Interest</button>
+  <button class="action-btn tax"      onclick="applyTax()">🏛️ Apply Tax</button>
   <button class="action-btn save"     onclick="exportData()">💾 Save Backup</button>
   <button class="action-btn load"     onclick="importData()">📂 Load Backup</button>
   <button class="action-btn reset"    onclick="resetAll()">🗑 Reset All</button>
@@ -1030,6 +1058,16 @@
     <!-- Currency -->
     <div class="hh-section-label">🌍 Currency</div>
     <select id="hh-currency-select" style="width:100%;padding:8px 10px;border-radius:10px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;outline:none;margin-bottom:18px;"></select>
+
+    <div class="hh-section-divider"></div>
+
+    <!-- Tax Rate -->
+    <div class="hh-section-label">🏛️ Household Tax</div>
+    <div style="font-size:.72rem;color:var(--muted);font-weight:600;margin-bottom:8px;line-height:1.5;">% taken from each kid's balance at month end — their share of household running costs.</div>
+    <div style="position:relative;max-width:160px;margin-bottom:18px;">
+      <input id="hh-tax-rate" type="number" min="0" max="50" step="0.1" placeholder="0" style="width:100%;padding:8px 28px 8px 10px;border-radius:10px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;outline:none;" onfocus="this.style.borderColor='#ef4444'" onblur="this.style.borderColor='var(--border)'">
+      <span style="position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:800;font-size:.8rem;pointer-events:none;">%</span>
+    </div>
 
     <div class="hh-section-divider"></div>
 
@@ -1166,6 +1204,7 @@ function migrateKidState(k) {
   if (!k.sessions)                k.sessions = [];
   if (k.balance === undefined)    k.balance = 0;
   if (k.interestApplied === undefined) k.interestApplied = 0;
+  if (k.taxApplied === undefined) k.taxApplied = 0;
   const dc = ['#6366f1','#f97316','#22c55e','#ec4899','#f59e0b'];
   k.activities.forEach((a,i)=>{ if(!a.color) a.color=dc[i%dc.length]; });
 }
@@ -1490,6 +1529,65 @@ function applyInterest() {
 }
 
 function monthKey(d) { return `${d.getFullYear()}-${pad(d.getMonth()+1)}`; }
+
+// ─────────────────────────────────────────────────────────────
+// TAX
+// ─────────────────────────────────────────────────────────────
+function applyTaxNow(silent) {
+  const rate = (appData.taxRate || 0) / 100;
+  if (rate <= 0 || !state || state.balance <= 0) return false;
+  const prev = JSON.parse(JSON.stringify(appData));
+  const taxAmt = +(state.balance * rate).toFixed(4);
+  state.taxApplied = +((state.taxApplied || 0) + taxAmt).toFixed(4);
+  state.balance = Math.max(0, +(state.balance - taxAmt).toFixed(4));
+  state.lastTaxMonth = monthKey(new Date());
+  state.sessions.push({id:uid(),type:'tax',date:todayStr(),minutes:0,earned:-taxAmt,manual:false,doneBy:currentUserRef()});
+  save();
+  writeAuditLog('tax', `${currentMember?.alias||'Auto'} applied ${appData.taxRate}% household tax (-${fmtAmt(taxAmt)}) for ${kid()}`, prev);
+  if (!silent) { renderAll(); alert(`🏛️ -${fmtAmt(taxAmt)} household tax applied for ${kid()}!\nNew balance: ${fmtAmt(state.balance)}`); }
+  return true;
+}
+
+function applyTax() {
+  if (!state) return;
+  const rate = appData.taxRate || 0;
+  if (rate <= 0) { alert('No household tax rate set.\nConfigure it in ⚙️ Household Settings.'); return; }
+  const mk = monthKey(new Date());
+  if (state.lastTaxMonth === mk) { alert('Tax already applied for this month! 📅'); return; }
+  if (state.balance <= 0) { alert('No balance yet!'); return; }
+  const taxAmt = state.balance * rate / 100;
+  if (!confirm(`Apply ${rate}% household tax to ${fmtAmt(state.balance)}?\nThis removes ${fmtAmt(taxAmt)} for shared household expenses.`)) return;
+  applyTaxNow(false);
+}
+
+function checkAutoTax() {
+  if (!state) return;
+  const rate = appData.taxRate || 0;
+  if (rate <= 0 || state.balance <= 0) return;
+  const now = new Date();
+  const currentMK = monthKey(now);
+  if (!state.lastTaxMonth) { state.lastTaxMonth = currentMK; save(); return; }
+  if (state.lastTaxMonth === currentMK) return;
+  const [ly, lm] = state.lastTaxMonth.split('-').map(Number);
+  const [cy, cm] = [now.getFullYear(), now.getMonth()+1];
+  let monthsMissed = (cy - ly) * 12 + (cm - lm);
+  if (monthsMissed <= 0) return;
+  let totalTaken = 0;
+  for (let i = 0; i < monthsMissed; i++) {
+    const d = new Date(ly, lm-1+i, 1);
+    const taxAmt = +(state.balance * rate / 100).toFixed(4);
+    state.taxApplied = +((state.taxApplied||0)+taxAmt).toFixed(4);
+    state.balance = Math.max(0, +(state.balance - taxAmt).toFixed(4));
+    totalTaken += taxAmt;
+    state.sessions.push({id:uid(),type:'tax',date:`${d.getFullYear()}-${pad(d.getMonth()+1)}-01`,minutes:0,earned:-taxAmt,manual:false,auto:true,doneBy:{userId:null,alias:'Auto'}});
+  }
+  state.lastTaxMonth = currentMK;
+  save();
+  const msg = monthsMissed === 1
+    ? `🏛️ Household tax applied automatically: -${fmtAmt(totalTaken)}!\nNew balance: ${fmtAmt(state.balance)}`
+    : `🏛️ ${monthsMissed} months of tax applied: -${fmtAmt(totalTaken)} total!\nNew balance: ${fmtAmt(state.balance)}`;
+  setTimeout(()=>alert(msg), 400);
+}
 
 function checkAutoInterest() {
   if (!state) return;
@@ -1915,11 +2013,18 @@ function buildSummary(){
   if (!state) return;
   const name = state.name || '';
   document.getElementById('balance-label-text') && (document.getElementById('balance-label-text').textContent = name ? `${name}'s Balance` : 'Total Balance');
-  const earned=state.sessions.filter(s=>s.type!=='interest'&&s.type!=='withdrawal').reduce((a,s)=>a+s.earned,0);
+  const earned=state.sessions.filter(s=>s.type!=='interest'&&s.type!=='withdrawal'&&s.type!=='tax'&&s.type!=='chest_bonus').reduce((a,s)=>a+s.earned,0);
   const withdrawn=state.sessions.filter(s=>s.type==='withdrawal').reduce((a,s)=>a+Math.abs(s.earned),0);
+  const taxPaid=state.sessions.filter(s=>s.type==='tax').reduce((a,s)=>a+Math.abs(s.earned),0);
   document.getElementById('balance-display').textContent=fmtAmt(state.balance);
-  document.getElementById('balance-sub').textContent=`Earned: ${fmtAmt(earned)} · Interest: ${fmtAmt(state.interestApplied||0)} · Redeemed: ${fmtAmt(withdrawn)}`;
-  const totalMins=state.sessions.filter(s=>s.type!=='interest'&&s.type!=='withdrawal').reduce((a,s)=>a+s.minutes,0);
+  document.getElementById('balance-sub').textContent=`Gross: ${fmtAmt(earned)} · Net: ${fmtAmt(state.balance)} · Tax: ${fmtAmt(taxPaid)} · Interest: ${fmtAmt(state.interestApplied||0)}`;
+  // tax badge
+  const taxBadge = document.getElementById('tax-badge-wrap');
+  const taxRateEl = document.getElementById('tax-rate-badge');
+  const taxRate = appData.taxRate || 0;
+  if (taxBadge) taxBadge.style.display = taxRate > 0 ? 'block' : 'none';
+  if (taxRateEl) taxRateEl.textContent = `-${taxRate}%`;
+  const totalMins=state.sessions.filter(s=>s.type!=='interest'&&s.type!=='withdrawal'&&s.type!=='tax').reduce((a,s)=>a+s.minutes,0);
   document.getElementById('stat-hrs').textContent=minsToHM(totalMins);
   document.getElementById('stat-days').textContent=new Set(state.sessions.filter(s=>s.type!=='interest'&&s.type!=='withdrawal').map(s=>s.date)).size;
   document.getElementById('interest-rate-badge').textContent=`+${state.interestRate??1}%`;
@@ -2404,10 +2509,11 @@ function buildUnifiedLog() {
   if (!el || !state) return;
 
   let sessions = [...state.sessions].reverse();
-  const isActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus';
+  const isActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax';
   if      (logFilter === 'activity') sessions = sessions.filter(isActivity);
   else if (logFilter === 'redeem')   sessions = sessions.filter(s => s.type === 'withdrawal');
   else if (logFilter === 'interest') sessions = sessions.filter(s => s.type === 'interest' || s.type === 'chest_bonus');
+  else if (logFilter === 'tax')      sessions = sessions.filter(s => s.type === 'tax');
 
   if (!sessions.length) {
     el.innerHTML = `<div class="no-log">No ${logFilter === 'all' ? '' : logFilter + ' '}entries yet.</div>`;
@@ -2422,6 +2528,12 @@ function buildUnifiedLog() {
       return `<div class="log-entry">
         <div class="log-left"><span>🎁</span><span>Surprise Bonus · ${s.date} ${byTag(s)}</span></div>
         <span class="log-earn">+${fmtAmt(s.earned)}</span>
+      </div>`;
+    }
+    if (s.type === 'tax') {
+      return `<div class="log-entry">
+        <div class="log-left"><span>🏛️</span><span>Household Tax · ${s.date} ${byTag(s)}</span></div>
+        <span class="log-tax">-${fmtAmt(Math.abs(s.earned))}</span>
       </div>`;
     }
     if (s.type === 'interest') {
@@ -2577,7 +2689,7 @@ function handleAuthCallback() {
       loadCurrentMember();
       buildKidSwitcher();
       updateMembersTab();
-      if (pulled) { checkAutoInterest(); if(viewMode==='dashboard') renderAll(); else buildOverview(); }
+      if (pulled) { checkAutoInterest(); checkAutoTax(); if(viewMode==='dashboard') renderAll(); else buildOverview(); }
       else openCreateHousehold();
       if (pulled && appData.kids.length === 0) openAddKid();
     });
@@ -2665,6 +2777,7 @@ async function onSignedIn() {
   updateMembersTab();
   if (pulled) {
     checkAutoInterest();
+    checkAutoTax();
     if (viewMode === 'dashboard') renderAll(); else buildOverview();
     if (appData.kids.length === 0) openAddKid();
   } else {
@@ -2751,6 +2864,9 @@ function openHouseholdSettings() {
   const sel = document.getElementById('hh-currency-select');
   const cur = appData.currency || 'EUR';
   sel.innerHTML = CURRENCIES.map(c => `<option value="${c.code}" ${c.code===cur?'selected':''}>${c.sym} ${c.name}</option>`).join('');
+  // Populate tax rate
+  const taxInput = document.getElementById('hh-tax-rate');
+  if (taxInput) taxInput.value = appData.taxRate || 0;
   // Sub title
   const sub = document.getElementById('hh-settings-sub');
   if (sub) sub.textContent = appData.householdName || 'My Family';
@@ -2849,6 +2965,11 @@ async function undoAuditEntry(entryId, btn) {
 
 function saveHouseholdSettings() {
   appData.currency = document.getElementById('hh-currency-select').value;
+  const taxInput = document.getElementById('hh-tax-rate');
+  if (taxInput) {
+    const v = parseFloat(taxInput.value);
+    appData.taxRate = (!isNaN(v) && v >= 0 && v <= 50) ? +v.toFixed(1) : 0;
+  }
   save();
   closeHouseholdSettings();
   if (viewMode === 'dashboard' && state) renderAll();
@@ -3249,7 +3370,7 @@ function disconnectSync() {
 async function forcePull() {
   if (!syncConfig) return;
   const pulled = await pullFromCloud();
-  if (pulled) { checkAutoInterest(); renderAll(); }
+  if (pulled) { checkAutoInterest(); checkAutoTax(); renderAll(); }
 }
 async function forcePush() {
   if (!syncConfig) await pushToCloud();
@@ -3374,15 +3495,43 @@ function buildHouseholdSummary() {
   const el = document.getElementById('household-summary'); if (!el) return;
   const kids = appData.kids || [];
   if (!kids.length) { el.innerHTML = ''; return; }
-  const totalBalance = kids.reduce((a, k) => a + (k.balance || 0), 0);
-  const totalEarned  = kids.reduce((a, k) => a + k.sessions.filter(s => s.type !== 'interest' && s.type !== 'withdrawal').reduce((b, s) => b + s.earned, 0), 0);
-  const totalMins    = kids.reduce((a, k) => a + k.sessions.filter(s => s.type !== 'interest' && s.type !== 'withdrawal').reduce((b, s) => b + s.minutes, 0), 0);
+  const totalBalance  = kids.reduce((a, k) => a + (k.balance || 0), 0);
+  const totalEarned   = kids.reduce((a, k) => a + k.sessions.filter(s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'tax' && s.type !== 'chest_bonus').reduce((b, s) => b + s.earned, 0), 0);
+  const totalMins     = kids.reduce((a, k) => a + k.sessions.filter(s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'tax').reduce((b, s) => b + s.minutes, 0), 0);
   const totalInterest = kids.reduce((a, k) => a + (k.interestApplied || 0), 0);
-  el.innerHTML = `<div class="balance-card" style="margin-bottom:18px;">
+  const totalTaxCollected = kids.reduce((a, k) => a + k.sessions.filter(s => s.type === 'tax').reduce((b, s) => b + Math.abs(s.earned), 0), 0);
+  const taxRate = appData.taxRate || 0;
+  const expectedTax = taxRate > 0 ? kids.reduce((a, k) => a + (k.balance * taxRate / 100), 0) : 0;
+
+  let budgetHtml = '';
+  if (taxRate > 0 || totalTaxCollected > 0) {
+    const kidRows = kids.map(k => {
+      const gross = k.sessions.filter(s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'tax' && s.type !== 'chest_bonus').reduce((a, s) => a + s.earned, 0);
+      const taxPaid = k.sessions.filter(s => s.type === 'tax').reduce((a, s) => a + Math.abs(s.earned), 0);
+      const exp = taxRate > 0 ? +(k.balance * taxRate / 100).toFixed(2) : 0;
+      return `<div class="hh-budget-kid-row">
+        <span style="color:${k.color};font-weight:800;">${k.avatar} ${k.name}</span>
+        <span>Gross ${fmtAmt(gross)} · Net ${fmtAmt(k.balance)} · Tax paid ${fmtAmt(taxPaid)}${taxRate > 0 ? ` · Due ${fmtAmt(exp)}` : ''}</span>
+      </div>`;
+    }).join('');
+    budgetHtml = `<div class="hh-budget-card">
+      <div class="hh-budget-title">🏛️ Household Budget</div>
+      <div class="hh-budget-grid">
+        <div class="hh-budget-chip"><div class="val">${fmtAmt(totalTaxCollected)}</div><div class="lbl">Tax Collected</div></div>
+        <div class="hh-budget-chip"><div class="val">${taxRate > 0 ? fmtAmt(expectedTax) : '—'}</div><div class="lbl">Expected This Month</div></div>
+      </div>
+      <div class="hh-budget-kid-row" style="font-size:.63rem;font-weight:800;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;padding-bottom:6px;border-bottom:1.5px solid #fca5a544;">
+        <span>Kid</span><span>Breakdown (${taxRate}% rate)</span>
+      </div>
+      ${kidRows}
+    </div>`;
+  }
+
+  el.innerHTML = `${budgetHtml}<div class="balance-card" style="margin-bottom:18px;">
     <div class="balance-main">
       <div class="balance-label">Household Balance</div>
       <div class="balance-amount" style="font-size:2rem;">${sym()}${Math.abs(totalBalance).toFixed(2)}</div>
-      <div class="balance-sub">Earned: ${sym()}${totalEarned.toFixed(2)} · Interest: ${sym()}${totalInterest.toFixed(2)}</div>
+      <div class="balance-sub">Gross: ${sym()}${totalEarned.toFixed(2)} · Interest: ${sym()}${totalInterest.toFixed(2)} · Tax: ${sym()}${totalTaxCollected.toFixed(2)}</div>
     </div>
     <div class="stats-row">
       <div class="stat-chip"><div class="val">${minsToHM(totalMins)}</div><div class="lbl">Total Time</div></div>
@@ -3486,10 +3635,11 @@ function buildHouseholdLog() {
   // Sort newest first
   all.sort((a, b) => b.date.localeCompare(a.date) || (b.id||'').localeCompare(a.id||''));
 
-  const hhIsActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus';
+  const hhIsActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax';
   if      (householdLogFilter === 'activity') all = all.filter(hhIsActivity);
   else if (householdLogFilter === 'redeem')   all = all.filter(s => s.type === 'withdrawal');
   else if (householdLogFilter === 'interest') all = all.filter(s => s.type === 'interest' || s.type === 'chest_bonus');
+  else if (householdLogFilter === 'tax')      all = all.filter(s => s.type === 'tax');
 
   if (!all.length) {
     el.innerHTML = '<div class="no-log">No entries yet.</div>';
@@ -3507,6 +3657,9 @@ function buildHouseholdLog() {
     if (s.type === 'interest') return `<div class="log-entry">
       <div class="log-left"><span>📈</span><span>Interest · ${s.date} ${kidChip(s)} ${byChip(s)}</span></div>
       <span class="log-earn">+${fmtAmt(s.earned)}</span></div>`;
+    if (s.type === 'tax') return `<div class="log-entry">
+      <div class="log-left"><span>🏛️</span><span>Household Tax · ${s.date} ${kidChip(s)} ${byChip(s)}</span></div>
+      <span class="log-tax">-${fmtAmt(Math.abs(s.earned))}</span></div>`;
     if (s.type === 'withdrawal') return `<div class="log-entry">
       <div class="log-left"><span>🛍️</span><span>${s.reason||'Redeemed'} · ${s.date} ${kidChip(s)} ${byChip(s)}</span></div>
       <span class="log-withdraw">-${fmtAmt(Math.abs(s.earned))}</span></div>`;
@@ -3560,6 +3713,7 @@ function switchToKid(id) {
   setDashTab('overview'); // always land on overview when switching kids
   buildKidSwitcher();
   checkAutoInterest();
+  checkAutoTax();
   renderAll();
 }
 
@@ -3722,6 +3876,7 @@ if (appData.kids.length > 0 && state) {
   document.getElementById('dashboard-screen').style.display = 'block';
   buildKidSwitcher();
   checkAutoInterest();
+  checkAutoTax();
   renderAll();
 } else if (appData.kids.length > 0) {
   showOverview();
