@@ -3404,7 +3404,7 @@ function clearAuthSession() { authSession = null; localStorage.removeItem(AUTH_S
 async function authFetch(path, method='POST', body=null, token=null) {
   if (!syncConfig) throw new Error('No Supabase config');
   const headers = { 'apikey': syncConfig.anonKey, 'Content-Type': 'application/json' };
-  if (token) headers['Authorization'] = 'Bearer ' + token;
+  headers['Authorization'] = 'Bearer ' + (token || syncConfig.anonKey);
   const opts = { method, headers };
   if (body) opts.body = JSON.stringify(body);
   const res = await fetch(syncConfig.url + '/auth/v1/' + path, opts);
