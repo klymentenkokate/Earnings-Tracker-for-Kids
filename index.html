@@ -4157,12 +4157,12 @@ function setSyncStatus(status, msg) {
 
 async function supabaseFetch(path, method='GET', body=null) {
   if (!syncConfig) return null;
-  const token = (authSession && authSession.access_token) ? authSession.access_token : syncConfig.anonKey;
+  const token = (authSession && authSession.access_token) ? authSession.access_token : null;
   const opts = {
     method,
     headers: {
       'apikey': syncConfig.anonKey,
-      'Authorization': 'Bearer ' + token,
+      ...(token ? { 'Authorization': 'Bearer ' + token } : {}),
       'Content-Type': 'application/json',
       'x-client-info': 'supabase-js/2.0',
       'Prefer': method === 'POST' ? 'resolution=merge-duplicates' : method === 'PATCH' ? 'return=minimal' : ''
