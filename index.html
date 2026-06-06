@@ -3933,11 +3933,9 @@ async function generateHhInviteLink() {
   if (!appData.householdId) return;
   try {
     const token = uid() + Date.now().toString(36);
-    await supabaseFetch('household_invites', 'POST', {
-      id: token, household_id: appData.householdId,
-      invitee_alias: alias, inviter_alias: currentMember?.alias||'',
-      invitee_role: role, email: null, accepted: false
-    });
+    const inviteBody = { id: token, household_id: appData.householdId, invitee_alias: alias, inviter_alias: currentMember?.alias||'', invitee_role: role, email: null, accepted: false };
+    console.log('[generateHhInviteLink] body:', JSON.parse(JSON.stringify(inviteBody)));
+    await supabaseFetch('household_invites', 'POST', inviteBody);
     const url = `${window.location.origin}${window.location.pathname}?invite=${token}`;
     document.getElementById('hh-invite-link-input').value = url;
     document.getElementById('hh-invite-result').style.display = 'block';
@@ -4058,15 +4056,9 @@ async function generateAndShowInviteLink() {
   if (!appData.householdId) return;
   try {
     const token = uid() + Date.now().toString(36);
-    await supabaseFetch('household_invites', 'POST', {
-      id: token,
-      household_id: appData.householdId,
-      invitee_alias: alias,
-      inviter_alias: currentMember?.alias || '',
-      invitee_role: role,
-      email: null,
-      accepted: false
-    });
+    const inviteBody2 = { id: token, household_id: appData.householdId, invitee_alias: alias, inviter_alias: currentMember?.alias || '', invitee_role: role, email: null, accepted: false };
+    console.log('[generateAndShowInviteLink] body:', JSON.parse(JSON.stringify(inviteBody2)));
+    await supabaseFetch('household_invites', 'POST', inviteBody2);
     const url = `${window.location.origin}${window.location.pathname}?invite=${token}`;
     document.getElementById('invite-link-text').value = url;
     document.getElementById('invite-result').style.display = 'block';
