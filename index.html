@@ -2917,7 +2917,7 @@ function buildLogModalKidTabs() {
 
   const activeKid = logModalKidId || (state && state.id);
   kidTabs.innerHTML = kids.map(k =>
-    `<button class="log-filter-btn${k.id === activeKid ? ' active' : ''}" onclick="setLogModalKid('${k.id}')">${k.avatar} ${k.name}</button>`
+    `<button class="log-filter-btn${k.id === activeKid ? ' active' : ''}" onclick="setLogModalKid('${k.id}')">${k.avatar} ${esc(k.name)}</button>`
   ).join('');
 }
 
@@ -3208,7 +3208,7 @@ function renderQuestKidChips(selectedIds) {
     const checked = (c.id === 'all' && sel.includes('all')) || (c.id !== 'all' && sel.includes(c.id));
     return `<label class="quest-kid-chip${checked ? ' selected' : ''}">
       <input type="checkbox" value="${c.id}" style="display:none;" ${checked ? 'checked' : ''} onchange="handleQuestKidChip(this)">
-      ${c.avatar} ${c.name}
+      ${c.avatar} ${esc(c.name)}
     </label>`;
   }).join('');
 }
@@ -3480,17 +3480,13 @@ function clearAuthSession() { authSession = null; localStorage.removeItem(AUTH_S
 async function authFetch(path, method='POST', body=null, token=null) {
   if (!syncConfig) throw new Error('No Supabase config');
   const headers = { 'apikey': syncConfig.anonKey, 'Content-Type': 'application/json' };
-  headers['Authorization'] = 'Bearer ' + (token || syncConfig.anonKey);
+  if (token) headers['Authorization'] = 'Bearer ' + token;
   const opts = { method, headers };
   if (body) opts.body = JSON.stringify(body);
   const url = syncConfig.url + '/auth/v1/' + path;
-  console.log('[authFetch] URL:', url);
-  console.log('[authFetch] Headers:', JSON.parse(JSON.stringify(headers)));
   const res = await fetch(url, opts);
   const data = await res.json().catch(()=>({}));
   if (!res.ok) {
-    console.error('[authFetch] Error response status:', res.status);
-    console.error('[authFetch] Error response body:', JSON.parse(JSON.stringify(data)));
     throw new Error(data.error_description || data.msg || data.error || 'Auth error');
   }
   return data;
@@ -3934,7 +3930,6 @@ async function generateHhInviteLink() {
   try {
     const token = uid() + Date.now().toString(36);
     const inviteBody = { id: token, household_id: appData.householdId, invitee_alias: alias, inviter_alias: currentMember?.alias||'', email: null, accepted: false };
-    console.log('[generateHhInviteLink] body:', JSON.parse(JSON.stringify(inviteBody)));
     await supabaseFetch('household_invites', 'POST', inviteBody, false);
     const url = `${window.location.origin}${window.location.pathname}?invite=${token}`;
     document.getElementById('hh-invite-link-input').value = url;
@@ -4057,7 +4052,6 @@ async function generateAndShowInviteLink() {
   try {
     const token = uid() + Date.now().toString(36);
     const inviteBody2 = { id: token, household_id: appData.householdId, invitee_alias: alias, inviter_alias: currentMember?.alias || '', email: null, accepted: false };
-    console.log('[generateAndShowInviteLink] body:', JSON.parse(JSON.stringify(inviteBody2)));
     await supabaseFetch('household_invites', 'POST', inviteBody2, false);
     const url = `${window.location.origin}${window.location.pathname}?invite=${token}`;
     document.getElementById('invite-link-text').value = url;
@@ -4162,8 +4156,6 @@ async function supabaseFetch(path, method='GET', body=null, upsert=true) {
     }
   };
   if (body) opts.body = JSON.stringify(body);
-  console.log('[supabaseFetch] URL:', syncConfig.url + '/rest/v1/' + path);
-  console.log('[supabaseFetch] Headers:', JSON.parse(JSON.stringify(opts.headers)));
   const res = await fetch(syncConfig.url + '/rest/v1/' + path, opts);
   if (!res.ok) throw new Error(await res.text());
   if (res.status === 204 || method === 'DELETE') return true;
@@ -4521,7 +4513,7 @@ function buildHouseholdPie() {
   });
   if (legEl) legEl.innerHTML = kids.map((k, i) => {
     const pct = grand > 0 ? (totals[i]/grand*100).toFixed(1) : 0;
-    return `<div class="pie-legend-item"><div class="pie-dot" style="background:${k.color}"></div>${k.avatar} ${k.name}<span class="pie-pct">${pct}%<br><small>${sym()}${totals[i].toFixed(2)}</small></span></div>`;
+    return `<div class="pie-legend-item"><div class="pie-dot" style="background:${k.color}"></div>${k.avatar} ${esc(k.name)}<span class="pie-pct">${pct}%<br><small>${sym()}${totals[i].toFixed(2)}</small></span></div>`;
   }).join('');
 }
 
@@ -4641,7 +4633,7 @@ function buildKidSwitcher() {
   let html = `<button class="kid-tab ${homeActive?'active':''}" style="${homeActive?'background:#1e1b4b;':''}" onclick="showOverview()">🏠 Home</button>`;
   appData.kids.forEach(k => {
     const isActive = viewMode==='dashboard' && appData.activeKidId===k.id;
-    html += `<button class="kid-tab ${isActive?'active':''}" style="${isActive?`background:${k.color};`:''}" onclick="switchToKid('${k.id}')">${k.avatar} ${k.name}</button>`;
+    html += `<button class="kid-tab ${isActive?'active':''}" style="${isActive?`background:${k.color};`:''}" onclick="switchToKid('${k.id}')">${k.avatar} ${esc(k.name)}</button>`;
   });
   html += `<button class="kid-tab kid-tab-add" onclick="openAddKid()">＋ Add Kid</button>`;
   el.innerHTML = html;
@@ -4658,7 +4650,7 @@ function buildOverview() {
     const memberCount = (appData.members||[]).length;
     const memberLine = memberCount > 1 ? ` · ${memberCount} members` : '';
     const managedBy = currentMember ? ` · signed in as ${currentMember.alias}` : '';
-    titleEl.innerHTML = `🏠 ${appData.householdName}<div style="font-size:.65rem;font-weight:700;color:var(--muted);text-transform:none;letter-spacing:0;margin-top:2px;">${memberCount} family member${memberCount!==1?'s':''}${managedBy}</div>`;
+    titleEl.innerHTML = `🏠 ${esc(appData.householdName)}<div style="font-size:.65rem;font-weight:700;color:var(--muted);text-transform:none;letter-spacing:0;margin-top:2px;">${memberCount} family member${memberCount!==1?'s':''}${managedBy}</div>`;
   }
   let html = appData.kids.map(k => {
     const totalMins = k.sessions.filter(s=>s.type!=='interest'&&s.type!=='withdrawal').reduce((a,s)=>a+s.minutes,0);
