@@ -3935,7 +3935,7 @@ async function generateHhInviteLink() {
     const token = uid() + Date.now().toString(36);
     const inviteBody = { id: token, household_id: appData.householdId, invitee_alias: alias, inviter_alias: currentMember?.alias||'', invitee_role: role, email: null, accepted: false };
     console.log('[generateHhInviteLink] body:', JSON.parse(JSON.stringify(inviteBody)));
-    await supabaseFetch('household_invites', 'POST', inviteBody);
+    await supabaseFetch('household_invites', 'POST', inviteBody, false);
     const url = `${window.location.origin}${window.location.pathname}?invite=${token}`;
     document.getElementById('hh-invite-link-input').value = url;
     document.getElementById('hh-invite-result').style.display = 'block';
@@ -4058,7 +4058,7 @@ async function generateAndShowInviteLink() {
     const token = uid() + Date.now().toString(36);
     const inviteBody2 = { id: token, household_id: appData.householdId, invitee_alias: alias, inviter_alias: currentMember?.alias || '', invitee_role: role, email: null, accepted: false };
     console.log('[generateAndShowInviteLink] body:', JSON.parse(JSON.stringify(inviteBody2)));
-    await supabaseFetch('household_invites', 'POST', inviteBody2);
+    await supabaseFetch('household_invites', 'POST', inviteBody2, false);
     const url = `${window.location.origin}${window.location.pathname}?invite=${token}`;
     document.getElementById('invite-link-text').value = url;
     document.getElementById('invite-result').style.display = 'block';
@@ -4147,9 +4147,10 @@ function setSyncStatus(status, msg) {
   txt.textContent = msg || msgs[status] || status;
 }
 
-async function supabaseFetch(path, method='GET', body=null) {
+async function supabaseFetch(path, method='GET', body=null, upsert=true) {
   if (!syncConfig) return null;
   const token = (authSession && authSession.access_token) ? authSession.access_token : null;
+  const prefer = method === 'POST' && upsert ? 'resolution=merge-duplicates' : method === 'PATCH' ? 'return=minimal' : '';
   const opts = {
     method,
     headers: {
@@ -4157,7 +4158,7 @@ async function supabaseFetch(path, method='GET', body=null) {
       ...(token ? { 'Authorization': 'Bearer ' + token } : {}),
       'Content-Type': 'application/json',
       'x-client-info': 'supabase-js/2.0',
-      'Prefer': method === 'POST' ? 'resolution=merge-duplicates' : method === 'PATCH' ? 'return=minimal' : ''
+      ...(prefer ? { 'Prefer': prefer } : {})
     }
   };
   if (body) opts.body = JSON.stringify(body);
