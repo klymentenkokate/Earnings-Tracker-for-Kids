@@ -4164,6 +4164,7 @@ async function supabaseFetch(path, method='GET', body=null) {
       'apikey': syncConfig.anonKey,
       'Authorization': 'Bearer ' + token,
       'Content-Type': 'application/json',
+      'x-client-info': 'supabase-js/2.0',
       'Prefer': method === 'POST' ? 'resolution=merge-duplicates' : method === 'PATCH' ? 'return=minimal' : ''
     }
   };
