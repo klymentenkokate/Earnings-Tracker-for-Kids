@@ -3580,6 +3580,7 @@ function friendlyAuthError(msg) {
 }
 
 async function submitAuth() {
+  console.log('[submitAuth] called, mode:', authMode, 'syncConfig:', syncConfig ? 'set' : 'null');
   const email    = document.getElementById('auth-email').value.trim();
   const password = document.getElementById('auth-password').value;
   if (!email || !email.includes('@')) { setAuthError('Please enter a valid email address.'); return; }
