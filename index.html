@@ -4081,7 +4081,7 @@ async function checkInviteParam() {
     if (!stored) return false;
     try {
       const inv = JSON.parse(stored);
-      if (inv.accepted) { localStorage.removeItem('pendingInvite'); return false; }
+      if (inv.accepted === true) { localStorage.removeItem('pendingInvite'); return false; }
       pendingInvite = inv;
       const subEl = document.getElementById('auth-sub');
       if (subEl) subEl.innerHTML = `<strong>${esc(inv.inviter_alias||'Someone')}</strong> has invited you to join as <strong>${esc(inv.invitee_alias)}</strong>. Sign in or create an account to continue.`;
@@ -4092,7 +4092,7 @@ async function checkInviteParam() {
     const rows = await supabaseFetch(`household_invites?id=eq.${token}&select=*`);
     if (!rows || !rows.length) { alert('Invite link not found or already used.'); return false; }
     const inv = rows[0];
-    if (inv.accepted) { alert('This invite link has already been used.'); history.replaceState(null,'',window.location.pathname); return false; }
+    if (inv.accepted === true) { alert('This invite link has already been used.'); history.replaceState(null,'',window.location.pathname); return false; }
     pendingInvite = inv;
     localStorage.setItem('pendingInvite', JSON.stringify(inv));
     // Update auth modal subtitle
@@ -4111,7 +4111,7 @@ async function acceptPendingInvite() {
       user_id: authSession.user.id,
       email: authSession.user.email || '',
       alias: pendingInvite.invitee_alias,
-      role: 'editor'
+      role: pendingInvite.invitee_role || 'editor' // invitee_role not stored in DB; defaults to editor
     });
     await supabaseFetch(`household_invites?id=eq.${pendingInvite.id}`, 'PATCH', { accepted: true });
   } catch(e) { console.error('Failed to accept invite:', e); }
