@@ -3933,7 +3933,7 @@ async function generateHhInviteLink() {
   if (!appData.householdId) return;
   try {
     const token = uid() + Date.now().toString(36);
-    const inviteBody = { id: token, household_id: appData.householdId, invitee_alias: alias, inviter_alias: currentMember?.alias||'', invitee_role: role, email: null, accepted: false };
+    const inviteBody = { id: token, household_id: appData.householdId, invitee_alias: alias, inviter_alias: currentMember?.alias||'', email: null, accepted: false };
     console.log('[generateHhInviteLink] body:', JSON.parse(JSON.stringify(inviteBody)));
     await supabaseFetch('household_invites', 'POST', inviteBody, false);
     const url = `${window.location.origin}${window.location.pathname}?invite=${token}`;
@@ -4056,7 +4056,7 @@ async function generateAndShowInviteLink() {
   if (!appData.householdId) return;
   try {
     const token = uid() + Date.now().toString(36);
-    const inviteBody2 = { id: token, household_id: appData.householdId, invitee_alias: alias, inviter_alias: currentMember?.alias || '', invitee_role: role, email: null, accepted: false };
+    const inviteBody2 = { id: token, household_id: appData.householdId, invitee_alias: alias, inviter_alias: currentMember?.alias || '', email: null, accepted: false };
     console.log('[generateAndShowInviteLink] body:', JSON.parse(JSON.stringify(inviteBody2)));
     await supabaseFetch('household_invites', 'POST', inviteBody2, false);
     const url = `${window.location.origin}${window.location.pathname}?invite=${token}`;
@@ -4117,7 +4117,7 @@ async function acceptPendingInvite() {
       user_id: authSession.user.id,
       email: authSession.user.email || '',
       alias: pendingInvite.invitee_alias,
-      role: pendingInvite.invitee_role || 'editor'
+      role: 'editor'
     });
     await supabaseFetch(`household_invites?id=eq.${pendingInvite.id}`, 'PATCH', { accepted: true });
   } catch(e) { console.error('Failed to accept invite:', e); }
