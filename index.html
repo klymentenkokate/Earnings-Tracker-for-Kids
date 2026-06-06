@@ -3484,11 +3484,8 @@ async function authFetch(path, method='POST', body=null, token=null) {
   const opts = { method, headers };
   if (body) opts.body = JSON.stringify(body);
   const url = syncConfig.url + '/auth/v1/' + path;
-  console.log('[authFetch] URL:', url);
-  console.log('[authFetch] headers:', JSON.parse(JSON.stringify(headers)));
   const res = await fetch(url, opts);
   const data = await res.json().catch(()=>({}));
-  console.log('[authFetch] status:', res.status, 'body:', JSON.parse(JSON.stringify(data)));
   if (!res.ok) {
     throw new Error(data.error_description || data.msg || data.error || 'Auth error');
   }
@@ -3580,7 +3577,6 @@ function friendlyAuthError(msg) {
 }
 
 async function submitAuth() {
-  console.log('[submitAuth] called, mode:', authMode, 'syncConfig:', syncConfig ? 'set' : 'null');
   const email    = document.getElementById('auth-email').value.trim();
   const password = document.getElementById('auth-password').value;
   if (!email || !email.includes('@')) { setAuthError('Please enter a valid email address.'); return; }
