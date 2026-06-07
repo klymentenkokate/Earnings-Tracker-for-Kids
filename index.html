@@ -3526,11 +3526,15 @@ function handleAuthCallback() {
     setSyncStatus('ok', 'Signed in ✓');
     const pendingToken = localStorage.getItem('pendingInviteToken');
     if (pendingToken) {
+      const pendingRole = localStorage.getItem('pendingInviteRole') || 'editor';
       localStorage.removeItem('pendingInviteToken');
+      localStorage.removeItem('pendingInviteRole');
       supabaseFetch(`household_invites?id=eq.${pendingToken}&select=*`).then(rows => {
         if (rows && rows.length && rows[0].accepted !== true) {
-          pendingInvite = rows[0];
-          localStorage.setItem('pendingInvite', JSON.stringify(rows[0]));
+          const inv = rows[0];
+          inv.invitee_role = pendingRole;
+          pendingInvite = inv;
+          localStorage.setItem('pendingInvite', JSON.stringify(inv));
         }
         onSignedIn();
       }).catch(() => onSignedIn());
@@ -3943,7 +3947,7 @@ async function generateHhInviteLink() {
     const token = uid() + Date.now().toString(36);
     const inviteBody = { id: token, household_id: appData.householdId, invitee_alias: alias, inviter_alias: currentMember?.alias||'', email: null, accepted: false };
     await supabaseFetch('household_invites', 'POST', inviteBody, false);
-    const url = `${window.location.origin}${window.location.pathname}?invite=${token}`;
+    const url = `${window.location.origin}${window.location.pathname}?invite=${token}&role=${encodeURIComponent(role)}`;
     document.getElementById('hh-invite-link-input').value = url;
     document.getElementById('hh-invite-result').style.display = 'block';
   } catch(e) { alert('Failed to generate invite link. Check your Supabase connection.'); }
@@ -4065,7 +4069,7 @@ async function generateAndShowInviteLink() {
     const token = uid() + Date.now().toString(36);
     const inviteBody2 = { id: token, household_id: appData.householdId, invitee_alias: alias, inviter_alias: currentMember?.alias || '', email: null, accepted: false };
     await supabaseFetch('household_invites', 'POST', inviteBody2, false);
-    const url = `${window.location.origin}${window.location.pathname}?invite=${token}`;
+    const url = `${window.location.origin}${window.location.pathname}?invite=${token}&role=${encodeURIComponent(role)}`;
     document.getElementById('invite-link-text').value = url;
     document.getElementById('invite-result').style.display = 'block';
   } catch(e) { alert('Failed to generate invite link. Check your Supabase connection.'); }
@@ -4087,6 +4091,7 @@ function updateMembersTab() {
 async function checkInviteParam() {
   const params = new URLSearchParams(window.location.search);
   const token  = params.get('invite');
+  const roleParam = params.get('role') || 'editor';
   if (!syncConfig) return false;
   if (!token) {
     const stored = localStorage.getItem('pendingInvite');
@@ -4105,9 +4110,11 @@ async function checkInviteParam() {
     if (!rows || !rows.length) { alert('Invite link not found or already used.'); return false; }
     const inv = rows[0];
     if (inv.accepted === true) { alert('This invite link has already been used.'); history.replaceState(null,'',window.location.pathname); return false; }
+    inv.invitee_role = roleParam;
     pendingInvite = inv;
     localStorage.setItem('pendingInvite', JSON.stringify(inv));
     localStorage.setItem('pendingInviteToken', token);
+    localStorage.setItem('pendingInviteRole', roleParam);
     // Update auth modal subtitle
     const subEl = document.getElementById('auth-sub');
     if (subEl) subEl.innerHTML = `<strong>${esc(inv.inviter_alias||'Someone')}</strong> has invited you to join as <strong>${esc(inv.invitee_alias)}</strong>. Sign in or create an account to continue.`;
