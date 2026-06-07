@@ -419,6 +419,15 @@
   .btn-hh-primary:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none;}
   .btn-hh-secondary{width:100%;padding:9px;border-radius:12px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;transition:.15s;}
   .btn-hh-secondary:hover{color:var(--text);border-color:var(--text);}
+  .hh-switcher-item{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-radius:10px;border:1.5px solid var(--border);margin-bottom:8px;cursor:pointer;transition:border-color .15s,background .15s;gap:10px;}
+  .hh-switcher-item:hover{border-color:var(--accent);}
+  .hh-switcher-item.active{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent);}
+  .hh-switcher-name{font-weight:700;font-size:.87rem;color:var(--text);}
+  .hh-switcher-meta{font-size:.68rem;color:var(--muted);font-weight:600;margin-top:2px;}
+  .hh-role-badge{font-size:.6rem;font-weight:800;padding:2px 8px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;flex-shrink:0;}
+  .hh-role-admin{background:#10b98120;color:#10b981;}
+  .hh-role-editor{background:#3b82f620;color:#3b82f6;}
+  .hh-role-champion{background:#f59e0b20;color:#f59e0b;}
 
   /* MEMBERS PANEL */
   .members-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
@@ -902,6 +911,7 @@
   </div>
   <div class="sync-bar-right">
     <a href="faq.html" target="_blank" class="sync-action-btn" style="text-decoration:none;">❓ FAQ</a>
+    <button class="sync-action-btn" id="switch-hh-btn" onclick="openHouseholdSwitcher()" title="Switch household" style="display:none;">⇄ Households</button>
     <button class="sync-action-btn" onclick="forcePull()" title="Pull latest from cloud">↓ Pull</button>
     <button class="sync-action-btn" onclick="forcePush()" title="Push to cloud">↑ Push</button>
     <button class="sync-action-btn danger" onclick="disconnectSync()">Sign Out</button>
@@ -1190,6 +1200,22 @@
     </div>
     <div class="hh-error" id="hh-error"></div>
     <button class="btn-hh-primary" id="hh-create-btn" onclick="submitCreateHousehold()">Create Household →</button>
+    <button class="btn-hh-secondary" id="hh-cancel-btn" style="display:none;" onclick="closeCreateHousehold();openHouseholdSwitcher()">← Back to households</button>
+  </div>
+</div>
+
+<!-- HOUSEHOLD SWITCHER MODAL -->
+<div class="hh-overlay" id="household-switcher-modal">
+  <div class="hh-box">
+    <div class="members-header">
+      <div>
+        <div class="hh-title">Your Households</div>
+        <div class="hh-sub" style="margin-bottom:0;">Switch between households or create a new one.</div>
+      </div>
+      <button class="members-close-btn" onclick="closeHouseholdSwitcher()">✕</button>
+    </div>
+    <div id="household-switcher-list" style="margin-top:16px;"></div>
+    <button class="btn-hh-primary" style="margin-top:6px;" onclick="closeHouseholdSwitcher();openCreateHousehold(true)">+ Create New Household</button>
   </div>
 </div>
 
@@ -3644,6 +3670,8 @@ async function onSignedIn() {
   // Accept pending invite before pulling (so the household_members row exists)
   if (pendingInvite) await acceptPendingInvite();
   const pulled = await pullFromCloud();
+  const switchBtn = document.getElementById('switch-hh-btn');
+  if (switchBtn) switchBtn.style.display = '';
   buildKidSwitcher();
   updateMembersTab();
   if (pulled) {
@@ -3653,7 +3681,7 @@ async function onSignedIn() {
     if (appData.kids.length === 0) openAddKid();
   } else {
     // No household found — this user has no household yet
-    openCreateHousehold();
+    openCreateHousehold(false);
   }
 }
 
@@ -3714,8 +3742,10 @@ function dataRowId() {
 // ─────────────────────────────────────────────────────────────
 // HOUSEHOLD ENGINE
 // ─────────────────────────────────────────────────────────────
-let currentMember = null; // { userId, email, alias, role } — the logged-in user's membership
-let pendingInvite  = null; // invite being accepted from URL param
+let currentMember   = null; // { userId, email, alias, role } — the logged-in user's membership in the active household
+let allMemberships  = [];   // all households this user belongs to: [{ household_id, alias, role }]
+let householdNames  = {};   // cache: { household_id: name }
+let pendingInvite   = null; // invite being accepted from URL param
 
 function isAdmin()    { return currentMember && currentMember.role === 'admin'; }
 function isEditor()   { return currentMember && currentMember.role === 'editor'; }
@@ -3978,10 +4008,13 @@ function copyHhInviteLink() {
 }
 
 // ── Create Household ────────────────────────────────────────
-function openCreateHousehold() {
+function openCreateHousehold(hasExisting = false) {
   document.getElementById('hh-name').value  = '';
-  document.getElementById('hh-alias').value = '';
+  // Pre-fill alias from current membership if switching households
+  document.getElementById('hh-alias').value = hasExisting && currentMember ? currentMember.alias : '';
   document.getElementById('hh-error').classList.remove('show');
+  const cancelBtn = document.getElementById('hh-cancel-btn');
+  if (cancelBtn) cancelBtn.style.display = hasExisting ? '' : 'none';
   document.getElementById('create-household-modal').classList.add('open');
   setTimeout(()=>document.getElementById('hh-name').focus(), 100);
 }
@@ -4009,20 +4042,22 @@ async function submitCreateHousehold() {
       role: 'admin'
     });
     const adminMember = { userId: authSession.user.id, email: authSession.user.email || '', alias, role: 'admin' };
-    currentMember = adminMember;
-    // Preserve any locally-added kids
-    const existingKids = (appData.kids || []);
-    appData = { householdId, householdName: name, members: [adminMember], kids: existingKids, activeKidId: appData.activeKidId || null };
-    await pushToCloud();
-    localStorage.setItem(STORAGE_KEY_V4, JSON.stringify(appData));
+    // Preserve locally-added kids only when this is the very first household
+    const existingKids = allMemberships.length === 0 ? (appData.kids || []) : [];
+    const newHousehold = { householdId, householdName: name, members: [adminMember], kids: existingKids, activeKidId: null, quests: [], currency: appData.currency || '$', taxRate: appData.taxRate || 0 };
+    await supabaseFetch('tracker_state', 'POST', { id: householdId, state: newHousehold, updated_at: new Date().toISOString() });
     closeCreateHousehold();
+    // Switch into the new household via a full pull so allMemberships and householdNames are refreshed
+    localStorage.setItem('selectedHouseholdId', householdId);
+    const pulled = await pullFromCloud();
     buildKidSwitcher();
     updateMembersTab();
-    if (appData.kids.length === 0) { showOverview(); openAddKid(); }
-    else { showOverview(); buildOverview(); }
+    if (pulled) {
+      if (appData.kids.length === 0) { showOverview(); openAddKid(); }
+      else { showOverview(); buildOverview(); }
+    }
   } catch(e) {
     showHhError('Failed to create household. Check your Supabase connection.');
-    console.error(e);
   } finally {
     btn.disabled = false; btn.textContent = 'Create Household →';
   }
@@ -4240,10 +4275,16 @@ async function pullFromCloud() {
   if (!syncConfig || !authSession) return false;
   setSyncStatus('syncing');
   try {
-    // Step 1: find the user's household via household_members
-    const memberships = await supabaseFetch(`household_members?user_id=eq.${authSession.user.id}&select=household_id,alias,role,email&limit=1`);
+    // Step 1: fetch all households this user belongs to
+    const memberships = await supabaseFetch(`household_members?user_id=eq.${authSession.user.id}&select=household_id,alias,role,email`);
     if (!memberships || !memberships.length) { setSyncStatus('ok'); return false; } // no household yet
-    const { household_id: householdId, alias, role } = memberships[0];
+    allMemberships = memberships;
+
+    // Pick the household the user last selected, falling back to the first one
+    const savedId = localStorage.getItem('selectedHouseholdId');
+    const selected = memberships.find(m => m.household_id === savedId) || memberships[0];
+    const { household_id: householdId, alias, role } = selected;
+    localStorage.setItem('selectedHouseholdId', householdId);
     currentMember = { userId: authSession.user.id, email: authSession.user.email || '', alias, role };
 
     // Step 2: fetch all household members
@@ -4291,6 +4332,12 @@ async function pullFromCloud() {
       const cutoff = new Date(Date.now() - 7*24*60*60*1000).toISOString();
       supabaseFetch(`audit_log?household_id=eq.${appData.householdId}&created_at=lt.${encodeURIComponent(cutoff)}`, 'DELETE').catch(()=>{});
     }
+    // Fetch names for all households so the switcher can display them
+    fetchHouseholdNames(allMemberships.map(m => m.household_id)).then(names => {
+      householdNames = names;
+      const btn = document.getElementById('switch-hh-btn');
+      if (btn) btn.style.display = authSession ? '' : 'none';
+    });
     setSyncStatus('ok');
     return true;
   } catch(e) {
@@ -4307,6 +4354,54 @@ async function pullFromCloud() {
     }
     return false;
   }
+}
+
+async function fetchHouseholdNames(ids) {
+  if (!ids.length) return {};
+  const rows = await supabaseFetch(`tracker_state?id=in.(${ids.join(',')})&select=id,state`).catch(() => []);
+  const names = {};
+  (rows || []).forEach(r => { names[r.id] = r.state?.householdName || 'My Family'; });
+  return names;
+}
+
+async function switchToHousehold(id) {
+  closeHouseholdSwitcher();
+  localStorage.setItem('selectedHouseholdId', id);
+  const pulled = await pullFromCloud();
+  if (pulled) {
+    buildKidSwitcher();
+    updateMembersTab();
+    checkAutoInterest();
+    checkAutoTax();
+    if (viewMode === 'dashboard') renderAll(); else buildOverview();
+    if (appData.kids.length === 0) openAddKid();
+  }
+}
+
+function openHouseholdSwitcher() {
+  buildHouseholdSwitcher();
+  document.getElementById('household-switcher-modal').classList.add('open');
+}
+function closeHouseholdSwitcher() {
+  document.getElementById('household-switcher-modal').classList.remove('open');
+}
+
+function buildHouseholdSwitcher() {
+  const list = document.getElementById('household-switcher-list');
+  if (!list) return;
+  const activeId = appData.householdId;
+  list.innerHTML = allMemberships.map(m => {
+    const name = esc(householdNames[m.household_id] || 'My Family');
+    const roleCls = m.role === 'admin' ? 'hh-role-admin' : m.role === 'editor' ? 'hh-role-editor' : 'hh-role-champion';
+    const active = m.household_id === activeId ? ' active' : '';
+    return `<div class="hh-switcher-item${active}" onclick="switchToHousehold('${esc(m.household_id)}')">
+      <div>
+        <div class="hh-switcher-name">🏠 ${name}</div>
+        <div class="hh-switcher-meta">${active ? 'Currently active' : 'Click to switch'}</div>
+      </div>
+      <span class="hh-role-badge ${roleCls}">${esc(m.role)}</span>
+    </div>`;
+  }).join('');
 }
 
 // Debounced auto-push — waits 1.5s after last change before pushing
