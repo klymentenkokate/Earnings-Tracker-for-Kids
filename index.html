@@ -1703,6 +1703,7 @@ function logSession(actId, minutes, manual) {
 }
 
 function deleteSession(id) {
+  if (!isAdmin()) { alert('Only admins can delete log entries.'); return; }
   const s=state.sessions.find(x=>x.id===id); if(!s) return;
   const prev = JSON.parse(JSON.stringify(appData));
   state.balance=Math.max(0,+(state.balance-s.earned).toFixed(4));
@@ -2298,8 +2299,8 @@ function buildLog(){
       <div class="log-left"><span>${icon}</span><span>${name} · ${minsToHM(s.minutes)}${tag} · ${s.date} ${byTag(s)}</span></div>
       <div style="display:flex;align-items:center;gap:4px">
         <span class="log-earn">+${fmtAmt(s.earned)}</span>
-        <button class="log-edit"   onclick="openEdit('${s.id}')" title="Edit">✏️</button>
-        <button class="log-delete" onclick="deleteSession('${s.id}')" title="Delete">✕</button>
+        ${isAdmin() ? `<button class="log-edit" onclick="openEdit('${s.id}')" title="Edit">✏️</button>` : ''}
+        ${isAdmin() ? `<button class="log-delete" onclick="deleteSession('${s.id}')" title="Delete">✕</button>` : ''}
       </div></div>`;
   }).join('');
 }
@@ -2862,8 +2863,8 @@ function buildUnifiedLog() {
       <div class="log-left"><span>${icon}</span><span>${name} · ${minsToHM(s.minutes)}${editTag} · ${s.date} ${byTag(s)}</span></div>
       <div style="display:flex;align-items:center;gap:4px">
         <span class="log-earn">+${fmtAmt(s.earned)}</span>
-        <button class="log-edit"   onclick="openEdit('${s.id}')" title="Edit">✏️</button>
-        <button class="log-delete" onclick="deleteSession('${s.id}')" title="Delete">✕</button>
+        ${isAdmin() ? `<button class="log-edit" onclick="openEdit('${s.id}')" title="Edit">✏️</button>` : ''}
+        ${isAdmin() ? `<button class="log-delete" onclick="deleteSession('${s.id}')" title="Delete">✕</button>` : ''}
       </div>
     </div>`;
   }).join('');
@@ -2981,7 +2982,7 @@ function buildLogModalContent() {
       <div class="log-left"><span>⚔️</span><span>${questLogLabel(s)} · ${s.date} ${byTag(s)}</span></div>
       <div style="display:flex;align-items:center;gap:4px">
         <span class="log-earn">+${fmtAmt(s.earned)}</span>
-        <button class="log-delete" onclick="deleteSessionFromModal('${kid.id}','${s.id}')" title="Delete">✕</button>
+        ${isAdmin() ? `<button class="log-delete" onclick="deleteSessionFromModal('${kid.id}','${s.id}')" title="Delete">✕</button>` : ''}
       </div></div>`;
     // Activity session — with edit + delete
     const act = kid.activities ? kid.activities.find(a => a.id === s.type) : getActivity(s.type);
@@ -2990,13 +2991,14 @@ function buildLogModalContent() {
       <div class="log-left"><span>${act ? act.emoji : '?'}</span><span>${act ? act.name : s.type} · ${minsToHM(s.minutes)}${editTag} · ${s.date} ${byTag(s)}</span></div>
       <div style="display:flex;align-items:center;gap:4px">
         <span class="log-earn">+${fmtAmt(s.earned)}</span>
-        <button class="log-edit"   onclick="openEditFromModal('${kid.id}','${s.id}')" title="Edit">✏️</button>
-        <button class="log-delete" onclick="deleteSessionFromModal('${kid.id}','${s.id}')" title="Delete">✕</button>
+        ${isAdmin() ? `<button class="log-edit" onclick="openEditFromModal('${kid.id}','${s.id}')" title="Edit">✏️</button>` : ''}
+        ${isAdmin() ? `<button class="log-delete" onclick="deleteSessionFromModal('${kid.id}','${s.id}')" title="Delete">✕</button>` : ''}
       </div></div>`;
   }).join('');
 }
 
 function deleteSessionFromModal(kidId, sessionId) {
+  if (!isAdmin()) { alert('Only admins can delete log entries.'); return; }
   const kid = (appData.kids||[]).find(k => k.id === kidId);
   if (!kid) return;
   const s = kid.sessions.find(x => x.id === sessionId);
@@ -3402,6 +3404,11 @@ function applyRoleUI() {
   show('.action-btn.save',     can('resetAll')); // backup = admin level
   show('.action-btn.load',     can('resetAll'));
   show('.action-btn.withdraw', can('redeem'));
+  // Hide activity timers and log button for champions (view-only role)
+  const canDoActivities = can('startTimer');
+  const timersEl = document.getElementById('timers-container');
+  if (timersEl) timersEl.style.display = canDoActivities ? '' : 'none';
+  show('.action-btn.log-btn', canDoActivities);
   // Add Quest button — visible to anyone who can create quests
   const addQuestBtn = document.querySelector('.add-quest-btn-main');
   if (addQuestBtn) addQuestBtn.style.display = can('createQuest') ? '' : 'none';
