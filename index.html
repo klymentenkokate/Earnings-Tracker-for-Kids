@@ -3523,15 +3523,27 @@ function handleAuthCallback() {
   if (syncConfig) {
     document.getElementById('sync-bar').style.display = 'flex';
     updateUserBadge();
-    pullFromCloud().then(pulled => {
-      loadCurrentMember();
-      buildKidSwitcher();
-      updateMembersTab();
-      if (pulled) { checkAutoInterest(); checkAutoTax(); if(viewMode==='dashboard') renderAll(); else buildOverview(); }
-      else openCreateHousehold();
-      if (pulled && appData.kids.length === 0) openAddKid();
-    });
     setSyncStatus('ok', 'Signed in ✓');
+    const pendingToken = localStorage.getItem('pendingInviteToken');
+    if (pendingToken) {
+      localStorage.removeItem('pendingInviteToken');
+      supabaseFetch(`household_invites?id=eq.${pendingToken}&select=*`).then(rows => {
+        if (rows && rows.length && rows[0].accepted !== true) {
+          pendingInvite = rows[0];
+          localStorage.setItem('pendingInvite', JSON.stringify(rows[0]));
+        }
+        onSignedIn();
+      }).catch(() => onSignedIn());
+    } else {
+      pullFromCloud().then(pulled => {
+        loadCurrentMember();
+        buildKidSwitcher();
+        updateMembersTab();
+        if (pulled) { checkAutoInterest(); checkAutoTax(); if(viewMode==='dashboard') renderAll(); else buildOverview(); }
+        else openCreateHousehold();
+        if (pulled && appData.kids.length === 0) openAddKid();
+      });
+    }
   }
   return true;
 }
@@ -4095,6 +4107,7 @@ async function checkInviteParam() {
     if (inv.accepted === true) { alert('This invite link has already been used.'); history.replaceState(null,'',window.location.pathname); return false; }
     pendingInvite = inv;
     localStorage.setItem('pendingInvite', JSON.stringify(inv));
+    localStorage.setItem('pendingInviteToken', token);
     // Update auth modal subtitle
     const subEl = document.getElementById('auth-sub');
     if (subEl) subEl.innerHTML = `<strong>${esc(inv.inviter_alias||'Someone')}</strong> has invited you to join as <strong>${esc(inv.invitee_alias)}</strong>. Sign in or create an account to continue.`;
