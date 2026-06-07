@@ -3592,7 +3592,7 @@ async function submitAuth() {
   clearAuthError();
   try {
     if (authMode === 'signup') {
-      await authFetch('signup', 'POST', { email, password });
+      await authFetch('signup', 'POST', { email, password, options: { redirectTo: window.location.origin + window.location.pathname } });
       pendingVerifyEmail = email;
       switchAuthMode('verify');
       document.getElementById('auth-verify-msg').innerHTML =
