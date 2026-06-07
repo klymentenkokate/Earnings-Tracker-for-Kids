@@ -3947,7 +3947,7 @@ async function removeHhMember(userId) {
   try {
     const deleted = await supabaseDelete(`household_members?household_id=eq.${appData.householdId}&user_id=eq.${userId}`);
     if (deleted === 0) {
-      alert('Could not remove member — your Supabase DELETE policy may not allow admins to remove other members. Please check Row Level Security settings.');
+      alert('Could not remove member — Supabase returned 0 deleted rows. Check that the RLS DELETE policy for household_members allows admins to remove members.');
       return;
     }
     appData.members = appData.members.filter(m => m.userId !== userId);
@@ -4074,7 +4074,7 @@ async function removeMember(userId) {
   try {
     const deleted = await supabaseDelete(`household_members?household_id=eq.${appData.householdId}&user_id=eq.${userId}`);
     if (deleted === 0) {
-      alert('Could not remove member — your Supabase DELETE policy may not allow admins to remove other members. Please check Row Level Security settings.');
+      alert('Could not remove member — Supabase returned 0 deleted rows. Check that the RLS DELETE policy for household_members allows admins to remove members.');
       return;
     }
     appData.members = appData.members.filter(m => m.userId !== userId);
@@ -4184,7 +4184,8 @@ function setSyncStatus(status, msg) {
   txt.textContent = msg || msgs[status] || status;
 }
 
-// DELETE with count=exact so we can detect RLS-blocked deletions (returns 0 if nothing was deleted)
+// DELETE with return=representation so we can detect RLS-blocked deletions
+// Returns count of actually deleted rows (0 means RLS blocked it or row not found)
 async function supabaseDelete(path) {
   if (!syncConfig) return 0;
   const token = (authSession && authSession.access_token) ? authSession.access_token : null;
@@ -4195,12 +4196,12 @@ async function supabaseDelete(path) {
       ...(token ? { 'Authorization': 'Bearer ' + token } : {}),
       'Content-Type': 'application/json',
       'x-client-info': 'supabase-js/2.0',
-      'Prefer': 'count=exact'
+      'Prefer': 'return=representation'
     }
   });
   if (!res.ok) throw new Error(await res.text());
-  const range = res.headers.get('Content-Range'); // e.g. "*/3"
-  return range ? parseInt(range.split('/')[1] || '0', 10) : 0;
+  const data = await res.json().catch(() => []);
+  return Array.isArray(data) ? data.length : (data ? 1 : 0);
 }
 
 async function supabaseFetch(path, method='GET', body=null, upsert=true) {
