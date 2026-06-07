@@ -3945,7 +3945,11 @@ async function removeHhMember(userId) {
   const m = appData.members.find(m => m.userId === userId);
   if (!m || !confirm(`Remove ${m.alias} from the household?\nThey will lose access and need a new invite to rejoin.`)) return;
   try {
-    await supabaseFetch(`household_members?household_id=eq.${appData.householdId}&user_id=eq.${userId}`, 'DELETE');
+    const deleted = await supabaseDelete(`household_members?household_id=eq.${appData.householdId}&user_id=eq.${userId}`);
+    if (deleted === 0) {
+      alert('Could not remove member — your Supabase DELETE policy may not allow admins to remove other members. Please check Row Level Security settings.');
+      return;
+    }
     appData.members = appData.members.filter(m => m.userId !== userId);
     save();
     buildHhMembersList();
@@ -4068,7 +4072,11 @@ async function removeMember(userId) {
   const m = appData.members.find(m => m.userId === userId);
   if (!m || !confirm(`Remove ${m.alias} from the household?\nThey will lose access and need a new invite to rejoin.`)) return;
   try {
-    await supabaseFetch(`household_members?household_id=eq.${appData.householdId}&user_id=eq.${userId}`, 'DELETE');
+    const deleted = await supabaseDelete(`household_members?household_id=eq.${appData.householdId}&user_id=eq.${userId}`);
+    if (deleted === 0) {
+      alert('Could not remove member — your Supabase DELETE policy may not allow admins to remove other members. Please check Row Level Security settings.');
+      return;
+    }
     appData.members = appData.members.filter(m => m.userId !== userId);
     save();
     buildMembersPanel();
@@ -4174,6 +4182,25 @@ function setSyncStatus(status, msg) {
   dot.className = 'sync-dot ' + status;
   const msgs = { local:'Local only · no cloud sync', ok:'Synced ✓', syncing:'Syncing…', error:'Sync error — check credentials' };
   txt.textContent = msg || msgs[status] || status;
+}
+
+// DELETE with count=exact so we can detect RLS-blocked deletions (returns 0 if nothing was deleted)
+async function supabaseDelete(path) {
+  if (!syncConfig) return 0;
+  const token = (authSession && authSession.access_token) ? authSession.access_token : null;
+  const res = await fetch(syncConfig.url + '/rest/v1/' + path, {
+    method: 'DELETE',
+    headers: {
+      'apikey': syncConfig.anonKey,
+      ...(token ? { 'Authorization': 'Bearer ' + token } : {}),
+      'Content-Type': 'application/json',
+      'x-client-info': 'supabase-js/2.0',
+      'Prefer': 'count=exact'
+    }
+  });
+  if (!res.ok) throw new Error(await res.text());
+  const range = res.headers.get('Content-Range'); // e.g. "*/3"
+  return range ? parseInt(range.split('/')[1] || '0', 10) : 0;
 }
 
 async function supabaseFetch(path, method='GET', body=null, upsert=true) {
