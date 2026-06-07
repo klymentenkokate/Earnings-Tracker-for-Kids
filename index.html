@@ -3723,7 +3723,11 @@ function isChampion() { return currentMember && currentMember.role === 'champion
 
 // Permission checks
 function can(action) {
-  if (!currentMember) return true; // local mode — no restrictions (if multi-profile local mode is ever added, revisit this)
+  if (!currentMember) {
+    // Cloud user whose membership hasn't loaded yet — deny everything sensitive
+    if (authSession) return false;
+    return true; // local mode — no restrictions
+  }
   const role = currentMember.role || 'member';
   const rules = {
     startTimer:       ['admin','editor'],
