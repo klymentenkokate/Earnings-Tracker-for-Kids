@@ -3091,11 +3091,11 @@ function questExpiryDate(sel, customVal) {
   if (sel === 'week') {
     const d = new Date(); const day = d.getDay();
     d.setDate(d.getDate() + (day === 0 ? 0 : 7 - day));
-    return d.toISOString().slice(0, 10);
+    return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
   }
   if (sel === 'month') {
-    const d = new Date(); const last = new Date(d.getFullYear(), d.getMonth() + 1, 0);
-    return last.toISOString().slice(0, 10);
+    const last = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0);
+    return `${last.getFullYear()}-${pad(last.getMonth()+1)}-${pad(last.getDate())}`;
   }
   if (sel === 'custom') return customVal || null;
   return null;
