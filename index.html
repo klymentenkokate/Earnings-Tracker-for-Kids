@@ -3945,11 +3945,8 @@ async function removeHhMember(userId) {
   const m = appData.members.find(m => m.userId === userId);
   if (!m || !confirm(`Remove ${m.alias} from the household?\nThey will lose access and need a new invite to rejoin.`)) return;
   try {
-    const deleted = await supabaseDelete(`household_members?household_id=eq.${appData.householdId}&user_id=eq.${userId}`);
-    if (deleted === 0) {
-      alert('Could not remove member — Supabase returned 0 deleted rows. Check that the RLS DELETE policy for household_members allows admins to remove members.');
-      return;
-    }
+    const ok = await supabaseFetch('rpc/remove_household_member', 'POST', { p_household_id: appData.householdId, p_user_id: String(userId) }, false);
+    if (!ok) { alert('Could not remove member — you may not have admin rights in Supabase.'); return; }
     appData.members = appData.members.filter(m => m.userId !== userId);
     save();
     buildHhMembersList();
@@ -4072,11 +4069,8 @@ async function removeMember(userId) {
   const m = appData.members.find(m => m.userId === userId);
   if (!m || !confirm(`Remove ${m.alias} from the household?\nThey will lose access and need a new invite to rejoin.`)) return;
   try {
-    const deleted = await supabaseDelete(`household_members?household_id=eq.${appData.householdId}&user_id=eq.${userId}`);
-    if (deleted === 0) {
-      alert('Could not remove member — Supabase returned 0 deleted rows. Check that the RLS DELETE policy for household_members allows admins to remove members.');
-      return;
-    }
+    const ok = await supabaseFetch('rpc/remove_household_member', 'POST', { p_household_id: appData.householdId, p_user_id: String(userId) }, false);
+    if (!ok) { alert('Could not remove member — you may not have admin rights in Supabase.'); return; }
     appData.members = appData.members.filter(m => m.userId !== userId);
     save();
     buildMembersPanel();
