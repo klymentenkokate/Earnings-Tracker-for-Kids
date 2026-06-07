@@ -1644,6 +1644,7 @@ function tickTimer(actId) {
 }
 
 function stopTimer(actId, log) {
+  if (log && !can('startTimer')) return;
   const t = timers[actId]; if(!t) return;
   clearInterval(t.interval); t.running=false;
   document.getElementById('tc-'+actId)?.classList.remove('active');
@@ -1657,6 +1658,7 @@ function stopTimer(actId, log) {
 function toggleManual(actId) { document.getElementById('mp-'+actId)?.classList.toggle('open'); }
 
 function logManual(actId) {
+  if (!can('createActivity')) { alert('You don\'t have permission to log activities.'); return; }
   const h=parseFloat(document.getElementById('mi-'+actId+'-h')?.value)||0;
   const m=parseFloat(document.getElementById('mi-'+actId+'-m')?.value)||0;
   const mins=h*60+m;
@@ -1850,6 +1852,8 @@ function checkAutoInterest() {
 function buildTimers() {
   const container = document.getElementById('timers-container');
   container.innerHTML = '';
+  if (!can('startTimer')) { container.style.display = 'none'; return; }
+  container.style.display = '';
   state.activities.forEach((act, i) => {
     ensureTimer(act.id);
     const color = actColor(i);
