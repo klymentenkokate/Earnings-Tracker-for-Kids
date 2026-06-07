@@ -713,6 +713,7 @@
       <div id="household-summary"></div>
       <div class="overview-title">👨‍👩‍👧‍👦 Family Dashboard</div>
       <div class="overview-grid" id="overview-grid"></div>
+      <div id="household-tax-summary"></div>
     </div>
 
     <!-- TAB: CHARTS (all kids combined) -->
@@ -4575,7 +4576,7 @@ function buildHouseholdSummary() {
     </div>`;
   }
 
-  el.innerHTML = `${budgetHtml}<div class="balance-card" style="margin-bottom:18px;">
+  el.innerHTML = `<div class="balance-card" style="margin-bottom:18px;">
     <div class="balance-main">
       <div class="balance-label">Household Balance</div>
       <div class="balance-amount" style="font-size:2rem;">${sym()}${Math.abs(totalBalance).toFixed(2)}</div>
@@ -4586,6 +4587,8 @@ function buildHouseholdSummary() {
       <div class="stat-chip"><div class="val">${kids.length}</div><div class="lbl">Kids</div></div>
     </div>
   </div>`;
+  const taxEl = document.getElementById('household-tax-summary');
+  if (taxEl) taxEl.innerHTML = budgetHtml;
 }
 
 function buildHouseholdChart() {
