@@ -6304,11 +6304,13 @@ function showQuizResults() {
   document.getElementById('quiz-res-msg').textContent = msg;
   document.getElementById('quiz-res-stars').textContent = stars;
 
-  // Buttons: back goes to continent picker, replay stays in same continent
+  const activeQuizDef = QUIZ_BANK.find(q => q.id === quizId);
+  const pickerWord = activeQuizDef?.section === 'Geography' ? 'Region' : activeQuizDef?.section === 'Books & Stories' ? 'Book' : 'Topic';
+  const pickerEmoji = activeQuizDef?.section === 'Geography' ? '🗺️' : activeQuizDef?.section === 'Books & Stories' ? '📚' : '🔀';
   const btns = document.getElementById('quiz-result-btns');
   if (btns) btns.innerHTML = `
-    <button class="btn-quiz-back" onclick="showContinentPicker('${quizId}')">🗺️ Change Region</button>
-    <button class="btn-quiz-retake" onclick="retakeQuiz()">🔄 Same Region</button>`;
+    <button class="btn-quiz-back" onclick="showContinentPicker('${quizId}')">${pickerEmoji} Change ${pickerWord}</button>
+    <button class="btn-quiz-retake" onclick="retakeQuiz()">🔄 Same ${pickerWord}</button>`;
 
   buildAnswersList(questions, answers);
   showQuizScreen('results');
