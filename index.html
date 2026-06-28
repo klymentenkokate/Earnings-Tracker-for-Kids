@@ -1179,7 +1179,6 @@
     <div class="section">
       <div class="section-title">🧠 Quizzes</div>
       <p style="font-size:.8rem;color:var(--muted);font-weight:700;margin-bottom:16px;">Pick a quiz — 10 random questions, 15 seconds each. The more you play, the harder it gets! 🔥</p>
-      <div class="quiz-section-title" style="margin-bottom:12px;">🌍 Geography</div>
       <div class="quiz-bank-grid" id="quiz-bank-grid"></div>
       <div id="quiz-history-section" style="display:none;margin-top:18px;"></div>
     </div>
@@ -5581,21 +5580,217 @@ const LANGUAGES_PAIRS = [
   {country:'Samoa',flag:'🇼🇸',answer:'Samoan',continent:'Oceania',decoys:['English','Tongan','Fijian']},
 ];
 
+const ANIMALS_PAIRS = [
+  {questionText:'What is the fastest land animal?',answer:'Cheetah',continent:'mammals',decoys:['Lion','Leopard','Gazelle']},
+  {questionText:'What is the largest animal on Earth?',answer:'Blue Whale',continent:'mammals',decoys:['African Elephant','Great White Shark','Giraffe']},
+  {questionText:'Which is the only mammal that can truly fly?',answer:'Bat',continent:'mammals',decoys:['Flying Squirrel','Sugar Glider','Flying Lemur']},
+  {questionText:'Which big cat cannot roar?',answer:'Cheetah',continent:'mammals',decoys:['Lion','Tiger','Leopard']},
+  {questionText:'What is a collective group of lions called?',answer:'Pride',continent:'mammals',decoys:['Pack','Herd','Flock']},
+  {questionText:'What is a collective group of bears called?',answer:'Sloth',continent:'mammals',decoys:['Pack','Herd','Pride']},
+  {questionText:'What is a baby kangaroo called?',answer:'Joey',continent:'mammals',decoys:['Cub','Kitten','Pup']},
+  {questionText:'Which mammal has the longest pregnancy?',answer:'Elephant',continent:'mammals',decoys:['Blue Whale','Giraffe','Dolphin']},
+  {questionText:'What is the tallest living animal?',answer:'Giraffe',continent:'mammals',decoys:['Elephant','Camel','Moose']},
+  {questionText:'Which animal is known to have the best memory?',answer:'Elephant',continent:'mammals',decoys:['Dolphin','Crow','Chimpanzee']},
+  {questionText:'What do giant pandas mainly eat?',answer:'Bamboo',continent:'mammals',decoys:['Fish','Eucalyptus leaves','Grass']},
+  {questionText:'Which mammal lays eggs?',answer:'Platypus',continent:'mammals',decoys:['Koala','Kangaroo','Wombat']},
+  {questionText:'What is the slowest mammal in the world?',answer:'Three-toed Sloth',continent:'mammals',decoys:['Koala','Tortoise','Snail']},
+  {questionText:'A group of wolves is called a?',answer:'Pack',continent:'mammals',decoys:['Pride','Herd','Flock']},
+  {questionText:'Which is the heaviest land animal?',answer:'African Elephant',continent:'mammals',decoys:['White Rhinoceros','Hippopotamus','Giraffe']},
+  {questionText:'Which animal has the longest tongue relative to its body?',answer:'Chameleon',continent:'mammals',decoys:['Giraffe','Anteater','Frog']},
+  {questionText:'What is a male deer\'s antlers made of?',answer:'Bone',continent:'mammals',decoys:['Horn','Keratin','Cartilage']},
+  {questionText:'Which mammal spends the most time sleeping (up to 22 hours a day)?',answer:'Koala',continent:'mammals',decoys:['Sloth','Bat','Opossum']},
+  {questionText:'What is the largest bird in the world?',answer:'Ostrich',continent:'birds',decoys:['Emu','Cassowary','Penguin']},
+  {questionText:'Which is the only bird that can fly backwards?',answer:'Hummingbird',continent:'birds',decoys:['Kingfisher','Swift','Swallow']},
+  {questionText:'What is a group of crows called?',answer:'Murder',continent:'birds',decoys:['Flock','Pack','Gaggle']},
+  {questionText:'How far can an owl rotate its head?',answer:'270 degrees',continent:'birds',decoys:['90 degrees','180 degrees','360 degrees']},
+  {questionText:'Flamingos get their pink colour from?',answer:'The food they eat',continent:'birds',decoys:['They are born pink','Sunlight','A skin pigment']},
+  {questionText:'What is a baby swan called?',answer:'Cygnet',continent:'birds',decoys:['Chick','Duckling','Foal']},
+  {questionText:'Which bird lays the largest eggs?',answer:'Ostrich',continent:'birds',decoys:['Emu','Wandering Albatross','Emperor Penguin']},
+  {questionText:'Which bird has the largest wingspan?',answer:'Wandering Albatross',continent:'birds',decoys:['Bald Eagle','Condor','Pelican']},
+  {questionText:'Which parrot species is considered best at mimicking human speech?',answer:'African Grey Parrot',continent:'birds',decoys:['Macaw','Budgerigar','Cockatoo']},
+  {questionText:'A group of geese on the ground is called a?',answer:'Gaggle',continent:'birds',decoys:['Flock','Pack','Murder']},
+  {questionText:'Which bird is the national symbol of the USA?',answer:'Bald Eagle',continent:'birds',decoys:['American Robin','Wild Turkey','Great Blue Heron']},
+  {questionText:'How many hearts does an octopus have?',answer:'3',continent:'ocean',decoys:['1','2','4']},
+  {questionText:'What is the largest species of shark?',answer:'Whale Shark',continent:'ocean',decoys:['Great White Shark','Hammerhead Shark','Basking Shark']},
+  {questionText:'What is the loudest animal on Earth?',answer:'Sperm Whale',continent:'ocean',decoys:['Blue Whale','Lion','Howler Monkey']},
+  {questionText:'How many arms does a starfish usually have?',answer:'5',continent:'ocean',decoys:['3','4','8']},
+  {questionText:'What is the largest fish in the ocean?',answer:'Whale Shark',continent:'ocean',decoys:['Blue Whale','Giant Oarfish','Great White Shark']},
+  {questionText:'Which sea creature can regrow its arms if they are cut off?',answer:'Starfish',continent:'ocean',decoys:['Octopus','Lobster','Crab']},
+  {questionText:'What is a group of fish called?',answer:'School',continent:'ocean',decoys:['Pack','Flock','Herd']},
+  {questionText:'Which animal has blue blood?',answer:'Octopus',continent:'ocean',decoys:['Shark','Whale','Dolphin']},
+  {questionText:'How many legs does a crab have?',answer:'10',continent:'ocean',decoys:['6','8','12']},
+  {questionText:'What is the fastest fish in the ocean?',answer:'Sailfish',continent:'ocean',decoys:['Swordfish','Tuna','Mako Shark']},
+  {questionText:'How many legs does an insect have?',answer:'6',continent:'insects',decoys:['4','8','10']},
+  {questionText:'How many legs does a spider have?',answer:'8',continent:'insects',decoys:['6','10','12']},
+  {questionText:'What does a caterpillar form before it becomes a butterfly?',answer:'Chrysalis',continent:'insects',decoys:['Cocoon','Pupa case','Egg']},
+  {questionText:'Which insect is known for making honey?',answer:'Bee',continent:'insects',decoys:['Wasp','Ant','Butterfly']},
+  {questionText:'What is the study of insects called?',answer:'Entomology',continent:'insects',decoys:['Biology','Zoology','Arachnology']},
+  {questionText:'Which insect has the shortest lifespan — sometimes just one day?',answer:'Mayfly',continent:'insects',decoys:['Housefly','Mosquito','Moth']},
+  {questionText:'A queen ant can live for how long?',answer:'Up to 30 years',continent:'insects',decoys:['1 year','5 years','1 week']},
+  {questionText:'Which insect can lift up to 50 times its own body weight?',answer:'Ant',continent:'insects',decoys:['Beetle','Grasshopper','Termite']},
+  {questionText:'What do butterflies use to taste food?',answer:'Their feet',continent:'insects',decoys:['Their tongue','Their antennae','Their wings']},
+  {questionText:'Which insect produces silk?',answer:'Silkworm',continent:'insects',decoys:['Spider','Moth','Beetle']},
+];
+
+const SCIENCE_PAIRS = [
+  {questionText:'Which is the closest planet to the Sun?',answer:'Mercury',continent:'space',decoys:['Venus','Earth','Mars']},
+  {questionText:'Which is the hottest planet in our solar system?',answer:'Venus',continent:'space',decoys:['Mercury','Earth','Mars']},
+  {questionText:'How many planets are in our solar system?',answer:'8',continent:'space',decoys:['7','9','10']},
+  {questionText:'Which is the largest planet in our solar system?',answer:'Jupiter',continent:'space',decoys:['Saturn','Neptune','Uranus']},
+  {questionText:'Which planet is famous for its spectacular rings?',answer:'Saturn',continent:'space',decoys:['Jupiter','Uranus','Neptune']},
+  {questionText:'What is the name of our galaxy?',answer:'Milky Way',continent:'space',decoys:['Andromeda','Pegasus','Orion']},
+  {questionText:'What is a "shooting star" actually?',answer:'A meteor burning up in the atmosphere',continent:'space',decoys:['A falling star','A comet','A dying star']},
+  {questionText:'What does a light year measure?',answer:'Distance',continent:'space',decoys:['Time','Speed','Temperature']},
+  {questionText:'What causes day and night on Earth?',answer:'Earth spinning on its axis',continent:'space',decoys:['Earth orbiting the Sun','The Moon\'s orbit','The Sun moving']},
+  {questionText:'How long does it take Earth to orbit the Sun?',answer:'365.25 days',continent:'space',decoys:['24 hours','28 days','2 years']},
+  {questionText:'What is the Sun mainly made of?',answer:'Hydrogen and helium gas',continent:'space',decoys:['Rock and magma','Liquid metal','Fire and plasma']},
+  {questionText:'Which planet is known as the Red Planet?',answer:'Mars',continent:'space',decoys:['Jupiter','Venus','Mercury']},
+  {questionText:'How long does light from the Sun take to reach Earth?',answer:'About 8 minutes',continent:'space',decoys:['1 second','1 hour','1 day']},
+  {questionText:'What is the name of Earth\'s natural satellite?',answer:'The Moon',continent:'space',decoys:['Europa','Titan','Phobos']},
+  {questionText:'Which planet spins on its side?',answer:'Uranus',continent:'space',decoys:['Saturn','Neptune','Mars']},
+  {questionText:'Which is the largest ocean on Earth?',answer:'Pacific Ocean',continent:'earth',decoys:['Atlantic Ocean','Indian Ocean','Arctic Ocean']},
+  {questionText:'Which is traditionally considered the world\'s longest river?',answer:'Nile',continent:'earth',decoys:['Amazon','Yangtze','Mississippi']},
+  {questionText:'Which is the largest hot desert on Earth?',answer:'Sahara',continent:'earth',decoys:['Gobi','Arabian','Kalahari']},
+  {questionText:'What is the deepest point on Earth?',answer:'Mariana Trench',continent:'earth',decoys:['Dead Sea','Grand Canyon','Java Trench']},
+  {questionText:'What gas makes up most of Earth\'s atmosphere?',answer:'Nitrogen',continent:'earth',decoys:['Oxygen','Carbon dioxide','Hydrogen']},
+  {questionText:'What is the outermost layer of the Earth called?',answer:'Crust',continent:'earth',decoys:['Mantle','Core','Magma']},
+  {questionText:'What type of rock forms when lava cools down?',answer:'Igneous rock',continent:'earth',decoys:['Sedimentary rock','Metamorphic rock','Limestone']},
+  {questionText:'What causes earthquakes?',answer:'Movement of tectonic plates',continent:'earth',decoys:['Volcanic eruptions','Underground rivers','Earth\'s rotation']},
+  {questionText:'Approximately what fraction of Earth\'s surface is covered by water?',answer:'About 70%',continent:'earth',decoys:['About 50%','About 30%','About 90%']},
+  {questionText:'Which layer of Earth is liquid?',answer:'Outer core',continent:'earth',decoys:['Inner core','Mantle','Crust']},
+  {questionText:'What is the tallest mountain on Earth?',answer:'Mount Everest',continent:'earth',decoys:['K2','Kangchenjunga','Mont Blanc']},
+  {questionText:'What is dry ice made of?',answer:'Frozen carbon dioxide',continent:'chemistry',decoys:['Frozen water','Frozen nitrogen','Frozen oxygen']},
+  {questionText:'What gas do plants absorb from the air to make food?',answer:'Carbon dioxide',continent:'chemistry',decoys:['Oxygen','Nitrogen','Hydrogen']},
+  {questionText:'What do plants produce through photosynthesis?',answer:'Oxygen',continent:'chemistry',decoys:['Carbon dioxide','Nitrogen','Water vapour']},
+  {questionText:'How many colours are in a rainbow?',answer:'7',continent:'chemistry',decoys:['5','6','8']},
+  {questionText:'What is the chemical formula for water?',answer:'H₂O',continent:'chemistry',decoys:['HO','H₂O₂','CO₂']},
+  {questionText:'What is the hardest natural substance?',answer:'Diamond',continent:'chemistry',decoys:['Gold','Iron','Quartz']},
+  {questionText:'At what temperature does water boil?',answer:'100°C',continent:'chemistry',decoys:['0°C','50°C','150°C']},
+  {questionText:'At what temperature does water freeze?',answer:'0°C',continent:'chemistry',decoys:['-10°C','10°C','32°C']},
+  {questionText:'What force pulls objects towards Earth?',answer:'Gravity',continent:'chemistry',decoys:['Magnetism','Friction','Electricity']},
+  {questionText:'What is the approximate speed of light?',answer:'300,000 km per second',continent:'chemistry',decoys:['30,000 km/s','3,000 km/s','3,000,000 km/s']},
+  {questionText:'What gas makes up about 21% of Earth\'s atmosphere?',answer:'Oxygen',continent:'chemistry',decoys:['Carbon dioxide','Nitrogen','Hydrogen']},
+  {questionText:'What is the name of the force that makes a ball slow down when rolled across the floor?',answer:'Friction',continent:'chemistry',decoys:['Gravity','Magnetism','Air pressure']},
+  {questionText:'Penicillin — the first antibiotic — was discovered by?',answer:'Alexander Fleming',continent:'chemistry',decoys:['Louis Pasteur','Marie Curie','Isaac Newton']},
+  {questionText:'Which scientist developed the theory of gravity after watching an apple fall?',answer:'Isaac Newton',continent:'chemistry',decoys:['Albert Einstein','Galileo Galilei','Stephen Hawking']},
+];
+
+const BODY_PAIRS = [
+  {questionText:'What is the largest organ in the human body?',answer:'Skin',continent:'organs',decoys:['Liver','Brain','Lungs']},
+  {questionText:'Which organ pumps blood around the body?',answer:'Heart',continent:'organs',decoys:['Lungs','Liver','Kidneys']},
+  {questionText:'Which organ filters waste from the blood and makes urine?',answer:'Kidneys',continent:'organs',decoys:['Liver','Spleen','Bladder']},
+  {questionText:'Which organ produces insulin?',answer:'Pancreas',continent:'organs',decoys:['Liver','Kidney','Stomach']},
+  {questionText:'Which organ produces bile to help digest fat?',answer:'Liver',continent:'organs',decoys:['Pancreas','Stomach','Spleen']},
+  {questionText:'Where does oxygen enter the bloodstream?',answer:'Lungs',continent:'organs',decoys:['Heart','Stomach','Trachea']},
+  {questionText:'How many chambers does the human heart have?',answer:'4',continent:'organs',decoys:['2','3','6']},
+  {questionText:'Which organ controls all the body\'s functions?',answer:'Brain',continent:'organs',decoys:['Heart','Spine','Liver']},
+  {questionText:'Which organ breaks food down using stomach acid?',answer:'Stomach',continent:'organs',decoys:['Liver','Large intestine','Pancreas']},
+  {questionText:'What makes blood look red?',answer:'Iron in haemoglobin',continent:'organs',decoys:['Oxygen molecules','Red blood cells\' natural dye','Copper']},
+  {questionText:'Which part of the brain controls balance and coordination?',answer:'Cerebellum',continent:'organs',decoys:['Cerebrum','Brain stem','Hippocampus']},
+  {questionText:'How long is the small intestine in an adult?',answer:'About 6–7 metres',continent:'organs',decoys:['About 1 metre','About 3 metres','About 20 metres']},
+  {questionText:'How many bones does an adult human body have?',answer:'206',continent:'bones',decoys:['150','300','270']},
+  {questionText:'What is the longest bone in the human body?',answer:'Femur (thigh bone)',continent:'bones',decoys:['Tibia','Humerus','Spine']},
+  {questionText:'What is the smallest bone in the human body?',answer:'Stirrup (in the ear)',continent:'bones',decoys:['Kneecap','Thumb bone','Smallest rib']},
+  {questionText:'What is the bone in the centre of your chest called?',answer:'Sternum',continent:'bones',decoys:['Clavicle','Spine','Ribcage centre']},
+  {questionText:'How many ribs does a human have in total?',answer:'24 (12 pairs)',continent:'bones',decoys:['20','22','26']},
+  {questionText:'Which part of the skeleton protects the brain?',answer:'Skull',continent:'bones',decoys:['Ribcage','Spine','Jaw']},
+  {questionText:'What is the kneecap called?',answer:'Patella',continent:'bones',decoys:['Tibia','Fibula','Femur']},
+  {questionText:'Babies are born with approximately how many bones — more or fewer than adults?',answer:'More (around 270)',continent:'bones',decoys:['Fewer (around 150)','The same (206)','Exactly 300']},
+  {questionText:'What substance makes bones hard?',answer:'Calcium',continent:'bones',decoys:['Iron','Potassium','Magnesium']},
+  {questionText:'What is the collarbone called?',answer:'Clavicle',continent:'bones',decoys:['Radius','Scapula','Sternum']},
+  {questionText:'How many senses does a human traditionally have?',answer:'5',continent:'senses',decoys:['4','6','7']},
+  {questionText:'Which sense uses the cochlea?',answer:'Hearing',continent:'senses',decoys:['Sight','Touch','Smell']},
+  {questionText:'What is the coloured part of the eye called?',answer:'Iris',continent:'senses',decoys:['Pupil','Cornea','Retina']},
+  {questionText:'What does the pupil in the eye do?',answer:'Controls how much light enters',continent:'senses',decoys:['Sees colour','Focuses images','Produces tears']},
+  {questionText:'Which part of the eye detects light?',answer:'Retina',continent:'senses',decoys:['Iris','Cornea','Pupil']},
+  {questionText:'How many taste buds does a human tongue have approximately?',answer:'Around 10,000',continent:'senses',decoys:['Around 100','Around 1,000','Around 100,000']},
+  {questionText:'Which nerve connects the eye to the brain?',answer:'Optic nerve',continent:'senses',decoys:['Auditory nerve','Olfactory nerve','Spinal cord']},
+  {questionText:'What is the medical term for the eardrum?',answer:'Tympanic membrane',continent:'senses',decoys:['Cochlea','Stirrup','Auricle']},
+  {questionText:'How many teeth does a healthy adult have?',answer:'32',continent:'senses',decoys:['28','30','36']},
+  {questionText:'Which part of the tongue detects salty taste — the tip or the sides?',answer:'The sides',continent:'senses',decoys:['The tip','The back','Evenly across the whole tongue']},
+];
+
+const BOOKS_PAIRS = [
+  {questionText:'Who wrote the Harry Potter series?',answer:'J.K. Rowling',continent:'hp',decoys:['Roald Dahl','C.S. Lewis','J.R.R. Tolkien']},
+  {questionText:'What school does Harry Potter attend?',answer:'Hogwarts',continent:'hp',decoys:['Beauxbatons','Durmstrang','Eton']},
+  {questionText:'What is Harry\'s owl called?',answer:'Hedwig',continent:'hp',decoys:['Errol','Norbert','Pigwidgeon']},
+  {questionText:'Which house is Harry sorted into?',answer:'Gryffindor',continent:'hp',decoys:['Slytherin','Hufflepuff','Ravenclaw']},
+  {questionText:'What shape is the scar on Harry\'s forehead?',answer:'Lightning bolt',continent:'hp',decoys:['Star','Crescent','Circle']},
+  {questionText:'Who teaches Potions at Hogwarts?',answer:'Professor Snape',continent:'hp',decoys:['Professor McGonagall','Professor Quirrell','Professor Dumbledore']},
+  {questionText:'What sport do wizards play on broomsticks?',answer:'Quidditch',continent:'hp',decoys:['Bludgering','Seekball','Broomsweep']},
+  {questionText:'What does the spell "Lumos" do?',answer:'Creates light from the wand tip',continent:'hp',decoys:['Opens locked doors','Stuns enemies','Summons objects']},
+  {questionText:'What is a Muggle?',answer:'A non-magical person',continent:'hp',decoys:['A dark wizard','A magical spell','A magical creature']},
+  {questionText:'Who is Harry Potter\'s best friend?',answer:'Ron Weasley',continent:'hp',decoys:['Neville Longbottom','Draco Malfoy','Cedric Diggory']},
+  {questionText:'What is the name of the wizarding bank?',answer:'Gringotts',continent:'hp',decoys:['Ollivanders','Flourish & Blotts','The Leaky Cauldron']},
+  {questionText:'What is Voldemort\'s real name?',answer:'Tom Riddle',continent:'hp',decoys:['Harry Dark','Salazar Slytherin','Gellert Grindelwald']},
+  {questionText:'What is Harry\'s Patronus?',answer:'A stag',continent:'hp',decoys:['A doe','A phoenix','A gryphon']},
+  {questionText:'What does the Mirror of Erised show?',answer:'Your deepest desire',continent:'hp',decoys:['The future','Your true reflection','Hidden secrets']},
+  {questionText:'Dumbledore\'s phoenix is named?',answer:'Fawkes',continent:'hp',decoys:['Hedwig','Buckbeak','Dobby']},
+  {questionText:'How do students travel to Hogwarts?',answer:'The Hogwarts Express',continent:'hp',decoys:['Flying broomsticks','Floo Powder','Apparition']},
+  {questionText:'Who wrote The Wonderful Wizard of Oz?',answer:'L. Frank Baum',continent:'oz',decoys:['Lewis Carroll','H.G. Wells','J.M. Barrie']},
+  {questionText:'Which US state is Dorothy\'s home?',answer:'Kansas',continent:'oz',decoys:['Nebraska','Texas','Iowa']},
+  {questionText:'What is Dorothy\'s dog called?',answer:'Toto',continent:'oz',decoys:['Rex','Spot','Buddy']},
+  {questionText:'What does the Scarecrow wish for?',answer:'A brain',continent:'oz',decoys:['A heart','Courage','A home']},
+  {questionText:'What does the Tin Man wish for?',answer:'A heart',continent:'oz',decoys:['A brain','Oil','Courage']},
+  {questionText:'What does the Cowardly Lion wish for?',answer:'Courage',continent:'oz',decoys:['A crown','Strength','A brain']},
+  {questionText:'In the famous film, what colour are Dorothy\'s magic slippers?',answer:'Ruby red',continent:'oz',decoys:['Gold','Silver','Blue']},
+  {questionText:'What does Dorothy say while clicking her heels to go home?',answer:'"There\'s no place like home"',continent:'oz',decoys:['"Take me home"','"Home sweet home"','"Back to Kansas"']},
+  {questionText:'What is the Wicked Witch of the West afraid of?',answer:'Water',continent:'oz',decoys:['Fire','Dorothy','Flying monkeys']},
+  {questionText:'What does Dorothy follow to reach the Emerald City?',answer:'The Yellow Brick Road',continent:'oz',decoys:['The Rainbow Path','The Golden Road','The Red Brick Road']},
+  {questionText:'Who rules the Emerald City?',answer:'The Wizard',continent:'oz',decoys:['Glinda','The Wicked Witch','Dorothy']},
+  {questionText:'Who is the good witch in Oz?',answer:'Glinda',continent:'oz',decoys:['Elphaba','The East Witch','Dorothy']},
+  {questionText:'How does Dorothy arrive in Oz?',answer:'A tornado',continent:'oz',decoys:['A magic mirror','A rabbit hole','A wardrobe']},
+  {questionText:'What was the Tin Man before he became metal?',answer:'A woodsman',continent:'oz',decoys:['A knight','A farmer','A robot']},
+  {questionText:'Who wrote Peter Pan?',answer:'J.M. Barrie',continent:'pp',decoys:['Lewis Carroll','L. Frank Baum','R.L. Stevenson']},
+  {questionText:'Where does Peter Pan live?',answer:'Neverland',continent:'pp',decoys:['Wonderland','Oz','The Enchanted Forest']},
+  {questionText:'Who is Peter Pan\'s fairy friend?',answer:'Tinker Bell',continent:'pp',decoys:['Pixie','Fairy Godmother','Rosetta']},
+  {questionText:'Who is the main villain in Peter Pan?',answer:'Captain Hook',continent:'pp',decoys:['Mr Smee','Long John Silver','Blackbeard']},
+  {questionText:'What are Wendy\'s brothers called?',answer:'John and Michael',continent:'pp',decoys:['James and Thomas','Jack and George','David and William']},
+  {questionText:'What is the name of the Darling family\'s dog?',answer:'Nana',continent:'pp',decoys:['Biscuit','Spot','Rex']},
+  {questionText:'How do children fly in Peter Pan?',answer:'Pixie dust and happy thoughts',continent:'pp',decoys:['A magic wand','Fairy wings','A broomstick']},
+  {questionText:'What is Captain Hook\'s ship called?',answer:'The Jolly Roger',continent:'pp',decoys:['The Black Pearl','The Flying Dutchman','The Sea Hawk']},
+  {questionText:'What is ticking inside the crocodile that scares Captain Hook?',answer:'A clock',continent:'pp',decoys:['A bomb','A heart','A pocket watch']},
+  {questionText:'What is Peter Pan\'s greatest fear?',answer:'Growing up',continent:'pp',decoys:['Captain Hook','The ocean','Darkness']},
+  {questionText:'What happens to Peter Pan\'s shadow?',answer:'It detaches and causes trouble',continent:'pp',decoys:['It glows in the dark','It cannot be seen','It talks']},
+  {questionText:'Who wrote Alice\'s Adventures in Wonderland?',answer:'Lewis Carroll',continent:'alice',decoys:['J.M. Barrie','L. Frank Baum','Charles Dickens']},
+  {questionText:'Which animal does Alice follow down the hole?',answer:'A white rabbit',continent:'alice',decoys:['A white cat','A hedgehog','A dormouse']},
+  {questionText:'The Cheshire Cat is famous for what?',answer:'Its disappearing grin',continent:'alice',decoys:['Its roar','Its enormous size','Its magic spells']},
+  {questionText:'What event is the Mad Hatter always hosting?',answer:'A tea party',continent:'alice',decoys:['A dinner party','A card game','A masked ball']},
+  {questionText:'What is the Queen of Hearts\' famous catchphrase?',answer:'"Off with their heads!"',continent:'alice',decoys:['"Off with their hats!"','"Down with Alice!"','"You shall not pass!"']},
+  {questionText:'What does Alice use as a mallet in the croquet game?',answer:'A flamingo',continent:'alice',decoys:['A broom','A stick','An umbrella']},
+  {questionText:'What sign is on the bottle that makes Alice shrink?',answer:'"Drink Me"',continent:'alice',decoys:['"Shrink"','"Small"','"Magic"']},
+  {questionText:'What is Alice\'s cat called?',answer:'Dinah',continent:'alice',decoys:['Cheshire','Tibbles','Mittens']},
+  {questionText:'What is the Caterpillar sitting on when Alice meets him?',answer:'A mushroom',continent:'alice',decoys:['A flower','A rock','A log']},
+  {questionText:'Who is on trial in the courtroom scene?',answer:'The Knave of Hearts',continent:'alice',decoys:['The Mad Hatter','Alice','The White Rabbit']},
+  {questionText:'What does the dormouse keep doing at the tea party?',answer:'Falling asleep',continent:'alice',decoys:['Falling off his chair','Singing songs','Telling riddles']},
+  {questionText:'Who wrote The Secret Garden?',answer:'Frances Hodgson Burnett',continent:'sg',decoys:['Charlotte Brontë','Jane Austen','Elizabeth Gaskell']},
+  {questionText:'Where does Mary Lennox come from at the start of the story?',answer:'India',continent:'sg',decoys:['England','America','France']},
+  {questionText:'What does Mary discover hidden behind a door in the garden wall?',answer:'A locked secret garden',continent:'sg',decoys:['A secret room','A buried treasure','A pet rabbit']},
+  {questionText:'What does Mary find that unlocks the secret garden?',answer:'A hidden key',continent:'sg',decoys:['A loose stone','A spare key from the house','A magic plant']},
+  {questionText:'Who is the bedridden boy Mary befriends in the house?',answer:'Colin',continent:'sg',decoys:['Dickon','Ben','Archibald']},
+  {questionText:'What is Dickon\'s special talent?',answer:'He can talk to and tame animals',continent:'sg',decoys:['He can grow any plant','He has healing powers','He can run very fast']},
+  {questionText:'In which region of England is the story set?',answer:'Yorkshire',continent:'sg',decoys:['London','Scotland','The Lake District']},
+  {questionText:'How long had the secret garden been locked before Mary found it?',answer:'10 years',continent:'sg',decoys:['5 years','20 years','Since Mary arrived']},
+  {questionText:'Why had the garden been locked for so long?',answer:'Mary\'s uncle\'s wife died there',continent:'sg',decoys:['A crime happened there','A treasure was hidden inside','It was cursed']},
+  {questionText:'What does Colin believe about himself at the start?',answer:'That he is an invalid who cannot be healthy',continent:'sg',decoys:['That he is magical','That he is cursed','That he is the rightful heir']},
+  {questionText:'Who is Colin\'s father?',answer:'Archibald Craven',continent:'sg',decoys:['Mr Lennox','Mr Beaumont','Lord Misselthwaite']},
+];
+
 const QUIZ_BANK = [
   {
-    id:'capitals', title:'Countries & Capitals', emoji:'🌍',
+    id:'capitals', section:'Geography', title:'Countries & Capitals', emoji:'🌍',
     description:'Can you name the capital city?',
     getQuestion: item => `What is the capital of ${item.country}?`,
     pairs: CAPITALS_PAIRS
   },
   {
-    id:'flags', title:'Flag Quiz', emoji:'🚩',
+    id:'flags', section:'Geography', title:'Flag Quiz', emoji:'🚩',
     description:'Spot the flag — name the country!',
     getQuestion: () => 'Which country does this flag belong to?',
     pairs: FLAGS_PAIRS
   },
   {
-    id:'continents', title:'World Continents', emoji:'🗺️',
+    id:'continents', section:'Geography', title:'World Continents', emoji:'🗺️',
     description:'Which continent is this country in?',
     getQuestion: item => `Which continent is ${item.country} in?`,
     buildOptionsFn: (item, allPairs, difficulty) => {
@@ -5615,11 +5810,62 @@ const QUIZ_BANK = [
     pairs: CONTINENT_PAIRS
   },
   {
-    id:'languages', title:'Languages of the World', emoji:'🗣️',
+    id:'languages', section:'Geography', title:'Languages of the World', emoji:'🗣️',
     description:'What language do they speak there?',
     getQuestion: item => `What is the official language of ${item.country}?`,
     pairs: LANGUAGES_PAIRS
-  }
+  },
+  {
+    id:'animals', section:'Nature & Science', title:'Animal Kingdom', emoji:'🐆',
+    description:'From the fastest to the strangest — how well do you know animals?',
+    getQuestion: item => item.questionText,
+    subcategories: [
+      {key:'mammals', label:'Mammals',    emoji:'🦁', color:'#fef3c7', border:'#fcd34d', text:'#92400e'},
+      {key:'birds',   label:'Birds',      emoji:'🦅', color:'#eff6ff', border:'#93c5fd', text:'#1e40af'},
+      {key:'ocean',   label:'Ocean Life', emoji:'🦈', color:'#e0f2fe', border:'#38bdf8', text:'#075985'},
+      {key:'insects', label:'Insects',    emoji:'🐝', color:'#fefce8', border:'#fde047', text:'#713f12'},
+      {key:'all',     label:'All Animals',emoji:'🐾', color:'#f0fdf4', border:'#86efac', text:'#15803d'},
+    ],
+    pairs: ANIMALS_PAIRS
+  },
+  {
+    id:'science', section:'Nature & Science', title:'Science & Nature', emoji:'🔬',
+    description:'Space, Earth, chemistry — explore the world of science!',
+    getQuestion: item => item.questionText,
+    subcategories: [
+      {key:'space',     label:'Space & Stars', emoji:'🚀', color:'#1e1b4b', border:'#6d28d9', text:'#c4b5fd'},
+      {key:'earth',     label:'Planet Earth',  emoji:'🌍', color:'#dcfce7', border:'#86efac', text:'#15803d'},
+      {key:'chemistry', label:'Science Lab',   emoji:'⚗️', color:'#fdf4ff', border:'#d8b4fe', text:'#6b21a8'},
+      {key:'all',       label:'All Science',   emoji:'🔬', color:'#f8fafc', border:'#cbd5e1', text:'#334155'},
+    ],
+    pairs: SCIENCE_PAIRS
+  },
+  {
+    id:'body', section:'Nature & Science', title:'Human Body', emoji:'🧬',
+    description:'Discover the amazing machine that is the human body!',
+    getQuestion: item => item.questionText,
+    subcategories: [
+      {key:'organs', label:'Organs',     emoji:'❤️', color:'#fef2f2', border:'#fca5a5', text:'#991b1b'},
+      {key:'bones',  label:'Bones',      emoji:'🦴', color:'#fafaf9', border:'#d6d3d1', text:'#44403c'},
+      {key:'senses', label:'Senses',     emoji:'👁️', color:'#fffbeb', border:'#fcd34d', text:'#78350f'},
+      {key:'all',    label:'All Body',   emoji:'🧬', color:'#f0fdf4', border:'#86efac', text:'#15803d'},
+    ],
+    pairs: BODY_PAIRS
+  },
+  {
+    id:'books', section:'Books & Stories', title:'Books & Stories', emoji:'📚',
+    description:'From Hogwarts to Neverland — how well do you know these classic tales?',
+    getQuestion: item => item.questionText,
+    subcategories: [
+      {key:'hp',    label:'Harry Potter',        emoji:'🧙', color:'#fef3c7', border:'#fcd34d', text:'#92400e'},
+      {key:'oz',    label:'Wizard of Oz',        emoji:'🌈', color:'#ecfdf5', border:'#6ee7b7', text:'#065f46'},
+      {key:'pp',    label:'Peter Pan',           emoji:'🧚', color:'#eff6ff', border:'#93c5fd', text:'#1d4ed8'},
+      {key:'alice', label:'Alice in Wonderland', emoji:'🐇', color:'#fdf4ff', border:'#d8b4fe', text:'#6b21a8'},
+      {key:'sg',    label:'The Secret Garden',   emoji:'🌸', color:'#fdf2f8', border:'#f9a8d4', text:'#9d174d'},
+      {key:'all',   label:'All Books',           emoji:'📚', color:'#f8fafc', border:'#cbd5e1', text:'#334155'},
+    ],
+    pairs: BOOKS_PAIRS
+  },
 ];
 
 const QUIZ_CONTINENTS = [
@@ -5697,21 +5943,29 @@ function buildQuizBank() {
   buildQuizHistory();
   const grid = document.getElementById('quiz-bank-grid');
   if (!grid) return;
-  grid.innerHTML = QUIZ_BANK.map(q => {
-    const totalAttempts = QUIZ_CONTINENTS.reduce((sum, c) => {
-      const key = quizAttemptKey(q.id, c.key);
-      return sum + ((state && state.quizAttempts && state.quizAttempts[key]) || 0);
-    }, 0);
+  const sections = [];
+  QUIZ_BANK.forEach(q => { if (!sections.includes(q.section)) sections.push(q.section); });
+  const secEmojis = {'Geography':'🌍','Nature & Science':'🔬','Books & Stories':'📚'};
+  grid.innerHTML = sections.map(sec => {
+    const quizzes = QUIZ_BANK.filter(q => q.section === sec);
     return `
-      <div class="quiz-bank-card" onclick="showContinentPicker('${q.id}')">
-        <div class="quiz-bank-card-emoji">${q.emoji}</div>
-        <div class="quiz-bank-card-title">${q.title}</div>
-        <div class="quiz-bank-card-meta">${q.description}</div>
-        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;">
-          <div class="quiz-bank-card-badge">📝 ${q.pairs.length} questions · 10/round · ⏱ 15s</div>
-          <div class="quiz-bank-card-badge">🗺️ Train by continent · ${totalAttempts ? totalAttempts + ' rounds played' : 'Pick a region to start!'}</div>
-        </div>
-      </div>`;
+      <div class="quiz-section-title" style="margin-bottom:10px;margin-top:18px;">${secEmojis[sec]||'📋'} ${sec}</div>
+      ${quizzes.map(q => {
+        const cats = q.subcategories || QUIZ_CONTINENTS;
+        const totalAttempts = cats.reduce((sum, c) => {
+          const key = quizAttemptKey(q.id, c.key);
+          return sum + ((state && state.quizAttempts && state.quizAttempts[key]) || 0);
+        }, 0);
+        return `<div class="quiz-bank-card" onclick="showContinentPicker('${q.id}')">
+          <div class="quiz-bank-card-emoji">${q.emoji}</div>
+          <div class="quiz-bank-card-title">${q.title}</div>
+          <div class="quiz-bank-card-meta">${q.description}</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;">
+            <div class="quiz-bank-card-badge">📝 ${q.pairs.length} questions · 10/round · ⏱ 15s</div>
+            <div class="quiz-bank-card-badge">${totalAttempts ? totalAttempts + ' rounds played' : 'New!'}</div>
+          </div>
+        </div>`;
+      }).join('')}`;
   }).join('');
 }
 
@@ -5742,12 +5996,14 @@ function buildQuizHistory() {
 function showContinentPicker(quizId) {
   const quiz = QUIZ_BANK.find(q => q.id === quizId);
   if (!quiz) return;
+  if (quiz.skipPicker) { startQuiz(quizId, 'all'); return; }
   const titleEl = document.getElementById('quiz-cont-quiz-title');
   if (titleEl) titleEl.textContent = `${quiz.emoji} ${quiz.title}`;
   const grid = document.getElementById('quiz-continent-grid');
   if (!grid) return;
+  const categories = quiz.subcategories || QUIZ_CONTINENTS;
 
-  grid.innerHTML = QUIZ_CONTINENTS.map(c => {
+  grid.innerHTML = categories.map(c => {
     const pool = c.key === 'all' ? quiz.pairs : quiz.pairs.filter(p => p.continent === c.key);
     if (!pool.length) return '';
     const lv = getQuizDifficulty(quizId, c.key);
