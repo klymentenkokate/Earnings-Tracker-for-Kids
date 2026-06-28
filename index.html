@@ -1534,6 +1534,24 @@
   </div>
 </div>
 
+<!-- DELETE KID CONFIRMATION MODAL -->
+<div class="kid-modal-overlay" id="delete-kid-modal">
+  <div class="kid-modal-box">
+    <div class="kid-modal-title" style="color:#dc2626;">⚠️ Delete Profile?</div>
+    <div id="delete-kid-warning" style="font-size:.88rem;color:var(--text);margin:6px 0 14px;line-height:1.55;"></div>
+    <div style="font-size:.68rem;font-weight:800;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;">Confirm with your admin password</div>
+    <input id="delete-kid-password" type="password" placeholder="••••••••" autocomplete="current-password"
+      style="width:100%;padding:9px 11px;border-radius:10px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:700;outline:none;"
+      onfocus="this.style.borderColor='#ef4444'" onblur="this.style.borderColor='var(--border)'"
+      onkeydown="if(event.key==='Enter')submitDeleteKid()">
+    <div id="delete-kid-error" style="display:none;color:#ef4444;font-size:.82rem;font-weight:700;margin-top:7px;"></div>
+    <div class="kid-modal-actions" style="margin-top:16px;">
+      <button class="btn-kid-cancel" onclick="closeDeleteKidModal()">Cancel</button>
+      <button id="delete-kid-confirm-btn" style="flex:1;padding:10px;border-radius:12px;border:none;background:#ef4444;color:#fff;font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:800;cursor:pointer;" onclick="submitDeleteKid()">🗑 Delete Permanently</button>
+    </div>
+  </div>
+</div>
+
 <!-- KID ADD / EDIT MODAL -->
 <div class="kid-modal-overlay" id="kid-modal">
   <div class="kid-modal-box">
@@ -5094,7 +5112,7 @@ function openEditKid(id) {
   newKidColor  = k.color;
   document.getElementById('kid-modal-title').textContent = `✏️ Edit ${k.name}`;
   document.getElementById('kid-modal-name').value = k.name;
-  document.getElementById('kid-modal-delete-btn').style.display = appData.kids.length>1 ? 'block' : 'none';
+  document.getElementById('kid-modal-delete-btn').style.display = (isAdmin() && appData.kids.length > 1) ? 'block' : 'none';
   renderKidModalPickers();
   document.getElementById('kid-modal').classList.add('open');
   setTimeout(()=>document.getElementById('kid-modal-name').focus(), 100);
@@ -5142,16 +5160,56 @@ function saveKidModal() {
   }
 }
 
+let pendingDeleteKidId = null;
+
 function deleteKid(id) {
-  const k = appData.kids.find(k=>k.id===id); if(!k) return;
-  if (appData.kids.length<=1) { alert('You must have at least one kid.'); return; }
-  if (!confirm(`Delete ${k.name}?\n\nAll their sessions and earnings will be permanently deleted.`)) return;
-  const kidName = k.name;
-  const prev = JSON.parse(JSON.stringify(appData));
-  appData.kids = appData.kids.filter(k=>k.id!==id);
-  state = null; viewMode='overview';
-  save(); closeKidModal(); showOverview();
-  writeAuditLog('delete_kid', `${currentMember?.alias||'Someone'} deleted ${kidName}`, prev);
+  if (!isAdmin()) { alert('Only admins can delete kid profiles.'); return; }
+  const k = appData.kids.find(k => k.id === id); if (!k) return;
+  if (appData.kids.length <= 1) { alert('You must keep at least one kid profile.'); return; }
+  pendingDeleteKidId = id;
+  document.getElementById('delete-kid-warning').textContent =
+    `You are about to permanently delete ${k.name}'s profile. All their sessions, earnings, and history will be gone forever and cannot be recovered.`;
+  document.getElementById('delete-kid-password').value = '';
+  document.getElementById('delete-kid-error').style.display = 'none';
+  const btn = document.getElementById('delete-kid-confirm-btn');
+  btn.disabled = false; btn.textContent = '🗑 Delete Permanently';
+  document.getElementById('delete-kid-modal').classList.add('open');
+  setTimeout(() => document.getElementById('delete-kid-password').focus(), 120);
+}
+
+function closeDeleteKidModal() {
+  document.getElementById('delete-kid-modal').classList.remove('open');
+  pendingDeleteKidId = null;
+}
+
+async function submitDeleteKid() {
+  const password = document.getElementById('delete-kid-password').value;
+  const errEl = document.getElementById('delete-kid-error');
+  if (!password) {
+    errEl.textContent = 'Please enter your password to confirm.';
+    errEl.style.display = 'block'; return;
+  }
+  const btn = document.getElementById('delete-kid-confirm-btn');
+  btn.disabled = true; btn.textContent = 'Verifying…';
+  errEl.style.display = 'none';
+  try {
+    const email = authSession?.user?.email;
+    if (!email) throw new Error('Not logged in');
+    await authFetch('token?grant_type=password', 'POST', { email, password });
+    // Password verified — proceed
+    const id = pendingDeleteKidId;
+    const k = appData.kids.find(k => k.id === id); if (!k) { closeDeleteKidModal(); return; }
+    const kidName = k.name;
+    const prev = JSON.parse(JSON.stringify(appData));
+    appData.kids = appData.kids.filter(k => k.id !== id);
+    state = null; viewMode = 'overview';
+    save(); closeDeleteKidModal(); closeKidModal(); showOverview();
+    writeAuditLog('delete_kid', `${currentMember?.alias||'Someone'} deleted ${kidName}`, prev);
+  } catch(e) {
+    errEl.textContent = 'Incorrect password — please try again.';
+    errEl.style.display = 'block';
+    btn.disabled = false; btn.textContent = '🗑 Delete Permanently';
+  }
 }
 
 // ─────────────────────────────────────────────────────────────
