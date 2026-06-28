@@ -637,6 +637,13 @@
   .quiz-bank-card-title{font-family:'Fredoka One',cursive;font-size:1.15rem;color:var(--text);}
   .quiz-bank-card-meta{font-size:.74rem;font-weight:700;color:var(--muted);}
   .quiz-bank-card-badge{display:inline-flex;align-items:center;gap:5px;background:#ede9fe;border:1.5px solid #c4b5fd;border-radius:50px;padding:3px 11px;font-size:.7rem;font-weight:800;color:#5b21b6;align-self:flex-start;}
+  .quiz-category-card{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:18px;border:2px solid;cursor:pointer;transition:.15s;margin-bottom:12px;width:100%;text-align:left;font-family:'Nunito',sans-serif;background:var(--card);}
+  .quiz-category-card:hover{filter:brightness(0.96);transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.08);}
+  .quiz-category-emoji{font-size:2.8rem;line-height:1;}
+  .quiz-category-info{flex:1;}
+  .quiz-category-name{font-family:'Fredoka One',cursive;font-size:1.15rem;line-height:1.2;}
+  .quiz-category-desc{font-size:.76rem;font-weight:700;color:var(--muted);margin-top:3px;}
+  .quiz-category-count{font-size:.71rem;font-weight:800;margin-top:5px;opacity:.8;}
 
   /* Playing */
   .quiz-progress-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
@@ -1174,29 +1181,40 @@
 <!-- TAB: QUIZZES -->
 <div id="tab-quizzes" style="display:none;">
 
-  <!-- BANK SCREEN -->
-  <div id="quiz-bank-screen">
+  <!-- L1: CATEGORY SCREEN (default) -->
+  <div id="quiz-category-screen">
     <div class="section">
       <div class="section-title">🧠 Quizzes</div>
-      <p style="font-size:.8rem;color:var(--muted);font-weight:700;margin-bottom:16px;">Pick a quiz — 10 random questions, 15 seconds each. The more you play, the harder it gets! 🔥</p>
-      <div class="quiz-bank-grid" id="quiz-bank-grid"></div>
+      <p style="font-size:.8rem;color:var(--muted);font-weight:700;margin-bottom:16px;">Pick a category and start learning! The more you play, the harder it gets! 🔥</p>
+      <div id="quiz-category-grid"></div>
       <div id="quiz-history-section" style="display:none;margin-top:18px;"></div>
     </div>
   </div>
 
-  <!-- CONTINENT PICKER SCREEN -->
+  <!-- L2: QUIZ LIST SCREEN -->
+  <div id="quiz-bank-screen" style="display:none;">
+    <div class="section">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <button class="btn-cancel-settings" style="padding:6px 14px;font-size:.76rem;" onclick="showQuizScreen('category')">← Back</button>
+        <div style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--text);" id="quiz-bank-category-title"></div>
+      </div>
+      <div class="quiz-bank-grid" id="quiz-bank-grid"></div>
+    </div>
+  </div>
+
+  <!-- L3: SUBCATEGORY PICKER SCREEN -->
   <div id="quiz-continent-screen" style="display:none;">
     <div class="section">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
         <button class="btn-cancel-settings" style="padding:6px 14px;font-size:.76rem;" onclick="showQuizScreen('bank')">← Back</button>
         <div style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--text);" id="quiz-cont-quiz-title">🌍 Countries &amp; Capitals</div>
       </div>
-      <p style="font-size:.8rem;font-weight:700;color:var(--muted);margin-bottom:14px;">Pick a region to focus on — start with one continent, master it, then move on! 🗺️</p>
+      <p style="font-size:.8rem;font-weight:700;color:var(--muted);margin-bottom:14px;">Pick a focus area — start with one, master it, then move on! 🎯</p>
       <div class="quiz-continent-grid" id="quiz-continent-grid"></div>
     </div>
   </div>
 
-  <!-- PLAYING SCREEN -->
+  <!-- L4a: PLAYING SCREEN -->
   <div id="quiz-play-screen" style="display:none;">
     <div class="section">
       <div id="quiz-exam-banner" class="quiz-exam-banner" style="display:none;">
@@ -1221,7 +1239,7 @@
     </div>
   </div>
 
-  <!-- RESULTS SCREEN -->
+  <!-- L4b: RESULTS SCREEN -->
   <div id="quiz-results-screen" style="display:none;">
     <div class="section">
       <div class="quiz-result-card">
@@ -1231,7 +1249,7 @@
         <div class="quiz-stars" id="quiz-res-stars">⭐⭐⭐⭐</div>
         <div class="quiz-result-msg" id="quiz-res-msg">Great job!</div>
         <div class="quiz-result-btns" id="quiz-result-btns">
-          <button class="btn-quiz-back" onclick="backToQuizBank()">← All Quizzes</button>
+          <button class="btn-quiz-back" onclick="backToQuizBank()">← Categories</button>
           <button class="btn-quiz-retake" onclick="retakeQuiz()">🔄 Play Again</button>
         </div>
       </div>
@@ -3003,7 +3021,7 @@ function setDashTab(tab) {
   });
   if (tab === 'charts' && state) { setChartView('pie'); buildProjections(); }
   if (tab === 'quests' && state) buildQuestsTab();
-  if (tab === 'quizzes') buildQuizBank();
+  if (tab === 'quizzes') { buildCategoryScreen(); showQuizScreen('category'); }
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -5776,6 +5794,12 @@ const BOOKS_PAIRS = [
   {questionText:'Who is Colin\'s father?',answer:'Archibald Craven',continent:'sg',decoys:['Mr Lennox','Mr Beaumont','Lord Misselthwaite']},
 ];
 
+const QUIZ_CATEGORIES = [
+  {key:'Geography',        label:'Geography',        emoji:'🌍', color:'#eff6ff', border:'#bfdbfe', text:'#1d4ed8', description:'Countries, capitals, flags & languages'},
+  {key:'Nature & Science', label:'Nature & Science',  emoji:'🔬', color:'#dcfce7', border:'#86efac', text:'#15803d', description:'Animals, science & the human body'},
+  {key:'Books & Stories',  label:'Books & Stories',   emoji:'📚', color:'#fdf4ff', border:'#d8b4fe', text:'#6b21a8', description:'Classic tales & beloved characters'},
+];
+
 const QUIZ_BANK = [
   {
     id:'capitals', section:'Geography', title:'Countries & Capitals', emoji:'🌍',
@@ -5878,6 +5902,7 @@ const QUIZ_CONTINENTS = [
 ];
 
 let quizSession = null;
+let currentQuizCategory = null;
 
 // ── difficulty helpers ──────────────────────────────────────
 
@@ -5939,35 +5964,63 @@ function buildOptions(item, allPairs, difficulty) {
 
 // ── bank screen ─────────────────────────────────────────────
 
-function buildQuizBank() {
+function buildCategoryScreen() {
   buildQuizHistory();
-  const grid = document.getElementById('quiz-bank-grid');
+  const grid = document.getElementById('quiz-category-grid');
   if (!grid) return;
-  const sections = [];
-  QUIZ_BANK.forEach(q => { if (!sections.includes(q.section)) sections.push(q.section); });
-  const secEmojis = {'Geography':'🌍','Nature & Science':'🔬','Books & Stories':'📚'};
-  grid.innerHTML = sections.map(sec => {
-    const quizzes = QUIZ_BANK.filter(q => q.section === sec);
-    return `
-      <div class="quiz-section-title" style="margin-bottom:10px;margin-top:18px;">${secEmojis[sec]||'📋'} ${sec}</div>
-      ${quizzes.map(q => {
-        const cats = q.subcategories || QUIZ_CONTINENTS;
-        const totalAttempts = cats.reduce((sum, c) => {
-          const key = quizAttemptKey(q.id, c.key);
-          return sum + ((state && state.quizAttempts && state.quizAttempts[key]) || 0);
-        }, 0);
-        return `<div class="quiz-bank-card" onclick="showContinentPicker('${q.id}')">
-          <div class="quiz-bank-card-emoji">${q.emoji}</div>
-          <div class="quiz-bank-card-title">${q.title}</div>
-          <div class="quiz-bank-card-meta">${q.description}</div>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;">
-            <div class="quiz-bank-card-badge">📝 ${q.pairs.length} questions · 10/round · ⏱ 15s</div>
-            <div class="quiz-bank-card-badge">${totalAttempts ? totalAttempts + ' rounds played' : 'New!'}</div>
-          </div>
-        </div>`;
-      }).join('')}`;
+  grid.innerHTML = QUIZ_CATEGORIES.map(cat => {
+    const quizzes = QUIZ_BANK.filter(q => q.section === cat.key);
+    const totalQ = quizzes.reduce((sum, q) => sum + q.pairs.length, 0);
+    const totalPlayed = quizzes.reduce((sum, q) => {
+      return sum + (q.subcategories || QUIZ_CONTINENTS).reduce((s, c) => {
+        const key = quizAttemptKey(q.id, c.key);
+        return s + ((state && state.quizAttempts && state.quizAttempts[key]) || 0);
+      }, 0);
+    }, 0);
+    return `<button class="quiz-category-card" onclick="openQuizCategory('${cat.key}')"
+      style="background:${cat.color};border-color:${cat.border};">
+      <div class="quiz-category-emoji">${cat.emoji}</div>
+      <div class="quiz-category-info">
+        <div class="quiz-category-name" style="color:${cat.text};">${cat.label}</div>
+        <div class="quiz-category-desc">${cat.description}</div>
+        <div class="quiz-category-count" style="color:${cat.text};">${quizzes.length} quiz${quizzes.length!==1?'es':''} · ${totalQ} questions${totalPlayed?' · '+totalPlayed+' rounds played':''}</div>
+      </div>
+      <div style="font-size:1.4rem;color:${cat.text};opacity:.6;">›</div>
+    </button>`;
   }).join('');
 }
+
+function openQuizCategory(categoryKey) {
+  currentQuizCategory = categoryKey;
+  buildQuizList(categoryKey);
+  showQuizScreen('bank');
+}
+
+function buildQuizList(categoryKey) {
+  const cat = QUIZ_CATEGORIES.find(c => c.key === categoryKey);
+  const titleEl = document.getElementById('quiz-bank-category-title');
+  if (titleEl && cat) titleEl.textContent = `${cat.emoji} ${cat.label}`;
+  const grid = document.getElementById('quiz-bank-grid');
+  if (!grid) return;
+  const quizzes = QUIZ_BANK.filter(q => q.section === categoryKey);
+  grid.innerHTML = quizzes.map(q => {
+    const totalAttempts = (q.subcategories || QUIZ_CONTINENTS).reduce((sum, c) => {
+      const key = quizAttemptKey(q.id, c.key);
+      return sum + ((state && state.quizAttempts && state.quizAttempts[key]) || 0);
+    }, 0);
+    return `<div class="quiz-bank-card" onclick="showContinentPicker('${q.id}')">
+      <div class="quiz-bank-card-emoji">${q.emoji}</div>
+      <div class="quiz-bank-card-title">${q.title}</div>
+      <div class="quiz-bank-card-meta">${q.description}</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;">
+        <div class="quiz-bank-card-badge">📝 ${q.pairs.length} questions · 10/round · ⏱ 15s</div>
+        <div class="quiz-bank-card-badge">${totalAttempts ? totalAttempts+' rounds played' : 'New!'}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function buildQuizBank() { buildCategoryScreen(); }
 
 function buildQuizHistory() {
   const el = document.getElementById('quiz-history-section');
@@ -6060,7 +6113,7 @@ function startQuiz(quizId, continent) {
 }
 
 function showQuizScreen(which) {
-  ['bank','continent','play','results'].forEach(s => {
+  ['category','bank','continent','play','results'].forEach(s => {
     const el = document.getElementById('quiz-' + s + '-screen');
     if (el) el.style.display = s === which ? 'block' : 'none';
   });
@@ -6239,10 +6292,9 @@ function retakeQuiz() {
 
 function backToQuizBank() {
   quizStopTimer();
-  const lastQuizId = quizSession?.quizId;
   quizSession = null;
-  if (lastQuizId) { showContinentPicker(lastQuizId); }
-  else { showQuizScreen('bank'); buildQuizBank(); }
+  buildCategoryScreen();
+  showQuizScreen('category');
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -6446,11 +6498,11 @@ function showQuizQuestResults() {
   if (btns) {
     if (passed) {
       btns.innerHTML = `
-        <button class="btn-quiz-back" onclick="backToQuizBank()">← All Quizzes</button>
+        <button class="btn-quiz-back" onclick="backToQuizBank()">← Categories</button>
         <button class="btn-quiz-retake" style="background:linear-gradient(135deg,#16a34a,#059669);" onclick="backToQuizBank()">🏆 Done!</button>`;
     } else {
       btns.innerHTML = `
-        <button class="btn-quiz-back" onclick="backToQuizBank()">← Train More</button>
+        <button class="btn-quiz-back" onclick="backToQuizBank()">← Categories</button>
         <button class="btn-quiz-retake" onclick="retakeQuiz()">🔄 Retry Exam</button>`;
     }
   }
