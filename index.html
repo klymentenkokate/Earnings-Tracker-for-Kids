@@ -5881,6 +5881,7 @@ const QUIZ_BANK = [
   },
   {
     id:'continents', section:'Geography', title:'World Continents', emoji:'🗺️',
+    skipPicker: true,
     description:'Which continent is this country in?',
     getQuestion: item => `Which continent is ${item.country} in?`,
     buildOptionsFn: (item, allPairs, difficulty) => {
