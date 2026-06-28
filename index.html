@@ -1238,7 +1238,10 @@
       </div>
       <div class="quiz-options" id="quiz-options"></div>
       <div id="quizExplanationBox" style="display:none;margin-top:14px;padding:14px 16px;background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;font-size:0.92rem;color:#78350f;line-height:1.5;animation:fadeIn 0.3s ease">
-        <span style="font-size:1.1rem">💡</span> <span id="quizExplanationText"></span>
+        <div id="quizExplanationFact" style="display:none;margin-bottom:10px"><span style="font-size:1.1rem">💡</span> <span id="quizExplanationText"></span></div>
+        <div style="text-align:center">
+          <button onclick="quizAdvance()" style="background:#f59e0b;color:#fff;border:none;border-radius:8px;padding:9px 26px;font-size:0.95rem;font-weight:700;cursor:pointer;letter-spacing:0.01em">Next Question →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -6259,12 +6262,17 @@ function quizTimeUp() {
   if (correctBtn) correctBtn.classList.add('reveal');
   document.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
   const explanationBox = document.getElementById('quizExplanationBox');
+  const explanationFact = document.getElementById('quizExplanationFact');
   const explanationText = document.getElementById('quizExplanationText');
-  if (explanationBox && explanationText && q && q.explanation) {
-    explanationText.textContent = q.explanation;
+  if (explanationBox) {
+    if (explanationFact && explanationText && q && q.explanation) {
+      explanationText.textContent = q.explanation;
+      explanationFact.style.display = 'block';
+    } else if (explanationFact) {
+      explanationFact.style.display = 'none';
+    }
     explanationBox.style.display = 'block';
   }
-  setTimeout(quizAdvance, 1200);
 }
 
 function quizSelectAnswer(i) {
@@ -6278,12 +6286,17 @@ function quizSelectAnswer(i) {
   if (!correct) document.getElementById('quiz-opt-' + q.correctIndex).classList.add('reveal');
   document.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
   const explanationBox = document.getElementById('quizExplanationBox');
+  const explanationFact = document.getElementById('quizExplanationFact');
   const explanationText = document.getElementById('quizExplanationText');
-  if (explanationBox && explanationText && q && q.explanation) {
-    explanationText.textContent = q.explanation;
+  if (explanationBox) {
+    if (explanationFact && explanationText && q && q.explanation) {
+      explanationText.textContent = q.explanation;
+      explanationFact.style.display = 'block';
+    } else if (explanationFact) {
+      explanationFact.style.display = 'none';
+    }
     explanationBox.style.display = 'block';
   }
-  setTimeout(quizAdvance, 1100);
 }
 
 function quizAdvance() {
