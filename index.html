@@ -5358,8 +5358,250 @@ const CAPITALS_PAIRS = [
   {country:'Cook Islands',capital:'Avarua',flag:'🇨🇰',continent:'Oceania',decoys:['Arorangi','Nikao','Amuri','Omoka']},
 ];
 
+const FLAGS_PAIRS = [
+  {flag:'🇫🇷',answer:'France',continent:'Europe',decoys:['Belgium','Luxembourg','Monaco','Andorra']},
+  {flag:'🇩🇪',answer:'Germany',continent:'Europe',decoys:['Austria','Belgium','Netherlands','Switzerland']},
+  {flag:'🇮🇹',answer:'Italy',continent:'Europe',decoys:['Hungary','Mexico','Ireland','France']},
+  {flag:'🇪🇸',answer:'Spain',continent:'Europe',decoys:['Portugal','Andorra','France','Italy']},
+  {flag:'🇵🇹',answer:'Portugal',continent:'Europe',decoys:['Spain','Brazil','Angola','Cape Verde']},
+  {flag:'🇬🇧',answer:'United Kingdom',continent:'Europe',decoys:['Australia','New Zealand','Tuvalu','Fiji']},
+  {flag:'🇵🇱',answer:'Poland',continent:'Europe',decoys:['Monaco','Indonesia','Singapore','Denmark']},
+  {flag:'🇳🇱',answer:'Netherlands',continent:'Europe',decoys:['Luxembourg','France','Germany','Belgium']},
+  {flag:'🇧🇪',answer:'Belgium',continent:'Europe',decoys:['Germany','France','Netherlands','Luxembourg']},
+  {flag:'🇸🇪',answer:'Sweden',continent:'Europe',decoys:['Norway','Denmark','Finland','Iceland']},
+  {flag:'🇳🇴',answer:'Norway',continent:'Europe',decoys:['Iceland','Denmark','Sweden','Finland']},
+  {flag:'🇫🇮',answer:'Finland',continent:'Europe',decoys:['Sweden','Estonia','Denmark','Norway']},
+  {flag:'🇩🇰',answer:'Denmark',continent:'Europe',decoys:['Norway','Sweden','Finland','Iceland']},
+  {flag:'🇨🇭',answer:'Switzerland',continent:'Europe',decoys:['Austria','Germany','Liechtenstein','Georgia']},
+  {flag:'🇦🇹',answer:'Austria',continent:'Europe',decoys:['Germany','Switzerland','Hungary','Belgium']},
+  {flag:'🇬🇷',answer:'Greece',continent:'Europe',decoys:['Cyprus','Uruguay','Finland','Sweden']},
+  {flag:'🇷🇴',answer:'Romania',continent:'Europe',decoys:['Chad','Moldova','Andorra','Belgium']},
+  {flag:'🇺🇦',answer:'Ukraine',continent:'Europe',decoys:['Sweden','Kazakhstan','Slovakia','Finland']},
+  {flag:'🇮🇪',answer:'Ireland',continent:'Europe',decoys:['Ivory Coast','Niger','Italy','France']},
+  {flag:'🇭🇺',answer:'Hungary',continent:'Europe',decoys:['Bulgaria','Italy','Tajikistan','Armenia']},
+  {flag:'🇯🇵',answer:'Japan',continent:'Asia',decoys:['South Korea','China','Singapore','Taiwan']},
+  {flag:'🇨🇳',answer:'China',continent:'Asia',decoys:['Japan','South Korea','Bhutan','Taiwan']},
+  {flag:'🇮🇳',answer:'India',continent:'Asia',decoys:['Nepal','Sri Lanka','Pakistan','Bangladesh']},
+  {flag:'🇷🇺',answer:'Russia',continent:'Asia',decoys:['Serbia','Slovakia','Czech Republic','Slovenia']},
+  {flag:'🇰🇷',answer:'South Korea',continent:'Asia',decoys:['Japan','China','Mongolia','Taiwan']},
+  {flag:'🇸🇦',answer:'Saudi Arabia',continent:'Asia',decoys:['Iraq','Palestine','UAE','Afghanistan']},
+  {flag:'🇹🇷',answer:'Turkey',continent:'Asia',decoys:['Azerbaijan','Tunisia','Libya','Uzbekistan']},
+  {flag:'🇹🇭',answer:'Thailand',continent:'Asia',decoys:['Cambodia','Laos','Myanmar','Vietnam']},
+  {flag:'🇻🇳',answer:'Vietnam',continent:'Asia',decoys:['Thailand','Laos','Cambodia','Myanmar']},
+  {flag:'🇮🇩',answer:'Indonesia',continent:'Asia',decoys:['Monaco','Poland','Singapore','Bahrain']},
+  {flag:'🇮🇱',answer:'Israel',continent:'Asia',decoys:['Greece','Uruguay','Finland','Honduras']},
+  {flag:'🇮🇷',answer:'Iran',continent:'Asia',decoys:['Iraq','Tajikistan','Bolivia','Afghanistan']},
+  {flag:'🇵🇭',answer:'Philippines',continent:'Asia',decoys:['Cuba','Liberia','Chile','Puerto Rico']},
+  {flag:'🇲🇾',answer:'Malaysia',continent:'Asia',decoys:['Brunei','Maldives','Comoros','Pakistan']},
+  {flag:'🇦🇪',answer:'UAE',continent:'Asia',decoys:['Jordan','Bahrain','Kuwait','Libya']},
+  {flag:'🇿🇦',answer:'South Africa',continent:'Africa',decoys:['Ethiopia','Rwanda','Zimbabwe','Malawi']},
+  {flag:'🇪🇬',answer:'Egypt',continent:'Africa',decoys:['Jordan','Syria','Iraq','Yemen']},
+  {flag:'🇳🇬',answer:'Nigeria',continent:'Africa',decoys:['Chad','Cameroon','Ghana','Mali']},
+  {flag:'🇪🇹',answer:'Ethiopia',continent:'Africa',decoys:['Bolivia','Ghana','Eritrea','South Africa']},
+  {flag:'🇰🇪',answer:'Kenya',continent:'Africa',decoys:['Uganda','Tanzania','Ethiopia','Somalia']},
+  {flag:'🇬🇭',answer:'Ghana',continent:'Africa',decoys:['Senegal','Niger','Cameroon','Benin']},
+  {flag:'🇲🇦',answer:'Morocco',continent:'Africa',decoys:['Tunisia','Algeria','Libya','Mauritania']},
+  {flag:'🇸🇳',answer:'Senegal',continent:'Africa',decoys:['Mali','Guinea','Cameroon','Gabon']},
+  {flag:'🇨🇩',answer:'DR Congo',continent:'Africa',decoys:['Cameroon','Rwanda','Uganda','Angola']},
+  {flag:'🇹🇿',answer:'Tanzania',continent:'Africa',decoys:['Uganda','Zambia','Mozambique','Rwanda']},
+  {flag:'🇿🇼',answer:'Zimbabwe',continent:'Africa',decoys:['Zambia','Malawi','Mozambique','Uganda']},
+  {flag:'🇸🇩',answer:'Sudan',continent:'Africa',decoys:['Yemen','Libya','Chad','Somalia']},
+  {flag:'🇺🇸',answer:'USA',continent:'Americas',decoys:['Liberia','Chile','Malaysia','Tonga']},
+  {flag:'🇨🇦',answer:'Canada',continent:'Americas',decoys:['USA','Greenland','Iceland','Norway']},
+  {flag:'🇧🇷',answer:'Brazil',continent:'Americas',decoys:['Bolivia','Colombia','Argentina','Venezuela']},
+  {flag:'🇲🇽',answer:'Mexico',continent:'Americas',decoys:['Bolivia','Colombia','Ecuador','Guatemala']},
+  {flag:'🇦🇷',answer:'Argentina',continent:'Americas',decoys:['Brazil','Bolivia','Uruguay','Colombia']},
+  {flag:'🇨🇱',answer:'Chile',continent:'Americas',decoys:['Ecuador','Bolivia','Peru','Colombia']},
+  {flag:'🇨🇴',answer:'Colombia',continent:'Americas',decoys:['Ecuador','Venezuela','Peru','Bolivia']},
+  {flag:'🇨🇺',answer:'Cuba',continent:'Americas',decoys:['Puerto Rico','Bahamas','Haiti','Dominican Republic']},
+  {flag:'🇯🇲',answer:'Jamaica',continent:'Americas',decoys:['Trinidad','Barbados','Belize','Guyana']},
+  {flag:'🇵🇪',answer:'Peru',continent:'Americas',decoys:['Bolivia','Colombia','Ecuador','Chile']},
+  {flag:'🇦🇺',answer:'Australia',continent:'Oceania',decoys:['New Zealand','Tuvalu','Fiji','Cook Islands']},
+  {flag:'🇳🇿',answer:'New Zealand',continent:'Oceania',decoys:['Australia','Tuvalu','Cook Islands','Fiji']},
+  {flag:'🇵🇬',answer:'Papua New Guinea',continent:'Oceania',decoys:['Vanuatu','Solomon Islands','Fiji','Kiribati']},
+  {flag:'🇫🇯',answer:'Fiji',continent:'Oceania',decoys:['Vanuatu','Samoa','Tonga','Papua New Guinea']},
+  {flag:'🇼🇸',answer:'Samoa',continent:'Oceania',decoys:['Tonga','Fiji','Kiribati','Cook Islands']},
+  {flag:'🇹🇴',answer:'Tonga',continent:'Oceania',decoys:['Samoa','Fiji','Vanuatu','Cook Islands']},
+];
+
+const CONTINENT_PAIRS = [
+  {country:'France',flag:'🇫🇷',answer:'Europe',continent:'Europe',decoys:['Asia','Africa','Americas']},
+  {country:'Germany',flag:'🇩🇪',answer:'Europe',continent:'Europe',decoys:['Asia','Americas','Oceania']},
+  {country:'Spain',flag:'🇪🇸',answer:'Europe',continent:'Europe',decoys:['Americas','Africa','Asia']},
+  {country:'Italy',flag:'🇮🇹',answer:'Europe',continent:'Europe',decoys:['Americas','Asia','Africa']},
+  {country:'United Kingdom',flag:'🇬🇧',answer:'Europe',continent:'Europe',decoys:['Americas','Asia','Oceania']},
+  {country:'Poland',flag:'🇵🇱',answer:'Europe',continent:'Europe',decoys:['Asia','Americas','Africa']},
+  {country:'Ukraine',flag:'🇺🇦',answer:'Europe',continent:'Europe',decoys:['Asia','Americas','Africa']},
+  {country:'Sweden',flag:'🇸🇪',answer:'Europe',continent:'Europe',decoys:['Americas','Asia','Africa']},
+  {country:'Norway',flag:'🇳🇴',answer:'Europe',continent:'Europe',decoys:['Americas','Asia','Oceania']},
+  {country:'Finland',flag:'🇫🇮',answer:'Europe',continent:'Europe',decoys:['Asia','Americas','Oceania']},
+  {country:'Romania',flag:'🇷🇴',answer:'Europe',continent:'Europe',decoys:['Asia','Africa','Americas']},
+  {country:'Hungary',flag:'🇭🇺',answer:'Europe',continent:'Europe',decoys:['Asia','Americas','Oceania']},
+  {country:'Greece',flag:'🇬🇷',answer:'Europe',continent:'Europe',decoys:['Asia','Africa','Americas']},
+  {country:'Russia',flag:'🇷🇺',answer:'Europe',continent:'Europe',decoys:['Asia','Americas','Africa']},
+  {country:'China',flag:'🇨🇳',answer:'Asia',continent:'Asia',decoys:['Oceania','Americas','Europe']},
+  {country:'Japan',flag:'🇯🇵',answer:'Asia',continent:'Asia',decoys:['Oceania','Americas','Europe']},
+  {country:'India',flag:'🇮🇳',answer:'Asia',continent:'Asia',decoys:['Africa','Oceania','Americas']},
+  {country:'South Korea',flag:'🇰🇷',answer:'Asia',continent:'Asia',decoys:['Oceania','Americas','Europe']},
+  {country:'Vietnam',flag:'🇻🇳',answer:'Asia',continent:'Asia',decoys:['Oceania','Americas','Africa']},
+  {country:'Thailand',flag:'🇹🇭',answer:'Asia',continent:'Asia',decoys:['Oceania','Americas','Africa']},
+  {country:'Indonesia',flag:'🇮🇩',answer:'Asia',continent:'Asia',decoys:['Oceania','Americas','Africa']},
+  {country:'Philippines',flag:'🇵🇭',answer:'Asia',continent:'Asia',decoys:['Oceania','Americas','Africa']},
+  {country:'Malaysia',flag:'🇲🇾',answer:'Asia',continent:'Asia',decoys:['Oceania','Americas','Africa']},
+  {country:'Pakistan',flag:'🇵🇰',answer:'Asia',continent:'Asia',decoys:['Africa','Europe','Americas']},
+  {country:'Bangladesh',flag:'🇧🇩',answer:'Asia',continent:'Asia',decoys:['Africa','Europe','Americas']},
+  {country:'Nepal',flag:'🇳🇵',answer:'Asia',continent:'Asia',decoys:['Africa','Europe','Americas']},
+  {country:'Sri Lanka',flag:'🇱🇰',answer:'Asia',continent:'Asia',decoys:['Oceania','Africa','Americas']},
+  {country:'Mongolia',flag:'🇲🇳',answer:'Asia',continent:'Asia',decoys:['Europe','Americas','Oceania']},
+  {country:'Saudi Arabia',flag:'🇸🇦',answer:'Asia',continent:'Asia',decoys:['Africa','Europe','Americas']},
+  {country:'Iran',flag:'🇮🇷',answer:'Asia',continent:'Asia',decoys:['Africa','Europe','Americas']},
+  {country:'Iraq',flag:'🇮🇶',answer:'Asia',continent:'Asia',decoys:['Africa','Europe','Americas']},
+  {country:'Turkey',flag:'🇹🇷',answer:'Asia',continent:'Asia',decoys:['Europe','Africa','Americas']},
+  {country:'Israel',flag:'🇮🇱',answer:'Asia',continent:'Asia',decoys:['Europe','Africa','Americas']},
+  {country:'Kazakhstan',flag:'🇰🇿',answer:'Asia',continent:'Asia',decoys:['Europe','Americas','Africa']},
+  {country:'Georgia',flag:'🇬🇪',answer:'Asia',continent:'Asia',decoys:['Europe','Americas','Africa']},
+  {country:'Armenia',flag:'🇦🇲',answer:'Asia',continent:'Asia',decoys:['Europe','Americas','Africa']},
+  {country:'Azerbaijan',flag:'🇦🇿',answer:'Asia',continent:'Asia',decoys:['Europe','Americas','Africa']},
+  {country:'Cyprus',flag:'🇨🇾',answer:'Asia',continent:'Asia',decoys:['Europe','Africa','Americas']},
+  {country:'UAE',flag:'🇦🇪',answer:'Asia',continent:'Asia',decoys:['Africa','Europe','Americas']},
+  {country:'Nigeria',flag:'🇳🇬',answer:'Africa',continent:'Africa',decoys:['Americas','Asia','Europe']},
+  {country:'Ethiopia',flag:'🇪🇹',answer:'Africa',continent:'Africa',decoys:['Asia','Americas','Europe']},
+  {country:'South Africa',flag:'🇿🇦',answer:'Africa',continent:'Africa',decoys:['Americas','Asia','Oceania']},
+  {country:'Kenya',flag:'🇰🇪',answer:'Africa',continent:'Africa',decoys:['Americas','Asia','Europe']},
+  {country:'Tanzania',flag:'🇹🇿',answer:'Africa',continent:'Africa',decoys:['Americas','Asia','Europe']},
+  {country:'Ghana',flag:'🇬🇭',answer:'Africa',continent:'Africa',decoys:['Americas','Asia','Europe']},
+  {country:'Senegal',flag:'🇸🇳',answer:'Africa',continent:'Africa',decoys:['Americas','Asia','Europe']},
+  {country:'Cameroon',flag:'🇨🇲',answer:'Africa',continent:'Africa',decoys:['Americas','Asia','Europe']},
+  {country:'Angola',flag:'🇦🇴',answer:'Africa',continent:'Africa',decoys:['Americas','Asia','Europe']},
+  {country:'Mozambique',flag:'🇲🇿',answer:'Africa',continent:'Africa',decoys:['Americas','Asia','Oceania']},
+  {country:'Egypt',flag:'🇪🇬',answer:'Africa',continent:'Africa',decoys:['Asia','Americas','Europe']},
+  {country:'Morocco',flag:'🇲🇦',answer:'Africa',continent:'Africa',decoys:['Europe','Asia','Americas']},
+  {country:'Madagascar',flag:'🇲🇬',answer:'Africa',continent:'Africa',decoys:['Oceania','Asia','Americas']},
+  {country:'Somalia',flag:'🇸🇴',answer:'Africa',continent:'Africa',decoys:['Asia','Americas','Europe']},
+  {country:'USA',flag:'🇺🇸',answer:'Americas',continent:'Americas',decoys:['Europe','Asia','Oceania']},
+  {country:'Canada',flag:'🇨🇦',answer:'Americas',continent:'Americas',decoys:['Europe','Asia','Oceania']},
+  {country:'Brazil',flag:'🇧🇷',answer:'Americas',continent:'Americas',decoys:['Europe','Africa','Asia']},
+  {country:'Mexico',flag:'🇲🇽',answer:'Americas',continent:'Americas',decoys:['Europe','Africa','Asia']},
+  {country:'Argentina',flag:'🇦🇷',answer:'Americas',continent:'Americas',decoys:['Europe','Africa','Asia']},
+  {country:'Colombia',flag:'🇨🇴',answer:'Americas',continent:'Americas',decoys:['Europe','Africa','Asia']},
+  {country:'Peru',flag:'🇵🇪',answer:'Americas',continent:'Americas',decoys:['Europe','Africa','Asia']},
+  {country:'Chile',flag:'🇨🇱',answer:'Americas',continent:'Americas',decoys:['Europe','Africa','Asia']},
+  {country:'Cuba',flag:'🇨🇺',answer:'Americas',continent:'Americas',decoys:['Europe','Africa','Asia']},
+  {country:'Haiti',flag:'🇭🇹',answer:'Americas',continent:'Americas',decoys:['Africa','Europe','Asia']},
+  {country:'Greenland',flag:'🇬🇱',answer:'Americas',continent:'Americas',decoys:['Europe','Asia','Africa']},
+  {country:'Suriname',flag:'🇸🇷',answer:'Americas',continent:'Americas',decoys:['Africa','Europe','Asia']},
+  {country:'Guyana',flag:'🇬🇾',answer:'Americas',continent:'Americas',decoys:['Africa','Europe','Asia']},
+  {country:'Australia',flag:'🇦🇺',answer:'Oceania',continent:'Oceania',decoys:['Asia','Americas','Africa']},
+  {country:'New Zealand',flag:'🇳🇿',answer:'Oceania',continent:'Oceania',decoys:['Americas','Asia','Europe']},
+  {country:'Papua New Guinea',flag:'🇵🇬',answer:'Oceania',continent:'Oceania',decoys:['Asia','Americas','Africa']},
+  {country:'Fiji',flag:'🇫🇯',answer:'Oceania',continent:'Oceania',decoys:['Asia','Americas','Africa']},
+  {country:'Samoa',flag:'🇼🇸',answer:'Oceania',continent:'Oceania',decoys:['Asia','Americas','Africa']},
+  {country:'Tonga',flag:'🇹🇴',answer:'Oceania',continent:'Oceania',decoys:['Asia','Americas','Africa']},
+];
+
+const LANGUAGES_PAIRS = [
+  {country:'Finland',flag:'🇫🇮',answer:'Finnish',continent:'Europe',decoys:['Swedish','Norwegian','Estonian']},
+  {country:'Hungary',flag:'🇭🇺',answer:'Hungarian',continent:'Europe',decoys:['German','Romanian','Czech']},
+  {country:'Romania',flag:'🇷🇴',answer:'Romanian',continent:'Europe',decoys:['Serbian','Bulgarian','Hungarian']},
+  {country:'Greece',flag:'🇬🇷',answer:'Greek',continent:'Europe',decoys:['Turkish','Albanian','Bulgarian']},
+  {country:'Iceland',flag:'🇮🇸',answer:'Icelandic',continent:'Europe',decoys:['Norwegian','Danish','Swedish']},
+  {country:'Czech Republic',flag:'🇨🇿',answer:'Czech',continent:'Europe',decoys:['Slovak','Polish','German']},
+  {country:'Malta',flag:'🇲🇹',answer:'Maltese',continent:'Europe',decoys:['Italian','English','Arabic']},
+  {country:'Albania',flag:'🇦🇱',answer:'Albanian',continent:'Europe',decoys:['Serbian','Greek','Macedonian']},
+  {country:'Luxembourg',flag:'🇱🇺',answer:'Luxembourgish',continent:'Europe',decoys:['French','German','Dutch']},
+  {country:'Estonia',flag:'🇪🇪',answer:'Estonian',continent:'Europe',decoys:['Finnish','Latvian','Lithuanian']},
+  {country:'Latvia',flag:'🇱🇻',answer:'Latvian',continent:'Europe',decoys:['Lithuanian','Estonian','Russian']},
+  {country:'Lithuania',flag:'🇱🇹',answer:'Lithuanian',continent:'Europe',decoys:['Latvian','Polish','Russian']},
+  {country:'Croatia',flag:'🇭🇷',answer:'Croatian',continent:'Europe',decoys:['Serbian','Bosnian','Slovenian']},
+  {country:'Switzerland',flag:'🇨🇭',answer:'German',continent:'Europe',decoys:['French','Italian','Romansh']},
+  {country:'Belgium',flag:'🇧🇪',answer:'Dutch',continent:'Europe',decoys:['French','German','Flemish']},
+  {country:'Iran',flag:'🇮🇷',answer:'Persian',continent:'Asia',decoys:['Arabic','Turkish','Kurdish']},
+  {country:'Pakistan',flag:'🇵🇰',answer:'Urdu',continent:'Asia',decoys:['Hindi','Arabic','Punjabi']},
+  {country:'Philippines',flag:'🇵🇭',answer:'Filipino',continent:'Asia',decoys:['Spanish','English','Malay']},
+  {country:'Sri Lanka',flag:'🇱🇰',answer:'Sinhala',continent:'Asia',decoys:['Tamil','Hindi','English']},
+  {country:'Israel',flag:'🇮🇱',answer:'Hebrew',continent:'Asia',decoys:['Arabic','Yiddish','English']},
+  {country:'Nepal',flag:'🇳🇵',answer:'Nepali',continent:'Asia',decoys:['Hindi','Sanskrit','Bengali']},
+  {country:'Bangladesh',flag:'🇧🇩',answer:'Bengali',continent:'Asia',decoys:['Hindi','Urdu','English']},
+  {country:'Myanmar',flag:'🇲🇲',answer:'Burmese',continent:'Asia',decoys:['Thai','Khmer','Malay']},
+  {country:'Cambodia',flag:'🇰🇭',answer:'Khmer',continent:'Asia',decoys:['Vietnamese','Thai','Lao']},
+  {country:'Laos',flag:'🇱🇦',answer:'Lao',continent:'Asia',decoys:['Thai','Khmer','Vietnamese']},
+  {country:'Mongolia',flag:'🇲🇳',answer:'Mongolian',continent:'Asia',decoys:['Chinese','Russian','Korean']},
+  {country:'Kazakhstan',flag:'🇰🇿',answer:'Kazakh',continent:'Asia',decoys:['Russian','Uzbek','Kyrgyz']},
+  {country:'Georgia',flag:'🇬🇪',answer:'Georgian',continent:'Asia',decoys:['Russian','Armenian','Turkish']},
+  {country:'Armenia',flag:'🇦🇲',answer:'Armenian',continent:'Asia',decoys:['Russian','Turkish','Persian']},
+  {country:'Azerbaijan',flag:'🇦🇿',answer:'Azerbaijani',continent:'Asia',decoys:['Russian','Turkish','Persian']},
+  {country:'Turkey',flag:'🇹🇷',answer:'Turkish',continent:'Asia',decoys:['Arabic','Kurdish','Persian']},
+  {country:'Thailand',flag:'🇹🇭',answer:'Thai',continent:'Asia',decoys:['Burmese','Khmer','Lao']},
+  {country:'Vietnam',flag:'🇻🇳',answer:'Vietnamese',continent:'Asia',decoys:['Khmer','Thai','Lao']},
+  {country:'Indonesia',flag:'🇮🇩',answer:'Indonesian',continent:'Asia',decoys:['Malay','Dutch','Javanese']},
+  {country:'Malaysia',flag:'🇲🇾',answer:'Malay',continent:'Asia',decoys:['Chinese','English','Tamil']},
+  {country:'Japan',flag:'🇯🇵',answer:'Japanese',continent:'Asia',decoys:['Chinese','Korean','Mandarin']},
+  {country:'China',flag:'🇨🇳',answer:'Mandarin',continent:'Asia',decoys:['Cantonese','Japanese','Korean']},
+  {country:'South Korea',flag:'🇰🇷',answer:'Korean',continent:'Asia',decoys:['Japanese','Mandarin','Vietnamese']},
+  {country:'Ethiopia',flag:'🇪🇹',answer:'Amharic',continent:'Africa',decoys:['Arabic','Swahili','Somali']},
+  {country:'Tanzania',flag:'🇹🇿',answer:'Swahili',continent:'Africa',decoys:['English','Zulu','Arabic']},
+  {country:'Madagascar',flag:'🇲🇬',answer:'Malagasy',continent:'Africa',decoys:['French','Arabic','Swahili']},
+  {country:'Mozambique',flag:'🇲🇿',answer:'Portuguese',continent:'Africa',decoys:['Swahili','English','French']},
+  {country:'Angola',flag:'🇦🇴',answer:'Portuguese',continent:'Africa',decoys:['French','Swahili','English']},
+  {country:'Rwanda',flag:'🇷🇼',answer:'Kinyarwanda',continent:'Africa',decoys:['French','English','Swahili']},
+  {country:'Somalia',flag:'🇸🇴',answer:'Somali',continent:'Africa',decoys:['Arabic','Swahili','Amharic']},
+  {country:'Eritrea',flag:'🇪🇷',answer:'Tigrinya',continent:'Africa',decoys:['Arabic','Amharic','Somali']},
+  {country:'Namibia',flag:'🇳🇦',answer:'English',continent:'Africa',decoys:['Afrikaans','German','Zulu']},
+  {country:'Egypt',flag:'🇪🇬',answer:'Arabic',continent:'Africa',decoys:['Coptic','Persian','Turkish']},
+  {country:'Morocco',flag:'🇲🇦',answer:'Arabic',continent:'Africa',decoys:['French','Berber','Spanish']},
+  {country:'Senegal',flag:'🇸🇳',answer:'French',continent:'Africa',decoys:['Arabic','Wolof','Portuguese']},
+  {country:'Brazil',flag:'🇧🇷',answer:'Portuguese',continent:'Americas',decoys:['Spanish','French','Italian']},
+  {country:'Suriname',flag:'🇸🇷',answer:'Dutch',continent:'Americas',decoys:['English','Spanish','Portuguese']},
+  {country:'Guyana',flag:'🇬🇾',answer:'English',continent:'Americas',decoys:['Spanish','Portuguese','Dutch']},
+  {country:'Haiti',flag:'🇭🇹',answer:'French',continent:'Americas',decoys:['Spanish','English','Creole']},
+  {country:'Belize',flag:'🇧🇿',answer:'English',continent:'Americas',decoys:['Spanish','Mayan','Creole']},
+  {country:'Jamaica',flag:'🇯🇲',answer:'English',continent:'Americas',decoys:['Spanish','French','Creole']},
+  {country:'Argentina',flag:'🇦🇷',answer:'Spanish',continent:'Americas',decoys:['Portuguese','Italian','French']},
+  {country:'Mexico',flag:'🇲🇽',answer:'Spanish',continent:'Americas',decoys:['Nahuatl','Portuguese','Mayan']},
+  {country:'Papua New Guinea',flag:'🇵🇬',answer:'Tok Pisin',continent:'Oceania',decoys:['English','Indonesian','Malay']},
+  {country:'Fiji',flag:'🇫🇯',answer:'Fijian',continent:'Oceania',decoys:['English','Hindi','Samoan']},
+  {country:'Samoa',flag:'🇼🇸',answer:'Samoan',continent:'Oceania',decoys:['English','Tongan','Fijian']},
+];
+
 const QUIZ_BANK = [
-  { id:'capitals', title:'Countries & Capitals', emoji:'🌍', description:'Can you name the capital city?', pairs: CAPITALS_PAIRS }
+  {
+    id:'capitals', title:'Countries & Capitals', emoji:'🌍',
+    description:'Can you name the capital city?',
+    getQuestion: item => `What is the capital of ${item.country}?`,
+    pairs: CAPITALS_PAIRS
+  },
+  {
+    id:'flags', title:'Flag Quiz', emoji:'🚩',
+    description:'Spot the flag — name the country!',
+    getQuestion: () => 'Which country does this flag belong to?',
+    pairs: FLAGS_PAIRS
+  },
+  {
+    id:'continents', title:'World Continents', emoji:'🗺️',
+    description:'Which continent is this country in?',
+    getQuestion: item => `Which continent is ${item.country} in?`,
+    buildOptionsFn: (item, allPairs, difficulty) => {
+      const ALL_CONTS = ['Europe','Asia','Africa','Americas','Oceania'];
+      const wrong = ALL_CONTS.filter(c => c !== item.answer);
+      let distractors;
+      if (difficulty >= 2 && item.decoys && item.decoys.length) {
+        const fromDecoys = item.decoys.filter(d => wrong.includes(d));
+        const others = shuffle(wrong.filter(d => !fromDecoys.includes(d)));
+        distractors = shuffle([...fromDecoys, ...others]).slice(0, 3);
+      } else {
+        distractors = shuffle(wrong).slice(0, 3);
+      }
+      const options = shuffle([item.answer, ...distractors]);
+      return { options, correctIndex: options.indexOf(item.answer) };
+    },
+    pairs: CONTINENT_PAIRS
+  },
+  {
+    id:'languages', title:'Languages of the World', emoji:'🗣️',
+    description:'What language do they speak there?',
+    getQuestion: item => `What is the official language of ${item.country}?`,
+    pairs: LANGUAGES_PAIRS
+  }
 ];
 
 const QUIZ_CONTINENTS = [
@@ -5401,36 +5643,34 @@ function diffColors(lv) {
 // ── question option builder ─────────────────────────────────
 
 function buildOptions(item, allPairs, difficulty) {
-  const sameContinent = allPairs.filter(p => p.capital !== item.capital && p.continent === item.continent);
-  const otherContinent = allPairs.filter(p => p.capital !== item.capital && p.continent !== item.continent);
+  const ans = p => p.answer || p.capital;
+  const sameContinent  = allPairs.filter(p => ans(p) !== ans(item) && p.continent === item.continent);
+  const otherContinent = allPairs.filter(p => ans(p) !== ans(item) && p.continent !== item.continent);
 
   let distractors = [];
 
   if (difficulty === 1) {
-    // Easy: random distractors from different continent — no tricks
-    distractors = shuffle(otherContinent).slice(0, 3).map(p => p.capital);
+    distractors = shuffle(otherContinent).slice(0, 3).map(ans);
   } else if (difficulty === 2) {
-    // Medium: 2 from same continent + 1 from other
-    const same = shuffle(sameContinent).slice(0, 2).map(p => p.capital);
-    const other = shuffle(otherContinent).slice(0, 1).map(p => p.capital);
+    const same  = shuffle(sameContinent).slice(0, 2).map(ans);
+    const other = shuffle(otherContinent).slice(0, 1).map(ans);
     distractors = shuffle([...same, ...other]);
   } else {
-    // Hard: use famous non-capital cities from same country (decoys) as traps
-    const cityTraps = shuffle(item.decoys || []).slice(0, 2);
-    const needed = 3 - cityTraps.length;
-    const capitalTraps = shuffle(sameContinent).slice(0, needed).map(p => p.capital);
+    const cityTraps    = shuffle(item.decoys || []).slice(0, 2);
+    const needed       = 3 - cityTraps.length;
+    const capitalTraps = shuffle(sameContinent).slice(0, needed).map(ans);
     distractors = shuffle([...cityTraps, ...capitalTraps]).slice(0, 3);
-    // pad if needed
     let i = 0;
     while (distractors.length < 3) {
       const extra = shuffle(otherContinent)[i++];
-      if (extra && !distractors.includes(extra.capital)) distractors.push(extra.capital);
+      if (extra && !distractors.includes(ans(extra))) distractors.push(ans(extra));
       if (i > otherContinent.length) break;
     }
   }
 
-  const options = shuffle([item.capital, ...distractors.slice(0, 3)]);
-  return { options, correctIndex: options.indexOf(item.capital) };
+  const correct = ans(item);
+  const options = shuffle([correct, ...distractors.slice(0, 3)]);
+  return { options, correctIndex: options.indexOf(correct) };
 }
 
 // ── bank screen ─────────────────────────────────────────────
@@ -5472,7 +5712,7 @@ function buildQuizHistory() {
       const contTag = contInfo ? `${contInfo.emoji} ${contInfo.label}` : '🌐 All';
       return `<div class="quiz-answer-row" style="margin-bottom:6px;">
         <span class="quiz-answer-icon">${pct>=70?'⭐':'📚'}</span>
-        <span class="quiz-answer-q">${contTag} · ${s.date}</span>
+        <span class="quiz-answer-q">${s.quizTitle ? s.quizTitle + ' · ' : ''}${contTag} · ${s.date}</span>
         <span style="font-size:.73rem;font-weight:800;display:flex;gap:5px;align-items:center;">
           <span style="color:${pct>=70?'#15803d':'#92400e'};">${s.score||0}/${s.total||10}</span>
           <span style="padding:2px 8px;border-radius:50px;background:${dc.bg};color:${dc.text};border:1px solid ${dc.border};">Lv.${s.difficulty||1}</span>
@@ -5531,8 +5771,9 @@ function startQuiz(quizId, continent) {
   const pool = cont === 'all' ? quiz.pairs : quiz.pairs.filter(p => p.continent === cont);
   const difficulty = getQuizDifficulty(quizId, cont);
   const questions = shuffle(pool).slice(0, 10).map(item => {
-    // For distractors use the full pairs pool so options span many continents
-    const { options, correctIndex } = buildOptions(item, quiz.pairs, difficulty);
+    const { options, correctIndex } = quiz.buildOptionsFn
+      ? quiz.buildOptionsFn(item, quiz.pairs, difficulty)
+      : buildOptions(item, quiz.pairs, difficulty);
     return { ...item, options, correctIndex };
   });
   quizSession = {
@@ -5564,8 +5805,11 @@ function renderQuizQuestion() {
     ? `🎯 FINAL EXAM · QUESTION ${current + 1}`
     : `${diffLabel(difficulty)}${contLabel} · QUESTION ${current + 1}`;
   document.getElementById('quiz-progress-fill').style.width = ((current + 1) / total * 100) + '%';
-  document.getElementById('quiz-flag').textContent = q.flag || '';
-  document.getElementById('quiz-q-text').textContent = `What is the capital of ${q.country}?`;
+  const flagEl = document.getElementById('quiz-flag');
+  flagEl.textContent = q.flag || '';
+  flagEl.style.fontSize = quizSession.quizId === 'flags' ? '4.5rem' : '2.4rem';
+  const activeQuiz = QUIZ_BANK.find(qb => qb.id === quizSession.quizId);
+  document.getElementById('quiz-q-text').textContent = q.questionText || (activeQuiz && activeQuiz.getQuestion ? activeQuiz.getQuestion(q) : `What is the capital of ${q.country}?`);
 
   const banner = document.getElementById('quiz-exam-banner');
   if (banner) banner.style.display = mode === 'quest' ? 'flex' : 'none';
@@ -5883,7 +6127,9 @@ function startQuizQuestExam(questId) {
   if (!quiz) return;
 
   const questions = shuffle(quiz.pairs).slice(0, 40).map(item => {
-    const { options, correctIndex } = buildOptions(item, quiz.pairs, 3); // always Expert
+    const { options, correctIndex } = quiz.buildOptionsFn
+      ? quiz.buildOptionsFn(item, quiz.pairs, 3)
+      : buildOptions(item, quiz.pairs, 3);
     return { ...item, options, correctIndex };
   });
 
