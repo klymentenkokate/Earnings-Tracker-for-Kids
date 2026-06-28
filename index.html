@@ -6278,8 +6278,8 @@ function buildAnswersList(questions, answers) {
     const chosen = a && a.chosen >= 0 ? q.options[a.chosen] : '(time up)';
     return `<div class="quiz-answer-row ${ok ? 'qa-correct' : 'qa-wrong'}">
       <span class="quiz-answer-icon">${ok ? '✅' : '❌'}</span>
-      <span class="quiz-answer-q">${q.flag} ${q.country}</span>
-      <span class="quiz-answer-a">${ok ? q.capital : `${chosen} · ✓ ${q.capital}`}</span>
+      <span class="quiz-answer-q">${q.flag ? q.flag+' ' : ''}${q.questionText || q.country || ''}</span>
+      <span class="quiz-answer-a">${ok ? (q.answer||q.capital) : `${chosen} · ✓ ${q.answer||q.capital}`}</span>
     </div>`;
   }).join('');
 }
