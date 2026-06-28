@@ -625,6 +625,108 @@
   .audit-entry-time{font-size:.62rem;color:var(--muted);font-weight:700;margin-top:3px;}
   .btn-audit-undo{background:#eff6ff;border:1.5px solid #bfdbfe;color:#2563eb;border-radius:7px;padding:4px 10px;font-size:.7rem;font-weight:800;cursor:pointer;flex-shrink:0;white-space:nowrap;transition:.15s;}
   .btn-audit-undo:hover{background:#dbeafe;}
+
+  /* ── QUIZ TAB ── */
+  #tab-quizzes{max-width:580px;margin:0 auto;}
+
+  /* Bank */
+  .quiz-bank-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+  .quiz-bank-card{background:var(--card);border:1.5px solid var(--border);border-radius:20px;padding:20px 18px;cursor:pointer;transition:.18s;box-shadow:0 3px 14px var(--shadow);display:flex;flex-direction:column;gap:10px;}
+  .quiz-bank-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(99,102,241,.15);border-color:#a5b4fc;}
+  .quiz-bank-card-emoji{font-size:2.6rem;line-height:1;}
+  .quiz-bank-card-title{font-family:'Fredoka One',cursive;font-size:1.15rem;color:var(--text);}
+  .quiz-bank-card-meta{font-size:.74rem;font-weight:700;color:var(--muted);}
+  .quiz-bank-card-badge{display:inline-flex;align-items:center;gap:5px;background:#ede9fe;border:1.5px solid #c4b5fd;border-radius:50px;padding:3px 11px;font-size:.7rem;font-weight:800;color:#5b21b6;align-self:flex-start;}
+
+  /* Playing */
+  .quiz-progress-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .quiz-progress-label{font-size:.78rem;font-weight:800;color:var(--muted);}
+  .quiz-progress-track{flex:1;height:7px;background:var(--border);border-radius:4px;margin:0 12px;overflow:hidden;}
+  .quiz-progress-fill{height:100%;background:linear-gradient(90deg,#6366f1,#a855f7);border-radius:4px;transition:width .35s ease;}
+
+  .quiz-timer-row{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+  .quiz-timer-num{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--text);min-width:36px;text-align:center;transition:color .3s;}
+  .quiz-timer-num.urgent{color:#ef4444;}
+  .quiz-timer-track{flex:1;height:9px;background:var(--border);border-radius:5px;overflow:hidden;}
+  .quiz-timer-fill{height:100%;background:linear-gradient(90deg,#22c55e,#84cc16);border-radius:5px;transition:width .9s linear;}
+  .quiz-timer-fill.urgent{background:linear-gradient(90deg,#ef4444,#f97316);}
+
+  .quiz-question-card{background:var(--card);border:1.5px solid var(--border);border-radius:20px;padding:22px 20px;box-shadow:0 4px 18px var(--shadow);margin-bottom:16px;text-align:center;}
+  .quiz-question-num{font-size:.72rem;font-weight:800;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px;}
+  .quiz-question-text{font-family:'Fredoka One',cursive;font-size:1.3rem;color:var(--text);line-height:1.3;}
+  .quiz-flag{font-size:2.4rem;margin-bottom:8px;}
+
+  .quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .quiz-option{background:var(--card);border:2px solid var(--border);border-radius:14px;padding:13px 10px;font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:800;color:var(--text);cursor:pointer;transition:.15s;text-align:center;line-height:1.3;}
+  .quiz-option:hover:not(:disabled){border-color:#6366f1;background:#ede9fe33;transform:scale(1.02);}
+  .quiz-option:disabled{cursor:default;}
+  .quiz-option.correct{background:#dcfce7;border-color:#16a34a;color:#15803d;}
+  .quiz-option.wrong{background:#fee2e2;border-color:#ef4444;color:#dc2626;}
+  .quiz-option.reveal{background:#dcfce7;border-color:#16a34a;color:#15803d;animation:pulse-green .4s ease;}
+  @keyframes pulse-green{0%{transform:scale(1)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
+
+  /* Results */
+  .quiz-result-card{background:var(--card);border:1.5px solid var(--border);border-radius:22px;padding:28px 22px;box-shadow:0 6px 28px var(--shadow);text-align:center;margin-bottom:20px;}
+  .quiz-result-emoji{font-size:3.5rem;margin-bottom:8px;}
+  .quiz-result-score{font-family:'Fredoka One',cursive;font-size:3rem;color:var(--text);line-height:1;}
+  .quiz-result-label{font-size:.8rem;font-weight:800;color:var(--muted);margin-top:4px;margin-bottom:14px;}
+  .quiz-stars{font-size:1.8rem;margin-bottom:14px;letter-spacing:3px;}
+  .quiz-result-msg{font-size:.9rem;font-weight:700;color:var(--text);line-height:1.5;}
+  .quiz-result-btns{display:flex;gap:10px;margin-top:20px;}
+  .btn-quiz-retake{flex:1;padding:12px;border-radius:13px;border:none;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:800;cursor:pointer;transition:.15s;}
+  .btn-quiz-retake:hover{transform:translateY(-1px);box-shadow:0 4px 14px #6366f144;}
+  .btn-quiz-back{padding:12px 18px;border-radius:13px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:800;cursor:pointer;transition:.15s;}
+  .btn-quiz-back:hover{color:var(--text);}
+
+  .quiz-answers-list{display:flex;flex-direction:column;gap:8px;}
+  .quiz-answer-row{display:flex;align-items:center;gap:10px;background:var(--soft);border:1.5px solid var(--border);border-radius:12px;padding:10px 13px;}
+  .quiz-answer-icon{font-size:1rem;flex-shrink:0;}
+  .quiz-answer-q{font-size:.78rem;font-weight:700;color:var(--text);flex:1;line-height:1.3;}
+  .quiz-answer-a{font-size:.75rem;font-weight:800;color:var(--muted);text-align:right;flex-shrink:0;}
+  .quiz-answer-row.qa-correct .quiz-answer-a{color:#16a34a;}
+  .quiz-answer-row.qa-wrong .quiz-answer-a{color:#dc2626;}
+  .quiz-section-title{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--text);margin-bottom:10px;}
+
+  /* ── CONTINENT PICKER ── */
+  .quiz-continent-grid{display:flex;flex-direction:column;gap:9px;}
+  .quiz-continent-btn{background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:13px 16px;cursor:pointer;transition:.18s;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px var(--shadow);width:100%;text-align:left;}
+  .quiz-continent-btn:hover{border-color:#6366f1;transform:translateX(3px);box-shadow:0 4px 18px rgba(99,102,241,.15);}
+  .quiz-continent-btn.cont-all{background:linear-gradient(135deg,#ede9fe,#ddd6fe);border-color:#a5b4fc;}
+  .quiz-continent-left{display:flex;align-items:center;gap:12px;}
+  .quiz-continent-emoji{font-size:1.7rem;flex-shrink:0;}
+  .quiz-continent-info{}
+  .quiz-continent-name{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--text);line-height:1.1;}
+  .quiz-continent-count{font-size:.7rem;font-weight:700;color:var(--muted);margin-top:1px;}
+  .quiz-continent-right{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0;}
+
+  /* ── QUIZ-QUEST: Quest tab cards ── */
+  .quiz-quest-section-title{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+  .quiz-quest-card{background:linear-gradient(135deg,#fdf4ff,#ede9fe);border:1.5px solid #c4b5fd;border-radius:18px;padding:16px;margin-bottom:10px;box-shadow:0 3px 14px rgba(139,92,246,.1);}
+  .quiz-quest-card.qq-completed{opacity:.55;filter:grayscale(.5);}
+  .quiz-quest-card.qq-expired{opacity:.4;filter:grayscale(.8);}
+  .quiz-quest-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;gap:8px;}
+  .quiz-quest-title{font-family:'Fredoka One',cursive;font-size:1rem;color:#4c1d95;line-height:1.2;}
+  .quiz-quest-reward{font-family:'Fredoka One',cursive;font-size:1.3rem;color:#16a34a;flex-shrink:0;}
+  .quiz-quest-meta{font-size:.72rem;font-weight:700;color:#7c3aed;margin-bottom:10px;line-height:1.6;}
+  .btn-start-exam{width:100%;padding:11px;border-radius:13px;border:none;background:linear-gradient(135deg,#7c3aed,#4f46e5);color:white;font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:800;cursor:pointer;transition:.15s;}
+  .btn-start-exam:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 14px rgba(124,58,237,.35);}
+  .btn-start-exam:disabled{opacity:.55;cursor:not-allowed;}
+
+  /* ── QUIZ-QUEST: CTA in quiz results ── */
+  .quiz-quest-cta{border-radius:18px;padding:18px;margin-bottom:16px;text-align:center;}
+  .quiz-quest-cta.cta-active{background:linear-gradient(135deg,#4f46e5,#7c3aed);}
+  .quiz-quest-cta.cta-done{background:linear-gradient(135deg,#16a34a,#059669);}
+  .quiz-quest-cta.cta-expired{background:var(--muted);}
+  .quiz-quest-cta-title{font-family:'Fredoka One',cursive;font-size:1.15rem;color:white;margin-bottom:5px;}
+  .quiz-quest-cta-sub{font-size:.76rem;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:14px;line-height:1.5;}
+  .btn-take-quest{padding:10px 22px;border-radius:12px;border:2px solid rgba(255,255,255,.55);background:white;color:#4f46e5;font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:800;cursor:pointer;transition:.15s;}
+  .btn-take-quest:hover{background:#ede9fe;}
+  .btn-take-quest.cta-done-btn{background:transparent;color:white;border-color:rgba(255,255,255,.5);cursor:default;}
+
+  /* ── QUIZ-QUEST: Exam banner in play screen ── */
+  .quiz-exam-banner{background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:14px;padding:10px 16px;margin-bottom:12px;color:white;display:flex;align-items:center;justify-content:space-between;}
+  .quiz-exam-banner-left{font-family:'Fredoka One',cursive;font-size:1rem;}
+  .quiz-exam-banner-right{font-size:.7rem;font-weight:800;opacity:.85;text-align:right;}
 </style>
 </head>
 <body>
@@ -748,6 +850,7 @@
           <button class="log-filter-btn active" data-filter="all"      onclick="setHouseholdLogFilter('all')">All</button>
           <button class="log-filter-btn"        data-filter="activity" onclick="setHouseholdLogFilter('activity')">⏱ Activities</button>
           <button class="log-filter-btn"        data-filter="quest"    onclick="setHouseholdLogFilter('quest')">⚔️ Quests</button>
+          <button class="log-filter-btn"        data-filter="quiz"     onclick="setHouseholdLogFilter('quiz')">🧠 Quizzes</button>
           <button class="log-filter-btn"        data-filter="redeem"   onclick="setHouseholdLogFilter('redeem')">🛍️ Redeemed</button>
           <button class="log-filter-btn"        data-filter="interest" onclick="setHouseholdLogFilter('interest')">📈 Interest</button>
           <button class="log-filter-btn"        data-filter="tax"      onclick="setHouseholdLogFilter('tax')">🏛️ Tax</button>
@@ -924,6 +1027,7 @@
   <button class="dash-tab active" data-tab="overview" onclick="setDashTab('overview')">📊 Overview</button>
   <button class="dash-tab" data-tab="quests" onclick="setDashTab('quests')">⚔️ Quests</button>
   <button class="dash-tab" data-tab="charts" onclick="setDashTab('charts')">📈 Charts</button>
+  <button class="dash-tab" data-tab="quizzes" onclick="setDashTab('quizzes')">🧠 Quizzes</button>
 </div>
 
 <!-- TAB: OVERVIEW -->
@@ -1061,10 +1165,83 @@
 <div id="tab-quests" style="display:none;">
 <div class="section">
   <div class="section-title">⚔️ Quests</div>
+  <div id="quiz-quest-section" style="display:none;"></div>
   <button class="add-quest-btn-main" onclick="openQuestModal()">+ Add New Quest</button>
   <div id="quests-container"></div>
 </div>
 </div><!-- /tab-quests -->
+
+<!-- TAB: QUIZZES -->
+<div id="tab-quizzes" style="display:none;">
+
+  <!-- BANK SCREEN -->
+  <div id="quiz-bank-screen">
+    <div class="section">
+      <div class="section-title">🧠 Quizzes</div>
+      <p style="font-size:.8rem;color:var(--muted);font-weight:700;margin-bottom:16px;">Pick a quiz — 10 random questions, 15 seconds each. The more you play, the harder it gets! 🔥</p>
+      <div id="quiz-history-section" style="display:none;margin-bottom:18px;"></div>
+      <div class="quiz-bank-grid" id="quiz-bank-grid"></div>
+    </div>
+  </div>
+
+  <!-- CONTINENT PICKER SCREEN -->
+  <div id="quiz-continent-screen" style="display:none;">
+    <div class="section">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <button class="btn-cancel-settings" style="padding:6px 14px;font-size:.76rem;" onclick="showQuizScreen('bank')">← Back</button>
+        <div style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--text);" id="quiz-cont-quiz-title">🌍 Countries &amp; Capitals</div>
+      </div>
+      <p style="font-size:.8rem;font-weight:700;color:var(--muted);margin-bottom:14px;">Pick a region to focus on — start with one continent, master it, then move on! 🗺️</p>
+      <div class="quiz-continent-grid" id="quiz-continent-grid"></div>
+    </div>
+  </div>
+
+  <!-- PLAYING SCREEN -->
+  <div id="quiz-play-screen" style="display:none;">
+    <div class="section">
+      <div id="quiz-exam-banner" class="quiz-exam-banner" style="display:none;">
+        <div class="quiz-exam-banner-left">🎯 FINAL EXAM</div>
+        <div class="quiz-exam-banner-right">Pass mark: 38/40 (95%)<br>Earn €1.00 on pass!</div>
+      </div>
+      <div class="quiz-progress-row">
+        <span class="quiz-progress-label" id="quiz-q-label">Question 1 / 10</span>
+        <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quiz-progress-fill" style="width:10%"></div></div>
+        <button class="btn-cancel-settings" style="padding:5px 12px;font-size:.74rem;" onclick="backToQuizBank()">✕ Quit</button>
+      </div>
+      <div class="quiz-timer-row">
+        <span class="quiz-timer-num" id="quiz-timer-num">15</span>
+        <div class="quiz-timer-track"><div class="quiz-timer-fill" id="quiz-timer-fill" style="width:100%"></div></div>
+      </div>
+      <div class="quiz-question-card">
+        <div class="quiz-question-num" id="quiz-q-num">QUESTION 1</div>
+        <div class="quiz-flag" id="quiz-flag"></div>
+        <div class="quiz-question-text" id="quiz-q-text">Loading…</div>
+      </div>
+      <div class="quiz-options" id="quiz-options"></div>
+    </div>
+  </div>
+
+  <!-- RESULTS SCREEN -->
+  <div id="quiz-results-screen" style="display:none;">
+    <div class="section">
+      <div class="quiz-result-card">
+        <div class="quiz-result-emoji" id="quiz-res-emoji">🏆</div>
+        <div class="quiz-result-score" id="quiz-res-score">7 / 10</div>
+        <div class="quiz-result-label" id="quiz-res-label">Countries &amp; Capitals</div>
+        <div class="quiz-stars" id="quiz-res-stars">⭐⭐⭐⭐</div>
+        <div class="quiz-result-msg" id="quiz-res-msg">Great job!</div>
+        <div class="quiz-result-btns" id="quiz-result-btns">
+          <button class="btn-quiz-back" onclick="backToQuizBank()">← All Quizzes</button>
+          <button class="btn-quiz-retake" onclick="retakeQuiz()">🔄 Play Again</button>
+        </div>
+      </div>
+      <div id="quiz-quest-cta" style="display:none;"></div>
+      <div class="quiz-section-title">Your Answers</div>
+      <div class="quiz-answers-list" id="quiz-answers-list"></div>
+    </div>
+  </div>
+
+</div><!-- /tab-quizzes -->
 
 <!-- ACTIONS -->
 <div class="action-btns">
@@ -1174,6 +1351,7 @@
       <button class="log-filter-btn active" data-filter="all"      onclick="setLogModalFilter('all')">All</button>
       <button class="log-filter-btn"        data-filter="activity" onclick="setLogModalFilter('activity')">⏱ Activities</button>
       <button class="log-filter-btn"        data-filter="quest"    onclick="setLogModalFilter('quest')">⚔️ Quests</button>
+      <button class="log-filter-btn"        data-filter="quiz"     onclick="setLogModalFilter('quiz')">🧠 Quizzes</button>
       <button class="log-filter-btn"        data-filter="redeem"   onclick="setLogModalFilter('redeem')">🛍️ Redeemed</button>
       <button class="log-filter-btn"        data-filter="interest" onclick="setLogModalFilter('interest')">📈 Interest</button>
       <button class="log-filter-btn"        data-filter="tax"      onclick="setLogModalFilter('tax')">🏛️ Tax</button>
@@ -1429,6 +1607,8 @@ function migrateKidState(k) {
   if (!k.avatar)                  k.avatar = '👦';
   if (!k.color)                   k.color = '#6366f1';
   if (!k.sessions)                k.sessions = [];
+  if (!k.quizAttempts)            k.quizAttempts = {};
+  if (!k.quizQuests)              k.quizQuests = [];
   if (k.balance === undefined)    k.balance = 0;
   if (k.interestApplied === undefined) k.interestApplied = 0;
   if (k.taxApplied === undefined) k.taxApplied = 0;
@@ -2815,13 +2995,15 @@ let logFilter     = 'all';
 
 function setDashTab(tab) {
   activeDashTab = tab;
+  quizStopTimer();
   document.querySelectorAll('.dash-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
-  ['overview','charts','quests'].forEach(t => {
+  ['overview','charts','quests','quizzes'].forEach(t => {
     const el = document.getElementById('tab-' + t);
     if (el) el.style.display = t === tab ? 'block' : 'none';
   });
   if (tab === 'charts' && state) { setChartView('pie'); buildProjections(); }
   if (tab === 'quests' && state) buildQuestsTab();
+  if (tab === 'quizzes') buildQuizBank();
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -2839,9 +3021,10 @@ function buildUnifiedLog() {
   if (!el || !state) return;
 
   let sessions = [...state.sessions].reverse();
-  const isActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax' && s.type !== 'quest';
+  const isActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax' && s.type !== 'quest' && s.type !== 'quiz';
   if      (logFilter === 'activity') sessions = sessions.filter(isActivity);
   else if (logFilter === 'quest')    sessions = sessions.filter(s => s.type === 'quest');
+  else if (logFilter === 'quiz')     sessions = sessions.filter(s => s.type === 'quiz');
   else if (logFilter === 'redeem')   sessions = sessions.filter(s => s.type === 'withdrawal');
   else if (logFilter === 'interest') sessions = sessions.filter(s => s.type === 'interest' || s.type === 'chest_bonus');
   else if (logFilter === 'tax')      sessions = sessions.filter(s => s.type === 'tax');
@@ -2884,6 +3067,17 @@ function buildUnifiedLog() {
       return `<div class="log-entry">
         <div class="log-left"><span>⚔️</span><span>${questLogLabel(s)} · ${s.date} ${byTag(s)}</span></div>
         <span class="log-earn">+${fmtAmt(s.earned)}</span>
+      </div>`;
+    }
+    if (s.type === 'quiz') {
+      const pct = Math.round((s.score||0) / (s.total||10) * 100);
+      const stars = pct >= 90 ? '⭐⭐⭐' : pct >= 60 ? '⭐⭐' : '⭐';
+      const lvlColors = ['','#15803d','#854d0e','#991b1b'];
+      const lvlBgs    = ['','#dcfce7','#fef9c3','#fee2e2'];
+      const lv = s.difficulty || 1;
+      return `<div class="log-entry">
+        <div class="log-left"><span>🧠</span><span>${s.quizTitle||'Quiz'} · ${s.score||0}/${s.total||10} ${stars} · ${s.date} ${byTag(s)}</span></div>
+        <span style="font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:50px;background:${lvlBgs[lv]};color:${lvlColors[lv]};">Lv.${lv}</span>
       </div>`;
     }
     const act = getActivity(s.type);
@@ -2982,9 +3176,10 @@ function buildLogModalContent() {
   if (nameEl) nameEl.textContent = `${kid.avatar} ${kid.name}'s log`;
 
   let sessions = [...kid.sessions].reverse();
-  const isActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax' && s.type !== 'quest';
+  const isActivity = s => s.type !== 'interest' && s.type !== 'withdrawal' && s.type !== 'chest_bonus' && s.type !== 'tax' && s.type !== 'quest' && s.type !== 'quiz';
   if      (logModalFilter === 'activity') sessions = sessions.filter(isActivity);
   else if (logModalFilter === 'quest')    sessions = sessions.filter(s => s.type === 'quest');
+  else if (logModalFilter === 'quiz')     sessions = sessions.filter(s => s.type === 'quiz');
   else if (logModalFilter === 'redeem')   sessions = sessions.filter(s => s.type === 'withdrawal');
   else if (logModalFilter === 'interest') sessions = sessions.filter(s => s.type === 'interest' || s.type === 'chest_bonus');
   else if (logModalFilter === 'tax')      sessions = sessions.filter(s => s.type === 'tax');
@@ -3015,6 +3210,17 @@ function buildLogModalContent() {
         <span class="log-earn">+${fmtAmt(s.earned)}</span>
         ${isAdmin() ? `<button class="log-delete" onclick="deleteSessionFromModal('${kid.id}','${s.id}')" title="Delete">✕</button>` : ''}
       </div></div>`;
+    if (s.type === 'quiz') {
+      const pct = Math.round((s.score||0) / (s.total||10) * 100);
+      const stars = pct >= 90 ? '⭐⭐⭐' : pct >= 60 ? '⭐⭐' : '⭐';
+      const lvlColors = ['','#15803d','#854d0e','#991b1b'];
+      const lvlBgs    = ['','#dcfce7','#fef9c3','#fee2e2'];
+      const lv = s.difficulty || 1;
+      return `<div class="log-entry">
+        <div class="log-left"><span>🧠</span><span>${s.quizTitle||'Quiz'} · ${s.score||0}/${s.total||10} ${stars} · ${s.date} ${byTag(s)}</span></div>
+        <span style="font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:50px;background:${lvlBgs[lv]};color:${lvlColors[lv]};">Lv.${lv}</span>
+      </div>`;
+    }
     // Activity session — with edit + delete
     const act = kid.activities ? kid.activities.find(a => a.id === s.type) : getActivity(s.type);
     const editTag = s.manual ? ' ✏' : '';
@@ -3130,6 +3336,7 @@ function questAssignedToKid(q, kidId) {
 function buildQuestsTab() {
   const container = document.getElementById('quests-container');
   if (!container || !state) return;
+  buildQuizQuestSection();
 
   const allQuests = (appData.quests || []).filter(q => q.active !== false);
   // Migrate old quests that have no status — treat as approved
@@ -4940,6 +5147,825 @@ if (appData.kids.length > 0 && state) {
   document.getElementById('overview-screen').style.display = 'block';
 }
 initSync(); // handles auth check, pulls cloud data, may open auth/add-kid modals
+
+// ─────────────────────────────────────────────────────────────
+// QUIZ SYSTEM
+// ─────────────────────────────────────────────────────────────
+
+function shuffle(arr) { return [...arr].sort(() => Math.random() - .5); }
+
+const CAPITALS_PAIRS = [
+  // ── EUROPE ──
+  {country:'France',capital:'Paris',flag:'🇫🇷',continent:'Europe',decoys:['Lyon','Marseille','Nice','Bordeaux']},
+  {country:'Germany',capital:'Berlin',flag:'🇩🇪',continent:'Europe',decoys:['Hamburg','Munich','Frankfurt','Cologne']},
+  {country:'United Kingdom',capital:'London',flag:'🇬🇧',continent:'Europe',decoys:['Manchester','Birmingham','Edinburgh','Liverpool']},
+  {country:'Italy',capital:'Rome',flag:'🇮🇹',continent:'Europe',decoys:['Milan','Naples','Florence','Venice']},
+  {country:'Spain',capital:'Madrid',flag:'🇪🇸',continent:'Europe',decoys:['Barcelona','Seville','Valencia','Bilbao']},
+  {country:'Netherlands',capital:'Amsterdam',flag:'🇳🇱',continent:'Europe',decoys:['Rotterdam','Utrecht','Eindhoven','The Hague']},
+  {country:'Portugal',capital:'Lisbon',flag:'🇵🇹',continent:'Europe',decoys:['Porto','Braga','Coimbra','Faro']},
+  {country:'Sweden',capital:'Stockholm',flag:'🇸🇪',continent:'Europe',decoys:['Gothenburg','Malmö','Uppsala','Linköping']},
+  {country:'Norway',capital:'Oslo',flag:'🇳🇴',continent:'Europe',decoys:['Bergen','Trondheim','Stavanger','Tromsø']},
+  {country:'Denmark',capital:'Copenhagen',flag:'🇩🇰',continent:'Europe',decoys:['Aarhus','Odense','Aalborg','Esbjerg']},
+  {country:'Finland',capital:'Helsinki',flag:'🇫🇮',continent:'Europe',decoys:['Tampere','Turku','Oulu','Jyväskylä']},
+  {country:'Poland',capital:'Warsaw',flag:'🇵🇱',continent:'Europe',decoys:['Kraków','Łódź','Wrocław','Poznań']},
+  {country:'Czech Republic',capital:'Prague',flag:'🇨🇿',continent:'Europe',decoys:['Brno','Ostrava','Plzeň','Liberec']},
+  {country:'Austria',capital:'Vienna',flag:'🇦🇹',continent:'Europe',decoys:['Graz','Linz','Salzburg','Innsbruck']},
+  {country:'Switzerland',capital:'Bern',flag:'🇨🇭',continent:'Europe',decoys:['Zurich','Geneva','Basel','Lausanne']},
+  {country:'Greece',capital:'Athens',flag:'🇬🇷',continent:'Europe',decoys:['Thessaloniki','Patras','Heraklion','Larissa']},
+  {country:'Turkey',capital:'Ankara',flag:'🇹🇷',continent:'Europe',decoys:['Istanbul','Izmir','Bursa','Antalya']},
+  {country:'Ukraine',capital:'Kyiv',flag:'🇺🇦',continent:'Europe',decoys:['Kharkiv','Lviv','Odesa','Dnipro']},
+  {country:'Romania',capital:'Bucharest',flag:'🇷🇴',continent:'Europe',decoys:['Cluj-Napoca','Timișoara','Iași','Constanța']},
+  {country:'Hungary',capital:'Budapest',flag:'🇭🇺',continent:'Europe',decoys:['Debrecen','Pécs','Miskolc','Győr']},
+  {country:'Belgium',capital:'Brussels',flag:'🇧🇪',continent:'Europe',decoys:['Antwerp','Ghent','Bruges','Liège']},
+  {country:'Ireland',capital:'Dublin',flag:'🇮🇪',continent:'Europe',decoys:['Cork','Galway','Limerick','Waterford']},
+  {country:'Iceland',capital:'Reykjavík',flag:'🇮🇸',continent:'Europe',decoys:['Akureyri','Kópavogur','Hafnarfjörður']},
+  {country:'Estonia',capital:'Tallinn',flag:'🇪🇪',continent:'Europe',decoys:['Tartu','Narva','Pärnu','Viljandi']},
+  {country:'Croatia',capital:'Zagreb',flag:'🇭🇷',continent:'Europe',decoys:['Split','Dubrovnik','Rijeka','Osijek']},
+  {country:'Slovakia',capital:'Bratislava',flag:'🇸🇰',continent:'Europe',decoys:['Košice','Prešov','Nitra','Žilina']},
+  {country:'Bulgaria',capital:'Sofia',flag:'🇧🇬',continent:'Europe',decoys:['Plovdiv','Varna','Burgas','Stara Zagora']},
+  {country:'Serbia',capital:'Belgrade',flag:'🇷🇸',continent:'Europe',decoys:['Novi Sad','Niš','Kragujevac','Subotica']},
+  {country:'Slovenia',capital:'Ljubljana',flag:'🇸🇮',continent:'Europe',decoys:['Maribor','Celje','Kranj','Koper']},
+  {country:'Lithuania',capital:'Vilnius',flag:'🇱🇹',continent:'Europe',decoys:['Kaunas','Klaipėda','Šiauliai','Panevėžys']},
+  {country:'Latvia',capital:'Riga',flag:'🇱🇻',continent:'Europe',decoys:['Daugavpils','Jēkabpils','Jelgava','Jūrmala']},
+  {country:'Luxembourg',capital:'Luxembourg City',flag:'🇱🇺',continent:'Europe',decoys:['Esch-sur-Alzette','Differdange','Dudelange']},
+  {country:'Malta',capital:'Valletta',flag:'🇲🇹',continent:'Europe',decoys:['Sliema','St. Julian\'s','Mdina','Birkirkara']},
+  {country:'Cyprus',capital:'Nicosia',flag:'🇨🇾',continent:'Europe',decoys:['Limassol','Larnaca','Paphos','Famagusta']},
+  {country:'Albania',capital:'Tirana',flag:'🇦🇱',continent:'Europe',decoys:['Durrës','Shkodër','Elbasan','Vlorë']},
+  {country:'North Macedonia',capital:'Skopje',flag:'🇲🇰',continent:'Europe',decoys:['Bitola','Kumanovo','Ohrid','Tetovo']},
+  {country:'Bosnia and Herzegovina',capital:'Sarajevo',flag:'🇧🇦',continent:'Europe',decoys:['Banja Luka','Mostar','Tuzla','Zenica']},
+  {country:'Montenegro',capital:'Podgorica',flag:'🇲🇪',continent:'Europe',decoys:['Budva','Kotor','Bar','Nikšić']},
+  {country:'Belarus',capital:'Minsk',flag:'🇧🇾',continent:'Europe',decoys:['Grodno','Brest','Gomel','Mogilev']},
+  {country:'Moldova',capital:'Chișinău',flag:'🇲🇩',continent:'Europe',decoys:['Tiraspol','Bălți','Bender','Cahul']},
+  {country:'Georgia',capital:'Tbilisi',flag:'🇬🇪',continent:'Europe',decoys:['Batumi','Kutaisi','Rustavi','Zugdidi']},
+  {country:'Armenia',capital:'Yerevan',flag:'🇦🇲',continent:'Europe',decoys:['Gyumri','Vanadzor','Vagharshapat','Abovyan']},
+  {country:'Azerbaijan',capital:'Baku',flag:'🇦🇿',continent:'Europe',decoys:['Ganja','Sumqayit','Mingəçevir','Nakhchivan']},
+  {country:'Kosovo',capital:'Pristina',flag:'🇽🇰',continent:'Europe',decoys:['Prizren','Peja','Gjakova','Mitrovica']},
+  {country:'Andorra',capital:'Andorra la Vella',flag:'🇦🇩',continent:'Europe',decoys:['Escaldes-Engordany','Sant Julià de Lòria']},
+  {country:'Liechtenstein',capital:'Vaduz',flag:'🇱🇮',continent:'Europe',decoys:['Schaan','Balzers','Triesen']},
+  {country:'Monaco',capital:'Monaco',flag:'🇲🇨',continent:'Europe',decoys:['Monte Carlo','La Condamine','Fontvieille']},
+  {country:'San Marino',capital:'San Marino',flag:'🇸🇲',continent:'Europe',decoys:['Serravalle','Borgo Maggiore','Domagnano']},
+  {country:'Vatican City',capital:'Vatican City',flag:'🇻🇦',continent:'Europe',decoys:['Rome','Florence','Naples']},
+  // ── ASIA ──
+  {country:'Japan',capital:'Tokyo',flag:'🇯🇵',continent:'Asia',decoys:['Osaka','Yokohama','Kyoto','Hiroshima']},
+  {country:'China',capital:'Beijing',flag:'🇨🇳',continent:'Asia',decoys:['Shanghai','Guangzhou','Shenzhen','Chengdu']},
+  {country:'South Korea',capital:'Seoul',flag:'🇰🇷',continent:'Asia',decoys:['Busan','Incheon','Daegu','Gwangju']},
+  {country:'India',capital:'New Delhi',flag:'🇮🇳',continent:'Asia',decoys:['Mumbai','Kolkata','Chennai','Bangalore']},
+  {country:'Thailand',capital:'Bangkok',flag:'🇹🇭',continent:'Asia',decoys:['Chiang Mai','Phuket','Pattaya','Chiang Rai']},
+  {country:'Vietnam',capital:'Hanoi',flag:'🇻🇳',continent:'Asia',decoys:['Ho Chi Minh City','Da Nang','Hue','Nha Trang']},
+  {country:'Indonesia',capital:'Jakarta',flag:'🇮🇩',continent:'Asia',decoys:['Surabaya','Bandung','Medan','Denpasar']},
+  {country:'Malaysia',capital:'Kuala Lumpur',flag:'🇲🇾',continent:'Asia',decoys:['George Town','Johor Bahru','Ipoh','Kota Kinabalu']},
+  {country:'Philippines',capital:'Manila',flag:'🇵🇭',continent:'Asia',decoys:['Cebu','Davao','Quezon City','Zamboanga']},
+  {country:'Pakistan',capital:'Islamabad',flag:'🇵🇰',continent:'Asia',decoys:['Karachi','Lahore','Faisalabad','Rawalpindi']},
+  {country:'Saudi Arabia',capital:'Riyadh',flag:'🇸🇦',continent:'Asia',decoys:['Jeddah','Mecca','Medina','Dammam']},
+  {country:'United Arab Emirates',capital:'Abu Dhabi',flag:'🇦🇪',continent:'Asia',decoys:['Dubai','Sharjah','Ajman','Ras al-Khaimah']},
+  {country:'Israel',capital:'Jerusalem',flag:'🇮🇱',continent:'Asia',decoys:['Tel Aviv','Haifa','Beersheba','Nazareth']},
+  {country:'Afghanistan',capital:'Kabul',flag:'🇦🇫',continent:'Asia',decoys:['Kandahar','Herat','Mazar-i-Sharif','Jalalabad']},
+  {country:'Bangladesh',capital:'Dhaka',flag:'🇧🇩',continent:'Asia',decoys:['Chittagong','Rajshahi','Khulna','Sylhet']},
+  {country:'Myanmar',capital:'Naypyidaw',flag:'🇲🇲',continent:'Asia',decoys:['Yangon','Mandalay','Bago','Taunggyi']},
+  {country:'Cambodia',capital:'Phnom Penh',flag:'🇰🇭',continent:'Asia',decoys:['Siem Reap','Battambang','Sihanoukville','Kampong Cham']},
+  {country:'Laos',capital:'Vientiane',flag:'🇱🇦',continent:'Asia',decoys:['Luang Prabang','Pakse','Savannakhet','Thakhek']},
+  {country:'Nepal',capital:'Kathmandu',flag:'🇳🇵',continent:'Asia',decoys:['Pokhara','Biratnagar','Lalitpur','Birgunj']},
+  {country:'Sri Lanka',capital:'Sri Jayawardenepura Kotte',flag:'🇱🇰',continent:'Asia',decoys:['Colombo','Kandy','Galle','Jaffna']},
+  {country:'Mongolia',capital:'Ulaanbaatar',flag:'🇲🇳',continent:'Asia',decoys:['Erdenet','Darkhan','Choibalsan','Mörön']},
+  {country:'North Korea',capital:'Pyongyang',flag:'🇰🇵',continent:'Asia',decoys:['Hamhung','Chongjin','Kaesong','Wonsan']},
+  {country:'Singapore',capital:'Singapore',flag:'🇸🇬',continent:'Asia',decoys:['Jurong','Tampines','Woodlands']},
+  {country:'Brunei',capital:'Bandar Seri Begawan',flag:'🇧🇳',continent:'Asia',decoys:['Kuala Belait','Seria','Tutong']},
+  {country:'Timor-Leste',capital:'Dili',flag:'🇹🇱',continent:'Asia',decoys:['Baucau','Maliana','Suai']},
+  {country:'Bhutan',capital:'Thimphu',flag:'🇧🇹',continent:'Asia',decoys:['Paro','Punakha','Phuntsholing','Wangdue Phodrang']},
+  {country:'Maldives',capital:'Malé',flag:'🇲🇻',continent:'Asia',decoys:['Addu City','Fuvahmulah','Kulhudhuffushi']},
+  {country:'Kazakhstan',capital:'Astana',flag:'🇰🇿',continent:'Asia',decoys:['Almaty','Shymkent','Karaganda','Aktobe']},
+  {country:'Uzbekistan',capital:'Tashkent',flag:'🇺🇿',continent:'Asia',decoys:['Samarkand','Namangan','Bukhara','Andijan']},
+  {country:'Kyrgyzstan',capital:'Bishkek',flag:'🇰🇬',continent:'Asia',decoys:['Osh','Jalal-Abad','Karakol','Tokmok']},
+  {country:'Tajikistan',capital:'Dushanbe',flag:'🇹🇯',continent:'Asia',decoys:['Khujand','Kulob','Qurghonteppa','Istaravshan']},
+  {country:'Turkmenistan',capital:'Ashgabat',flag:'🇹🇲',continent:'Asia',decoys:['Türkmenabat','Mary','Balkanabat','Daşoguz']},
+  {country:'Iraq',capital:'Baghdad',flag:'🇮🇶',continent:'Asia',decoys:['Basra','Mosul','Erbil','Najaf']},
+  {country:'Iran',capital:'Tehran',flag:'🇮🇷',continent:'Asia',decoys:['Isfahan','Mashhad','Shiraz','Tabriz']},
+  {country:'Syria',capital:'Damascus',flag:'🇸🇾',continent:'Asia',decoys:['Aleppo','Homs','Latakia','Hama']},
+  {country:'Lebanon',capital:'Beirut',flag:'🇱🇧',continent:'Asia',decoys:['Tripoli','Sidon','Tyre','Jounieh']},
+  {country:'Jordan',capital:'Amman',flag:'🇯🇴',continent:'Asia',decoys:['Zarqa','Irbid','Aqaba','Russeifa']},
+  {country:'Yemen',capital:'Sana\'a',flag:'🇾🇪',continent:'Asia',decoys:['Aden','Taiz','Hodeidah','Mukalla']},
+  {country:'Oman',capital:'Muscat',flag:'🇴🇲',continent:'Asia',decoys:['Salalah','Sohar','Nizwa','Sur']},
+  {country:'Kuwait',capital:'Kuwait City',flag:'🇰🇼',continent:'Asia',decoys:['Ahmadi','Hawalli','Salmiya','Farwaniya']},
+  {country:'Qatar',capital:'Doha',flag:'🇶🇦',continent:'Asia',decoys:['Al Wakrah','Al Khor','Lusail','Mesaieed']},
+  {country:'Bahrain',capital:'Manama',flag:'🇧🇭',continent:'Asia',decoys:['Riffa','Muharraq','Hamad Town','Isa Town']},
+  {country:'Taiwan',capital:'Taipei',flag:'🇹🇼',continent:'Asia',decoys:['Kaohsiung','Taichung','Tainan','New Taipei']},
+  // ── AFRICA ──
+  {country:'Egypt',capital:'Cairo',flag:'🇪🇬',continent:'Africa',decoys:['Alexandria','Giza','Luxor','Aswan']},
+  {country:'South Africa',capital:'Pretoria',flag:'🇿🇦',continent:'Africa',decoys:['Cape Town','Johannesburg','Durban','Port Elizabeth']},
+  {country:'Nigeria',capital:'Abuja',flag:'🇳🇬',continent:'Africa',decoys:['Lagos','Kano','Ibadan','Port Harcourt']},
+  {country:'Kenya',capital:'Nairobi',flag:'🇰🇪',continent:'Africa',decoys:['Mombasa','Kisumu','Nakuru','Eldoret']},
+  {country:'Morocco',capital:'Rabat',flag:'🇲🇦',continent:'Africa',decoys:['Casablanca','Fez','Marrakech','Tangier']},
+  {country:'Ethiopia',capital:'Addis Ababa',flag:'🇪🇹',continent:'Africa',decoys:['Dire Dawa','Gondar','Mekelle','Hawassa']},
+  {country:'Tanzania',capital:'Dodoma',flag:'🇹🇿',continent:'Africa',decoys:['Dar es Salaam','Zanzibar','Mwanza','Arusha']},
+  {country:'Ghana',capital:'Accra',flag:'🇬🇭',continent:'Africa',decoys:['Kumasi','Tamale','Sekondi-Takoradi','Cape Coast']},
+  {country:'Uganda',capital:'Kampala',flag:'🇺🇬',continent:'Africa',decoys:['Gulu','Mbarara','Jinja','Entebbe']},
+  {country:'Cameroon',capital:'Yaoundé',flag:'🇨🇲',continent:'Africa',decoys:['Douala','Garoua','Bamenda','Maroua']},
+  {country:'Ivory Coast',capital:'Yamoussoukro',flag:'🇨🇮',continent:'Africa',decoys:['Abidjan','Bouaké','Korhogo','San-Pédro']},
+  {country:'Senegal',capital:'Dakar',flag:'🇸🇳',continent:'Africa',decoys:['Thiès','Kaolack','Ziguinchor','Saint-Louis']},
+  {country:'Mali',capital:'Bamako',flag:'🇲🇱',continent:'Africa',decoys:['Timbuktu','Sikasso','Mopti','Ségou']},
+  {country:'Niger',capital:'Niamey',flag:'🇳🇪',continent:'Africa',decoys:['Zinder','Maradi','Tahoua','Agadez']},
+  {country:'Burkina Faso',capital:'Ouagadougou',flag:'🇧🇫',continent:'Africa',decoys:['Bobo-Dioulasso','Koudougou','Ouahigouya','Banfora']},
+  {country:'Guinea',capital:'Conakry',flag:'🇬🇳',continent:'Africa',decoys:['Nzérékoré','Kankan','Kindia','Labé']},
+  {country:'Benin',capital:'Porto-Novo',flag:'🇧🇯',continent:'Africa',decoys:['Cotonou','Parakou','Abomey-Calavi','Djougou']},
+  {country:'Togo',capital:'Lomé',flag:'🇹🇬',continent:'Africa',decoys:['Sokodé','Kara','Atakpamé','Kpalimé']},
+  {country:'Sierra Leone',capital:'Freetown',flag:'🇸🇱',continent:'Africa',decoys:['Bo','Kenema','Makeni','Koidu']},
+  {country:'Liberia',capital:'Monrovia',flag:'🇱🇷',continent:'Africa',decoys:['Gbarnga','Buchanan','Kakata','Yekepa']},
+  {country:'Madagascar',capital:'Antananarivo',flag:'🇲🇬',continent:'Africa',decoys:['Toamasina','Antsirabe','Fianarantsoa','Mahajanga']},
+  {country:'Mozambique',capital:'Maputo',flag:'🇲🇿',continent:'Africa',decoys:['Beira','Nampula','Nacala','Quelimane']},
+  {country:'Zimbabwe',capital:'Harare',flag:'🇿🇼',continent:'Africa',decoys:['Bulawayo','Mutare','Gweru','Kwekwe']},
+  {country:'Zambia',capital:'Lusaka',flag:'🇿🇲',continent:'Africa',decoys:['Kitwe','Ndola','Livingstone','Kabwe']},
+  {country:'Angola',capital:'Luanda',flag:'🇦🇴',continent:'Africa',decoys:['Huambo','Lobito','Benguela','Lubango']},
+  {country:'DR Congo',capital:'Kinshasa',flag:'🇨🇩',continent:'Africa',decoys:['Lubumbashi','Mbuji-Mayi','Kisangani','Kananga']},
+  {country:'Republic of Congo',capital:'Brazzaville',flag:'🇨🇬',continent:'Africa',decoys:['Pointe-Noire','Dolisie','Nkayi','Impfondo']},
+  {country:'Sudan',capital:'Khartoum',flag:'🇸🇩',continent:'Africa',decoys:['Omdurman','Port Sudan','Kassala','Obeid']},
+  {country:'Libya',capital:'Tripoli',flag:'🇱🇾',continent:'Africa',decoys:['Benghazi','Misrata','Bayda','Zawiya']},
+  {country:'Tunisia',capital:'Tunis',flag:'🇹🇳',continent:'Africa',decoys:['Sfax','Sousse','Bizerte','Gabès']},
+  {country:'Algeria',capital:'Algiers',flag:'🇩🇿',continent:'Africa',decoys:['Oran','Constantine','Annaba','Blida']},
+  {country:'Somalia',capital:'Mogadishu',flag:'🇸🇴',continent:'Africa',decoys:['Hargeisa','Kismayo','Bosaso','Berbera']},
+  {country:'Rwanda',capital:'Kigali',flag:'🇷🇼',continent:'Africa',decoys:['Butare','Gisenyi','Muhanga','Ruhengeri']},
+  {country:'Burundi',capital:'Gitega',flag:'🇧🇮',continent:'Africa',decoys:['Bujumbura','Ngozi','Rumonge','Muyinga']},
+  {country:'Malawi',capital:'Lilongwe',flag:'🇲🇼',continent:'Africa',decoys:['Blantyre','Mzuzu','Zomba','Kasungu']},
+  {country:'Botswana',capital:'Gaborone',flag:'🇧🇼',continent:'Africa',decoys:['Francistown','Maun','Molepolole','Serowe']},
+  {country:'Namibia',capital:'Windhoek',flag:'🇳🇦',continent:'Africa',decoys:['Swakopmund','Walvis Bay','Oshakati','Rundu']},
+  {country:'Lesotho',capital:'Maseru',flag:'🇱🇸',continent:'Africa',decoys:['Teyateyaneng','Mafeteng','Leribe','Hlotse']},
+  {country:'Eswatini',capital:'Mbabane',flag:'🇸🇿',continent:'Africa',decoys:['Manzini','Matsapha','Nhlangano','Big Bend']},
+  {country:'Djibouti',capital:'Djibouti City',flag:'🇩🇯',continent:'Africa',decoys:['Ali Sabieh','Dikhil','Arta','Obock']},
+  {country:'Eritrea',capital:'Asmara',flag:'🇪🇷',continent:'Africa',decoys:['Keren','Massawa','Assab','Mendefera']},
+  {country:'Gabon',capital:'Libreville',flag:'🇬🇦',continent:'Africa',decoys:['Port-Gentil','Franceville','Oyem','Moanda']},
+  {country:'Central African Republic',capital:'Bangui',flag:'🇨🇫',continent:'Africa',decoys:['Bimbo','Berbérati','Bambari','Bouar']},
+  {country:'Chad',capital:'N\'Djamena',flag:'🇹🇩',continent:'Africa',decoys:['Moundou','Sarh','Abéché','Kélo']},
+  {country:'South Sudan',capital:'Juba',flag:'🇸🇸',continent:'Africa',decoys:['Wau','Malakal','Yei','Malakal']},
+  {country:'Mauritania',capital:'Nouakchott',flag:'🇲🇷',continent:'Africa',decoys:['Nouadhibou','Zouerate','Kaédi','Rosso']},
+  {country:'Cape Verde',capital:'Praia',flag:'🇨🇻',continent:'Africa',decoys:['Mindelo','Santa Maria','Espargos','Assomada']},
+  {country:'Gambia',capital:'Banjul',flag:'🇬🇲',continent:'Africa',decoys:['Serekunda','Brikama','Bakau','Farafenni']},
+  {country:'Guinea-Bissau',capital:'Bissau',flag:'🇬🇼',continent:'Africa',decoys:['Bafatá','Gabú','Cacheu','Bissorã']},
+  {country:'Equatorial Guinea',capital:'Malabo',flag:'🇬🇶',continent:'Africa',decoys:['Bata','Ebebiyín','Mongomo','Evinayong']},
+  {country:'São Tomé and Príncipe',capital:'São Tomé',flag:'🇸🇹',continent:'Africa',decoys:['Santo António','Trindade','Neves']},
+  {country:'Comoros',capital:'Moroni',flag:'🇰🇲',continent:'Africa',decoys:['Mutsamudu','Fomboni','Domoni','Moutsamoudou']},
+  {country:'Seychelles',capital:'Victoria',flag:'🇸🇨',continent:'Africa',decoys:['Anse Boileau','Beau Vallon','Takamaka']},
+  {country:'Mauritius',capital:'Port Louis',flag:'🇲🇺',continent:'Africa',decoys:['Vacoas-Phoenix','Curepipe','Quatre Bornes','Beau Bassin']},
+  // ── AMERICAS ──
+  {country:'United States',capital:'Washington D.C.',flag:'🇺🇸',continent:'Americas',decoys:['New York','Los Angeles','Chicago','Miami']},
+  {country:'Canada',capital:'Ottawa',flag:'🇨🇦',continent:'Americas',decoys:['Toronto','Vancouver','Montreal','Calgary']},
+  {country:'Brazil',capital:'Brasília',flag:'🇧🇷',continent:'Americas',decoys:['São Paulo','Rio de Janeiro','Salvador','Fortaleza']},
+  {country:'Mexico',capital:'Mexico City',flag:'🇲🇽',continent:'Americas',decoys:['Guadalajara','Monterrey','Puebla','Tijuana']},
+  {country:'Argentina',capital:'Buenos Aires',flag:'🇦🇷',continent:'Americas',decoys:['Córdoba','Rosario','Mendoza','Mar del Plata']},
+  {country:'Chile',capital:'Santiago',flag:'🇨🇱',continent:'Americas',decoys:['Valparaíso','Concepción','Antofagasta','Viña del Mar']},
+  {country:'Colombia',capital:'Bogotá',flag:'🇨🇴',continent:'Americas',decoys:['Medellín','Cali','Cartagena','Barranquilla']},
+  {country:'Peru',capital:'Lima',flag:'🇵🇪',continent:'Americas',decoys:['Arequipa','Trujillo','Chiclayo','Cusco']},
+  {country:'Cuba',capital:'Havana',flag:'🇨🇺',continent:'Americas',decoys:['Santiago de Cuba','Camagüey','Holguín','Santa Clara']},
+  {country:'Bolivia',capital:'Sucre',flag:'🇧🇴',continent:'Americas',decoys:['La Paz','Santa Cruz','Cochabamba','Oruro']},
+  {country:'Paraguay',capital:'Asunción',flag:'🇵🇾',continent:'Americas',decoys:['Ciudad del Este','San Lorenzo','Lambaré','Fernando de la Mora']},
+  {country:'Uruguay',capital:'Montevideo',flag:'🇺🇾',continent:'Americas',decoys:['Salto','Paysandú','Las Piedras','Rivera']},
+  {country:'Venezuela',capital:'Caracas',flag:'🇻🇪',continent:'Americas',decoys:['Maracaibo','Valencia','Barquisimeto','Maracay']},
+  {country:'Ecuador',capital:'Quito',flag:'🇪🇨',continent:'Americas',decoys:['Guayaquil','Cuenca','Santo Domingo','Ambato']},
+  {country:'Guyana',capital:'Georgetown',flag:'🇬🇾',continent:'Americas',decoys:['Linden','New Amsterdam','Bartica','Corriverton']},
+  {country:'Suriname',capital:'Paramaribo',flag:'🇸🇷',continent:'Americas',decoys:['Lelydorp','Nieuw Nickerie','Moengo','Albina']},
+  {country:'Panama',capital:'Panama City',flag:'🇵🇦',continent:'Americas',decoys:['Colón','David','La Chorrera','Santiago']},
+  {country:'Costa Rica',capital:'San José',flag:'🇨🇷',continent:'Americas',decoys:['Alajuela','Cartago','Heredia','Liberia']},
+  {country:'Nicaragua',capital:'Managua',flag:'🇳🇮',continent:'Americas',decoys:['León','Granada','Masaya','Chinandega']},
+  {country:'Honduras',capital:'Tegucigalpa',flag:'🇭🇳',continent:'Americas',decoys:['San Pedro Sula','La Ceiba','Choloma','Choluteca']},
+  {country:'El Salvador',capital:'San Salvador',flag:'🇸🇻',continent:'Americas',decoys:['Soyapango','Santa Ana','San Miguel','Mejicanos']},
+  {country:'Guatemala',capital:'Guatemala City',flag:'🇬🇹',continent:'Americas',decoys:['Mixco','Villa Nueva','Quetzaltenango','Escuintla']},
+  {country:'Belize',capital:'Belmopan',flag:'🇧🇿',continent:'Americas',decoys:['Belize City','Orange Walk','Dangriga','San Ignacio']},
+  {country:'Haiti',capital:'Port-au-Prince',flag:'🇭🇹',continent:'Americas',decoys:['Cap-Haïtien','Gonaïves','Saint-Marc','Les Cayes']},
+  {country:'Jamaica',capital:'Kingston',flag:'🇯🇲',continent:'Americas',decoys:['Montego Bay','Spanish Town','Portmore','Mandeville']},
+  {country:'Dominican Republic',capital:'Santo Domingo',flag:'🇩🇴',continent:'Americas',decoys:['Santiago','La Romana','San Pedro de Macorís','San Cristóbal']},
+  {country:'Trinidad and Tobago',capital:'Port of Spain',flag:'🇹🇹',continent:'Americas',decoys:['Chaguanas','San Fernando','Arima','Point Fortin']},
+  {country:'Bahamas',capital:'Nassau',flag:'🇧🇸',continent:'Americas',decoys:['Freeport','Lucaya','Marsh Harbour','Andros Town']},
+  {country:'Barbados',capital:'Bridgetown',flag:'🇧🇧',continent:'Americas',decoys:['Speightstown','Oistins','Bathsheba','Holetown']},
+  {country:'Grenada',capital:'St. George\'s',flag:'🇬🇩',continent:'Americas',decoys:['Gouyave','Grenville','Victoria','Sauteurs']},
+  {country:'Saint Lucia',capital:'Castries',flag:'🇱🇨',continent:'Americas',decoys:['Gros Islet','Vieux Fort','Micoud','Soufrière']},
+  {country:'Antigua and Barbuda',capital:'St. John\'s',flag:'🇦🇬',continent:'Americas',decoys:['All Saints','Liberta','Potters Village','Codrington']},
+  {country:'Dominica',capital:'Roseau',flag:'🇩🇲',continent:'Americas',decoys:['Portsmouth','Marigot','Berekua','Canefield']},
+  {country:'Saint Vincent and the Grenadines',capital:'Kingstown',flag:'🇻🇨',continent:'Americas',decoys:['Georgetown','Barrouallie','Layou','Chateaubelair']},
+  {country:'Saint Kitts and Nevis',capital:'Basseterre',flag:'🇰🇳',continent:'Americas',decoys:['Charlestown','Sandy Point Town','Cayon','Dieppe Bay']},
+  // ── OCEANIA ──
+  {country:'Australia',capital:'Canberra',flag:'🇦🇺',continent:'Oceania',decoys:['Sydney','Melbourne','Brisbane','Perth']},
+  {country:'New Zealand',capital:'Wellington',flag:'🇳🇿',continent:'Oceania',decoys:['Auckland','Christchurch','Hamilton','Dunedin']},
+  {country:'Fiji',capital:'Suva',flag:'🇫🇯',continent:'Oceania',decoys:['Nadi','Lautoka','Ba','Labasa']},
+  {country:'Papua New Guinea',capital:'Port Moresby',flag:'🇵🇬',continent:'Oceania',decoys:['Lae','Mount Hagen','Madang','Wewak']},
+  {country:'Solomon Islands',capital:'Honiara',flag:'🇸🇧',continent:'Oceania',decoys:['Gizo','Auki','Noro','Tulagi']},
+  {country:'Vanuatu',capital:'Port Vila',flag:'🇻🇺',continent:'Oceania',decoys:['Luganville','Isangel','Lakatoro','Lenakel']},
+  {country:'Samoa',capital:'Apia',flag:'🇼🇸',continent:'Oceania',decoys:['Salelologa','Asau','Faleolo','Mulifanua']},
+  {country:'Tonga',capital:'Nuku\'alofa',flag:'🇹🇴',continent:'Oceania',decoys:['Neiafu','Mu\'a','Haveluloto','Pangai']},
+  {country:'Kiribati',capital:'South Tarawa',flag:'🇰🇮',continent:'Oceania',decoys:['Betio','Bikenibeu','Bairiki','Bonriki']},
+  {country:'Marshall Islands',capital:'Majuro',flag:'🇲🇭',continent:'Oceania',decoys:['Ebeye','Laura','Darrit','Delap']},
+  {country:'Micronesia',capital:'Palikir',flag:'🇫🇲',continent:'Oceania',decoys:['Weno','Kolonia','Tofol','Lelu']},
+  {country:'Palau',capital:'Ngerulmud',flag:'🇵🇼',continent:'Oceania',decoys:['Koror','Airai','Meyungs','Melekeok']},
+  {country:'Tuvalu',capital:'Funafuti',flag:'🇹🇻',continent:'Oceania',decoys:['Savave','Fongafale','Asau','Alapi']},
+  {country:'Nauru',capital:'Yaren',flag:'🇳🇷',continent:'Oceania',decoys:['Denigomodu','Aiwo','Boe','Meneng']},
+  {country:'Cook Islands',capital:'Avarua',flag:'🇨🇰',continent:'Oceania',decoys:['Arorangi','Nikao','Amuri','Omoka']},
+];
+
+const QUIZ_BANK = [
+  { id:'capitals', title:'Countries & Capitals', emoji:'🌍', description:'Can you name the capital city?', pairs: CAPITALS_PAIRS }
+];
+
+const QUIZ_CONTINENTS = [
+  { key:'Europe',   label:'Europe',          emoji:'🇪🇺', color:'#eff6ff', border:'#bfdbfe', text:'#1d4ed8' },
+  { key:'Asia',     label:'Asia',            emoji:'🌏', color:'#fef9c3', border:'#fde047', text:'#854d0e' },
+  { key:'Africa',   label:'Africa',          emoji:'🌍', color:'#dcfce7', border:'#86efac', text:'#15803d' },
+  { key:'Americas', label:'Americas',        emoji:'🌎', color:'#fce7f3', border:'#f9a8d4', text:'#9d174d' },
+  { key:'Oceania',  label:'Oceania',         emoji:'🌊', color:'#e0f2fe', border:'#7dd3fc', text:'#075985' },
+  { key:'all',      label:'All Continents',  emoji:'🌐', color:'#ede9fe', border:'#c4b5fd', text:'#5b21b6' },
+];
+
+let quizSession = null;
+
+// ── difficulty helpers ──────────────────────────────────────
+
+function quizAttemptKey(quizId, continent) {
+  return continent && continent !== 'all' ? `${quizId}_${continent}` : quizId;
+}
+
+function getQuizDifficulty(quizId, continent) {
+  const key = quizAttemptKey(quizId, continent);
+  const attempts = (state && state.quizAttempts && state.quizAttempts[key]) || 0;
+  if (attempts >= 8) return 3;
+  if (attempts >= 4) return 2;
+  return 1;
+}
+
+function diffLabel(lv) {
+  return ['','🟢 Beginner','🟡 Medium','🔴 Expert'][lv];
+}
+
+function diffColors(lv) {
+  const bg    = ['','#dcfce7','#fef9c3','#fee2e2'][lv];
+  const border= ['','#86efac','#fde047','#fca5a5'][lv];
+  const text  = ['','#15803d','#854d0e','#991b1b'][lv];
+  return { bg, border, text };
+}
+
+// ── question option builder ─────────────────────────────────
+
+function buildOptions(item, allPairs, difficulty) {
+  const sameContinent = allPairs.filter(p => p.capital !== item.capital && p.continent === item.continent);
+  const otherContinent = allPairs.filter(p => p.capital !== item.capital && p.continent !== item.continent);
+
+  let distractors = [];
+
+  if (difficulty === 1) {
+    // Easy: random distractors from different continent — no tricks
+    distractors = shuffle(otherContinent).slice(0, 3).map(p => p.capital);
+  } else if (difficulty === 2) {
+    // Medium: 2 from same continent + 1 from other
+    const same = shuffle(sameContinent).slice(0, 2).map(p => p.capital);
+    const other = shuffle(otherContinent).slice(0, 1).map(p => p.capital);
+    distractors = shuffle([...same, ...other]);
+  } else {
+    // Hard: use famous non-capital cities from same country (decoys) as traps
+    const cityTraps = shuffle(item.decoys || []).slice(0, 2);
+    const needed = 3 - cityTraps.length;
+    const capitalTraps = shuffle(sameContinent).slice(0, needed).map(p => p.capital);
+    distractors = shuffle([...cityTraps, ...capitalTraps]).slice(0, 3);
+    // pad if needed
+    let i = 0;
+    while (distractors.length < 3) {
+      const extra = shuffle(otherContinent)[i++];
+      if (extra && !distractors.includes(extra.capital)) distractors.push(extra.capital);
+      if (i > otherContinent.length) break;
+    }
+  }
+
+  const options = shuffle([item.capital, ...distractors.slice(0, 3)]);
+  return { options, correctIndex: options.indexOf(item.capital) };
+}
+
+// ── bank screen ─────────────────────────────────────────────
+
+function buildQuizBank() {
+  buildQuizHistory();
+  const grid = document.getElementById('quiz-bank-grid');
+  if (!grid) return;
+  grid.innerHTML = QUIZ_BANK.map(q => {
+    const totalAttempts = QUIZ_CONTINENTS.reduce((sum, c) => {
+      const key = quizAttemptKey(q.id, c.key);
+      return sum + ((state && state.quizAttempts && state.quizAttempts[key]) || 0);
+    }, 0);
+    return `
+      <div class="quiz-bank-card" onclick="showContinentPicker('${q.id}')">
+        <div class="quiz-bank-card-emoji">${q.emoji}</div>
+        <div class="quiz-bank-card-title">${q.title}</div>
+        <div class="quiz-bank-card-meta">${q.description}</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;">
+          <div class="quiz-bank-card-badge">📝 ${q.pairs.length} questions · 10/round · ⏱ 15s</div>
+          <div class="quiz-bank-card-badge">🗺️ Train by continent · ${totalAttempts ? totalAttempts + ' rounds played' : 'Pick a region to start!'}</div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function buildQuizHistory() {
+  const el = document.getElementById('quiz-history-section');
+  if (!el || !state) return;
+  const recent = (state.sessions || []).filter(s => s.type === 'quiz').slice(-5).reverse();
+  if (!recent.length) { el.style.display = 'none'; return; }
+  el.style.display = 'block';
+  el.innerHTML = `
+    <div class="quiz-section-title" style="margin-bottom:8px;">📋 Recent Results</div>
+    ${recent.map(s => {
+      const pct = Math.round((s.score||0)/(s.total||10)*100);
+      const dc = diffColors(s.difficulty||1);
+      const contInfo = QUIZ_CONTINENTS.find(c => c.key === (s.continent||'all'));
+      const contTag = contInfo ? `${contInfo.emoji} ${contInfo.label}` : '🌐 All';
+      return `<div class="quiz-answer-row" style="margin-bottom:6px;">
+        <span class="quiz-answer-icon">${pct>=70?'⭐':'📚'}</span>
+        <span class="quiz-answer-q">${contTag} · ${s.date}</span>
+        <span style="font-size:.73rem;font-weight:800;display:flex;gap:5px;align-items:center;">
+          <span style="color:${pct>=70?'#15803d':'#92400e'};">${s.score||0}/${s.total||10}</span>
+          <span style="padding:2px 8px;border-radius:50px;background:${dc.bg};color:${dc.text};border:1px solid ${dc.border};">Lv.${s.difficulty||1}</span>
+        </span>
+      </div>`;
+    }).join('')}`;
+}
+
+function showContinentPicker(quizId) {
+  const quiz = QUIZ_BANK.find(q => q.id === quizId);
+  if (!quiz) return;
+  const titleEl = document.getElementById('quiz-cont-quiz-title');
+  if (titleEl) titleEl.textContent = `${quiz.emoji} ${quiz.title}`;
+  const grid = document.getElementById('quiz-continent-grid');
+  if (!grid) return;
+
+  grid.innerHTML = QUIZ_CONTINENTS.map(c => {
+    const pool = c.key === 'all' ? quiz.pairs : quiz.pairs.filter(p => p.continent === c.key);
+    if (!pool.length) return '';
+    const lv = getQuizDifficulty(quizId, c.key);
+    const key = quizAttemptKey(quizId, c.key);
+    const attempts = (state && state.quizAttempts && state.quizAttempts[key]) || 0;
+    const dc = diffColors(lv);
+    const nextLv = lv < 3 ? [null,4,8][lv] : null;
+    const toNext = nextLv ? `${nextLv - attempts} more to Lv.${lv+1}` : 'Max level!';
+    const lvBadge = `<span style="font-size:.65rem;font-weight:800;padding:2px 8px;border-radius:50px;background:${dc.bg};border:1px solid ${dc.border};color:${dc.text};">${diffLabel(lv)}</span>`;
+    const attBadge = attempts
+      ? `<span style="font-size:.63rem;font-weight:700;color:var(--muted);">${attempts}× played · ${toNext}</span>`
+      : `<span style="font-size:.63rem;font-weight:700;color:var(--muted);">New!</span>`;
+    const isAll = c.key === 'all';
+    return `<button class="quiz-continent-btn${isAll?' cont-all':''}" onclick="startQuiz('${quizId}','${c.key}')"
+      style="background:${c.color};border-color:${c.border};">
+      <div class="quiz-continent-left">
+        <span class="quiz-continent-emoji">${c.emoji}</span>
+        <div class="quiz-continent-info">
+          <div class="quiz-continent-name" style="color:${c.text};">${c.label}</div>
+          <div class="quiz-continent-count">${pool.length} question${pool.length !== 1 ? 's' : ''} · 10 per round · 15s each</div>
+        </div>
+      </div>
+      <div class="quiz-continent-right">
+        ${lvBadge}
+        ${attBadge}
+      </div>
+    </button>`;
+  }).join('');
+
+  showQuizScreen('continent');
+}
+
+// ── quiz session ────────────────────────────────────────────
+
+function startQuiz(quizId, continent) {
+  const quiz = QUIZ_BANK.find(q => q.id === quizId);
+  if (!quiz) return;
+  const cont = continent || 'all';
+  const pool = cont === 'all' ? quiz.pairs : quiz.pairs.filter(p => p.continent === cont);
+  const difficulty = getQuizDifficulty(quizId, cont);
+  const questions = shuffle(pool).slice(0, 10).map(item => {
+    // For distractors use the full pairs pool so options span many continents
+    const { options, correctIndex } = buildOptions(item, quiz.pairs, difficulty);
+    return { ...item, options, correctIndex };
+  });
+  quizSession = {
+    quizId, quizTitle: quiz.title, continent: cont,
+    difficulty, questions, current: 0, answers: [],
+    timerId: null, secondsLeft: 15, answered: false
+  };
+  showQuizScreen('play');
+  renderQuizQuestion();
+}
+
+function showQuizScreen(which) {
+  ['bank','continent','play','results'].forEach(s => {
+    const el = document.getElementById('quiz-' + s + '-screen');
+    if (el) el.style.display = s === which ? 'block' : 'none';
+  });
+}
+
+function renderQuizQuestion() {
+  if (!quizSession) return;
+  const { questions, current, difficulty, mode } = quizSession;
+  const q = questions[current];
+  const total = questions.length;
+
+  const contLabel = quizSession.continent && quizSession.continent !== 'all'
+    ? ` · ${quizSession.continent}` : '';
+  document.getElementById('quiz-q-label').textContent = `Question ${current + 1} / ${total}`;
+  document.getElementById('quiz-q-num').textContent = mode === 'quest'
+    ? `🎯 FINAL EXAM · QUESTION ${current + 1}`
+    : `${diffLabel(difficulty)}${contLabel} · QUESTION ${current + 1}`;
+  document.getElementById('quiz-progress-fill').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('quiz-flag').textContent = q.flag || '';
+  document.getElementById('quiz-q-text').textContent = `What is the capital of ${q.country}?`;
+
+  const banner = document.getElementById('quiz-exam-banner');
+  if (banner) banner.style.display = mode === 'quest' ? 'flex' : 'none';
+
+  const opts = document.getElementById('quiz-options');
+  opts.innerHTML = q.options.map((opt, i) => `
+    <button class="quiz-option" onclick="quizSelectAnswer(${i})" id="quiz-opt-${i}">${opt}</button>
+  `).join('');
+
+  quizSession.answered = false;
+  quizStartTimer();
+}
+
+function quizStartTimer() {
+  quizStopTimer();
+  quizSession.secondsLeft = 15;
+  quizUpdateTimerUI(15);
+  quizSession.timerId = setInterval(() => {
+    quizSession.secondsLeft--;
+    quizUpdateTimerUI(quizSession.secondsLeft);
+    if (quizSession.secondsLeft <= 0) {
+      quizStopTimer();
+      if (!quizSession.answered) quizTimeUp();
+    }
+  }, 1000);
+}
+
+function quizUpdateTimerUI(secs) {
+  const num = document.getElementById('quiz-timer-num');
+  const fill = document.getElementById('quiz-timer-fill');
+  if (!num || !fill) return;
+  num.textContent = secs;
+  num.classList.toggle('urgent', secs <= 5);
+  fill.style.width = (secs / 15 * 100) + '%';
+  fill.classList.toggle('urgent', secs <= 5);
+}
+
+function quizStopTimer() {
+  if (quizSession && quizSession.timerId) {
+    clearInterval(quizSession.timerId);
+    quizSession.timerId = null;
+  }
+}
+
+function quizTimeUp() {
+  if (!quizSession || quizSession.answered) return;
+  quizSession.answered = true;
+  quizSession.answers.push({ chosen: -1, correct: false });
+  const correctBtn = document.getElementById('quiz-opt-' + quizSession.questions[quizSession.current].correctIndex);
+  if (correctBtn) correctBtn.classList.add('reveal');
+  document.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
+  setTimeout(quizAdvance, 1200);
+}
+
+function quizSelectAnswer(i) {
+  if (!quizSession || quizSession.answered) return;
+  quizSession.answered = true;
+  quizStopTimer();
+  const q = quizSession.questions[quizSession.current];
+  const correct = i === q.correctIndex;
+  quizSession.answers.push({ chosen: i, correct });
+  document.getElementById('quiz-opt-' + i).classList.add(correct ? 'correct' : 'wrong');
+  if (!correct) document.getElementById('quiz-opt-' + q.correctIndex).classList.add('reveal');
+  document.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
+  setTimeout(quizAdvance, 1100);
+}
+
+function quizAdvance() {
+  quizSession.current++;
+  if (quizSession.current >= quizSession.questions.length) {
+    showQuizResults();
+  } else {
+    renderQuizQuestion();
+  }
+}
+
+// ── results ─────────────────────────────────────────────────
+
+function showQuizResults() {
+  quizStopTimer();
+  const banner = document.getElementById('quiz-exam-banner');
+  if (banner) banner.style.display = 'none';
+
+  if (quizSession.mode === 'quest') { showQuizQuestResults(); return; }
+
+  const { quizId, quizTitle, difficulty, questions, answers } = quizSession;
+  const score = answers.filter(a => a.correct).length;
+  const total = questions.length;
+  const pct = score / total;
+
+  const { continent } = quizSession;
+  const contInfo = QUIZ_CONTINENTS.find(c => c.key === continent) || QUIZ_CONTINENTS.find(c => c.key === 'all');
+  const contTag = continent && continent !== 'all' ? ` · ${contInfo?.emoji || ''} ${continent}` : ' · 🌐 All Continents';
+
+  document.getElementById('quiz-res-score').textContent = `${score} / ${total}`;
+  document.getElementById('quiz-res-label').textContent = `${quizTitle}${contTag} · ${diffLabel(difficulty)}`;
+
+  let emoji, msg, stars;
+  if (pct === 1)      { emoji='🏆'; msg='Perfect score! Geography genius! 🌟'; stars='⭐⭐⭐⭐⭐'; }
+  else if (pct >= .8) { emoji='🎉'; msg='Amazing — almost perfect!'; stars='⭐⭐⭐⭐'; }
+  else if (pct >= .6) { emoji='😊'; msg='Good job! Keep practising!'; stars='⭐⭐⭐'; }
+  else if (pct >= .4) { emoji='🤔'; msg='Not bad — you\'ll do better next time!'; stars='⭐⭐'; }
+  else                { emoji='📚'; msg='Keep studying — you\'ve got this!'; stars='⭐'; }
+
+  document.getElementById('quiz-res-emoji').textContent = emoji;
+  document.getElementById('quiz-res-msg').textContent = msg;
+  document.getElementById('quiz-res-stars').textContent = stars;
+
+  // Buttons: back goes to continent picker, replay stays in same continent
+  const btns = document.getElementById('quiz-result-btns');
+  if (btns) btns.innerHTML = `
+    <button class="btn-quiz-back" onclick="showContinentPicker('${quizId}')">🗺️ Change Region</button>
+    <button class="btn-quiz-retake" onclick="retakeQuiz()">🔄 Same Region</button>`;
+
+  buildAnswersList(questions, answers);
+  showQuizScreen('results');
+  renderQuizQuestCTA(quizId);
+
+  // Save training session log with continent-scoped attempt key
+  if (state) {
+    if (!state.quizAttempts) state.quizAttempts = {};
+    const key = quizAttemptKey(quizId, continent);
+    state.quizAttempts[key] = (state.quizAttempts[key] || 0) + 1;
+    state.sessions.push({
+      id: uid(), type: 'quiz', quizId, quizTitle,
+      continent: continent || 'all',
+      date: todayStr(), minutes: 0, earned: 0,
+      score, total, difficulty, manual: false, doneBy: currentUserRef()
+    });
+    save();
+  }
+}
+
+function buildAnswersList(questions, answers) {
+  const list = document.getElementById('quiz-answers-list');
+  list.innerHTML = questions.map((q, i) => {
+    const a = answers[i];
+    const ok = a && a.correct;
+    const chosen = a && a.chosen >= 0 ? q.options[a.chosen] : '(time up)';
+    return `<div class="quiz-answer-row ${ok ? 'qa-correct' : 'qa-wrong'}">
+      <span class="quiz-answer-icon">${ok ? '✅' : '❌'}</span>
+      <span class="quiz-answer-q">${q.flag} ${q.country}</span>
+      <span class="quiz-answer-a">${ok ? q.capital : `${chosen} · ✓ ${q.capital}`}</span>
+    </div>`;
+  }).join('');
+}
+
+function retakeQuiz() {
+  if (!quizSession) return;
+  if (quizSession.mode === 'quest') { startQuizQuestExam(quizSession.questId); return; }
+  startQuiz(quizSession.quizId, quizSession.continent);
+}
+
+function backToQuizBank() {
+  quizStopTimer();
+  const lastQuizId = quizSession?.quizId;
+  quizSession = null;
+  if (lastQuizId) { showContinentPicker(lastQuizId); }
+  else { showQuizScreen('bank'); buildQuizBank(); }
+}
+
+// ─────────────────────────────────────────────────────────────
+// QUIZ-QUEST SYSTEM
+// ─────────────────────────────────────────────────────────────
+
+function oneMonthFromNow() {
+  const d = new Date();
+  d.setMonth(d.getMonth() + 1);
+  return d.toISOString().slice(0, 10);
+}
+
+function isQuizQuestExpired(qq) {
+  return !!(qq.expiresAt && todayStr() > qq.expiresAt);
+}
+
+function getKidQuizQuest(quizId) {
+  if (!state || !state.quizQuests) return null;
+  return state.quizQuests.find(q => q.quizId === quizId) || null;
+}
+
+function createOrGetQuizQuest(quizId) {
+  if (!state) return null;
+  if (!state.quizQuests) state.quizQuests = [];
+  let qq = state.quizQuests.find(q => q.quizId === quizId && !isQuizQuestExpired(q) && !q.completed);
+  if (!qq) {
+    const quiz = QUIZ_BANK.find(q => q.id === quizId);
+    qq = {
+      id: uid(),
+      quizId,
+      title: (quiz?.title || quizId) + ' — Final Exam',
+      createdAt: todayStr(),
+      expiresAt: oneMonthFromNow(),
+      completed: false,
+      completedAt: null,
+      attempts: 0,
+      lastScore: null,
+    };
+    state.quizQuests.push(qq);
+    save();
+  }
+  return qq;
+}
+
+// ── Quest CTA shown on training results screen ──────────────
+
+function renderQuizQuestCTA(quizId) {
+  const el = document.getElementById('quiz-quest-cta');
+  if (!el) return;
+  const qq = getKidQuizQuest(quizId);
+
+  if (!qq) {
+    el.style.display = 'block';
+    el.innerHTML = `
+      <div class="quiz-quest-cta cta-active">
+        <div class="quiz-quest-cta-title">🎯 Ready for the Final Challenge?</div>
+        <div class="quiz-quest-cta-sub">40 questions · Expert difficulty · 95% to pass<br>Complete it within 1 month to earn <strong style="color:white;">€1.00</strong>!</div>
+        <button class="btn-take-quest" onclick="acceptQuizQuest('${quizId}')">⚔️ Challenge the Quest!</button>
+      </div>`;
+  } else if (qq.completed) {
+    el.style.display = 'block';
+    el.innerHTML = `
+      <div class="quiz-quest-cta cta-done">
+        <div class="quiz-quest-cta-title">🏆 Quest Completed!</div>
+        <div class="quiz-quest-cta-sub">You passed with ${qq.lastScore}/40 — €1.00 earned!<br>Keep training to stay sharp!</div>
+        <button class="btn-take-quest cta-done-btn" disabled>Completed ✓</button>
+      </div>`;
+  } else if (isQuizQuestExpired(qq)) {
+    el.style.display = 'block';
+    el.innerHTML = `
+      <div class="quiz-quest-cta cta-expired" style="background:#94a3b8;">
+        <div class="quiz-quest-cta-title">⏰ Quest Expired</div>
+        <div class="quiz-quest-cta-sub">Your previous quest expired. Start a fresh one!</div>
+        <button class="btn-take-quest" onclick="acceptQuizQuest('${quizId}')">🔄 Start New Quest</button>
+      </div>`;
+  } else {
+    const attempts = qq.attempts || 0;
+    const best = qq.lastScore !== null ? ` · Best: ${qq.lastScore}/40` : '';
+    el.style.display = 'block';
+    el.innerHTML = `
+      <div class="quiz-quest-cta cta-active">
+        <div class="quiz-quest-cta-title">⚔️ Quest Active — Keep Going!</div>
+        <div class="quiz-quest-cta-sub">40 questions · need 38/40 (95%) · Earn €1.00<br>${attempts} attempt${attempts !== 1 ? 's' : ''} so far${best} · Expires ${qq.expiresAt}</div>
+        <button class="btn-take-quest" onclick="goToQuestTab()">🎯 Go to Quest Tab</button>
+      </div>`;
+  }
+}
+
+function acceptQuizQuest(quizId) {
+  createOrGetQuizQuest(quizId);
+  goToQuestTab();
+}
+
+function goToQuestTab() {
+  setDashTab('quests');
+  setTimeout(() => {
+    const el = document.getElementById('quiz-quest-section');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 80);
+}
+
+// ── Quest tab section rendering ─────────────────────────────
+
+function buildQuizQuestSection() {
+  const el = document.getElementById('quiz-quest-section');
+  if (!el || !state) return;
+  const quizQuests = (state.quizQuests || []);
+  if (!quizQuests.length) { el.style.display = 'none'; return; }
+
+  el.style.display = 'block';
+  el.innerHTML = `
+    <div class="quiz-quest-section-title">🧠 Knowledge Quests</div>
+    ${quizQuests.map(qq => {
+      const quiz = QUIZ_BANK.find(q => q.id === qq.quizId);
+      const expired = isQuizQuestExpired(qq);
+      const best = qq.lastScore !== null ? ` · Best score: ${qq.lastScore}/40` : '';
+      const attempts = qq.attempts || 0;
+
+      let statusPill, actionBtn;
+      if (qq.completed) {
+        statusPill = `<span style="background:#dcfce7;color:#15803d;border:1px solid #86efac;padding:3px 10px;border-radius:50px;font-size:.65rem;font-weight:800;">🏆 COMPLETED</span>`;
+        actionBtn  = `<button class="btn-start-exam" disabled>Quest Passed — €1.00 Earned! 🎉</button>`;
+      } else if (expired) {
+        statusPill = `<span style="background:#fee2e2;color:#991b1b;border:1px solid #fca5a5;padding:3px 10px;border-radius:50px;font-size:.65rem;font-weight:800;">EXPIRED</span>`;
+        actionBtn  = `<button class="btn-start-exam" disabled style="background:#ccc;">Expired — go train and start a new one!</button>`;
+      } else {
+        statusPill = `<span style="background:#ede9fe;color:#5b21b6;border:1px solid #c4b5fd;padding:3px 10px;border-radius:50px;font-size:.65rem;font-weight:800;">⚔️ ACTIVE</span>`;
+        actionBtn  = `<button class="btn-start-exam" onclick="startQuizQuestExam('${qq.id}')">📝 Take Final Exam — 40 Questions</button>`;
+      }
+
+      return `<div class="quiz-quest-card${qq.completed ? ' qq-completed' : expired ? ' qq-expired' : ''}">
+        <div class="quiz-quest-header">
+          <div>
+            <div class="quiz-quest-title">${quiz?.emoji || '🧠'} ${qq.title}</div>
+            <div style="margin-top:5px;">${statusPill}</div>
+          </div>
+          <div class="quiz-quest-reward">€1.00</div>
+        </div>
+        <div class="quiz-quest-meta">
+          Pass mark: 38/40 (95%) · Expert difficulty · ${attempts} attempt${attempts !== 1 ? 's' : ''}${best}<br>
+          Created: ${qq.createdAt} · Expires: ${qq.expiresAt}
+        </div>
+        ${actionBtn}
+      </div>`;
+    }).join('')}
+    <div class="hh-section-divider" style="margin:14px 0;"></div>`;
+}
+
+// ── Final exam ───────────────────────────────────────────────
+
+function startQuizQuestExam(questId) {
+  if (!state) return;
+  const qq = (state.quizQuests || []).find(q => q.id === questId);
+  if (!qq || qq.completed || isQuizQuestExpired(qq)) return;
+  const quiz = QUIZ_BANK.find(q => q.id === qq.quizId);
+  if (!quiz) return;
+
+  const questions = shuffle(quiz.pairs).slice(0, 40).map(item => {
+    const { options, correctIndex } = buildOptions(item, quiz.pairs, 3); // always Expert
+    return { ...item, options, correctIndex };
+  });
+
+  quizSession = {
+    mode: 'quest', questId, quizId: qq.quizId, quizTitle: quiz.title,
+    difficulty: 3, questions, current: 0, answers: [],
+    timerId: null, secondsLeft: 15, answered: false
+  };
+
+  setDashTab('quizzes');
+  showQuizScreen('play');
+  renderQuizQuestion();
+}
+
+// ── Final exam results ───────────────────────────────────────
+
+function showQuizQuestResults() {
+  const { questId, quizId, quizTitle, questions, answers } = quizSession;
+  const score = answers.filter(a => a.correct).length;
+  const total = questions.length; // 40
+  const pct = Math.round(score / total * 100);
+  const passed = score >= 38;
+
+  document.getElementById('quiz-res-score').textContent = `${score} / ${total}`;
+  document.getElementById('quiz-res-label').textContent = `${quizTitle} — Final Exam`;
+
+  if (passed) {
+    document.getElementById('quiz-res-emoji').textContent = '🏆';
+    document.getElementById('quiz-res-stars').textContent = '⭐⭐⭐⭐⭐';
+    document.getElementById('quiz-res-msg').textContent = `${pct}% — Quest passed! +€1.00 earned! 🎉`;
+  } else {
+    const needed = 38 - score;
+    document.getElementById('quiz-res-emoji').textContent = score >= 32 ? '😤' : '📚';
+    document.getElementById('quiz-res-stars').textContent = score >= 36 ? '⭐⭐⭐⭐' : score >= 30 ? '⭐⭐⭐' : score >= 20 ? '⭐⭐' : '⭐';
+    document.getElementById('quiz-res-msg').textContent = `${pct}% — need 95% to pass. ${needed} more correct answer${needed !== 1 ? 's' : ''} needed. Keep training!`;
+  }
+
+  // Dynamic result buttons for quest mode
+  const btns = document.getElementById('quiz-result-btns');
+  if (btns) {
+    if (passed) {
+      btns.innerHTML = `
+        <button class="btn-quiz-back" onclick="backToQuizBank()">← All Quizzes</button>
+        <button class="btn-quiz-retake" style="background:linear-gradient(135deg,#16a34a,#059669);" onclick="backToQuizBank()">🏆 Done!</button>`;
+    } else {
+      btns.innerHTML = `
+        <button class="btn-quiz-back" onclick="backToQuizBank()">← Train More</button>
+        <button class="btn-quiz-retake" onclick="retakeQuiz()">🔄 Retry Exam</button>`;
+    }
+  }
+
+  buildAnswersList(questions, answers);
+  showQuizScreen('results');
+
+  // Hide quest CTA (we're in quest mode already)
+  const ctaEl = document.getElementById('quiz-quest-cta');
+  if (ctaEl) ctaEl.style.display = 'none';
+
+  // Update quest record
+  if (state) {
+    const qq = (state.quizQuests || []).find(q => q.id === questId);
+    if (qq) {
+      qq.attempts = (qq.attempts || 0) + 1;
+      if (qq.lastScore === null || score > qq.lastScore) qq.lastScore = score;
+      if (passed && !qq.completed) {
+        qq.completed = true;
+        qq.completedAt = todayStr();
+        // Award €1 via quest session (shows in log + updates balance)
+        const rewardSession = {
+          id: uid(), type: 'quest', questId: qq.id, questTitle: qq.title,
+          date: todayStr(), minutes: 0, earned: 1.00,
+          manual: false, doneBy: currentUserRef()
+        };
+        state.sessions.push(rewardSession);
+        state.balance = Math.round((state.balance + 1.00) * 100) / 100;
+        showChestToast('🏆', `Quest passed! +€1.00 earned!`);
+      }
+      save();
+      if (passed) renderAll();
+    }
+  }
+}
 </script>
 </body>
 </html>
