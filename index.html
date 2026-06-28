@@ -5901,7 +5901,7 @@ const QUIZ_BANK = [
   {
     id:'animals', section:'Nature & Science', title:'Animal Kingdom', emoji:'🐆',
     description:'From the fastest to the strangest — how well do you know animals?',
-    getQuestion: item => item.questionText,
+    fixedDecoys: true, getQuestion: item => item.questionText,
     subcategories: [
       {key:'mammals', label:'Mammals',    emoji:'🦁', color:'#fef3c7', border:'#fcd34d', text:'#92400e'},
       {key:'birds',   label:'Birds',      emoji:'🦅', color:'#eff6ff', border:'#93c5fd', text:'#1e40af'},
@@ -5914,7 +5914,7 @@ const QUIZ_BANK = [
   {
     id:'science', section:'Nature & Science', title:'Science & Nature', emoji:'🔬',
     description:'Space, Earth, chemistry — explore the world of science!',
-    getQuestion: item => item.questionText,
+    fixedDecoys: true, getQuestion: item => item.questionText,
     subcategories: [
       {key:'space',     label:'Space & Stars', emoji:'🚀', color:'#1e1b4b', border:'#6d28d9', text:'#c4b5fd'},
       {key:'earth',     label:'Planet Earth',  emoji:'🌍', color:'#dcfce7', border:'#86efac', text:'#15803d'},
@@ -5926,7 +5926,7 @@ const QUIZ_BANK = [
   {
     id:'body', section:'Nature & Science', title:'Human Body', emoji:'🧬',
     description:'Discover the amazing machine that is the human body!',
-    getQuestion: item => item.questionText,
+    fixedDecoys: true, getQuestion: item => item.questionText,
     subcategories: [
       {key:'organs', label:'Organs',     emoji:'❤️', color:'#fef2f2', border:'#fca5a5', text:'#991b1b'},
       {key:'bones',  label:'Bones',      emoji:'🦴', color:'#fafaf9', border:'#d6d3d1', text:'#44403c'},
@@ -5938,7 +5938,7 @@ const QUIZ_BANK = [
   {
     id:'books', section:'Books & Stories', title:'Books & Stories', emoji:'📚',
     description:'From Hogwarts to Neverland — how well do you know these classic tales?',
-    getQuestion: item => item.questionText,
+    fixedDecoys: true, getQuestion: item => item.questionText,
     subcategories: [
       {key:'hp',    label:'Harry Potter',        emoji:'🧙', color:'#fef3c7', border:'#fcd34d', text:'#92400e'},
       {key:'oz',    label:'Wizard of Oz',        emoji:'🌈', color:'#ecfdf5', border:'#6ee7b7', text:'#065f46'},
@@ -5990,8 +5990,14 @@ function diffColors(lv) {
 
 // ── question option builder ─────────────────────────────────
 
-function buildOptions(item, allPairs, difficulty) {
+function buildOptions(item, allPairs, difficulty, fixedDecoys) {
   const ans = p => p.answer || p.capital;
+  if (fixedDecoys && item.decoys && item.decoys.length) {
+    const distractors = shuffle(item.decoys).slice(0, 3);
+    const correct = ans(item);
+    const options = shuffle([correct, ...distractors]);
+    return { options, correctIndex: options.indexOf(correct) };
+  }
   const sameContinent  = allPairs.filter(p => ans(p) !== ans(item) && p.continent === item.continent);
   const otherContinent = allPairs.filter(p => ans(p) !== ans(item) && p.continent !== item.continent);
 
@@ -6159,7 +6165,7 @@ function startQuiz(quizId, continent) {
   const questions = shuffle(pool).slice(0, 10).map(item => {
     const { options, correctIndex } = quiz.buildOptionsFn
       ? quiz.buildOptionsFn(item, quiz.pairs, difficulty)
-      : buildOptions(item, quiz.pairs, difficulty);
+      : buildOptions(item, quiz.pairs, difficulty, quiz.fixedDecoys);
     return { ...item, options, correctIndex };
   });
   quizSession = {
@@ -6520,7 +6526,7 @@ function startQuizQuestExam(questId) {
   const questions = shuffle(quiz.pairs).slice(0, 40).map(item => {
     const { options, correctIndex } = quiz.buildOptionsFn
       ? quiz.buildOptionsFn(item, quiz.pairs, 3)
-      : buildOptions(item, quiz.pairs, 3);
+      : buildOptions(item, quiz.pairs, 3, quiz.fixedDecoys);
     return { ...item, options, correctIndex };
   });
 
