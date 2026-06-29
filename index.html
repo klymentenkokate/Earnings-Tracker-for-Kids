@@ -663,6 +663,12 @@
   .quiz-question-num{font-size:.72rem;font-weight:800;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px;}
   .quiz-question-text{font-family:'Fredoka One',cursive;font-size:1.3rem;color:var(--text);line-height:1.3;}
   .quiz-flag{font-size:2.4rem;margin-bottom:8px;}
+  .quiz-audio-player{text-align:center;padding:10px 0 6px;}
+  .quiz-audio-play-btn{width:64px;height:64px;border-radius:50%;border:none;background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;font-size:1.7rem;cursor:pointer;box-shadow:0 4px 18px rgba(99,102,241,.4);transition:.15s;display:inline-flex;align-items:center;justify-content:center;}
+  .quiz-audio-play-btn:hover{transform:scale(1.07);box-shadow:0 6px 24px rgba(99,102,241,.5);}
+  .quiz-audio-track{height:5px;background:#e8e0d4;border-radius:3px;overflow:hidden;margin:10px 8px 4px;}
+  .quiz-audio-fill{height:100%;width:0%;background:linear-gradient(90deg,#6366f1,#818cf8);border-radius:3px;transition:width .25s linear;}
+  .quiz-audio-time{font-size:.74rem;color:#94a3b8;font-weight:700;}
   img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;display:inline;}
 
   .quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
@@ -1229,13 +1235,19 @@
         <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quiz-progress-fill" style="width:10%"></div></div>
         <button class="btn-cancel-settings" style="padding:5px 12px;font-size:.74rem;" onclick="backToQuizBank()">✕ Quit</button>
       </div>
-      <div class="quiz-timer-row">
+      <div class="quiz-timer-row" id="quiz-timer-row">
         <span class="quiz-timer-num" id="quiz-timer-num">15</span>
         <div class="quiz-timer-track"><div class="quiz-timer-fill" id="quiz-timer-fill" style="width:100%"></div></div>
       </div>
       <div class="quiz-question-card">
         <div class="quiz-question-num" id="quiz-q-num">QUESTION 1</div>
         <div class="quiz-flag" id="quiz-flag"></div>
+        <div class="quiz-audio-player" id="quiz-audio-player" style="display:none;">
+          <audio id="quiz-audio" preload="auto"></audio>
+          <button class="quiz-audio-play-btn" id="quiz-audio-play-btn" onclick="toggleQuizAudio()">▶</button>
+          <div class="quiz-audio-track"><div class="quiz-audio-fill" id="quiz-audio-fill"></div></div>
+          <div class="quiz-audio-time" id="quiz-audio-time">0:00 / 0:30</div>
+        </div>
         <div class="quiz-question-text" id="quiz-q-text">Loading…</div>
       </div>
       <div class="quiz-options" id="quiz-options"></div>
@@ -5916,6 +5928,55 @@ const QUIZ_CATEGORIES = [
   {key:'Geography',        label:'Geography',        emoji:'🌍', color:'#eff6ff', border:'#bfdbfe', text:'#1d4ed8', description:'Countries, capitals, flags & languages'},
   {key:'Nature & Science', label:'Nature & Science',  emoji:'🔬', color:'#dcfce7', border:'#86efac', text:'#15803d', description:'Animals, science & the human body'},
   {key:'Books & Stories',  label:'Books & Stories',   emoji:'📚', color:'#fdf4ff', border:'#d8b4fe', text:'#6b21a8', description:'Classic tales & beloved characters'},
+  {key:'Music',            label:'Music',             emoji:'🎼', color:'#fff1f2', border:'#fda4af', text:'#9f1239', description:'Hear the clip — name the composer!'},
+];
+
+const CLASSICAL_PAIRS = [
+  {file:'beethoven_sym5.mp3', answer:'Beethoven', pieceName:'Symphony No. 5', continent:'all', fixedDecoys:true,
+   decoys:['Mozart','Brahms','Haydn'],
+   explanation:'🎵 "Symphony No. 5" by Beethoven. Those famous four notes — da-da-da-DUM — are one of the most recognised sounds in all of music! Beethoven started writing it in 1804 and took four years to finish, even though he was going deaf at the time.'},
+  {file:'mozart_nachtmusik.mp3', answer:'Mozart', pieceName:'Eine Kleine Nachtmusik', continent:'all', fixedDecoys:true,
+   decoys:['Haydn','Vivaldi','Beethoven'],
+   explanation:'🎵 "Eine Kleine Nachtmusik" by Mozart. The title means "A Little Night Music" in German. Mozart wrote it in 1787, the same year he composed Don Giovanni — he was incredibly fast and could write a full symphony in just a few weeks.'},
+  {file:'vivaldi_spring.mp3', answer:'Vivaldi', pieceName:'The Four Seasons — Spring', continent:'all', fixedDecoys:true,
+   decoys:['Bach','Handel','Telemann'],
+   explanation:'🎵 "The Four Seasons — Spring" by Vivaldi. Vivaldi wrote poems to go with each season! The birds chirping, a stream flowing, and a thunderstorm are all hidden in the music. He wrote over 500 concertos during his life.'},
+  {file:'bach_toccata.mp3', answer:'Bach', pieceName:'Toccata and Fugue in D minor', continent:'all', fixedDecoys:true,
+   decoys:['Handel','Vivaldi','Telemann'],
+   explanation:'🎵 "Toccata and Fugue in D minor" by Bach. This dramatic organ piece is one of the most famous ever written. It has appeared in countless movies and cartoons. Bach was a church organist who had 20 children!'},
+  {file:'beethoven_ode_joy.mp3', answer:'Beethoven', pieceName:'Ode to Joy (Symphony No. 9)', continent:'all', fixedDecoys:true,
+   decoys:['Brahms','Schubert','Schumann'],
+   explanation:'🎵 "Ode to Joy" by Beethoven. This is the melody of the European Union\'s anthem! Beethoven wrote it when he was completely deaf — at the premiere he had to be turned around to see the audience applauding because he couldn\'t hear any of it.'},
+  {file:'tchaikovsky_swan.mp3', answer:'Tchaikovsky', pieceName:'Swan Lake', continent:'all', fixedDecoys:true,
+   decoys:['Brahms','Chopin','Liszt'],
+   explanation:'🎵 "Swan Lake" by Tchaikovsky. This ballet tells the story of a princess turned into a swan by a sorcerer\'s curse. When it first premiered in 1877 it was considered a failure — today it\'s one of the most performed ballets in the world.'},
+  {file:'handel_hallelujah.mp3', answer:'Handel', pieceName:'Hallelujah Chorus', continent:'all', fixedDecoys:true,
+   decoys:['Bach','Vivaldi','Purcell'],
+   explanation:'🎵 "Hallelujah Chorus" by Handel. The tradition of standing up during this chorus may have started because King George II of England stood up when he heard it — and everyone had to stand when the king stood!'},
+  {file:'mozart_sym40.mp3', answer:'Mozart', pieceName:'Symphony No. 40', continent:'all', fixedDecoys:true,
+   decoys:['Haydn','Beethoven','Schubert'],
+   explanation:'🎵 "Symphony No. 40" by Mozart. Mozart wrote this urgent, restless symphony in 1788, when he was struggling with money and illness. He wrote three entire symphonies in just six weeks that summer.'},
+  {file:'chopin_nocturne.mp3', answer:'Chopin', pieceName:'Nocturne Op. 9 No. 2', continent:'all', fixedDecoys:true,
+   decoys:['Liszt','Schumann','Schubert'],
+   explanation:'🎵 "Nocturne Op. 9 No. 2" by Chopin. A nocturne is a piece inspired by the night. Chopin was Polish but lived most of his life in Paris. He was so shy he rarely performed in public — he preferred playing to small groups of friends in candlelit rooms.'},
+  {file:'beethoven_moonlight.mp3', answer:'Beethoven', pieceName:'Moonlight Sonata', continent:'all', fixedDecoys:true,
+   decoys:['Schubert','Chopin','Mozart'],
+   explanation:'🎵 "Moonlight Sonata" by Beethoven. Beethoven never called it that — the nickname was given by a music critic who said the opening reminded him of moonlight on a lake. Beethoven dedicated it to a 17-year-old countess he was in love with.'},
+  {file:'brahms_hungarian5.mp3', answer:'Brahms', pieceName:'Hungarian Dance No. 5', continent:'all', fixedDecoys:true,
+   decoys:['Liszt','Dvořák','Bartók'],
+   explanation:'🎵 "Hungarian Dance No. 5" by Brahms. Brahms based his 21 Hungarian Dances on folk melodies he heard from a Hungarian violinist friend. This is the most famous of them all and has appeared in countless films and commercials.'},
+  {file:'vivaldi_summer.mp3', answer:'Vivaldi', pieceName:'The Four Seasons — Summer', continent:'all', fixedDecoys:true,
+   decoys:['Bach','Handel','Corelli'],
+   explanation:'🎵 "The Four Seasons — Summer (Storm)" by Vivaldi. This final movement of Summer represents a violent thunderstorm. The rapid bowing and dramatic dynamics were incredibly ahead of their time when Vivaldi wrote them in 1725.'},
+  {file:'bach_air.mp3', answer:'Bach', pieceName:'Air on the G String', continent:'all', fixedDecoys:true,
+   decoys:['Handel','Purcell','Telemann'],
+   explanation:'🎵 "Air on the G String" by Bach. The nickname comes from a 19th-century arrangement that moved the melody to the violin\'s lowest, richest string (the G string). Bach originally wrote it for a full orchestra as part of a suite in 1731.'},
+  {file:'tchaikovsky_1812.mp3', answer:'Tchaikovsky', pieceName:'1812 Overture', continent:'all', fixedDecoys:true,
+   decoys:['Beethoven','Brahms','Berlioz'],
+   explanation:'🎵 "1812 Overture" by Tchaikovsky. Written to celebrate Russia\'s victory over Napoleon in 1812, the score actually calls for real cannon fire and church bells! Tchaikovsky himself said he didn\'t like it much — he thought it was too loud and showy.'},
+  {file:'schubert_ave_maria.mp3', answer:'Schubert', pieceName:'Ave Maria', continent:'all', fixedDecoys:true,
+   decoys:['Mozart','Brahms','Schumann'],
+   explanation:'🎵 "Ave Maria" by Schubert. Schubert wrote this in 1825 as a setting of a prayer from a Scottish poem — not originally as a religious piece at all! He composed over 600 songs during his short life, often writing several in a single day.'},
 ];
 
 const QUIZ_BANK = [
@@ -6009,6 +6070,13 @@ const QUIZ_BANK = [
     ],
     pairs: BOOKS_PAIRS
   },
+  { id:'classical', section:'Music', title:'Classical Music', emoji:'🎼',
+    type:'audio', skipPicker: true,
+    description:'Hear 30 seconds — name the composer!',
+    fixedDecoys: true,
+    getQuestion: () => 'Who composed this piece?',
+    pairs: CLASSICAL_PAIRS
+  },
 ];
 
 const QUIZ_CONTINENTS = [
@@ -6021,6 +6089,50 @@ const QUIZ_CONTINENTS = [
 ];
 
 let quizSession = null;
+let quizAudioInterval = null;
+
+function setupAudioPlayer(file) {
+  const audio = document.getElementById('quiz-audio');
+  const player = document.getElementById('quiz-audio-player');
+  if (!audio || !player) return;
+  audio.src = 'audio/' + file;
+  audio.load();
+  player.style.display = 'block';
+  document.getElementById('quiz-audio-play-btn').textContent = '▶';
+  document.getElementById('quiz-audio-fill').style.width = '0%';
+  document.getElementById('quiz-audio-time').textContent = '0:00 / 0:30';
+  clearInterval(quizAudioInterval);
+}
+
+function toggleQuizAudio() {
+  const audio = document.getElementById('quiz-audio');
+  if (!audio) return;
+  if (!audio.paused) {
+    audio.pause();
+    document.getElementById('quiz-audio-play-btn').textContent = '▶';
+    clearInterval(quizAudioInterval);
+  } else {
+    audio.play().catch(() => {});
+    document.getElementById('quiz-audio-play-btn').textContent = '⏸';
+    quizAudioInterval = setInterval(() => {
+      const elapsed = Math.min(audio.currentTime, 30);
+      document.getElementById('quiz-audio-fill').style.width = (elapsed / 30 * 100) + '%';
+      const s = Math.floor(elapsed);
+      document.getElementById('quiz-audio-time').textContent =
+        `${Math.floor(s/60)}:${(s%60).toString().padStart(2,'0')} / 0:30`;
+      if (elapsed >= 30) { stopQuizAudio(); }
+    }, 250);
+  }
+}
+
+function stopQuizAudio() {
+  const audio = document.getElementById('quiz-audio');
+  if (audio) { audio.pause(); }
+  clearInterval(quizAudioInterval);
+  const btn = document.getElementById('quiz-audio-play-btn');
+  if (btn) btn.textContent = '▶';
+}
+
 function parseTwemoji(el) {
   if (window.twemoji && el) twemoji.parse(el, {folder:'svg', ext:'.svg'});
 }
@@ -6261,11 +6373,21 @@ function renderQuizQuestion() {
     ? `🎯 FINAL EXAM · QUESTION ${current + 1}`
     : `${diffLabel(difficulty)}${contLabel} · QUESTION ${current + 1}`;
   document.getElementById('quiz-progress-fill').style.width = ((current + 1) / total * 100) + '%';
-  const flagEl = document.getElementById('quiz-flag');
-  flagEl.textContent = q.flag || '';
-  flagEl.style.fontSize = quizSession.quizId === 'flags' ? '4.5rem' : '2.4rem';
-  parseTwemoji(flagEl);
   const activeQuiz = QUIZ_BANK.find(qb => qb.id === quizSession.quizId);
+  const isAudio = activeQuiz && activeQuiz.type === 'audio';
+  const flagEl = document.getElementById('quiz-flag');
+  const audioPlayer = document.getElementById('quiz-audio-player');
+  stopQuizAudio();
+  if (isAudio) {
+    flagEl.textContent = '';
+    if (audioPlayer) audioPlayer.style.display = 'block';
+    setupAudioPlayer(q.file);
+  } else {
+    if (audioPlayer) audioPlayer.style.display = 'none';
+    flagEl.textContent = q.flag || '';
+    flagEl.style.fontSize = quizSession.quizId === 'flags' ? '4.5rem' : '2.4rem';
+    parseTwemoji(flagEl);
+  }
   document.getElementById('quiz-q-text').textContent = q.questionText || (activeQuiz && activeQuiz.getQuestion ? activeQuiz.getQuestion(q) : `What is the capital of ${q.country}?`);
 
   const banner = document.getElementById('quiz-exam-banner');
@@ -6277,7 +6399,9 @@ function renderQuizQuestion() {
   `).join('');
 
   quizSession.answered = false;
-  quizStartTimer();
+  const timerRow = document.getElementById('quiz-timer-row') || document.querySelector('.quiz-timer-row');
+  if (timerRow) timerRow.style.display = isAudio ? 'none' : 'flex';
+  if (!isAudio) quizStartTimer();
 }
 
 function quizStartTimer() {
@@ -6336,6 +6460,7 @@ function quizTimeUp() {
 function quizSelectAnswer(i) {
   if (!quizSession || quizSession.answered) return;
   quizSession.answered = true;
+  stopQuizAudio();
   quizStopTimer();
   const q = quizSession.questions[quizSession.current];
   const correct = i === q.correctIndex;
@@ -6358,6 +6483,7 @@ function quizSelectAnswer(i) {
 }
 
 function quizAdvance() {
+  stopQuizAudio();
   const explanationBox = document.getElementById('quizExplanationBox');
   if (explanationBox) explanationBox.style.display = 'none';
   quizSession.current++;
