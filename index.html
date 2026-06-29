@@ -1539,8 +1539,8 @@
   <div class="kid-modal-box">
     <div class="kid-modal-title" style="color:#dc2626;">⚠️ Delete Profile?</div>
     <div id="delete-kid-warning" style="font-size:.88rem;color:var(--text);margin:6px 0 14px;line-height:1.55;"></div>
-    <div style="font-size:.68rem;font-weight:800;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;">Confirm with your admin password</div>
-    <input id="delete-kid-password" type="password" placeholder="••••••••" autocomplete="current-password"
+    <div style="font-size:.68rem;font-weight:800;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;">Type your email address to confirm</div>
+    <input id="delete-kid-password" type="text" placeholder="your@email.com" autocomplete="off"
       style="width:100%;padding:9px 11px;border-radius:10px;border:1.5px solid var(--border);background:var(--soft);color:var(--text);font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:700;outline:none;"
       onfocus="this.style.borderColor='#ef4444'" onblur="this.style.borderColor='var(--border)'"
       onkeydown="if(event.key==='Enter')submitDeleteKid()">
@@ -5182,34 +5182,26 @@ function closeDeleteKidModal() {
   pendingDeleteKidId = null;
 }
 
-async function submitDeleteKid() {
-  const password = document.getElementById('delete-kid-password').value;
+function submitDeleteKid() {
+  const typed = document.getElementById('delete-kid-password').value.trim();
   const errEl = document.getElementById('delete-kid-error');
-  if (!password) {
-    errEl.textContent = 'Please enter your password to confirm.';
+  if (!typed) {
+    errEl.textContent = 'Please type your email address to confirm.';
     errEl.style.display = 'block'; return;
   }
-  const btn = document.getElementById('delete-kid-confirm-btn');
-  btn.disabled = true; btn.textContent = 'Verifying…';
-  errEl.style.display = 'none';
-  try {
-    const email = authSession?.user?.email;
-    if (!email) throw new Error('Not logged in');
-    await authFetch('token?grant_type=password', 'POST', { email, password });
-    // Password verified — proceed
-    const id = pendingDeleteKidId;
-    const k = appData.kids.find(k => k.id === id); if (!k) { closeDeleteKidModal(); return; }
-    const kidName = k.name;
-    const prev = JSON.parse(JSON.stringify(appData));
-    appData.kids = appData.kids.filter(k => k.id !== id);
-    state = null; viewMode = 'overview';
-    save(); closeDeleteKidModal(); closeKidModal(); showOverview();
-    writeAuditLog('delete_kid', `${currentMember?.alias||'Someone'} deleted ${kidName}`, prev);
-  } catch(e) {
-    errEl.textContent = 'Incorrect password — please try again.';
-    errEl.style.display = 'block';
-    btn.disabled = false; btn.textContent = '🗑 Delete Permanently';
+  const adminEmail = authSession?.user?.email || '';
+  if (typed.toLowerCase() !== adminEmail.toLowerCase()) {
+    errEl.textContent = 'Email does not match — please try again.';
+    errEl.style.display = 'block'; return;
   }
+  const id = pendingDeleteKidId;
+  const k = appData.kids.find(k => k.id === id); if (!k) { closeDeleteKidModal(); return; }
+  const kidName = k.name;
+  const prev = JSON.parse(JSON.stringify(appData));
+  appData.kids = appData.kids.filter(k => k.id !== id);
+  state = null; viewMode = 'overview';
+  save(); closeDeleteKidModal(); closeKidModal(); showOverview();
+  writeAuditLog('delete_kid', `${currentMember?.alias||'Someone'} deleted ${kidName}`, prev);
 }
 
 // ─────────────────────────────────────────────────────────────
