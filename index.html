@@ -1318,7 +1318,7 @@
     <div class="section">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
         <button class="btn-cancel-settings" style="padding:6px 14px;font-size:.76rem;" onclick="showQuizScreen('bank')">← Back</button>
-        <div style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--text);">🌈 Wizard of Oz Comprehension</div>
+        <div style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--text);" id="oz-book-title">🌈 Wizard of Oz Comprehension</div>
       </div>
       <p style="font-size:.8rem;font-weight:700;color:var(--muted);margin-bottom:14px;">Watch a chapter film, then answer the questions about what happened. 🎬</p>
       <div id="oz-reward"></div>
@@ -1676,6 +1676,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="oz/quiz-data.js?v=1"></script>
+<script src="alice/quiz-data.js?v=1"></script>
 <script>
 // ─────────────────────────────────────────────────────────────
 // CONSTANTS & DEFAULTS
@@ -6262,6 +6263,11 @@ const QUIZ_BANK = [
     description:'Watch each chapter film, then answer questions. Pass all 24 chapters to earn €4!',
     pairs: typeof OZ_QUIZ !== 'undefined' ? OZ_QUIZ.flatMap(c => c.questions) : []
   },
+  { id:'alicecomp', section:'Books & Stories', title:'Alice in Wonderland Comprehension', emoji:'🐇',
+    type:'oz',
+    description:'Watch each chapter film, then answer questions. Pass all 12 chapters to earn €1!',
+    pairs: typeof ALICE_QUIZ !== 'undefined' ? ALICE_QUIZ.flatMap(c => c.questions) : []
+  },
   { id:'classical', section:'Music', title:'Classical Music', emoji:'🎼',
     type:'audio', skipPicker: true,
     description:'Hear 30 seconds — name the composer!',
@@ -6446,7 +6452,7 @@ function buildQuizList(categoryKey) {
       <div class="quiz-bank-card-title">${q.title}</div>
       <div class="quiz-bank-card-meta">${q.description}</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;">
-        <div class="quiz-bank-card-badge">${isOz ? `🎬 ${OZ_QUIZ.length} chapters · ${ozPassedCount()}/${OZ_QUIZ.length} passed` : `📝 ${q.pairs.length} questions · 10/round · ⏱ 15s`}</div>
+        <div class="quiz-bank-card-badge">${isOz ? `🎬 ${CH_BOOKS[q.id].data().length} chapters · ${ozPassedCount(q.id)}/${CH_BOOKS[q.id].data().length} passed` : `📝 ${q.pairs.length} questions · 10/round · ⏱ 15s`}</div>
         <div class="quiz-bank-card-badge">${totalAttempts ? totalAttempts+' rounds played' : 'New!'}</div>
       </div>
     </div>`;
@@ -6482,7 +6488,7 @@ function buildQuizHistory() {
 function showContinentPicker(quizId) {
   const quiz = QUIZ_BANK.find(q => q.id === quizId);
   if (!quiz) return;
-  if (quiz.type === 'oz') { openOzHome(); return; }
+  if (quiz.type === 'oz') { openOzHome(quiz.id); return; }
   if (quiz.skipPicker) { startQuiz(quizId, 'all'); return; }
   const titleEl = document.getElementById('quiz-cont-quiz-title');
   if (titleEl) titleEl.textContent = `${quiz.emoji} ${quiz.title}`;
@@ -6778,13 +6784,21 @@ function backToQuizBank() {
 }
 
 // ─────────────────────────────────────────────────────────────
-// WIZARD OF OZ COMPREHENSION
-// One film per chapter (oz/chNN-*.mp4), then that chapter's questions (oz/quiz-data.js).
-// A chapter is passed at 80%+ (7/8). All chapters passed → €4 once, as a quest session.
+// CHAPTER-FILM BOOKS (Wizard of Oz, Alice in Wonderland)
+// One film per chapter (<dir>/chNN-*.mp4), then that chapter's questions (<dir>/quiz-data.js).
+// A chapter is passed at 80%+ (7/8). All chapters of a book passed → its reward once, as a quest session.
+// The screens and functions keep their oz* names; CH_BOOKS[ozBookId] says which book is open.
 // ─────────────────────────────────────────────────────────────
 
 const OZ_PASS_PCT = 0.8;
-const OZ_REWARD = 4.00;
+const CH_BOOKS = {
+  ozcomp:    { data: () => typeof OZ_QUIZ !== 'undefined' ? OZ_QUIZ : [], dir: 'oz/', stateKey: 'oz', reward: 4.00,
+               title: 'Wizard of Oz Comprehension', emoji: '🌈', short: 'Oz', book: 'The Wizard of Oz' },
+  alicecomp: { data: () => typeof ALICE_QUIZ !== 'undefined' ? ALICE_QUIZ : [], dir: 'alice/', stateKey: 'alice', reward: 1.00,
+               title: 'Alice in Wonderland Comprehension', emoji: '🐇', short: 'Alice', book: "Alice's Adventures in Wonderland" },
+};
+let ozBookId = 'ozcomp';
+const ozBook = () => CH_BOOKS[ozBookId];
 const OZ_TAGS = { story: 'Story', word: 'Word', literature: 'How stories work' };
 let ozSession = null;
 
@@ -6792,39 +6806,42 @@ function ozEsc(s) {
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
-function ozState() {
+function ozState(id = ozBookId) {
+  const k = CH_BOOKS[id].stateKey;
   if (!state) return { best:{}, watched:{}, rewarded:false };
-  if (!state.oz) state.oz = { best:{}, watched:{}, rewarded:false, rewardedAt:null };
-  return state.oz;
+  if (!state[k]) state[k] = { best:{}, watched:{}, rewarded:false, rewardedAt:null };
+  return state[k];
 }
 
 function ozPassMark(ch) { return Math.ceil(ch.questions.length * OZ_PASS_PCT); }
 
-function ozIsPassed(ch) {
-  const b = ozState().best[ch.chapter];
+function ozIsPassed(ch, id = ozBookId) {
+  const b = ozState(id).best[ch.chapter];
   return b !== undefined && b >= ozPassMark(ch);
 }
 
-function ozPassedCount() {
-  if (typeof OZ_QUIZ === 'undefined') return 0;
-  return OZ_QUIZ.filter(ozIsPassed).length;
+function ozPassedCount(id = ozBookId) {
+  return CH_BOOKS[id].data().filter(ch => ozIsPassed(ch, id)).length;
 }
 
-function openOzHome() {
+function openOzHome(id) {
+  if (id && CH_BOOKS[id]) ozBookId = id;
+  const bk = ozBook(), BOOK = bk.data();
+  document.getElementById('oz-book-title').textContent = `${bk.emoji} ${bk.title}`;
   const oz = ozState();
-  const passed = ozPassedCount(), total = OZ_QUIZ.length;
+  const passed = ozPassedCount(), total = BOOK.length;
   const reward = document.getElementById('oz-reward');
   reward.innerHTML = oz.rewarded
     ? `<div class="oz-reward-card oz-earned">
-        <div class="oz-reward-title">🏆 All ${total} chapters passed — ${fmtAmt(OZ_REWARD)} earned!</div>
+        <div class="oz-reward-title">🏆 All ${total} chapters passed — ${fmtAmt(bk.reward)} earned!</div>
         <div class="oz-reward-sub">Added to your balance on ${oz.rewardedAt}. You can still rewatch and replay any chapter.</div>
       </div>`
     : `<div class="oz-reward-card">
-        <div class="oz-reward-title">🌈 ${passed} / ${total} chapters passed</div>
-        <div class="oz-reward-sub">Get at least 80% right in every chapter (7 of 8) and earn <strong>${fmtAmt(OZ_REWARD)}</strong>!</div>
+        <div class="oz-reward-title">${bk.emoji} ${passed} / ${total} chapters passed</div>
+        <div class="oz-reward-sub">Get at least 80% right in every chapter (7 of 8) and earn <strong>${fmtAmt(bk.reward)}</strong>!</div>
         <div class="oz-reward-track"><div class="oz-reward-fill" style="width:${passed / total * 100}%"></div></div>
       </div>`;
-  document.getElementById('oz-grid').innerHTML = OZ_QUIZ.map(ch => {
+  document.getElementById('oz-grid').innerHTML = BOOK.map(ch => {
     const b = oz.best[ch.chapter];
     const pass = ozIsPassed(ch);
     const status = pass ? `✅ Passed · best ${b}/${ch.questions.length}`
@@ -6840,7 +6857,7 @@ function openOzHome() {
 }
 
 function openOzChapter(n) {
-  const ch = OZ_QUIZ.find(c => c.chapter === n);
+  const ch = ozBook().data().find(c => c.chapter === n);
   if (!ch) return;
   ozSession = { ch, order: [], qi: 0, answers: [], answered: false };
   document.getElementById('oz-ch-title').textContent = `Chapter ${n} · ${ch.title}`;
@@ -6848,7 +6865,7 @@ function openOzChapter(n) {
   document.getElementById('oz-play').style.display = 'none';
   document.getElementById('oz-done').style.display = 'none';
   const vid = document.getElementById('oz-vid');
-  vid.src = 'oz/' + ch.video;
+  vid.src = ozBook().dir + ch.video;
   const watched = !!ozState().watched[n];
   document.getElementById('oz-start').disabled = !watched;
   document.getElementById('oz-hint').textContent = watched
@@ -6933,6 +6950,7 @@ function ozNext() {
 
 function finishOzChapter() {
   const { ch, answers } = ozSession;
+  const bk = ozBook(), BOOK = bk.data();
   const total = ch.questions.length;
   const score = answers.filter(a => a.correct).length;
   const mark = ozPassMark(ch);
@@ -6949,9 +6967,9 @@ function finishOzChapter() {
   document.getElementById('oz-res-emoji').textContent = score === total ? '🏆' : passedNow ? '🎉' : '📚';
   const passedCount = ozPassedCount();
   document.getElementById('oz-res-msg').textContent = passedNow
-    ? `${score === total ? 'Perfect!' : 'Chapter passed!'} ${passedCount} of ${OZ_QUIZ.length} chapters passed.`
+    ? `${score === total ? 'Perfect!' : 'Chapter passed!'} ${passedCount} of ${BOOK.length} chapters passed.`
     : `You need ${mark} of ${total} to pass this chapter. Watch the film again and have another go!`;
-  const next = OZ_QUIZ.find(c => c.chapter === ch.chapter + 1);
+  const next = BOOK.find(c => c.chapter === ch.chapter + 1);
   document.getElementById('oz-res-btns').innerHTML = passedNow
     ? `<button class="btn-quiz-back" onclick="openOzHome()">← Chapters</button>
        ${next ? `<button class="btn-quiz-retake" onclick="openOzChapter(${next.chapter})">Next chapter →</button>`
@@ -6969,31 +6987,31 @@ function finishOzChapter() {
 
   if (state) {
     if (!state.quizAttempts) state.quizAttempts = {};
-    state.quizAttempts.ozcomp = (state.quizAttempts.ozcomp || 0) + 1;
+    state.quizAttempts[ozBookId] = (state.quizAttempts[ozBookId] || 0) + 1;
     state.sessions.push({
-      id: uid(), type: 'quiz', quizId: 'ozcomp', quizTitle: `Oz Chapter ${ch.chapter}`,
+      id: uid(), type: 'quiz', quizId: ozBookId, quizTitle: `${bk.short} Chapter ${ch.chapter}`,
       continent: 'all', date: todayStr(), minutes: 0, earned: 0,
       score, total, difficulty: 1, manual: false, doneBy: currentUserRef()
     });
     let rewardedNow = false;
-    if (!oz.rewarded && passedCount === OZ_QUIZ.length) {
+    if (!oz.rewarded && passedCount === BOOK.length) {
       oz.rewarded = true;
       oz.rewardedAt = todayStr();
       state.sessions.push({
-        id: uid(), type: 'quest', questId: 'ozcomp', questTitle: '🌈 Wizard of Oz Comprehension — all 24 chapters passed',
-        date: todayStr(), minutes: 0, earned: OZ_REWARD, manual: false, doneBy: currentUserRef()
+        id: uid(), type: 'quest', questId: ozBookId, questTitle: `${bk.emoji} ${bk.title} — all ${BOOK.length} chapters passed`,
+        date: todayStr(), minutes: 0, earned: bk.reward, manual: false, doneBy: currentUserRef()
       });
-      state.balance = Math.round((state.balance + OZ_REWARD) * 100) / 100;
+      state.balance = Math.round((state.balance + bk.reward) * 100) / 100;
       rewardedNow = true;
     }
     save();
     if (rewardedNow) {
       document.getElementById('oz-res-emoji').textContent = '🏆';
-      document.getElementById('oz-res-msg').textContent = `You passed all ${OZ_QUIZ.length} chapters of The Wizard of Oz! +${fmtAmt(OZ_REWARD)} added to your balance! 🎉`;
-      showChestToast('🌈', `Oz complete! +${fmtAmt(OZ_REWARD)} earned!`);
+      document.getElementById('oz-res-msg').textContent = `You passed all ${BOOK.length} chapters of ${bk.book}! +${fmtAmt(bk.reward)} added to your balance! 🎉`;
+      showChestToast(bk.emoji, `${bk.short} complete! +${fmtAmt(bk.reward)} earned!`);
       renderAll();
     } else if (passedNow && !wasPassed) {
-      showChestToast('✅', `Chapter ${ch.chapter} passed! ${passedCount}/${OZ_QUIZ.length}`);
+      showChestToast('✅', `Chapter ${ch.chapter} passed! ${passedCount}/${BOOK.length}`);
     }
   }
   window.scrollTo(0, 0);
