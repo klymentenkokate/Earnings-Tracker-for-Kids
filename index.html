@@ -743,6 +743,39 @@
   .quiz-exam-banner{background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:14px;padding:10px 16px;margin-bottom:12px;color:white;display:flex;align-items:center;justify-content:space-between;}
   .quiz-exam-banner-left{font-family:'Fredoka One',cursive;font-size:1rem;}
   .quiz-exam-banner-right{font-size:.7rem;font-weight:800;opacity:.85;text-align:right;}
+
+  /* ── WIZARD OF OZ COMPREHENSION ── */
+  .oz-reward-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1.5px solid #6ee7b7;border-radius:18px;padding:16px 18px;margin-bottom:16px;}
+  .oz-reward-card.oz-earned{background:linear-gradient(135deg,#16a34a,#059669);border-color:#16a34a;color:#fff;}
+  .oz-reward-title{font-family:'Fredoka One',cursive;font-size:1.1rem;color:#065f46;}
+  .oz-earned .oz-reward-title{color:#fff;}
+  .oz-reward-sub{font-size:.76rem;font-weight:700;color:#047857;margin-top:4px;line-height:1.5;}
+  .oz-earned .oz-reward-sub{color:rgba(255,255,255,.9);}
+  .oz-reward-track{height:9px;background:#fff;border-radius:5px;overflow:hidden;margin-top:10px;border:1px solid #a7f3d0;}
+  .oz-reward-fill{height:100%;background:linear-gradient(90deg,#16a34a,#84cc16);border-radius:5px;transition:width .35s ease;}
+  .oz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;}
+  .oz-ch{background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:12px 13px;cursor:pointer;transition:.15s;text-align:left;font-family:'Nunito',sans-serif;color:var(--text);display:flex;flex-direction:column;gap:4px;min-height:112px;box-shadow:0 2px 8px var(--shadow);}
+  .oz-ch:hover{border-color:#6ee7b7;transform:translateY(-2px);}
+  .oz-ch-num{font-size:.66rem;font-weight:800;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;}
+  .oz-ch-title{font-family:'Fredoka One',cursive;font-size:.95rem;line-height:1.2;}
+  .oz-ch-status{margin-top:auto;font-size:.72rem;font-weight:800;color:var(--muted);}
+  .oz-ch.oz-pass{background:#f0fdf4;border-color:#86efac;}
+  .oz-ch.oz-pass .oz-ch-status{color:#15803d;}
+  .oz-ch.oz-tried .oz-ch-status{color:#b45309;}
+  .oz-video{width:100%;display:block;border-radius:16px;background:#000;aspect-ratio:16/9;margin-bottom:12px;}
+  .oz-watch-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+  .oz-hint{font-size:.78rem;font-weight:700;color:var(--muted);}
+  .oz-opts{display:flex;flex-direction:column;gap:8px;}
+  .oz-opts .quiz-option{text-align:left;font-size:.92rem;padding:12px 14px;}
+  .oz-why{display:block;font-size:.78rem;font-weight:700;margin-top:4px;opacity:.85;}
+  .oz-tag{display:inline-block;font-size:.65rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:3px 10px;border-radius:50px;margin-bottom:10px;background:#ecfdf5;border:1px solid #6ee7b7;color:#065f46;}
+  .oz-tag.word{background:#fef3c7;border-color:#fcd34d;color:#92400e;}
+  .oz-tag.literature{background:#ede9fe;border-color:#c4b5fd;color:#5b21b6;}
+  .oz-quote{font-style:italic;font-size:.88rem;color:var(--muted);margin-top:8px;}
+  .oz-explain{margin-top:14px;padding:14px 16px;background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;font-size:.9rem;color:#78350f;line-height:1.5;}
+  .oz-verdict{font-family:'Fredoka One',cursive;font-size:1.1rem;margin-bottom:4px;}
+  #oz-answers .quiz-answer-row{flex-wrap:wrap;}
+  #oz-answers .quiz-answer-a{flex-basis:100%;text-align:left;padding-left:26px;}
 </style>
 </head>
 <body>
@@ -1280,6 +1313,64 @@
     </div>
   </div>
 
+  <!-- OZ: CHAPTER LIST SCREEN -->
+  <div id="quiz-oz-screen" style="display:none;">
+    <div class="section">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <button class="btn-cancel-settings" style="padding:6px 14px;font-size:.76rem;" onclick="showQuizScreen('bank')">← Back</button>
+        <div style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--text);">🌈 Wizard of Oz Comprehension</div>
+      </div>
+      <p style="font-size:.8rem;font-weight:700;color:var(--muted);margin-bottom:14px;">Watch a chapter film, then answer the questions about what happened. 🎬</p>
+      <div id="oz-reward"></div>
+      <div class="oz-grid" id="oz-grid"></div>
+    </div>
+  </div>
+
+  <!-- OZ: CHAPTER SCREEN (film → questions → score) -->
+  <div id="quiz-ozch-screen" style="display:none;">
+    <div class="section">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <button class="btn-cancel-settings" style="padding:6px 14px;font-size:.76rem;" onclick="openOzHome()">← Chapters</button>
+        <div style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--text);" id="oz-ch-title"></div>
+      </div>
+      <div id="oz-watch">
+        <video class="oz-video" id="oz-vid" controls playsinline preload="metadata"></video>
+        <div class="oz-watch-row">
+          <button class="btn-quiz-retake" style="flex:none;padding:12px 22px;" id="oz-start" onclick="startOzQuestions()" disabled>📝 Questions</button>
+          <span class="oz-hint" id="oz-hint"></span>
+        </div>
+      </div>
+      <div id="oz-play" style="display:none;">
+        <div class="quiz-progress-row">
+          <span class="quiz-progress-label" id="oz-q-label"></span>
+          <div class="quiz-progress-track"><div class="quiz-progress-fill" id="oz-progress"></div></div>
+        </div>
+        <div class="quiz-question-card" style="text-align:left;">
+          <span class="oz-tag" id="oz-q-tag"></span>
+          <div class="quiz-question-text" id="oz-q-text"></div>
+          <div class="oz-quote" id="oz-q-quote" style="display:none;"></div>
+        </div>
+        <div class="oz-opts" id="oz-opts"></div>
+        <div class="oz-explain" id="oz-explain" style="display:none;">
+          <div class="oz-verdict" id="oz-verdict"></div>
+          <div id="oz-explain-text"></div>
+          <div style="text-align:right;margin-top:12px;"><button onclick="ozNext()" id="oz-next" style="background:#f59e0b;color:#fff;border:none;border-radius:8px;padding:9px 26px;font-size:0.95rem;font-weight:700;cursor:pointer;"></button></div>
+        </div>
+      </div>
+      <div id="oz-done" style="display:none;">
+        <div class="quiz-result-card">
+          <div class="quiz-result-emoji" id="oz-res-emoji"></div>
+          <div class="quiz-result-score" id="oz-res-score"></div>
+          <div class="quiz-result-label" id="oz-res-label"></div>
+          <div class="quiz-result-msg" id="oz-res-msg"></div>
+          <div class="quiz-result-btns" id="oz-res-btns"></div>
+        </div>
+        <div class="quiz-section-title">Your Answers</div>
+        <div class="quiz-answers-list" id="oz-answers"></div>
+      </div>
+    </div>
+  </div>
+
 </div><!-- /tab-quizzes -->
 
 <!-- ACTIONS -->
@@ -1584,6 +1675,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="oz/quiz-data.js?v=1"></script>
 <script>
 // ─────────────────────────────────────────────────────────────
 // CONSTANTS & DEFAULTS
@@ -3053,6 +3145,8 @@ let logFilter     = 'all';
 function setDashTab(tab) {
   activeDashTab = tab;
   quizStopTimer();
+  const ozVid = document.getElementById('oz-vid');
+  if (ozVid) ozVid.pause();
   document.querySelectorAll('.dash-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
   ['overview','charts','quests','quizzes'].forEach(t => {
     const el = document.getElementById('tab-' + t);
@@ -6163,6 +6257,11 @@ const QUIZ_BANK = [
     ],
     pairs: BOOKS_PAIRS
   },
+  { id:'ozcomp', section:'Books & Stories', title:'Wizard of Oz Comprehension', emoji:'🌈',
+    type:'oz',
+    description:'Watch each chapter film, then answer questions. Pass all 24 chapters to earn €4!',
+    pairs: typeof OZ_QUIZ !== 'undefined' ? OZ_QUIZ.flatMap(c => c.questions) : []
+  },
   { id:'classical', section:'Music', title:'Classical Music', emoji:'🎼',
     type:'audio', skipPicker: true,
     description:'Hear 30 seconds — name the composer!',
@@ -6341,12 +6440,13 @@ function buildQuizList(categoryKey) {
       const key = quizAttemptKey(q.id, c.key);
       return sum + ((state && state.quizAttempts && state.quizAttempts[key]) || 0);
     }, 0);
+    const isOz = q.type === 'oz';
     return `<div class="quiz-bank-card" onclick="showContinentPicker('${q.id}')">
       <div class="quiz-bank-card-emoji">${q.emoji}</div>
       <div class="quiz-bank-card-title">${q.title}</div>
       <div class="quiz-bank-card-meta">${q.description}</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;">
-        <div class="quiz-bank-card-badge">📝 ${q.pairs.length} questions · 10/round · ⏱ 15s</div>
+        <div class="quiz-bank-card-badge">${isOz ? `🎬 ${OZ_QUIZ.length} chapters · ${ozPassedCount()}/${OZ_QUIZ.length} passed` : `📝 ${q.pairs.length} questions · 10/round · ⏱ 15s`}</div>
         <div class="quiz-bank-card-badge">${totalAttempts ? totalAttempts+' rounds played' : 'New!'}</div>
       </div>
     </div>`;
@@ -6382,6 +6482,7 @@ function buildQuizHistory() {
 function showContinentPicker(quizId) {
   const quiz = QUIZ_BANK.find(q => q.id === quizId);
   if (!quiz) return;
+  if (quiz.type === 'oz') { openOzHome(); return; }
   if (quiz.skipPicker) { startQuiz(quizId, 'all'); return; }
   const titleEl = document.getElementById('quiz-cont-quiz-title');
   if (titleEl) titleEl.textContent = `${quiz.emoji} ${quiz.title}`;
@@ -6447,10 +6548,12 @@ function startQuiz(quizId, continent) {
 }
 
 function showQuizScreen(which) {
-  ['category','bank','continent','play','results'].forEach(s => {
+  ['category','bank','continent','play','results','oz','ozch'].forEach(s => {
     const el = document.getElementById('quiz-' + s + '-screen');
     if (el) el.style.display = s === which ? 'block' : 'none';
   });
+  const ozVid = document.getElementById('oz-vid');
+  if (ozVid && which !== 'ozch') ozVid.pause();
 }
 
 function renderQuizQuestion() {
@@ -6672,6 +6775,228 @@ function backToQuizBank() {
   quizSession = null;
   buildCategoryScreen();
   showQuizScreen('category');
+}
+
+// ─────────────────────────────────────────────────────────────
+// WIZARD OF OZ COMPREHENSION
+// One film per chapter (oz/chNN-*.mp4), then that chapter's questions (oz/quiz-data.js).
+// A chapter is passed at 80%+ (7/8). All chapters passed → €4 once, as a quest session.
+// ─────────────────────────────────────────────────────────────
+
+const OZ_PASS_PCT = 0.8;
+const OZ_REWARD = 4.00;
+const OZ_TAGS = { story: 'Story', word: 'Word', literature: 'How stories work' };
+let ozSession = null;
+
+function ozEsc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function ozState() {
+  if (!state) return { best:{}, watched:{}, rewarded:false };
+  if (!state.oz) state.oz = { best:{}, watched:{}, rewarded:false, rewardedAt:null };
+  return state.oz;
+}
+
+function ozPassMark(ch) { return Math.ceil(ch.questions.length * OZ_PASS_PCT); }
+
+function ozIsPassed(ch) {
+  const b = ozState().best[ch.chapter];
+  return b !== undefined && b >= ozPassMark(ch);
+}
+
+function ozPassedCount() {
+  if (typeof OZ_QUIZ === 'undefined') return 0;
+  return OZ_QUIZ.filter(ozIsPassed).length;
+}
+
+function openOzHome() {
+  const oz = ozState();
+  const passed = ozPassedCount(), total = OZ_QUIZ.length;
+  const reward = document.getElementById('oz-reward');
+  reward.innerHTML = oz.rewarded
+    ? `<div class="oz-reward-card oz-earned">
+        <div class="oz-reward-title">🏆 All ${total} chapters passed — ${fmtAmt(OZ_REWARD)} earned!</div>
+        <div class="oz-reward-sub">Added to your balance on ${oz.rewardedAt}. You can still rewatch and replay any chapter.</div>
+      </div>`
+    : `<div class="oz-reward-card">
+        <div class="oz-reward-title">🌈 ${passed} / ${total} chapters passed</div>
+        <div class="oz-reward-sub">Get at least 80% right in every chapter (7 of 8) and earn <strong>${fmtAmt(OZ_REWARD)}</strong>!</div>
+        <div class="oz-reward-track"><div class="oz-reward-fill" style="width:${passed / total * 100}%"></div></div>
+      </div>`;
+  document.getElementById('oz-grid').innerHTML = OZ_QUIZ.map(ch => {
+    const b = oz.best[ch.chapter];
+    const pass = ozIsPassed(ch);
+    const status = pass ? `✅ Passed · best ${b}/${ch.questions.length}`
+      : b !== undefined ? `Best ${b}/${ch.questions.length} · need ${ozPassMark(ch)}`
+      : oz.watched[ch.chapter] ? '🎬 Watched' : 'New!';
+    return `<button class="oz-ch${pass ? ' oz-pass' : b !== undefined ? ' oz-tried' : ''}" onclick="openOzChapter(${ch.chapter})">
+      <span class="oz-ch-num">Chapter ${ch.chapter}</span>
+      <span class="oz-ch-title">${ozEsc(ch.title)}</span>
+      <span class="oz-ch-status">${status}</span>
+    </button>`;
+  }).join('');
+  showQuizScreen('oz');
+}
+
+function openOzChapter(n) {
+  const ch = OZ_QUIZ.find(c => c.chapter === n);
+  if (!ch) return;
+  ozSession = { ch, order: [], qi: 0, answers: [], answered: false };
+  document.getElementById('oz-ch-title').textContent = `Chapter ${n} · ${ch.title}`;
+  document.getElementById('oz-watch').style.display = 'block';
+  document.getElementById('oz-play').style.display = 'none';
+  document.getElementById('oz-done').style.display = 'none';
+  const vid = document.getElementById('oz-vid');
+  vid.src = 'oz/' + ch.video;
+  const watched = !!ozState().watched[n];
+  document.getElementById('oz-start').disabled = !watched;
+  document.getElementById('oz-hint').textContent = watched
+    ? 'You have watched this one — rewatch it or go straight to the questions.'
+    : 'Watch the film to the end, then the questions open.';
+  showQuizScreen('ozch');
+  window.scrollTo(0, 0);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const vid = document.getElementById('oz-vid');
+  if (!vid) return;
+  vid.addEventListener('ended', () => {
+    if (!ozSession || !state) return;
+    ozState().watched[ozSession.ch.chapter] = true;
+    save();
+    document.getElementById('oz-start').disabled = false;
+    document.getElementById('oz-hint').textContent = 'Well watched! Ready for the questions?';
+  });
+});
+
+function startOzQuestions() {
+  if (!ozSession) return;
+  document.getElementById('oz-vid').pause();
+  document.getElementById('oz-watch').style.display = 'none';
+  document.getElementById('oz-done').style.display = 'none';
+  document.getElementById('oz-play').style.display = 'block';
+  ozSession.qi = 0; ozSession.answers = [];
+  renderOzQuestion();
+}
+
+function renderOzQuestion() {
+  const { ch, qi } = ozSession;
+  const q = ch.questions[qi];
+  const total = ch.questions.length;
+  document.getElementById('oz-q-label').textContent = `Question ${qi + 1} / ${total}`;
+  document.getElementById('oz-progress').style.width = ((qi + 1) / total * 100) + '%';
+  const tag = document.getElementById('oz-q-tag');
+  tag.className = 'oz-tag ' + q.type;
+  tag.textContent = OZ_TAGS[q.type] || q.type;
+  document.getElementById('oz-q-text').textContent = q.q;
+  const quote = document.getElementById('oz-q-quote');
+  quote.style.display = q.quote ? 'block' : 'none';
+  quote.textContent = q.quote ? `“${q.quote}”` : '';
+  ozSession.order = shuffle(q.options.map((_, i) => i));
+  ozSession.answered = false;
+  document.getElementById('oz-opts').innerHTML = ozSession.order.map(oi =>
+    `<button class="quiz-option" data-oi="${oi}" onclick="ozPick(${oi})">${ozEsc(q.options[oi])}<span class="oz-why" style="display:none;"></span></button>`
+  ).join('');
+  document.getElementById('oz-explain').style.display = 'none';
+}
+
+function ozPick(oi) {
+  if (!ozSession || ozSession.answered) return;
+  ozSession.answered = true;
+  const q = ozSession.ch.questions[ozSession.qi];
+  const ok = oi === q.answer;
+  ozSession.answers.push({ chosen: oi, correct: ok });
+  document.querySelectorAll('#oz-opts .quiz-option').forEach(b => {
+    const i = +b.dataset.oi;
+    b.disabled = true;
+    if (i === q.answer) b.classList.add(ok ? 'correct' : 'reveal');
+    if (i === oi && !ok) b.classList.add('wrong');
+    if ((i === oi || i === q.answer) && q.why && q.why[i]) {
+      const w = b.querySelector('.oz-why');
+      w.textContent = q.why[i];
+      w.style.display = 'block';
+    }
+  });
+  document.getElementById('oz-verdict').textContent = ok ? '🎉 Correct!' : '🤔 Not quite!';
+  document.getElementById('oz-explain-text').textContent = q.explain || '';
+  document.getElementById('oz-next').textContent = ozSession.qi === ozSession.ch.questions.length - 1 ? 'See my score →' : 'Next Question →';
+  document.getElementById('oz-explain').style.display = 'block';
+}
+
+function ozNext() {
+  if (!ozSession) return;
+  ozSession.qi++;
+  if (ozSession.qi < ozSession.ch.questions.length) renderOzQuestion();
+  else finishOzChapter();
+}
+
+function finishOzChapter() {
+  const { ch, answers } = ozSession;
+  const total = ch.questions.length;
+  const score = answers.filter(a => a.correct).length;
+  const mark = ozPassMark(ch);
+  const passedNow = score >= mark;
+  const oz = ozState();
+  const wasPassed = ozIsPassed(ch);
+  oz.best[ch.chapter] = Math.max(oz.best[ch.chapter] || 0, score);
+  oz.watched[ch.chapter] = true;
+
+  document.getElementById('oz-play').style.display = 'none';
+  document.getElementById('oz-done').style.display = 'block';
+  document.getElementById('oz-res-score').textContent = `${score} / ${total}`;
+  document.getElementById('oz-res-label').textContent = `Chapter ${ch.chapter} · ${ch.title}`;
+  document.getElementById('oz-res-emoji').textContent = score === total ? '🏆' : passedNow ? '🎉' : '📚';
+  const passedCount = ozPassedCount();
+  document.getElementById('oz-res-msg').textContent = passedNow
+    ? `${score === total ? 'Perfect!' : 'Chapter passed!'} ${passedCount} of ${OZ_QUIZ.length} chapters passed.`
+    : `You need ${mark} of ${total} to pass this chapter. Watch the film again and have another go!`;
+  const next = OZ_QUIZ.find(c => c.chapter === ch.chapter + 1);
+  document.getElementById('oz-res-btns').innerHTML = passedNow
+    ? `<button class="btn-quiz-back" onclick="openOzHome()">← Chapters</button>
+       ${next ? `<button class="btn-quiz-retake" onclick="openOzChapter(${next.chapter})">Next chapter →</button>`
+              : `<button class="btn-quiz-retake" onclick="startOzQuestions()">🔄 Try again</button>`}`
+    : `<button class="btn-quiz-back" onclick="openOzChapter(${ch.chapter})">🎬 Watch again</button>
+       <button class="btn-quiz-retake" onclick="startOzQuestions()">🔄 Try again</button>`;
+  document.getElementById('oz-answers').innerHTML = ch.questions.map((q, i) => {
+    const a = answers[i];
+    return `<div class="quiz-answer-row ${a.correct ? 'qa-correct' : 'qa-wrong'}">
+      <span class="quiz-answer-icon">${a.correct ? '✅' : '❌'}</span>
+      <span class="quiz-answer-q">${ozEsc(q.q)}</span>
+      <span class="quiz-answer-a">${a.correct ? ozEsc(q.options[q.answer]) : `✓ ${ozEsc(q.options[q.answer])}`}</span>
+    </div>`;
+  }).join('');
+
+  if (state) {
+    if (!state.quizAttempts) state.quizAttempts = {};
+    state.quizAttempts.ozcomp = (state.quizAttempts.ozcomp || 0) + 1;
+    state.sessions.push({
+      id: uid(), type: 'quiz', quizId: 'ozcomp', quizTitle: `Oz Chapter ${ch.chapter}`,
+      continent: 'all', date: todayStr(), minutes: 0, earned: 0,
+      score, total, difficulty: 1, manual: false, doneBy: currentUserRef()
+    });
+    let rewardedNow = false;
+    if (!oz.rewarded && passedCount === OZ_QUIZ.length) {
+      oz.rewarded = true;
+      oz.rewardedAt = todayStr();
+      state.sessions.push({
+        id: uid(), type: 'quest', questId: 'ozcomp', questTitle: '🌈 Wizard of Oz Comprehension — all 24 chapters passed',
+        date: todayStr(), minutes: 0, earned: OZ_REWARD, manual: false, doneBy: currentUserRef()
+      });
+      state.balance = Math.round((state.balance + OZ_REWARD) * 100) / 100;
+      rewardedNow = true;
+    }
+    save();
+    if (rewardedNow) {
+      document.getElementById('oz-res-emoji').textContent = '🏆';
+      document.getElementById('oz-res-msg').textContent = `You passed all ${OZ_QUIZ.length} chapters of The Wizard of Oz! +${fmtAmt(OZ_REWARD)} added to your balance! 🎉`;
+      showChestToast('🌈', `Oz complete! +${fmtAmt(OZ_REWARD)} earned!`);
+      renderAll();
+    } else if (passedNow && !wasPassed) {
+      showChestToast('✅', `Chapter ${ch.chapter} passed! ${passedCount}/${OZ_QUIZ.length}`);
+    }
+  }
+  window.scrollTo(0, 0);
 }
 
 // ─────────────────────────────────────────────────────────────
