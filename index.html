@@ -6277,7 +6277,7 @@ const QUIZ_BANK = [
   },
   { id:'gardencomp', section:'Books & Stories', title:'The Secret Garden Comprehension', emoji:'🌹',
     type:'oz',
-    description:'Watch each chapter film, then answer questions. Pass all 27 chapters to earn €1!',
+    description:'Watch each chapter film, then answer questions. Pass all 27 chapters to earn €2!',
     pairs: typeof GARDEN_QUIZ !== 'undefined' ? GARDEN_QUIZ.flatMap(c => c.questions) : []
   },
   { id:'classical', section:'Music', title:'Classical Music', emoji:'🎼',
@@ -6810,7 +6810,7 @@ const CH_BOOKS = {
                title: 'Alice in Wonderland Comprehension', emoji: '🐇', short: 'Alice', book: "Alice's Adventures in Wonderland" },
   lookingcomp: { data: () => typeof LOOKING_QUIZ !== 'undefined' ? LOOKING_QUIZ : [], dir: 'looking/', stateKey: 'looking', reward: 1.00,
                title: 'Through the Looking-Glass Comprehension', emoji: '♟️', short: 'Looking-Glass', book: 'Through the Looking-Glass' },
-  gardencomp: { data: () => typeof GARDEN_QUIZ !== 'undefined' ? GARDEN_QUIZ : [], dir: 'garden/', stateKey: 'garden', reward: 1.00,
+  gardencomp: { data: () => typeof GARDEN_QUIZ !== 'undefined' ? GARDEN_QUIZ : [], dir: 'garden/', stateKey: 'garden', reward: 2.00,
                title: 'The Secret Garden Comprehension', emoji: '🌹', short: 'Secret Garden', book: 'The Secret Garden' },
 };
 let ozBookId = 'ozcomp';
