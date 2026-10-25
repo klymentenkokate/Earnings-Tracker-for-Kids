@@ -1677,6 +1677,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="oz/quiz-data.js?v=1"></script>
 <script src="alice/quiz-data.js?v=1"></script>
+<script src="looking/quiz-data.js?v=1"></script>
 <script>
 // ─────────────────────────────────────────────────────────────
 // CONSTANTS & DEFAULTS
@@ -6268,6 +6269,11 @@ const QUIZ_BANK = [
     description:'Watch each chapter film, then answer questions. Pass all 12 chapters to earn €1!',
     pairs: typeof ALICE_QUIZ !== 'undefined' ? ALICE_QUIZ.flatMap(c => c.questions) : []
   },
+  { id:'lookingcomp', section:'Books & Stories', title:'Through the Looking-Glass Comprehension', emoji:'♟️',
+    type:'oz',
+    description:'Watch each chapter film, then answer questions. Pass all 12 chapters to earn €1!',
+    pairs: typeof LOOKING_QUIZ !== 'undefined' ? LOOKING_QUIZ.flatMap(c => c.questions) : []
+  },
   { id:'classical', section:'Music', title:'Classical Music', emoji:'🎼',
     type:'audio', skipPicker: true,
     description:'Hear 30 seconds — name the composer!',
@@ -6784,7 +6790,7 @@ function backToQuizBank() {
 }
 
 // ─────────────────────────────────────────────────────────────
-// CHAPTER-FILM BOOKS (Wizard of Oz, Alice in Wonderland)
+// CHAPTER-FILM BOOKS (Wizard of Oz, Alice in Wonderland, Through the Looking-Glass)
 // One film per chapter (<dir>/chNN-*.mp4), then that chapter's questions (<dir>/quiz-data.js).
 // A chapter is passed at 80%+ (7/8). All chapters of a book passed → its reward once, as a quest session.
 // The screens and functions keep their oz* names; CH_BOOKS[ozBookId] says which book is open.
@@ -6796,6 +6802,8 @@ const CH_BOOKS = {
                title: 'Wizard of Oz Comprehension', emoji: '🌈', short: 'Oz', book: 'The Wizard of Oz' },
   alicecomp: { data: () => typeof ALICE_QUIZ !== 'undefined' ? ALICE_QUIZ : [], dir: 'alice/', stateKey: 'alice', reward: 1.00,
                title: 'Alice in Wonderland Comprehension', emoji: '🐇', short: 'Alice', book: "Alice's Adventures in Wonderland" },
+  lookingcomp: { data: () => typeof LOOKING_QUIZ !== 'undefined' ? LOOKING_QUIZ : [], dir: 'looking/', stateKey: 'looking', reward: 1.00,
+               title: 'Through the Looking-Glass Comprehension', emoji: '♟️', short: 'Looking-Glass', book: 'Through the Looking-Glass' },
 };
 let ozBookId = 'ozcomp';
 const ozBook = () => CH_BOOKS[ozBookId];
