@@ -7000,5 +7000,7284 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "min": 11,
 "pay": 0.09,
 "subjectShort": "Francés"
+},
+{
+"id": "fr-u4-l1",
+"unit": 4,
+"label": "Lección 1",
+"title": "C'est ma cousine !",
+"pages": "35–36",
+"icon": "👨‍👩‍👧‍👦",
+"intro": "La **familia** y los posesivos. En español «mi» sirve para masculino y femenino (mi padre, mi madre), pero en francés cambia: **mon** père (masculino), **ma** mère (femenino), **mes** parents (plural, como «mis»). Igual con **ton / ta / tes** y **son / sa / ses**.",
+"sections": [
+{
+"title": "Del cuaderno · p. 35",
+"icon": "📒",
+"from": 0,
+"n": 12
+},
+{
+"title": "El árbol de Théo · p. 35",
+"icon": "🌳",
+"from": 12,
+"n": 6
+},
+{
+"title": "Del cuaderno · p. 36 · la feria",
+"icon": "🎡",
+"from": 18,
+"n": 12
+},
+{
+"title": "Más práctica · «su» en francés",
+"icon": "💪",
+"from": 30,
+"n": 13
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 43,
+"n": 5
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Completa «Ma famille»:",
+"opts": [
+"père",
+"mère",
+"sœur"
+],
+"a": 0,
+"fr": "Mon ____ s'appelle Vincent.",
+"why": "**Mon** → palabra masculina: mon père.",
+"img": "👨",
+"sayA": "au/e0c2a7baaadca9ad.mp3",
+"show": "Mon père s'appelle Vincent."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"mère",
+"père",
+"frère"
+],
+"a": 0,
+"fr": "Ma ____ s'appelle Laure.",
+"why": "**Ma** → palabra femenina: ma mère.",
+"img": "👩",
+"sayA": "au/5604b3070e6991c0.mp3",
+"show": "Ma mère s'appelle Laure."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"frère",
+"sœur",
+"tante"
+],
+"a": 1,
+"fr": "J'ai une petite ____, Lola.",
+"img": "👧",
+"sayA": "au/26c7b37debf31390.mp3",
+"show": "J'ai une petite sœur, Lola."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"frère",
+"sœur",
+"cousine"
+],
+"a": 0,
+"fr": "J'ai un grand ____, Oscar.",
+"img": "👦",
+"sayA": "au/77d6d1dc5ed12244.mp3",
+"show": "J'ai un grand frère, Oscar."
+},
+{
+"t": "choice",
+"q": "La mujer de mi tío es mi…",
+"opts": [
+"tante",
+"cousine",
+"grand-mère"
+],
+"a": 0,
+"fr": "La femme de mon oncle s'appelle Olga. C'est ma ____.",
+"why": "**la tante** = la tía · **l'oncle** = el tío.",
+"sayA": "au/f21d24ebdc378b02.mp3",
+"show": "La femme de mon oncle s'appelle Olga. C'est ma tante."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"grand-mère",
+"sœur",
+"cousine"
+],
+"a": 0,
+"fr": "J'adore ma ____ ! Elle a 72 ans.",
+"img": "👵",
+"sayA": "au/eb7186d1c6a4d76e.mp3",
+"show": "J'adore ma grand-mère ! Elle a 72 ans."
+},
+{
+"t": "choice",
+"q": "Elige el posesivo:",
+"opts": [
+"mon",
+"ma"
+],
+"a": 1,
+"fr": "____ maison",
+"why": "**la** maison es femenino → **ma** maison.",
+"keep": true,
+"sayA": "au/55bc44f782e54485.mp3",
+"show": "ma maison"
+},
+{
+"t": "choice",
+"q": "Elige el posesivo:",
+"opts": [
+"ton",
+"ta"
+],
+"a": 1,
+"fr": "____ chienne",
+"why": "**une** chienne (perra) es femenino → **ta** chienne.",
+"keep": true,
+"sayA": "au/43723d991453369a.mp3",
+"show": "ta chienne"
+},
+{
+"t": "choice",
+"q": "Elige el posesivo:",
+"opts": [
+"son",
+"sa"
+],
+"a": 0,
+"fr": "____ cousin",
+"why": "**un** cousin (masculino) → **son** cousin.",
+"keep": true,
+"sayA": "au/c5ed3d34b93f4df1.mp3",
+"show": "son cousin"
+},
+{
+"t": "choice",
+"q": "Elige el posesivo:",
+"opts": [
+"ton",
+"ta"
+],
+"a": 1,
+"fr": "____ tante",
+"keep": true,
+"sayA": "au/0a996f410d022699.mp3",
+"show": "ta tante"
+},
+{
+"t": "choice",
+"q": "Elige el posesivo:",
+"opts": [
+"mon",
+"ma"
+],
+"a": 0,
+"fr": "____ père",
+"keep": true,
+"sayA": "au/471eb7733901af9b.mp3",
+"show": "mon père"
+},
+{
+"t": "choice",
+"q": "Elige el posesivo:",
+"opts": [
+"son",
+"sa"
+],
+"a": 1,
+"fr": "____ sœur",
+"keep": true,
+"sayA": "au/50b2cd9a9f908290.mp3",
+"show": "sa sœur"
+},
+{
+"t": "choice",
+"q": "«Théo a une petite sœur, Celia, et une grande sœur, Manon.» ¿Quién es la hermana pequeña?",
+"opts": [
+"Celia",
+"Manon",
+"Emma"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "«La mère de Théo s'appelle Carole et son père Laurent.» ¿Cómo se llama el padre de Théo?",
+"opts": [
+"Franck",
+"Laurent",
+"Roger"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "«La tante de Théo s'appelle Patricia.» Patricia es… de Théo.",
+"opts": [
+"la mère",
+"la tante",
+"la sœur"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "Roger y Germaine están arriba del árbol (los abuelos). Para Théo, Roger es…",
+"opts": [
+"son oncle",
+"son grand-père",
+"son cousin"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "«Le cousin de Manon s'appelle Mathys.» Para Théo, Mathys es…",
+"opts": [
+"son frère",
+"son cousin",
+"son oncle"
+],
+"a": 1,
+"why": "Si es primo de Manon (su hermana), también es primo de Théo."
+},
+{
+"t": "match",
+"q": "Une cada palabra con su traducción:",
+"pairs": [
+[
+"le père",
+"el padre"
+],
+[
+"la mère",
+"la madre"
+],
+[
+"le frère",
+"el hermano"
+],
+[
+"la sœur",
+"la hermana"
+],
+[
+"le cousin",
+"el primo"
+],
+[
+"la cousine",
+"la prima"
+]
+],
+"au2": [
+"au/7b52bc336cd8024c.mp3",
+"au/3f5ac9c04ae6434f.mp3",
+"au/8e22a7c6327152c6.mp3",
+"au/f61eb2b1e20db0c0.mp3",
+"au/f7a1754c98b85c32.mp3",
+"au/61d835dce73aa07c.mp3"
+]
+},
+{
+"t": "choice",
+"q": "Mi padre está delante de mi madre:",
+"opts": [
+"devant",
+"derrière",
+"sous"
+],
+"a": 0,
+"fr": "Mon père est ____ ma mère.",
+"sayA": "au/99a0a19b25fe9b74.mp3",
+"show": "Mon père est devant ma mère."
+},
+{
+"t": "choice",
+"q": "Hector está sentado en las rodillas de su tía:",
+"opts": [
+"sur",
+"sous",
+"dans"
+],
+"a": 0,
+"fr": "Je suis ____ ses genoux.",
+"sayA": "au/7f94cfce26f12020.mp3",
+"show": "Je suis sur ses genoux."
+},
+{
+"t": "choice",
+"q": "El perro Doby está debajo de la mesa:",
+"opts": [
+"sur",
+"sous",
+"devant"
+],
+"a": 1,
+"fr": "Mon chien Doby est ____ la table.",
+"why": "**sous** = debajo · **sur** = encima.",
+"sayA": "au/47bc5dd8fa21e6cc.mp3",
+"show": "Mon chien Doby est sous la table."
+},
+{
+"t": "choice",
+"q": "La tía Chloé está dentro del tren fantasma:",
+"opts": [
+"dans",
+"sur",
+"à côté de"
+],
+"a": 0,
+"fr": "Ma tante Chloé est ____ le train fantôme.",
+"sayA": "au/61fb86ac0fe009de.mp3",
+"show": "Ma tante Chloé est dans le train fantôme."
+},
+{
+"t": "choice",
+"q": "Los padres están al lado del tiovivo:",
+"opts": [
+"à côté du",
+"sous le",
+"dans le"
+],
+"a": 0,
+"fr": "Mon père et ma mère sont ____ manège.",
+"why": "**à côté de** + le → **à côté du** manège.",
+"sayA": "au/2bce34d652187556.mp3",
+"show": "Mon père et ma mère sont à côté du manège."
+},
+{
+"t": "type",
+"q": "Conjuga **être**:",
+"a": [
+"suis"
+],
+"fr": "Je m'appelle Tristan, je ____ franco-espagnol.",
+"sayA": "au/4d8fd0adc8f40fb5.mp3",
+"show": "Je m'appelle Tristan, je suis franco-espagnol."
+},
+{
+"t": "type",
+"q": "Conjuga **être**:",
+"a": [
+"est"
+],
+"fr": "Mon père ____ français.",
+"sayA": "au/41d73ff28b562af4.mp3",
+"show": "Mon père est français."
+},
+{
+"t": "type",
+"q": "Conjuga **être**:",
+"a": [
+"est"
+],
+"fr": "Ma mère ____ espagnole.",
+"sayA": "au/77c8dfca949fd9c6.mp3",
+"show": "Ma mère est espagnole."
+},
+{
+"t": "type",
+"q": "Conjuga **être**:",
+"a": [
+"sont"
+],
+"fr": "Ils ____ sympa !",
+"sayA": "au/0bba873a6a121d7e.mp3",
+"show": "Ils sont sympa !"
+},
+{
+"t": "type",
+"q": "Conjuga **être**:",
+"a": [
+"sommes"
+],
+"fr": "Nous ____ bilingues.",
+"sayA": "au/2ea1177d76822889.mp3",
+"show": "Nous sommes bilingues."
+},
+{
+"t": "type",
+"q": "Conjuga **être**:",
+"a": [
+"es"
+],
+"fr": "Tu ____ de quelle nationalité ?",
+"sayA": "au/6759184ebe0b59ae.mp3",
+"show": "Tu es de quelle nationalité ?"
+},
+{
+"t": "type",
+"q": "Conjuga **être**:",
+"a": [
+"êtes"
+],
+"fr": "Vous ____ nombreux dans ta famille ?",
+"why": "vous **êtes** lleva acento circunflejo: ê.",
+"sayA": "au/b1ee0ddc5b1adaed.mp3",
+"show": "Vous êtes nombreux dans ta famille ?"
+},
+{
+"t": "choice",
+"q": "«su padre» (de Lou):",
+"opts": [
+"son père",
+"sa père",
+"ses père"
+],
+"a": 0,
+"why": "En francés manda la palabra que sigue: **le** père → **son** père (aunque Lou sea una chica).",
+"keep": true
+},
+{
+"t": "choice",
+"q": "«su madre» (de Théo):",
+"opts": [
+"son mère",
+"sa mère",
+"ses mère"
+],
+"a": 1,
+"why": "**la** mère → **sa** mère (aunque Théo sea un chico).",
+"keep": true
+},
+{
+"t": "choice",
+"q": "«sus abuelos»:",
+"opts": [
+"son grands-parents",
+"sa grands-parents",
+"ses grands-parents"
+],
+"a": 2,
+"why": "Plural → **ses**.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "«mi amiga» (ojo: empieza por vocal):",
+"opts": [
+"ma amie",
+"mon amie"
+],
+"a": 1,
+"why": "Delante de vocal (o h muda) se usa **mon** aunque sea femenino: **mon** amie, **mon** école, **mon** histoire. Suena mejor.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "Elige:",
+"opts": [
+"ma école",
+"mon école"
+],
+"a": 1,
+"why": "**l'école** es femenino, pero empieza por vocal → **mon** école.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "«su amiga» (de Théo):",
+"opts": [
+"sa amie",
+"son amie"
+],
+"a": 1,
+"why": "**amie** empieza por vocal → **son** amie (aunque sea femenino).",
+"keep": true
+},
+{
+"t": "type",
+"q": "Escribe el posesivo (tu):",
+"a": [
+"ton"
+],
+"fr": "C'est ____ amie Lou ?",
+"why": "Delante de vocal: **ton** amie, no «ta amie».",
+"sayA": "au/c717d8e0158c8696.mp3",
+"show": "C'est ton amie Lou ?"
+},
+{
+"t": "type",
+"q": "Escribe el posesivo (de él):",
+"a": [
+"sa"
+],
+"fr": "C'est ____ sœur. Elle s'appelle Celia.",
+"sayA": "au/ad4eeed4d1ab5c46.mp3",
+"show": "C'est sa sœur. Elle s'appelle Celia."
+},
+{
+"t": "type",
+"q": "Escribe el posesivo (de ella):",
+"a": [
+"son"
+],
+"fr": "C'est ____ frère. Il s'appelle Martin.",
+"sayA": "au/b4b6062f825ac164.mp3",
+"show": "C'est son frère. Il s'appelle Martin."
+},
+{
+"t": "type",
+"q": "Escribe el posesivo (mis):",
+"a": [
+"mes"
+],
+"fr": "J'adore ____ cousins !",
+"sayA": "au/b0a285958b6cc8b2.mp3",
+"show": "J'adore mes cousins !"
+},
+{
+"t": "type",
+"q": "Escribe el posesivo (tu):",
+"a": [
+"ta"
+],
+"fr": "Comment s'appelle ____ tante ?",
+"sayA": "au/e9744dc3f72d9320.mp3",
+"show": "Comment s'appelle ta tante ?"
+},
+{
+"t": "choice",
+"q": "Un chico dice:",
+"opts": [
+"Je suis espagnol.",
+"Je es espagnol.",
+"Je suis espagnole."
+],
+"a": 0,
+"why": "Un chico dice **espagnol**; una chica dice **espagnole**. «Je es» no existe: **je suis**.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "Una chica dice:",
+"opts": [
+"Je suis français.",
+"Je suis française."
+],
+"a": 1,
+"why": "Femenino: + **e** → français**e**, espagnol**e**.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Quién es?",
+"opts": [
+"su hermana",
+"su madre",
+"su abuela"
+],
+"a": 2,
+"au": "au/c614efb391e21bbb.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Dónde está el perro?",
+"opts": [
+"encima de la mesa",
+"debajo de la mesa",
+"al lado de la mesa"
+],
+"a": 1,
+"au": "au/917777f3793bfc75.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿De qué nacionalidad es la madre?",
+"opts": [
+"francesa",
+"española",
+"suiza"
+],
+"a": 1,
+"au": "au/75b161c9880a2d56.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"C'est mon cousin."
+],
+"au": "au/fcb56f7754deb48e.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Nous sommes bilingues."
+],
+"au": "au/b1b083571cc3deb4.mp3"
+}
+],
+"film": {
+"src": "films/ch41-c-est-ma-cousine-v3.mp4",
+"dur": 91.5
+},
+"pagesLabel": "cuaderno p. 35–36",
+"min": 19,
+"pay": 0.16,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u4-l2",
+"unit": 4,
+"label": "Lección 2",
+"title": "J'aime les animaux",
+"pages": "37",
+"icon": "🐶",
+"intro": "Los **animales** y dos sonidos que hay que distinguir: **[y]** de **tu** (no existe en español: labios en «u», lengua en «i») y **[u]** de **tout** (como nuestra «u», se escribe **ou**). ¡Ojo con el género!: **une** souris (el ratón), **un** serpent (la serpiente).",
+"sections": [
+{
+"title": "Del cuaderno · p. 37",
+"icon": "📒",
+"from": 0,
+"n": 11
+},
+{
+"title": "[y] o [u]",
+"icon": "👄",
+"from": 11,
+"n": 10
+},
+{
+"title": "Más práctica · animales",
+"icon": "💪",
+"from": 21,
+"n": 8
+}
+],
+"items": [
+{
+"t": "type",
+"q": "¿Qué animal es? 🐶 (con artículo: un…)",
+"a": [
+"un chien",
+"chien",
+"le chien"
+],
+"img": "🐶"
+},
+{
+"t": "type",
+"q": "¿Qué animal es? 🐱",
+"a": [
+"un chat",
+"chat",
+"le chat"
+],
+"img": "🐱"
+},
+{
+"t": "type",
+"q": "¿Qué animal es? 🐦",
+"a": [
+"un oiseau",
+"oiseau",
+"l'oiseau"
+],
+"why": "**un oiseau**: o-i-s-e-a-u. ¡Tiene las cinco vocales!",
+"img": "🐦"
+},
+{
+"t": "type",
+"q": "¿Qué animal es? 🐍",
+"a": [
+"un serpent",
+"serpent",
+"le serpent"
+],
+"why": "**un** serpent: en francés es masculino.",
+"img": "🐍"
+},
+{
+"t": "type",
+"q": "¿Qué animal es? 🐟",
+"a": [
+"un poisson",
+"poisson",
+"le poisson"
+],
+"why": "**poisson** con **ss** (sonido s). Con una s, «poison» es veneno.",
+"img": "🐟"
+},
+{
+"t": "type",
+"q": "¿Qué animal es? 🐺",
+"a": [
+"un loup",
+"loup",
+"le loup"
+],
+"why": "**loup**: la p final no se pronuncia: «lu».",
+"img": "🐺"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué animal es?",
+"opts": [
+"🐱",
+"🐶",
+"🐍",
+"🐦"
+],
+"a": 0,
+"keep": true,
+"au": "au/65c915a35f360411.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué animal es?",
+"opts": [
+"🐱",
+"🐶",
+"🐍",
+"🐦"
+],
+"a": 1,
+"keep": true,
+"au": "au/c44bd59fc2f7ef24.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué animal es?",
+"opts": [
+"🐱",
+"🐶",
+"🐍",
+"🐦"
+],
+"a": 2,
+"keep": true,
+"au": "au/bcb7613f9c76e8b7.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué animal es?",
+"opts": [
+"🐱",
+"🐶",
+"🐍",
+"🐦"
+],
+"a": 3,
+"keep": true,
+"au": "au/ca8b7096242cc9c4.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha el trabalenguas. ¿Dónde cae Lulu la mosca?",
+"opts": [
+"dans la louche (en el cucharón)",
+"dans la soupe",
+"sur la table"
+],
+"a": 0,
+"au": "au/e4efef509b8f2184.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [y] (tu) o [u] (tout)?",
+"opts": [
+"[y] como «tu»",
+"[u] como «tout»"
+],
+"a": 0,
+"keep": true,
+"au": "au/927817344ed369e4.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [y] (tu) o [u] (tout)?",
+"opts": [
+"[y] como «tu»",
+"[u] como «tout»"
+],
+"a": 1,
+"keep": true,
+"au": "au/6dbec1fba950168d.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [y] o [u]?",
+"opts": [
+"[y]",
+"[u]"
+],
+"a": 0,
+"keep": true,
+"au": "au/3fa180bb31d8e408.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [y] o [u]?",
+"opts": [
+"[y]",
+"[u]"
+],
+"a": 1,
+"keep": true,
+"au": "au/d7d6e91e65609add.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [y] o [u]?",
+"opts": [
+"[y]",
+"[u]"
+],
+"a": 1,
+"keep": true,
+"au": "au/4550caa3429d1e5c.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [y] o [u]?",
+"opts": [
+"[y]",
+"[u]"
+],
+"a": 0,
+"keep": true,
+"au": "au/ed9256e4ce077afd.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [y] o [u]?",
+"opts": [
+"[y]",
+"[u]"
+],
+"a": 1,
+"keep": true,
+"au": "au/7d34f9fddbf9b282.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué palabra es?",
+"opts": [
+"dessus (encima)",
+"dessous (debajo)"
+],
+"a": 0,
+"keep": true,
+"au": "au/5f834a6037bae87a.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué palabra es?",
+"opts": [
+"dessus (encima)",
+"dessous (debajo)"
+],
+"a": 1,
+"keep": true,
+"au": "au/9460a28d3348c118.mp3"
+},
+{
+"t": "choice",
+"q": "¿Qué palabra tiene el sonido [u] (como la «u» española)?",
+"opts": [
+"la mouche",
+"la lune",
+"tu"
+],
+"a": 0,
+"why": "**ou** = [u]: mouche, louche, loup, tout. **u** sola = [y]: lune, tu, Lulu.",
+"keep": true
+},
+{
+"t": "match",
+"q": "Une cada animal con su nombre:",
+"pairs": [
+[
+"🐁",
+"une souris"
+],
+[
+"🐢",
+"une tortue"
+],
+[
+"🐰",
+"un lapin"
+],
+[
+"🐴",
+"un cheval"
+],
+[
+"🐸",
+"une grenouille"
+]
+]
+},
+{
+"t": "choice",
+"q": "«el ratón» en francés es…",
+"opts": [
+"un souris",
+"une souris"
+],
+"a": 1,
+"why": "¡Al revés que en español! **une** souris es femenino.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "«la serpiente» en francés es…",
+"opts": [
+"une serpent",
+"un serpent"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"J'aime les chiens.",
+"J'aime les chien.",
+"J'aime le chiens."
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Je n'aime pas les serpents.",
+"Je ne aime pas les serpents.",
+"Je n'aime les serpents pas."
+],
+"a": 0
+},
+{
+"t": "type",
+"q": "Escribe: «Me gustan los gatos.»",
+"a": [
+"J'aime les chats."
+],
+"ph": "J'aime …"
+},
+{
+"t": "type",
+"q": "Escribe el plural: un oiseau → des …",
+"a": [
+"oiseaux",
+"des oiseaux"
+],
+"why": "-eau → -eau**x**: un oiseau, des oiseau**x**."
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Lulu la mouche tombe dans la louche."
+],
+"au": "au/df574adb5eb28feb.mp3"
+}
+],
+"film": {
+"src": "films/ch42-j-aime-les-animaux-v2.mp4",
+"dur": 70.3
+},
+"pagesLabel": "cuaderno p. 37",
+"min": 13,
+"pay": 0.11,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u4-zoom",
+"unit": 4,
+"label": "Zoom",
+"title": "Zoom sur l'histoire de France",
+"pages": "38",
+"icon": "👑",
+"intro": "Cuatro personajes famosos de la historia de Francia: **Louis XIV** (el Rey Sol), **Marie Curie** (científica), **Jeanne d'Arc** (heroína) y **Victor Hugo** (escritor).",
+"sections": [
+{
+"title": "Del cuaderno · p. 38",
+"icon": "📒",
+"from": 0,
+"n": 5
+},
+{
+"title": "Más práctica",
+"icon": "🔎",
+"from": 5,
+"n": 7
+}
+],
+"items": [
+{
+"t": "match",
+"q": "Une cada personaje con su objeto:",
+"pairs": [
+[
+"Louis XIV",
+"👑 une couronne"
+],
+[
+"Marie Curie",
+"⚗️ un laboratoire"
+],
+[
+"Jeanne d'Arc",
+"⚔️ une épée"
+],
+[
+"Victor Hugo",
+"📚 des livres"
+]
+]
+},
+{
+"t": "choice",
+"q": "¿Qué libro escribió Victor Hugo?",
+"opts": [
+"Les Misérables",
+"Les Trois Mousquetaires",
+"Le Tour du monde en 80 jours"
+],
+"a": 0,
+"why": "**Les Misérables** es de Victor Hugo. Los otros dos son de Alexandre Dumas y Jules Verne."
+},
+{
+"t": "choice",
+"q": "¿Cuál es el otro nombre de Louis XIV?",
+"opts": [
+"le Roi-Soleil ☀️",
+"le roi Nuage ☁️",
+"le roi Éclair ⚡"
+],
+"a": 0,
+"why": "Le **Roi-Soleil** = el Rey Sol."
+},
+{
+"t": "choice",
+"q": "Marie Curie era…",
+"opts": [
+"une scientifique",
+"une reine",
+"une chanteuse"
+],
+"a": 0,
+"why": "Ganó **dos** premios Nobel (física y química)."
+},
+{
+"t": "choice",
+"q": "Jeanne d'Arc es famosa por…",
+"opts": [
+"sus libros",
+"ser una heroína valiente",
+"sus cuadros"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 0,
+"fr": "Victor Hugo est un écrivain.",
+"why": "**un écrivain** = un escritor.",
+"keep": true,
+"au": "au/e100f8e2a41c3b1c.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 1,
+"fr": "Louis XIV est un scientifique.",
+"why": "Louis XIV est **un roi** (un rey).",
+"keep": true,
+"au": "au/81129b7e83af0308.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 0,
+"fr": "Marie Curie travaille dans un laboratoire.",
+"keep": true,
+"au": "au/c34a7f844675b2e7.mp3"
+},
+{
+"t": "type",
+"q": "Escribe en francés: «el rey»",
+"a": [
+"le roi",
+"roi"
+]
+},
+{
+"t": "type",
+"q": "Escribe en francés: «el sol»",
+"a": [
+"le soleil",
+"soleil"
+]
+},
+{
+"t": "choice",
+"q": "Escucha. ¿De quién habla?",
+"opts": [
+"Louis XIV",
+"Victor Hugo",
+"Marie Curie"
+],
+"a": 2,
+"au": "au/e8007189d2c5defb.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿De quién habla?",
+"opts": [
+"Louis XIV",
+"Victor Hugo",
+"Jeanne d'Arc"
+],
+"a": 0,
+"au": "au/3cb2bf075e28801f.mp3"
+}
+],
+"film": {
+"src": "films/ch43-l-histoire-de-france-v2.mp4",
+"dur": 68.0
+},
+"pagesLabel": "cuaderno p. 38",
+"min": 6,
+"pay": 0.05,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u4-l3",
+"unit": 4,
+"label": "Lección 3",
+"title": "Un anniversaire en famille",
+"pages": "39",
+"icon": "🎂",
+"intro": "Más posesivos (**ma, ta, sa, son, ses**), el verbo **être** completo (je suis, tu es, il est, nous sommes, vous êtes, ils sont) y dónde están las cosas: **dans, sur, sous, derrière, devant, à côté de**.",
+"sections": [
+{
+"title": "Del cuaderno · p. 39",
+"icon": "📒",
+"from": 0,
+"n": 13
+},
+{
+"title": "Más práctica · ¿dónde está?",
+"icon": "🎁",
+"from": 13,
+"n": 8
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 21,
+"n": 4
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Completa (je):",
+"opts": [
+"ma",
+"ta",
+"sa"
+],
+"a": 0,
+"fr": "J'adore ____ famille. Ils sont tous fantastiques !",
+"sayA": "au/4608742c66233574.mp3",
+"show": "J'adore ma famille. Ils sont tous fantastiques !"
+},
+{
+"t": "choice",
+"q": "Completa (elle):",
+"opts": [
+"son",
+"sa",
+"ses"
+],
+"a": 0,
+"fr": "Regarde ! C'est ____ frère ! Il s'appelle Martin.",
+"why": "**le** frère → **son** frère.",
+"sayA": "au/2290c1ef7e85ca1f.mp3",
+"show": "Regarde ! C'est son frère ! Il s'appelle Martin."
+},
+{
+"t": "choice",
+"q": "Completa (il):",
+"opts": [
+"Son",
+"Sa",
+"Ses"
+],
+"a": 1,
+"fr": "____ grand-mère habite à Genève.",
+"sayA": "au/fa7db43827a9821b.mp3",
+"show": "Sa grand-mère habite à Genève."
+},
+{
+"t": "choice",
+"q": "Completa (elle):",
+"opts": [
+"son",
+"sa",
+"ses"
+],
+"a": 2,
+"fr": "Elle adore jouer avec ____ cousins !",
+"why": "Plural → **ses** cousins. (En el cuaderno pone «(je)», pero es un error: la lista solo tiene ma, ta, sa, son, ses.)",
+"sayA": "au/b44cb852e33581ca.mp3",
+"show": "Elle adore jouer avec ses cousins !"
+},
+{
+"t": "type",
+"q": "Conjuga **être**:",
+"a": [
+"sommes"
+],
+"fr": "Nous ____ au cinéma avec Noémie.",
+"sayA": "au/8357944482c76953.mp3",
+"show": "Nous sommes au cinéma avec Noémie."
+},
+{
+"t": "type",
+"q": "Conjuga **être**:",
+"a": [
+"es"
+],
+"fr": "Tu ____ très content.",
+"sayA": "au/3e572155c1469dfb.mp3",
+"show": "Tu es très content."
+},
+{
+"t": "type",
+"q": "Conjuga **être**:",
+"a": [
+"sont"
+],
+"fr": "Margaux et Justine ____ voisines.",
+"sayA": "au/9d08b0f4d1c8bab5.mp3",
+"show": "Margaux et Justine sont voisines."
+},
+{
+"t": "type",
+"q": "Conjuga **être**:",
+"a": [
+"est"
+],
+"fr": "Alexis ____ en Grèce.",
+"sayA": "au/e6c9dc2b6befe744.mp3",
+"show": "Alexis est en Grèce."
+},
+{
+"t": "type",
+"q": "Conjuga **être**:",
+"a": [
+"êtes"
+],
+"fr": "Vous ____ journaliste ou photographe ?",
+"sayA": "au/bb43ac4a2eecb618.mp3",
+"show": "Vous êtes journaliste ou photographe ?"
+},
+{
+"t": "choice",
+"q": "Ratibus nada en el agua 🏊:",
+"opts": [
+"dans",
+"sur",
+"derrière"
+],
+"a": 0,
+"fr": "Ratibus est ____ l'eau.",
+"sayA": "au/fde58f6f14a88c21.mp3",
+"show": "Ratibus est dans l'eau."
+},
+{
+"t": "choice",
+"q": "Ratibus se esconde detrás del castillo de arena:",
+"opts": [
+"devant",
+"derrière",
+"sur"
+],
+"a": 1,
+"fr": "Ratibus est ____ le château de sable.",
+"sayA": "au/460782b9d599148f.mp3",
+"show": "Ratibus est derrière le château de sable."
+},
+{
+"t": "choice",
+"q": "Ratibus está al lado de Clara:",
+"opts": [
+"à côté",
+"sous",
+"dans"
+],
+"a": 0,
+"fr": "Ratibus est ____ de Clara.",
+"sayA": "au/13160c0f33dc8e45.mp3",
+"show": "Ratibus est à côté de Clara."
+},
+{
+"t": "choice",
+"q": "Ratibus está tumbado encima de la toalla:",
+"opts": [
+"sous",
+"sur",
+"derrière"
+],
+"a": 1,
+"fr": "Ratibus est ____ la serviette de plage.",
+"sayA": "au/167afb8c47685027.mp3",
+"show": "Ratibus est sur la serviette de plage."
+},
+{
+"t": "match",
+"q": "Une cada palabra con su significado:",
+"pairs": [
+[
+"dans",
+"dentro de"
+],
+[
+"sur",
+"encima de"
+],
+[
+"sous",
+"debajo de"
+],
+[
+"devant",
+"delante de"
+],
+[
+"derrière",
+"detrás de"
+],
+[
+"à côté de",
+"al lado de"
+]
+],
+"au2": [
+"au/985465745fe17213.mp3",
+"au/b04d4e46c5e7c790.mp3",
+"au/ca2f60ad954867a3.mp3",
+"au/719f821179d4b779.mp3",
+"au/dee39d601be2f01e.mp3",
+"au/d0bf3ac524e3936a.mp3"
+]
+},
+{
+"t": "choice",
+"q": "El regalo está encima de la mesa 🎁:",
+"opts": [
+"Le cadeau est sous la table.",
+"Le cadeau est sur la table.",
+"Le cadeau est dans la table."
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "El gato está debajo de la silla 🐱:",
+"opts": [
+"Le chat est sous la chaise.",
+"Le chat est sur la chaise."
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "La tarta está dentro de la caja 🎂:",
+"opts": [
+"Le gâteau est dans la boîte.",
+"Le gâteau est derrière la boîte."
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "match",
+"q": "Une cada pronombre con **être**:",
+"pairs": [
+[
+"je",
+"suis"
+],
+[
+"tu",
+"es"
+],
+[
+"il / elle",
+"est"
+],
+[
+"nous",
+"sommes"
+],
+[
+"vous",
+"êtes"
+],
+[
+"ils / elles",
+"sont"
+]
+]
+},
+{
+"t": "type",
+"q": "Escribe: «Estamos en la fiesta.» (la fiesta = la fête)",
+"a": [
+"Nous sommes à la fête."
+],
+"ph": "Nous …"
+},
+{
+"t": "order",
+"q": "Ordena la frase:",
+"words": [
+"Le",
+"chien",
+"est",
+"à",
+"côté",
+"de",
+"mon",
+"père."
+],
+"a": [
+"Le chien est à côté de mon père."
+],
+"sayA": "au/c930a93e39220db8.mp3"
+},
+{
+"t": "order",
+"q": "Ordena la frase:",
+"words": [
+"Mes",
+"cousins",
+"sont",
+"dans",
+"le",
+"jardin."
+],
+"a": [
+"Mes cousins sont dans le jardin."
+],
+"sayA": "au/b749320135f17bdc.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Dónde está la tarta?",
+"opts": [
+"encima de la mesa",
+"debajo de la mesa",
+"detrás de la mesa"
+],
+"a": 0,
+"au": "au/395e39420d30bd7b.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Dónde está el gato?",
+"opts": [
+"dentro de la caja",
+"detrás de la caja",
+"al lado de la caja"
+],
+"a": 1,
+"au": "au/f432a028145d8982.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Elle est à côté de sa sœur."
+],
+"au": "au/820721aa7fc89243.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Vous êtes dans la cuisine."
+],
+"au": "au/909277e18d4acf1b.mp3"
+}
+],
+"film": {
+"src": "films/ch44-un-anniversaire-en-famille-v2.mp4",
+"dur": 86.8
+},
+"pagesLabel": "cuaderno p. 39",
+"min": 12,
+"pay": 0.1,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u4-culture",
+"unit": 4,
+"label": "Cultura + Lectura",
+"title": "Animaux, sorcière et ski",
+"pages": "40–42",
+"icon": "🐾",
+"intro": "La **SPA** (una asociación francesa que cuida a los animales abandonados), el cuento **«Aventure nocturne»** de la p. 41 y una historia de **Théo en Suiza**.",
+"sections": [
+{
+"title": "Découvertes culturelles · p. 40",
+"icon": "🐾",
+"from": 0,
+"n": 6
+},
+{
+"title": "Lecture · Aventure nocturne · p. 41",
+"icon": "🧙",
+"from": 6,
+"n": 6
+},
+{
+"title": "Nuestra historia · Théo en Suisse · p. 42",
+"icon": "⛷️",
+"from": 12,
+"n": 7
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "La SPA es una asociación…",
+"opts": [
+"en France",
+"aux Philippines",
+"en Espagne"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "Completa: la SPA, c'est la Société Protectrice des ____ .",
+"opts": [
+"animaux",
+"enfants",
+"arbres"
+],
+"a": 0,
+"why": "**la Société Protectrice des Animaux** = Sociedad Protectora de los Animales."
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 1,
+"fr": "Les animaux sont des jouets.",
+"why": "Un animal no es un juguete: es un ser vivo.",
+"keep": true,
+"au": "au/2d2397f291b649aa.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 0,
+"fr": "En été, des familles abandonnent des chiens : c'est mal.",
+"keep": true,
+"au": "au/dea3a17b76b6f11e.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 1,
+"fr": "La SPA n'aide pas les animaux.",
+"why": "Al contrario: la SPA **aide** (ayuda) a los animales.",
+"keep": true,
+"au": "au/f8e0d5cb146d66eb.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 0,
+"fr": "Le loup-garou n'existe pas.",
+"why": "**le loup-garou** = el hombre lobo. ¡Es una leyenda!",
+"keep": true,
+"au": "au/766e3b56a96515df.mp3"
+},
+{
+"t": "choice",
+"q": "Lee el cuento de la p. 41 en tu cuaderno. Anatole rentre chez…",
+"opts": [
+"son grand-père",
+"sa mère",
+"sa grand-mère"
+],
+"a": 2,
+"fr": "C'est la nuit. Anatole rentre chez sa grand-mère. Il a peur.",
+"au": "au/c47e48c4e9fb2366.mp3"
+},
+{
+"t": "choice",
+"q": "Dans son rêve, c'est…",
+"opts": [
+"le matin",
+"l'après-midi",
+"la nuit"
+],
+"a": 2
+},
+{
+"t": "choice",
+"q": "Devant Anatole, il y a…",
+"opts": [
+"une sorcière",
+"une maîtresse",
+"sa tante"
+],
+"a": 0,
+"fr": "Devant Anatole, il y a une sorcière horrible, verte, avec un chapeau sur la tête.",
+"why": "**une sorcière** = una bruja.",
+"au": "au/ad7a30b5fb0ba99f.mp3"
+},
+{
+"t": "choice",
+"q": "¿Qué animales ve Anatole?",
+"opts": [
+"🐱 des chats",
+"🐶 des chiens",
+"🐺 des loups"
+],
+"a": 2,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Dónde está Anatole al final?",
+"opts": [
+"🛏️ dans son lit",
+"🌳 dans un arbre",
+"🏥 à l'hôpital"
+],
+"a": 0,
+"why": "¡Era un sueño! «Il est dans son lit… Ce n'est pas réel !»",
+"keep": true
+},
+{
+"t": "choice",
+"q": "«Au secours !» quiere decir…",
+"opts": [
+"¡Socorro!",
+"¡Buenas noches!",
+"¡Adiós!"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "Lee y escucha. En la pista de esquí, Lara está…",
+"opts": [
+"devant Théo",
+"derrière Théo",
+"à côté de Théo"
+],
+"a": 0,
+"fr": "Théo est en Suisse, à la montagne. Sur la piste de ski, il y a une fille devant lui. Elle s'appelle Lara. Elle est suisse, elle a douze ans et elle habite à Genève. Lara a un petit frère, Max, il a cinq ans, et un gros chien, Bruno. Lara adore son chien !",
+"au": "au/f3e9e6adf683186d.mp3"
+},
+{
+"t": "choice",
+"q": "Lara est de quelle nationalité ?",
+"opts": [
+"française",
+"suisse",
+"espagnole"
+],
+"a": 1,
+"fr": "Théo est en Suisse, à la montagne. Sur la piste de ski, il y a une fille devant lui. Elle s'appelle Lara. Elle est suisse, elle a douze ans et elle habite à Genève. Lara a un petit frère, Max, il a cinq ans, et un gros chien, Bruno. Lara adore son chien !",
+"auto": false,
+"au": "au/f3e9e6adf683186d.mp3"
+},
+{
+"t": "type",
+"q": "Quel âge a Lara ? (en letras: Elle a … ans.)",
+"a": [
+"Elle a douze ans.",
+"Lara a douze ans.",
+"douze ans",
+"douze"
+]
+},
+{
+"t": "type",
+"q": "Lara habite où ? (à + ciudad)",
+"a": [
+"à Genève",
+"Elle habite à Genève.",
+"Lara habite à Genève.",
+"Genève"
+],
+"why": "**à** Genève, con acento en **à** y en **Genève**."
+},
+{
+"t": "type",
+"q": "Quel âge a Max ? (en letras)",
+"a": [
+"Il a cinq ans.",
+"Max a cinq ans.",
+"cinq ans",
+"cinq"
+]
+},
+{
+"t": "choice",
+"q": "Lara adore…",
+"opts": [
+"son collège",
+"son frère",
+"son chien"
+],
+"a": 2
+},
+{
+"t": "choice",
+"q": "Le chien de Lara est…",
+"opts": [
+"petit",
+"gros",
+"long"
+],
+"a": 1
+}
+],
+"pagesLabel": "cuaderno p. 40–42",
+"min": 8,
+"pay": 0.07,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u4-delf",
+"unit": 4,
+"label": "DELF Prim",
+"title": "DELF : les animaux de compagnie",
+"pages": "43–44",
+"icon": "🐈",
+"intro": "Como en el examen **DELF Prim**: escuchar a unos niños hablar de sus mascotas, leer un anuncio de gatitos y presentar a tu familia.",
+"sections": [
+{
+"title": "Compréhension orale · p. 43",
+"icon": "🎧",
+"from": 0,
+"n": 5
+},
+{
+"title": "Compréhension de l'écrit · p. 44",
+"icon": "📖",
+"from": 5,
+"n": 5
+},
+{
+"title": "Production écrite · p. 44",
+"icon": "✍️",
+"from": 10,
+"n": 7
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Escucha. ¿Dónde está el cuaderno de Julie?",
+"opts": [
+"sur le lit",
+"sous le bureau",
+"dans le sac"
+],
+"a": 1,
+"au": "au/f57ea162842a792f.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Dónde está su libro?",
+"opts": [
+"sur le lit",
+"sous le bureau",
+"dans la poubelle"
+],
+"a": 0,
+"au": "au/d2c4efef7590bbac.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿A Seb le gustan los animales?",
+"opts": [
+"Sí",
+"No"
+],
+"a": 0,
+"keep": true,
+"au": "au/e987f5784191e8d6.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Quién es alérgico?",
+"opts": [
+"Seb",
+"Lisa",
+"Alex"
+],
+"a": 2,
+"au": "au/9bb2491e25c008d1.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué mascotas tiene Lisa?",
+"opts": [
+"1 chat, 1 chien, 1 tortue, 1 poisson",
+"2 chats, 1 chien, 1 tortue, 1 poisson",
+"2 chats, 1 chien, 1 tortue, 2 poissons"
+],
+"a": 1,
+"au": "au/499438284cabb72f.mp3"
+},
+{
+"t": "choice",
+"q": "Lee el anuncio. ¿Qué condición hay?",
+"opts": [
+"Aimer les animaux.",
+"Payer dix euros.",
+"Avoir un chat."
+],
+"a": 0,
+"fr": "Vous aimez les chats ? Nous donnons nos chats : zéro euro ! Il y a Mimi, un an, chat blanc avec une tache noire sur la tête. Il y a Câline, trois mois, c'est une chatte grise. Elle aime les câlins. Il y a aussi Minou. Il a six mois, il est marron. Il aime jouer. Les chats sont en bonne santé. Téléphone : 06 67 38 92 63.",
+"au": "au/1f95e867d3f0c24b.mp3"
+},
+{
+"t": "choice",
+"q": "¿Cómo es Mimi?",
+"opts": [
+"un chat blanc avec une tache noire sur la tête",
+"un chat marron",
+"une chatte grise"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "Minou aime…",
+"opts": [
+"jouer",
+"dormir",
+"manger"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "Para responder al anuncio, usas…",
+"opts": [
+"📧 un e-mail",
+"📞 le téléphone",
+"✉️ une lettre"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuántos meses tiene Câline?",
+"opts": [
+"un mois",
+"trois mois",
+"six mois"
+],
+"a": 1
+},
+{
+"t": "order",
+"q": "Hugo presenta a su familia. Ordena:",
+"words": [
+"Dans",
+"ma",
+"famille,",
+"il",
+"y",
+"a",
+"quatre",
+"personnes."
+],
+"a": [
+"Dans ma famille, il y a quatre personnes."
+],
+"sayA": "au/c8e50c73277e5dff.mp3"
+},
+{
+"t": "order",
+"q": "Ordena:",
+"words": [
+"Mon",
+"père",
+"s'appelle",
+"Paul.",
+"Il",
+"a",
+"quarante",
+"ans."
+],
+"a": [
+"Mon père s'appelle Paul. Il a quarante ans."
+],
+"sayA": "au/4eea1349016bd11f.mp3"
+},
+{
+"t": "order",
+"q": "Ordena:",
+"words": [
+"Ma",
+"sœur",
+"s'appelle",
+"Léa.",
+"Elle",
+"adore",
+"les",
+"chats."
+],
+"a": [
+"Ma sœur s'appelle Léa. Elle adore les chats."
+],
+"sayA": "au/0215e6e0dfc6bdcd.mp3"
+},
+{
+"t": "type",
+"q": "Escribe: «Mi hermano tiene ocho años.»",
+"a": [
+"Mon frère a huit ans.",
+"Mon frère a 8 ans."
+],
+"ph": "Mon frère …"
+},
+{
+"t": "type",
+"q": "Escribe: «Mi madre es española.»",
+"a": [
+"Ma mère est espagnole."
+],
+"ph": "Ma mère …"
+},
+{
+"t": "choice",
+"q": "Quieres adoptar un gato. Pregunta por su edad:",
+"opts": [
+"Quel est son âge ?",
+"Quelle est sa âge ?"
+],
+"a": 0,
+"why": "**l'âge** es masculino en francés (la edad) → **son** âge.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "Pregunta por su color:",
+"opts": [
+"Quelle est sa couleur ?",
+"Quel est son couleur ?"
+],
+"a": 0,
+"why": "**la couleur** es femenino en francés (el color) → **sa** couleur.",
+"keep": true
+}
+],
+"pagesLabel": "cuaderno p. 43–44",
+"min": 7,
+"pay": 0.06,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u4-eval",
+"unit": 4,
+"label": "Evaluación",
+"title": "Évaluation · Unité 4",
+"pages": "45",
+"icon": "🏅",
+"intro": "El repaso de toda la unidad, como el examen de la p. 45… ¡y un repaso de lo que ya sabes de antes!",
+"sections": [
+{
+"title": "Évaluation · p. 45",
+"icon": "📒",
+"from": 0,
+"n": 14
+},
+{
+"title": "Mis errores · repaso",
+"icon": "🎯",
+"from": 14,
+"n": 9
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Si mon père est ton oncle, tu es qui ?",
+"opts": [
+"mon cousin / ma cousine",
+"mon frère / ma sœur",
+"mon oncle"
+],
+"a": 0,
+"why": "El hijo de tu tío es tu **primo** (cousin) o tu **prima** (cousine)."
+},
+{
+"t": "choice",
+"q": "Completa (el pantalón está debajo de la cama):",
+"opts": [
+"sous",
+"sur",
+"dans"
+],
+"a": 0,
+"fr": "Le pantalon est ____ le lit.",
+"img": "🛏️⬇️👖",
+"sayA": "au/6bdeecb364400c5c.mp3",
+"show": "Le pantalon est sous le lit."
+},
+{
+"t": "choice",
+"q": "Completa (el ordenador está encima de la mesa):",
+"opts": [
+"sous",
+"sur",
+"dans"
+],
+"a": 1,
+"fr": "L'ordinateur est ____ la table.",
+"img": "💻⬆️",
+"sayA": "au/e6c4b06d66d764ce.mp3",
+"show": "L'ordinateur est sur la table."
+},
+{
+"t": "choice",
+"q": "Completa (a la izquierda de la mesa):",
+"opts": [
+"gauche",
+"sous",
+"dans"
+],
+"a": 0,
+"fr": "À ____ de la table, il y a une armoire.",
+"sayA": "au/7cec3d08257a7c34.mp3",
+"show": "À gauche de la table, il y a une armoire."
+},
+{
+"t": "choice",
+"q": "Completa (el vestido está dentro del armario):",
+"opts": [
+"sur",
+"dans",
+"sous"
+],
+"a": 1,
+"fr": "La robe est ____ l'armoire.",
+"img": "🚪👗",
+"sayA": "au/669a2a135dbb9af9.mp3",
+"show": "La robe est dans l'armoire."
+},
+{
+"t": "choice",
+"q": "«Il est dans les bras de la femme.» C'est…",
+"opts": [
+"le chat 🐱",
+"le perroquet 🦜",
+"les chiens 🐶🐶"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "«Ils sont derrière l'homme.» Ce sont…",
+"opts": [
+"les poissons 🐟",
+"les chiens 🐶🐶",
+"le chat 🐱"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "«Il est sur le doigt de la femme.» C'est…",
+"opts": [
+"le perroquet 🦜",
+"le chat 🐱",
+"le poisson 🐟"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "«Ils sont dans l'aquarium.» Ce sont…",
+"opts": [
+"les chiens 🐶🐶",
+"les poissons 🐟🐟",
+"les oiseaux 🐦🐦"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "type",
+"q": "Completa con **être**:",
+"a": [
+"êtes"
+],
+"fr": "Vous ____ frères et sœur.",
+"sayA": "au/efff50d78ee0b5d6.mp3",
+"show": "Vous êtes frères et sœur."
+},
+{
+"t": "type",
+"q": "Completa con **être**:",
+"a": [
+"est"
+],
+"fr": "Médor ____ mon chien.",
+"sayA": "au/04f704703b37541b.mp3",
+"show": "Médor est mon chien."
+},
+{
+"t": "type",
+"q": "Completa con **être**:",
+"a": [
+"sont"
+],
+"fr": "Lou et Amina ____ amies.",
+"sayA": "au/6f1d29887ddc0bb7.mp3",
+"show": "Lou et Amina sont amies."
+},
+{
+"t": "type",
+"q": "Completa con **être**:",
+"a": [
+"sommes"
+],
+"fr": "Nous ____ le 10 mars.",
+"sayA": "au/b1ec288cd87148f1.mp3",
+"show": "Nous sommes le 10 mars."
+},
+{
+"t": "type",
+"q": "Completa con **être**:",
+"a": [
+"es"
+],
+"fr": "Tu ____ Noah ?",
+"sayA": "au/ef4ca0201c05a929.mp3",
+"show": "Tu es Noah ?"
+},
+{
+"t": "choice",
+"q": "«su hermana» (de Théo):",
+"opts": [
+"son sœur",
+"sa sœur"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "«sus primos»:",
+"opts": [
+"ses cousins",
+"son cousins"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Ma amie s'appelle Amina.",
+"Mon amie s'appelle Amina."
+],
+"a": 1,
+"why": "**amie** empieza por vocal → **mon** amie.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Elle s'apelle Lara.",
+"Elle s'appelle Lara."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"J' douze ans.",
+"J'ai douze ans."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Elle habite à Genève.",
+"Elle habite a Genève."
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Vous etes suisses ?",
+"Vous êtes suisses ?"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "type",
+"q": "Dictado final. Escucha y escribe:",
+"a": [
+"Ma cousine a un chat et deux poissons."
+],
+"au": "au/99f41aa726761551.mp3"
+},
+{
+"t": "type",
+"q": "Dictado final. Escucha y escribe:",
+"a": [
+"Le chien est sous la table."
+],
+"au": "au/6a10ef98f2518e31.mp3"
+}
+],
+"film": {
+"src": "films/ch45-le-grand-quiz-de-la-famille-v2.mp4",
+"dur": 74.7
+},
+"pagesLabel": "cuaderno p. 45",
+"min": 9,
+"pay": 0.07,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u5-l1",
+"unit": 5,
+"label": "Lección 1",
+"title": "De la tête aux pieds !",
+"pages": "46–47",
+"icon": "🧍",
+"intro": "Las partes de la **cara** y del **cuerpo** con **un / une**, los plurales raros (**un œil → des yeux**, **un cheveu → des cheveux**) y cómo describir a alguien: **il est grand**, **elle est brune**, **il a les cheveux longs**.",
+"sections": [
+{
+"title": "Del cuaderno · p. 46",
+"icon": "📒",
+"from": 0,
+"n": 16
+},
+{
+"title": "Del cuaderno · p. 47 · masculino y femenino",
+"icon": "📒",
+"from": 16,
+"n": 13
+},
+{
+"title": "Más práctica · describir",
+"icon": "💪",
+"from": 29,
+"n": 11
+},
+{
+"title": "Escucha · ¿chico o chica?",
+"icon": "🎧",
+"from": 40,
+"n": 8
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "👃 ¿un o une?",
+"opts": [
+"un nez",
+"une nez"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "👄 ¿un o une?",
+"opts": [
+"un bouche",
+"une bouche"
+],
+"a": 1,
+"why": "**une bouche** (femenino, como «la boca»).",
+"keep": true
+},
+{
+"t": "choice",
+"q": "👁️ ¿un o une?",
+"opts": [
+"un œil",
+"une œil"
+],
+"a": 0,
+"why": "**un œil** es masculino. ¡Y su plural es muy raro: **des yeux**!",
+"keep": true
+},
+{
+"t": "choice",
+"q": "👂 ¿un o une?",
+"opts": [
+"un oreille",
+"une oreille"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "🦷 ¿un o une?",
+"opts": [
+"un dent",
+"une dent"
+],
+"a": 1,
+"why": "**une dent** es femenino (en español «el diente» es masculino).",
+"keep": true
+},
+{
+"t": "choice",
+"q": "Ordena las letras: U N E G O",
+"opts": [
+"un genou",
+"une gonue",
+"un nouge"
+],
+"a": 0,
+"why": "**un genou** = una rodilla."
+},
+{
+"t": "choice",
+"q": "Ordena las letras: I D E P",
+"opts": [
+"un pide",
+"un pied",
+"une dipe"
+],
+"a": 1,
+"why": "**un pied** = un pie (la d no suena)."
+},
+{
+"t": "choice",
+"q": "Ordena las letras: N I M A",
+"opts": [
+"une main",
+"un mina",
+"une nami"
+],
+"a": 0,
+"why": "**une main** = una mano."
+},
+{
+"t": "choice",
+"q": "Ordena las letras: L É P E A U",
+"opts": [
+"une épaule",
+"une pelaué",
+"un lapéeu"
+],
+"a": 0,
+"why": "**une épaule** = un hombro."
+},
+{
+"t": "type",
+"q": "Pon en plural:",
+"a": [
+"jambes"
+],
+"fr": "une jambe, deux ____",
+"sayA": "au/05bc631e06b47db2.mp3",
+"show": "une jambe, deux jambes"
+},
+{
+"t": "type",
+"q": "Pon en plural:",
+"a": [
+"doigts"
+],
+"fr": "un doigt, dix ____",
+"why": "**doigt**: la g y la t no suenan: «dua».",
+"sayA": "au/eebb3995e5fdccda.mp3",
+"show": "un doigt, dix doigts"
+},
+{
+"t": "type",
+"q": "Pon en plural:",
+"a": [
+"cheveux"
+],
+"fr": "un cheveu, des ____",
+"why": "Las palabras en **-eu** hacen el plural con **-x**: cheveu**x**.",
+"sayA": "au/22a3284514b5ad05.mp3",
+"show": "un cheveu, des cheveux"
+},
+{
+"t": "type",
+"q": "Pon en plural (¡cuidado, es muy raro!):",
+"a": [
+"yeux"
+],
+"fr": "un œil, des ____",
+"why": "**un œil → des yeux**. Cambia toda la palabra.",
+"sayA": "au/96d4fd9a58eeb77b.mp3",
+"show": "un œil, des yeux"
+},
+{
+"t": "choice",
+"q": "Mira el monstruo verde: tiene **dos ojos amarillos**. ¿Cómo se dice?",
+"opts": [
+"Il a deux yeux jaunes.",
+"Il a deux œils jaunes.",
+"Il est deux yeux jaunes."
+],
+"a": 0,
+"why": "Para describir partes del cuerpo: **il a** (tiene). Plural de œil: **yeux**.",
+"img": "👾"
+},
+{
+"t": "choice",
+"q": "Tiene **seis brazos**. ¿Cómo se dice?",
+"opts": [
+"Il a six bras.",
+"Il a six brases.",
+"Il est six bras."
+],
+"a": 0,
+"why": "**un bras, des bras**: termina en s, así que no cambia."
+},
+{
+"t": "choice",
+"q": "Tiene **una oreja grande**. ¿Cómo se dice?",
+"opts": [
+"Il a une grande oreille.",
+"Il a un grand oreille.",
+"Il a une grand oreille."
+],
+"a": 0,
+"why": "**oreille** es femenino → **une grande** oreille."
+},
+{
+"t": "type",
+"q": "Completa la tabla. Femenino: **brune** → masculino:",
+"a": [
+"brun"
+]
+},
+{
+"t": "type",
+"q": "Masculino: **roux** → femenino:",
+"a": [
+"rousse"
+],
+"why": "roux → **rousse** (pelirrojo/pelirroja). ¡Cambia mucho!"
+},
+{
+"t": "type",
+"q": "Femenino: **grande** → masculino:",
+"a": [
+"grand"
+]
+},
+{
+"t": "type",
+"q": "Femenino: **grosse** → masculino:",
+"a": [
+"gros"
+],
+"why": "gros → gro**sse**: se dobla la s."
+},
+{
+"t": "type",
+"q": "Femenino: **invisible** → masculino:",
+"a": [
+"invisible"
+],
+"why": "Si termina en **-e**, no cambia: un garçon invisible, une fille invisible."
+},
+{
+"t": "choice",
+"q": "Valentin tiene el pelo rubio. Completa:",
+"opts": [
+"blonds",
+"blondes",
+"blond"
+],
+"a": 0,
+"fr": "Il a les cheveux ____.",
+"why": "**les cheveux** es masculino plural → blond**s**.",
+"sayA": "au/272acb5721b393a5.mp3",
+"show": "Il a les cheveux blonds."
+},
+{
+"t": "choice",
+"q": "Valentin no es muy alto. Completa:",
+"opts": [
+"grand",
+"grande"
+],
+"a": 0,
+"fr": "Il n'est pas très ____.",
+"why": "Valentin es un chico → **grand**.",
+"keep": true,
+"sayA": "au/0ecd091ad1590ac9.mp3",
+"show": "Il n'est pas très grand."
+},
+{
+"t": "choice",
+"q": "Valentin tiene los ojos azules. Completa:",
+"opts": [
+"yeux",
+"œils"
+],
+"a": 0,
+"fr": "Il a les ____ bleus.",
+"why": "un œil → des **yeux**.",
+"keep": true,
+"sayA": "au/edf6fe7093590783.mp3",
+"show": "Il a les yeux bleus."
+},
+{
+"t": "choice",
+"q": "Elige la palabra que encaja:",
+"opts": [
+"longs",
+"noir",
+"grand",
+"brune"
+],
+"a": 0,
+"fr": "Ma cousine a les cheveux ____.",
+"why": "**les cheveux** (masc. plural) → **longs**.",
+"sayA": "au/086b80c40349f03a.mp3",
+"show": "Ma cousine a les cheveux longs."
+},
+{
+"t": "choice",
+"q": "Elige la palabra que encaja:",
+"opts": [
+"longs",
+"noir",
+"grand",
+"verts",
+"brune"
+],
+"a": 1,
+"fr": "Elle a un chat ____.",
+"sayA": "au/c3e5c905d84daf66.mp3",
+"show": "Elle a un chat noir."
+},
+{
+"t": "choice",
+"q": "Habla un chico. Elige la palabra que encaja:",
+"opts": [
+"longs",
+"noir",
+"grand",
+"verts"
+],
+"a": 2,
+"fr": "Je suis très ____.",
+"sayA": "au/84790218308ee7c3.mp3",
+"show": "Je suis très grand."
+},
+{
+"t": "choice",
+"q": "Elige la palabra que encaja:",
+"opts": [
+"longs",
+"noir",
+"grand",
+"verts",
+"brune"
+],
+"a": 3,
+"fr": "Ma sœur a les yeux ____.",
+"why": "**les yeux** (masc. plural) → vert**s**.",
+"sayA": "au/c6137b7e6fe5f7e3.mp3",
+"show": "Ma sœur a les yeux verts."
+},
+{
+"t": "choice",
+"q": "Elige la palabra que encaja:",
+"opts": [
+"longs",
+"noir",
+"grand",
+"verts",
+"brune"
+],
+"a": 4,
+"fr": "Élisa est ____.",
+"why": "Élisa es una chica → **brune** (con -e).",
+"sayA": "au/559840d3a70ff42f.mp3",
+"show": "Élisa est brune."
+},
+{
+"t": "match",
+"q": "Une cada parte del cuerpo:",
+"pairs": [
+[
+"la tête",
+"la cabeza"
+],
+[
+"le bras",
+"el brazo"
+],
+[
+"la jambe",
+"la pierna"
+],
+[
+"le pied",
+"el pie"
+],
+[
+"la main",
+"la mano"
+]
+],
+"au2": [
+"au/a0e30c5115f7d37e.mp3",
+"au/2bac646fba80afbc.mp3",
+"au/60c5d8d2d0dba6ea.mp3",
+"au/43adf387959f5b1a.mp3",
+"au/d7cab8a434910303.mp3"
+]
+},
+{
+"t": "match",
+"q": "Une cada parte de la cara:",
+"pairs": [
+[
+"les yeux",
+"los ojos"
+],
+[
+"le nez",
+"la nariz"
+],
+[
+"la bouche",
+"la boca"
+],
+[
+"les cheveux",
+"el pelo"
+],
+[
+"les oreilles",
+"las orejas"
+]
+],
+"au2": [
+"au/ab824fc93e40b87a.mp3",
+"au/8669910bbbff94ca.mp3",
+"au/6dd9f1d15cf523fb.mp3",
+"au/fdc33c0fd9aad884.mp3",
+"au/0b7c4e724b3c8633.mp3"
+]
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «el pelo»?",
+"opts": [
+"le cheveu",
+"les cheveux",
+"la cheveux"
+],
+"a": 1,
+"why": "En francés el pelo de la cabeza va en **plural**: **les cheveux**."
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Il est grand et il a les yeux bleus.",
+"Il a grand et il est les yeux bleus."
+],
+"a": 0,
+"why": "**être** para cómo eres (grand, petit, brun) · **avoir** para lo que tienes (les yeux bleus).",
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Elle est petite et brune.",
+"Elle est petit et brun."
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Il a les cheveux courts.",
+"Il a les cheveux courtes."
+],
+"a": 0,
+"why": "**cheveux** es masculino → court**s**.",
+"keep": true
+},
+{
+"t": "type",
+"q": "Escribe: «Ella es alta.»",
+"a": [
+"Elle est grande.",
+"Elle est grande"
+],
+"why": "Chica → **grande** (con -e)."
+},
+{
+"t": "type",
+"q": "Escribe: «Él tiene los ojos verdes.»",
+"a": [
+"Il a les yeux verts.",
+"Il a les yeux verts"
+]
+},
+{
+"t": "type",
+"q": "Escribe: «Tengo el pelo largo.»",
+"a": [
+"J'ai les cheveux longs.",
+"J'ai les cheveux longs"
+],
+"why": "**J'ai** (con ai) + les cheveux long**s**."
+},
+{
+"t": "order",
+"q": "Ordena la descripción:",
+"words": [
+"Il",
+"est",
+"petit",
+"et",
+"il",
+"a",
+"les",
+"cheveux",
+"roux."
+],
+"a": [
+"Il est petit et il a les cheveux roux."
+],
+"sayA": "au/65e8cb0c4564cd98.mp3"
+},
+{
+"t": "order",
+"q": "Ordena la descripción:",
+"words": [
+"Elle",
+"s'appelle",
+"Kenza",
+"et",
+"elle",
+"est",
+"brune."
+],
+"a": [
+"Elle s'appelle Kenza et elle est brune."
+],
+"why": "Repaso: **s'appelle** con dos p y dos l.",
+"sayA": "au/e85b22cdd470e2f3.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Habla de un chico o de una chica?",
+"opts": [
+"un chico 👦",
+"una chica 👧"
+],
+"a": 1,
+"why": "**petite**: se oye la **t** al final → femenino. **petit**: la t no suena.",
+"keep": true,
+"au": "au/61ef283bdc1faa48.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Habla de un chico o de una chica?",
+"opts": [
+"un chico 👦",
+"una chica 👧"
+],
+"a": 0,
+"keep": true,
+"au": "au/167556535260eb69.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha la palabra sola. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 1,
+"why": "**grande**: se oye la **d**. **grand**: no se oye.",
+"keep": true,
+"au": "au/15acbbe5d63756d6.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha la palabra sola. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 0,
+"keep": true,
+"au": "au/0d12876ea8ccdf00.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha la palabra sola. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 1,
+"keep": true,
+"au": "au/9fa3bf37c8a11d14.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Quién es?",
+"opts": [
+"un monstre avec trois yeux",
+"un monstre avec deux bras",
+"un monstre avec une oreille"
+],
+"a": 0,
+"au": "au/5d282aa367ae0a57.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Il a les yeux bleus."
+],
+"au": "au/cd7380cb86dd33df.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Elle a les cheveux longs."
+],
+"au": "au/208808c95fec5a2f.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 46–47",
+"film": {
+"src": "films/ch51-de-la-tete-aux-pieds-v3.mp4",
+"dur": 84.0
+},
+"min": 20,
+"pay": 0.17,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u5-l2",
+"unit": 5,
+"label": "Lección 2",
+"title": "Mes vêtements",
+"pages": "48",
+"icon": "👕",
+"intro": "La **ropa** y los adjetivos que cambian mucho en femenino: **beau → belle**, **nouveau → nouvelle**, **vieux → vieille**, **long → longue**. Ojo con el género: **la robe** (el vestido), **la ceinture** (el cinturón), **les chaussures** (los zapatos) ¡son femeninos!",
+"sections": [
+{
+"title": "Del cuaderno · p. 48 · el armario",
+"icon": "📒",
+"from": 0,
+"n": 15
+},
+{
+"title": "Más práctica · la ropa y su género",
+"icon": "💪",
+"from": 15,
+"n": 14
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 29,
+"n": 4
+}
+],
+"items": [
+{
+"t": "match",
+"q": "¿Qué hay en el armario? Une:",
+"pairs": [
+[
+"un jean",
+"👖"
+],
+[
+"une robe",
+"👗"
+],
+[
+"un t-shirt",
+"👕"
+],
+[
+"une jupe",
+"la falda"
+],
+[
+"une ceinture",
+"el cinturón"
+],
+[
+"un chapeau",
+"👒"
+]
+],
+"au2": [
+"au/3187926a29d83913.mp3",
+"au/5d7c5f9a91252683.mp3",
+"au/d36c39d73033f379.mp3",
+"au/2b9818058e5edcf5.mp3",
+"au/01f712bff0f80e93.mp3",
+"au/09fe4a4879b5ef5f.mp3"
+]
+},
+{
+"t": "match",
+"q": "Más ropa. Une:",
+"pairs": [
+[
+"un manteau",
+"el abrigo"
+],
+[
+"une veste",
+"la chaqueta"
+],
+[
+"une chemise",
+"la camisa"
+],
+[
+"un pull",
+"el jersey"
+],
+[
+"des chaussures",
+"👞"
+]
+],
+"au2": [
+"au/57b2808a2ce387a0.mp3",
+"au/6f39d749edb4b8f7.mp3",
+"au/aa8c28b32b84a50a.mp3",
+"au/75c57587f192d82c.mp3",
+"au/800345df32493592.mp3"
+]
+},
+{
+"t": "type",
+"q": "Completa la tabla: masculino **beau** → femenino:",
+"a": [
+"belle"
+],
+"why": "beau → **belle** (guapo/guapa, bonito/bonita)."
+},
+{
+"t": "type",
+"q": "Femenino **nouvelle** → masculino:",
+"a": [
+"nouveau"
+]
+},
+{
+"t": "type",
+"q": "Masculino **vieux** → femenino:",
+"a": [
+"vieille"
+],
+"why": "vieux → **vieille** (viejo/vieja)."
+},
+{
+"t": "type",
+"q": "Femenino **longue** → masculino:",
+"a": [
+"long"
+],
+"why": "long → long**ue**: en femenino **se oye la g** (lon-g). La **u** hace falta: «longe» sonaría «lonj»."
+},
+{
+"t": "choice",
+"q": "Es el bolso morado de Kenza, muy bonito. Completa:",
+"opts": [
+"beau",
+"belle",
+"beaux"
+],
+"a": 0,
+"fr": "C'est le ____ sac de Kenza.",
+"why": "**le sac** (masculino) → **beau**.",
+"sayA": "au/fb6fe762cdc3476f.mp3",
+"show": "C'est le beau sac de Kenza."
+},
+{
+"t": "choice",
+"q": "La falda de Lou es larga. Completa:",
+"opts": [
+"long",
+"longue",
+"longs"
+],
+"a": 1,
+"fr": "C'est la ____ jupe de Lou.",
+"why": "**la jupe** (femenino) → **longue**.",
+"sayA": "au/fdc62d7e9f420ed5.mp3",
+"show": "C'est la longue jupe de Lou."
+},
+{
+"t": "choice",
+"q": "El sombrero de Noé es viejo. Completa:",
+"opts": [
+"vieux",
+"vieille",
+"vieil"
+],
+"a": 0,
+"fr": "C'est le ____ chapeau de Noé.",
+"why": "**le chapeau** (masculino) → **vieux**.",
+"sayA": "au/27fdc7f3bf73864e.mp3",
+"show": "C'est le vieux chapeau de Noé."
+},
+{
+"t": "choice",
+"q": "Los zapatos de Théo son nuevos. Completa:",
+"opts": [
+"nouveaux",
+"nouvelles",
+"nouveau"
+],
+"a": 1,
+"fr": "Ce sont les ____ chaussures de Théo.",
+"why": "**les chaussures** son femeninas en francés → **nouvelles**.",
+"sayA": "au/d827ce76bc3e63b9.mp3",
+"show": "Ce sont les nouvelles chaussures de Théo."
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 1,
+"keep": true,
+"au": "au/c62addd8e2ce2c11.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha la palabra sola. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 0,
+"keep": true,
+"au": "au/61d6cce6958502b5.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha la palabra sola. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 1,
+"keep": true,
+"au": "au/fa263c0a602d0f86.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 0,
+"keep": true,
+"au": "au/d219e8db40081ebc.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 1,
+"keep": true,
+"au": "au/999dd1c877d5c9ae.mp3"
+},
+{
+"t": "choice",
+"q": "«el vestido» en francés es…",
+"opts": [
+"le robe",
+"la robe"
+],
+"a": 1,
+"why": "**la robe** es femenino (¡en español «el vestido» es masculino!).",
+"keep": true
+},
+{
+"t": "choice",
+"q": "«el cinturón» en francés es…",
+"opts": [
+"le ceinture",
+"la ceinture"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "«los calcetines» en francés son…",
+"opts": [
+"les chaussettes",
+"les chaussures"
+],
+"a": 0,
+"why": "**les chaussettes** = calcetines · **les chaussures** = zapatos.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "«el pantalón» en francés es…",
+"opts": [
+"le pantalon",
+"la pantalon"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "«la gorra» en francés es…",
+"opts": [
+"une casquette",
+"un chapeau"
+],
+"a": 0,
+"why": "**une casquette** = gorra · **un chapeau** = sombrero.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"une beau robe",
+"une belle robe",
+"un beau robe"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"un nouveau pull",
+"un nouvelle pull",
+"une nouveau pull"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"une vieux veste",
+"une vieille veste",
+"un vieille veste"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"une chemise blanc",
+"une chemise blanche",
+"un chemise blanche"
+],
+"a": 1,
+"why": "blanc → **blanche** en femenino."
+},
+{
+"t": "type",
+"q": "Escribe en femenino: **un short blanc** → une jupe …",
+"a": [
+"blanche",
+"une jupe blanche"
+],
+"fr": "une jupe ____",
+"sayA": "au/2188ff3339562092.mp3",
+"show": "une jupe blanche"
+},
+{
+"t": "type",
+"q": "Escribe en femenino: **un beau pull** → une … robe",
+"a": [
+"belle",
+"une belle robe"
+],
+"fr": "une ____ robe",
+"sayA": "au/c62addd8e2ce2c11.mp3",
+"show": "une belle robe"
+},
+{
+"t": "type",
+"q": "Escribe: «Llevo una camisa azul.»",
+"a": [
+"Je porte une chemise bleue.",
+"Je porte une chemise bleue"
+],
+"why": "**porter** = llevar (ropa). chemise es femenino → bleu**e**."
+},
+{
+"t": "order",
+"q": "Ordena:",
+"words": [
+"Elle",
+"porte",
+"une",
+"belle",
+"robe",
+"rouge."
+],
+"a": [
+"Elle porte une belle robe rouge."
+],
+"sayA": "au/0a49f4404d6eeb17.mp3"
+},
+{
+"t": "order",
+"q": "Ordena:",
+"words": [
+"Il",
+"porte",
+"un",
+"beau",
+"pull",
+"vert."
+],
+"a": [
+"Il porte un beau pull vert."
+],
+"sayA": "au/ef7b77c441ee0958.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué lleva Lou?",
+"opts": [
+"une robe et des baskets",
+"un jean et un pull",
+"une jupe et une chemise"
+],
+"a": 2,
+"au": "au/0676ee713d6fef79.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué lleva Théo?",
+"opts": [
+"un short et un t-shirt",
+"un manteau et un bonnet",
+"un pantalon et une veste"
+],
+"a": 0,
+"au": "au/33824361b3ef67e3.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"C'est le beau sac de Kenza."
+],
+"au": "au/2c0caeef20edaf87.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Je porte un pull rouge."
+],
+"au": "au/b816f855fa93baa0.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 48",
+"film": {
+"src": "films/ch52-mes-vetements-v3.mp4",
+"dur": 70.5
+},
+"min": 14,
+"pay": 0.12,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u5-zoom",
+"unit": 5,
+"label": "Zoom",
+"title": "Zoom sur les sciences",
+"pages": "49",
+"icon": "🌦️",
+"intro": "Las **estaciones** y el **tiempo**. En español «hace frío», en francés **il fait froid**. Llueve → **il pleut**. Nieva → **il neige**. Y ojo: **au** printemps, pero **en** été, **en** automne, **en** hiver.",
+"sections": [
+{
+"title": "Del cuaderno · p. 49",
+"icon": "📒",
+"from": 0,
+"n": 11
+},
+{
+"title": "Más práctica · il fait…",
+"icon": "💪",
+"from": 11,
+"n": 9
+},
+{
+"title": "Escucha · el parte del tiempo",
+"icon": "🎧",
+"from": 20,
+"n": 5
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "🧊 Carámbanos de hielo. ¿Qué estación es?",
+"opts": [
+"l'hiver",
+"l'été",
+"le printemps",
+"l'automne"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "🌼 Narcisos amarillos. ¿Qué estación es?",
+"opts": [
+"l'hiver",
+"l'été",
+"le printemps",
+"l'automne"
+],
+"a": 2,
+"keep": true
+},
+{
+"t": "choice",
+"q": "🌻 Girasoles al sol. ¿Qué estación es?",
+"opts": [
+"l'hiver",
+"l'été",
+"le printemps",
+"l'automne"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "🍂 Hojas rojas que caen. ¿Qué estación es?",
+"opts": [
+"l'hiver",
+"l'été",
+"le printemps",
+"l'automne"
+],
+"a": 3,
+"keep": true
+},
+{
+"t": "choice",
+"q": "Completa con la palabra que falta:",
+"opts": [
+"Au",
+"En"
+],
+"a": 0,
+"fr": "____ printemps, il fait beau.",
+"why": "**au printemps** (única estación con «au»).",
+"keep": true,
+"sayA": "au/f93901a05f4c90dc.mp3",
+"show": "Au printemps, il fait beau."
+},
+{
+"t": "choice",
+"q": "Completa con la palabra que falta:",
+"opts": [
+"Au",
+"En"
+],
+"a": 1,
+"fr": "____ hiver, il neige.",
+"why": "**en été, en automne, en hiver**.",
+"keep": true,
+"sayA": "au/91f0c4420d38d0cd.mp3",
+"show": "En hiver, il neige."
+},
+{
+"t": "choice",
+"q": "☂️ Un paraguas bajo la lluvia. ¿Qué tiempo hace?",
+"opts": [
+"Il pleut.",
+"Il neige.",
+"Il fait chaud."
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "🌨️ Un bosque blanco de nieve. ¿Qué tiempo hace?",
+"opts": [
+"Il pleut.",
+"Il neige.",
+"Il fait chaud."
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "☀️ Un campo de girasoles con mucho sol. ¿Qué tiempo hace?",
+"opts": [
+"Il pleut.",
+"Il neige.",
+"Il fait chaud."
+],
+"a": 2
+},
+{
+"t": "choice",
+"q": "🩴🕶️ Una maleta con chanclas, gafas de sol y ropa fina. ¿Para qué estación es?",
+"opts": [
+"C'est pour l'été.",
+"C'est pour l'hiver."
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "🧣🧤 Una maleta con jerséis gordos y bufandas. ¿Para qué estación es?",
+"opts": [
+"C'est pour l'été.",
+"C'est pour l'hiver."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "match",
+"q": "Une el francés con el español:",
+"pairs": [
+[
+"Il fait chaud.",
+"Hace calor."
+],
+[
+"Il fait froid.",
+"Hace frío."
+],
+[
+"Il fait beau.",
+"Hace buen tiempo."
+],
+[
+"Il pleut.",
+"Llueve."
+],
+[
+"Il neige.",
+"Nieva."
+]
+],
+"au2": [
+"au/8e9a91664bd863dc.mp3",
+"au/987e6d4f18bf652f.mp3",
+"au/2d3b1a47dac27a79.mp3",
+"au/65115b4244103526.mp3",
+"au/75ee5042438754ba.mp3"
+]
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «hace sol»?",
+"opts": [
+"Il y a du soleil.",
+"Il fait soleil.",
+"Il est soleil."
+],
+"a": 0,
+"why": "Lo correcto (como en el libro): **il y a du soleil** (hay sol). «Il fait soleil» se oye, pero es informal."
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Il fait froid.",
+"Il hace froid.",
+"Il est froid."
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "type",
+"q": "Escribe: «Llueve.»",
+"a": [
+"Il pleut.",
+"Il pleut"
+]
+},
+{
+"t": "type",
+"q": "Escribe: «En invierno, nieva.»",
+"a": [
+"En hiver, il neige.",
+"En hiver il neige.",
+"Il neige en hiver."
+]
+},
+{
+"t": "type",
+"q": "Escribe: «En verano, hace calor.»",
+"a": [
+"En été, il fait chaud.",
+"En été il fait chaud.",
+"Il fait chaud en été."
+]
+},
+{
+"t": "match",
+"q": "¿Qué ropa para cada tiempo? Une:",
+"pairs": [
+[
+"Il neige.",
+"❄️🧤 un bonnet et des gants"
+],
+[
+"Il pleut.",
+"☔ un imperméable"
+],
+[
+"Il fait chaud.",
+"☀️🩳 un short et des sandales"
+]
+],
+"au2": [
+"au/75ee5042438754ba.mp3",
+"au/65115b4244103526.mp3",
+"au/8e9a91664bd863dc.mp3"
+]
+},
+{
+"t": "choice",
+"q": "En hiver, je porte…",
+"opts": [
+"un maillot de bain",
+"un manteau",
+"des sandales"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "En été, je porte…",
+"opts": [
+"un bonnet",
+"des gants",
+"un short"
+],
+"a": 2
+},
+{
+"t": "choice",
+"q": "Escucha el parte del tiempo. ¿Qué tiempo hace en París?",
+"opts": [
+"☔ llueve",
+"❄️ nieva",
+"☀️ hace sol"
+],
+"a": 0,
+"au": "au/a4949a19f2a069c0.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué tiempo hace en la montaña?",
+"opts": [
+"☔ llueve",
+"❄️ nieva",
+"☀️ hace calor"
+],
+"a": 1,
+"au": "au/4cd47981dc864e25.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué tiempo hace en Marsella?",
+"opts": [
+"🥶 hace frío",
+"☀️ hace calor",
+"☔ llueve"
+],
+"a": 1,
+"au": "au/8410dd746ec1d48a.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué estación es?",
+"opts": [
+"le printemps",
+"l'été",
+"l'automne",
+"l'hiver"
+],
+"a": 2,
+"keep": true,
+"au": "au/5c8e58b878948b26.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Il fait beau."
+],
+"au": "au/0993a86490a74fa8.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 49",
+"film": {
+"src": "films/ch53-zoom-sur-les-sciences-v3.mp4",
+"dur": 72.9
+},
+"min": 10,
+"pay": 0.08,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u5-l3",
+"unit": 5,
+"label": "Lección 3",
+"title": "Brr ! Il fait froid !",
+"pages": "50",
+"icon": "🥶",
+"intro": "Plurales del cuerpo, el **color de los ojos** y pasar frases al **femenino**. Truco: **marron** nunca cambia (des yeux marron).",
+"sections": [
+{
+"title": "Del cuaderno · p. 50",
+"icon": "📒",
+"from": 0,
+"n": 15
+},
+{
+"title": "Más práctica",
+"icon": "💪",
+"from": 15,
+"n": 6
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 21,
+"n": 5
+}
+],
+"items": [
+{
+"t": "type",
+"q": "Pon en plural:",
+"a": [
+"des cheveux",
+"cheveux"
+],
+"fr": "un cheveu, ____",
+"ph": "des …",
+"sayA": "au/22a3284514b5ad05.mp3",
+"show": "un cheveu, des cheveux"
+},
+{
+"t": "type",
+"q": "Pon en plural:",
+"a": [
+"des doigts",
+"doigts"
+],
+"fr": "un doigt, ____",
+"ph": "des …",
+"sayA": "au/95c603391a2baf5b.mp3",
+"show": "un doigt, des doigts"
+},
+{
+"t": "type",
+"q": "Pon en plural:",
+"a": [
+"des yeux",
+"yeux"
+],
+"fr": "un œil, ____",
+"ph": "des …",
+"sayA": "au/96d4fd9a58eeb77b.mp3",
+"show": "un œil, des yeux"
+},
+{
+"t": "type",
+"q": "Pon en plural:",
+"a": [
+"des pieds",
+"pieds"
+],
+"fr": "un pied, ____",
+"ph": "des …",
+"sayA": "au/d5fac2346934838a.mp3",
+"show": "un pied, des pieds"
+},
+{
+"t": "type",
+"q": "Pon en plural:",
+"a": [
+"des jambes",
+"jambes"
+],
+"fr": "une jambe, ____",
+"ph": "des …",
+"sayA": "au/b0f382fd31a4d3f2.mp3",
+"show": "une jambe, des jambes"
+},
+{
+"t": "type",
+"q": "Pon en plural:",
+"a": [
+"des oreilles",
+"oreilles"
+],
+"fr": "une oreille, ____",
+"ph": "des …",
+"sayA": "au/7f2b358c4f9b8364.mp3",
+"show": "une oreille, des oreilles"
+},
+{
+"t": "choice",
+"q": "👀 Dos ojos azules:",
+"opts": [
+"des yeux bleus",
+"des yeux bleu",
+"des œils bleus"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "Un ojo verde:",
+"opts": [
+"un œil verte",
+"un œil vert",
+"une œil vert"
+],
+"a": 1,
+"why": "**œil** es masculino → **vert**."
+},
+{
+"t": "choice",
+"q": "Dos ojos marrones:",
+"opts": [
+"des yeux marrons",
+"des yeux marron",
+"des yeux marronnes"
+],
+"a": 1,
+"why": "**marron** no cambia nunca: des yeux **marron**."
+},
+{
+"t": "choice",
+"q": "Un ojo gris:",
+"opts": [
+"un œil gris",
+"un œil grise"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "type",
+"q": "Pon en femenino: «Mon cousin est très beau.» → Ma cousine…",
+"a": [
+"Ma cousine est très belle.",
+"Ma cousine est très belle"
+]
+},
+{
+"t": "type",
+"q": "Pon en femenino: «Le sac à dos de Priscille est vieux.» → La trousse…",
+"a": [
+"La trousse de Priscille est vieille.",
+"La trousse de Priscille est vieille",
+"La trousse est vieille."
+]
+},
+{
+"t": "type",
+"q": "Pon en femenino: «Le nouveau professeur s'appelle monsieur Simon.» → … madame Gérard.",
+"a": [
+"La nouvelle professeure s'appelle madame Gérard.",
+"La nouvelle professeur s'appelle madame Gérard.",
+"La nouvelle prof s'appelle madame Gérard.",
+"La nouvelle maîtresse s'appelle madame Gérard.",
+"La nouvelle maitresse s'appelle madame Gérard."
+],
+"why": "nouveau → **nouvelle** · y repasa: **s'appelle** con dos p y dos l."
+},
+{
+"t": "type",
+"q": "Pon en femenino: «Son pull est très long.» → Sa robe…",
+"a": [
+"Sa robe est très longue.",
+"Sa robe est très longue"
+]
+},
+{
+"t": "type",
+"q": "Pon en femenino: «Mon chien est un peu gros.» → Ma chienne…",
+"a": [
+"Ma chienne est un peu grosse.",
+"Ma chienne est un peu grosse"
+]
+},
+{
+"t": "match",
+"q": "Une masculino y femenino:",
+"pairs": [
+[
+"beau",
+"belle"
+],
+[
+"nouveau",
+"nouvelle"
+],
+[
+"vieux",
+"vieille"
+],
+[
+"blanc",
+"blanche"
+],
+[
+"gros",
+"grosse"
+]
+],
+"au2": [
+"au/12efaf2aa0a6e4f3.mp3",
+"au/558c17e05fe9ed1c.mp3",
+"au/8bdcc1b41e8c573d.mp3",
+"au/a3ff77ad63aae3f0.mp3",
+"au/236ea85a8308c0f1.mp3"
+]
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Elle a les yeux verts.",
+"Elle a les yeux vertes."
+],
+"a": 0,
+"why": "El adjetivo concuerda con **les yeux** (masc. plural), no con «elle».",
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Il a les cheveux blondes.",
+"Il a les cheveux blonds."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Ma mère est grande.",
+"Ma mère est grand."
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "type",
+"q": "Escribe: «Tengo los ojos marrones.»",
+"a": [
+"J'ai les yeux marron.",
+"J'ai les yeux marron"
+],
+"why": "**marron** no cambia."
+},
+{
+"t": "type",
+"q": "Escribe: «Brr… ¡hace frío!»",
+"a": [
+"Brr… il fait froid !",
+"Brr, il fait froid !",
+"Il fait froid !",
+"Brr... il fait froid !",
+"Brr ! Il fait froid !",
+"Brr il fait froid",
+"Brr ! il fait froid",
+"Brr… il fait froid"
+]
+},
+{
+"t": "choice",
+"q": "Escucha. ¿De qué color tiene los ojos?",
+"opts": [
+"azules 🔵",
+"verdes 🟢",
+"marrones 🟤"
+],
+"a": 1,
+"au": "au/a88f6f6c79b9963b.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha la palabra sola. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 1,
+"why": "**blanche**: se oye «ch». **blanc**: termina en «an».",
+"keep": true,
+"au": "au/b9a453097c028233.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha la palabra sola. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 0,
+"keep": true,
+"au": "au/8fefa020f25104cb.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha la palabra sola. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 1,
+"keep": true,
+"au": "au/3a6cbb5a2b86b8f6.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Ma cousine est très belle."
+],
+"au": "au/b02d99d635b2303f.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 50",
+"film": {
+"src": "films/ch54-brr-il-fait-froid-v2.mp4",
+"dur": 65.0
+},
+"min": 12,
+"pay": 0.1,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u5-culture",
+"unit": 5,
+"label": "Cultura + Lectura",
+"title": "Les saisons autour du monde",
+"pages": "51–52",
+"icon": "🌍",
+"intro": "Las estaciones no son iguales en todo el mundo 🌍. Y después, Lou y Amina van de compras **dans le grand magasin**.",
+"sections": [
+{
+"title": "Cultura · p. 51",
+"icon": "🌍",
+"from": 0,
+"n": 9
+},
+{
+"title": "Lectura · Dans le grand magasin · p. 52",
+"icon": "📖",
+"from": 9,
+"n": 8
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Au pôle Nord, c'est l'été. Et au pôle Sud ?",
+"opts": [
+"C'est l'été.",
+"C'est l'hiver.",
+"C'est le printemps."
+],
+"a": 1,
+"why": "Cuando en el norte es verano, en el sur es **invierno** (¡al revés!)."
+},
+{
+"t": "choice",
+"q": "Il y a combien de saisons en Belgique ?",
+"opts": [
+"deux",
+"quatre",
+"six"
+],
+"a": 1,
+"why": "En Bélgica, como en Francia: **quatre saisons**."
+},
+{
+"t": "choice",
+"q": "Il y a combien de saisons sur l'île de la Réunion ?",
+"opts": [
+"deux",
+"quatre",
+"trois"
+],
+"a": 0,
+"why": "En La Reunión (isla tropical) hay **deux saisons**: una lluviosa y caliente y otra seca y más fresca."
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 0,
+"fr": "En France, l'été commence le 21 juin.",
+"keep": true,
+"au": "au/ce907a082a2758c7.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 1,
+"fr": "En France, l'hiver commence en juillet.",
+"why": "En Francia el invierno empieza en diciembre (**décembre**), hacia el 21.",
+"keep": true,
+"au": "au/24abb068c29555c4.mp3"
+},
+{
+"t": "choice",
+"q": "¿En qué mes empieza la primavera en Francia?",
+"opts": [
+"en mars",
+"en juin",
+"en septembre"
+],
+"a": 0
+},
+{
+"t": "match",
+"q": "Une cada estación con el mes en que empieza (en Francia):",
+"pairs": [
+[
+"le printemps",
+"mars"
+],
+[
+"l'été",
+"juin"
+],
+[
+"l'automne",
+"septembre"
+],
+[
+"l'hiver",
+"décembre"
+]
+],
+"au2": [
+"au/62aefa99437d547f.mp3",
+"au/3f8008eab0d3c8f7.mp3",
+"au/ac8e2164f4f88bb4.mp3",
+"au/fa43e48b99cbb710.mp3"
+]
+},
+{
+"t": "choice",
+"q": "Les deux saisons de la Réunion, ce sont…",
+"opts": [
+"l'été (chaud et pluvieux) et l'hiver (sec et plus frais)",
+"le printemps et l'automne",
+"l'été et l'automne"
+],
+"a": 0,
+"why": "En La Reunión hay **l'été** (de noviembre a abril: calor y lluvia) y **l'hiver** (de mayo a octubre: seco y más fresco)."
+},
+{
+"t": "match",
+"q": "En Francia, ¿de cuándo a cuándo va cada estación?",
+"pairs": [
+[
+"le printemps",
+"du 21 mars au 20 juin"
+],
+[
+"l'été",
+"du 21 juin au 22 septembre"
+],
+[
+"l'automne",
+"du 23 septembre au 20 décembre"
+],
+[
+"l'hiver",
+"du 21 décembre au 20 mars"
+]
+],
+"au2": [
+"au/62aefa99437d547f.mp3",
+"au/3f8008eab0d3c8f7.mp3",
+"au/ac8e2164f4f88bb4.mp3",
+"au/fa43e48b99cbb710.mp3"
+]
+},
+{
+"t": "choice",
+"q": "¿Por qué compran ropa nueva Lou y Amina?",
+"opts": [
+"Pour l'anniversaire de Fatima.",
+"Pour l'école.",
+"Pour les vacances."
+],
+"a": 0,
+"fr": "Samedi, c'est l'anniversaire de Fatima. Lou et Amina sont dans le grand magasin. – Lou, qu'est-ce que tu achètes ? – J'hésite… J'aime la chemise rouge et les chaussures rouges et noires. – Moi, j'aime la robe à rayures rouges et les chaussures marron. – Tu es belle avec cette robe, Amina ! – Merci ! Et le cadeau de Fatima ? – Regarde ce sac à dos marron ! – Il est magnifique !",
+"au": "au/642a1bf2ac2df7c8.mp3"
+},
+{
+"t": "choice",
+"q": "Où sont Lou et Amina ?",
+"opts": [
+"dans un grand magasin",
+"dans un restaurant",
+"dans un hôtel"
+],
+"a": 0,
+"fr": "Samedi, c'est l'anniversaire de Fatima. Lou et Amina sont dans le grand magasin. – Lou, qu'est-ce que tu achètes ? – J'hésite… J'aime la chemise rouge et les chaussures rouges et noires. – Moi, j'aime la robe à rayures rouges et les chaussures marron. – Tu es belle avec cette robe, Amina ! – Merci ! Et le cadeau de Fatima ? – Regarde ce sac à dos marron ! – Il est magnifique !",
+"why": "**un grand magasin** = unos grandes almacenes (una tienda grande).",
+"auto": false,
+"au": "au/642a1bf2ac2df7c8.mp3"
+},
+{
+"t": "choice",
+"q": "¿Qué vestido elige Amina?",
+"opts": [
+"la robe blanche",
+"la robe à rayures rouges",
+"la chemise rouge"
+],
+"a": 1,
+"fr": "Samedi, c'est l'anniversaire de Fatima. Lou et Amina sont dans le grand magasin. – Lou, qu'est-ce que tu achètes ? – J'hésite… J'aime la chemise rouge et les chaussures rouges et noires. – Moi, j'aime la robe à rayures rouges et les chaussures marron. – Tu es belle avec cette robe, Amina ! – Merci ! Et le cadeau de Fatima ? – Regarde ce sac à dos marron ! – Il est magnifique !",
+"why": "«la robe à **rayures** rouges» · **rayures** = rayas.",
+"auto": false,
+"au": "au/642a1bf2ac2df7c8.mp3"
+},
+{
+"t": "choice",
+"q": "¿Qué zapatos elige Amina?",
+"opts": [
+"les chaussures marron",
+"les chaussures rouges et noires"
+],
+"a": 0,
+"fr": "Samedi, c'est l'anniversaire de Fatima. Lou et Amina sont dans le grand magasin. – Lou, qu'est-ce que tu achètes ? – J'hésite… J'aime la chemise rouge et les chaussures rouges et noires. – Moi, j'aime la robe à rayures rouges et les chaussures marron. – Tu es belle avec cette robe, Amina ! – Merci ! Et le cadeau de Fatima ? – Regarde ce sac à dos marron ! – Il est magnifique !",
+"keep": true,
+"auto": false,
+"au": "au/642a1bf2ac2df7c8.mp3"
+},
+{
+"t": "choice",
+"q": "¿Qué compra Lou?",
+"opts": [
+"la chemise rouge et les chaussures rouges et noires",
+"la robe blanche",
+"un sac à dos"
+],
+"a": 0,
+"fr": "Samedi, c'est l'anniversaire de Fatima. Lou et Amina sont dans le grand magasin. – Lou, qu'est-ce que tu achètes ? – J'hésite… J'aime la chemise rouge et les chaussures rouges et noires. – Moi, j'aime la robe à rayures rouges et les chaussures marron. – Tu es belle avec cette robe, Amina ! – Merci ! Et le cadeau de Fatima ? – Regarde ce sac à dos marron ! – Il est magnifique !",
+"auto": false,
+"au": "au/642a1bf2ac2df7c8.mp3"
+},
+{
+"t": "choice",
+"q": "Quel cadeau elles achètent à Fatima ?",
+"opts": [
+"un sac à main marron",
+"un pantalon marron",
+"un sac à dos marron"
+],
+"a": 2,
+"fr": "Samedi, c'est l'anniversaire de Fatima. Lou et Amina sont dans le grand magasin. – Lou, qu'est-ce que tu achètes ? – J'hésite… J'aime la chemise rouge et les chaussures rouges et noires. – Moi, j'aime la robe à rayures rouges et les chaussures marron. – Tu es belle avec cette robe, Amina ! – Merci ! Et le cadeau de Fatima ? – Regarde ce sac à dos marron ! – Il est magnifique !",
+"auto": false,
+"au": "au/642a1bf2ac2df7c8.mp3"
+},
+{
+"t": "choice",
+"q": "«Tu es belle avec cette robe !» ¿Qué significa?",
+"opts": [
+"¡Estás guapa con este vestido!",
+"¡Tu vestido es viejo!",
+"¡Quiero este vestido!"
+],
+"a": 0,
+"fr": "Samedi, c'est l'anniversaire de Fatima. Lou et Amina sont dans le grand magasin. – Lou, qu'est-ce que tu achètes ? – J'hésite… J'aime la chemise rouge et les chaussures rouges et noires. – Moi, j'aime la robe à rayures rouges et les chaussures marron. – Tu es belle avec cette robe, Amina ! – Merci ! Et le cadeau de Fatima ? – Regarde ce sac à dos marron ! – Il est magnifique !",
+"auto": false,
+"au": "au/642a1bf2ac2df7c8.mp3"
+},
+{
+"t": "choice",
+"q": "«J'hésite…» significa…",
+"opts": [
+"No sé qué elegir…",
+"Me encanta…",
+"Tengo frío…"
+],
+"a": 0,
+"fr": "Samedi, c'est l'anniversaire de Fatima. Lou et Amina sont dans le grand magasin. – Lou, qu'est-ce que tu achètes ? – J'hésite… J'aime la chemise rouge et les chaussures rouges et noires. – Moi, j'aime la robe à rayures rouges et les chaussures marron. – Tu es belle avec cette robe, Amina ! – Merci ! Et le cadeau de Fatima ? – Regarde ce sac à dos marron ! – Il est magnifique !",
+"auto": false,
+"au": "au/642a1bf2ac2df7c8.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 51–52",
+"min": 10,
+"pay": 0.08,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u5-delf",
+"unit": 5,
+"label": "DELF",
+"title": "DELF : Qui je suis ?",
+"pages": "53–54",
+"icon": "📝",
+"intro": "Practica como en el examen **DELF Prim**: escuchar descripciones de niños y su ropa, leer el mensaje de Kenza y escribir tu anuncio.",
+"sections": [
+{
+"title": "Comprensión oral · p. 53",
+"icon": "🎧",
+"from": 0,
+"n": 4
+},
+{
+"title": "Comprensión escrita · p. 54",
+"icon": "📖",
+"from": 4,
+"n": 6
+},
+{
+"title": "Producción escrita · ¡tu anuncio!",
+"icon": "✍️",
+"from": 10,
+"n": 4
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Escucha. ¿Cómo es Mathis?",
+"opts": [
+"pelo rizado y ojos azules",
+"pelo liso y ojos verdes",
+"pelo corto y gafas"
+],
+"a": 0,
+"why": "**bouclés** = rizados.",
+"au": "au/f6818f7922e19d63.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Cómo es Julie?",
+"opts": [
+"rubia y ojos marrones",
+"pelirroja y ojos verdes",
+"pelo negro y ojos azules"
+],
+"a": 1,
+"au": "au/64ac04897f8b812b.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué lleva Alice?",
+"opts": [
+"une robe bleue et des baskets blanches",
+"une jupe verte et un haut rose",
+"un jean et une chemise blanche"
+],
+"a": 0,
+"au": "au/65cdb82b9b249c96.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué lleva David?",
+"opts": [
+"un t-shirt rouge et un pantalon marron",
+"une chemise blanche et un jean",
+"un pull vert et un short"
+],
+"a": 0,
+"au": "au/b902f937da259576.mp3"
+},
+{
+"t": "choice",
+"q": "Lee el mensaje de Kenza. ¿Qué tiempo hace donde vive Kenza?",
+"opts": [
+"Il fait très beau et très chaud, mais le soir il fait froid.",
+"Il neige.",
+"Il pleut tous les jours."
+],
+"a": 0,
+"fr": "Salut Clara, ici, il fait très beau et très chaud mais le soir, il fait froid. Voici la liste pour ta valise : de la crème solaire, un maillot de bain, des sandales, un manteau pour la pluie, une casquette ou un chapeau de soleil et une paire de lunettes de soleil. Gros bisous, Kenza",
+"au": "au/2df2338759ce3428.mp3"
+},
+{
+"t": "choice",
+"q": "¿Clara tiene que llevar crema solar?",
+"opts": [
+"Oui",
+"Non"
+],
+"a": 0,
+"fr": "Salut Clara, ici, il fait très beau et très chaud mais le soir, il fait froid. Voici la liste pour ta valise : de la crème solaire, un maillot de bain, des sandales, un manteau pour la pluie, une casquette ou un chapeau de soleil et une paire de lunettes de soleil. Gros bisous, Kenza",
+"keep": true,
+"auto": false,
+"au": "au/2df2338759ce3428.mp3"
+},
+{
+"t": "choice",
+"q": "¿Clara tiene que llevar botas?",
+"opts": [
+"Oui",
+"Non"
+],
+"a": 1,
+"fr": "Salut Clara, ici, il fait très beau et très chaud mais le soir, il fait froid. Voici la liste pour ta valise : de la crème solaire, un maillot de bain, des sandales, un manteau pour la pluie, une casquette ou un chapeau de soleil et une paire de lunettes de soleil. Gros bisous, Kenza",
+"why": "En la lista no hay botas: hay **des sandales**.",
+"keep": true,
+"auto": false,
+"au": "au/2df2338759ce3428.mp3"
+},
+{
+"t": "choice",
+"q": "¿Para qué es el abrigo («un manteau»)?",
+"opts": [
+"pour la pluie",
+"pour la neige",
+"pour la fête"
+],
+"a": 0,
+"fr": "Salut Clara, ici, il fait très beau et très chaud mais le soir, il fait froid. Voici la liste pour ta valise : de la crème solaire, un maillot de bain, des sandales, un manteau pour la pluie, une casquette ou un chapeau de soleil et une paire de lunettes de soleil. Gros bisous, Kenza",
+"auto": false,
+"au": "au/2df2338759ce3428.mp3"
+},
+{
+"t": "choice",
+"q": "¿Qué tiene que llevar Clara en la cabeza?",
+"opts": [
+"une casquette ou un chapeau de soleil",
+"un bonnet",
+"des lunettes"
+],
+"a": 0,
+"fr": "Salut Clara, ici, il fait très beau et très chaud mais le soir, il fait froid. Voici la liste pour ta valise : de la crème solaire, un maillot de bain, des sandales, un manteau pour la pluie, une casquette ou un chapeau de soleil et une paire de lunettes de soleil. Gros bisous, Kenza",
+"auto": false,
+"au": "au/2df2338759ce3428.mp3"
+},
+{
+"t": "choice",
+"q": "«Gros bisous» al final de un mensaje significa…",
+"opts": [
+"Muchos besos",
+"Hasta luego",
+"Gracias"
+],
+"a": 0,
+"fr": "Salut Clara, ici, il fait très beau et très chaud mais le soir, il fait froid. Voici la liste pour ta valise : de la crème solaire, un maillot de bain, des sandales, un manteau pour la pluie, une casquette ou un chapeau de soleil et une paire de lunettes de soleil. Gros bisous, Kenza",
+"auto": false,
+"au": "au/2df2338759ce3428.mp3"
+},
+{
+"t": "order",
+"q": "Ordena el principio del anuncio:",
+"words": [
+"Je",
+"cherche",
+"un",
+"correspondant",
+"français."
+],
+"a": [
+"Je cherche un correspondant français."
+],
+"why": "**chercher** = buscar.",
+"sayA": "au/67a7897aa6db802c.mp3"
+},
+{
+"t": "order",
+"q": "Ordena:",
+"words": [
+"Il",
+"a",
+"dix",
+"ans."
+],
+"a": [
+"Il a dix ans."
+],
+"sayA": "au/53914b4044f85ab2.mp3"
+},
+{
+"t": "order",
+"q": "Ordena:",
+"words": [
+"Il",
+"aime",
+"le",
+"foot",
+"et",
+"les",
+"jeux",
+"vidéo."
+],
+"a": [
+"Il aime le foot et les jeux vidéo."
+],
+"sayA": "au/dabbcdc6be572da7.mp3"
+},
+{
+"t": "type",
+"q": "Escribe: «Soy alto y tengo el pelo corto.»",
+"a": [
+"Je suis grand et j'ai les cheveux courts.",
+"Je suis grand et j'ai les cheveux courts"
+]
+}
+],
+"pagesLabel": "cuaderno p. 53–54",
+"min": 8,
+"pay": 0.07,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u5-eval",
+"unit": 5,
+"label": "Evaluación",
+"title": "Évaluation · Unité 5",
+"pages": "55",
+"icon": "🏅",
+"intro": "El repaso de toda la unidad, como el examen de la p. 55… ¡y un repaso de errores de unidades anteriores!",
+"sections": [
+{
+"title": "Évaluation · p. 55",
+"icon": "📒",
+"from": 0,
+"n": 14
+},
+{
+"title": "Mis errores · ¡ya no!",
+"icon": "🎯",
+"from": 14,
+"n": 8
+}
+],
+"items": [
+{
+"t": "type",
+"q": "Ordena las letras: L U L P",
+"a": [
+"pull",
+"un pull"
+],
+"why": "**un pull** = un jersey."
+},
+{
+"t": "type",
+"q": "Ordena las letras: K A S B E T S",
+"a": [
+"baskets",
+"des baskets"
+],
+"why": "**des baskets** = zapatillas de deporte."
+},
+{
+"t": "type",
+"q": "Ordena las letras: T O T B E S",
+"a": [
+"bottes",
+"des bottes"
+],
+"why": "**des bottes** = botas."
+},
+{
+"t": "type",
+"q": "Ordena las letras: Q U A T E C T E S",
+"a": [
+"casquette",
+"une casquette"
+],
+"why": "**une casquette** = una gorra."
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 0,
+"keep": true,
+"au": "au/f412eb2d9f69c91d.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 1,
+"keep": true,
+"au": "au/b9dfc311a8fb9038.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 1,
+"keep": true,
+"au": "au/11692e808c032013.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 0,
+"keep": true,
+"au": "au/b0c28fd20106e158.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Masculino o femenino?",
+"opts": [
+"masculino",
+"femenino"
+],
+"a": 1,
+"keep": true,
+"au": "au/47e23013bb45e960.mp3"
+},
+{
+"t": "type",
+"q": "Pon en femenino: un vieux chapeau → une … casquette",
+"a": [
+"vieille",
+"une vieille casquette"
+],
+"fr": "une ____ casquette",
+"sayA": "au/dd4df8008bea7978.mp3",
+"show": "une vieille casquette"
+},
+{
+"t": "type",
+"q": "Pon en femenino: un nouveau pull → une … robe",
+"a": [
+"nouvelle",
+"une nouvelle robe"
+],
+"fr": "une ____ robe",
+"sayA": "au/81bbb52cb68f3c6b.mp3",
+"show": "une nouvelle robe"
+},
+{
+"t": "type",
+"q": "Pon en femenino: un beau t-shirt → une … jupe",
+"a": [
+"belle",
+"une belle jupe"
+],
+"fr": "une ____ jupe",
+"sayA": "au/2c181408508429aa.mp3",
+"show": "une belle jupe"
+},
+{
+"t": "type",
+"q": "Pon en femenino: un short blanc → une ceinture …",
+"a": [
+"blanche",
+"une ceinture blanche"
+],
+"fr": "une ceinture ____",
+"sayA": "au/229e22ee6f904e4d.mp3",
+"show": "une ceinture blanche"
+},
+{
+"t": "choice",
+"q": "Mira a David 🛹: pelo castaño un poco largo, camiseta verde, pantalón corto negro. ¿Qué frase lo describe?",
+"opts": [
+"Il a les cheveux longs et il porte un t-shirt vert et un short noir.",
+"Il a les cheveux courts et il porte une robe verte.",
+"Il est blond et il porte un manteau noir."
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Il a les yeux bleu.",
+"Il a les yeux bleus."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"une belle robe",
+"une beau robe"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Il fait froid.",
+"Il hace froid."
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"J'ai onze ans.",
+"Je suis onze ans."
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Elle s'apelle Amina.",
+"Elle s'appelle Amina."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"des yeux marron",
+"des yeux marrons"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "type",
+"q": "Dictado final. Escucha y escribe:",
+"a": [
+"En hiver, il fait froid et je porte un bonnet."
+],
+"au": "au/d57db68a8dfaa1c2.mp3"
+},
+{
+"t": "type",
+"q": "Dictado final. Escucha y escribe:",
+"a": [
+"Ma sœur est grande et elle a les cheveux longs.",
+"Ma soeur est grande et elle a les cheveux longs."
+],
+"au": "au/5bfa45ce5aacf423.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 55",
+"min": 9,
+"pay": 0.07,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u6-l1",
+"unit": 6,
+"label": "Lección 1",
+"title": "Qu'est-ce que tu manges ?",
+"pages": "56–57",
+"icon": "🥖",
+"intro": "La **comida**, la **mesa** y una palabrita nueva: **du / de la / de l' / des**. En español decimos «como pan», pero en francés hace falta ese artículo: je mange **du** pain. Y ojo con el género: **la** leche → **le** lait, **la** mantequilla → **le** beurre.",
+"sections": [
+{
+"title": "Del cuaderno · p. 56",
+"icon": "📒",
+"from": 0,
+"n": 8
+},
+{
+"title": "Del cuaderno · p. 57 · du, de la, de l', des",
+"icon": "📒",
+"from": 8,
+"n": 16
+},
+{
+"title": "Más práctica · ¿du o de la?",
+"icon": "💪",
+"from": 24,
+"n": 9
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 33,
+"n": 4
+}
+],
+"items": [
+{
+"t": "match",
+"q": "Une cada palabra con su dibujo:",
+"pairs": [
+[
+"le poisson",
+"🐟"
+],
+[
+"le fromage",
+"🧀"
+],
+[
+"les haricots verts",
+"🫛"
+],
+[
+"la tomate",
+"🍅"
+],
+[
+"le pain",
+"🥖"
+]
+],
+"au2": [
+"au/c9a503aa15267647.mp3",
+"au/919329b840f301f2.mp3",
+"au/31419e970d978093.mp3",
+"au/7fc02258d60917fd.mp3",
+"au/58c64ee6f46fe38a.mp3"
+]
+},
+{
+"t": "match",
+"q": "Une cada palabra con su dibujo:",
+"pairs": [
+[
+"les pommes de terre",
+"🥔"
+],
+[
+"les fraises",
+"🍓"
+],
+[
+"le yaourt",
+"yogur"
+],
+[
+"la salade",
+"🥬"
+]
+],
+"why": "**une pomme de terre** = una patata (¡«manzana de tierra»!). **une pomme** = una manzana.",
+"au2": [
+"au/f7a0e11138383602.mp3",
+"au/5fdd20a166d0f3b3.mp3",
+"au/b39f3d4805eebb6d.mp3",
+"au/3647ebdb61644613.mp3"
+]
+},
+{
+"t": "type",
+"q": "Crucigrama: 🥛 (4 letras: _ A _ T)",
+"a": [
+"le lait",
+"un lait",
+"lait",
+"du lait"
+],
+"why": "**le lait** = la leche. ¡Masculino en francés!",
+"img": "🥛"
+},
+{
+"t": "type",
+"q": "Crucigrama: 🍓🫙 (9 letras: C _ _ F _ T _ _ E)",
+"a": [
+"la confiture",
+"une confiture",
+"confiture",
+"de la confiture"
+],
+"why": "**la confiture** = la mermelada.",
+"img": "🫙"
+},
+{
+"t": "type",
+"q": "Crucigrama: 🍗 (6 letras: P O _ L _ T)",
+"a": [
+"le poulet",
+"un poulet",
+"poulet",
+"du poulet"
+],
+"why": "**le poulet** = el pollo.",
+"img": "🍗"
+},
+{
+"t": "type",
+"q": "Crucigrama: 🍎 (5 letras: P _ M _ E)",
+"a": [
+"la pomme",
+"une pomme",
+"pomme"
+],
+"img": "🍎"
+},
+{
+"t": "type",
+"q": "Crucigrama: 🧈 (6 letras: B E _ R _ _)",
+"a": [
+"le beurre",
+"un beurre",
+"beurre",
+"du beurre"
+],
+"why": "**le beurre** = la mantequilla. ¡Masculino!",
+"img": "🧈"
+},
+{
+"t": "type",
+"q": "Crucigrama: 🍫 (8 letras: C _ _ _ _ _ _ T)",
+"a": [
+"le chocolat",
+"un chocolat",
+"chocolat",
+"du chocolat"
+],
+"why": "**le chocolat**: la t final no se pronuncia.",
+"img": "🍫"
+},
+{
+"t": "choice",
+"q": "El desayuno. Completa:",
+"opts": [
+"du",
+"de la",
+"de l'",
+"des"
+],
+"a": 0,
+"fr": "Je mange ____ pain.",
+"why": "**pain** es masculino → **du** pain. En español no ponemos nada: «como pan».",
+"keep": true,
+"sayA": "au/1c2c5f6af77452ac.mp3",
+"show": "Je mange du pain."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"de l'",
+"des"
+],
+"a": 1,
+"fr": "Il y a ____ confiture.",
+"why": "**la** confiture → **de la** confiture.",
+"keep": true,
+"sayA": "au/040e30c9cc1e6295.mp3",
+"show": "Il y a de la confiture."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"de l'",
+"des"
+],
+"a": 2,
+"fr": "Je bois ____ eau.",
+"why": "**l'**eau (vocal) → **de l'**eau.",
+"keep": true,
+"sayA": "au/9a8e7758e3e3a39a.mp3",
+"show": "Je bois de l' eau."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"de l'",
+"des"
+],
+"a": 3,
+"fr": "Elle mange ____ fruits.",
+"why": "Plural → **des** fruits.",
+"keep": true,
+"sayA": "au/ff3bf145e8906ef2.mp3",
+"show": "Elle mange des fruits."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"de l'",
+"des"
+],
+"a": 0,
+"fr": "Je bois ____ jus d'orange.",
+"keep": true,
+"sayA": "au/c6eeb7d5a98718ed.mp3",
+"show": "Je bois du jus d'orange."
+},
+{
+"t": "choice",
+"q": "El almuerzo. Completa:",
+"opts": [
+"du",
+"de la",
+"de l'",
+"des"
+],
+"a": 0,
+"fr": "Il y a ____ poisson.",
+"keep": true,
+"sayA": "au/53f54b2c10c9a252.mp3",
+"show": "Il y a du poisson."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"de l'",
+"des"
+],
+"a": 3,
+"fr": "Nous mangeons ____ haricots verts.",
+"keep": true,
+"sayA": "au/64d9cfd535ff2e75.mp3",
+"show": "Nous mangeons des haricots verts."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"de l'",
+"des"
+],
+"a": 0,
+"fr": "Et ____ fromage !",
+"keep": true,
+"sayA": "au/3777206d545f592b.mp3",
+"show": "Et du fromage !"
+},
+{
+"t": "match",
+"q": "La mesa. Une cada palabra con su traducción:",
+"pairs": [
+[
+"la nappe",
+"el mantel"
+],
+[
+"la serviette",
+"la servilleta"
+],
+[
+"le couteau",
+"el cuchillo 🔪"
+],
+[
+"la cuillère",
+"la cuchara 🥄"
+],
+[
+"la fourchette",
+"el tenedor"
+],
+[
+"l'assiette",
+"el plato 🍽️"
+]
+],
+"au2": [
+"au/aaebdde2413b3452.mp3",
+"au/5531cf56bd210698.mp3",
+"au/694689426a546d87.mp3",
+"au/4b1c613669ed1549.mp3",
+"au/a5cbace555eeedba.mp3",
+"au/cd7ceb4bcdc30df2.mp3"
+]
+},
+{
+"t": "choice",
+"q": "En la mesa hay: la nappe, la serviette, l'assiette, la fourchette, le couteau, la cuillère. ¿Qué falta para beber?",
+"opts": [
+"un verre",
+"un vélo",
+"un ver"
+],
+"a": 0,
+"why": "**un verre** = un vaso. (**un ver** es un gusano 🪱… ¡suena igual!)"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Oyes [ɑ̃] o [ɔ̃]?",
+"opts": [
+"[ɑ̃] como en «maman» 👩",
+"[ɔ̃] como en «bonbon» 🍬"
+],
+"a": 0,
+"keep": true,
+"au": "au/2b0a4dfc7f5bd3fc.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Oyes [ɑ̃] o [ɔ̃]?",
+"opts": [
+"[ɑ̃] como en «maman» 👩",
+"[ɔ̃] como en «bonbon» 🍬"
+],
+"a": 1,
+"keep": true,
+"au": "au/a29a8acf11430dbd.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Oyes [ɑ̃] o [ɔ̃]?",
+"opts": [
+"[ɑ̃] como en «maman» 👩",
+"[ɔ̃] como en «bonbon» 🍬"
+],
+"a": 0,
+"keep": true,
+"au": "au/e8eb244dabf91a0b.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Oyes [ɑ̃] o [ɔ̃]?",
+"opts": [
+"[ɑ̃] como en «maman» 👩",
+"[ɔ̃] como en «bonbon» 🍬"
+],
+"a": 1,
+"keep": true,
+"au": "au/bc18f59f80cd252e.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Oyes [ɑ̃] o [ɔ̃]?",
+"opts": [
+"[ɑ̃] como en «maman» 👩",
+"[ɔ̃] como en «bonbon» 🍬"
+],
+"a": 1,
+"keep": true,
+"au": "au/8922498d1d3e5682.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Oyes [ɑ̃] o [ɔ̃]?",
+"opts": [
+"[ɑ̃] como en «maman» 👩",
+"[ɔ̃] como en «bonbon» 🍬"
+],
+"a": 0,
+"keep": true,
+"au": "au/cd3cf923a3a104a8.mp3"
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «Bebo leche»?",
+"opts": [
+"Je bois lait.",
+"Je bois du lait.",
+"Je bois de la lait."
+],
+"a": 1,
+"why": "**le** lait (masculino) → **du** lait."
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «Como mantequilla»?",
+"opts": [
+"Je mange de la beurre.",
+"Je mange du beurre.",
+"Je mange beurre."
+],
+"a": 1,
+"why": "**le** beurre → **du** beurre. (¡En español es femenino!)"
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «Bebo agua»?",
+"opts": [
+"Je bois de la eau.",
+"Je bois du eau.",
+"Je bois de l'eau."
+],
+"a": 2,
+"why": "Delante de vocal: **de l'**: de l'eau, de l'huile."
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «Hay fresas»?",
+"opts": [
+"Il y a des fraises.",
+"Il y a de la fraises.",
+"Il y a fraises."
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "¿Masculino o femenino? ___ sel (la sal)",
+"opts": [
+"le sel",
+"la sel"
+],
+"a": 0,
+"why": "**le sel**: masculino en francés, femenino en español.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Masculino o femenino? ___ salade",
+"opts": [
+"le salade",
+"la salade"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Masculino o femenino? ___ lait",
+"opts": [
+"le lait",
+"la lait"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "type",
+"q": "Escribe: «Como pan y queso.»",
+"a": [
+"Je mange du pain et du fromage.",
+"Je mange du pain et du fromage"
+],
+"ph": "Je mange …"
+},
+{
+"t": "type",
+"q": "Escribe: «Bebo zumo de naranja.»",
+"a": [
+"Je bois du jus d'orange.",
+"Je bois du jus d'orange"
+],
+"ph": "Je bois …"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué come Lou en el desayuno?",
+"opts": [
+"pan con mermelada 🥖",
+"pescado 🐟",
+"patatas 🥔"
+],
+"a": 0,
+"au": "au/872f11c248a7b583.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué bebe Théo?",
+"opts": [
+"leche 🥛",
+"agua 💧",
+"zumo de naranja 🍊"
+],
+"a": 2,
+"au": "au/20345d1f43217c59.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Je mange du pain et de la confiture."
+],
+"au": "au/a607f81983ed42c8.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Il boit de l'eau."
+],
+"au": "au/ca9b8cb4e9074973.mp3"
+}
+],
+"film": {
+"src": "films/ch61-qu-est-ce-que-tu-manges-v3.mp4",
+"dur": 85.3
+},
+"pagesLabel": "cuaderno p. 56–57",
+"min": 16,
+"pay": 0.13,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u6-l2",
+"unit": 6,
+"label": "Lección 2",
+"title": "Vite une recette !",
+"pages": "58",
+"icon": "🍳",
+"intro": "El **menú del comedor** (entrée, plat, produit laitier, dessert) y el **imperativo** para dar órdenes en una receta: tu manges → **Mange !** · tu verses → **Verse !** Con los verbos en -er, ¡se quita la **s**!",
+"sections": [
+{
+"title": "Del cuaderno · p. 58 · el comedor",
+"icon": "📒",
+"from": 0,
+"n": 9
+},
+{
+"title": "Más práctica · ¡el imperativo!",
+"icon": "💪",
+"from": 9,
+"n": 8
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 17,
+"n": 4
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "La pizarra del comedor dice: «ENTRÉE: Tomates · PLAT: Poulet, riz et haricots verts». Lee el texto. ¿Qué entrada hay de verdad?",
+"opts": [
+"des carottes râpées",
+"des tomates",
+"des fraises"
+],
+"a": 1,
+"fr": "J'aime la cantine. Aujourd'hui, il y a des carottes râpées. Le plat principal, c'est du riz avec des haricots verts et un hamburger. Il y a aussi du lait et des yaourts. En dessert, il y a des fruits : des bananes, des pommes et des poires. Il y a aussi de la tarte aux pommes. Et il y a de l'eau.",
+"why": "El texto dice «carottes râpées», pero la pizarra dice **tomates**: ¡es un error del texto!",
+"au": "au/f6732296bf52af36.mp3"
+},
+{
+"t": "choice",
+"q": "Según la pizarra, ¿qué carne hay?",
+"opts": [
+"un hamburger",
+"du poulet",
+"du poisson"
+],
+"a": 1,
+"why": "Il n'y a pas de hamburger : il y a **du poulet**."
+},
+{
+"t": "choice",
+"q": "Completa la corrección:",
+"opts": [
+"de hamburger",
+"un hamburger",
+"du hamburger"
+],
+"a": 0,
+"fr": "Il n'y a pas ____ : il y a du poulet.",
+"why": "Con la negación, **un / une / du / de la / de l' / des** se convierten en **de** (**d'** delante de vocal): il n'y a **pas de** hamburger, je ne bois **pas d'**eau.",
+"keep": true,
+"sayA": "au/1c5f9f0353a8a24d.mp3",
+"show": "Il n'y a pas de hamburger : il y a du poulet."
+},
+{
+"t": "match",
+"q": "Une cada parte del menú con un ejemplo:",
+"pairs": [
+[
+"l'entrée",
+"🥗 la salade"
+],
+[
+"le plat",
+"🍗 le poulet et le riz"
+],
+[
+"le produit laitier",
+"🧀 le fromage"
+],
+[
+"le dessert",
+"🍐 la poire"
+]
+],
+"au2": [
+"au/ed442902164d2221.mp3",
+"au/35606cc278570356.mp3",
+"au/1b2861cd7fdb5e2f.mp3",
+"au/7df5e91693560b64.mp3"
+]
+},
+{
+"t": "type",
+"q": "Pon en imperativo: «Alfred mange les légumes.»",
+"a": [
+"Mange",
+"Mange les légumes."
+],
+"fr": "____ les légumes.",
+"why": "tu mang**es** → **Mange !** (sin s).",
+"sayA": "au/0082da0791d7913f.mp3",
+"show": "Mange les légumes."
+},
+{
+"t": "type",
+"q": "Pon en imperativo: «Noémie verse le lait dans le bol.»",
+"a": [
+"Verse",
+"Verse le lait dans le bol."
+],
+"fr": "____ le lait dans le bol.",
+"sayA": "au/d5dbf238017ab969.mp3",
+"show": "Verse le lait dans le bol."
+},
+{
+"t": "type",
+"q": "Pon en imperativo: «Sacha ajoute des fraises.»",
+"a": [
+"Ajoute",
+"Ajoute des fraises."
+],
+"fr": "____ des fraises.",
+"sayA": "au/7ec489f7f5faa890.mp3",
+"show": "Ajoute des fraises."
+},
+{
+"t": "type",
+"q": "Pon en imperativo: «Sacha décore le gâteau.»",
+"a": [
+"Décore",
+"Décore le gâteau."
+],
+"fr": "____ le gâteau.",
+"sayA": "au/7c63e86f18f45425.mp3",
+"show": "Décore le gâteau."
+},
+{
+"t": "type",
+"q": "Pon en imperativo: «Léon mélange les œufs et la farine.»",
+"a": [
+"Mélange",
+"Mélange les œufs et la farine."
+],
+"fr": "____ les œufs et la farine.",
+"why": "**œ** (o y e pegadas): «oeufs» también vale si no encuentras la tecla.",
+"sayA": "au/3fb0fb2533f87621.mp3",
+"show": "Mélange les œufs et la farine."
+},
+{
+"t": "choice",
+"q": "¿Cuál es una orden (imperativo)?",
+"opts": [
+"Tu manges une pomme.",
+"Mange une pomme !"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "tu coupes → …",
+"opts": [
+"Coupes !",
+"Coupe !",
+"Couper !"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "tu prépares → …",
+"opts": [
+"Prépare !",
+"Prépares !",
+"Préparer !"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "tu goûtes → …",
+"opts": [
+"Goûte !",
+"Goûtes !",
+"Goûter !"
+],
+"a": 0,
+"why": "**goûter** = probar (un sabor)."
+},
+{
+"t": "type",
+"q": "Imperativo de **verser** (tú):",
+"a": [
+"Verse",
+"Verse !"
+],
+"fr": "____ l'eau dans le verre.",
+"sayA": "au/5bdc0b5dfecc77c0.mp3",
+"show": "Verse l'eau dans le verre."
+},
+{
+"t": "type",
+"q": "Imperativo de **mélanger** (tú):",
+"a": [
+"Mélange",
+"Mélange !"
+],
+"fr": "____ bien !",
+"sayA": "au/e24a488ce8cae40d.mp3",
+"show": "Mélange bien !"
+},
+{
+"t": "type",
+"q": "Imperativo de **ajouter** (tú):",
+"a": [
+"Ajoute",
+"Ajoute !"
+],
+"fr": "____ le sucre.",
+"sayA": "au/d29a4e900c545219.mp3",
+"show": "Ajoute le sucre."
+},
+{
+"t": "order",
+"q": "Ordena la receta (¡empieza por el principio!):",
+"words": [
+"Verse le lait dans le bol.",
+"Ajoute le chocolat dans le lait.",
+"Mélange.",
+"Bois !"
+],
+"a": [
+"Verse le lait dans le bol. Ajoute le chocolat dans le lait. Mélange. Bois !"
+],
+"why": "Primero el bol con leche, luego el cacao, se remueve… ¡y a beber!",
+"sayA": "au/265d660835512a9e.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha la orden. ¿Qué tienes que hacer?",
+"opts": [
+"Cortar las frutas 🔪",
+"Comer las fresas 🍓",
+"Lavar el bol"
+],
+"a": 0,
+"au": "au/5ab8b1d00833b996.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha la orden. ¿Qué tienes que hacer?",
+"opts": [
+"Verter la leche 🥛",
+"Comer el pan 🥖",
+"Añadir sal"
+],
+"a": 0,
+"au": "au/46cab5b38234b912.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué hay de postre?",
+"opts": [
+"fresas 🍓",
+"un yogur",
+"plátanos 🍌"
+],
+"a": 2,
+"au": "au/8199cace838e66e0.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Mange les légumes !"
+],
+"au": "au/92996eda14e662a0.mp3"
+}
+],
+"film": {
+"src": "films/ch62-vite-une-recette-v2.mp4",
+"dur": 71.6
+},
+"pagesLabel": "cuaderno p. 58",
+"min": 11,
+"pay": 0.09,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u6-zoom",
+"unit": 6,
+"label": "Zoom",
+"title": "Zoom sur la géographie",
+"pages": "59",
+"icon": "🗺️",
+"intro": "Un viaje por **Francia** y sus **comidas típicas**: Lille, Paris, Strasbourg, Dijon, Rennes, Nantes, Bordeaux, Toulouse y Marseille.",
+"sections": [
+{
+"title": "Del cuaderno · p. 59",
+"icon": "📒",
+"from": 0,
+"n": 14
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 14,
+"n": 3
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "En el mapa, ¿qué ciudad está muy al norte, cerca de Bélgica?",
+"opts": [
+"Lille",
+"Marseille",
+"Toulouse"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "¿Qué ciudad está al este, cerca de Alemania?",
+"opts": [
+"Rennes",
+"Strasbourg",
+"Bordeaux"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "¿Qué ciudad está al sur, junto al mar Mediterráneo?",
+"opts": [
+"Lille",
+"Nantes",
+"Marseille"
+],
+"a": 2
+},
+{
+"t": "choice",
+"q": "¿Qué ciudad es la capital de Francia?",
+"opts": [
+"Paris",
+"Dijon",
+"Bordeaux"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "¿Qué es? 🥨",
+"opts": [
+"un bretzel",
+"un croissant",
+"une gaufre"
+],
+"a": 0,
+"why": "El **bretzel** es típico de **Strasbourg** (Alsacia).",
+"img": "🥨"
+},
+{
+"t": "choice",
+"q": "¿Qué es? (galletitas redondas de colores con crema)",
+"opts": [
+"des macarons",
+"des crêpes",
+"des frites"
+],
+"a": 0,
+"img": "🟣🟢🟡"
+},
+{
+"t": "choice",
+"q": "¿Qué es? (salsa amarilla y picante de Dijon)",
+"opts": [
+"de la moutarde",
+"de la confiture",
+"du ketchup"
+],
+"a": 0,
+"img": "🫙"
+},
+{
+"t": "choice",
+"q": "¿Qué es? (mejillones con patatas fritas)",
+"opts": [
+"des moules-frites",
+"du poulet",
+"du couscous"
+],
+"a": 0,
+"img": "🍟"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 0,
+"fr": "À Dijon, il y a de la moutarde.",
+"keep": true,
+"au": "au/2314d4bdff368ab2.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 1,
+"fr": "À Strasbourg, il n'y a pas de bretzels.",
+"why": "¡Sí hay! El bretzel es la especialidad de Strasbourg.",
+"keep": true,
+"au": "au/651585598a0002ab.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 1,
+"fr": "La spécialité de Toulouse, c'est les crêpes.",
+"why": "Las crêpes son de **Bretaña** (Rennes). En Toulouse se come el **cassoulet**.",
+"keep": true,
+"au": "au/6d2959310902fffd.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 0,
+"fr": "À Marseille, on prépare la bouillabaisse.",
+"why": "La **bouillabaisse** es una sopa de pescado de Marseille.",
+"keep": true,
+"au": "au/de4bd5c58f5558ee.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 0,
+"fr": "À Bordeaux, on mange des cannelés.",
+"why": "Los **cannelés** son pastelitos de Bordeaux.",
+"keep": true,
+"au": "au/bba22a47722c1e01.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 0,
+"fr": "À Lille, il y a des moules et des frites.",
+"keep": true,
+"au": "au/15de44d81432683e.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿De qué ciudad habla?",
+"opts": [
+"Strasbourg",
+"Marseille",
+"Lille"
+],
+"a": 1,
+"au": "au/05fc023203fd28ad.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿De qué ciudad habla?",
+"opts": [
+"Dijon",
+"Bordeaux",
+"Rennes"
+],
+"a": 0,
+"au": "au/a2d98bb4c91a4788.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"À Lille, on mange des moules-frites.",
+"À Lille, on mange des moules frites."
+],
+"au": "au/56e978490aa5f14d.mp3"
+}
+],
+"film": {
+"src": "films/ch63-zoom-sur-la-geographie-v3.mp4",
+"dur": 65.5
+},
+"pagesLabel": "cuaderno p. 59",
+"min": 8,
+"pay": 0.07,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u6-l3",
+"unit": 6,
+"label": "Lección 3",
+"title": "Lapins coquins",
+"pages": "60",
+"icon": "🐰",
+"intro": "Repasamos **le / la / l'**, **du / de la / des**, el **imperativo** (mange, coupe, verse…) y dos frases muy útiles: **J'ai faim** (tengo hambre) y **J'ai soif** (tengo sed). ¡Con **avoir**, como en español!",
+"sections": [
+{
+"title": "Del cuaderno · p. 60 · le, la, l'",
+"icon": "📒",
+"from": 0,
+"n": 9
+},
+{
+"title": "Del cuaderno · p. 60 · du, de la, d', des",
+"icon": "📒",
+"from": 9,
+"n": 10
+},
+{
+"title": "Del cuaderno · p. 60 · el imperativo",
+"icon": "📒",
+"from": 19,
+"n": 8
+},
+{
+"title": "Más práctica · J'ai faim",
+"icon": "💪",
+"from": 27,
+"n": 6
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 33,
+"n": 3
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "¿Qué artículo? ___ sucre",
+"opts": [
+"le",
+"la",
+"l'"
+],
+"a": 0,
+"why": "**le sucre** (el azúcar).",
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Qué artículo? ___ orange",
+"opts": [
+"le",
+"la",
+"l'"
+],
+"a": 2,
+"why": "**l'orange**: empieza por vocal → **l'** (y es femenino).",
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Qué artículo? ___ poulet",
+"opts": [
+"le",
+"la",
+"l'"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Qué artículo? ___ beurre",
+"opts": [
+"le",
+"la",
+"l'"
+],
+"a": 0,
+"why": "**le beurre**: ¡masculino! (la mantequilla).",
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Qué artículo? ___ pomme",
+"opts": [
+"le",
+"la",
+"l'"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Qué artículo? ___ riz",
+"opts": [
+"le",
+"la",
+"l'"
+],
+"a": 0,
+"why": "**le riz** (el arroz).",
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Qué artículo? ___ fromage",
+"opts": [
+"le",
+"la",
+"l'"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Qué artículo? ___ fraise",
+"opts": [
+"le",
+"la",
+"l'"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Qué artículo? ___ tomate",
+"opts": [
+"le",
+"la",
+"l'"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"d'",
+"des"
+],
+"a": 0,
+"fr": "Il boit ____ jus de pomme.",
+"keep": true,
+"sayA": "au/3979e4de199a9132.mp3",
+"show": "Il boit du jus de pomme."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"d'",
+"des"
+],
+"a": 0,
+"fr": "Il mange ____ poulet.",
+"keep": true,
+"sayA": "au/ff170c211b5c82c2.mp3",
+"show": "Il mange du poulet."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"d'",
+"des"
+],
+"a": 3,
+"fr": "Il mange du poulet avec ____ haricots verts.",
+"keep": true,
+"sayA": "au/60d91b777b98ae9a.mp3",
+"show": "Il mange du poulet avec des haricots verts."
+},
+{
+"t": "choice",
+"q": "Completa (después de una cantidad, solo **de**):",
+"opts": [
+"du",
+"de la",
+"de",
+"des"
+],
+"a": 2,
+"fr": "Je voudrais un kilo ____ farine.",
+"why": "Después de una cantidad (un kilo, un verre, un peu) va **de**: un kilo **de** farine, un verre **de** lait.",
+"keep": true,
+"sayA": "au/e127a4a859a92729.mp3",
+"show": "Je voudrais un kilo de farine."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"d'",
+"des"
+],
+"a": 3,
+"fr": "Aujourd'hui, en dessert, il y a ____ pêches.",
+"keep": true,
+"sayA": "au/7d4300388229973b.mp3",
+"show": "Aujourd'hui, en dessert, il y a des pêches."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"d'",
+"des"
+],
+"a": 1,
+"fr": "Ajoute ____ sauce tomate.",
+"keep": true,
+"sayA": "au/7ef4cf8f79ef2052.mp3",
+"show": "Ajoute de la sauce tomate."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"d'",
+"des"
+],
+"a": 0,
+"fr": "Il adore les frites avec ____ ketchup.",
+"keep": true,
+"sayA": "au/781623383a4b45bc.mp3",
+"show": "Il adore les frites avec du ketchup."
+},
+{
+"t": "choice",
+"q": "Completa (negación):",
+"opts": [
+"de",
+"du",
+"de la"
+],
+"a": 0,
+"fr": "Je ne mange pas ____ viande.",
+"why": "Con la negación, **de la** → **de**: pas **de** viande.",
+"keep": true,
+"sayA": "au/942019f5e50cd373.mp3",
+"show": "Je ne mange pas de viande."
+},
+{
+"t": "choice",
+"q": "Completa (negación):",
+"opts": [
+"d'",
+"de l'",
+"des"
+],
+"a": 0,
+"fr": "Il n'y a pas ____ eau.",
+"why": "Con la negación, **de l'** → **d'**: pas **d'**eau.",
+"keep": true,
+"sayA": "au/6900b957065987fc.mp3",
+"show": "Il n'y a pas d' eau."
+},
+{
+"t": "choice",
+"q": "Completa (negación):",
+"opts": [
+"de",
+"des",
+"du"
+],
+"a": 0,
+"fr": "Il n'y a pas ____ fraises.",
+"why": "Con la negación, **des** → **de**: pas **de** fraises.",
+"keep": true,
+"sayA": "au/149f421d3756b468.mp3",
+"show": "Il n'y a pas de fraises."
+},
+{
+"t": "type",
+"q": "Imperativo (tú) de **manger**:",
+"a": [
+"Mange",
+"Mange !"
+],
+"fr": "____ les fraises.",
+"sayA": "au/57f42b2f7e92f63b.mp3",
+"show": "Mange les fraises."
+},
+{
+"t": "type",
+"q": "Imperativo (tú) de **couper**:",
+"a": [
+"Coupe",
+"Coupe !"
+],
+"fr": "____ les fruits.",
+"sayA": "au/e88fcad145674e52.mp3",
+"show": "Coupe les fruits."
+},
+{
+"t": "type",
+"q": "Imperativo (tú) de **ajouter**:",
+"a": [
+"Ajoute",
+"Ajoute !"
+],
+"fr": "____ le sucre.",
+"sayA": "au/d29a4e900c545219.mp3",
+"show": "Ajoute le sucre."
+},
+{
+"t": "type",
+"q": "Imperativo (tú) de **mélanger**:",
+"a": [
+"Mélange",
+"Mélange !"
+],
+"fr": "____ le lait avec les œufs.",
+"sayA": "au/d5fddc750034fce8.mp3",
+"show": "Mélange le lait avec les œufs."
+},
+{
+"t": "type",
+"q": "Imperativo (tú) de **verser**:",
+"a": [
+"Verse",
+"Verse !"
+],
+"fr": "____ la préparation dans un bol.",
+"sayA": "au/94cb823cf2ff73e8.mp3",
+"show": "Verse la préparation dans un bol."
+},
+{
+"t": "type",
+"q": "Imperativo (tú) de **mixer**:",
+"a": [
+"Mixe",
+"Mixe !"
+],
+"fr": "____ le lait, les fraises et le sucre.",
+"sayA": "au/658afed38e63625d.mp3",
+"show": "Mixe le lait, les fraises et le sucre."
+},
+{
+"t": "choice",
+"q": "Un niño bebe una botella de agua enorme 🥤. ¿Qué dice?",
+"opts": [
+"J'ai faim !",
+"J'ai soif !"
+],
+"a": 1,
+"img": "🧒🥤",
+"keep": true
+},
+{
+"t": "choice",
+"q": "Una niña mira una hamburguesa y se relame 🍔. ¿Qué dice?",
+"opts": [
+"J'ai faim !",
+"J'ai soif !"
+],
+"a": 0,
+"img": "👧🍔",
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «Tengo hambre»?",
+"opts": [
+"Je suis faim.",
+"J'ai faim.",
+"J'ai hambre."
+],
+"a": 1,
+"why": "Como en español: **tener** hambre → **avoir** faim. «Je suis faim» está mal."
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «¿Tienes sed?»",
+"opts": [
+"Tu as soif ?",
+"Tu es soif ?",
+"Tu as faim ?"
+],
+"a": 0
+},
+{
+"t": "type",
+"q": "Escribe: «Tengo sed.»",
+"a": [
+"J'ai soif.",
+"J'ai soif !",
+"J'ai soif"
+],
+"ph": "J'ai …"
+},
+{
+"t": "type",
+"q": "Escribe: «Tenemos hambre.»",
+"a": [
+"Nous avons faim.",
+"Nous avons faim !",
+"On a faim."
+],
+"ph": "Nous …"
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Je mange de la poulet.",
+"Je mange du poulet.",
+"Je mange le poulet de."
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien? (repaso de la Unidad 1 😉)",
+"opts": [
+"Le lapin s'apelle Coco.",
+"Le lapin s'appelle Coco."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué le pasa al conejo?",
+"opts": [
+"Tiene hambre 🥕",
+"Tiene sed 💧",
+"Tiene sueño 😴"
+],
+"a": 0,
+"au": "au/3a0c278a5aa77358.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué tiene que hacer?",
+"opts": [
+"Cortar 🔪",
+"Remover 🥄",
+"Verter 🥛"
+],
+"a": 1,
+"au": "au/db77ddbb580108f6.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"J'ai soif. Je voudrais de l'eau.",
+"J'ai soif, je voudrais de l'eau.",
+"J'ai soif ! Je voudrais de l'eau.",
+"J'ai soif ! je voudrais de l'eau."
+],
+"au": "au/0d3077b9d9f7e542.mp3"
+}
+],
+"film": {
+"src": "films/ch64-lapins-coquins-v2.mp4",
+"dur": 76.6
+},
+"pagesLabel": "cuaderno p. 60",
+"min": 14,
+"pay": 0.12,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u6-culture",
+"unit": 6,
+"label": "Cultura + Lectura",
+"title": "Spécialités et carnaval",
+"pages": "61–63",
+"icon": "🌍",
+"intro": "Platos de **países francófonos**, las **vacas de Francia** (¡de ellas sale la leche y el queso!) y una historia: **Théo en el carnaval de Québec**.",
+"sections": [
+{
+"title": "Cultura · p. 61",
+"icon": "🌍",
+"from": 0,
+"n": 7
+},
+{
+"title": "Lectura · p. 62 · les vaches",
+"icon": "📖",
+"from": 7,
+"n": 7
+},
+{
+"title": "Historia · Carnaval à Québec",
+"icon": "❄️",
+"from": 14,
+"n": 7
+}
+],
+"items": [
+{
+"t": "match",
+"q": "Une cada plato con su país:",
+"pairs": [
+[
+"les gaufres",
+"🇧🇪 la Belgique (Liège, Bruxelles)"
+],
+[
+"la poutine",
+"🇨🇦 le Canada (Québec)"
+],
+[
+"le couscous",
+"🇲🇦 le Maroc"
+],
+[
+"les crêpes",
+"🇫🇷 la France (Bretagne)"
+]
+],
+"au2": [
+"au/54f52111b2d0859e.mp3",
+"au/382c86a77e0143c9.mp3",
+"au/31e57bf0731a8f39.mp3",
+"au/6490a21b271fa83a.mp3"
+]
+},
+{
+"t": "choice",
+"q": "¿Qué plato lleva: frites, fromage, sauce brune?",
+"opts": [
+"la poutine",
+"le couscous",
+"les gaufres"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "¿Qué plato lleva: viande, légumes, semoule?",
+"opts": [
+"la poutine",
+"le couscous",
+"les crêpes"
+],
+"a": 1,
+"why": "**la semoule** = la sémola."
+},
+{
+"t": "choice",
+"q": "¿Qué lleva **levure** (levadura) para que suba?",
+"opts": [
+"les gaufres",
+"la poutine",
+"le couscous"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "Adivinanza: «Je suis une spécialité française à base de pommes de terre.»",
+"opts": [
+"le gratin dauphinois",
+"la fondue",
+"les baklavas"
+],
+"a": 0,
+"fr": "Je suis une spécialité française à base de pommes de terre.",
+"au": "au/b6401d7bc2fe8243.mp3"
+},
+{
+"t": "choice",
+"q": "Adivinanza: «Mon ingrédient principal est le fromage. On me mange avec du pain.»",
+"opts": [
+"le gratin dauphinois",
+"la fondue",
+"les baklavas"
+],
+"a": 1,
+"fr": "Mon ingrédient principal est le fromage. On me mange avec du pain.",
+"why": "**La fondue** suisse: queso fundido con trocitos de pan.",
+"au": "au/f980d1dc9ac53d15.mp3"
+},
+{
+"t": "choice",
+"q": "Adivinanza: «Dans ma recette, il y a du miel et du sucre. Je suis un dessert.»",
+"opts": [
+"le gratin dauphinois",
+"la fondue",
+"les baklavas"
+],
+"a": 2,
+"fr": "Dans ma recette, il y a du miel et du sucre. Je suis un dessert.",
+"why": "**le miel** = la miel. ¡Masculino en francés! Les **baklavas**: un postre de Túnez (y también de Turquía, Grecia, Oriente Medio).",
+"au": "au/b6596e2602051eec.mp3"
+},
+{
+"t": "choice",
+"q": "«Je suis grande et blonde, mes cornes sont blanches.» ¿Qué vaca es?",
+"opts": [
+"la Blonde d'Aquitaine",
+"la Normande",
+"la Salers"
+],
+"a": 0,
+"fr": "Je suis grande et blonde, mes cornes sont blanches.",
+"au": "au/afa8d7aefe01298d.mp3"
+},
+{
+"t": "choice",
+"q": "«Ma robe porte des taches noires et blanches.»",
+"opts": [
+"la Limousine",
+"la Prim'Holstein",
+"la Blonde d'Aquitaine"
+],
+"a": 1,
+"fr": "Ma robe porte des taches noires et blanches.",
+"why": "**la robe** de una vaca = su **capa** (el color del pelo), ¡no un vestido!",
+"au": "au/9e6ee6812c95979a.mp3"
+},
+{
+"t": "choice",
+"q": "«Il y a une ligne noire autour de mes yeux.»",
+"opts": [
+"la Normande",
+"la Salers",
+"la Limousine"
+],
+"a": 0,
+"fr": "Mon ventre est blanc, j'ai des taches marron. Il y a une ligne noire autour de mes yeux.",
+"au": "au/888d41999081b775.mp3"
+},
+{
+"t": "choice",
+"q": "«Mes cornes sont grandes et fines, ma robe est marron et frisée.»",
+"opts": [
+"la Salers",
+"la Normande",
+"la Prim'Holstein"
+],
+"a": 0,
+"fr": "Mes cornes sont grandes et fines et ma robe est marron et frisée.",
+"au": "au/6ae3d8b46d71fbcb.mp3"
+},
+{
+"t": "choice",
+"q": "«Je suis grande et très musclée. Ma robe est rousse.»",
+"opts": [
+"la Limousine",
+"la Blonde d'Aquitaine",
+"la Normande"
+],
+"a": 0,
+"fr": "Je suis grande et très musclée. Ma robe est rousse.",
+"au": "au/98e7d017ccf8b511.mp3"
+},
+{
+"t": "type",
+"q": "Escribe un **produit laitier** (producto lácteo) en francés:",
+"a": [
+"le lait",
+"le fromage",
+"le yaourt",
+"le beurre",
+"la crème",
+"lait",
+"fromage",
+"yaourt",
+"beurre",
+"crème",
+"du lait",
+"du fromage",
+"un yaourt",
+"du beurre",
+"de la crème",
+"les yaourts",
+"des yaourts",
+"la crème fraîche",
+"yogourt",
+"le yogourt",
+"du yaourt",
+"fromage blanc",
+"le fromage blanc",
+"du fromage blanc",
+"petit-suisse",
+"le petit-suisse",
+"crème fraîche",
+"de la crème fraîche",
+"les fromages",
+"un fromage",
+"des fromages"
+],
+"ph": "le …"
+},
+{
+"t": "type",
+"q": "Escribe **otro** producto lácteo (el libro pide dos):",
+"a": [
+"le lait",
+"le fromage",
+"le yaourt",
+"le beurre",
+"la crème",
+"lait",
+"fromage",
+"yaourt",
+"beurre",
+"crème",
+"du lait",
+"du fromage",
+"un yaourt",
+"du beurre",
+"de la crème",
+"les yaourts",
+"des yaourts",
+"la crème fraîche",
+"yogourt",
+"le yogourt",
+"du yaourt",
+"fromage blanc",
+"le fromage blanc",
+"du fromage blanc",
+"petit-suisse",
+"le petit-suisse",
+"crème fraîche",
+"de la crème fraîche",
+"les fromages",
+"un fromage",
+"des fromages"
+],
+"ph": "le …"
+},
+{
+"t": "choice",
+"q": "Lee la historia. ¿Dónde está Théo?",
+"opts": [
+"À Paris",
+"Au Québec",
+"À Marseille"
+],
+"a": 1,
+"fr": "Théo est au Québec, chez son amie Rosalie. Dans sa valise, il y a un bonnet, des gants et un pantalon chaud. Le père de Rosalie est professeur et sculpteur de glace. Au carnaval, ils voient le Bonhomme Carnaval, un grand bonhomme de neige avec un bonnet rouge et une ceinture fléchée. Ensuite, ils mangent une poutine : des frites avec du fromage et de la sauce brune. Miam !",
+"au": "au/8442312af9a8673b.mp3"
+},
+{
+"t": "choice",
+"q": "¿Qué hay en la maleta de Théo?",
+"opts": [
+"un bonnet, des gants, un pantalon chaud",
+"un maillot de bain et des lunettes de soleil",
+"une flûte et une trompette"
+],
+"a": 0,
+"fr": "Théo est au Québec, chez son amie Rosalie. Dans sa valise, il y a un bonnet, des gants et un pantalon chaud. Le père de Rosalie est professeur et sculpteur de glace. Au carnaval, ils voient le Bonhomme Carnaval, un grand bonhomme de neige avec un bonnet rouge et une ceinture fléchée. Ensuite, ils mangent une poutine : des frites avec du fromage et de la sauce brune. Miam !",
+"auto": false,
+"au": "au/8442312af9a8673b.mp3"
+},
+{
+"t": "choice",
+"q": "¿Cómo se llama la amiga de Théo?",
+"opts": [
+"Rosalie",
+"Lou",
+"Kenza"
+],
+"a": 0,
+"fr": "Théo est au Québec, chez son amie Rosalie. Dans sa valise, il y a un bonnet, des gants et un pantalon chaud. Le père de Rosalie est professeur et sculpteur de glace. Au carnaval, ils voient le Bonhomme Carnaval, un grand bonhomme de neige avec un bonnet rouge et une ceinture fléchée. Ensuite, ils mangent une poutine : des frites avec du fromage et de la sauce brune. Miam !",
+"auto": false,
+"au": "au/8442312af9a8673b.mp3"
+},
+{
+"t": "choice",
+"q": "El padre de Rosalie es…",
+"opts": [
+"professeur et sculpteur de glace",
+"ingénieur et sculpteur de glace",
+"professeur et ingénieur"
+],
+"a": 0,
+"fr": "Théo est au Québec, chez son amie Rosalie. Dans sa valise, il y a un bonnet, des gants et un pantalon chaud. Le père de Rosalie est professeur et sculpteur de glace. Au carnaval, ils voient le Bonhomme Carnaval, un grand bonhomme de neige avec un bonnet rouge et une ceinture fléchée. Ensuite, ils mangent une poutine : des frites avec du fromage et de la sauce brune. Miam !",
+"auto": false,
+"au": "au/8442312af9a8673b.mp3"
+},
+{
+"t": "choice",
+"q": "¿Quién es el muñeco de nieve con gorro rojo y cinturón de colores?",
+"opts": [
+"le Bonhomme Carnaval",
+"le père Noël",
+"Théo"
+],
+"a": 0,
+"img": "⛄"
+},
+{
+"t": "choice",
+"q": "El plato tradicional de Québec es…",
+"opts": [
+"la paella",
+"la poutine",
+"les spaghettis"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "¿Qué es importante para el carnaval de Québec (¡hace mucho frío!)?",
+"opts": [
+"un bonnet",
+"une flûte",
+"un maillot de bain"
+],
+"a": 0
+}
+],
+"film": {
+"src": "films/ch65-carnaval-a-quebec-v2.mp4",
+"dur": 76.5
+},
+"pagesLabel": "cuaderno p. 61–63",
+"min": 12,
+"pay": 0.1,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u6-delf",
+"unit": 6,
+"label": "DELF",
+"title": "DELF Prim · À table !",
+"pages": "64–65",
+"icon": "📝",
+"intro": "Como en el examen **DELF Prim**: escuchar qué come la gente, leer una lista de la compra, ordenar una receta y **pedir en un restaurante**.",
+"sections": [
+{
+"title": "Comprensión oral · p. 64",
+"icon": "🎧",
+"from": 0,
+"n": 4
+},
+{
+"title": "Producción oral · p. 64",
+"icon": "🗣️",
+"from": 4,
+"n": 4
+},
+{
+"title": "Comprensión escrita · p. 65",
+"icon": "📖",
+"from": 8,
+"n": 5
+},
+{
+"title": "Expresión escrita · p. 65",
+"icon": "✍️",
+"from": 13,
+"n": 8
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Escucha. ¿Qué bandeja es?",
+"opts": [
+"una hamburguesa con patatas fritas y un helado 🍔🍟🍦",
+"zanahorias, filete, queso y postre rosa",
+"salchichas, carne con arroz y un flan"
+],
+"a": 0,
+"au": "au/017e23ed678c327c.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha el mensaje. ¿Qué foto es?",
+"opts": [
+"una crêpe en la sartén 🥞",
+"un plato vacío ❓",
+"una chica comiendo un yogur"
+],
+"a": 0,
+"au": "au/545e32bfede37988.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha el mensaje. ¿Qué foto es?",
+"opts": [
+"una crêpe en la sartén 🥞",
+"un plato vacío ❓",
+"una chica comiendo un yogur"
+],
+"a": 1,
+"au": "au/7f421684605fcf5f.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha el mensaje. ¿Qué foto es?",
+"opts": [
+"una crêpe en la sartén 🥞",
+"un plato vacío ❓",
+"una chica comiendo un yogur"
+],
+"a": 2,
+"au": "au/5d04818461114d74.mp3"
+},
+{
+"t": "choice",
+"q": "En el cesto de Marco hay: une baguette, de l'eau, du lait, des bananes, du raisin, des tomates, du fromage. ¿Qué NO hay?",
+"opts": [
+"du pain",
+"du poisson",
+"du fromage"
+],
+"a": 1
+},
+{
+"t": "order",
+"q": "En el restaurante. Ordena tu frase:",
+"words": [
+"Bonjour",
+"Madame,",
+"je",
+"voudrais",
+"une",
+"pizza,",
+"s'il",
+"vous",
+"plaît."
+],
+"a": [
+"Bonjour Madame, je voudrais une pizza, s'il vous plaît."
+],
+"sayA": "au/7087f0740d309922.mp3"
+},
+{
+"t": "order",
+"q": "Ordena la pregunta del camarero:",
+"words": [
+"Et",
+"comme",
+"boisson",
+"?"
+],
+"a": [
+"Et comme boisson ?"
+],
+"why": "**une boisson** = una bebida.",
+"sayA": "au/c82dc6b34faf0dfb.mp3"
+},
+{
+"t": "order",
+"q": "Ordena tu respuesta:",
+"words": [
+"Je",
+"voudrais",
+"un",
+"jus",
+"d'orange,",
+"s'il",
+"vous",
+"plaît."
+],
+"a": [
+"Je voudrais un jus d'orange, s'il vous plaît."
+],
+"sayA": "au/9f5269dbab70dbc1.mp3"
+},
+{
+"t": "choice",
+"q": "La lista de Émilie: «Acheter : 4 yaourts, confiture, fraises, lait, œufs». ¿Qué NO está en su lista?",
+"opts": [
+"les yaourts",
+"le poulet",
+"les œufs"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "¿Cuántos yogures compra Émilie?",
+"opts": [
+"deux",
+"quatre",
+"dix"
+],
+"a": 1
+},
+{
+"t": "order",
+"q": "Ordena el final de la receta del pastel:",
+"words": [
+"Ajoute les blancs d'œuf en neige.",
+"Verse dans un moule.",
+"Place le moule dans le four pendant 30 minutes.",
+"Déguste avec tes amis !"
+],
+"a": [
+"Ajoute les blancs d'œuf en neige. Verse dans un moule. Place le moule dans le four pendant 30 minutes. Déguste avec tes amis !"
+],
+"why": "Primero se mezcla todo, luego al molde, al horno… ¡y a disfrutar!",
+"sayA": "au/2f0a64fb724efefd.mp3"
+},
+{
+"t": "choice",
+"q": "¿Qué se hace ANTES: «Monte les blancs en neige» o «Ajoute les blancs en neige»?",
+"opts": [
+"Monte les blancs en neige",
+"Ajoute les blancs en neige"
+],
+"a": 0,
+"why": "Primero se **montan** las claras a punto de nieve; después se **añaden** a la mezcla.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "«Fais fondre le chocolat» quiere decir…",
+"opts": [
+"Derrite el chocolate",
+"Come el chocolate",
+"Compra el chocolate"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "El menú del comedor. **Entrée**:",
+"opts": [
+"la salade",
+"le yaourt",
+"la poire"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "**Plat**:",
+"opts": [
+"les spaghettis à la sauce tomate",
+"la poire",
+"la salade"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "**Produit laitier**:",
+"opts": [
+"la poire",
+"le yaourt",
+"les spaghettis"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "**Dessert**:",
+"opts": [
+"la poire",
+"la salade",
+"le yaourt"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "El pastel de Lou. Dibujo 1: la mantequilla se derrite en el cazo. ¿Qué escribes?",
+"opts": [
+"Fais fondre le beurre.",
+"Mange le beurre.",
+"Coupe le beurre."
+],
+"a": 0
+},
+{
+"t": "type",
+"q": "Dibujo 2: una cucharada de azúcar al bol. Escribe la orden (imperativo de **ajouter**):",
+"a": [
+"Ajoute le sucre.",
+"Ajoute du sucre.",
+"Ajoute une cuillère de sucre.",
+"Ajoute un peu de sucre.",
+"Ajoute une cuillerée de sucre.",
+"Ajoute le sucre dans le bol.",
+"Ajoute du sucre dans le bol."
+],
+"ph": "Ajoute …"
+},
+{
+"t": "type",
+"q": "Dibujo 4: una taza de leche al bol (imperativo de **verser**):",
+"a": [
+"Verse le lait.",
+"Verse du lait.",
+"Verse une tasse de lait.",
+"Verse le lait dans le bol.",
+"Verse du lait dans le bol.",
+"Verse une tasse de lait dans le bol."
+],
+"ph": "Verse …"
+},
+{
+"t": "choice",
+"q": "Dibujo 5: el pastel entra al horno. ¿Qué escribes?",
+"opts": [
+"Mets le gâteau dans le four.",
+"Bois le gâteau.",
+"Verse le four."
+],
+"a": 0
+}
+],
+"pagesLabel": "cuaderno p. 64–65",
+"min": 8,
+"pay": 0.07,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u6-eval",
+"unit": 6,
+"label": "Evaluación",
+"title": "Évaluation · Unité 6",
+"pages": "66",
+"icon": "🏅",
+"intro": "El repaso de toda la unidad, como el examen de la p. 66… ¡y los errores típicos que ya sabes evitar!",
+"sections": [
+{
+"title": "Évaluation · p. 66",
+"icon": "📒",
+"from": 0,
+"n": 13
+},
+{
+"title": "Mis errores · ¡ya no!",
+"icon": "🎯",
+"from": 13,
+"n": 8
+}
+],
+"items": [
+{
+"t": "type",
+"q": "Escribe el nombre del objeto: (el mantel sobre la mesa)",
+"a": [
+"la nappe",
+"une nappe",
+"nappe"
+],
+"img": "🟥⬜🟥"
+},
+{
+"t": "type",
+"q": "Escribe el nombre del objeto: (la servilleta roja doblada)",
+"a": [
+"la serviette",
+"une serviette",
+"serviette"
+],
+"img": "🟥"
+},
+{
+"t": "type",
+"q": "Escribe el nombre del objeto:",
+"a": [
+"le couteau",
+"un couteau",
+"couteau"
+],
+"img": "🔪"
+},
+{
+"t": "type",
+"q": "Escribe el nombre del objeto:",
+"a": [
+"la cuillère",
+"une cuillère",
+"cuillère",
+"la cuiller",
+"une cuiller",
+"cuiller"
+],
+"why": "**la cuillère**: con è (acento grave).",
+"img": "🥄"
+},
+{
+"t": "choice",
+"q": "«Hum… une tarte aux fraises !» 🍓🥧",
+"opts": [
+"J'ai faim.",
+"J'ai soif."
+],
+"a": 0,
+"img": "🥧",
+"keep": true
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"de l'",
+"des"
+],
+"a": 0,
+"fr": "La maman de Théo prépare ____ poisson pour le dîner.",
+"keep": true,
+"sayA": "au/ce312badc8d1d9d0.mp3",
+"show": "La maman de Théo prépare du poisson pour le dîner."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"de l'",
+"des"
+],
+"a": 0,
+"fr": "Tu préfères ____ jus d'orange ou de l'eau ?",
+"why": "Aquí **du** = «un poco de»: te ofrecen algo de beber. (Para gustos se dice: je préfère **le** jus d'orange.)",
+"keep": true,
+"sayA": "au/42c784d1a5307eb2.mp3",
+"show": "Tu préfères du jus d'orange ou de l'eau ?"
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"de l'",
+"des"
+],
+"a": 2,
+"fr": "Tu préfères du jus d'orange ou ____ eau ?",
+"keep": true,
+"sayA": "au/1dde2edb38d0fd7c.mp3",
+"show": "Tu préfères du jus d'orange ou de l' eau ?"
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"du",
+"de la",
+"de l'",
+"des"
+],
+"a": 3,
+"fr": "Le matin, je mange ____ croissants avec un chocolat chaud.",
+"keep": true,
+"sayA": "au/ac35e82415ac77de.mp3",
+"show": "Le matin, je mange des croissants avec un chocolat chaud."
+},
+{
+"t": "choice",
+"q": "¿Qué frase está en imperativo? 🍏",
+"opts": [
+"Tu manges une pomme.",
+"Mange une pomme."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "Completa con **an** u **on**: un croiss…t 🥐",
+"opts": [
+"an",
+"on"
+],
+"a": 0,
+"why": "un croiss**an**t",
+"keep": true
+},
+{
+"t": "choice",
+"q": "Completa con **an** u **on**: un poiss… 🐟",
+"opts": [
+"an",
+"on"
+],
+"a": 1,
+"why": "un poiss**on**",
+"keep": true
+},
+{
+"t": "choice",
+"q": "Completa: un p…tal… 👖",
+"opts": [
+"an … on",
+"on … an",
+"an … an"
+],
+"a": 0,
+"why": "un p**an**tal**on** (el pantalón).",
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Je suis faim.",
+"J'ai faim."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Je bois de la eau.",
+"Je bois de l'eau."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Je mange pain.",
+"Je mange du pain."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"la lait",
+"le lait"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Manges ta soupe !",
+"Mange ta soupe !"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien? (repaso)",
+"opts": [
+"J' dix ans.",
+"J'ai dix ans."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "type",
+"q": "Dictado final. Escucha y escribe:",
+"a": [
+"Le matin, je mange du pain et je bois du lait."
+],
+"au": "au/a028ba951292b8ff.mp3"
+},
+{
+"t": "type",
+"q": "Dictado final. Escucha y escribe:",
+"a": [
+"Verse le lait et mélange !",
+"Verse le lait et mélange."
+],
+"au": "au/e981f9b627c9bee3.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 66",
+"min": 7,
+"pay": 0.06,
+"subjectShort": "Francés"
 }
 ]);
