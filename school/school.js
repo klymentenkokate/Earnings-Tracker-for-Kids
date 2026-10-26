@@ -330,6 +330,8 @@ function schoolFinish() {
 // ---------- styles ----------
 (function () {
   const css = `
+  #school-root{max-width:580px;margin:0 auto 22px;}
+  .sch-film video{aspect-ratio:16/9;}
   #school-root img.emoji{height:1em;width:1em;margin:0 .05em;vertical-align:-.12em;display:inline;}
   .sch-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
   .sch-h1{font-family:'Fredoka One',cursive;font-size:1.25rem;color:var(--text);line-height:1.15;}
