@@ -2248,8 +2248,8 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch17-le-grand-quiz-v1.mp4",
-"dur": 78.9
+"src": "films/ch17-le-grand-quiz-v2.mp4",
+"dur": 79.1
 },
 "pagesLabel": "cuaderno p. 13",
 "min": 12,
@@ -2688,9 +2688,13 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "au": "au/95048175c4a65b5e.mp3"
 }
 ],
+"film": {
+"src": "films/ch21-mon-materiel-v4.mp4",
+"dur": 64.3
+},
 "pagesLabel": "cuaderno p. 14",
-"min": 11,
-"pay": 0.09,
+"min": 12,
+"pay": 0.1,
 "subjectShort": "Francés"
 },
 {
@@ -3043,9 +3047,13 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "au": "au/eb0998b3d6addada.mp3"
 }
 ],
+"film": {
+"src": "films/ch22-zoom-sur-les-maths-v4.mp4",
+"dur": 65.8
+},
 "pagesLabel": "cuaderno p. 15",
-"min": 12,
-"pay": 0.1,
+"min": 13,
+"pay": 0.11,
 "subjectShort": "Francés"
 },
 {
@@ -3602,9 +3610,13 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "au": "au/f903d0a2838c9a79.mp3"
 }
 ],
+"film": {
+"src": "films/ch23-bon-anniversaire-v4.mp4",
+"dur": 65.5
+},
 "pagesLabel": "cuaderno p. 16–17",
-"min": 19,
-"pay": 0.16,
+"min": 20,
+"pay": 0.17,
 "subjectShort": "Francés"
 },
 {
@@ -4016,8 +4028,12 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "au": "au/3f45f6dd2e22b115.mp3"
 }
 ],
+"film": {
+"src": "films/ch24-vite-a-l-ecole-v6.mp4",
+"dur": 61.6
+},
 "pagesLabel": "cuaderno p. 18",
-"min": 14,
+"min": 15,
 "pay": 0.12,
 "subjectShort": "Francés"
 },
