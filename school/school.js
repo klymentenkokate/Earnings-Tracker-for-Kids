@@ -6,10 +6,18 @@
 // (EUR 0.50 per hour). Active time (tab visible + input in the last 60 s) is logged per pack to check the estimates.
 // ─────────────────────────────────────────────────────────────
 const SCHOOL_PASS = 0.8;
-const SCHOOL_SUBJECTS = [];
+// The subjects of his school year, in Kateryna's order (26 Oct 2026); a subject's data file fills it in when it exists.
+const SCHOOL_SUBJECTS = [
+  { id: 'fr', name: 'Français', emoji: '🇫🇷', units: [], soon: true },
+  { id: 'cm', name: 'Conocimiento del medio', emoji: '🌍', units: [], soon: true },
+  { id: 'le', name: 'Lengua', emoji: '📖', units: [], soon: true },
+  { id: 'ma', name: 'Mates', emoji: '🔢', units: [], soon: true },
+  { id: 'en', name: 'English', emoji: '🇬🇧', units: [], soon: true },
+];
 const SCHOOL_PACKS = {};
 function schoolRegister(subject, packs) {
-  if (!SCHOOL_SUBJECTS.find(s => s.id === subject.id)) SCHOOL_SUBJECTS.push(subject);
+  const i = SCHOOL_SUBJECTS.findIndex(s => s.id === subject.id);
+  if (i >= 0) SCHOOL_SUBJECTS[i] = subject; else SCHOOL_SUBJECTS.push(subject);
   packs.forEach(p => { p.subject = subject.id; SCHOOL_PACKS[p.id] = p; });
 }
 
@@ -52,11 +60,11 @@ function schoolShow(html) {
 function renderSchool() {
   schoolStopMedia();
   schoolCur = { subject: null, pack: null, i: 0, done: false };
-  if (!SCHOOL_SUBJECTS.length) { schoolShow(`<div class="sch-empty">Cargando…</div>`); return; }
-  if (SCHOOL_SUBJECTS.length === 1) { openSchoolSubject(SCHOOL_SUBJECTS[0].id); return; }
   schoolShow(`<div class="section-title">🏫 Escuela</div><div class="sch-subjects">` + SCHOOL_SUBJECTS.map(s => {
     const packs = schoolPacksOf(s.id), done = packs.filter(p => schoolPackState(p).passed).length;
-    return `<button class="sch-subject" onclick="openSchoolSubject('${s.id}')"><span class="sch-subj-emoji">${s.emoji}</span>
+    return s.soon || !packs.length
+      ? `<div class="sch-subject soon"><span class="sch-subj-emoji">${s.emoji}</span><span class="sch-subj-name">${schEsc(s.name)}</span><span class="sch-subj-sub">Pronto ✨</span></div>`
+      : `<button class="sch-subject" onclick="openSchoolSubject('${s.id}')"><span class="sch-subj-emoji">${s.emoji}</span>
       <span class="sch-subj-name">${schEsc(s.name)}</span><span class="sch-subj-sub">${done} / ${packs.length} superadas</span></button>`;
   }).join('') + `</div>`);
 }
@@ -83,7 +91,7 @@ function openSchoolSubject(id) {
     </div>`;
   }).join('');
   schoolShow(`<div class="sch-top">
-      ${SCHOOL_SUBJECTS.length > 1 ? `<button class="btn-quiz-back" onclick="renderSchool()">←</button>` : ''}
+      <button class="btn-quiz-back" onclick="renderSchool()">←</button>
       <div><div class="sch-h1">${s.emoji} ${schEsc(s.name)}</div><div class="sch-sub">${schEsc(s.book)}</div></div></div>
     <div class="oz-reward-card"><div class="oz-reward-title">${passed} / ${all.length} prácticas superadas · ${schMoney(earned)} de ${schMoney(total)}</div>
       <div class="oz-reward-sub">Cada práctica se paga una vez, cuando aciertas el 80 % o más. Busca la página de tu cuaderno 📒</div>
@@ -340,7 +348,9 @@ function schoolFinish() {
   .sch-empty,.sch-soon{padding:18px;text-align:center;color:var(--muted);font-weight:700;}
   .sch-subjects{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   .sch-subject{background:var(--card);border:1.5px solid var(--border);border-radius:18px;padding:18px 12px;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;font-family:'Nunito',sans-serif;}
-  .sch-subj-emoji{font-size:2rem}.sch-subj-name{font-weight:900;color:var(--text)}.sch-subj-sub{font-size:.74rem;color:var(--muted);font-weight:700}
+  .sch-subject.soon{opacity:.5;cursor:default;}
+  .sch-subj-emoji{font-size:2rem}.sch-subj-name{font-weight:900;font-size:.95rem;color:var(--text);text-align:center}.sch-subj-sub{font-size:.74rem;color:var(--muted);font-weight:700}
+  .sch-subject{min-height:120px;justify-content:center;}
   .sch-unit{background:var(--card);border:1.5px solid var(--border);border-left:6px solid var(--uc);border-radius:16px;margin-bottom:10px;overflow:hidden;}
   .sch-unit-head{width:100%;background:none;border:none;text-align:left;padding:13px 14px;cursor:pointer;display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-family:'Nunito',sans-serif;}
   .sch-unit-n{grid-row:span 2;align-self:center;background:var(--uc);color:#fff;border-radius:10px;padding:6px 9px;font-weight:900;font-size:.75rem;}
