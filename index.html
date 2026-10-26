@@ -1683,6 +1683,7 @@
 <script src="looking/quiz-data.js?v=1"></script>
 <script src="garden/quiz-data.js?v=1"></script>
 <script src="peter/quiz-data.js?v=1"></script>
+<script src="prince/quiz-data.js?v=1"></script>
 <script src="school/school.js?v=5"></script>
 <script src="school/fr/data.js?v=7"></script>
 <script>
@@ -6293,6 +6294,11 @@ const QUIZ_BANK = [
     description:'Watch each chapter film, then answer questions. Pass all 17 chapters to earn €1.50!',
     pairs: typeof PETER_QUIZ !== 'undefined' ? PETER_QUIZ.flatMap(c => c.questions) : []
   },
+  { id:'princecomp', section:'Books & Stories', title:'The Little Prince Comprehension', emoji:'🦊',
+    type:'oz',
+    description:'Watch each chapter film, then answer questions. Pass all 27 chapters to earn €2!',
+    pairs: typeof PRINCE_QUIZ !== 'undefined' ? PRINCE_QUIZ.flatMap(c => c.questions) : []
+  },
   { id:'classical', section:'Music', title:'Classical Music', emoji:'🎼',
     type:'audio', skipPicker: true,
     description:'Hear 30 seconds — name the composer!',
@@ -6827,6 +6833,8 @@ const CH_BOOKS = {
                title: 'The Secret Garden Comprehension', emoji: '🌹', short: 'Secret Garden', book: 'The Secret Garden' },
   petercomp: { data: () => typeof PETER_QUIZ !== 'undefined' ? PETER_QUIZ : [], dir: 'peter/', stateKey: 'peter', reward: 1.50,
                title: 'Peter Pan Comprehension', emoji: '🧚', short: 'Peter Pan', book: 'Peter Pan' },
+  princecomp: { data: () => typeof PRINCE_QUIZ !== 'undefined' ? PRINCE_QUIZ : [], dir: 'prince/', stateKey: 'prince', reward: 2.00,
+               title: 'The Little Prince Comprehension', emoji: '🦊', short: 'Little Prince', book: 'The Little Prince' },
 };
 let ozBookId = 'ozcomp';
 const ozBook = () => CH_BOOKS[ozBookId];
