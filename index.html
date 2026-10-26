@@ -1075,7 +1075,7 @@
 <div class="dash-tabs" id="dash-tabs">
   <button class="dash-tab active" data-tab="overview" onclick="setDashTab('overview')">📊 Overview</button>
   <button class="dash-tab" data-tab="quests" onclick="setDashTab('quests')">⚔️ Quests</button>
-  <button class="dash-tab" data-tab="charts" onclick="setDashTab('charts')">📈 Charts</button>
+  <button class="dash-tab" data-tab="school" onclick="setDashTab('school')">🏫 School</button>
   <button class="dash-tab" data-tab="quizzes" onclick="setDashTab('quizzes')">🧠 Quizzes</button>
 </div>
 
@@ -1219,6 +1219,9 @@
   <div id="quests-container"></div>
 </div>
 </div><!-- /tab-quests -->
+
+<!-- TAB: SCHOOL (practice packs from his school books; replaces the kid Charts tab 26 Oct 2026, Charts markup kept below, hidden) -->
+<div id="tab-school" style="display:none;"><div id="school-root"></div></div>
 
 <!-- TAB: QUIZZES -->
 <div id="tab-quizzes" style="display:none;">
@@ -1680,6 +1683,8 @@
 <script src="looking/quiz-data.js?v=1"></script>
 <script src="garden/quiz-data.js?v=1"></script>
 <script src="peter/quiz-data.js?v=1"></script>
+<script src="school/school.js?v=1"></script>
+<script src="school/fr/data.js?v=1"></script>
 <script>
 // ─────────────────────────────────────────────────────────────
 // CONSTANTS & DEFAULTS
@@ -3152,13 +3157,15 @@ function setDashTab(tab) {
   const ozVid = document.getElementById('oz-vid');
   if (ozVid) ozVid.pause();
   document.querySelectorAll('.dash-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
-  ['overview','charts','quests','quizzes'].forEach(t => {
+  ['overview','charts','quests','quizzes','school'].forEach(t => {
     const el = document.getElementById('tab-' + t);
     if (el) el.style.display = t === tab ? 'block' : 'none';
   });
   if (tab === 'charts' && state) { setChartView('pie'); buildProjections(); }
   if (tab === 'quests' && state) buildQuestsTab();
   if (tab === 'quizzes') { buildCategoryScreen(); showQuizScreen('category'); }
+  if (tab !== 'school' && typeof schoolStopMedia === 'function') { schoolStopMedia(); schoolCur.pack = null; }
+  if (tab === 'school' && typeof renderSchool === 'function') renderSchool();
 }
 
 // ─────────────────────────────────────────────────────────────
