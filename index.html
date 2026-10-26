@@ -1679,6 +1679,7 @@
 <script src="alice/quiz-data.js?v=1"></script>
 <script src="looking/quiz-data.js?v=1"></script>
 <script src="garden/quiz-data.js?v=1"></script>
+<script src="peter/quiz-data.js?v=1"></script>
 <script>
 // ─────────────────────────────────────────────────────────────
 // CONSTANTS & DEFAULTS
@@ -6280,6 +6281,11 @@ const QUIZ_BANK = [
     description:'Watch each chapter film, then answer questions. Pass all 27 chapters to earn €2!',
     pairs: typeof GARDEN_QUIZ !== 'undefined' ? GARDEN_QUIZ.flatMap(c => c.questions) : []
   },
+  { id:'petercomp', section:'Books & Stories', title:'Peter Pan Comprehension', emoji:'🧚',
+    type:'oz',
+    description:'Watch each chapter film, then answer questions. Pass all 17 chapters to earn €1.50!',
+    pairs: typeof PETER_QUIZ !== 'undefined' ? PETER_QUIZ.flatMap(c => c.questions) : []
+  },
   { id:'classical', section:'Music', title:'Classical Music', emoji:'🎼',
     type:'audio', skipPicker: true,
     description:'Hear 30 seconds — name the composer!',
@@ -6812,6 +6818,8 @@ const CH_BOOKS = {
                title: 'Through the Looking-Glass Comprehension', emoji: '♟️', short: 'Looking-Glass', book: 'Through the Looking-Glass' },
   gardencomp: { data: () => typeof GARDEN_QUIZ !== 'undefined' ? GARDEN_QUIZ : [], dir: 'garden/', stateKey: 'garden', reward: 2.00,
                title: 'The Secret Garden Comprehension', emoji: '🌹', short: 'Secret Garden', book: 'The Secret Garden' },
+  petercomp: { data: () => typeof PETER_QUIZ !== 'undefined' ? PETER_QUIZ : [], dir: 'peter/', stateKey: 'peter', reward: 1.50,
+               title: 'Peter Pan Comprehension', emoji: '🧚', short: 'Peter Pan', book: 'Peter Pan' },
 };
 let ozBookId = 'ozcomp';
 const ozBook = () => CH_BOOKS[ozBookId];
