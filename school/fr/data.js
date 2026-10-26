@@ -440,7 +440,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch01-comment-tu-t-appelles-v5.mp4",
+"src": "films/ch01-comment-tu-t-appelles-v6.mp4",
 "dur": 78.6
 },
 "pagesLabel": "cuaderno p. 4–5",
@@ -896,7 +896,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch12-tu-habites-o-v3.mp4",
+"src": "films/ch12-tu-habites-o-v4.mp4",
 "dur": 100.1
 },
 "pagesLabel": "cuaderno p. 6",
@@ -1040,7 +1040,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch13-zoom-sur-la-musique-v3.mp4",
+"src": "films/ch13-zoom-sur-la-musique-v4.mp4",
 "dur": 74.6
 },
 "pagesLabel": "cuaderno p. 7",
@@ -1422,7 +1422,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch14-je-m-appelle-p-querette-v3.mp4",
+"src": "films/ch14-je-m-appelle-p-querette-v4.mp4",
 "dur": 75.7
 },
 "pagesLabel": "cuaderno p. 8",
@@ -1647,7 +1647,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch15-je-parle-fran-ais-v3.mp4",
+"src": "films/ch15-je-parle-fran-ais-v4.mp4",
 "dur": 53.9
 },
 "pagesLabel": "cuaderno p. 9",
@@ -1940,7 +1940,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch16-nicolas-ali-et-lilas-v3.mp4",
+"src": "films/ch16-nicolas-ali-et-lilas-v4.mp4",
 "dur": 80.0
 },
 "pagesLabel": "cuaderno p. 10–12",
@@ -2248,7 +2248,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch17-le-grand-quiz-v2.mp4",
+"src": "films/ch17-le-grand-quiz-v3.mp4",
 "dur": 79.1
 },
 "pagesLabel": "cuaderno p. 13",
@@ -2689,7 +2689,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch21-mon-materiel-v4.mp4",
+"src": "films/ch21-mon-materiel-v5.mp4",
 "dur": 64.3
 },
 "pagesLabel": "cuaderno p. 14",
@@ -3048,7 +3048,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch22-zoom-sur-les-maths-v4.mp4",
+"src": "films/ch22-zoom-sur-les-maths-v5.mp4",
 "dur": 65.8
 },
 "pagesLabel": "cuaderno p. 15",
@@ -3611,7 +3611,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch23-bon-anniversaire-v4.mp4",
+"src": "films/ch23-bon-anniversaire-v5.mp4",
 "dur": 65.5
 },
 "pagesLabel": "cuaderno p. 16–17",
@@ -4029,7 +4029,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch24-vite-a-l-ecole-v6.mp4",
+"src": "films/ch24-vite-a-l-ecole-v7.mp4",
 "dur": 61.6
 },
 "pagesLabel": "cuaderno p. 18",
@@ -5380,7 +5380,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch31-c-est-un-jeu-v4.mp4",
+"src": "films/ch31-c-est-un-jeu-v5.mp4",
 "dur": 67.6
 },
 "pagesLabel": "cuaderno p. 25–26",
@@ -5714,7 +5714,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch32-mes-gouts-v6.mp4",
+"src": "films/ch32-mes-gouts-v7.mp4",
 "dur": 65.4
 },
 "pagesLabel": "cuaderno p. 27",
@@ -5889,7 +5889,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch33-zoom-sur-les-arts-v4.mp4",
+"src": "films/ch33-zoom-sur-les-arts-v5.mp4",
 "dur": 55.3
 },
 "pagesLabel": "cuaderno p. 28",
@@ -6204,7 +6204,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch34-moi-j-aime-v7.mp4",
+"src": "films/ch34-moi-j-aime-v8.mp4",
 "dur": 67.3
 },
 "pagesLabel": "cuaderno p. 29",
@@ -6817,7 +6817,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "aime"
 ],
 "fr": "J'____ les hamburgers.",
-"sayA": "au/ef452bdf178f6acb.mp3",
+"sayA": "au/eb264811d280149a.mp3",
 "show": "J'aime les hamburgers."
 },
 {

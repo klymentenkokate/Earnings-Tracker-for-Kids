@@ -34,7 +34,7 @@ setInterval(() => {   // active time: pack open, page visible, input within the 
 }, 5000);
 
 const schEsc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const schRich = s => schEsc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/__([^_\s](?:[^_]*[^_\s])?)__/g, '<u>$1</u>');   // __word__ = underline; never touches blanks like "06 __ 10 __" or "____"
+const schRich = s => schEsc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');   // underscores are always gaps (____, p__tal__), never formatting - underline markup removed 26 Oct 2026
 const schMoney = n => fmtAmt(n);
 
 function schoolState() {
@@ -241,7 +241,7 @@ function schoolPick(oi) {
   schoolScore(ok ? 1 : 0, ok ? '' : `La respuesta es: **${it.opts[it.a]}**`);
 }
 
-const schNorm = s => String(s).replace(/[’‘`´]/g, "'").replace(/\s+/g, ' ').replace(/\s*'\s*/g, "'").trim().replace(/[.!?¡¿,;:]+$/g, '').trim();
+const schNorm = s => String(s).replace(/[’‘`´]/g, "'").replace(/œ/g, 'oe').replace(/Œ/g, 'Oe').replace(/\s+/g, ' ').replace(/\s*'\s*/g, "'").trim().replace(/[.!?¡¿,;:]+$/g, '').trim();
 const schFold = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 function schoolCheckType() {
   const it = schoolItemState.it, el = document.getElementById('sch-in'); if (schoolItemState.answered || !el) return;
@@ -252,6 +252,11 @@ function schoolCheckType() {
   const polite = /[\s,]*s'il (te|vous) pla[iî]t$/i;
   if (!answers.some(a => polite.test(a)) && polite.test(raw)) raw = schNorm(raw.replace(polite, ''));
   answers.push(...answers.map(noComma)); raw = answers.some(a => a.toLowerCase() === noComma(raw).toLowerCase()) ? noComma(raw) : raw;
+  // typed more than the gap ("une belle robe" for "____ robe" = belle): fine if it's a piece of the finished sentence that holds the answer
+  if (it.show && answers.every(a => a.toLowerCase() !== raw.toLowerCase())) {
+    const full = ' ' + noComma(schNorm(it.show)).toLowerCase() + ' ', piece = ' ' + noComma(raw).toLowerCase() + ' ';
+    if (full.includes(piece) && answers.some(a => piece.includes(' ' + a.toLowerCase() + ' '))) raw = answers.find(a => piece.includes(' ' + a.toLowerCase() + ' '));
+  }
   const cs = it.case ? (x => x) : (x => x.toLowerCase());
   el.disabled = true;
   if (answers.some(a => cs(a) === cs(raw))) {
