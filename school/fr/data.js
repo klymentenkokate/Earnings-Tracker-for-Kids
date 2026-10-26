@@ -80,7 +80,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 ],
 "a": 0,
 "fr": "____ m'appelle Kenza.",
-"why": "**Je** = yo. Delante de vocal o h se convierte en **j'** (j'habite).",
+"why": "**Je** = yo. Delante de vocal o de h muda → **j'** (j'ai, j'habite).",
 "sayA": "au/3b31cd085be27100.mp3",
 "show": "Je m'appelle Kenza."
 },
@@ -99,16 +99,16 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 },
 {
 "t": "choice",
-"q": "Lou le habla a Kenza (le dice «tú»). Completa:",
+"q": "Lou le pregunta a Kenza (le dice «tú»). Completa:",
 "opts": [
 "Je m'appelle",
 "Il s'appelle",
 "Tu t'appelles"
 ],
 "a": 2,
-"fr": "____ Kenza.",
-"sayA": "au/67872e55c001afb6.mp3",
-"show": "Tu t'appelles Kenza."
+"fr": "____ Kenza ?",
+"sayA": "au/3a40fd5727118537.mp3",
+"show": "Tu t'appelles Kenza ?"
 },
 {
 "t": "choice",
@@ -266,7 +266,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 },
 {
 "t": "choice",
-"q": "Ordena de mejor a peor. ¿Cuál es el MEJOR?",
+"q": "¿Cuál es la respuesta MÁS contenta? 😃",
 "opts": [
 "Ça va bien",
 "Génial !",
@@ -391,8 +391,8 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "q": "Escucha. ¿Qué momento del día es?",
 "opts": [
 "Por la mañana ☀️",
-"Por la noche 🌙",
-"Se despiden 👋"
+"Por la tarde-noche 🌙",
+"A mediodía 🕛"
 ],
 "a": 1,
 "au": "au/07cbf43eae733b07.mp3"
@@ -417,7 +417,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "😫 Muy mal"
 ],
 "a": 1,
-"au": "au/62fc815a37d0b985.mp3"
+"au": "au/ab193a8ebfd73a8e.mp3"
 },
 {
 "t": "choice",
@@ -440,8 +440,8 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch01-comment-tu-t-appelles-v4.mp4",
-"dur": 77.5
+"src": "films/ch01-comment-tu-t-appelles-v5.mp4",
+"dur": 78.6
 },
 "pagesLabel": "cuaderno p. 4–5",
 "min": 14,
@@ -490,11 +490,11 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "🧛 Dracula"
 ],
 [
-"J'habite dans la maison, 7 rue de la Galette.",
+"J'habite dans une maison, 7, rue de la Galette.",
 "🧒 le Petit Chaperon rouge"
 ],
 [
-"J'habite dans le centre-ville, 15 rue Lepic.",
+"J'habite dans le centre-ville, 15, rue Lepic.",
 "👧 la fille"
 ]
 ],
@@ -502,8 +502,8 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "au2": [
 "au/235aa5e43a0fe67a.mp3",
 "au/90322732cf0c10e4.mp3",
-"au/6938d74c0ae98154.mp3",
-"au/505eadfa8eda525c.mp3"
+"au/d1ef54714ae0e662.mp3",
+"au/aef9a5d26583b50b.mp3"
 ]
 },
 {
@@ -540,7 +540,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 },
 {
 "t": "choice",
-"q": "Escucha el número de teléfono. ¿Qué falta? 06 __ 10 09 __",
+"q": "Escucha el número de teléfono. ¿Qué falta? 06 … 10 09 …",
 "opts": [
 "03 … 07",
 "13 … 17",
@@ -564,8 +564,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "t": "type",
 "q": "Escribe el número en letras (¡en francés!): 18",
 "a": [
-"dix-huit",
-"dix huit"
+"dix-huit"
 ],
 "why": "dix-huit = 10 + 8, con guion. ¡No «dieciocho»!"
 },
@@ -784,7 +783,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "a": [
 "vingt"
 ],
-"why": "**vingt**: la g y la t no se pronuncian: «van»."
+"why": "**vingt**: la g y la t no se pronuncian. Suena como «van» pero nasal, sin cerrar la n."
 },
 {
 "t": "choice",
@@ -896,9 +895,13 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "au": "au/71106f10da2f99b1.mp3"
 }
 ],
+"film": {
+"src": "films/ch12-tu-habites-o-v3.mp4",
+"dur": 100.1
+},
 "pagesLabel": "cuaderno p. 6",
-"min": 17,
-"pay": 0.14,
+"min": 19,
+"pay": 0.16,
 "subjectShort": "Francés"
 },
 {
@@ -926,31 +929,31 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "items": [
 {
 "t": "match",
-"q": "Une cada palabra con su dibujo:",
+"q": "Une cada palabra con su significado:",
 "pairs": [
 [
 "une clé de sol",
-"𝄞"
+"𝄞 la clave de sol"
 ],
 [
 "une note de musique",
-"♪"
+"♪ una nota"
 ],
 [
 "une portée",
-"𝄚 (las 5 líneas)"
+"las 5 líneas (el pentagrama)"
 ],
 [
-"la musique",
-"🎶"
+"J'aime la musique !",
+"❤️ me gusta la música"
 ]
 ],
-"why": "Están en el Lexique de la p. 67: une clé de sol · une portée · une note de musique.",
+"why": "une clé de sol · une portée · une note de musique: las palabras de la música (Lexique, unidad 1).",
 "au2": [
 "au/584d048148cb5c9a.mp3",
 "au/9f747ec9b739f796.mp3",
 "au/5d1cde9d0cfb6a29.mp3",
-"au/7976e25dbf931b16.mp3"
+"au/52b150cdbb847174.mp3"
 ]
 },
 {
@@ -978,11 +981,9 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 },
 {
 "t": "type",
-"q": "Escribe las notas en orden: do, ré, mi, fa, …",
+"q": "¿Qué nota viene después de **fa**? do, ré, mi, fa, …",
 "a": [
-"sol",
-"sol, la, si",
-"sol la si"
+"sol"
 ],
 "why": "do – ré – mi – fa – **sol** – la – si. ¡Fíjate en el acento de **ré**!"
 },
@@ -998,10 +999,10 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 },
 {
 "t": "choice",
-"q": "Escucha la escala. ¿Sube ↗️ o baja ↘️?",
+"q": "Escucha. ¿Las notas van en orden (do → si) o al revés (si → do)?",
 "opts": [
-"Sube ↗️",
-"Baja ↘️"
+"En orden ↗️",
+"Al revés ↘️"
 ],
 "a": 0,
 "keep": true,
@@ -1038,8 +1039,12 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "au": "au/2d9813b4dac7d39a.mp3"
 }
 ],
+"film": {
+"src": "films/ch13-zoom-sur-la-musique-v2.mp4",
+"dur": 74.8
+},
 "pagesLabel": "cuaderno p. 7",
-"min": 4,
+"min": 5,
 "pay": 0.05,
 "subjectShort": "Francés"
 },
@@ -1231,7 +1236,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 ],
 "fr": "Léa et Léo ____ rue de la Gare.",
 "why": "ils / elles habit**ent** (la -ent no se pronuncia).",
-"sayA": "au/3518e0f7672ef558.mp3",
+"sayA": "au/9dccef09c4634325.mp3",
 "show": "Léa et Léo habitent rue de la Gare."
 },
 {
@@ -1282,7 +1287,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "habitent"
 ],
 "fr": "Elles ____ à Genève.",
-"sayA": "au/aea91856922510f5.mp3",
+"sayA": "au/65e0a41be32ecb93.mp3",
 "show": "Elles habitent à Genève."
 },
 {
@@ -1385,8 +1390,8 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "En France",
 "En Belgique"
 ],
-"a": 2,
-"au": "au/ea6d19a019230ff1.mp3"
+"a": 1,
+"au": "au/fee0b8bcb9c7f2d5.mp3"
 },
 {
 "t": "choice",
@@ -1416,9 +1421,13 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "au": "au/63f42d1d97bd859a.mp3"
 }
 ],
+"film": {
+"src": "films/ch14-je-m-appelle-p-querette-v2.mp4",
+"dur": 75.7
+},
 "pagesLabel": "cuaderno p. 8",
-"min": 11,
-"pay": 0.09,
+"min": 13,
+"pay": 0.11,
 "subjectShort": "Francés"
 },
 {
@@ -1596,7 +1605,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 },
 {
 "t": "type",
-"q": "Escribe el país en francés: Suiza",
+"q": "Escribe el país en francés (con mayúscula): Suiza",
 "a": [
 "Suisse",
 "la Suisse"
@@ -1608,7 +1617,8 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "q": "Escribe: «Vivo en España.»",
 "a": [
 "J'habite en Espagne.",
-"J'habite en Espagne"
+"J'habite en Espagne",
+"Je vis en Espagne."
 ],
 "why": "Países femeninos con **en**: en Espagne, en France, en Belgique, en Suisse.",
 "ph": "J'habite …"
@@ -1636,9 +1646,13 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "au": "au/c93ef6d20d5bfdef.mp3"
 }
 ],
+"film": {
+"src": "films/ch15-je-parle-fran-ais-v2.mp4",
+"dur": 52.5
+},
 "pagesLabel": "cuaderno p. 9",
-"min": 6,
-"pay": 0.05,
+"min": 7,
+"pay": 0.06,
 "subjectShort": "Francés"
 },
 {
@@ -1686,7 +1700,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 ],
 "a": 1,
 "fr": "Bonjour, je m'appelle Nicolas, je suis ton correspondant. J'ai 10 ans, j'habite à Bordeaux, en France. Mon numéro de téléphone, c'est le 06 12 07 11 03. Et toi ? Écris-moi vite !",
-"au": "au/194b9a8563685b53.mp3"
+"au": "au/2d918c368c40dd7f.mp3"
 },
 {
 "t": "choice",
@@ -1699,7 +1713,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "a": 0,
 "fr": "Bonjour, je m'appelle Nicolas, je suis ton correspondant. J'ai 10 ans, j'habite à Bordeaux, en France. Mon numéro de téléphone, c'est le 06 12 07 11 03. Et toi ? Écris-moi vite !",
 "auto": false,
-"au": "au/194b9a8563685b53.mp3"
+"au": "au/2d918c368c40dd7f.mp3"
 },
 {
 "t": "choice",
@@ -1712,7 +1726,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "a": 1,
 "fr": "06 12 07 11 03",
 "why": "0-6-1-2-0-7-1-1-0-3 = **10 chiffres** (cifras).",
-"au": "au/4bd5f686df69d7ed.mp3"
+"au": "au/a6218d1fe22101c4.mp3"
 },
 {
 "t": "choice",
@@ -1751,7 +1765,8 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "q": "Completa la ficha de Ali. Âge :",
 "a": [
 "10 ans",
-"dix ans"
+"dix ans",
+"10"
 ],
 "fr": "Âge : ____",
 "sayA": "au/6b1d067a0140d354.mp3",
@@ -1759,9 +1774,10 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 },
 {
 "t": "type",
-"q": "Ville :",
+"q": "Ville (con mayúscula):",
 "a": [
-"Marseille"
+"Marseille",
+"Marseille, en France"
 ],
 "fr": "Ville : ____",
 "why": "Las ciudades con **mayúscula**: Marseille.",
@@ -1906,7 +1922,8 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "q": "Escribe: «Vivo en Madrid, en España.»",
 "a": [
 "J'habite à Madrid, en Espagne.",
-"J'habite à Madrid en Espagne."
+"J'habite à Madrid en Espagne.",
+"Je vis à Madrid, en Espagne."
 ],
 "ph": "J'habite à …"
 },
@@ -1916,14 +1933,19 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "a": [
 "Au revoir ! À la prochaine !",
 "Au revoir ! À la prochaine.",
-"Au revoir. À la prochaine !"
+"Au revoir. À la prochaine !",
+"Au revoir, à la prochaine !"
 ],
 "why": "**À** con acento: À la prochaine !"
 }
 ],
+"film": {
+"src": "films/ch16-nicolas-ali-et-lilas-v2.mp4",
+"dur": 80.0
+},
 "pagesLabel": "cuaderno p. 10–12",
-"min": 9,
-"pay": 0.07,
+"min": 11,
+"pay": 0.09,
 "subjectShort": "Francés"
 },
 {
@@ -2040,7 +2062,9 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "q": "La pregunta para: «Ça va bien, merci.»",
 "a": [
 "Comment ça va ?",
-"Ça va ?"
+"Ça va ?",
+"Comment vas-tu ?",
+"Tu vas bien ?"
 ]
 },
 {
@@ -2223,9 +2247,13 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "au": "au/8acb20163df16bac.mp3"
 }
 ],
+"film": {
+"src": "films/ch17-le-grand-quiz-v1.mp4",
+"dur": 78.9
+},
 "pagesLabel": "cuaderno p. 13",
-"min": 10,
-"pay": 0.08,
+"min": 12,
+"pay": 0.1,
 "subjectShort": "Francés"
 }
 ]);

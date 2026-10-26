@@ -34,7 +34,7 @@ setInterval(() => {   // active time: pack open, page visible, input within the 
 }, 5000);
 
 const schEsc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const schRich = s => schEsc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/__(.+?)__/g, '<u>$1</u>');
+const schRich = s => schEsc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/__([^_\s](?:[^_]*[^_\s])?)__/g, '<u>$1</u>');   // __word__ = underline; never touches blanks like "06 __ 10 __" or "____"
 const schMoney = n => fmtAmt(n);
 
 function schoolState() {
@@ -245,8 +245,13 @@ const schNorm = s => String(s).replace(/[’‘`´]/g, "'").replace(/\s+/g, ' ')
 const schFold = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 function schoolCheckType() {
   const it = schoolItemState.it, el = document.getElementById('sch-in'); if (schoolItemState.answered || !el) return;
-  const raw = schNorm(el.value); if (!raw) { el.focus(); return; }
+  let raw = schNorm(el.value); if (!raw) { el.focus(); return; }
   const answers = (Array.isArray(it.a) ? it.a : [it.a]).map(schNorm);
+  // commas can't be heard in a dictation, and a polite ", s'il te/vous plaît" the answer didn't ask for is never wrong (review, 26 Oct 2026)
+  const noComma = x => x.replace(/\s*,\s*/g, ' ').replace(/\s+/g, ' ').trim();
+  const polite = /[\s,]*s'il (te|vous) pla[iî]t$/i;
+  if (!answers.some(a => polite.test(a)) && polite.test(raw)) raw = schNorm(raw.replace(polite, ''));
+  answers.push(...answers.map(noComma)); raw = answers.some(a => a.toLowerCase() === noComma(raw).toLowerCase()) ? noComma(raw) : raw;
   const cs = it.case ? (x => x) : (x => x.toLowerCase());
   el.disabled = true;
   if (answers.some(a => cs(a) === cs(raw))) {
