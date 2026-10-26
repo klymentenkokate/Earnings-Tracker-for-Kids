@@ -1040,8 +1040,8 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch13-zoom-sur-la-musique-v2.mp4",
-"dur": 74.8
+"src": "films/ch13-zoom-sur-la-musique-v3.mp4",
+"dur": 74.6
 },
 "pagesLabel": "cuaderno p. 7",
 "min": 5,
@@ -1422,7 +1422,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch14-je-m-appelle-p-querette-v2.mp4",
+"src": "films/ch14-je-m-appelle-p-querette-v3.mp4",
 "dur": 75.7
 },
 "pagesLabel": "cuaderno p. 8",
@@ -1647,8 +1647,8 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch15-je-parle-fran-ais-v2.mp4",
-"dur": 52.5
+"src": "films/ch15-je-parle-fran-ais-v3.mp4",
+"dur": 53.9
 },
 "pagesLabel": "cuaderno p. 9",
 "min": 7,
@@ -1940,7 +1940,7 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 }
 ],
 "film": {
-"src": "films/ch16-nicolas-ali-et-lilas-v2.mp4",
+"src": "films/ch16-nicolas-ali-et-lilas-v3.mp4",
 "dur": 80.0
 },
 "pagesLabel": "cuaderno p. 10–12",
@@ -2254,6 +2254,4735 @@ schoolRegister({"id": "fr", "name": "Français", "emoji": "🇫🇷", "book": "M
 "pagesLabel": "cuaderno p. 13",
 "min": 12,
 "pay": 0.1,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u2-l1",
+"unit": 2,
+"label": "Lección 1",
+"title": "Mon matériel",
+"pages": "14",
+"icon": "✏️",
+"intro": "El material de clase con **un** (masculino) o **une** (femenino) y las frases que dice la profe. ¡Cuidado! Algunas palabras no tienen el mismo género que en español: **une trousse** (el estuche), **une colle** (el pegamento), **un sac à dos** (la mochila).",
+"sections": [
+{
+"title": "Del cuaderno · p. 14",
+"icon": "📒",
+"from": 0,
+"n": 13
+},
+{
+"title": "Más práctica · un / une",
+"icon": "💪",
+"from": 13,
+"n": 12
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 25,
+"n": 6
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "¿**un** o **une**?",
+"opts": [
+"un",
+"une"
+],
+"a": 1,
+"fr": "____ gomme",
+"why": "**une gomme** (la goma). Femenino → une.",
+"keep": true,
+"sayA": "au/3903b383bd8afcb4.mp3",
+"show": "une gomme"
+},
+{
+"t": "choice",
+"q": "¿**un** o **une**?",
+"opts": [
+"un",
+"une"
+],
+"a": 0,
+"fr": "____ livre",
+"why": "**un livre** (el libro).",
+"keep": true,
+"sayA": "au/e7b5501c68ed90cf.mp3",
+"show": "un livre"
+},
+{
+"t": "choice",
+"q": "¿**un** o **une**?",
+"opts": [
+"un",
+"une"
+],
+"a": 0,
+"fr": "____ feutre",
+"why": "**un feutre** (el rotulador) es masculino.",
+"keep": true,
+"sayA": "au/d50121cc394bc787.mp3",
+"show": "un feutre"
+},
+{
+"t": "choice",
+"q": "¿**un** o **une**?",
+"opts": [
+"un",
+"une"
+],
+"a": 0,
+"fr": "____ taille-crayon",
+"why": "**un taille-crayon** (el sacapuntas).",
+"keep": true,
+"sayA": "au/11cc10adde182d36.mp3",
+"show": "un taille-crayon"
+},
+{
+"t": "choice",
+"q": "¿**un** o **une**?",
+"opts": [
+"un",
+"une"
+],
+"a": 0,
+"fr": "____ cahier",
+"why": "**un cahier** (el cuaderno).",
+"keep": true,
+"sayA": "au/61788b8cfd617b4f.mp3",
+"show": "un cahier"
+},
+{
+"t": "choice",
+"q": "¿**un** o **une**?",
+"opts": [
+"un",
+"une"
+],
+"a": 1,
+"fr": "____ règle",
+"why": "**une règle** (la regla), con acento grave è.",
+"keep": true,
+"sayA": "au/bf80b36f8e72e4f3.mp3",
+"show": "une règle"
+},
+{
+"t": "choice",
+"q": "En el cuaderno, los puntos del 1 al 20 dibujan esto ✂️. ¿Qué es?",
+"opts": [
+"des ciseaux",
+"un stylo",
+"une colle"
+],
+"a": 0,
+"why": "**des ciseaux** (las tijeras): siempre en plural, como en español.",
+"img": "✂️"
+},
+{
+"t": "match",
+"q": "Une cada palabra con su dibujo:",
+"pairs": [
+[
+"un stylo",
+"🖊️ bolígrafo"
+],
+[
+"une gomme",
+"goma de borrar"
+],
+[
+"un crayon",
+"✏️ lápiz"
+],
+[
+"une colle",
+"pegamento"
+]
+],
+"au2": [
+"au/374f45fa125e492f.mp3",
+"au/3903b383bd8afcb4.mp3",
+"au/9f9cddbf5641778c.mp3",
+"au/3c01f9202492cd1b.mp3"
+]
+},
+{
+"t": "choice",
+"q": "Completa la frase de la profe:",
+"opts": [
+"livre",
+"répéter",
+"dialogue"
+],
+"a": 0,
+"fr": "Ouvrez votre ____ à la page 9.",
+"why": "**Ouvrez votre livre** = abrid el libro.",
+"sayA": "au/cfc315e6a2df19fd.mp3",
+"show": "Ouvrez votre livre à la page 9."
+},
+{
+"t": "choice",
+"q": "Completa la frase de la profe:",
+"opts": [
+"cahier",
+"répéter",
+"comment"
+],
+"a": 0,
+"fr": "Écrivez la réponse dans votre ____.",
+"sayA": "au/0384cbb7c78cf38f.mp3",
+"show": "Écrivez la réponse dans votre cahier."
+},
+{
+"t": "choice",
+"q": "Completa la frase:",
+"opts": [
+"répéter",
+"comment",
+"dialogue"
+],
+"a": 0,
+"fr": "Vous pouvez ____, s'il vous plaît ?",
+"why": "**Vous pouvez répéter ?** = ¿Puede repetir? Muy útil en clase.",
+"sayA": "au/8b096e8396395c76.mp3",
+"show": "Vous pouvez répéter, s'il vous plaît ?"
+},
+{
+"t": "choice",
+"q": "Completa la frase:",
+"opts": [
+"répéter",
+"comment",
+"livre"
+],
+"a": 1,
+"fr": "Ça se prononce ____ ?",
+"why": "**Ça se prononce comment ?** = ¿Cómo se pronuncia?",
+"sayA": "au/f994abc0e3dbfc1c.mp3",
+"show": "Ça se prononce comment ?"
+},
+{
+"t": "choice",
+"q": "Completa la frase:",
+"opts": [
+"cahier",
+"dialogue",
+"répéter"
+],
+"a": 1,
+"fr": "Écoutez le ____.",
+"sayA": "au/b4936b5022e7b98b.mp3",
+"show": "Écoutez le dialogue."
+},
+{
+"t": "choice",
+"q": "¿**un** o **une**? (¡no es como en español!)",
+"opts": [
+"un",
+"une"
+],
+"a": 1,
+"fr": "____ trousse",
+"why": "**une trousse** (el estuche) es femenino en francés.",
+"keep": true,
+"sayA": "au/237e0513e7fe1fd7.mp3",
+"show": "une trousse"
+},
+{
+"t": "choice",
+"q": "¿**un** o **une**?",
+"opts": [
+"un",
+"une"
+],
+"a": 0,
+"fr": "____ sac à dos",
+"why": "**un sac à dos** (la mochila) es masculino en francés.",
+"keep": true,
+"sayA": "au/328f1da9617840f6.mp3",
+"show": "un sac à dos"
+},
+{
+"t": "choice",
+"q": "¿**un** o **une**?",
+"opts": [
+"un",
+"une"
+],
+"a": 0,
+"fr": "____ stylo",
+"keep": true,
+"sayA": "au/374f45fa125e492f.mp3",
+"show": "un stylo"
+},
+{
+"t": "choice",
+"q": "¿**un** o **une**?",
+"opts": [
+"un",
+"une"
+],
+"a": 1,
+"fr": "____ calculatrice",
+"keep": true,
+"sayA": "au/cb6831ce828bddd7.mp3",
+"show": "une calculatrice"
+},
+{
+"t": "choice",
+"q": "¿**un** o **une**?",
+"opts": [
+"un",
+"une"
+],
+"a": 0,
+"fr": "____ crayon",
+"keep": true,
+"sayA": "au/9f9cddbf5641778c.mp3",
+"show": "un crayon"
+},
+{
+"t": "type",
+"q": "Escribe en francés con un/une: «un cuaderno»",
+"a": [
+"un cahier"
+]
+},
+{
+"t": "type",
+"q": "Escribe en francés con un/une: «una regla»",
+"a": [
+"une règle"
+],
+"why": "**règle** con è."
+},
+{
+"t": "type",
+"q": "Escribe en francés con un/une: «un sacapuntas»",
+"a": [
+"un taille-crayon",
+"un taille-crayons"
+]
+},
+{
+"t": "type",
+"q": "Escribe en francés: «unas tijeras» (con des)",
+"a": [
+"des ciseaux"
+]
+},
+{
+"t": "match",
+"q": "Une el francés con el español:",
+"pairs": [
+[
+"un feutre",
+"un rotulador"
+],
+[
+"une trousse",
+"un estuche"
+],
+[
+"un sac à dos",
+"una mochila"
+],
+[
+"une gomme",
+"una goma"
+],
+[
+"un cahier",
+"un cuaderno"
+]
+],
+"au2": [
+"au/d50121cc394bc787.mp3",
+"au/237e0513e7fe1fd7.mp3",
+"au/328f1da9617840f6.mp3",
+"au/3903b383bd8afcb4.mp3",
+"au/61788b8cfd617b4f.mp3"
+]
+},
+{
+"t": "choice",
+"q": "¿Qué quiere decir «Ouvrez votre livre» ?",
+"opts": [
+"Cerrad el libro",
+"Abrid el libro",
+"Leed el libro"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "No entiendes a la profe. ¿Qué dices?",
+"opts": [
+"Vous pouvez répéter, s'il vous plaît ?",
+"Écoutez le dialogue.",
+"Ouvrez votre cahier."
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué objeto es?",
+"opts": [
+"✏️ un crayon",
+"📏 une règle",
+"📓 un cahier"
+],
+"a": 1,
+"au": "au/f10798b42d7d11ec.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué objeto es?",
+"opts": [
+"✂️ des ciseaux",
+"🖊️ un stylo",
+"🎒 un sac à dos"
+],
+"a": 2,
+"au": "au/087eaaa300c028d1.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué tiene que hacer?",
+"opts": [
+"Abrir el libro",
+"Escribir en el cuaderno",
+"Escuchar el diálogo"
+],
+"a": 1,
+"au": "au/0384cbb7c78cf38f.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué tiene que hacer?",
+"opts": [
+"Repetir",
+"Escuchar el diálogo",
+"Abrir el libro en la página 9"
+],
+"a": 2,
+"au": "au/99075fa523be41ec.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"C'est une gomme."
+],
+"au": "au/866c68b8a5f889c0.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"J'ai un cahier et un stylo."
+],
+"au": "au/95048175c4a65b5e.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 14",
+"min": 11,
+"pay": 0.09,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u2-zoom",
+"unit": 2,
+"label": "Zoom",
+"title": "Zoom sur les maths",
+"pages": "15",
+"icon": "🔢",
+"intro": "Los números del **20 al 31** y las cuentas en francés: **plus** (+), **moins** (−), **égalent** (=). Ojo: 21 = **vingt et un** (con «et»), pero 22 = **vingt-deux** (con guion).",
+"sections": [
+{
+"title": "Del cuaderno · p. 15",
+"icon": "📒",
+"from": 0,
+"n": 11
+},
+{
+"title": "Más práctica · 20-31",
+"icon": "💪",
+"from": 11,
+"n": 9
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 20,
+"n": 9
+}
+],
+"items": [
+{
+"t": "type",
+"q": "Escribe el número en letras: 23",
+"a": [
+"vingt-trois"
+]
+},
+{
+"t": "type",
+"q": "Escribe el número en letras: 25",
+"a": [
+"vingt-cinq"
+]
+},
+{
+"t": "type",
+"q": "Escribe el número en letras: 30",
+"a": [
+"trente"
+]
+},
+{
+"t": "choice",
+"q": "Sigue la serie (de dos en dos hacia atrás): vingt, ____, seize",
+"opts": [
+"dix-huit",
+"dix-neuf",
+"dix-sept"
+],
+"a": 0,
+"fr": "vingt – ____ – seize",
+"sayA": "au/3f08ad2a710df3da.mp3",
+"show": "vingt – dix-huit – seize"
+},
+{
+"t": "choice",
+"q": "Sigue la serie: trente et un, ____, vingt-neuf",
+"opts": [
+"trente",
+"vingt-dix",
+"trente-deux"
+],
+"a": 0,
+"fr": "trente et un – ____ – vingt-neuf",
+"sayA": "au/62946bf044cf513d.mp3",
+"show": "trente et un – trente – vingt-neuf"
+},
+{
+"t": "choice",
+"q": "Sigue la serie (de tres en tres): quinze, dix-huit, vingt et un, ____",
+"opts": [
+"vingt-quatre",
+"vingt-trois",
+"vingt-deux"
+],
+"a": 0,
+"fr": "quinze – dix-huit – vingt et un – ____",
+"sayA": "au/404cb6647cedb070.mp3",
+"show": "quinze – dix-huit – vingt et un – vingt-quatre"
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"plus",
+"moins",
+"égalent"
+],
+"a": 0,
+"fr": "Trois ____ trois égalent six.",
+"why": "3 **plus** 3 égalent 6 (3 + 3 = 6).",
+"sayA": "au/d5001afe934fdfa2.mp3",
+"show": "Trois plus trois égalent six."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"un",
+"deux",
+"trois"
+],
+"a": 1,
+"fr": "Cinq moins ____ égalent trois.",
+"why": "5 − 2 = 3 → cinq **moins deux** égalent trois.",
+"sayA": "au/dfc88335653dcece.mp3",
+"show": "Cinq moins deux égalent trois."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"Un",
+"Deux",
+"Sept"
+],
+"a": 0,
+"fr": "____ plus sept égalent huit.",
+"sayA": "au/c982b8bbff974b7b.mp3",
+"show": "Un plus sept égalent huit."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"huit",
+"six",
+"dix"
+],
+"a": 0,
+"fr": "Deux plus ____ égalent dix.",
+"sayA": "au/084ee9bb3cc48c86.mp3",
+"show": "Deux plus huit égalent dix."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"cinq",
+"six",
+"trois"
+],
+"a": 1,
+"fr": "Neuf moins trois égalent ____.",
+"sayA": "au/64a7586a596f35f2.mp3",
+"show": "Neuf moins trois égalent six."
+},
+{
+"t": "match",
+"q": "Une cada número con su palabra:",
+"pairs": [
+[
+"21",
+"vingt et un"
+],
+[
+"24",
+"vingt-quatre"
+],
+[
+"27",
+"vingt-sept"
+],
+[
+"29",
+"vingt-neuf"
+],
+[
+"31",
+"trente et un"
+]
+]
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien escrito? (21)",
+"opts": [
+"vingt-un",
+"vingt et un",
+"vingtiun"
+],
+"a": 1,
+"why": "21 y 31 llevan **et**: vingt **et** un, trente **et** un."
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien escrito? (22)",
+"opts": [
+"vingt et deux",
+"vingt-deux",
+"vingtidos"
+],
+"a": 1
+},
+{
+"t": "type",
+"q": "Escribe en letras: 26",
+"a": [
+"vingt-six"
+]
+},
+{
+"t": "type",
+"q": "Escribe en letras: 28",
+"a": [
+"vingt-huit"
+]
+},
+{
+"t": "type",
+"q": "Escribe en letras: 31",
+"a": [
+"trente et un",
+"trente-et-un"
+]
+},
+{
+"t": "type",
+"q": "Calcula y escribe en letras: dix plus douze égalent…",
+"a": [
+"vingt-deux"
+]
+},
+{
+"t": "type",
+"q": "Calcula y escribe en letras: trente moins quatre égalent…",
+"a": [
+"vingt-six"
+]
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «15 + 5 = 20»?",
+"opts": [
+"Quinze plus cinq égalent vingt.",
+"Quinze moins cinq égalent vingt.",
+"Quince más cinco son veinte."
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué número es?",
+"opts": [
+"12",
+"22",
+"20"
+],
+"a": 1,
+"keep": true,
+"au": "au/fc0563d959f70d06.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué número es?",
+"opts": [
+"26",
+"16",
+"6"
+],
+"a": 0,
+"keep": true,
+"au": "au/8f57312a9ab90823.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué número es?",
+"opts": [
+"13",
+"3",
+"30"
+],
+"a": 2,
+"keep": true,
+"au": "au/28408d38ca07afec.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué número es?",
+"opts": [
+"21",
+"20",
+"11"
+],
+"a": 0,
+"keep": true,
+"au": "au/cfe6c6f02cb6c396.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué número es?",
+"opts": [
+"19",
+"29",
+"9"
+],
+"a": 1,
+"keep": true,
+"au": "au/052ed0adf812ae43.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué número es?",
+"opts": [
+"13",
+"31",
+"30"
+],
+"a": 1,
+"keep": true,
+"au": "au/659bb1929508391a.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha la cuenta. ¿Cuál es el resultado?",
+"opts": [
+"7",
+"8",
+"9"
+],
+"a": 1,
+"keep": true,
+"au": "au/fc58086724a8f2c3.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe en letras:",
+"a": [
+"vingt-quatre"
+],
+"au": "au/eae1ac69451b2bbe.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe en letras:",
+"a": [
+"vingt-sept"
+],
+"au": "au/eb0998b3d6addada.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 15",
+"min": 12,
+"pay": 0.1,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u2-l2",
+"unit": 2,
+"label": "Lección 2",
+"title": "Bon anniversaire !",
+"pages": "16–17",
+"icon": "🎂",
+"intro": "Los **meses**, los **días**, las **fechas** (le 18 octobre), los **colores** y el verbo **avoir** (tener). Como en español, meses y días van en **minúscula**. ¡Cuidado con los acentos de **février**, **août** y **décembre**!",
+"sections": [
+{
+"title": "Del cuaderno · p. 16",
+"icon": "📒",
+"from": 0,
+"n": 15
+},
+{
+"title": "Del cuaderno · p. 17 · les couleurs",
+"icon": "🎨",
+"from": 15,
+"n": 9
+},
+{
+"title": "Más práctica · fechas, días y avoir",
+"icon": "💪",
+"from": 24,
+"n": 13
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 37,
+"n": 6
+}
+],
+"items": [
+{
+"t": "order",
+"q": "Ordena los meses del año (del 1 al 6):",
+"words": [
+"janvier",
+"février",
+"mars",
+"avril",
+"mai",
+"juin"
+],
+"a": [
+"janvier février mars avril mai juin"
+],
+"sayA": "au/05878410f5d741fe.mp3"
+},
+{
+"t": "order",
+"q": "Ordena los meses del año (del 7 al 12):",
+"words": [
+"juillet",
+"août",
+"septembre",
+"octobre",
+"novembre",
+"décembre"
+],
+"a": [
+"juillet août septembre octobre novembre décembre"
+],
+"sayA": "au/25190540a2abe86b.mp3"
+},
+{
+"t": "choice",
+"q": "¿Qué mes es el 8?",
+"opts": [
+"juin",
+"août",
+"octobre"
+],
+"a": 1,
+"why": "**août** (agosto), con acento circunflejo en la û. Se pronuncia «u» o «ut» (las dos valen)."
+},
+{
+"t": "order",
+"q": "Escribe una fecha con las tarjetas:",
+"words": [
+"lundi",
+"7",
+"décembre"
+],
+"a": [
+"lundi 7 décembre"
+],
+"why": "Día de la semana + número + mes: **lundi 7 décembre**.",
+"sayA": "au/d47aae6973950571.mp3"
+},
+{
+"t": "order",
+"q": "Escribe una fecha con las tarjetas:",
+"words": [
+"samedi",
+"18",
+"août"
+],
+"a": [
+"samedi 18 août"
+],
+"sayA": "au/b7d2b1d5e6bc83b8.mp3"
+},
+{
+"t": "order",
+"q": "Escribe una fecha con las tarjetas:",
+"words": [
+"vendredi",
+"31",
+"octobre"
+],
+"a": [
+"vendredi 31 octobre"
+],
+"sayA": "au/d2f319b5078ce9c1.mp3"
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"avons"
+],
+"fr": "Nous ____ un bon emploi du temps.",
+"sayA": "au/8d4cb1c32e14ebf9.mp3",
+"show": "Nous avons un bon emploi du temps."
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"ont"
+],
+"fr": "Jeanne et Alex ____ des bonbons.",
+"why": "ils / elles **ont** (tienen). ¡No confundir con **sont** (son)!",
+"sayA": "au/2691c2f87ac89189.mp3",
+"show": "Jeanne et Alex ont des bonbons."
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"avez"
+],
+"fr": "Vous ____ quel livre ?",
+"sayA": "au/31cb6051de5acd7d.mp3",
+"show": "Vous avez quel livre ?"
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"ont"
+],
+"fr": "Elles ____ quel âge ?",
+"sayA": "au/b02940a93488e56d.mp3",
+"show": "Elles ont quel âge ?"
+},
+{
+"t": "choice",
+"q": "Escucha y completa: Jules a ____ ans.",
+"opts": [
+"9",
+"10",
+"11"
+],
+"a": 1,
+"au": "au/5d17acdeadfcd38b.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha otra vez: ¿cuándo nació Jules?",
+"opts": [
+"le 4 mars",
+"le 14 mars",
+"le 4 mai"
+],
+"a": 0,
+"au": "au/5d17acdeadfcd38b.mp3"
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"dix",
+"douze",
+"trente"
+],
+"a": 1,
+"fr": "Une année a ____ mois.",
+"sayA": "au/441de0dfb5053086.mp3",
+"show": "Une année a douze mois."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"cinq",
+"sept",
+"dix"
+],
+"a": 1,
+"fr": "Une semaine a ____ jours.",
+"sayA": "au/c67a19e1c0769939.mp3",
+"show": "Une semaine a sept jours."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"vingt-huit",
+"trente",
+"trente et un"
+],
+"a": 0,
+"fr": "En février, il y a ____ ou vingt-neuf jours.",
+"sayA": "au/0e16460abdd780b6.mp3",
+"show": "En février, il y a vingt-huit ou vingt-neuf jours."
+},
+{
+"t": "match",
+"q": "Une cada color con su nombre:",
+"pairs": [
+[
+"rouge",
+"🔴"
+],
+[
+"bleu",
+"🔵"
+],
+[
+"jaune",
+"🟡"
+],
+[
+"vert",
+"🟢"
+],
+[
+"rose",
+"🌸"
+],
+[
+"blanc",
+"⚪"
+],
+[
+"noir",
+"⚫"
+]
+],
+"au2": [
+"au/5811af1f6b59cd4a.mp3",
+"au/415c3634f8773892.mp3",
+"au/a27fb021f45eebf3.mp3",
+"au/84610fce26753ee5.mp3",
+"au/20b2979e2566eddd.mp3",
+"au/a3ff77ad63aae3f0.mp3",
+"au/6ec286ab82e3764b.mp3"
+]
+},
+{
+"t": "type",
+"q": "¿Cómo se dice «amarillo»?",
+"a": [
+"jaune"
+],
+"why": "**jaune**: la j francesa es suave (como en «je») y «au» suena «o»."
+},
+{
+"t": "type",
+"q": "¿Cómo se dice «verde»?",
+"a": [
+"vert"
+],
+"why": "**vert**: la t final no se pronuncia."
+},
+{
+"t": "type",
+"q": "¿Cómo se dice «negro»?",
+"a": [
+"noir"
+]
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"ai"
+],
+"fr": "J'____ une belle trousse.",
+"why": "**J'ai** = yo tengo. (¡Como en «J'ai dix ans»!)",
+"sayA": "au/855b10af1f044c50.mp3",
+"show": "J'ai une belle trousse."
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"as"
+],
+"fr": "Tu ____ un tube de colle dans ta trousse.",
+"sayA": "au/7a9a76de7aae8e6a.mp3",
+"show": "Tu as un tube de colle dans ta trousse."
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"a"
+],
+"fr": "Amina ____ un sac rose.",
+"why": "il / elle **a**, sin acento (à con acento = «a / en»).",
+"sayA": "au/3b560a9dc73c0dd6.mp3",
+"show": "Amina a un sac rose."
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"avez"
+],
+"fr": "Est-ce que vous ____ une règle, s'il vous plaît ?",
+"sayA": "au/c531b04ef2f6bae1.mp3",
+"show": "Est-ce que vous avez une règle, s'il vous plaît ?"
+},
+{
+"t": "order",
+"q": "Describe tu estuche: ordena la frase",
+"words": [
+"Dans",
+"ma",
+"trousse,",
+"j'ai",
+"un",
+"crayon",
+"rouge."
+],
+"a": [
+"Dans ma trousse, j'ai un crayon rouge."
+],
+"sayA": "au/8f92ee7795327b60.mp3"
+},
+{
+"t": "order",
+"q": "Ordena los días de la semana:",
+"words": [
+"lundi",
+"mardi",
+"mercredi",
+"jeudi",
+"vendredi",
+"samedi",
+"dimanche"
+],
+"a": [
+"lundi mardi mercredi jeudi vendredi samedi dimanche"
+],
+"sayA": "au/0679684d9754017e.mp3"
+},
+{
+"t": "type",
+"q": "¿Qué día va después de **mercredi**?",
+"a": [
+"jeudi"
+]
+},
+{
+"t": "type",
+"q": "Escribe el mes con su acento: «febrero»",
+"a": [
+"février"
+]
+},
+{
+"t": "type",
+"q": "Escribe el mes con su acento: «diciembre»",
+"a": [
+"décembre"
+]
+},
+{
+"t": "type",
+"q": "Escribe el mes: «agosto» (con su acento)",
+"a": [
+"août"
+]
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «el 1 de enero»?",
+"opts": [
+"le un janvier",
+"le premier janvier",
+"le une janvier"
+],
+"a": 1,
+"why": "El día 1 es **le premier** (1er). Los demás días, el número normal: le deux, le trois…"
+},
+{
+"t": "type",
+"q": "Escribe la fecha en letras: «el 26 de octubre» (le … octobre)",
+"a": [
+"le vingt-six octobre"
+],
+"ph": "le …"
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien? (agosto, minúscula)",
+"opts": [
+"Le 15 Août",
+"le 15 août",
+"le 15 agosto"
+],
+"a": 1
+},
+{
+"t": "match",
+"q": "Une el sujeto con **avoir**:",
+"pairs": [
+[
+"j'",
+"ai"
+],
+[
+"tu",
+"as"
+],
+[
+"il / elle",
+"a"
+],
+[
+"nous",
+"avons"
+],
+[
+"vous",
+"avez"
+],
+[
+"ils / elles",
+"ont"
+]
+]
+},
+{
+"t": "choice",
+"q": "¿Tener o ser? «Ellos tienen un perro.»",
+"opts": [
+"Ils ont un chien.",
+"Ils sont un chien."
+],
+"a": 0,
+"why": "**ont** = tienen (avoir). **sont** = son (être).",
+"keep": true
+},
+{
+"t": "type",
+"q": "Repaso unidad 1: «Tengo once años.»",
+"a": [
+"J'ai onze ans.",
+"J'ai onze ans"
+],
+"ph": "J'…"
+},
+{
+"t": "choice",
+"q": "¿De qué color es? 🍌",
+"opts": [
+"jaune",
+"bleu",
+"noir"
+],
+"a": 0,
+"img": "🍌"
+},
+{
+"t": "choice",
+"q": "¿De qué color es? 🐸",
+"opts": [
+"rouge",
+"vert",
+"rose"
+],
+"a": 1,
+"img": "🐸"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Cuándo es su cumpleaños?",
+"opts": [
+"le 13 mai",
+"le 3 mai",
+"le 13 mars"
+],
+"a": 0,
+"keep": true,
+"au": "au/fd2382e64aad4be2.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué día es hoy?",
+"opts": [
+"mardi",
+"jeudi",
+"samedi"
+],
+"a": 1,
+"au": "au/8bea87feb377c27d.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué color le gusta?",
+"opts": [
+"🔴 rouge",
+"🔵 bleu",
+"🟢 vert"
+],
+"a": 1,
+"au": "au/cb39cf9c1d3b8d4f.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Cuántos años tiene Nina?",
+"opts": [
+"8",
+"9",
+"10"
+],
+"a": 1,
+"au": "au/4a60aa25220240e3.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"C'est le premier avril.",
+"C'est le 1er avril."
+],
+"au": "au/2e5c0782e4ebb2d4.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Nous avons une règle jaune."
+],
+"au": "au/f903d0a2838c9a79.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 16–17",
+"min": 19,
+"pay": 0.16,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u2-l3",
+"unit": 2,
+"label": "Lección 3",
+"title": "Vite, à l'école !",
+"pages": "18",
+"icon": "🚌",
+"intro": "**un / une / des**, el verbo **avoir** con todas las personas y los pronombres **je, tu, il, elle, nous, vous, ils, elles**. Y una música: en **nous‿avons** se oye una **z**: «nu-za-von».",
+"sections": [
+{
+"title": "Del cuaderno · p. 18",
+"icon": "📒",
+"from": 0,
+"n": 18
+},
+{
+"title": "Más práctica · avoir y des",
+"icon": "💪",
+"from": 18,
+"n": 11
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 29,
+"n": 5
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "¿un, une o des?",
+"opts": [
+"un",
+"une",
+"des"
+],
+"a": 0,
+"fr": "____ taille-crayon",
+"keep": true,
+"sayA": "au/11cc10adde182d36.mp3",
+"show": "un taille-crayon"
+},
+{
+"t": "choice",
+"q": "¿un, une o des?",
+"opts": [
+"un",
+"une",
+"des"
+],
+"a": 2,
+"fr": "____ cahiers",
+"why": "Plural → **des** (unos / unas): des cahiers.",
+"keep": true,
+"sayA": "au/f2388d9e814cb7b1.mp3",
+"show": "des cahiers"
+},
+{
+"t": "choice",
+"q": "¿un, une o des?",
+"opts": [
+"un",
+"une",
+"des"
+],
+"a": 1,
+"fr": "____ règle",
+"keep": true,
+"sayA": "au/bf80b36f8e72e4f3.mp3",
+"show": "une règle"
+},
+{
+"t": "choice",
+"q": "¿un, une o des?",
+"opts": [
+"un",
+"une",
+"des"
+],
+"a": 0,
+"fr": "____ feutre",
+"keep": true,
+"sayA": "au/d50121cc394bc787.mp3",
+"show": "un feutre"
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"avez"
+],
+"fr": "Vous ____ un crayon rouge ?",
+"sayA": "au/77ff51b08192be1a.mp3",
+"show": "Vous avez un crayon rouge ?"
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"as"
+],
+"fr": "Tu ____ sport le mardi.",
+"sayA": "au/d4e3e0f9854b6438.mp3",
+"show": "Tu as sport le mardi."
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"ont"
+],
+"fr": "Ils ____ un examen jeudi prochain.",
+"sayA": "au/c3931b4d91b113a4.mp3",
+"show": "Ils ont un examen jeudi prochain."
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"a"
+],
+"fr": "Elle ____ une trousse avec des feutres de toutes les couleurs !",
+"sayA": "au/de97a555b3c68181.mp3",
+"show": "Elle a une trousse avec des feutres de toutes les couleurs !"
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"ai"
+],
+"fr": "J'____ douze ans, et toi ?",
+"sayA": "au/e158906543e25d99.mp3",
+"show": "J'ai douze ans, et toi ?"
+},
+{
+"t": "choice",
+"q": "Elige el pronombre:",
+"opts": [
+"il",
+"tu",
+"nous"
+],
+"a": 0,
+"fr": "Aujourd'hui, ____ a 10 ans.",
+"sayA": "au/ed7025e7826d586e.mp3",
+"show": "Aujourd'hui, il a 10 ans."
+},
+{
+"t": "choice",
+"q": "Elige el pronombre:",
+"opts": [
+"Il",
+"Tu",
+"Vous"
+],
+"a": 1,
+"fr": "____ as un crayon, s'il te plaît ?",
+"sayA": "au/5af4fb54ae18ccd4.mp3",
+"show": "Tu as un crayon, s'il te plaît ?"
+},
+{
+"t": "choice",
+"q": "Elige el pronombre:",
+"opts": [
+"nous",
+"vous",
+"ils"
+],
+"a": 0,
+"fr": "Le jeudi, ____ avons cours de maths à 9 heures.",
+"sayA": "au/65c5b40414443ac6.mp3",
+"show": "Le jeudi, nous avons cours de maths à 9 heures."
+},
+{
+"t": "choice",
+"q": "Elige el pronombre:",
+"opts": [
+"J'",
+"Il",
+"Tu"
+],
+"a": 0,
+"fr": "____ai un bon gâteau d'anniversaire !",
+"sayA": "au/1baf00b8a306e7cc.mp3",
+"show": "J'ai un bon gâteau d'anniversaire !"
+},
+{
+"t": "choice",
+"q": "Elige el pronombre:",
+"opts": [
+"Vous",
+"Nous",
+"Ils"
+],
+"a": 0,
+"fr": "Bonjour ! ____ avez le livre de français ?",
+"sayA": "au/b6a3aca565da9ea9.mp3",
+"show": "Bonjour ! Vous avez le livre de français ?"
+},
+{
+"t": "type",
+"q": "Repaso: conjuga **habiter**",
+"a": [
+"habitons"
+],
+"fr": "Nous ____ en Suisse.",
+"sayA": "au/52c9555e233cf175.mp3",
+"show": "Nous habitons en Suisse."
+},
+{
+"t": "type",
+"q": "Repaso: conjuga **habiter**",
+"a": [
+"habites"
+],
+"fr": "Et toi, tu ____ où ?",
+"why": "tu habite**s** (con -s).",
+"sayA": "au/1dc5ec4efe084c94.mp3",
+"show": "Et toi, tu habites où ?"
+},
+{
+"t": "choice",
+"q": "Escucha: ¿cómo suena «nous avons»?",
+"opts": [
+"nu-a-von (sin z)",
+"nu-za-von (con z)"
+],
+"a": 1,
+"why": "La **s** de nous se une a la vocal siguiente y suena **z**: nous‿avons, vous‿avez, ils‿ont, elles‿ont. Se llama **liaison**.",
+"keep": true,
+"au": "au/d094b6e2cb0d29e2.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha: ¿qué oyes?",
+"opts": [
+"ils ont (tienen) — con z",
+"ils sont (son) — con s"
+],
+"a": 0,
+"keep": true,
+"au": "au/acdcae38db574b3d.mp3"
+},
+{
+"t": "type",
+"q": "Escribe el plural con **des**: un crayon → ",
+"a": [
+"des crayons"
+],
+"why": "Plural: **des** + nombre + **s** (que no se pronuncia)."
+},
+{
+"t": "type",
+"q": "Escribe el plural con **des**: une gomme → ",
+"a": [
+"des gommes"
+]
+},
+{
+"t": "type",
+"q": "Escribe el plural con **des**: un livre → ",
+"a": [
+"des livres"
+]
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"ont"
+],
+"fr": "Lou et Kenza ____ des ciseaux.",
+"sayA": "au/4606993bf4cc836e.mp3",
+"show": "Lou et Kenza ont des ciseaux."
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"avons"
+],
+"fr": "Toi et moi, nous ____ cours de français.",
+"sayA": "au/029d1b7209b33b02.mp3",
+"show": "Toi et moi, nous avons cours de français."
+},
+{
+"t": "type",
+"q": "Completa con **avoir**:",
+"a": [
+"a"
+],
+"fr": "Théo ____ un sac à dos bleu.",
+"sayA": "au/b26c90cf99ba1afc.mp3",
+"show": "Théo a un sac à dos bleu."
+},
+{
+"t": "order",
+"q": "Ordena la frase:",
+"words": [
+"Nous",
+"avons",
+"des",
+"feutres",
+"verts."
+],
+"a": [
+"Nous avons des feutres verts."
+],
+"sayA": "au/ca082fe1d966176f.mp3"
+},
+{
+"t": "order",
+"q": "Ordena la pregunta:",
+"words": [
+"Tu",
+"as",
+"une",
+"gomme",
+"?"
+],
+"a": [
+"Tu as une gomme ?"
+],
+"sayA": "au/78a452d28d182ce0.mp3"
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien? «Ellas tienen 9 años»",
+"opts": [
+"Elles ont neuf ans.",
+"Elles sont neuf ans.",
+"Elles a neuf ans."
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"J' un livre.",
+"J'ai un livre.",
+"Je ai un livre."
+],
+"a": 1,
+"why": "Siempre **J'ai** (con ai). ¡Tu error de la unidad 1!"
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Il s'apelle Max.",
+"Il s'appelle Max."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué tiene Kenza en la mochila?",
+"opts": [
+"📕 un livre",
+"✂️ des ciseaux",
+"📏 une règle"
+],
+"a": 1,
+"au": "au/9c8dd7be2d921bcf.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Cuándo tienen examen?",
+"opts": [
+"lundi",
+"jeudi",
+"vendredi"
+],
+"a": 1,
+"au": "au/f78ea2de9953cd9c.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué pronombre oyes?",
+"opts": [
+"nous",
+"vous",
+"ils"
+],
+"a": 1,
+"au": "au/a72e68117f396efc.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Vous avez un stylo ?",
+"Vous avez un stylo"
+],
+"au": "au/3c38af9b83c40742.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Elles ont des cahiers."
+],
+"au": "au/3f45f6dd2e22b115.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 18",
+"min": 14,
+"pay": 0.12,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u2-culture",
+"unit": 2,
+"label": "Cultura + Lectura",
+"title": "L'école en France",
+"pages": "19–21",
+"icon": "🏫",
+"intro": "¿Cómo es el colegio en Francia? Muchos niños **no tienen clase el miércoles** (o solo por la mañana) y comen en la **cantine** (el comedor). Y luego… ¡el cumpleaños de Fred!",
+"sections": [
+{
+"title": "Cultura · p. 19",
+"icon": "🌍",
+"from": 0,
+"n": 7
+},
+{
+"title": "Lectura · p. 20 · l'anniversaire de Fred",
+"icon": "📖",
+"from": 7,
+"n": 8
+},
+{
+"title": "Un cuento · Lou à l'école",
+"icon": "🎬",
+"from": 15,
+"n": 4
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Lee lo que dice Olivia. ¿Qué día NO tiene clase entre semana?",
+"opts": [
+"le lundi",
+"le mercredi",
+"le vendredi"
+],
+"a": 1,
+"fr": "Je m'appelle Olivia. J'ai école tous les jours le matin et l'après-midi, sauf le mercredi, le samedi et le dimanche. J'adore la cantine ! C'est super, il y a les copains !",
+"au": "au/5329e637eb198c5e.mp3"
+},
+{
+"t": "choice",
+"q": "¿A Olivia le gusta el comedor (la cantine)?",
+"opts": [
+"Oui, elle adore la cantine.",
+"Non, elle n'aime pas la cantine."
+],
+"a": 0,
+"fr": "Je m'appelle Olivia. J'ai école tous les jours le matin et l'après-midi, sauf le mercredi, le samedi et le dimanche. J'adore la cantine ! C'est super, il y a les copains !",
+"keep": true,
+"auto": false,
+"au": "au/5329e637eb198c5e.mp3"
+},
+{
+"t": "choice",
+"q": "Lee lo que dice Lucas. ¿El miércoles por la mañana tiene clase?",
+"opts": [
+"Oui",
+"Non"
+],
+"a": 0,
+"fr": "Salut, moi c'est Lucas. Je suis à l'école le matin du lundi au vendredi. Et j'ai aussi école l'après-midi lundi, mardi, jeudi et vendredi. Je n'aime pas la cantine.",
+"keep": true,
+"au": "au/7ac7d600a568887c.mp3"
+},
+{
+"t": "choice",
+"q": "¿A Lucas le gusta el comedor (la cantine)?",
+"opts": [
+"Oui",
+"Non"
+],
+"a": 1,
+"fr": "Salut, moi c'est Lucas. Je suis à l'école le matin du lundi au vendredi. Et j'ai aussi école l'après-midi lundi, mardi, jeudi et vendredi. Je n'aime pas la cantine.",
+"why": "«Je **n'aime pas** la cantine» = no me gusta el comedor.",
+"keep": true,
+"auto": false,
+"au": "au/7ac7d600a568887c.mp3"
+},
+{
+"t": "choice",
+"q": "Horario A: no hay clase en todo el miércoles. ¿De quién es?",
+"opts": [
+"d'Olivia",
+"de Lucas"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "Horario B: el miércoles hay clase por la mañana. ¿De quién es?",
+"opts": [
+"d'Olivia",
+"de Lucas"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "match",
+"q": "Une las palabras del colegio:",
+"pairs": [
+[
+"la cantine",
+"el comedor"
+],
+[
+"l'emploi du temps",
+"el horario"
+],
+[
+"la maîtresse",
+"la maestra"
+],
+[
+"les copains",
+"los amigos"
+],
+[
+"le matin",
+"la mañana"
+],
+[
+"l'après-midi",
+"la tarde"
+]
+],
+"au2": [
+"au/f4074b7a73e09abc.mp3",
+"au/b6abe908b4f636e9.mp3",
+"au/5b0433b2fe765d2c.mp3",
+"au/633eddba89b119a4.mp3",
+"au/fa8905037bace9c5.mp3",
+"au/58ffa4e7d9105ab8.mp3"
+]
+},
+{
+"t": "choice",
+"q": "¿Qué día es el cumpleaños de Fred?",
+"opts": [
+"le 8 octobre",
+"le 18 octobre",
+"le 18 août"
+],
+"a": 1,
+"fr": "Dimanche 18 octobre. C'est l'anniversaire de Fred. Il a onze ans. Voici les cadeaux de Fred : un pantalon bleu, un sac à dos, un stylo magique, un billet de vingt euros et un billet de cinq euros.",
+"au": "au/94f18ad7883b7929.mp3"
+},
+{
+"t": "choice",
+"q": "¿Cuántos años cumple Fred?",
+"opts": [
+"dix ans",
+"onze ans",
+"douze ans"
+],
+"a": 1,
+"fr": "Dimanche 18 octobre. C'est l'anniversaire de Fred. Il a onze ans. Voici les cadeaux de Fred : un pantalon bleu, un sac à dos, un stylo magique, un billet de vingt euros et un billet de cinq euros.",
+"auto": false,
+"au": "au/94f18ad7883b7929.mp3"
+},
+{
+"t": "choice",
+"q": "¿De qué color es el pantalón?",
+"opts": [
+"rouge",
+"bleu",
+"vert"
+],
+"a": 1,
+"fr": "Dimanche 18 octobre. C'est l'anniversaire de Fred. Il a onze ans. Voici les cadeaux de Fred : un pantalon bleu, un sac à dos, un stylo magique, un billet de vingt euros et un billet de cinq euros.",
+"auto": false,
+"au": "au/94f18ad7883b7929.mp3"
+},
+{
+"t": "choice",
+"q": "¿Cuánto dinero recibe en billetes?",
+"opts": [
+"vingt euros",
+"vingt-cinq euros",
+"trente euros"
+],
+"a": 1,
+"why": "un billet de 20 € + un billet de 5 € = **vingt-cinq euros**."
+},
+{
+"t": "type",
+"q": "Completa el texto: «C'est l'anniversaire de Fred. Il a ____ ans.» (en letras)",
+"a": [
+"onze"
+]
+},
+{
+"t": "type",
+"q": "Escribe «una mochila» en francés",
+"a": [
+"un sac à dos",
+"un cartable"
+]
+},
+{
+"t": "type",
+"q": "Y tú: ¿cómo se pregunta «¿cuántos años tienes?»",
+"a": [
+"Tu as quel âge ?",
+"Quel âge as-tu ?",
+"Quel âge tu as ?"
+]
+},
+{
+"t": "order",
+"q": "Ordena la frase:",
+"words": [
+"Mon",
+"anniversaire,",
+"c'est",
+"le",
+"dix",
+"mai."
+],
+"a": [
+"Mon anniversaire, c'est le dix mai."
+],
+"sayA": "au/31e92c87d199c5b8.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha y lee. ¿Qué colores tiene el colegio de Lou?",
+"opts": [
+"blanche et bleue",
+"rouge et verte",
+"jaune et noire"
+],
+"a": 0,
+"fr": "Voici Lou. Elle a dix ans. Son école est blanche et bleue, avec une porte rouge. Dans son sac, elle a une trousse jaune.",
+"au": "au/06081c273dbfaa68.mp3"
+},
+{
+"t": "choice",
+"q": "¿De qué color es la puerta?",
+"opts": [
+"bleue",
+"rouge",
+"jaune"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "¿Qué tiene Lou en la mochila?",
+"opts": [
+"une trousse jaune",
+"un gâteau",
+"un livre bleu"
+],
+"a": 0
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Son école est blanche et bleue."
+],
+"au": "au/1b1e411fe8c0ea26.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 19–21",
+"min": 9,
+"pay": 0.07,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u2-delf",
+"unit": 2,
+"label": "DELF Prim",
+"title": "DELF : en classe",
+"pages": "22–23",
+"icon": "📝",
+"intro": "Como el examen **DELF Prim**: escuchar y marcar, leer un texto y rellenar una ficha, y describir el material con sus colores.",
+"sections": [
+{
+"title": "Comprensión oral · p. 22",
+"icon": "🎧",
+"from": 0,
+"n": 8
+},
+{
+"title": "Comprensión escrita · p. 23",
+"icon": "📖",
+"from": 8,
+"n": 6
+},
+{
+"title": "Producción escrita",
+"icon": "✍️",
+"from": 14,
+"n": 5
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Escucha. En su estuche, Lucie tiene…",
+"opts": [
+"una goma azul",
+"un bolígrafo negro",
+"un pegamento"
+],
+"a": 2,
+"au": "au/5e7d414da543fb12.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. El color preferido de Julien es…",
+"opts": [
+"🟠 l'orange",
+"🔴 le rouge",
+"🔵 le bleu"
+],
+"a": 1,
+"au": "au/0753743c93957947.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. En la clase de Thibaut hay…",
+"opts": [
+"9 filles",
+"12 filles",
+"21 filles"
+],
+"a": 1,
+"keep": true,
+"au": "au/f20a92769078782e.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. Hoy es…",
+"opts": [
+"mardi",
+"jeudi",
+"samedi"
+],
+"a": 0,
+"keep": true,
+"au": "au/9074d82942ccb2f9.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. Es el…",
+"opts": [
+"24 février",
+"23 janvier",
+"23 février"
+],
+"a": 2,
+"keep": true,
+"au": "au/00b753cccb1cf80e.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Cuántos años tiene Noé?",
+"opts": [
+"7",
+"8",
+"9"
+],
+"a": 1,
+"au": "au/e7fda7ad7da24abd.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha otra vez. ¿Y Nina?",
+"opts": [
+"8",
+"10",
+"12"
+],
+"a": 1,
+"au": "au/e7fda7ad7da24abd.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Cuándo es el cumpleaños de Nina?",
+"opts": [
+"le 2 avril",
+"le 12 avril",
+"le 2 août"
+],
+"a": 0,
+"keep": true,
+"au": "au/40345287e641101c.mp3"
+},
+{
+"t": "choice",
+"q": "Lee. ¿En qué colegio está Jérôme?",
+"opts": [
+"l'école Jules Verne",
+"l'école de Marseille",
+"l'école Marson"
+],
+"a": 0,
+"fr": "Jérôme Marson est élève à l'école Jules Verne. Il est né le 14 août 2009. Il habite 25, rue des Abeilles à Marseille, en France.",
+"au": "au/ea4afed5ab644b5c.mp3"
+},
+{
+"t": "type",
+"q": "Ficha · Nom :",
+"a": [
+"Marson"
+],
+"fr": "Nom : ____",
+"sayA": "au/4c1f6281bac7269a.mp3",
+"show": "Nom : Marson"
+},
+{
+"t": "type",
+"q": "Ficha · Prénom :",
+"a": [
+"Jérôme"
+],
+"fr": "Prénom : ____",
+"why": "**Jérôme** con é y ô.",
+"sayA": "au/c97bd45834a47fe1.mp3",
+"show": "Prénom : Jérôme"
+},
+{
+"t": "choice",
+"q": "Ficha: ¿fille o garçon?",
+"opts": [
+"Fille",
+"Garçon"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "Ficha · Date de naissance :",
+"opts": [
+"14 août 2009",
+"4 août 2009",
+"14 avril 2009"
+],
+"a": 0
+},
+{
+"t": "type",
+"q": "Ficha · Ville :",
+"a": [
+"Marseille"
+],
+"fr": "Ville : ____",
+"sayA": "au/f1290ee192b8e777.mp3",
+"show": "Ville : Marseille"
+},
+{
+"t": "order",
+"q": "En la mochila hay… Ordena:",
+"words": [
+"Dans",
+"le",
+"sac",
+"à",
+"dos,",
+"il",
+"y",
+"a",
+"un",
+"cahier",
+"jaune."
+],
+"a": [
+"Dans le sac à dos, il y a un cahier jaune."
+],
+"sayA": "au/7238f51bb0a3eb16.mp3"
+},
+{
+"t": "order",
+"q": "Ordena:",
+"words": [
+"Il",
+"y",
+"a",
+"des",
+"ciseaux",
+"noirs."
+],
+"a": [
+"Il y a des ciseaux noirs."
+],
+"sayA": "au/8c1fc9b99204af66.mp3"
+},
+{
+"t": "type",
+"q": "Escribe: «una calculadora negra»",
+"a": [
+"une calculatrice noire"
+],
+"why": "Femenino: noir → **noire**."
+},
+{
+"t": "type",
+"q": "Escribe: «un cuaderno amarillo»",
+"a": [
+"un cahier jaune"
+]
+},
+{
+"t": "type",
+"q": "Escribe: «unos lápices de colores»",
+"a": [
+"des crayons de couleur",
+"des crayons de couleurs"
+]
+}
+],
+"pagesLabel": "cuaderno p. 22–23",
+"min": 8,
+"pay": 0.07,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u2-eval",
+"unit": 2,
+"label": "Evaluación",
+"title": "Évaluation · Unité 2",
+"pages": "24",
+"icon": "🏅",
+"intro": "El examen de la unidad 2 (p. 24) y un repaso de los errores más típicos.",
+"sections": [
+{
+"title": "Évaluation · p. 24",
+"icon": "📒",
+"from": 0,
+"n": 16
+},
+{
+"title": "Repaso · ¡sin errores!",
+"icon": "🎯",
+"from": 16,
+"n": 8
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Elige el artículo: le, la, l' o les",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 2,
+"fr": "____école",
+"why": "Delante de vocal → **l'**: l'école.",
+"keep": true,
+"sayA": "au/1d281da68e77fc5f.mp3",
+"show": "l'école"
+},
+{
+"t": "choice",
+"q": "Elige el artículo:",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 0,
+"fr": "____ crayon",
+"keep": true,
+"sayA": "au/b48e778ade9a4f95.mp3",
+"show": "le crayon"
+},
+{
+"t": "choice",
+"q": "Elige el artículo:",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 1,
+"fr": "____ trousse",
+"keep": true,
+"sayA": "au/3c2c03db99ba71bf.mp3",
+"show": "la trousse"
+},
+{
+"t": "choice",
+"q": "Elige el artículo:",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 3,
+"fr": "____ ciseaux",
+"keep": true,
+"sayA": "au/52f2b914e9a02d85.mp3",
+"show": "les ciseaux"
+},
+{
+"t": "choice",
+"q": "Elige el artículo:",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 0,
+"fr": "____ feutre",
+"keep": true,
+"sayA": "au/3a99de71f54c708e.mp3",
+"show": "le feutre"
+},
+{
+"t": "choice",
+"q": "Elige el artículo:",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 1,
+"fr": "____ gomme",
+"keep": true,
+"sayA": "au/71fc25690cf8358f.mp3",
+"show": "la gomme"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Cuál es el estuche de Amina?",
+"opts": [
+"1 · rayas rojas, verdes y negras",
+"2 · azul oscuro con tijeras rojas",
+"3 · rosa, con una regla amarilla"
+],
+"a": 2,
+"keep": true,
+"au": "au/ada18c28bf14d962.mp3"
+},
+{
+"t": "type",
+"q": "Escribe en letras: 21",
+"a": [
+"vingt et un",
+"vingt-et-un"
+]
+},
+{
+"t": "type",
+"q": "Escribe en letras: 23",
+"a": [
+"vingt-trois"
+]
+},
+{
+"t": "type",
+"q": "Escribe en letras: 28",
+"a": [
+"vingt-huit"
+]
+},
+{
+"t": "type",
+"q": "Escribe en letras: 30",
+"a": [
+"trente"
+]
+},
+{
+"t": "type",
+"q": "**avoir**: tu ____",
+"a": [
+"as"
+]
+},
+{
+"t": "type",
+"q": "**avoir**: il ____",
+"a": [
+"a"
+]
+},
+{
+"t": "type",
+"q": "**avoir**: vous ____",
+"a": [
+"avez"
+]
+},
+{
+"t": "type",
+"q": "**avoir**: elles ____",
+"a": [
+"ont"
+]
+},
+{
+"t": "choice",
+"q": "Calendario de enero: el cumpleaños de Léo es el domingo 26. Elige la fecha:",
+"opts": [
+"C'est le dimanche 26 janvier.",
+"C'est le lundi 26 janvier.",
+"C'est le dimanche 16 janvier."
+],
+"a": 0,
+"why": "Domingo = **dimanche** · 26 = vingt-six · enero = **janvier**.",
+"img": "🗓️"
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"une trousse",
+"un trousse"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"vingt-un",
+"vingt et un"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"le 15 Août",
+"le 15 août"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Ils sont dix ans.",
+"Ils ont dix ans."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Nous avons cours.",
+"Nous avez cours."
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Elle s'appelle Lou.",
+"Elle s'apelle Lou."
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "type",
+"q": "Dictado final. Escucha y escribe:",
+"a": [
+"Mon anniversaire, c'est le vingt mars.",
+"Mon anniversaire, c'est le 20 mars."
+],
+"au": "au/aa2bcfa2f1a044c3.mp3"
+},
+{
+"t": "type",
+"q": "Dictado final. Escucha y escribe:",
+"a": [
+"Dans ma trousse, j'ai une gomme blanche."
+],
+"au": "au/fab3eadd0f41589b.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 24",
+"min": 9,
+"pay": 0.07,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u3-l1",
+"unit": 3,
+"label": "Lección 1",
+"title": "C'est un jeu !",
+"pages": "25–26",
+"icon": "🪁",
+"intro": "Los **juguetes** y los artículos **le, la, l', les** (el, la, los/las). Ojo: el género no siempre coincide con el español: **la** bicicleta → **le** vélo · **la** cometa → **le** cerf-volant · **la** pelota → **le** ballon. Y para tu cumpleaños: **j'aimerais…**",
+"sections": [
+{
+"title": "Del cuaderno · p. 25",
+"icon": "📒",
+"from": 0,
+"n": 13
+},
+{
+"title": "Del cuaderno · p. 26 · Los regalos de Papá Noel",
+"icon": "🎅",
+"from": 13,
+"n": 7
+},
+{
+"title": "Más práctica · le, la, l', les",
+"icon": "💪",
+"from": 20,
+"n": 12
+},
+{
+"title": "Escucha · [s] o [z]",
+"icon": "🐍",
+"from": 32,
+"n": 10
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Escucha. ¿Qué es?",
+"opts": [
+"un ballon ⚽",
+"un vélo 🚲",
+"un robot 🤖"
+],
+"a": 1,
+"au": "au/db315fd167d6c04d.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué es?",
+"opts": [
+"une poupée 🪆",
+"un train 🚂",
+"un livre 📖"
+],
+"a": 1,
+"au": "au/dd897d4ecb1ae63b.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué es?",
+"opts": [
+"un jeu vidéo 🎮",
+"un puzzle 🧩",
+"un cerf-volant 🪁"
+],
+"a": 0,
+"au": "au/2807f264a23b96e7.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué es?",
+"opts": [
+"un robot 🤖",
+"une poupée 🪆",
+"un ballon ⚽"
+],
+"a": 1,
+"au": "au/46424f36d81cc711.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué es?",
+"opts": [
+"un ballon ⚽",
+"un skateboard 🛹",
+"un vélo 🚲"
+],
+"a": 0,
+"au": "au/4eebae3bfd90ab19.mp3"
+},
+{
+"t": "choice",
+"q": "Une los puntos del dibujo… ¡tiene cola con lazos! ¿Qué es?",
+"opts": [
+"C'est un cerf-volant.",
+"C'est un ballon.",
+"C'est un avion."
+],
+"a": 0,
+"why": "**un cerf-volant** = una cometa (¡masculino en francés!).",
+"img": "🪁"
+},
+{
+"t": "choice",
+"q": "¿En qué círculo va? ✈️ avion",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 2,
+"why": "**l'avion**: delante de vocal, le/la → **l'**.",
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿En qué círculo va? 🍕 pizza",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿En qué círculo va? 🚕 taxi",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿En qué círculo va? 🥐 croissant",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿En qué círculo va? gomme (goma de borrar)",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿En qué círculo va? 📏 règle (regla)",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿En qué círculo va? 📺 télévision",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "Completa (el regalo de Laurent es una tele):",
+"opts": [
+"télévision",
+"train",
+"ordinateur"
+],
+"a": 0,
+"fr": "La ____ est pour Laurent.",
+"why": "**La** → la palabra es femenina: **la télévision**.",
+"sayA": "au/6f824b6e51b6a6c5.mp3",
+"show": "La télévision est pour Laurent."
+},
+{
+"t": "choice",
+"q": "Completa (Tom recibe cartas):",
+"opts": [
+"cartes",
+"robot",
+"train"
+],
+"a": 0,
+"fr": "Les ____ sont pour Tom.",
+"why": "**Les** + plural + **sont**.",
+"sayA": "au/2d7f1d8efb9ea1e4.mp3",
+"show": "Les cartes sont pour Tom."
+},
+{
+"t": "choice",
+"q": "Completa (Camille recibe un ordenador):",
+"opts": [
+"ordinateur",
+"train",
+"télévision"
+],
+"a": 0,
+"fr": "L'____ est pour Camille.",
+"why": "**l'ordinateur** (masculino, empieza por vocal).",
+"sayA": "au/ce255d41b9f93f10.mp3",
+"show": "L'ordinateur est pour Camille."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"est",
+"sont"
+],
+"a": 0,
+"fr": "L'os ____ pour Miko.",
+"why": "Una cosa → **est**. Varias cosas → **sont**.",
+"keep": true,
+"sayA": "au/84c079051e2174b2.mp3",
+"show": "L'os est pour Miko."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"est",
+"sont"
+],
+"a": 1,
+"fr": "Les livres d'art ____ pour Sophie.",
+"keep": true,
+"sayA": "au/6e41eaaa69ef8181.mp3",
+"show": "Les livres d'art sont pour Sophie."
+},
+{
+"t": "order",
+"q": "Ordena tu deseo de cumpleaños:",
+"words": [
+"Pour",
+"mon",
+"anniversaire,",
+"j'aimerais",
+"un",
+"vélo."
+],
+"a": [
+"Pour mon anniversaire, j'aimerais un vélo."
+],
+"sayA": "au/c390dbc1f0d48026.mp3"
+},
+{
+"t": "type",
+"q": "Escribe: «Para mi cumpleaños, me gustaría un robot.»",
+"a": [
+"Pour mon anniversaire, j'aimerais un robot.",
+"Pour mon anniversaire j'aimerais un robot."
+],
+"ph": "Pour mon anniversaire, …"
+},
+{
+"t": "match",
+"q": "Une cada juguete con su artículo:",
+"pairs": [
+[
+"ballon",
+"le"
+],
+[
+"poupée",
+"la"
+],
+[
+"ordinateur",
+"l'"
+],
+[
+"cartes",
+"les"
+]
+],
+"au2": [
+"au/ffbecc88e289c458.mp3",
+"au/8a5c61b3e89803f1.mp3",
+"au/add89bcd93bfab62.mp3",
+"au/868d446249a37f25.mp3"
+]
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «la bicicleta»?",
+"opts": [
+"la vélo",
+"le vélo",
+"l'vélo"
+],
+"a": 1,
+"why": "En francés es **masculino**: **le vélo**."
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «la cometa»?",
+"opts": [
+"la cerf-volant",
+"le cerf-volant",
+"les cerf-volant"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «la pelota» (de fútbol)?",
+"opts": [
+"le ballon",
+"la ballon",
+"l'ballon"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «el coche»?",
+"opts": [
+"le voiture",
+"la voiture",
+"l'voiture"
+],
+"a": 1,
+"why": "**la voiture** es femenina (al revés que en español)."
+},
+{
+"t": "type",
+"q": "Escribe el artículo (le, la, l' o les):",
+"a": [
+"le"
+],
+"fr": "____ train",
+"sayA": "au/d2ffa7012399505e.mp3",
+"show": "le train"
+},
+{
+"t": "type",
+"q": "Escribe el artículo (le, la, l' o les):",
+"a": [
+"la"
+],
+"fr": "____ poupée",
+"sayA": "au/1ed33ee499b99ce6.mp3",
+"show": "la poupée"
+},
+{
+"t": "type",
+"q": "Escribe el artículo (le, la, l' o les):",
+"a": [
+"l'"
+],
+"fr": "____avion",
+"why": "Delante de vocal: **l'**.",
+"sayA": "au/f70c485e3887a4e6.mp3",
+"show": "l'avion"
+},
+{
+"t": "type",
+"q": "Escribe el artículo (le, la, l' o les):",
+"a": [
+"les"
+],
+"fr": "____ jeux vidéo",
+"sayA": "au/a9c5bc544d969ef5.mp3",
+"show": "les jeux vidéo"
+},
+{
+"t": "type",
+"q": "Escribe el artículo (le, la, l' o les):",
+"a": [
+"l'"
+],
+"fr": "____école",
+"why": "**l'école** (la escuela) — empieza por vocal.",
+"sayA": "au/1d281da68e77fc5f.mp3",
+"show": "l'école"
+},
+{
+"t": "choice",
+"q": "¿«Un» o «une»?",
+"opts": [
+"un",
+"une"
+],
+"a": 0,
+"fr": "C'est ____ robot.",
+"keep": true,
+"sayA": "au/1d0277e509f7022f.mp3",
+"show": "C'est un robot."
+},
+{
+"t": "choice",
+"q": "¿«Un» o «une»?",
+"opts": [
+"un",
+"une"
+],
+"a": 1,
+"fr": "C'est ____ trottinette.",
+"why": "**une trottinette** = un patinete (femenino en francés).",
+"keep": true,
+"sayA": "au/f2fdf6f0713bc4e1.mp3",
+"show": "C'est une trottinette."
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] (sssss 🐍) o [z] (zzzzz 🐝)?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 0,
+"why": "**poisson** (pez) = [s] con **ss**.",
+"keep": true,
+"au": "au/0d15753df90d8e83.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] 🐍 o [z] 🐝?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 1,
+"why": "**poison** (veneno) = [z]: una **s** entre dos vocales suena **z**.",
+"keep": true,
+"au": "au/06178e0b572907dd.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] 🐍 o [z] 🐝?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 1,
+"keep": true,
+"au": "au/79d8d30e9e29ae3d.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] 🐍 o [z] 🐝?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 0,
+"keep": true,
+"au": "au/05cbd1ef6c1342e0.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] 🐍 o [z] 🐝?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 1,
+"keep": true,
+"au": "au/10fe84cb483248ef.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] 🐍 o [z] 🐝?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 0,
+"keep": true,
+"au": "au/a8d9047dbc4ad236.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] 🐍 o [z] 🐝?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 1,
+"keep": true,
+"au": "au/195696436fa375ee.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué palabra es?",
+"opts": [
+"poisson 🐟",
+"poison ☠️"
+],
+"a": 1,
+"keep": true,
+"au": "au/198d18bcebadd419.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué dice?",
+"opts": [
+"ils sont",
+"ils ont"
+],
+"a": 1,
+"why": "**ils ont** = [z] (ilzon) · **ils sont** = [s].",
+"keep": true,
+"au": "au/526d19647b4e9e8a.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"C'est un cerf-volant."
+],
+"au": "au/a78c81a6c06ab52a.mp3"
+}
+],
+"film": {
+"src": "films/ch31-c-est-un-jeu-v4.mp4",
+"dur": 67.6
+},
+"pagesLabel": "cuaderno p. 25–26",
+"min": 17,
+"pay": 0.14,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u3-l2",
+"unit": 3,
+"label": "Lección 2",
+"title": "Mes goûts",
+"pages": "27",
+"icon": "❤️",
+"intro": "Decir lo que te gusta y lo que no: **j'aime** / **je n'aime pas**. El verbo **aimer**: j'aime, tu aime**s**, il aime, nous aim**ons**, vous aim**ez**, ils aim**ent**. El «no» va en dos partes: **ne** … **pas** (y delante de vocal **n'**: je **n'**aime **pas**).",
+"sections": [
+{
+"title": "Del cuaderno · p. 27",
+"icon": "📒",
+"from": 0,
+"n": 9
+},
+{
+"title": "Más práctica · aimer",
+"icon": "💪",
+"from": 9,
+"n": 12
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 21,
+"n": 5
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Mira: un niño con cara de enfado junto a unos libros 📚😠. Qu'est-ce qu'il n'aime pas ?",
+"opts": [
+"Il n'aime pas les livres.",
+"Il aime les livres.",
+"Il n'aime pas les cadeaux."
+],
+"a": 0,
+"img": "😠📚"
+},
+{
+"t": "choice",
+"q": "Tres niños felices con regalos 🎁😃. Qu'est-ce qu'ils aiment ?",
+"opts": [
+"Ils aiment les cadeaux.",
+"Ils n'aiment pas les cadeaux.",
+"Ils aiment les livres."
+],
+"a": 0,
+"img": "😃🎁"
+},
+{
+"t": "choice",
+"q": "Una niña enfadada con un monopatín 🛹😠. Qu'est-ce qu'elle n'aime pas ?",
+"opts": [
+"Elle aime le skateboard.",
+"Elle n'aime pas le skateboard.",
+"Elle n'aime pas les livres."
+],
+"a": 1,
+"img": "😠🛹"
+},
+{
+"t": "choice",
+"q": "Escucha solo el verbo. ¿«aime» y «aiment» suenan igual (=) o diferente (≠)?",
+"opts": [
+"= igual",
+"≠ diferente"
+],
+"a": 0,
+"why": "La **-ent** de aim**ent** no se pronuncia: suenan **igual**. ¡Pero ojo! Con **ils** se oye una [z]: ils‿aiment = «il-zèm».",
+"keep": true,
+"au": "au/b9d222a0c27b1525.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha solo el verbo. ¿«aimes» y «aimons» suenan igual (=) o diferente (≠)?",
+"opts": [
+"= igual",
+"≠ diferente"
+],
+"a": 1,
+"keep": true,
+"au": "au/687c08beb7edcc77.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha solo el verbo. ¿«aime» y «aimes» suenan igual (=) o diferente (≠)?",
+"opts": [
+"= igual",
+"≠ diferente"
+],
+"a": 0,
+"why": "La **-s** de tu aime**s** no se pronuncia.",
+"keep": true,
+"au": "au/4f3579e0d8c783b0.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha solo el verbo. ¿«aimez» y «aime» suenan igual (=) o diferente (≠)?",
+"opts": [
+"= igual",
+"≠ diferente"
+],
+"a": 1,
+"keep": true,
+"au": "au/b79625f89332eeb5.mp3"
+},
+{
+"t": "choice",
+"q": "Batalla naval ⛵: «Il aime le chocolat.» ¿Qué casilla es?",
+"opts": [
+"AIMER · il",
+"NE PAS AIMER · il",
+"AIMER · ils"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "choice",
+"q": "Batalla naval ⛵: «Vous n'aimez pas le foot.» ¿Qué casilla es?",
+"opts": [
+"AIMER · vous",
+"NE PAS AIMER · vous",
+"NE PAS AIMER · nous"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "match",
+"q": "Une el sujeto con el verbo:",
+"pairs": [
+[
+"j'",
+"aime"
+],
+[
+"tu",
+"aimes"
+],
+[
+"nous",
+"aimons"
+],
+[
+"vous",
+"aimez"
+],
+[
+"ils / elles",
+"aiment"
+]
+]
+},
+{
+"t": "type",
+"q": "Conjuga **aimer**:",
+"a": [
+"aimes"
+],
+"fr": "Tu ____ les puzzles ?",
+"sayA": "au/7ca7c825b978622f.mp3",
+"show": "Tu aimes les puzzles ?"
+},
+{
+"t": "type",
+"q": "Conjuga **aimer**:",
+"a": [
+"aimons"
+],
+"fr": "Nous ____ la musique.",
+"sayA": "au/899e72985947fd67.mp3",
+"show": "Nous aimons la musique."
+},
+{
+"t": "type",
+"q": "Conjuga **aimer**:",
+"a": [
+"aiment"
+],
+"fr": "Théo et Amina ____ le foot.",
+"sayA": "au/236c9c60d4c8c5f5.mp3",
+"show": "Théo et Amina aiment le foot."
+},
+{
+"t": "type",
+"q": "Conjuga **aimer**:",
+"a": [
+"aimez"
+],
+"fr": "Vous ____ le cinéma ?",
+"sayA": "au/c9a8dfc531951669.mp3",
+"show": "Vous aimez le cinéma ?"
+},
+{
+"t": "type",
+"q": "Conjuga **aimer**:",
+"a": [
+"aime"
+],
+"fr": "Kenza ____ les jeux vidéo.",
+"sayA": "au/cefa609fd5a26668.mp3",
+"show": "Kenza aime les jeux vidéo."
+},
+{
+"t": "order",
+"q": "Ordena la frase en negativo:",
+"words": [
+"Je",
+"n'aime",
+"pas",
+"le",
+"tennis."
+],
+"a": [
+"Je n'aime pas le tennis."
+],
+"sayA": "au/927705e47bdd8fbb.mp3"
+},
+{
+"t": "order",
+"q": "Ordena la frase en negativo:",
+"words": [
+"Elle",
+"n'aime",
+"pas",
+"les",
+"robots."
+],
+"a": [
+"Elle n'aime pas les robots."
+],
+"sayA": "au/5cc3746541b07016.mp3"
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Je ne aime pas le basket.",
+"Je n'aime pas le basket.",
+"Je n'aime le basket pas."
+],
+"a": 1,
+"why": "**ne** + vocal → **n'**; y **pas** va justo después del verbo."
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Nous n'aimons pas la danse.",
+"Nous ne aimons pas la danse.",
+"Nous n'aimons la danse pas."
+],
+"a": 0
+},
+{
+"t": "type",
+"q": "Escribe en francés: «No me gusta el fútbol.»",
+"a": [
+"Je n'aime pas le foot.",
+"Je n'aime pas le football."
+],
+"ph": "Je n'…"
+},
+{
+"t": "type",
+"q": "Escribe en francés: «Me gustan los regalos.»",
+"a": [
+"J'aime les cadeaux."
+],
+"ph": "J'…"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Le gusta 😍 o no 😖?",
+"opts": [
+"Le gusta 😍",
+"No le gusta 😖"
+],
+"a": 1,
+"keep": true,
+"au": "au/9d5585f1f2c23cc8.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Le gusta 😍 o no 😖?",
+"opts": [
+"Le gusta 😍",
+"No le gusta 😖"
+],
+"a": 0,
+"why": "**J'adore** = me encanta 😍😍.",
+"keep": true,
+"au": "au/1fed140e0fe11357.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué le gusta a Lou?",
+"opts": [
+"la danse 💃",
+"le foot ⚽",
+"le tennis 🎾"
+],
+"a": 0,
+"au": "au/a78c42f695ed8cd6.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Il n'aime pas les livres."
+],
+"au": "au/351619c4de555bb0.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Nous aimons le chocolat."
+],
+"au": "au/69c7e639ee28effb.mp3"
+}
+],
+"film": {
+"src": "films/ch32-mes-gouts-v6.mp4",
+"dur": 65.4
+},
+"pagesLabel": "cuaderno p. 27",
+"min": 12,
+"pay": 0.1,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u3-zoom",
+"unit": 3,
+"label": "Zoom",
+"title": "Zoom sur les arts plastiques",
+"pages": "28",
+"icon": "🎨",
+"intro": "¡Visita al museo! **La Joconde** (la Mona Lisa) de **Léonard de Vinci** está en el **Louvre**, en París. Y **le Douanier Rousseau** pintó un autorretrato: «Moi-même».",
+"sections": [
+{
+"title": "El museo",
+"icon": "🖼️",
+"from": 0,
+"n": 6
+},
+{
+"title": "Las 7 diferencias · escucha",
+"icon": "🔍",
+"from": 6,
+"n": 5
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "¿Cómo se llama la Mona Lisa en francés?",
+"opts": [
+"La Joconde",
+"La Jolie",
+"La Dame"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "¿Quién pintó la Joconde?",
+"opts": [
+"Léonard de Vinci",
+"Victor Hugo",
+"Paul Pogba"
+],
+"a": 0,
+"why": "Leonardo da Vinci = **Léonard de Vinci** en francés."
+},
+{
+"t": "choice",
+"q": "¿En qué museo de París está la Joconde?",
+"opts": [
+"le Louvre",
+"la tour Eiffel",
+"le Vieux-Port"
+],
+"a": 0,
+"why": "El **Louvre**: ¿recuerdas «rue du Louvre» de la Unidad 1?"
+},
+{
+"t": "match",
+"q": "Une cada palabra con su dibujo:",
+"pairs": [
+[
+"un tableau",
+"🖼️ un cuadro"
+],
+[
+"un peintre",
+"👨‍🎨 un pintor"
+],
+[
+"un pinceau",
+"🖌️ un pincel"
+],
+[
+"une palette",
+"🎨 una paleta"
+]
+],
+"au2": [
+"au/f6745465f8536569.mp3",
+"au/25d2b0f573d1523f.mp3",
+"au/ae6e18647a248551.mp3",
+"au/8bbb7aa65ff27a0d.mp3"
+]
+},
+{
+"t": "choice",
+"q": "Para reconstruir el cuadro (puzle 3×3), la cara de la Joconde va…",
+"opts": [
+"arriba, en la columna del medio",
+"justo en el centro del cuadro",
+"abajo a la derecha"
+],
+"a": 0,
+"why": "En un retrato la cara está **arriba en el centro**; la pieza «e» del cuaderno muestra su cara."
+},
+{
+"t": "choice",
+"q": "«Moi-même» quiere decir…",
+"opts": [
+"yo mismo",
+"mi madre",
+"mi museo"
+],
+"a": 0,
+"why": "Es un **autorretrato**: el pintor se pinta a sí mismo."
+},
+{
+"t": "choice",
+"q": "Escucha la descripción. ¿Qué lleva el pintor en la mano?",
+"opts": [
+"une palette 🎨",
+"un ballon ⚽",
+"un livre 📖"
+],
+"a": 0,
+"au": "au/a923c8f95c42d027.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué hay en el cielo?",
+"opts": [
+"un ballon (globo) 🎈",
+"un avion ✈️",
+"un cerf-volant 🪁"
+],
+"a": 0,
+"why": "En el cuadro hay un **globo aerostático**: «un ballon» también puede ser un globo.",
+"au": "au/56a89003ba55ef0c.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿De qué color es la boina?",
+"opts": [
+"noir ⚫",
+"rouge 🔴",
+"bleu 🔵"
+],
+"a": 0,
+"why": "**le béret** es masculino: noir, bleu (sin -e).",
+"au": "au/8dbd5eb31fe1e74f.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 0,
+"fr": "La Joconde est au Louvre, à Paris.",
+"keep": true,
+"au": "au/5619a2a2d24c7866.mp3"
+},
+{
+"t": "choice",
+"q": "¿Verdadero o falso? (Vrai ou faux ?)",
+"opts": [
+"Vrai ✔️",
+"Faux ✖️"
+],
+"a": 1,
+"fr": "Léonard de Vinci est un footballeur.",
+"why": "Fue un **peintre** (pintor) e inventor.",
+"keep": true,
+"au": "au/1943ea500ba7b1d0.mp3"
+}
+],
+"film": {
+"src": "films/ch33-zoom-sur-les-arts-v4.mp4",
+"dur": 55.3
+},
+"pagesLabel": "cuaderno p. 28",
+"min": 5,
+"pay": 0.05,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u3-l3",
+"unit": 3,
+"label": "Lección 3",
+"title": "Moi, j'aime…",
+"pages": "29",
+"icon": "🛹",
+"intro": "Artículos **le, la, l', les**, la frase en negativo con **ne… pas** y pedir algo con educación: **Je voudrais** un chocolat, **s'il te plaît**.",
+"sections": [
+{
+"title": "Del cuaderno · p. 29",
+"icon": "📒",
+"from": 0,
+"n": 12
+},
+{
+"title": "Más práctica · je voudrais / j'aimerais",
+"icon": "💪",
+"from": 12,
+"n": 7
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 19,
+"n": 3
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Artículo definido:",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 1,
+"fr": "____ danse",
+"keep": true,
+"sayA": "au/d5499529d3286c10.mp3",
+"show": "la danse"
+},
+{
+"t": "choice",
+"q": "Artículo definido:",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 0,
+"fr": "____ film",
+"keep": true,
+"sayA": "au/d353ee6f38e071db.mp3",
+"show": "le film"
+},
+{
+"t": "choice",
+"q": "Artículo definido:",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 3,
+"fr": "____ cadeaux",
+"keep": true,
+"sayA": "au/2f6210156cddd674.mp3",
+"show": "les cadeaux"
+},
+{
+"t": "choice",
+"q": "Artículo definido:",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 2,
+"fr": "____ordinateur",
+"keep": true,
+"sayA": "au/f249e5181e9ae74e.mp3",
+"show": "l'ordinateur"
+},
+{
+"t": "type",
+"q": "Ponlo en negativo: «J'aime le tennis.»",
+"a": [
+"Je n'aime pas le tennis."
+],
+"ph": "Je n'…"
+},
+{
+"t": "type",
+"q": "Ponlo en negativo: «Tu aimes le basket.»",
+"a": [
+"Tu n'aimes pas le basket."
+],
+"ph": "Tu n'…"
+},
+{
+"t": "type",
+"q": "Ponlo en negativo: «Elle aime les jeux vidéo.»",
+"a": [
+"Elle n'aime pas les jeux vidéo.",
+"Elle n'aime pas les jeux vidéos."
+],
+"ph": "Elle n'…"
+},
+{
+"t": "type",
+"q": "Ponlo en negativo: «Nous aimons la musique.»",
+"a": [
+"Nous n'aimons pas la musique."
+],
+"ph": "Nous n'…"
+},
+{
+"t": "type",
+"q": "Como en el ejemplo «Je voudrais un skateboard, s'il te plaît.»: vouloir / chocolat 🍫",
+"a": [
+"Je voudrais un chocolat, s'il te plaît.",
+"Je voudrais un chocolat.",
+"Je voudrais un chocolat s'il te plaît.",
+"Je voudrais un chocolat, s'il vous plaît.",
+"Je voudrais un chocolat s'il vous plaît.",
+"Je voudrais du chocolat.",
+"Je voudrais du chocolat, s'il te plaît.",
+"Je voudrais du chocolat s'il te plaît.",
+"Je voudrais du chocolat, s'il vous plaît.",
+"Je voudrais du chocolat s'il vous plaît."
+],
+"ph": "Je voudrais …"
+},
+{
+"t": "type",
+"q": "aimer / puzzle 🧩 → «J'aime…»",
+"a": [
+"J'aime les puzzles.",
+"J'aime le puzzle.",
+"J'aime faire des puzzles."
+],
+"ph": "J'aime …"
+},
+{
+"t": "type",
+"q": "Como en el ejemplo: vouloir / jus d'orange 🧃 (zumo de naranja)",
+"a": [
+"Je voudrais un jus d'orange, s'il te plaît.",
+"Je voudrais un jus d'orange.",
+"Je voudrais un jus d'orange s'il te plaît.",
+"Je voudrais un jus d'orange, s'il vous plaît.",
+"Je voudrais un jus d'orange s'il vous plaît."
+],
+"ph": "Je voudrais …"
+},
+{
+"t": "type",
+"q": "aimer / jeu vidéo 🎮 → «J'aime…»",
+"a": [
+"J'aime les jeux vidéo.",
+"J'aime le jeu vidéo.",
+"J'aime les jeux vidéos."
+],
+"ph": "J'aime …"
+},
+{
+"t": "choice",
+"q": "¿Qué es lo más educado para pedir?",
+"opts": [
+"Je veux un chocolat !",
+"Je voudrais un chocolat, s'il te plaît.",
+"Chocolat !"
+],
+"a": 1,
+"why": "**Je voudrais** = me gustaría / quisiera (muy educado)."
+},
+{
+"t": "choice",
+"q": "«s'il te plaît» quiere decir…",
+"opts": [
+"por favor",
+"gracias",
+"de nada"
+],
+"a": 0,
+"why": "**s'il te plaît** (a un amigo) · **s'il vous plaît** (a un adulto). **merci** = gracias."
+},
+{
+"t": "choice",
+"q": "Le pides algo a la vendedora (adulta). Dices…",
+"opts": [
+"…, s'il te plaît.",
+"…, s'il vous plaît."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "order",
+"q": "Ordena:",
+"words": [
+"Je",
+"voudrais",
+"un",
+"skateboard,",
+"s'il",
+"te",
+"plaît."
+],
+"a": [
+"Je voudrais un skateboard, s'il te plaît."
+],
+"sayA": "au/3e34bd3f81033091.mp3"
+},
+{
+"t": "order",
+"q": "Ordena:",
+"words": [
+"J'aimerais",
+"une",
+"poupée",
+"pour",
+"mon",
+"anniversaire."
+],
+"a": [
+"J'aimerais une poupée pour mon anniversaire."
+],
+"sayA": "au/48bbd9efc085dcae.mp3"
+},
+{
+"t": "match",
+"q": "¿Qué pides? Une:",
+"pairs": [
+[
+"Je voudrais un jus d'orange.",
+"🧃"
+],
+[
+"Je voudrais un croissant.",
+"🥐"
+],
+[
+"Je voudrais une pizza.",
+"🍕"
+],
+[
+"Je voudrais un ballon.",
+"⚽"
+]
+],
+"au2": [
+"au/2bd70e1b4f1ec1c8.mp3",
+"au/30914203652a44c2.mp3",
+"au/7eb4676dc9c833ad.mp3",
+"au/b3d4c809310144d9.mp3"
+]
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Je n'aime pas la pizza.",
+"Je ne aime pas la pizza.",
+"Je n'aime la pizza pas."
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué quiere?",
+"opts": [
+"un chocolat 🍫",
+"un jus d'orange 🧃",
+"un croissant 🥐"
+],
+"a": 1,
+"au": "au/0a8d90c5f9d633eb.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué no le gusta?",
+"opts": [
+"le tennis 🎾",
+"le basket 🏀",
+"le foot ⚽"
+],
+"a": 1,
+"au": "au/1ae69144c191f7aa.mp3"
+},
+{
+"t": "type",
+"q": "Escucha y escribe:",
+"a": [
+"Je voudrais un puzzle, s'il te plaît.",
+"Je voudrais un puzzle s'il te plaît."
+],
+"au": "au/a25ab5387aee20e3.mp3"
+}
+],
+"film": {
+"src": "films/ch34-moi-j-aime-v7.mp4",
+"dur": 67.3
+},
+"pagesLabel": "cuaderno p. 29",
+"min": 10,
+"pay": 0.08,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u3-culture",
+"unit": 3,
+"label": "Cultura + Lectura",
+"title": "Les jeux dans le monde",
+"pages": "30–31",
+"icon": "🌏",
+"intro": "Juegos de todo el mundo, la historia de la **cometa** (le cerf-volant) y una entrevista con el futbolista **Paul Pogba**.",
+"sections": [
+{
+"title": "Los juegos del mundo · p. 30",
+"icon": "🌍",
+"from": 0,
+"n": 8
+},
+{
+"title": "Lectura · Paul Pogba · p. 31",
+"icon": "⚽",
+"from": 8,
+"n": 6
+}
+],
+"items": [
+{
+"t": "match",
+"q": "Une cada juego con su país:",
+"pairs": [
+[
+"le cerf-volant 🪁",
+"la Chine 🇨🇳"
+],
+[
+"le baseball ⚾",
+"les États-Unis 🇺🇸"
+],
+[
+"l'awalé (semillas) 🌰",
+"la Côte d'Ivoire 🇨🇮"
+],
+[
+"la luge 🛷",
+"le Canada 🇨🇦"
+]
+]
+},
+{
+"t": "choice",
+"q": "¿Cómo se dice «el trineo» en francés?",
+"opts": [
+"la luge",
+"le luge",
+"la lune"
+],
+"a": 0
+},
+{
+"t": "type",
+"q": "🪁 Escribe el nombre con el artículo (como en la p. 30):",
+"a": [
+"le cerf-volant",
+"un cerf-volant"
+],
+"ph": "le …"
+},
+{
+"t": "type",
+"q": "🛷 Escribe el nombre con el artículo:",
+"a": [
+"la luge",
+"une luge"
+],
+"ph": "la …"
+},
+{
+"t": "type",
+"q": "⚾ Escribe el nombre con el artículo:",
+"a": [
+"le baseball",
+"un baseball",
+"le base-ball"
+],
+"ph": "le …"
+},
+{
+"t": "choice",
+"q": "Lee: «Le cerf-volant existe en Chine depuis 3000 ans !» ¿De dónde viene la cometa?",
+"opts": [
+"de Chine 🇨🇳",
+"de France 🇫🇷",
+"d'Espagne 🇪🇸"
+],
+"a": 0,
+"fr": "Le cerf-volant existe en Chine depuis 3000 ans !",
+"au": "au/b384d598bcd6e27b.mp3"
+},
+{
+"t": "choice",
+"q": "¿Cómo se llama la cometa en V?",
+"opts": [
+"le cerf-volant Eddy",
+"le cerf-volant Chine",
+"le deltaplane"
+],
+"a": 0,
+"fr": "En 1890, William Eddy invente le cerf-volant en V. On l'appelle le cerf-volant Eddy.",
+"au": "au/b5efb2953738c653.mp3"
+},
+{
+"t": "choice",
+"q": "¿Cuál es un «descendiente» de la cometa?",
+"opts": [
+"le parapente",
+"le vélo",
+"le train"
+],
+"a": 0,
+"fr": "Le cerf-volant est l'ancêtre du deltaplane, du parapente et des ULM.",
+"why": "**le deltaplane**, **le parapente** y **l'ULM** vuelan gracias a **un ala**, como la cometa.",
+"au": "au/f614ba368fa03b61.mp3"
+},
+{
+"t": "choice",
+"q": "Paul Pogba est champion du monde de…",
+"opts": [
+"foot ⚽",
+"rugby 🏉",
+"tennis 🎾"
+],
+"a": 0,
+"fr": "Paul Pogba est français. C'est un footballeur. En 2018, il est champion du monde.",
+"au": "au/5a512024efbebb1e.mp3"
+},
+{
+"t": "choice",
+"q": "Paul Pogba aime la couleur…",
+"opts": [
+"rouge 🔴",
+"verte 🟢",
+"bleue 🔵"
+],
+"a": 2,
+"fr": "Journaliste : Quelle couleur tu aimes ? — Paul Pogba : Le bleu ! C'est le nom de mon équipe ! — Journaliste : Qu'est-ce que tu aimes ? — Paul Pogba : Le foot bien sûr ! Mais j'aime aussi le hip hop !",
+"au": "au/cc8414918ff54876.mp3"
+},
+{
+"t": "choice",
+"q": "Paul Pogba aime aussi…",
+"opts": [
+"la danse classique 🩰",
+"le hip hop 🕺",
+"le hockey 🏒"
+],
+"a": 1,
+"fr": "Journaliste : Quelle couleur tu aimes ? — Paul Pogba : Le bleu ! C'est le nom de mon équipe ! — Journaliste : Qu'est-ce que tu aimes ? — Paul Pogba : Le foot bien sûr ! Mais j'aime aussi le hip hop !",
+"auto": false,
+"au": "au/cc8414918ff54876.mp3"
+},
+{
+"t": "choice",
+"q": "¿Quién es su mejor amigo?",
+"opts": [
+"Antoine Griezmann",
+"Léonard de Vinci",
+"William Eddy"
+],
+"a": 0,
+"fr": "Et ton meilleur ami, qui c'est ? — C'est Antoine Griezmann. Il est aussi footballeur.",
+"au": "au/355445af6d3e9cdb.mp3"
+},
+{
+"t": "choice",
+"q": "«Les Bleus» es el nombre de…",
+"opts": [
+"el equipo de Francia",
+"un color de pintura",
+"un juego"
+],
+"a": 0,
+"why": "Al equipo de fútbol de Francia lo llaman **les Bleus** (los azules)."
+},
+{
+"t": "type",
+"q": "Escribe en francés: «Me gusta el fútbol.»",
+"a": [
+"J'aime le foot.",
+"J'aime le football."
+],
+"ph": "J'aime …"
+}
+],
+"pagesLabel": "cuaderno p. 30–31",
+"min": 7,
+"pay": 0.06,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u3-delf",
+"unit": 3,
+"label": "DELF",
+"title": "DELF Prim · J'aime jouer",
+"pages": "32–33",
+"icon": "📝",
+"intro": "Como el examen **DELF Prim**: escuchar diálogos en una tienda, leer un cartel de cine y rellenar una ficha.",
+"sections": [
+{
+"title": "Comprensión oral · p. 32",
+"icon": "🎧",
+"from": 0,
+"n": 6
+},
+{
+"title": "Comprensión escrita · p. 33",
+"icon": "🎬",
+"from": 6,
+"n": 4
+},
+{
+"title": "Producción escrita · la ficha de Hugo",
+"icon": "✍️",
+"from": 10,
+"n": 9
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Escucha. ¿De qué hablan?",
+"opts": [
+"un gratinado / una lasaña 🍲",
+"un coche amarillo 🚕",
+"material de dibujo 🖍️"
+],
+"a": 1,
+"au": "au/9e26de66f0aa93d1.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿De qué hablan?",
+"opts": [
+"material de dibujo 🖍️",
+"un regalo 🎁",
+"un coche 🚗"
+],
+"a": 0,
+"au": "au/364beabc0f5de247.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha el diálogo. ¿Cómo se llama la vendedora?",
+"opts": [
+"Lara",
+"Sarah",
+"Samia"
+],
+"a": 2,
+"au": "au/a636037c03ee2a16.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué NO le gusta a Léo?",
+"opts": [
+"los superhéroes 🦸",
+"los cómics 📘",
+"los videojuegos 🎮"
+],
+"a": 2,
+"au": "au/d76d78aca22a91bf.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué le gusta a Léo?",
+"opts": [
+"el fútbol ⚽",
+"el monopatín 🛹",
+"la música 🎧"
+],
+"a": 2,
+"why": "«J'aime **la musique**» 🎧.",
+"au": "au/d76d78aca22a91bf.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué compra Tom?",
+"opts": [
+"une bande dessinée 📘",
+"un jeu vidéo 🎮",
+"un ballon de foot ⚽"
+],
+"a": 0,
+"why": "**une bande dessinée** (una BD) = un cómic.",
+"au": "au/28c5b167689a0730.mp3"
+},
+{
+"t": "choice",
+"q": "¿Cuándo es la fiesta del cine?",
+"opts": [
+"13 de abril",
+"14 de marzo",
+"10 de marzo"
+],
+"a": 1,
+"fr": "C'est la fête du cinéma du mercredi 12 au samedi 15 mars.",
+"why": "Del 12 al 15 de **marzo** (mars): el 14 está dentro.",
+"au": "au/bfc991c57f39604a.mp3"
+},
+{
+"t": "choice",
+"q": "¿Qué tarjeta da el descuento?",
+"opts": [
+"la carte d'identité",
+"la carte « Fête du cinéma »",
+"la carte bancaire"
+],
+"a": 1,
+"fr": "Avec la carte « Fête du cinéma », les films sont à 2 euros !",
+"au": "au/9f1a752aaba61b78.mp3"
+},
+{
+"t": "choice",
+"q": "¿Cuánto cuesta una película?",
+"opts": [
+"1 euro",
+"2 euros",
+"5 euros"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Dónde hay más información?",
+"opts": [
+"por teléfono ☎️",
+"por carta ✉️",
+"en la web 🌐"
+],
+"a": 2,
+"fr": "Les informations sont sur notre site Internet.",
+"au": "au/4f91e975970a3c93.mp3"
+},
+{
+"t": "type",
+"q": "Hugo tiene once años. Âge :",
+"a": [
+"onze ans",
+"11 ans"
+],
+"fr": "Âge : ____",
+"sayA": "au/ded683bc673e8fed.mp3",
+"show": "Âge : onze ans"
+},
+{
+"t": "type",
+"q": "Su color preferido es el azul. Couleur préférée :",
+"a": [
+"le bleu",
+"bleu"
+],
+"fr": "Couleur préférée : ____",
+"sayA": "au/f082a39d5e94956c.mp3",
+"show": "Couleur préférée : le bleu"
+},
+{
+"t": "type",
+"q": "Le encanta el fútbol. Une activité ❤ : (escribe «J'aime le foot.»)",
+"a": [
+"J'aime le foot.",
+"J'aime le football."
+],
+"ph": "J'aime …"
+},
+{
+"t": "choice",
+"q": "🎻 Mira la tarjeta (p. 32). ¿Cómo lo dices?",
+"opts": [
+"J'aime le violon.",
+"J'aime la violon.",
+"J'aime l'violon."
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "🎭 ¿Cómo lo dices?",
+"opts": [
+"J'aime le théâtre.",
+"J'aime la théâtre.",
+"J'aime les théâtre."
+],
+"a": 0
+},
+{
+"t": "type",
+"q": "🥊 No te gusta el boxeo: escribe la frase.",
+"a": [
+"Je n'aime pas la boxe."
+],
+"ph": "Je n'aime pas …"
+},
+{
+"t": "type",
+"q": "🏫 Te gusta el colegio: escribe la frase.",
+"a": [
+"J'aime l'école."
+],
+"why": "**l'école** (con l' porque empieza por vocal).",
+"ph": "J'aime …"
+},
+{
+"t": "type",
+"q": "No le gusta bailar. Une activité 💔 : (escribe «Je n'aime pas la danse.»)",
+"a": [
+"Je n'aime pas la danse.",
+"Je n'aime pas danser."
+],
+"ph": "Je n'aime pas …"
+},
+{
+"t": "type",
+"q": "Su deseo: un cerf-volant. (escribe «J'aimerais un cerf-volant.»)",
+"a": [
+"J'aimerais un cerf-volant.",
+"Je voudrais un cerf-volant."
+],
+"ph": "J'aimerais …"
+}
+],
+"pagesLabel": "cuaderno p. 32–33",
+"min": 8,
+"pay": 0.07,
+"subjectShort": "Francés"
+},
+{
+"id": "fr-u3-eval",
+"unit": 3,
+"label": "Evaluación",
+"title": "Évaluation · Unité 3",
+"pages": "34",
+"icon": "🏅",
+"intro": "El examen de la p. 34 y un repaso con los errores típicos (y un poco de la Unidad 1).",
+"sections": [
+{
+"title": "Évaluation · p. 34",
+"icon": "📒",
+"from": 0,
+"n": 20
+},
+{
+"title": "Repaso · ¡sin errores!",
+"icon": "🎯",
+"from": 20,
+"n": 8
+}
+],
+"items": [
+{
+"t": "type",
+"q": "Expresa un deseo: 🍫",
+"a": [
+"J'aimerais un chocolat.",
+"J'aimerais un chocolat, s'il te plaît.",
+"J'aimerais un chocolat s'il te plaît.",
+"J'aimerais un chocolat, s'il vous plaît.",
+"J'aimerais un chocolat s'il vous plaît.",
+"J'aimerais du chocolat.",
+"J'aimerais du chocolat, s'il te plaît.",
+"J'aimerais du chocolat s'il te plaît.",
+"J'aimerais du chocolat, s'il vous plaît.",
+"J'aimerais du chocolat s'il vous plaît.",
+"Je voudrais un chocolat.",
+"Je voudrais un chocolat, s'il te plaît.",
+"Je voudrais un chocolat s'il te plaît.",
+"Je voudrais un chocolat, s'il vous plaît.",
+"Je voudrais un chocolat s'il vous plaît.",
+"Je voudrais du chocolat.",
+"Je voudrais du chocolat, s'il te plaît.",
+"Je voudrais du chocolat s'il te plaît.",
+"Je voudrais du chocolat, s'il vous plaît.",
+"Je voudrais du chocolat s'il vous plaît."
+],
+"ph": "J'aimerais …"
+},
+{
+"t": "type",
+"q": "Expresa un deseo: 🧃 (zumo de naranja)",
+"a": [
+"Je voudrais un jus d'orange.",
+"Je voudrais un jus d'orange, s'il te plaît.",
+"Je voudrais un jus d'orange s'il te plaît.",
+"Je voudrais un jus d'orange, s'il vous plaît.",
+"Je voudrais un jus d'orange s'il vous plaît.",
+"J'aimerais un jus d'orange.",
+"J'aimerais un jus d'orange, s'il te plaît.",
+"J'aimerais un jus d'orange s'il te plaît.",
+"J'aimerais un jus d'orange, s'il vous plaît.",
+"J'aimerais un jus d'orange s'il vous plaît."
+],
+"ph": "Je voudrais …"
+},
+{
+"t": "type",
+"q": "Expresa un deseo: 🛹",
+"a": [
+"J'aimerais un skateboard.",
+"J'aimerais un skateboard, s'il te plaît.",
+"J'aimerais un skateboard s'il te plaît.",
+"J'aimerais un skateboard, s'il vous plaît.",
+"J'aimerais un skateboard s'il vous plaît.",
+"Je voudrais un skateboard.",
+"Je voudrais un skateboard, s'il te plaît.",
+"Je voudrais un skateboard s'il te plaît.",
+"Je voudrais un skateboard, s'il vous plaît.",
+"Je voudrais un skateboard s'il vous plaît."
+],
+"ph": "J'aimerais …"
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 3,
+"fr": "Arthur aime ____ croissants.",
+"keep": true,
+"sayA": "au/3456754de6dd4eb7.mp3",
+"show": "Arthur aime les croissants."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"Le",
+"La",
+"L'",
+"Les"
+],
+"a": 2,
+"fr": "____école est rue des Plantes.",
+"keep": true,
+"sayA": "au/14b58b52ad7b48c1.mp3",
+"show": "L'école est rue des Plantes."
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"le",
+"la",
+"l'",
+"les"
+],
+"a": 2,
+"fr": "C'est ____anniversaire de Ninon !",
+"keep": true,
+"sayA": "au/33504db65785ef67.mp3",
+"show": "C'est l'anniversaire de Ninon !"
+},
+{
+"t": "choice",
+"q": "Completa:",
+"opts": [
+"Le",
+"La",
+"L'",
+"Les"
+],
+"a": 1,
+"fr": "____ maîtresse s'appelle Agathe.",
+"keep": true,
+"sayA": "au/c6fe2c2f15fbf965.mp3",
+"show": "La maîtresse s'appelle Agathe."
+},
+{
+"t": "type",
+"q": "Escribe lo contrario: «Paul aime le foot.»",
+"a": [
+"Paul n'aime pas le foot.",
+"Paul n'aime pas le football."
+]
+},
+{
+"t": "type",
+"q": "Escribe lo contrario: «Lisa n'aime pas chanter.»",
+"a": [
+"Lisa aime chanter."
+]
+},
+{
+"t": "type",
+"q": "Escribe lo contrario: «Tom aime la pizza.»",
+"a": [
+"Tom n'aime pas la pizza."
+]
+},
+{
+"t": "type",
+"q": "Completa con **aimer**:",
+"a": [
+"aime"
+],
+"fr": "J'____ les hamburgers.",
+"sayA": "au/ef452bdf178f6acb.mp3",
+"show": "J'aime les hamburgers."
+},
+{
+"t": "type",
+"q": "Completa con **aimer**:",
+"a": [
+"aime"
+],
+"fr": "Lou ____ Paris.",
+"sayA": "au/d81d962f591d043f.mp3",
+"show": "Lou aime Paris."
+},
+{
+"t": "type",
+"q": "Completa con **aimer**:",
+"a": [
+"aiment"
+],
+"fr": "Théo et Amina ____ les cerfs-volants.",
+"sayA": "au/b758561120d5efe3.mp3",
+"show": "Théo et Amina aiment les cerfs-volants."
+},
+{
+"t": "type",
+"q": "Completa con **aimer**:",
+"a": [
+"aimes"
+],
+"fr": "Tu ____ les bandes dessinées ?",
+"sayA": "au/67fcb6a8007ef229.mp3",
+"show": "Tu aimes les bandes dessinées ?"
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] 🐍 o [z] 🐝?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 1,
+"keep": true,
+"au": "au/a55d9d1f4be3d7a1.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] 🐍 o [z] 🐝?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 0,
+"keep": true,
+"au": "au/87d95af8c149315a.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] 🐍 o [z] 🐝?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 1,
+"keep": true,
+"au": "au/98599ce071353226.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] 🐍 o [z] 🐝?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 0,
+"keep": true,
+"au": "au/84c26437e59aed48.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] 🐍 o [z] 🐝?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 1,
+"keep": true,
+"au": "au/83d3f5a5ee946492.mp3"
+},
+{
+"t": "choice",
+"q": "¿Oyes [s] 🐍 o [z] 🐝?",
+"opts": [
+"[s] 🐍",
+"[z] 🐝"
+],
+"a": 0,
+"keep": true,
+"au": "au/64522ce571aa5f13.mp3"
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"la vélo",
+"le vélo"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Je ne aime pas",
+"Je n'aime pas"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Les cadeaux est pour Tom.",
+"Les cadeaux sont pour Tom."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "¿Cuál está bien?",
+"opts": [
+"Tu aime le foot ?",
+"Tu aimes le foot ?"
+],
+"a": 1,
+"why": "Con **tu**: **-s** (igual que tu habite**s** de la Unidad 1).",
+"keep": true
+},
+{
+"t": "choice",
+"q": "Unidad 1: ¿cuál está bien?",
+"opts": [
+"Il s'apelle Léo.",
+"Il s'appelle Léo."
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "choice",
+"q": "Unidad 1: ¿cuál está bien?",
+"opts": [
+"J'ai dix ans.",
+"J' dix ans."
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "type",
+"q": "Dictado final:",
+"a": [
+"Pour mon anniversaire, j'aimerais un vélo.",
+"Pour mon anniversaire j'aimerais un vélo."
+],
+"au": "au/4e4dc538d5b75396.mp3"
+},
+{
+"t": "type",
+"q": "Dictado final:",
+"a": [
+"Elle n'aime pas les jeux vidéo.",
+"Elle n'aime pas les jeux vidéos."
+],
+"au": "au/9acfa23065f9df62.mp3"
+}
+],
+"pagesLabel": "cuaderno p. 34",
+"min": 11,
+"pay": 0.09,
 "subjectShort": "Francés"
 }
 ]);
