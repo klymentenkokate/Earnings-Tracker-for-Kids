@@ -6575,5 +6575,1015 @@ schoolRegister({"id": "ma", "name": "Mates", "emoji": "🔢", "book": "Cuaderno 
 "min": 9,
 "pay": 0.07,
 "subjectShort": "Mates"
+},
+{
+"id": "ma-u5-l1",
+"unit": 5,
+"label": "Lección 1",
+"title": "Problemas (I) y (II)",
+"pages": "25–26",
+"icon": "🏎️",
+"intro": "Para resolver un problema: **1)** lee despacio y busca los **datos** · **2)** piensa **qué te preguntan** · **3)** elige la **operación** · **4)** calcula · **5)** ¿**tiene sentido** el resultado? Hoy: carreras, fresas, bodas de oro, vacas, ruedas, pasos y collares 🏎️",
+"sections": [
+{
+"title": "p. 25 · la carrera de Fernando",
+"icon": "🏎️",
+"from": 0,
+"n": 5
+},
+{
+"title": "p. 25 · la campaña de la fresa",
+"icon": "🍓",
+"from": 5,
+"n": 2
+},
+{
+"title": "p. 25 · las bodas de oro",
+"icon": "💛",
+"from": 7,
+"n": 3
+},
+{
+"title": "p. 25 · las vacas y los toros",
+"icon": "🐄",
+"from": 10,
+"n": 3
+},
+{
+"title": "p. 26 · el taller de ruedas",
+"icon": "🛞",
+"from": 13,
+"n": 4
+},
+{
+"title": "p. 26 · los pasos de María",
+"icon": "👟",
+"from": 17,
+"n": 2
+},
+{
+"title": "p. 26 · mascarillas y collares",
+"icon": "🩺",
+"from": 19,
+"n": 3
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 22,
+"n": 1
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "¿Qué operación hay que hacer cuando un coche **adelanta** a otros?",
+"opts": [
+"sumar posiciones",
+"restar posiciones"
+],
+"a": 1,
+"keep": true,
+"why": "Ir hacia el 1.º es bajar de número → **restar**."
+},
+{
+"t": "num",
+"q": "Fernando sale en la posición **20**. En la salida **adelanta a 8** coches. ¿En qué posición va?",
+"a": [
+12
+],
+"why": "Adelantar = mejorar = **restar** posiciones: 20 − 8 = **12**."
+},
+{
+"t": "num",
+"q": "En la siguiente curva **pierde 2 posiciones**. ¿Y ahora?",
+"a": [
+14
+],
+"why": "Perder posiciones = **sumar**: 12 + 2 = **14**."
+},
+{
+"t": "num",
+"q": "Al entrar a boxes **pierde 3** más. ¿Y ahora?",
+"a": [
+17
+],
+"why": "14 + 3 = **17**."
+},
+{
+"t": "num",
+"q": "Antes de acabar **adelanta a 15** coches. ¿En qué posición termina?",
+"a": [
+2
+],
+"why": "17 − 15 = **2** → ¡termina **segundo**! (20 − 8 + 2 + 3 − 15 = 2)"
+},
+{
+"t": "num",
+"q": "Fresas: febrero **226.750 kg**, marzo **305.645 kg**, abril **352.545 kg**, mayo **194.770 kg**. ¿Cuántos kg en total?",
+"a": [
+1079710
+],
+"show": "1.079.710",
+"why": "**226.750 + 305.645 + 352.545 + 194.770 = 1.079.710**"
+},
+{
+"t": "num",
+"q": "Redondea **1.079.710 kg** a las **centenas de millar**:",
+"a": [
+1100000
+],
+"show": "1.100.000",
+"why": "CM = 0, DM = **7** → sube: **1.100.000 kg** (un millón cien mil)."
+},
+{
+"t": "num",
+"q": "A la fiesta van **175 adultos**. El menú de adulto cuesta **47 €**. ¿Cuánto cuestan los adultos?",
+"a": [
+8225
+],
+"unit": "€",
+"show": "8.225",
+"why": "**175 × 47 = 8.225**"
+},
+{
+"t": "num",
+"q": "Van **35 niños**, y el menú de niño cuesta **22 €**. ¿Cuánto cuestan los niños?",
+"a": [
+770
+],
+"unit": "€",
+"show": "770",
+"why": "**35 × 22 = 770**"
+},
+{
+"t": "num",
+"q": "Los adultos cuestan **8.225 €** y los niños **770 €**. ¿Cuánto cuesta la celebración en total?",
+"a": [
+8995
+],
+"unit": "€",
+"show": "8.995",
+"why": "175 × 47 + 35 × 22 = 8.225 + 770 = **8.995 €**."
+},
+{
+"t": "num",
+"q": "El ganadero tiene **245 vacas** y deja **46** en el establo. ¿Cuántas vacas lleva a pastar?",
+"a": [
+199
+],
+"show": "199",
+"why": "**245 − 46 = 199**"
+},
+{
+"t": "num",
+"q": "Tiene **60 toros** y deja **25**. ¿Cuántos toros lleva?",
+"a": [
+35
+],
+"show": "35",
+"why": "**60 − 25 = 35**"
+},
+{
+"t": "num",
+"q": "Lleva a pastar **199 vacas** y **35 toros**. ¿Cuántas cabezas de ganado lleva en total?",
+"a": [
+234
+],
+"show": "234",
+"why": "(245 − 46) + (60 − 25) = 199 + 35 = **234**."
+},
+{
+"t": "choice",
+"q": "El taller tiene **12.450 ruedas**. Cada coche necesita **4**. ¿Qué operación dice a cuántos coches puede cambiarlas?",
+"opts": [
+"sumar",
+"restar",
+"multiplicar",
+"dividir"
+],
+"a": 3,
+"keep": true
+},
+{
+"t": "num",
+"q": "¿A cuántos coches puede cambiar las 4 ruedas?",
+"a": [
+3112
+],
+"show": "3.112",
+"why": "12.450 : 4 = **3.112**, y sobran 2 ruedas (no llegan para otro coche)."
+},
+{
+"t": "num",
+"q": "Si quiere cambiar las ruedas a **3.500 coches**, ¿cuántas ruedas necesita?",
+"a": [
+14000
+],
+"show": "14.000",
+"why": "**3.500 × 4 = 14.000**"
+},
+{
+"t": "num",
+"q": "Necesita **14.000 ruedas** y tiene **12.450**. ¿Cuántas ruedas **más** tendrá que comprar?",
+"a": [
+1550
+],
+"show": "1.550",
+"why": "**14.000 − 12.450 = 1.550**"
+},
+{
+"t": "num",
+"q": "Pasos de María: lunes **12.112**, martes **8.745**, miércoles **9.990**, jueves **11.538**, viernes **15.224**, sábado **21.317**, domingo **7.266**. ¿Cuántos en total?",
+"a": [
+86192
+],
+"show": "86.192",
+"why": "**12.112 + 8.745 + 9.990 + 11.538 + 15.224 + 21.317 + 7.266 = 86.192**"
+},
+{
+"t": "num",
+"q": "Su objetivo eran **95.000** pasos. ¿Cuántos le faltaron?",
+"a": [
+8808
+],
+"show": "8.808",
+"why": "**95.000 − 86.192 = 8.808**"
+},
+{
+"t": "num",
+"q": "En un hospital hay **235 enfermeros**. Cada uno usa **2 mascarillas** al día. ¿Cuántas mascarillas en **30 días**?",
+"a": [
+14100
+],
+"show": "14.100",
+"why": "**235 × 2 × 30 = 14.100**"
+},
+{
+"t": "num",
+"q": "Cada uno de los **235 enfermeros** usa también **6 guantes** al día. ¿Cuántos guantes en **30 días**?",
+"a": [
+42300
+],
+"show": "42.300",
+"why": "**235 × 6 × 30 = 42.300**"
+},
+{
+"t": "num",
+"q": "Un comerciante compra **15 collares**. Cada uno tiene 4 piedras verdes, 6 rojas, 8 azules y 12 amarillas. ¿Cuántas piedras hay en total?",
+"a": [
+450
+],
+"show": "450",
+"why": "Cada collar: 4 + 6 + 8 + 12 = 30 piedras → 15 × 30 = **450**."
+},
+{
+"t": "num",
+"q": "Escucha el problema:",
+"a": [
+36
+],
+"why": "48 − 12 = **36**.",
+"au": "au/9ec981844e7a0b76.mp3"
+}
+],
+"film": {
+"src": "films/ch51-problemas-v1.mp4",
+"dur": 110.6
+},
+"min": 19,
+"pay": 0.16,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u5-l2",
+"unit": 5,
+"label": "Lección 2",
+"title": "Problemas (III) y (IV)",
+"pages": "27–28",
+"icon": "🍬",
+"intro": "Muchos problemas son **cajas dentro de cajas**: 2 cajas con 3 bolsas con 5 caramelos → 2 × 3 × 5. Y **repartir** en partes iguales es **dividir**. Hoy: caramelos de Reyes, piscinas, teteras, parchís, magdalenas y balones 🍬",
+"sections": [
+{
+"title": "p. 27 · los caramelos de Reyes",
+"icon": "👑",
+"from": 0,
+"n": 3
+},
+{
+"title": "p. 27 · las piscinas",
+"icon": "🏊",
+"from": 3,
+"n": 2
+},
+{
+"title": "p. 27 · lápices y teteras",
+"icon": "🫖",
+"from": 5,
+"n": 4
+},
+{
+"title": "p. 28 · el parchís y el cumpleaños",
+"icon": "🎂",
+"from": 9,
+"n": 7
+},
+{
+"title": "p. 28 · balones y dorsales",
+"icon": "⚽",
+"from": 16,
+"n": 4
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 20,
+"n": 1
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Una caja tiene **15 bolsas** con **100 caramelos** cada una. ¿Cuántos caramelos tiene una caja?",
+"a": [
+1500
+],
+"show": "1.500",
+"why": "**15 × 100 = 1.500**"
+},
+{
+"t": "num",
+"q": "Cada carroza reparte **24 cajas**. ¿Cuántos caramelos reparte una carroza?",
+"a": [
+36000
+],
+"show": "36.000",
+"why": "**24 × 1.500 = 36.000**"
+},
+{
+"t": "num",
+"q": "¿Y las **3 carrozas** de los Reyes juntas?",
+"a": [
+108000
+],
+"show": "108.000",
+"why": "3 × 24 × 15 × 100 = **108.000** caramelos."
+},
+{
+"t": "num",
+"q": "Hay 3 piscinas: **108.000 L**, **45.000 L** y **27.000 L**. ¿Cuántos litros hacen falta para llenarlas?",
+"a": [
+180000
+],
+"show": "180.000",
+"why": "**108.000 + 45.000 + 27.000 = 180.000**"
+},
+{
+"t": "num",
+"q": "Cada camión lleva **10.000 L**. ¿Cuántos camiones hacen falta?",
+"a": [
+18
+],
+"show": "18",
+"why": "**180.000 : 10.000 = 18**"
+},
+{
+"t": "num",
+"q": "**9 cajas** con **9 estuches** cada una, y cada estuche con **9 lápices**. ¿Cuántos lápices?",
+"a": [
+729
+],
+"show": "729",
+"why": "9 × 9 × 9 = 9³ = **729**."
+},
+{
+"t": "choice",
+"q": "¿Qué es mejor para llevar más teteras: **6 cajas con 4** o **4 cajas con 6**?",
+"opts": [
+"6 cajas con 4",
+"4 cajas con 6",
+"es igual"
+],
+"a": 2,
+"keep": true,
+"why": "6 × 4 = 24 y 4 × 6 = 24 → **igual** (¡propiedad conmutativa!)."
+},
+{
+"t": "choice",
+"q": "En cada tetera caben **2 L** de té. ¿Con qué opción se transporta **más té**?",
+"opts": [
+"6 cajas con 4",
+"4 cajas con 6",
+"con las dos igual"
+],
+"a": 2,
+"keep": true,
+"why": "Las dos llevan 24 teteras → el mismo té."
+},
+{
+"t": "num",
+"q": "Con las dos opciones se llevan **24 teteras**. Si en cada tetera caben **2 L** de té, ¿cuántos litros se llevan?",
+"a": [
+48
+],
+"unit": "L",
+"show": "48",
+"why": "24 × 2 = **48 L** con cualquiera de las dos opciones."
+},
+{
+"t": "num",
+"q": "Cada parchís tiene **4 colores** con **4 fichas** cada uno. ¿Cuántas fichas para **4 parchís**?",
+"a": [
+64
+],
+"show": "64",
+"why": "**4 × 4 × 4 = 64**"
+},
+{
+"t": "num",
+"q": "Vega compra **5 cajas** de magdalenas, con **5 bolsas** cada una, y **5 magdalenas** en cada bolsa. ¿Cuántas magdalenas?",
+"a": [
+125
+],
+"show": "125",
+"why": "**5 × 5 × 5 = 125**"
+},
+{
+"t": "num",
+"q": "Tiene **125 magdalenas** y **60 invitados**. ¿Cuántas magdalenas puede comerse cada uno?",
+"a": [
+2
+],
+"why": "125 : 60 = **2** para cada uno."
+},
+{
+"t": "num",
+"q": "125 magdalenas, 2 para cada uno de los 60 invitados. ¿Cuántas magdalenas **sobran**?",
+"a": [
+5
+],
+"why": "60 × 2 = 120 → 125 − 120 = **5**."
+},
+{
+"t": "num",
+"q": "Compra **8 botellas** de zumo, y cada una llena **8 vasos**. ¿Cuántos vasos de zumo hay?",
+"a": [
+64
+],
+"show": "64",
+"why": "**8 × 8 = 64**"
+},
+{
+"t": "num",
+"q": "Hay **64 vasos** de zumo para **60 invitados**. ¿Cuántos vasos le tocan a cada uno?",
+"a": [
+1
+],
+"why": "64 : 60 = **1** vaso cada uno."
+},
+{
+"t": "num",
+"q": "64 vasos, 1 para cada uno de los 60 invitados. ¿Cuántos vasos **sobran**?",
+"a": [
+4
+],
+"why": "64 − 60 = **4**."
+},
+{
+"t": "num",
+"q": "Bianca reparte **36 balones** en **12 aulas**. ¿Cuántos por aula?",
+"a": [
+3
+],
+"show": "3",
+"why": "**36 : 12 = 3**"
+},
+{
+"t": "num",
+"q": "¿Y **18 balones** entre **6 aulas**?",
+"a": [
+3
+],
+"show": "3",
+"why": "18 : 6 = **3**. ¡El mismo! (Propiedad fundamental: 36 : 12 = 18 : 6.)"
+},
+{
+"t": "num",
+"q": "Pilar mete **180 dorsales** en sobres de **6**. ¿Cuántos sobres completa?",
+"a": [
+30
+],
+"show": "30",
+"why": "**180 : 6 = 30**"
+},
+{
+"t": "num",
+"q": "Paco mete **90 dorsales** en sobres de **3**. ¿Cuántos sobres?",
+"a": [
+30
+],
+"show": "30",
+"why": "**90 : 3 = 30**"
+},
+{
+"t": "num",
+"q": "Escucha el problema:",
+"a": [
+8
+],
+"why": "40 : 5 = **8**.",
+"au": "au/10959f2433656017.mp3"
+}
+],
+"film": {
+"src": "films/ch52-cajas-v1.mp4",
+"dur": 81.5
+},
+"min": 17,
+"pay": 0.14,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u5-l3",
+"unit": 5,
+"label": "Lección 3",
+"title": "Problemas (V) y (VI)",
+"pages": "29–30",
+"icon": "🏀",
+"intro": "Algunos problemas tienen **varios pasos** y se escriben con una **operación combinada**: 3 cajas con 10 coches y 5 motos = 3 × (10 + 5). Y en baloncesto, la **valoración** = lo bueno (se suma) − lo malo (se resta) 🏀",
+"sections": [
+{
+"title": "p. 29 · motos y coches",
+"icon": "🚗",
+"from": 0,
+"n": 4
+},
+{
+"title": "p. 29 · equipos, cajas y piezas",
+"icon": "📦",
+"from": 4,
+"n": 3
+},
+{
+"title": "p. 30 · la valoración de Pau",
+"icon": "🏀",
+"from": 7,
+"n": 5
+},
+{
+"title": "p. 30 · la valoración de Marc",
+"icon": "🏀",
+"from": 12,
+"n": 4
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 16,
+"n": 1
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Raúl tiene **8 cajas** con **29 coches y 18 motos** cada una. ¿Cuántos vehículos tiene?",
+"a": [
+376
+],
+"show": "376",
+"why": "**8 × (29 + 18) = 376**"
+},
+{
+"t": "num",
+"q": "Germán tiene **5 cajas** con **38 coches y 22 motos**. ¿Cuántos tiene?",
+"a": [
+300
+],
+"show": "300",
+"why": "**5 × (38 + 22) = 300**"
+},
+{
+"t": "num",
+"q": "Raúl tiene **376** vehículos y Germán **300**. ¿Cuántos tiene Raúl **más** que Germán?",
+"a": [
+76
+],
+"show": "76",
+"why": "**376 − 300 = 76**"
+},
+{
+"t": "num",
+"q": "Raúl tiene **376** y Germán **300**. ¿Cuántos tiene que darle Raúl a Germán para que los dos tengan **la misma cantidad**?",
+"a": [
+38
+],
+"why": "¡La mitad de la diferencia! 76 : 2 = **38** → Raúl 376 − 38 = 338 y Germán 300 + 38 = 338 ✔️ (Si le diera 76, Germán tendría más.)"
+},
+{
+"t": "num",
+"q": "En quinto hay **50** niños y niñas. ¿Cuántos equipos de **10** se forman?",
+"a": [
+5
+],
+"show": "5",
+"why": "**50 : 10 = 5**"
+},
+{
+"t": "num",
+"q": "Hay **1.400** camisetas en un almacén y **1.000** en otro. ¿Cuántas cajas de **200** se completan?",
+"a": [
+12
+],
+"show": "12",
+"why": "1.400 + 1.000 = 2.400 → 2.400 : 200 = **12**."
+},
+{
+"t": "num",
+"q": "Una caja tiene **2.432 piezas** de **4 colores**, la misma cantidad de cada uno. ¿Cuántas de cada color?",
+"a": [
+608
+],
+"show": "608",
+"why": "**2.432 : 4 = 608**"
+},
+{
+"t": "choice",
+"q": "En la valoración, ¿qué se **resta**?",
+"opts": [
+"puntos, rebotes y asistencias",
+"tiros fallados, pérdidas y faltas personales",
+"tapones y faltas recibidas"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "num",
+"q": "Pau, **1.ª parte**: suma lo bueno (puntos, rebotes, asistencias, tapones, faltas recibidas).",
+"a": [
+22
+],
+"show": "22",
+"why": "**12 + 2 + 3 + 2 + 3 = 22**",
+"pre": "Pau      1.ª  2.ª\npuntos    12   16\nrebotes    2    3\nasist.     3    1\ntapones    2    0\nf. recib.  3    4\ntiros f.   6    5\npérdidas   2    4\nf. pers.   1    3"
+},
+{
+"t": "num",
+"q": "Y resta lo malo (tiros fallados, pérdidas, faltas personales). ¿Valoración de la 1.ª parte?",
+"a": [
+13
+],
+"show": "13",
+"why": "22 − 9 = **13**.",
+"pre": "Pau      1.ª  2.ª\npuntos    12   16\nrebotes    2    3\nasist.     3    1\ntapones    2    0\nf. recib.  3    4\ntiros f.   6    5\npérdidas   2    4\nf. pers.   1    3"
+},
+{
+"t": "num",
+"q": "¿Valoración de Pau en la **2.ª parte**?",
+"a": [
+12
+],
+"show": "12",
+"why": "24 − 12 = **12**.",
+"pre": "Pau      1.ª  2.ª\npuntos    12   16\nrebotes    2    3\nasist.     3    1\ntapones    2    0\nf. recib.  3    4\ntiros f.   6    5\npérdidas   2    4\nf. pers.   1    3"
+},
+{
+"t": "num",
+"q": "Pau sacó **13** en la 1.ª parte y **12** en la 2.ª. ¿Valoración **total**?",
+"a": [
+25
+],
+"show": "25",
+"why": "**13 + 12 = 25**"
+},
+{
+"t": "num",
+"q": "Valoración de Marc en la **1.ª parte** (lo bueno − lo malo):",
+"a": [
+17
+],
+"show": "17",
+"why": "21 − 4 = **17**.",
+"pre": "Marc     1.ª  2.ª\npuntos     6    9\nrebotes    5    4\nasist.     2    4\ntapones    2    1\nf. recib.  6    5\ntiros f.   2    3\npérdidas   1    2\nf. pers.   1    1"
+},
+{
+"t": "num",
+"q": "Valoración de Marc en la **2.ª parte** (lo bueno − lo malo):",
+"a": [
+17
+],
+"show": "17",
+"why": "23 − 6 = **17**.",
+"pre": "Marc     1.ª  2.ª\npuntos     6    9\nrebotes    5    4\nasist.     2    4\ntapones    2    1\nf. recib.  6    5\ntiros f.   2    3\npérdidas   1    2\nf. pers.   1    1"
+},
+{
+"t": "num",
+"q": "Marc sacó **17** en cada parte. ¿Valoración **total**?",
+"a": [
+34
+],
+"show": "34",
+"why": "**17 + 17 = 34**"
+},
+{
+"t": "choice",
+"q": "Pau: **25** · Marc: **34**. ¿Quién ha tenido **mejor** valoración total?",
+"opts": [
+"Pau",
+"Marc",
+"empate"
+],
+"a": 1,
+"keep": true,
+"why": "Marc 34 > Pau 25. ¡Aunque Pau metió más puntos!"
+},
+{
+"t": "num",
+"q": "Escucha el problema:",
+"a": [
+18
+],
+"why": "3 × 6 = **18**.",
+"au": "au/b31bb06de5c02224.mp3"
+}
+],
+"film": {
+"src": "films/ch53-valoracion-v1.mp4",
+"dur": 86.1
+},
+"min": 14,
+"pay": 0.12,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u5-l4",
+"unit": 5,
+"label": "Lección 4",
+"title": "Problemas (VII) · ¿y el resto?",
+"pages": "31",
+"icon": "📦",
+"intro": "En los problemas de **repartir**, el **resto** también cuenta: ¿cuántas cajas se **completan**? ¿cuántos **sobran**? ¿cuántos **faltan** para otra? Truco del día: si sobran 3 cromos y en un sobre caben 5, ¡faltan 2 para llenar otro! 📦",
+"sections": [
+{
+"title": "p. 31 · los balones de Asier",
+"icon": "🤾",
+"from": 0,
+"n": 4
+},
+{
+"title": "p. 31 · las canicas de Amaya",
+"icon": "🔮",
+"from": 4,
+"n": 2
+},
+{
+"title": "p. 31 · las pelotas de tenis",
+"icon": "🎾",
+"from": 6,
+"n": 3
+},
+{
+"title": "¿Qué hago con el resto?",
+"icon": "🤔",
+"from": 9,
+"n": 3
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 12,
+"n": 1
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "Asier mete **1.270 balones** en cajas de **18**. ¿Qué operación hace?",
+"opts": [
+"sumar",
+"restar",
+"multiplicar",
+"dividir"
+],
+"a": 3,
+"keep": true
+},
+{
+"t": "num",
+"q": "**1.270 balones** en cajas de **18**. ¿Cuántas cajas puede **completar**?",
+"a": [
+70
+],
+"why": "1.270 : 18 = **70** cajas llenas."
+},
+{
+"t": "num",
+"q": "Llena **70 cajas** de 18 con sus 1.270 balones. ¿Cuántos balones **sobran**?",
+"a": [
+10
+],
+"why": "18 × 70 = 1.260 → 1.270 − 1.260 = **10**."
+},
+{
+"t": "num",
+"q": "Le sobran **10 balones** y en una caja caben **18**. ¿Cuántos balones **más** necesita para completar **otra** caja?",
+"a": [
+8
+],
+"why": "En la caja caben 18 y tiene 10 → 18 − 10 = **8**."
+},
+{
+"t": "num",
+"q": "Amaya da **23 canicas** a cada uno de sus **24 alumnos**. ¿Cuántas reparte?",
+"a": [
+552
+],
+"show": "552",
+"why": "**24 × 23 = 552**"
+},
+{
+"t": "num",
+"q": "Le **sobran 18**. ¿Cuántas canicas había en la bolsa?",
+"a": [
+570
+],
+"show": "570",
+"why": "24 × 23 + 18 = **570**. ¡Es la prueba de la división: d × c + r!"
+},
+{
+"t": "num",
+"q": "Una máquina hace **8.640 pelotas** al día. En cada bote van **3**. ¿Cuántos botes llena?",
+"a": [
+2880
+],
+"show": "2.880",
+"why": "**8.640 : 3 = 2.880**"
+},
+{
+"t": "num",
+"q": "En cada caja van **24 botes**. ¿Cuántas cajas necesitan al día?",
+"a": [
+120
+],
+"show": "120",
+"why": "**2.880 : 24 = 120**"
+},
+{
+"t": "choice",
+"q": "También se puede hacer así: 8.640 : (3 × 24) = 8.640 : 72 = 120.",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 0,
+"keep": true,
+"why": "En cada caja van 3 × 24 = 72 pelotas → 8.640 : 72 = **120** ✔️"
+},
+{
+"t": "choice",
+"q": "**50 niños** van de excursión en coches de **4**. ¿Cuántos coches hacen falta?",
+"opts": [
+"12",
+"13",
+"12,5"
+],
+"a": 1,
+"keep": true,
+"why": "50 : 4 = 12, resto 2… ¡pero esos 2 niños también tienen que ir! → **13** coches."
+},
+{
+"t": "choice",
+"q": "Tengo **30 €** y cada entrada cuesta **4 €**. ¿Cuántas entradas puedo comprar?",
+"opts": [
+"7",
+"8"
+],
+"a": 0,
+"keep": true,
+"why": "30 : 4 = 7, resto 2 → con 2 € no llega para otra → **7**."
+},
+{
+"t": "num",
+"q": "Hay **100 galletas** para **7 niños**, todos igual. ¿Cuántas sobran?",
+"a": [
+2
+],
+"why": "7 × 14 = 98 → sobran **2**."
+},
+{
+"t": "num",
+"q": "Escucha el problema:",
+"a": [
+5
+],
+"why": "32 : 6 = **5**, resto 2 → **5** páginas llenas (y 2 fotos en la sexta).",
+"au": "au/1bc445724c81549c.mp3"
+}
+],
+"film": {
+"src": "films/ch54-resto-v1.mp4",
+"dur": 98.2
+},
+"min": 10,
+"pay": 0.08,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u5-rep",
+"unit": 5,
+"label": "Repaso",
+"title": "El gran repaso de problemas",
+"pages": "25–31",
+"icon": "🏆",
+"intro": "¡Problemas de todo tipo mezclados! Lee despacio, busca los datos y piensa la operación. 💪",
+"sections": [
+{
+"title": "Problemas",
+"icon": "🧩",
+"from": 0,
+"n": 6
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 6,
+"n": 1
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Un cine tiene **18 filas** de **24 butacas**. ¿Cuántas butacas hay?",
+"a": [
+432
+],
+"show": "432",
+"why": "**18 × 24 = 432**"
+},
+{
+"t": "num",
+"q": "Se venden **385** entradas. ¿Cuántas butacas quedan libres?",
+"a": [
+47
+],
+"show": "47",
+"why": "**432 − 385 = 47**"
+},
+{
+"t": "num",
+"q": "Un granjero recoge **1.344 huevos** y los pone en hueveras de **12**. ¿Cuántas hueveras llena?",
+"a": [
+112
+],
+"show": "112",
+"why": "**1.344 : 12 = 112**"
+},
+{
+"t": "num",
+"q": "Compro **3 camisetas** de **12 €** y un pantalón de **25 €**. Pago con **100 €**. ¿Cuánto me devuelven?",
+"a": [
+39
+],
+"unit": "€",
+"show": "39",
+"why": "**100 − (3 × 12 + 25) = 39**"
+},
+{
+"t": "num",
+"q": "**75 alumnos** van en autobuses de **30** plazas. ¿Cuántos autobuses hacen falta?",
+"a": [
+3
+],
+"why": "75 : 30 = 2, resto 15 → los 15 también van → **3**."
+},
+{
+"t": "choice",
+"q": "Leo tiene **120** cromos y Ana **80**. ¿Cuántos tiene que darle Leo a Ana para tener la misma cantidad?",
+"opts": [
+"40",
+"20",
+"10"
+],
+"a": 1,
+"keep": true,
+"why": "Diferencia 40 → la mitad: **20** (100 y 100)."
+},
+{
+"t": "num",
+"q": "Escucha el problema:",
+"a": [
+45
+],
+"why": "9 × 5 = **45**.",
+"au": "au/2e2657b7be85da94.mp3"
+}
+],
+"film": {
+"src": "films/ch55-repaso-v1.mp4",
+"dur": 107.9
+},
+"min": 7,
+"pay": 0.06,
+"subjectShort": "Mates"
 }
 ]);
