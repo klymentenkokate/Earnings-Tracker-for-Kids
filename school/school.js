@@ -275,13 +275,31 @@ function schoolCheckType() {
 }
 
 // "3.081.955", "3 081 955" and "3081955" are the same number; a comma is the decimal mark (Spanish school)
-const schNum = s => { const t = String(s).trim().replace(/[\s.'’]/g, '').replace(',', '.'); return /^-?\d+(\.\d+)?$/.test(t) ? +t : NaN; };
+const schNum = s => {
+  let t = String(s).trim().replace(/[\s'’]/g, '');
+  if (/^-?\d{1,3}([.,]\d{3})+$/.test(t)) return +t.replace(/[.,]/g, '');   // 3.081.955 or 3,081,955 (thousands groups, either sign)
+  t = t.replace(/\./g, '').replace(',', '.');
+  return /^-?\d+(\.\d+)?$/.test(t) ? +t : NaN;
+};
 const schNumFmt = n => { const [i, d] = String(n).split('.'); return i.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (d ? ',' + d : ''); };
 function schoolCheckNum() {
   const it = schoolItemState.it, el = document.getElementById('sch-in'); if (schoolItemState.answered || !el) return;
   const v = schNum(el.value);
   if (!el.value.trim()) { el.focus(); return; }
-  if (Number.isNaN(v)) { el.classList.add('half'); setTimeout(() => el.classList.remove('half'), 600); el.select(); return; }   // not a number: let him fix it
+  if (Number.isNaN(v)) {   // not a number: say so (a silent flash looked like "nothing happens"); on the 2nd try mark it and move on
+    schoolItemState.badNum = (schoolItemState.badNum || 0) + 1;
+    if (schoolItemState.badNum < 2) {
+      el.classList.add('half'); el.select();
+      let h = document.getElementById('sch-numhint');
+      if (!h) { h = document.createElement('div'); h.id = 'sch-numhint'; h.className = 'sch-fb half'; el.parentNode.after(h); }
+      h.textContent = 'Escribe solo cifras, por ejemplo 3.081.955 (con o sin puntos). Luego pulsa Comprobar otra vez.';
+      return;
+    }
+  }
+  const hint = document.getElementById('sch-numhint'); if (hint) hint.remove();
+  if (Number.isNaN(v)) { el.disabled = true; el.classList.add('bad');
+    const answers0 = (Array.isArray(it.a) ? it.a : [it.a]).map(Number);
+    schoolScore(0, `La respuesta es: **${it.show || schNumFmt(answers0[0])}${it.unit ? ' ' + it.unit : ''}**`); return; }
   el.disabled = true;
   const answers = (Array.isArray(it.a) ? it.a : [it.a]).map(Number);
   const ok = answers.some(a => Math.abs(a - v) < 1e-9);
