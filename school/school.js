@@ -165,6 +165,7 @@ function schoolItem() {
       <div class="sch-count">${run.i + 1}/${p.items.length}</div></div>`;
   let body = `<div class="sch-q">${schRich(it.q)}</div>`;
   if (it.img) body += `<div class="sch-img">${it.img}</div>`;
+  if (it.pre) body += `<pre class="sch-pre">${schEsc(it.pre)}</pre>`;   // maths: a sum laid out in columns, a table, a number line
   if (it.fr) body += `<div class="sch-fr">${au}<span>${schRich(it.fr)}</span></div>`;
   else if (it.au) body += `<div class="sch-listen">${au}<span>Escucha</span></div>`;
   if (it.t === 'choice') {
@@ -173,8 +174,11 @@ function schoolItem() {
       order.map(oi => `<button class="quiz-option" data-oi="${oi}" onclick="schoolPick(${oi})">${schRich(it.opts[oi])}</button>`).join('') + `</div>`;
   } else if (it.t === 'type') {
     body += `<div class="sch-type"><input id="sch-in" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${schEsc(it.ph || 'Escribe aquí')}" onkeydown="if(event.key==='Enter')schoolCheckType()">
-      <div class="sch-keys">${['à', 'â', 'ç', 'é', 'è', 'ê', 'ë', 'î', 'ï', 'ô', 'ù', 'û', '’'].map(k => `<button onclick="schoolKey('${k === '’' ? "\\'" : k}')">${k}</button>`).join('')}</div>
+      <div class="sch-keys">${((SCHOOL_SUBJECTS.find(s => s.id === p.subject) || {}).keys || ['à', 'â', 'ç', 'é', 'è', 'ê', 'ë', 'î', 'ï', 'ô', 'ù', 'û', '’']).map(k => `<button onclick="schoolKey('${k === '’' ? "\\'" : k}')">${k}</button>`).join('')}</div>
       <button class="btn-quiz-retake" onclick="schoolCheckType()">Comprobar</button></div>`;
+  } else if (it.t === 'num') {   // maths: a number answer (thousands with or without dots/spaces, decimals with a comma)
+    body += `<div class="sch-type sch-num"><input id="sch-in" inputmode="decimal" autocomplete="off" placeholder="${schEsc(it.ph || 'Escribe el número')}" onkeydown="if(event.key==='Enter')schoolCheckNum()">${it.unit ? `<span class="sch-unit-lbl">${schEsc(it.unit)}</span>` : ''}
+      <button class="btn-quiz-retake" onclick="schoolCheckNum()">Comprobar</button></div>`;
   } else if (it.t === 'order') {
     const tiles = shuffle(it.words.map((w, i) => i));
     schoolItemState.tiles = tiles;
@@ -268,6 +272,21 @@ function schoolCheckType() {
   const bare = x => schFold(cs(x)).replace(/['\-\s]/g, '');
   if (answers.some(a => bare(a) === bare(raw))) { el.classList.add('half'); schoolScore(0.5, `¡Casi! Fíjate en el apóstrofo ( ' ), los guiones y los espacios: **${answers[0]}**`); return; }
   el.classList.add('bad'); schoolScore(0, `Se escribe: **${answers[0]}**`);
+}
+
+// "3.081.955", "3 081 955" and "3081955" are the same number; a comma is the decimal mark (Spanish school)
+const schNum = s => { const t = String(s).trim().replace(/[\s.'’]/g, '').replace(',', '.'); return /^-?\d+(\.\d+)?$/.test(t) ? +t : NaN; };
+const schNumFmt = n => { const [i, d] = String(n).split('.'); return i.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (d ? ',' + d : ''); };
+function schoolCheckNum() {
+  const it = schoolItemState.it, el = document.getElementById('sch-in'); if (schoolItemState.answered || !el) return;
+  const v = schNum(el.value);
+  if (!el.value.trim()) { el.focus(); return; }
+  if (Number.isNaN(v)) { el.classList.add('half'); setTimeout(() => el.classList.remove('half'), 600); el.select(); return; }   // not a number: let him fix it
+  el.disabled = true;
+  const answers = (Array.isArray(it.a) ? it.a : [it.a]).map(Number);
+  const ok = answers.some(a => Math.abs(a - v) < 1e-9);
+  el.value = schNumFmt(v); el.classList.add(ok ? 'ok' : 'bad');
+  schoolScore(ok ? 1 : 0, ok ? '' : `La respuesta es: **${it.show || schNumFmt(answers[0])}${it.unit ? ' ' + it.unit : ''}**`);
 }
 
 function schoolTile(i) {
@@ -396,6 +415,9 @@ function schoolFinish() {
   .sch-opts .quiz-option{font-size:1rem;}
   .sch-type input{width:100%;box-sizing:border-box;font-size:1.15rem;font-weight:800;padding:12px 14px;border-radius:12px;border:2px solid var(--border);font-family:'Nunito',sans-serif;}
   .sch-type input.ok{border-color:#16a34a;background:#dcfce7}.sch-type input.half{border-color:#f59e0b;background:#fef3c7}.sch-type input.bad{border-color:#ef4444;background:#fee2e2}
+  .sch-pre{font-family:'IBM Plex Mono',ui-monospace,Consolas,monospace;font-size:1.05rem;font-weight:700;background:var(--soft);border:1.5px solid var(--border);border-radius:12px;padding:10px 14px;margin:0 0 12px;white-space:pre-wrap;line-height:1.45;overflow-wrap:anywhere;}
+  .sch-num{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.sch-num input{flex:1 1 160px;font-size:1.5rem;text-align:center;letter-spacing:.04em}.sch-num .btn-quiz-retake{flex:1 1 100%}
+  .sch-unit-lbl{font-weight:900;font-size:1.2rem}
   .sch-keys{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0 10px;}
   .sch-keys button{min-width:36px;padding:7px 0;border-radius:9px;border:1.5px solid var(--border);background:var(--soft);font-size:1rem;font-weight:800;cursor:pointer;}
   .sch-built{min-height:52px;border:2px dashed var(--border);border-radius:12px;padding:6px;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
