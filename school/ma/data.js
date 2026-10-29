@@ -5222,5 +5222,1358 @@ schoolRegister({"id": "ma", "name": "Mates", "emoji": "🔢", "book": "Cuaderno 
 "min": 10,
 "pay": 0.08,
 "subjectShort": "Mates"
+},
+{
+"id": "ma-u4-l1",
+"unit": 4,
+"label": "Lección 1",
+"title": "División con divisor de dos cifras (I)",
+"pages": "20",
+"icon": "🏆",
+"intro": "Para dividir entre un número de **dos cifras**: coge las primeras cifras del **dividendo** hasta que quepa el **divisor**, busca cuántas veces cabe (¡prueba redondeando: 78 ≈ 80!), multiplica, resta y **baja** la siguiente cifra. Truco del día: el **resto** siempre es **menor** que el divisor 🏆",
+"sections": [
+{
+"title": "Del cuaderno · p. 20 · colorea los cocientes",
+"icon": "📒",
+"from": 0,
+"n": 5
+},
+{
+"title": "Del cuaderno · p. 20 · la sopa de cifras",
+"icon": "📒",
+"from": 5,
+"n": 8
+},
+{
+"title": "¿Cuántas veces cabe?",
+"icon": "🧠",
+"from": 13,
+"n": 5
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 18,
+"n": 1
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Divide **12.792 : 78**. ¿Cuál es el **cociente**?",
+"a": [
+164
+],
+"show": "164",
+"why": "12.792 : 78 = **164**, resto 0. Prueba: 78 × 164 = 12.792 ✔️",
+"pre": "12792 │ 78\n      └────"
+},
+{
+"t": "num",
+"q": "Divide **18.424 : 94**. ¿Cuál es el **cociente**?",
+"a": [
+196
+],
+"show": "196",
+"why": "18.424 : 94 = **196**, resto 0. Prueba: 94 × 196 = 18.424 ✔️",
+"pre": "18424 │ 94\n      └────"
+},
+{
+"t": "num",
+"q": "Divide **23.288 : 82**. ¿Cuál es el **cociente**?",
+"a": [
+284
+],
+"show": "284",
+"why": "23.288 : 82 = **284**, resto 0.",
+"pre": "23288 │ 82\n      └────"
+},
+{
+"t": "num",
+"q": "Divide **10.005 : 69**. ¿Cuál es el **cociente**?",
+"a": [
+145
+],
+"show": "145",
+"why": "10.005 : 69 = **145**, resto 0. ¡Cuidado con los ceros del medio: 100 : 69 = 1, resto 31 → bajas el 0 → 310 : 69 = 4…",
+"pre": "10005 │ 69\n      └────"
+},
+{
+"t": "choice",
+"q": "Las cuatro divisiones de colores tienen resto **0**. ¿Cómo se llaman?",
+"opts": [
+"divisiones exactas",
+"divisiones enteras",
+"divisiones mixtas"
+],
+"a": 0,
+"why": "Si el resto es 0, la división es **exacta**. Si no, es **entera**."
+},
+{
+"t": "num",
+"q": "Divide **12.575 : 35**. ¿Cuál es el **cociente**?",
+"a": [
+359
+],
+"show": "359",
+"why": "12.575 : 35 = **359** (¿y el resto? ¡ahora te lo pregunto!)",
+"pre": "12575 │ 35\n      └────"
+},
+{
+"t": "num",
+"q": "¿Y el **resto** de **12.575 : 35**?",
+"a": [
+10
+],
+"why": "El cociente es 359; 35 × 359 = 12.565 → 12.575 − 12.565 = **10**. (¡Siempre menor que 35!)",
+"pre": "12575 │ 35\n      └────"
+},
+{
+"t": "num",
+"q": "Divide **73.186 : 94**. ¿Cuál es el **cociente**?",
+"a": [
+778
+],
+"show": "778",
+"why": "73.186 : 94 = **778** (¿y el resto? ¡ahora te lo pregunto!)",
+"pre": "73186 │ 94\n      └────"
+},
+{
+"t": "num",
+"q": "¿Y el **resto** de **73.186 : 94**?",
+"a": [
+54
+],
+"why": "El cociente es 778; 94 × 778 = 73.132 → 73.186 − 73.132 = **54**. (¡Siempre menor que 94!)",
+"pre": "73186 │ 94\n      └────"
+},
+{
+"t": "num",
+"q": "Divide **23.110 : 65**. ¿Cuál es el **cociente**?",
+"a": [
+355
+],
+"show": "355",
+"why": "23.110 : 65 = **355**, resto **35**. Prueba: 65 × 355 + 35 = 23.110 ✔️",
+"pre": "23110 │ 65\n      └────"
+},
+{
+"t": "num",
+"q": "Divide **48.094 : 66**. ¿Cuál es el **cociente**?",
+"a": [
+728
+],
+"show": "728",
+"why": "48.094 : 66 = **728**, resto **46**. Prueba: 66 × 728 + 46 = 48.094 ✔️",
+"pre": "48094 │ 66\n      └────"
+},
+{
+"t": "num",
+"q": "Divide **54.682 : 86**. ¿Cuál es el **cociente**?",
+"a": [
+635
+],
+"show": "635",
+"why": "54.682 : 86 = **635**, resto **72**. Prueba: 86 × 635 + 72 = 54.682 ✔️",
+"pre": "54682 │ 86\n      └────"
+},
+{
+"t": "num",
+"q": "Divide **30.031 : 58**. ¿Cuál es el **cociente**?",
+"a": [
+517
+],
+"show": "517",
+"why": "30.031 : 58 = **517**, resto **45**. Prueba: 58 × 517 + 45 = 30.031 ✔️",
+"pre": "30031 │ 58\n      └────"
+},
+{
+"t": "choice",
+"q": "En **127 : 35**, ¿cuántas veces cabe 35? (piensa: 35 ≈ 30 o 40)",
+"opts": [
+"2",
+"3",
+"4"
+],
+"a": 1,
+"keep": true,
+"why": "35 × 3 = 105 ✔️ y 35 × 4 = 140 (se pasa) → **3**, resto 22."
+},
+{
+"t": "choice",
+"q": "En **731 : 94**, ¿cuántas veces cabe 94? (94 ≈ 90)",
+"opts": [
+"7",
+"8",
+"9"
+],
+"a": 0,
+"keep": true,
+"why": "94 × 7 = 658 ✔️, 94 × 8 = 752 se pasa → **7**."
+},
+{
+"t": "choice",
+"q": "**500 : 78** da cociente 6 y resto **32**.",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 0,
+"keep": true,
+"why": "78 × 6 = 468 → 500 − 468 = **32**, y 32 < 78 ✔️"
+},
+{
+"t": "choice",
+"q": "**400 : 65** da cociente 5 y resto **75**.",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 1,
+"keep": true,
+"why": "¡El resto (75) es **mayor** que el divisor (65)! Cabe una vez más: cociente **6**, resto **10**."
+},
+{
+"t": "match",
+"q": "En **836 : 28 = 29**, resto **24**, une cada nombre con su número:",
+"pairs": [
+[
+"dividendo",
+"836"
+],
+[
+"divisor",
+"28"
+],
+[
+"cociente",
+"29"
+],
+[
+"resto",
+"24"
+]
+]
+},
+{
+"t": "num",
+"q": "Escucha y calcula el cociente:",
+"a": [
+25
+],
+"why": "750 : 30 = **25**.",
+"au": "au/b379d625b92110b8.mp3"
+}
+],
+"film": {
+"src": "films/ch41-division-v1.mp4",
+"dur": 114.4
+},
+"min": 14,
+"pay": 0.12,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u4-l2",
+"unit": 4,
+"label": "Lección 2",
+"title": "División con divisor de dos cifras (II)",
+"pages": "21",
+"icon": "🔎",
+"intro": "La **prueba de la división**: dividendo = divisor × cociente + resto. **D = d × c + r**. Sirve para comprobar una división… ¡y para encontrar el dividendo si falta! Truco del día: hoy, un número mágico que se divide entre 7, 11 y 13 🔎",
+"sections": [
+{
+"title": "Del cuaderno · p. 21 · completa la tabla",
+"icon": "📒",
+"from": 0,
+"n": 8
+},
+{
+"title": "Del cuaderno · p. 21 · el número mágico",
+"icon": "📒",
+"from": 8,
+"n": 5
+},
+{
+"title": "La prueba de la división",
+"icon": "✔️",
+"from": 13,
+"n": 5
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 18,
+"n": 1
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Divide **675 : 25**. ¿Cuál es el **cociente**?",
+"a": [
+27
+],
+"show": "27",
+"why": "675 : 25 = **27** (¿y el resto? ¡ahora te lo pregunto!)",
+"pre": "675 │ 25\n    └────"
+},
+{
+"t": "num",
+"q": "¿Y el **resto** de **675 : 25**?",
+"a": [
+0
+],
+"why": "El cociente es 27; 25 × 27 = 675 → 675 − 675 = **0**. (¡Siempre menor que 25!)",
+"pre": "675 │ 25\n    └────"
+},
+{
+"t": "num",
+"q": "Divide **836 : 28**. ¿Cuál es el **cociente**?",
+"a": [
+29
+],
+"show": "29",
+"why": "836 : 28 = **29** (¿y el resto? ¡ahora te lo pregunto!)",
+"pre": "836 │ 28\n    └────"
+},
+{
+"t": "num",
+"q": "¿Y el **resto** de **836 : 28**?",
+"a": [
+24
+],
+"why": "El cociente es 29; 28 × 29 = 812 → 836 − 812 = **24**. (¡Siempre menor que 28!)",
+"pre": "836 │ 28\n    └────"
+},
+{
+"t": "num",
+"q": "Divide **945 : 35**. ¿Cuál es el **cociente**?",
+"a": [
+27
+],
+"show": "27",
+"why": "945 : 35 = **27**, resto **0**. Prueba: 35 × 27 + 0 = 945 ✔️",
+"pre": "945 │ 35\n    └────"
+},
+{
+"t": "num",
+"q": "Divisor **72**, cociente **13**, resto **10**. ¿Cuál es el **dividendo**?",
+"a": [
+946
+],
+"why": "D = d × c + r = 72 × 13 + 10 = 936 + 10 = **946**."
+},
+{
+"t": "num",
+"q": "Divisor **47**, cociente **18**, resto **35**. ¿Cuál es el **dividendo**?",
+"a": [
+881
+],
+"why": "47 × 18 + 35 = 846 + 35 = **881**."
+},
+{
+"t": "num",
+"q": "Divisor **36**, cociente **24**, resto **0**. ¿Cuál es el **dividendo**?",
+"a": [
+864
+],
+"why": "36 × 24 = **864** (exacta)."
+},
+{
+"t": "num",
+"q": "Paso 1-2: escribe **123** dos veces seguidas: **123.123**. Paso 3: **123.123 : 7 =**",
+"a": [
+17589
+],
+"show": "17.589"
+},
+{
+"t": "num",
+"q": "Paso 4: **17.589 : 11 =**",
+"a": [
+1599
+],
+"show": "1.599"
+},
+{
+"t": "num",
+"q": "Paso 5: **1.599 : 13 =**",
+"a": [
+123
+],
+"why": "¡Vuelve a salir **123**, el número del principio! ¿Por qué? Mira la siguiente pregunta…"
+},
+{
+"t": "num",
+"q": "El secreto: **7 × 11 × 13 =**",
+"a": [
+1001
+],
+"show": "1.001",
+"why": "**1.001**, y 123 × 1.001 = 123.123. ¡Dividir entre 7, 11 y 13 es dividir entre 1.001!"
+},
+{
+"t": "num",
+"q": "Pruébalo con **456**: **456.456 : 1.001 =**",
+"a": [
+456
+]
+},
+{
+"t": "choice",
+"q": "¿Cuál es la **prueba** de una división?",
+"opts": [
+"D = d × c + r",
+"D = d + c × r",
+"d = D × c + r"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "**946 : 72 = 13**, resto **10**. ¿Está bien?",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 0,
+"keep": true,
+"why": "72 × 13 + 10 = 946 ✔️"
+},
+{
+"t": "choice",
+"q": "**881 : 47 = 18**, resto **45**. ¿Está bien?",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 1,
+"keep": true,
+"why": "47 × 18 + 45 = 891, no 881. El resto correcto es **35**."
+},
+{
+"t": "num",
+"q": "Una división tiene divisor **25**, cociente **40** y resto **7**. ¿Cuál es el dividendo?",
+"a": [
+1007
+],
+"show": "1.007"
+},
+{
+"t": "choice",
+"q": "Si el divisor es **28**, ¿cuál es el resto **más grande** posible?",
+"opts": [
+"28",
+"27",
+"29"
+],
+"a": 1,
+"keep": true,
+"why": "El resto siempre es menor que el divisor → como mucho **27**."
+},
+{
+"t": "num",
+"q": "Escucha y calcula el dividendo:",
+"a": [
+495
+],
+"why": "20 × 24 + 15 = **495**.",
+"au": "au/6b8c138a0cf6e03f.mp3"
+}
+],
+"film": {
+"src": "films/ch42-prueba-v1.mp4",
+"dur": 103.5
+},
+"min": 14,
+"pay": 0.12,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u4-l3",
+"unit": 4,
+"label": "Lección 3",
+"title": "Propiedad fundamental de la división",
+"pages": "22",
+"icon": "⚖️",
+"intro": "Si **multiplicas** (o **divides**) el dividendo y el divisor por el **mismo número**, el **cociente no cambia** (en la división exacta): 10 : 2 = 5 · 20 : 4 = 5 · 30 : 6 = 5… ¡Sirve para hacer divisiones más fáciles! ⚖️",
+"sections": [
+{
+"title": "Del cuaderno · p. 22 · la tabla",
+"icon": "📒",
+"from": 0,
+"n": 5
+},
+{
+"title": "Del cuaderno · p. 22 · por parejas",
+"icon": "📒",
+"from": 5,
+"n": 8
+},
+{
+"title": "Del cuaderno · p. 22 · sin hacer la división",
+"icon": "📒",
+"from": 13,
+"n": 6
+},
+{
+"title": "Del cuaderno · p. 22 · inventa divisiones",
+"icon": "📒",
+"from": 19,
+"n": 4
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 23,
+"n": 1
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Calcula: **24 : 6**",
+"a": [
+4
+],
+"show": "4"
+},
+{
+"t": "num",
+"q": "Calcula: **12 : 3**",
+"a": [
+4
+],
+"show": "4"
+},
+{
+"t": "num",
+"q": "Calcula: **36 : 9**",
+"a": [
+4
+],
+"show": "4"
+},
+{
+"t": "num",
+"q": "Calcula: **72 : 18**",
+"a": [
+4
+],
+"show": "4"
+},
+{
+"t": "choice",
+"q": "¿Cómo son los cocientes de la tabla?",
+"opts": [
+"iguales",
+"cada vez más grandes",
+"cada vez más pequeños"
+],
+"a": 0,
+"why": "Todos son **4**: 12 : 3 → ×2 → 24 : 6 → … dividendo y divisor cambian **por el mismo número**."
+},
+{
+"t": "num",
+"q": "Calcula: **20 : 5**",
+"a": [
+4
+],
+"show": "4"
+},
+{
+"t": "num",
+"q": "Calcula: **60 : 15**",
+"a": [
+4
+],
+"show": "4",
+"why": "60 : 15 es 20 : 5 con todo **× 3** → el mismo cociente, **4**."
+},
+{
+"t": "num",
+"q": "Calcula: **56 : 14**",
+"a": [
+4
+],
+"show": "4"
+},
+{
+"t": "num",
+"q": "Calcula: **28 : 7**",
+"a": [
+4
+],
+"show": "4",
+"why": "28 : 7 es 56 : 14 con todo **: 2** → **4**."
+},
+{
+"t": "num",
+"q": "Calcula: **25 : 5**",
+"a": [
+5
+],
+"show": "5"
+},
+{
+"t": "num",
+"q": "Calcula: **75 : 15**",
+"a": [
+5
+],
+"show": "5",
+"why": "75 : 15 es 25 : 5 con todo **× 3** → **5**."
+},
+{
+"t": "num",
+"q": "Calcula: **120 : 24**",
+"a": [
+5
+],
+"show": "5"
+},
+{
+"t": "num",
+"q": "Calcula: **30 : 6**",
+"a": [
+5
+],
+"show": "5",
+"why": "30 : 6 es 120 : 24 con todo **: 4** → **5**."
+},
+{
+"t": "choice",
+"q": "**882 : 14** tiene el mismo cociente que **441 : 7**.",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 0,
+"keep": true,
+"why": "882 = 441 × 2 y 14 = 7 × 2 → mismo cociente (63)."
+},
+{
+"t": "choice",
+"q": "**2.205 : 35** tiene el mismo cociente que **441 : 7**.",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 0,
+"keep": true,
+"why": "Los dos × 5 → mismo cociente (63)."
+},
+{
+"t": "choice",
+"q": "**65 : 5** tiene el mismo cociente que **441 : 7**.",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 1,
+"keep": true,
+"why": "65 : 5 = 13, y 441 : 7 = 63."
+},
+{
+"t": "choice",
+"q": "**264 : 3** tiene el mismo cociente que **528 : 6**.",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 0,
+"keep": true,
+"why": "Los dos : 2 → mismo cociente (88)."
+},
+{
+"t": "choice",
+"q": "**6.338 : 12** tiene el mismo cociente que **528 : 6**.",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 1,
+"keep": true,
+"why": "528 × 2 = 1.056, no 6.338. (6.338 : 12 ni siquiera es exacta.)"
+},
+{
+"t": "choice",
+"q": "**176 : 2** tiene el mismo cociente que **528 : 6**.",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 0,
+"keep": true,
+"why": "528 : 3 = 176 y 6 : 3 = 2 → mismo cociente (88)."
+},
+{
+"t": "num",
+"q": "**845 : 5 = 1.690 : ___**",
+"a": [
+10
+],
+"why": "Dividendo × 2 → divisor × 2: **10**. (Cociente 169.)"
+},
+{
+"t": "num",
+"q": "**390 : 15 = 780 : ___**",
+"a": [
+30
+]
+},
+{
+"t": "num",
+"q": "**3.024 : 9 = 1.008 : ___**",
+"a": [
+3
+],
+"why": "3.024 : 3 = 1.008 → 9 : 3 = **3**. (Cociente 336.)"
+},
+{
+"t": "num",
+"q": "Truco: **700 : 25** es difícil… multiplica los dos por 4: **2.800 : 100 =**",
+"a": [
+28
+],
+"show": "28",
+"why": "2.800 : 100 = **28**. ¡Mucho más fácil!"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué división tiene el **mismo** cociente que 30 : 6?",
+"opts": [
+"60 : 12",
+"60 : 6",
+"30 : 12"
+],
+"a": 0,
+"why": "60 : 12 = 30 : 6 con todo × 2 → **5**.",
+"au": "au/7de8d2964174a697.mp3"
+}
+],
+"film": {
+"src": "films/ch43-fundamental-v1.mp4",
+"dur": 89.5
+},
+"min": 16,
+"pay": 0.13,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u4-l4",
+"unit": 4,
+"label": "Lección 4",
+"title": "División por decenas, centenas y millares",
+"pages": "23",
+"icon": "✂️",
+"intro": "Para dividir entre **10, 100, 1.000** se **quitan** 1, 2 o 3 **ceros** del final. Y si dividendo y divisor acaban en ceros, puedes **tachar los mismos** ceros en los dos: 8.400 : 700 → 84 : 7 = **12**. ✂️",
+"sections": [
+{
+"title": "Del cuaderno · p. 23 · la tabla",
+"icon": "📒",
+"from": 0,
+"n": 7
+},
+{
+"title": "Del cuaderno · p. 23 · cálculo mental",
+"icon": "📒",
+"from": 7,
+"n": 6
+},
+{
+"title": "Del cuaderno · p. 23 · tacha ceros",
+"icon": "📒",
+"from": 13,
+"n": 5
+},
+{
+"title": "Del cuaderno · p. 23 · el número que falta",
+"icon": "📒",
+"from": 18,
+"n": 6
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 24,
+"n": 1
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Calcula: **40.000 : 10**",
+"a": [
+4000
+],
+"show": "4.000"
+},
+{
+"t": "num",
+"q": "Calcula: **40.000 : 100**",
+"a": [
+400
+],
+"show": "400"
+},
+{
+"t": "num",
+"q": "Calcula: **40.000 : 1.000**",
+"a": [
+40
+],
+"show": "40"
+},
+{
+"t": "num",
+"q": "Calcula: **55.000 : 100**",
+"a": [
+550
+],
+"show": "550"
+},
+{
+"t": "num",
+"q": "Calcula: **80.000 : 1.000**",
+"a": [
+80
+],
+"show": "80"
+},
+{
+"t": "num",
+"q": "Calcula: **310.000 : 10**",
+"a": [
+31000
+],
+"show": "31.000"
+},
+{
+"t": "num",
+"q": "Calcula: **2.000 : 1.000**",
+"a": [
+2
+],
+"show": "2"
+},
+{
+"t": "num",
+"q": "Calcula: **70 : 10**",
+"a": [
+7
+],
+"show": "7"
+},
+{
+"t": "num",
+"q": "Calcula: **25.000 : 100**",
+"a": [
+250
+],
+"show": "250"
+},
+{
+"t": "num",
+"q": "Calcula: **10.000 : 100**",
+"a": [
+100
+],
+"show": "100"
+},
+{
+"t": "num",
+"q": "Calcula: **800 : 10**",
+"a": [
+80
+],
+"show": "80"
+},
+{
+"t": "num",
+"q": "Calcula: **100.000 : 10**",
+"a": [
+10000
+],
+"show": "10.000"
+},
+{
+"t": "num",
+"q": "Calcula: **400.000 : 1.000**",
+"a": [
+400
+],
+"show": "400"
+},
+{
+"t": "num",
+"q": "Calcula: **4.800 : 600**",
+"a": [
+8
+],
+"show": "8",
+"why": "Tacha dos ceros en cada uno: 48 : 6 = **8**."
+},
+{
+"t": "num",
+"q": "Calcula: **24.000 : 40**",
+"a": [
+600
+],
+"show": "600",
+"why": "Tacha **un** cero en cada uno (el 40 solo tiene uno): 2.400 : 4 = **600**."
+},
+{
+"t": "num",
+"q": "Calcula: **56.000 : 800**",
+"a": [
+70
+],
+"show": "70",
+"why": "Tacha dos: 560 : 8 = **70**."
+},
+{
+"t": "num",
+"q": "Calcula: **90.000 : 900**",
+"a": [
+100
+],
+"show": "100",
+"why": "Tacha dos: 900 : 9 = **100**."
+},
+{
+"t": "match",
+"q": "Une las divisiones que tienen el **mismo cociente**:",
+"pairs": [
+[
+"84.000 : 200",
+"25.200 : 60"
+],
+[
+"5.400 : 30",
+"16.200 : 90"
+],
+[
+"150.000 : 5.000",
+"24.000 : 800"
+],
+[
+"360 : 20",
+"18.000 : 1.000"
+]
+],
+"why": "420 · 180 · 30 · 18."
+},
+{
+"t": "num",
+"q": "**85.000 : ___ = 1.700**",
+"a": [
+50
+]
+},
+{
+"t": "num",
+"q": "**12.000 : ___ = 600**",
+"a": [
+20
+]
+},
+{
+"t": "num",
+"q": "**490.000 : ___ = 700**",
+"a": [
+700
+]
+},
+{
+"t": "num",
+"q": "**___ : 300 = 120**",
+"a": [
+36000
+],
+"show": "36.000",
+"why": "Falta el dividendo → multiplica: 300 × 120 = **36.000**."
+},
+{
+"t": "num",
+"q": "**___ : 40 = 4.500**",
+"a": [
+180000
+],
+"show": "180.000"
+},
+{
+"t": "num",
+"q": "**___ : 8.000 = 34**",
+"a": [
+272000
+],
+"show": "272.000"
+},
+{
+"t": "num",
+"q": "Escucha y calcula:",
+"a": [
+60
+],
+"why": "Tacha un cero: 480 : 8 = **60**.",
+"au": "au/e90409a1e191e17a.mp3"
+}
+],
+"film": {
+"src": "films/ch44-tacha-v1.mp4",
+"dur": 84.7
+},
+"min": 19,
+"pay": 0.16,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u4-l5",
+"unit": 4,
+"label": "Lección 5",
+"title": "Operaciones combinadas con división",
+"pages": "24",
+"icon": "🚦",
+"intro": "El orden de siempre: **1.º** paréntesis · **2.º** multiplicaciones **y divisiones** (de izquierda a derecha) · **3.º** sumas y restas. Truco del día: 20 + 8 : 2 **no** es 14, es **24** — ¡primero 8 : 2! 🚦",
+"sections": [
+{
+"title": "Del cuaderno · p. 24 · sigue el esquema",
+"icon": "📒",
+"from": 0,
+"n": 3
+},
+{
+"title": "Del cuaderno · p. 24 · respeta el orden",
+"icon": "📒",
+"from": 3,
+"n": 3
+},
+{
+"title": "Del cuaderno · p. 24 · el número que falta",
+"icon": "📒",
+"from": 6,
+"n": 6
+},
+{
+"title": "Del cuaderno · p. 24 · ¿bien o mal?",
+"icon": "📒",
+"from": 12,
+"n": 6
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 18,
+"n": 1
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Calcula: **(45 − 31) : 2**",
+"a": [
+7
+],
+"show": "7"
+},
+{
+"t": "num",
+"q": "Calcula: **36 : (3 + 6)**",
+"a": [
+4
+],
+"show": "4"
+},
+{
+"t": "num",
+"q": "Calcula: **53 + 12 : 2**",
+"a": [
+59
+],
+"show": "59",
+"why": "Primero 12 : 2 = 6 → 53 + 6 = **59**."
+},
+{
+"t": "num",
+"q": "Calcula: **(45 − 18) : 9 + 5**",
+"a": [
+8
+],
+"show": "8",
+"why": "27 : 9 = 3 → 3 + 5 = **8**."
+},
+{
+"t": "num",
+"q": "Calcula: **33 − 15 : 5 + 10 × 2**",
+"a": [
+50
+],
+"show": "50",
+"why": "15 : 5 = 3 y 10 × 2 = 20 → 33 − 3 + 20 = **50**."
+},
+{
+"t": "num",
+"q": "Calcula: **(4 + 14) × 3 − 84 : 3**",
+"a": [
+26
+],
+"show": "26",
+"why": "18 × 3 = 54 y 84 : 3 = 28 → 54 − 28 = **26**."
+},
+{
+"t": "num",
+"q": "**(___ + 6) : 4 = 6**",
+"a": [
+18
+],
+"why": "Lo de dentro tiene que dar 24 → 24 − 6 = **18**."
+},
+{
+"t": "num",
+"q": "**12 − 8 : ___ = 10**",
+"a": [
+4
+],
+"why": "8 : ___ tiene que ser 2 → **4**."
+},
+{
+"t": "num",
+"q": "**86 : 2 − ___ = 39**",
+"a": [
+4
+],
+"why": "86 : 2 = 43 → 43 − **4** = 39."
+},
+{
+"t": "num",
+"q": "**56 : (3 + ___) = 8**",
+"a": [
+4
+],
+"why": "56 : 7 = 8 → 3 + **4** = 7."
+},
+{
+"t": "num",
+"q": "**22 × ___ + 12 = 100**",
+"a": [
+4
+],
+"why": "22 × 4 = 88 → 88 + 12 = 100."
+},
+{
+"t": "num",
+"q": "**(46 − 38) : ___ = 4**",
+"a": [
+2
+]
+},
+{
+"t": "choice",
+"q": "**74 − 7 × 8 = 536**",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 1,
+"keep": true,
+"why": "7 × 8 = 56 → 74 − 56 = **18**, no 536."
+},
+{
+"t": "choice",
+"q": "**95 : 5 + 12 = 31**",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 0,
+"keep": true,
+"why": "19 + 12 = 31 ✔️"
+},
+{
+"t": "choice",
+"q": "**36 + 12 : 4 + 15 = 27**",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 1,
+"keep": true,
+"why": "12 : 4 = 3 → 36 + 3 + 15 = **54**, no 27."
+},
+{
+"t": "choice",
+"q": "**81 : 3 + 4 × 5 = 47**",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 0,
+"keep": true,
+"why": "27 + 20 = 47 ✔️"
+},
+{
+"t": "choice",
+"q": "¿Qué paréntesis hacen que **74 − 7 × 8 = 536**?",
+"opts": [
+"(74 − 7) × 8",
+"74 − (7 × 8)",
+"no hacen falta"
+],
+"a": 0
+},
+{
+"t": "choice",
+"q": "¿Qué paréntesis hacen que **36 + 12 : 4 + 15 = 27**?",
+"opts": [
+"(36 + 12) : 4 + 15",
+"36 + 12 : (4 + 15)",
+"36 + (12 : 4) + 15"
+],
+"a": 0
+},
+{
+"t": "num",
+"q": "Escucha y calcula (¡en orden!):",
+"a": [
+13
+],
+"why": "12 : 4 = 3 → 10 + 3 = **13**.",
+"au": "au/db04639eb4ae62c0.mp3"
+}
+],
+"film": {
+"src": "films/ch45-combinadas-v1.mp4",
+"dur": 96.0
+},
+"min": 13,
+"pay": 0.11,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u4-rep",
+"unit": 4,
+"label": "Repaso",
+"title": "El gran repaso de la división",
+"pages": "20–24",
+"icon": "🏆",
+"intro": "¡Todo el Tema 4 mezclado! Dividir entre dos cifras, la prueba, la propiedad fundamental, tachar ceros y operaciones combinadas. 💪",
+"sections": [
+{
+"title": "Dividir",
+"icon": "➗",
+"from": 0,
+"n": 3
+},
+{
+"title": "Propiedad y ceros",
+"icon": "✂️",
+"from": 3,
+"n": 3
+},
+{
+"title": "Combinadas",
+"icon": "🚦",
+"from": 6,
+"n": 3
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 9,
+"n": 1
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Divide **9.876 : 54**. ¿Cuál es el **cociente**?",
+"a": [
+182
+],
+"show": "182",
+"why": "9.876 : 54 = **182** (¿y el resto? ¡ahora te lo pregunto!)",
+"pre": "9876 │ 54\n     └────"
+},
+{
+"t": "num",
+"q": "¿Y el **resto** de **9.876 : 54**?",
+"a": [
+48
+],
+"why": "El cociente es 182; 54 × 182 = 9.828 → 9.876 − 9.828 = **48**. (¡Siempre menor que 54!)",
+"pre": "9876 │ 54\n     └────"
+},
+{
+"t": "num",
+"q": "Divisor **15**, cociente **62**, resto **9**. ¿Dividendo?",
+"a": [
+939
+]
+},
+{
+"t": "num",
+"q": "Calcula: **63.000 : 900**",
+"a": [
+70
+],
+"show": "70"
+},
+{
+"t": "num",
+"q": "**48 : 16 = 96 : ___**",
+"a": [
+32
+]
+},
+{
+"t": "num",
+"q": "Calcula: **500 : 25**",
+"a": [
+20
+],
+"show": "20"
+},
+{
+"t": "num",
+"q": "Calcula: **40 − 30 : 5**",
+"a": [
+34
+],
+"show": "34"
+},
+{
+"t": "num",
+"q": "Calcula: **(40 − 30) : 5**",
+"a": [
+2
+],
+"show": "2"
+},
+{
+"t": "num",
+"q": "Calcula: **6 × 8 : 4 + 1**",
+"a": [
+13
+],
+"show": "13"
+},
+{
+"t": "num",
+"q": "Escucha y calcula:",
+"a": [
+9
+],
+"au": "au/cf601521755946ea.mp3"
+}
+],
+"film": {
+"src": "films/ch46-repaso-v1.mp4",
+"dur": 105.0
+},
+"min": 9,
+"pay": 0.07,
+"subjectShort": "Mates"
 }
 ]);
