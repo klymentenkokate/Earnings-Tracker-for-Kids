@@ -1136,5 +1136,840 @@ schoolRegister({"id": "ma", "name": "Mates", "emoji": "🔢", "book": "Cuaderno 
 "min": 17,
 "pay": 0.14,
 "subjectShort": "Mates"
+},
+{
+"id": "ma-u1-l4",
+"unit": 1,
+"label": "Lección 4",
+"title": "Comparo números",
+"pages": "6",
+"icon": "⚖️",
+"intro": "Para comparar: 1) el que tiene **más cifras** es mayor; 2) si tienen las mismas, mira **de izquierda a derecha** hasta la primera cifra **distinta**. Signos: **<** menor que · **>** mayor que · **=** igual. ¡El cocodrilo 🐊 siempre se come al mayor!",
+"sections": [
+{
+"title": "Del cuaderno · p. 6 · la sopa de cifras",
+"icon": "📒",
+"from": 0,
+"n": 3
+},
+{
+"title": "Del cuaderno · p. 6 · los camiones cisterna",
+"icon": "📒",
+"from": 3,
+"n": 3
+},
+{
+"title": "Los signos < > =",
+"icon": "🐊",
+"from": 6,
+"n": 8
+},
+{
+"title": "Piensa como un detective",
+"icon": "🕵️",
+"from": 14,
+"n": 7
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 21,
+"n": 2
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Mira la sopa de cifras (se lee en horizontal y en vertical). ¿Cuál es el **mayor** número de siete cifras?",
+"a": [
+9874005
+],
+"show": "9.874.005",
+"why": "Busca el que empieza por la cifra más grande: la fila **9 8 7 4 0 0 5** → **9.874.005**.",
+"pre": "3  5  7  0  1  4  0\n3  6  9  8  3  0  5\n3  0  0  9  0  6  7\n6  8  6  0  4  5  8\n2  0  0  0  5  4  0\n9  8  7  4  0  0  5\n5  4  3  5  0  2  2"
+},
+{
+"t": "num",
+"q": "En la misma sopa, ¿cuál es el **menor** número de siete cifras? (pista: mira también en **vertical**)",
+"a": [
+1304500
+],
+"show": "1.304.500",
+"why": "La 5.ª columna, de arriba abajo: **1 3 0 4 5 0 0** → **1.304.500**. Ningún otro empieza por una cifra tan pequeña (los que empiezan por 0 no tienen siete cifras).",
+"pre": "3  5  7  0  1  4  0\n3  6  9  8  3  0  5\n3  0  0  9  0  6  7\n6  8  6  0  4  5  8\n2  0  0  0  5  4  0\n9  8  7  4  0  0  5\n5  4  3  5  0  2  2"
+},
+{
+"t": "order",
+"q": "Ordena los números de las **tres primeras filas** de **menor a mayor**:",
+"words": [
+"3.009.067",
+"3.570.140",
+"3.698.305"
+],
+"a": [
+"3.009.067 3.570.140 3.698.305"
+],
+"why": "Los tres empiezan por 3 → mira la segunda cifra: **0** < **5** < **6**."
+},
+{
+"t": "order",
+"q": "Ordena la capacidad de los camiones de **menor a mayor**:",
+"words": [
+"28.013 L",
+"28.034 L",
+"28.125 L",
+"28.156 L",
+"28.567 L",
+"28.875 L"
+],
+"a": [
+"28.013 L 28.034 L 28.125 L 28.156 L 28.567 L 28.875 L"
+],
+"why": "Todos empiezan por 28 → compara las **centenas**: 0, 0, 1, 1, 5, 8. Si empatan, mira las **decenas**: 28.0**1**3 < 28.0**3**4."
+},
+{
+"t": "choice",
+"q": "¿Qué signo va entre **28.013 L** y **28.034 L**?",
+"opts": [
+"<",
+">",
+"="
+],
+"a": 0,
+"keep": true,
+"why": "Son **distintos**, así que nunca va **=**: 28.013 **<** 28.034 (1 decena < 3 decenas)."
+},
+{
+"t": "choice",
+"q": "¿Qué camión lleva **más** agua?",
+"opts": [
+"28.567 L",
+"28.875 L",
+"28.156 L"
+],
+"a": 1
+},
+{
+"t": "choice",
+"q": "Elige el signo: **4.589.123  ?  4.598.123**",
+"opts": [
+"<",
+">",
+"="
+],
+"a": 0,
+"keep": true,
+"why": "4.589.123 **<** 4.598.123. **<** = menor que · **>** = mayor que (la boca abierta mira al mayor 🐊)."
+},
+{
+"t": "choice",
+"q": "Elige el signo: **999.999  ?  1.000.000**",
+"opts": [
+"<",
+">",
+"="
+],
+"a": 0,
+"keep": true,
+"why": "999.999 **<** 1.000.000. **<** = menor que · **>** = mayor que (la boca abierta mira al mayor 🐊)."
+},
+{
+"t": "choice",
+"q": "Elige el signo: **7.300.050  ?  7.030.500**",
+"opts": [
+"<",
+">",
+"="
+],
+"a": 1,
+"keep": true,
+"why": "7.300.050 **>** 7.030.500. **<** = menor que · **>** = mayor que (la boca abierta mira al mayor 🐊)."
+},
+{
+"t": "choice",
+"q": "Elige el signo: **2.005.000  ?  2.005.000**",
+"opts": [
+"<",
+">",
+"="
+],
+"a": 2,
+"keep": true,
+"why": "2.005.000 **=** 2.005.000. **<** = menor que · **>** = mayor que (la boca abierta mira al mayor 🐊)."
+},
+{
+"t": "choice",
+"q": "Elige el signo: **6.400.000  ?  640.000**",
+"opts": [
+"<",
+">",
+"="
+],
+"a": 1,
+"keep": true,
+"why": "6.400.000 **>** 640.000. **<** = menor que · **>** = mayor que (la boca abierta mira al mayor 🐊)."
+},
+{
+"t": "choice",
+"q": "Elige el signo: **3.999.999  ?  4.000.001**",
+"opts": [
+"<",
+">",
+"="
+],
+"a": 0,
+"keep": true,
+"why": "3.999.999 **<** 4.000.001. **<** = menor que · **>** = mayor que (la boca abierta mira al mayor 🐊)."
+},
+{
+"t": "choice",
+"q": "**28.013 L = 28.034 L**",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 1,
+"keep": true,
+"why": "Solo se pone **=** si los números son **exactamente iguales**. Aquí 28.013 **<** 28.034."
+},
+{
+"t": "choice",
+"q": "¿Cuál es **verdad**?",
+"opts": [
+"5.004.300 > 5.040.300",
+"5.004.300 < 5.040.300",
+"5.004.300 = 5.040.300"
+],
+"a": 1,
+"keep": true,
+"why": "5.0**0**4.300 y 5.0**4**0.300: la primera cifra distinta está en las **DM** → 0 < 4."
+},
+{
+"t": "choice",
+"q": "¿Qué cifra puede ir en el hueco? **4.5_2.000 > 4.580.000**",
+"opts": [
+"0",
+"7",
+"9",
+"5"
+],
+"a": 2,
+"keep": true,
+"why": "Hasta las CM son iguales (4.5…) → compara las **DM**: con 0, 5 o 7 el número es menor que 4.580.000; con **9** es mayor: 4.592.000 > 4.580.000. (Con 8 también valdría: 4.582.000.)"
+},
+{
+"t": "num",
+"q": "¿Cuál es el **mayor** número de **siete cifras**?",
+"a": [
+9999999
+],
+"show": "9.999.999"
+},
+{
+"t": "num",
+"q": "¿Cuál es el **menor** número de **siete cifras**?",
+"a": [
+1000000
+],
+"show": "1.000.000",
+"why": "Un millón: **1.000.000** (un número no empieza por 0)."
+},
+{
+"t": "num",
+"q": "¿Qué número va **justo después** de **2.999.999**?",
+"a": [
+3000000
+],
+"show": "3.000.000"
+},
+{
+"t": "num",
+"q": "¿Qué número va **justo antes** de **5.000.000**?",
+"a": [
+4999999
+],
+"show": "4.999.999"
+},
+{
+"t": "choice",
+"q": "Tres ciudades: A tiene **807.693** habitantes, B **684.025** y C **682.513**. ¿Cuál tiene **menos**?",
+"opts": [
+"A",
+"B",
+"C"
+],
+"a": 2,
+"keep": true,
+"why": "684.025 y 682.513 empiezan por 68 → en las UM 4 > 2 → **C** es la menor."
+},
+{
+"t": "order",
+"q": "Ordena de **mayor a menor**:",
+"words": [
+"1.200.000",
+"1.020.000",
+"1.002.000",
+"120.000"
+],
+"a": [
+"1.200.000 1.020.000 1.002.000 120.000"
+],
+"why": "120.000 tiene **solo seis cifras** → es el menor. Los otros: mira las CM (2, 0, 0) y luego las DM (2, 0)."
+},
+{
+"t": "choice",
+"q": "Escucha los dos números. ¿Cuál es **mayor**?",
+"opts": [
+"El primero",
+"El segundo",
+"Son iguales"
+],
+"a": 1,
+"why": "3.405.000 < **3.450.000** (en las DM: 0 < 5).",
+"au": "au/ec8918f893379002.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Cuál es **menor**?",
+"opts": [
+"El primero",
+"El segundo",
+"Son iguales"
+],
+"a": 0,
+"why": "899.999 tiene seis cifras; un millón tiene siete → el **primero** es menor.",
+"au": "au/218080e2839ac140.mp3"
+}
+],
+"film": {
+"src": "films/ch14-comparo-v2.mp4",
+"dur": 79.6
+},
+"min": 13,
+"pay": 0.11,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u1-l5",
+"unit": 1,
+"label": "Lección 5",
+"title": "Aproximo números",
+"pages": "7",
+"icon": "🎯",
+"intro": "**Redondear** = buscar el número «redondo» **más cercano**. Mira la cifra **de la derecha** del lugar que redondeas: si es **0, 1, 2, 3 o 4** → se queda; si es **5, 6, 7, 8 o 9** → sube. Todo lo de la derecha se convierte en **ceros**.",
+"sections": [
+{
+"title": "Del cuaderno · p. 7 · la recta numérica",
+"icon": "📒",
+"from": 0,
+"n": 3
+},
+{
+"title": "Del cuaderno · p. 7 · el crucigrama",
+"icon": "📒",
+"from": 3,
+"n": 10
+},
+{
+"title": "Casos con truco",
+"icon": "🧠",
+"from": 13,
+"n": 6
+},
+{
+"title": "Redondear en la vida",
+"icon": "🛒",
+"from": 19,
+"n": 3
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 22,
+"n": 2
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "En la recta, **4.169** está entre **4.000** y **5.000**. ¿A cuál está más cerca?",
+"opts": [
+"4.000",
+"5.000"
+],
+"a": 0,
+"keep": true,
+"why": "4.169 está a 169 de 4.000 y a 831 de 5.000 → **4.000**. (Centenas = **1** < 5 → se queda.)",
+"pre": "4.000 ──●──────────── 5.000\n      4.169"
+},
+{
+"t": "num",
+"q": "La centena más próxima a **538**:",
+"a": [
+500
+],
+"why": "Mira las **decenas**: **3** < 5 → se queda en **500**.",
+"pre": "500 ─────●────────── 600\n         538"
+},
+{
+"t": "num",
+"q": "El millar más próximo a **2.781**:",
+"a": [
+3000
+],
+"show": "3.000",
+"why": "Mira las **centenas**: **7** ≥ 5 → sube a **3.000**.",
+"pre": "2.000 ──────────●── 3.000\n               2.781"
+},
+{
+"t": "num",
+"q": "Redondea **8.405.512** a la centena de millar (CM):",
+"a": [
+8400000
+],
+"show": "8.400.000",
+"why": "CM = 4; la cifra de la derecha (DM) es **0** → se queda: **8.400.000**."
+},
+{
+"t": "num",
+"q": "Redondea **4.789** a la unidad de millar (UM):",
+"a": [
+5000
+],
+"show": "5.000",
+"why": "Centenas = **7** → sube: 4 → **5.000**."
+},
+{
+"t": "num",
+"q": "Redondea **716.306** a la unidad de millar (UM):",
+"a": [
+716000
+],
+"show": "716.000",
+"why": "Centenas = **3** → se queda: **716.000**."
+},
+{
+"t": "num",
+"q": "Redondea **2.345.678** a la unidad de millón (UMM):",
+"a": [
+2000000
+],
+"show": "2.000.000",
+"why": "CM = **3** → se queda: **2.000.000**."
+},
+{
+"t": "num",
+"q": "Redondea **314** a la centena:",
+"a": [
+300
+],
+"show": "300"
+},
+{
+"t": "num",
+"q": "Redondea **444** a la decena:",
+"a": [
+440
+],
+"show": "440",
+"why": "Unidades = **4** → se queda: **440**."
+},
+{
+"t": "num",
+"q": "Redondea **6.820.451** a la decena de millar (DM):",
+"a": [
+6820000
+],
+"show": "6.820.000",
+"why": "UM = **0** → se queda: **6.820.000**."
+},
+{
+"t": "num",
+"q": "Redondea **1.982** a la unidad de millar (UM):",
+"a": [
+2000
+],
+"show": "2.000"
+},
+{
+"t": "num",
+"q": "Redondea **75.167** a la decena de millar (DM):",
+"a": [
+80000
+],
+"show": "80.000",
+"why": "UM = **5** → **sube**: 7 → 8 → **80.000**. ¡Con 5 también se sube!"
+},
+{
+"t": "num",
+"q": "Redondea **4.000.555** a la unidad de millón (UMM):",
+"a": [
+4000000
+],
+"show": "4.000.000"
+},
+{
+"t": "num",
+"q": "Redondea **9.960** a la centena:",
+"a": [
+10000
+],
+"show": "10.000",
+"why": "Decenas = 6 → sube la centena: **99** centenas + 1 = **100** centenas → **10.000**. ¡Se «lleva» como en una suma!"
+},
+{
+"t": "num",
+"q": "Redondea **550** a la centena:",
+"a": [
+600
+],
+"show": "600",
+"why": "Justo en la mitad (decenas = **5**) → **se sube**: **600**."
+},
+{
+"t": "num",
+"q": "Redondea **3.496.000** a la unidad de millón (UMM):",
+"a": [
+3000000
+],
+"show": "3.000.000",
+"why": "Mira **solo** la cifra de las CM: **4** → se queda **3.000.000**. ¡No redondees dos veces (3.496.000 → 3.500.000 → 4.000.000 es un error)!"
+},
+{
+"t": "num",
+"q": "Redondea **999.999** a la centena de millar (CM):",
+"a": [
+1000000
+],
+"show": "1.000.000",
+"why": "DM = 9 → sube: 9 CM + 1 → **1.000.000**."
+},
+{
+"t": "choice",
+"q": "¿Qué número se redondea a **70.000** (a la DM)?",
+"opts": [
+"64.999",
+"65.000",
+"75.000",
+"75.500"
+],
+"a": 1,
+"keep": true,
+"why": "De **65.000** a **74.999** se redondea a 70.000. 64.999 baja a 60.000; 75.000 ya sube a 80.000."
+},
+{
+"t": "choice",
+"q": "**1.250.000** redondeado a la UMM es **2.000.000**.",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 1,
+"keep": true,
+"why": "CM = **2** → se queda: **1.000.000**."
+},
+{
+"t": "num",
+"q": "Un coche cuesta **18.745 €**. ¿Cuánto es, redondeado al **millar**?",
+"a": [
+19000
+],
+"unit": "€",
+"show": "19.000"
+},
+{
+"t": "num",
+"q": "A un concierto fueron **48.312** personas. Redondea a la **decena de millar**:",
+"a": [
+50000
+],
+"show": "50.000",
+"why": "UM = **8** → sube: 4 → 5 → **50.000**."
+},
+{
+"t": "choice",
+"q": "En el periódico pone: «Casi **3 millones** de visitantes». ¿Cuál puede ser el número real?",
+"opts": [
+"2.351.000",
+"2.874.000",
+"3.512.000"
+],
+"a": 1,
+"why": "«Casi 3 millones» = un poco **menos** de 3.000.000 que se redondea a 3.000.000: **2.874.000** (CM = 8 → sube). 2.351.000 → 2.000.000; 3.512.000 es más de 3 millones."
+},
+{
+"t": "num",
+"q": "Escucha el número y redondéalo a la **centena de millar** (CM):",
+"a": [
+5700000
+],
+"show": "5.700.000",
+"why": "5.**6**82.910 → DM = 8 → sube: **5.700.000**.",
+"au": "au/3dcc7ecd80ab41f7.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. Redondeado a la **UMM**, ¿cuánto es?",
+"opts": [
+"7.000.000",
+"8.000.000",
+"7.500.000"
+],
+"a": 1,
+"why": "CM = **5** → sube: **8.000.000**.",
+"au": "au/60a5aa352d8d3cec.mp3"
+}
+],
+"film": {
+"src": "films/ch15-aproximo-v1.mp4",
+"dur": 78.1
+},
+"min": 17,
+"pay": 0.14,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u1-rep",
+"unit": 1,
+"label": "Repaso",
+"title": "El gran repaso de los números",
+"pages": "3–7",
+"icon": "🏆",
+"intro": "¡Todo el Tema 1 mezclado! Ordinales, números de siete cifras, valor de las cifras, comparar y redondear. ¡Demuestra lo que sabes! 💪",
+"sections": [
+{
+"title": "Ordinales",
+"icon": "🏁",
+"from": 0,
+"n": 4
+},
+{
+"title": "Siete cifras",
+"icon": "🧮",
+"from": 4,
+"n": 5
+},
+{
+"title": "Comparar y redondear",
+"icon": "⚖️",
+"from": 9,
+"n": 6
+},
+{
+"title": "Problemas",
+"icon": "🧩",
+"from": 15,
+"n": 3
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 18,
+"n": 2
+}
+],
+"items": [
+{
+"t": "type",
+"q": "Escribe con letras: **19.º**",
+"a": [
+"decimonoveno",
+"décimo noveno",
+"decimonono"
+]
+},
+{
+"t": "type",
+"q": "Escribe con letras: **30.º**",
+"a": [
+"trigésimo"
+]
+},
+{
+"t": "choice",
+"q": "Completa: «Hoy es el ___ día de vacaciones.» (1.º)",
+"opts": [
+"primero",
+"primer",
+"uno"
+],
+"a": 1
+},
+{
+"t": "num",
+"q": "Un tren tiene 25 vagones. ¿Cuántos vagones hay **detrás** del **vigésimo**?",
+"a": [
+5
+],
+"why": "Detrás del 20.º están del 21.º al 25.º → **5** vagones."
+},
+{
+"t": "num",
+"q": "Escribe el número del ábaco con cifras:",
+"a": [
+2030405
+],
+"show": "2.030.405",
+"why": "Sin ceros delante: **2.030.405**.",
+"pre": "DMM │ ·\nUMM │ ●●\n CM │ ·\n DM │ ●●●\n UM │ ·\n  C │ ●●●●\n  D │ ·\n  U │ ●●●●●"
+},
+{
+"t": "type",
+"q": "Escribe con letras: **6.017.090**",
+"a": [
+"seis millones diecisiete mil noventa"
+]
+},
+{
+"t": "num",
+"q": "Escribe con cifras: «nueve millones cien mil diez»",
+"a": [
+9100010
+],
+"show": "9.100.010"
+},
+{
+"t": "num",
+"q": "¿Qué valor tiene la cifra **7** en **3.471.200**?",
+"a": [
+70000
+],
+"show": "70.000"
+},
+{
+"t": "order",
+"q": "Ordena la descomposición de **5.208.613**:",
+"words": [
+"5 UMM",
+"2 CM",
+"0 DM",
+"8 UM",
+"6 C",
+"1 D",
+"3 U"
+],
+"a": [
+"5 UMM 2 CM 0 DM 8 UM 6 C 1 D 3 U"
+]
+},
+{
+"t": "choice",
+"q": "Elige el signo: **6.099.999  ?  6.100.000**",
+"opts": [
+"<",
+">",
+"="
+],
+"a": 0,
+"keep": true,
+"why": "6.099.999 **<** 6.100.000. **<** = menor que · **>** = mayor que (la boca abierta mira al mayor 🐊)."
+},
+{
+"t": "choice",
+"q": "Elige el signo: **4.320.000  ?  432.000**",
+"opts": [
+"<",
+">",
+"="
+],
+"a": 1,
+"keep": true,
+"why": "4.320.000 **>** 432.000. **<** = menor que · **>** = mayor que (la boca abierta mira al mayor 🐊)."
+},
+{
+"t": "order",
+"q": "Ordena de **menor a mayor**:",
+"words": [
+"909.090",
+"990.099",
+"1.009.009",
+"1.090.000"
+],
+"a": [
+"909.090 990.099 1.009.009 1.090.000"
+]
+},
+{
+"t": "num",
+"q": "Redondea **6.549.999** a la unidad de millón (UMM):",
+"a": [
+7000000
+],
+"show": "7.000.000",
+"why": "CM = **5** → sube: **7.000.000**."
+},
+{
+"t": "num",
+"q": "Redondea **38.450** a la centena:",
+"a": [
+38500
+],
+"show": "38.500",
+"why": "Decenas = **5** → sube: **38.500**."
+},
+{
+"t": "num",
+"q": "Redondea **1.995** a la decena:",
+"a": [
+2000
+],
+"show": "2.000",
+"why": "Unidades = 5 → sube: 199 decenas + 1 = 200 decenas → **2.000**."
+},
+{
+"t": "num",
+"q": "Soy un número de **siete cifras**. Mi cifra de las **UMM** es 4 y **todas las demás son 0**, menos la de las **C**, que es 9. ¿Quién soy?",
+"a": [
+4000900
+],
+"show": "4.000.900"
+},
+{
+"t": "choice",
+"q": "Ana dice que **2.400.000** es mayor que **24.000.000**. ¿Tiene razón?",
+"opts": [
+"Sí",
+"No: 24.000.000 tiene más cifras"
+],
+"a": 1,
+"keep": true,
+"why": "24.000.000 tiene **ocho** cifras → es mayor (diez veces más)."
+},
+{
+"t": "num",
+"q": "En un estadio caben **85.412** personas. ¿Cuántas son, redondeando a la **DM**?",
+"a": [
+90000
+],
+"show": "90.000"
+},
+{
+"t": "num",
+"q": "Escucha y escribe el número con cifras:",
+"a": [
+7040150
+],
+"show": "7.040.150",
+"au": "au/cce951d437ad2d2a.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué ordinal es?",
+"opts": [
+"24.º",
+"14.º",
+"4.º"
+],
+"a": 1,
+"au": "au/ea0889fbca9d7da8.mp3"
+}
+],
+"film": {
+"src": "films/ch16-repaso-v1.mp4",
+"dur": 94.0
+},
+"min": 14,
+"pay": 0.12,
+"subjectShort": "Mates"
 }
 ]);
