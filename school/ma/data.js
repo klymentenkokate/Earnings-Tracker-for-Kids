@@ -3616,5 +3616,1611 @@ schoolRegister({"id": "ma", "name": "Mates", "emoji": "🔢", "book": "Cuaderno 
 "min": 13,
 "pay": 0.11,
 "subjectShort": "Mates"
+},
+{
+"id": "ma-u3-l1",
+"unit": 3,
+"label": "Lección 1",
+"title": "La multiplicación y sus propiedades (I)",
+"pages": "13",
+"icon": "⭐",
+"intro": "Multiplicar es sumar el mismo número muchas veces: 4 × 3 = 4 + 4 + 4. Los números que se multiplican son los **factores** y el resultado, el **producto**. Propiedades: **conmutativa** (4 × 3 = 3 × 4), **asociativa** ((2 × 5) × 7 = 2 × (5 × 7)) y **distributiva** (3 × (10 + 2) = 3 × 10 + 3 × 2). ¡Hoy, estrellas! ⭐",
+"sections": [
+{
+"title": "Del cuaderno · p. 13 · las estrellas",
+"icon": "📒",
+"from": 0,
+"n": 12
+},
+{
+"title": "Del cuaderno · p. 13 · el camino de estrellas",
+"icon": "📒",
+"from": 12,
+"n": 6
+},
+{
+"title": "Del cuaderno · p. 13 · sin hacer la operación",
+"icon": "📒",
+"from": 18,
+"n": 4
+},
+{
+"title": "Cálculo mental",
+"icon": "⚡",
+"from": 22,
+"n": 6
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 28,
+"n": 2
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Estrella: arriba la **suma** de los dos del centro, abajo su **producto**. ¿Qué número va **en el centro, a la derecha**?",
+"a": [
+3
+],
+"why": "3 + 3 = **6** y 3 × 3 = **9**.",
+"pre": "   suma: 6\n  [ 3 | ? ]\nproducto: ?"
+},
+{
+"t": "num",
+"q": "Estrella: arriba la **suma** de los dos del centro, abajo su **producto**. ¿Qué número va **abajo**?",
+"a": [
+9
+],
+"why": "3 + 3 = **6** y 3 × 3 = **9**.",
+"pre": "   suma: 6\n  [ 3 | ? ]\nproducto: ?"
+},
+{
+"t": "num",
+"q": "Estrella: arriba la **suma** de los dos del centro, abajo su **producto**. ¿Qué número va **en el centro, a la izquierda**?",
+"a": [
+7
+],
+"why": "7 + 2 = **9** y 7 × 2 = **14**.",
+"pre": "   suma: ?\n  [ ? | 2 ]\nproducto: 14"
+},
+{
+"t": "num",
+"q": "Estrella: suma **11**, producto **24**. ¿Cuáles son los dos números del centro? Escribe el **mayor**.",
+"a": [
+8
+],
+"why": "Busca dos números que sumen 11 y multiplicados den 24: **8 y 3** (8 + 3 = 11, 8 × 3 = 24).",
+"pre": "   suma: 11\n  [ ? | ? ]\nproducto: 24"
+},
+{
+"t": "num",
+"q": "Estrella: arriba la **suma** de los dos del centro, abajo su **producto**. ¿Qué número va **en el centro, a la izquierda**?",
+"a": [
+10
+],
+"why": "10 + 7 = **17** y 10 × 7 = **70**.",
+"pre": "   suma: 17\n  [ ? | 7 ]\nproducto: ?"
+},
+{
+"t": "num",
+"q": "Estrella: suma **103**, producto **300**. Escribe el número **mayor** del centro.",
+"a": [
+100
+],
+"why": "**100 y 3**: 100 + 3 = 103 y 100 × 3 = 300.",
+"pre": "   suma: 103\n  [ ? | ? ]\nproducto: 300"
+},
+{
+"t": "num",
+"q": "Estrella: suma **18**, producto **81**. ¿Qué número va en cada hueco del centro? (son iguales)",
+"a": [
+9
+],
+"why": "9 + 9 = 18 y 9 × 9 = **81**.",
+"pre": "   suma: 18\n  [ ? | ? ]\nproducto: 81"
+},
+{
+"t": "num",
+"q": "Estrella: arriba la **suma** de los dos del centro, abajo su **producto**. ¿Qué número va **en el centro, a la izquierda**?",
+"a": [
+15
+],
+"why": "15 + 4 = **19** y 15 × 4 = **60**.",
+"pre": "   suma: ?\n  [ ? | 4 ]\nproducto: 60"
+},
+{
+"t": "num",
+"q": "Estrella: suma **25**, producto **100**. Escribe el número **mayor** del centro.",
+"a": [
+20
+],
+"why": "**20 y 5**.",
+"pre": "   suma: 25\n  [ ? | ? ]\nproducto: 100"
+},
+{
+"t": "num",
+"q": "Estrella: suma **24**, producto **144**. ¿Qué número va en cada hueco? (son iguales)",
+"a": [
+12
+],
+"why": "12 + 12 = 24 y 12 × 12 = **144**.",
+"pre": "   suma: 24\n  [ ? | ? ]\nproducto: 144"
+},
+{
+"t": "num",
+"q": "Estrella: arriba la **suma** de los dos del centro, abajo su **producto**. ¿Qué número va **arriba**?",
+"a": [
+26
+],
+"why": "13 + 13 = **26** y 13 × 13 = **169**.",
+"pre": "   suma: ?\n  [ 13 | 13 ]\nproducto: ?"
+},
+{
+"t": "num",
+"q": "Estrella: arriba la **suma** de los dos del centro, abajo su **producto**. ¿Qué número va **abajo**?",
+"a": [
+169
+],
+"why": "13 + 13 = **26** y 13 × 13 = **169**.",
+"pre": "   suma: ?\n  [ 13 | 13 ]\nproducto: ?"
+},
+{
+"t": "num",
+"q": "Camino del ejemplo: **1 × 4 × 5 × 6 × 3 =**",
+"a": [
+360
+],
+"show": "360"
+},
+{
+"t": "num",
+"q": "Camino para **750**: 1 × 3 × 10 × 25. Compruébalo: **1 × 3 × 10 × 25 =**",
+"a": [
+750
+],
+"show": "750",
+"why": "3 × 10 = 30 → 30 × 25 = **750**."
+},
+{
+"t": "num",
+"q": "Camino para **270**: 1 × 3 × 5 × 6 × ___ = 270. ¿Qué factor falta?",
+"a": [
+3
+],
+"why": "1 × 3 × 5 × 6 = 90 → 90 × **3** = 270."
+},
+{
+"t": "num",
+"q": "Camino para **960**: 1 × 4 × 5 × 6 × ___ = 960. ¿Qué factor falta?",
+"a": [
+8
+],
+"why": "1 × 4 × 5 × 6 = 120 → 120 × **8** = 960."
+},
+{
+"t": "num",
+"q": "Camino para **1.000**: 1 × 4 × 5 × 2 × ___ = 1.000. ¿Qué factor falta?",
+"a": [
+25
+],
+"why": "4 × 5 × 2 = 40 → 40 × **25** = 1.000."
+},
+{
+"t": "num",
+"q": "Camino para **1.344**: 1 × 4 × 7 × 3 × **?** = 1.344. ¿Qué número va en la estrella misteriosa **?**",
+"a": [
+16
+],
+"why": "4 × 7 × 3 = 84 → 1.344 : 84 = **16**. (Compruébalo: 84 × 16 = 1.344.)"
+},
+{
+"t": "match",
+"q": "Une los productos que dan **lo mismo** (¡sin calcular!):",
+"pairs": [
+[
+"52.365 × 41",
+"41 × 52.365"
+],
+[
+"48 × 23 + 12 × 23",
+"(48 + 12) × 23"
+],
+[
+"(25 × 68) × 47",
+"25 × (68 × 47)"
+]
+]
+},
+{
+"t": "choice",
+"q": "**52.365 × 41 = 41 × 52.365**. ¿Qué propiedad es?",
+"opts": [
+"conmutativa",
+"asociativa",
+"distributiva"
+],
+"a": 0,
+"keep": true,
+"why": "Cambia el **orden** de los factores → conmutativa."
+},
+{
+"t": "choice",
+"q": "**(25 × 68) × 47 = 25 × (68 × 47)**. ¿Qué propiedad es?",
+"opts": [
+"conmutativa",
+"asociativa",
+"distributiva"
+],
+"a": 1,
+"keep": true,
+"why": "Cambia cómo se **agrupan** → asociativa."
+},
+{
+"t": "choice",
+"q": "**48 × 23 + 12 × 23 = (48 + 12) × 23**. ¿Qué propiedad es?",
+"opts": [
+"conmutativa",
+"asociativa",
+"distributiva"
+],
+"a": 2,
+"keep": true,
+"why": "Multiplicar una **suma** es como multiplicar cada número y sumar → **distributiva**. (48 + 12) × 23 = 60 × 23 = 1.380."
+},
+{
+"t": "num",
+"q": "Calcula: **25 × 7 × 4**",
+"a": [
+700
+],
+"show": "700",
+"why": "25 × 4 = 100 primero → 100 × 7 = **700**."
+},
+{
+"t": "num",
+"q": "Calcula: **2 × 37 × 5**",
+"a": [
+370
+],
+"show": "370",
+"why": "2 × 5 = 10 → 10 × 37 = **370**."
+},
+{
+"t": "num",
+"q": "Calcula: **6 × 12**",
+"a": [
+72
+],
+"show": "72"
+},
+{
+"t": "num",
+"q": "Calcula: **9 × 8**",
+"a": [
+72
+],
+"show": "72"
+},
+{
+"t": "num",
+"q": "Calcula: **7 × 8**",
+"a": [
+56
+],
+"show": "56"
+},
+{
+"t": "num",
+"q": "Calcula: **12 × 12**",
+"a": [
+144
+],
+"show": "144"
+},
+{
+"t": "num",
+"q": "Escucha y calcula:",
+"a": [
+400
+],
+"why": "25 × 4 = 100 → 100 × 4 = **400**.",
+"au": "au/971b29c0b8eecd79.mp3"
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Cómo se llama el resultado de una multiplicación?",
+"opts": [
+"el producto",
+"la suma",
+"el factor"
+],
+"a": 0,
+"au": "au/4a69d9aaff02158a.mp3"
+}
+],
+"film": {
+"src": "films/ch31-estrellas-v1.mp4",
+"dur": 103.9
+},
+"min": 23,
+"pay": 0.19,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u3-l2",
+"unit": 3,
+"label": "Lección 2",
+"title": "La multiplicación y sus propiedades (II)",
+"pages": "14",
+"icon": "🗝️",
+"intro": "La **propiedad distributiva**: para multiplicar un número por una suma (o una resta), puedes multiplicarlo por **cada** número y luego sumar (o restar): 5 × (545 + 235) = 5 × 545 + 5 × 235. Truco del día: ¡multiplica por **los dos**, no solo por el primero! 🗝️",
+"sections": [
+{
+"title": "Del cuaderno · p. 14 · el factor que falta",
+"icon": "📒",
+"from": 0,
+"n": 7
+},
+{
+"title": "Del cuaderno · p. 14 · de dos formas",
+"icon": "📒",
+"from": 7,
+"n": 10
+},
+{
+"title": "Del cuaderno · p. 14 · pergaminos y cofres",
+"icon": "📒",
+"from": 17,
+"n": 8
+},
+{
+"title": "Cálculo mental con la distributiva",
+"icon": "⚡",
+"from": 25,
+"n": 3
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 28,
+"n": 1
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Completa: **458.120 × 74 = 74 × ___**",
+"a": [
+458120
+],
+"show": "458.120"
+},
+{
+"t": "choice",
+"q": "¿Qué propiedad es **458.120 × 74 = 74 × 458.120**?",
+"opts": [
+"conmutativa",
+"asociativa",
+"distributiva"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "num",
+"q": "Completa: **(45 × 86) × 27 = ___ × (86 × 27)**",
+"a": [
+45
+]
+},
+{
+"t": "choice",
+"q": "¿Qué propiedad es **(45 × 86) × 27 = 45 × (86 × 27)**?",
+"opts": [
+"conmutativa",
+"asociativa",
+"distributiva"
+],
+"a": 1,
+"keep": true
+},
+{
+"t": "num",
+"q": "Completa: **25 × 48 − 25 × 32 = 25 × (48 − ___)**",
+"a": [
+32
+]
+},
+{
+"t": "choice",
+"q": "¿Qué propiedad es **25 × 48 − 25 × 32 = 25 × (48 − 32)**?",
+"opts": [
+"conmutativa",
+"asociativa",
+"distributiva"
+],
+"a": 2,
+"keep": true,
+"why": "El 25 «se reparte» entre el 48 y el 32 → **distributiva**."
+},
+{
+"t": "num",
+"q": "Calcula: **25 × (48 − 32)**",
+"a": [
+400
+],
+"show": "400",
+"why": "48 − 32 = 16 → 25 × 16 = **400**. ¡Más fácil que hacer las dos multiplicaciones!"
+},
+{
+"t": "num",
+"q": "Forma 1 (el paréntesis primero): **5 × (545 + 235) =**",
+"a": [
+3900
+],
+"show": "3.900",
+"why": "545 + 235 = 780 → 5 × 780 = **3.900**."
+},
+{
+"t": "num",
+"q": "Forma 2 (distributiva). Primero: **5 × 545 =**",
+"a": [
+2725
+],
+"show": "2.725"
+},
+{
+"t": "num",
+"q": "Y: **5 × 235 =**",
+"a": [
+1175
+],
+"show": "1.175"
+},
+{
+"t": "num",
+"q": "Ahora suma: **2.725 + 1.175 =**",
+"a": [
+3900
+],
+"show": "3.900",
+"why": "¡**3.900** otra vez! Las dos formas dan lo mismo."
+},
+{
+"t": "num",
+"q": "Forma 1: **8 × (485 − 237) =**",
+"a": [
+1984
+],
+"show": "1.984",
+"why": "485 − 237 = 248 → 8 × 248 = **1.984**."
+},
+{
+"t": "num",
+"q": "Forma 2. Primero: **8 × 485 =**",
+"a": [
+3880
+],
+"show": "3.880"
+},
+{
+"t": "num",
+"q": "Y: **8 × 237 =**",
+"a": [
+1896
+],
+"show": "1.896"
+},
+{
+"t": "num",
+"q": "Ahora resta: **3.880 − 1.896 =**",
+"a": [
+1984
+],
+"show": "1.984",
+"why": "¡**1.984** otra vez!"
+},
+{
+"t": "choice",
+"q": "¿Cuál es igual a **6 × (10 + 3)**?",
+"opts": [
+"6 × 10 + 3",
+"6 × 10 + 6 × 3",
+"6 + 10 × 3"
+],
+"a": 1,
+"keep": true,
+"why": "¡El 6 multiplica a **los dos**! 6 × 10 + 6 × 3 = 60 + 18 = 78. (6 × 10 + 3 = 63, mal.)"
+},
+{
+"t": "choice",
+"q": "**7 × (20 − 1) = 7 × 20 − 1**",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 1,
+"keep": true,
+"why": "7 × (20 − 1) = 7 × 19 = **133**. Lo correcto es 7 × 20 − 7 × 1 = 140 − 7 = 133."
+},
+{
+"t": "choice",
+"q": "¿En qué cofre va el pergamino **(100 − 61) × 2**?",
+"opts": [
+"48 (amarillo)",
+"78 (verde)",
+"50 (azul)"
+],
+"a": 1,
+"keep": true,
+"why": "(100 − 61) × 2 = **78**. ¡El paréntesis primero!"
+},
+{
+"t": "choice",
+"q": "¿En qué cofre va el pergamino **(35 − 27) × 6**?",
+"opts": [
+"48 (amarillo)",
+"78 (verde)",
+"50 (azul)"
+],
+"a": 0,
+"keep": true,
+"why": "(35 − 27) × 6 = **48**. ¡El paréntesis primero!"
+},
+{
+"t": "choice",
+"q": "¿En qué cofre va el pergamino **3 × (12 + 14)**?",
+"opts": [
+"48 (amarillo)",
+"78 (verde)",
+"50 (azul)"
+],
+"a": 1,
+"keep": true,
+"why": "3 × (12 + 14) = **78**. ¡El paréntesis primero!"
+},
+{
+"t": "choice",
+"q": "¿En qué cofre va el pergamino **10 × (7 − 2)**?",
+"opts": [
+"48 (amarillo)",
+"78 (verde)",
+"50 (azul)"
+],
+"a": 2,
+"keep": true,
+"why": "10 × (7 − 2) = **50**. ¡El paréntesis primero!"
+},
+{
+"t": "choice",
+"q": "¿En qué cofre va el pergamino **(9 + 4) × 6**?",
+"opts": [
+"48 (amarillo)",
+"78 (verde)",
+"50 (azul)"
+],
+"a": 1,
+"keep": true,
+"why": "(9 + 4) × 6 = **78**. ¡El paréntesis primero!"
+},
+{
+"t": "choice",
+"q": "¿En qué cofre va el pergamino **5 × (99 − 89)**?",
+"opts": [
+"48 (amarillo)",
+"78 (verde)",
+"50 (azul)"
+],
+"a": 2,
+"keep": true,
+"why": "5 × (99 − 89) = **50**. ¡El paréntesis primero!"
+},
+{
+"t": "choice",
+"q": "¿En qué cofre va el pergamino **(76 − 51) × 2**?",
+"opts": [
+"48 (amarillo)",
+"78 (verde)",
+"50 (azul)"
+],
+"a": 2,
+"keep": true,
+"why": "(76 − 51) × 2 = **50**. ¡El paréntesis primero!"
+},
+{
+"t": "choice",
+"q": "¿En qué cofre va el pergamino **25 × (47 − 45)**?",
+"opts": [
+"48 (amarillo)",
+"78 (verde)",
+"50 (azul)"
+],
+"a": 2,
+"keep": true,
+"why": "25 × (47 − 45) = **50**. ¡El paréntesis primero!"
+},
+{
+"t": "num",
+"q": "Calcula: **9 × 99**",
+"a": [
+891
+],
+"show": "891",
+"why": "9 × (100 − 1) = 900 − 9 = **891**."
+},
+{
+"t": "num",
+"q": "Calcula: **12 × 21**",
+"a": [
+252
+],
+"show": "252",
+"why": "12 × (20 + 1) = 240 + 12 = **252**."
+},
+{
+"t": "num",
+"q": "Calcula: **4 × 105**",
+"a": [
+420
+],
+"show": "420",
+"why": "4 × 100 + 4 × 5 = 400 + 20 = **420**."
+},
+{
+"t": "num",
+"q": "Escucha y calcula:",
+"a": [
+104
+],
+"why": "8 × 13 = **104** (= 80 + 24).",
+"au": "au/65895739725a2b63.mp3"
+}
+],
+"film": {
+"src": "films/ch32-distributiva-v1.mp4",
+"dur": 112.3
+},
+"min": 19,
+"pay": 0.16,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u3-l3",
+"unit": 3,
+"label": "Lección 3",
+"title": "Multiplicación por decenas, centenas y millares",
+"pages": "15",
+"icon": "0️⃣",
+"intro": "Para multiplicar por **20, 300, 5.000**…: multiplica por la cifra sin ceros (2, 3, 5) y luego **añade los ceros** al final. 3.125 × 200 → 3.125 × 2 = 6.250 → **625.000**. Por 10, 100, 1.000: ¡solo añade 1, 2 o 3 ceros! 0️⃣",
+"sections": [
+{
+"title": "Del cuaderno · p. 15 · rodea el resultado",
+"icon": "📒",
+"from": 0,
+"n": 3
+},
+{
+"title": "Del cuaderno · p. 15 · por centenas",
+"icon": "📒",
+"from": 3,
+"n": 4
+},
+{
+"title": "Del cuaderno · p. 15 · une",
+"icon": "📒",
+"from": 7,
+"n": 1
+},
+{
+"title": "Del cuaderno · p. 15 · el número que falta",
+"icon": "📒",
+"from": 8,
+"n": 6
+},
+{
+"title": "Del cuaderno · p. 15 · la serie × 20",
+"icon": "📒",
+"from": 14,
+"n": 4
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 18,
+"n": 1
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "**7.589 × 20 =**",
+"opts": [
+"151.780",
+"75.890",
+"15.178",
+"7.589"
+],
+"a": 0,
+"keep": true,
+"why": "7.589 × 2 = 15.178 → añade un 0 → **151.780**."
+},
+{
+"t": "choice",
+"q": "**2.052 × 90 =**",
+"opts": [
+"18.468",
+"1.846.800",
+"20.520",
+"184.680"
+],
+"a": 3,
+"keep": true,
+"why": "2.052 × 9 = 18.468 → añade un 0 → **184.680**."
+},
+{
+"t": "choice",
+"q": "**5.890 × 50 =**",
+"opts": [
+"2.945",
+"29.450",
+"294.500",
+"58.900"
+],
+"a": 2,
+"keep": true,
+"why": "589 × 5 = 2.945, y hay **dos** ceros (el de 5.890 y el de 50) → **294.500**."
+},
+{
+"t": "num",
+"q": "Calcula: **4.256 × 800**",
+"a": [
+3404800
+],
+"show": "3.404.800",
+"why": "4.256 × 8 = 34.048 → y le añades los ceros (2): **3.404.800**."
+},
+{
+"t": "num",
+"q": "Calcula: **4.256 × 200**",
+"a": [
+851200
+],
+"show": "851.200",
+"why": "4.256 × 2 = 8.512 → y le añades los ceros (2): **851.200**."
+},
+{
+"t": "num",
+"q": "Calcula: **4.256 × 300**",
+"a": [
+1276800
+],
+"show": "1.276.800",
+"why": "4.256 × 3 = 12.768 → y le añades los ceros (2): **1.276.800**."
+},
+{
+"t": "num",
+"q": "Calcula: **4.256 × 100**",
+"a": [
+425600
+],
+"show": "425.600",
+"why": "Por 100: añade **dos ceros** → **425.600**."
+},
+{
+"t": "match",
+"q": "Une cada producto con su resultado:",
+"pairs": [
+[
+"816 × 7.000",
+"5.712.000"
+],
+[
+"3.658 × 2.000",
+"7.316.000"
+],
+[
+"412 × 5.000",
+"2.060.000"
+],
+[
+"1.478 × 1.000",
+"1.478.000"
+]
+],
+"why": "816 × 7 = 5.712 → +000 · 3.658 × 2 = 7.316 → +000 · 412 × 5 = 2.060 → +000 · 1.478 × 1 → +000."
+},
+{
+"t": "num",
+"q": "**19 × ___ = 95.000**",
+"a": [
+5000
+],
+"show": "5.000",
+"why": "19 × 5 = 95, y faltan **tres ceros** → **5.000**."
+},
+{
+"t": "num",
+"q": "**5.692 × ___ = 3.415.200**",
+"a": [
+600
+],
+"why": "5.692 × 6 = 34.152, y faltan **dos ceros** → **600**."
+},
+{
+"t": "num",
+"q": "**789 × ___ = 7.101.000**",
+"a": [
+9000
+],
+"show": "9.000",
+"why": "789 × 9 = 7.101 → **9.000**."
+},
+{
+"t": "num",
+"q": "**36 × ___ = 144.000**",
+"a": [
+4000
+],
+"show": "4.000",
+"why": "36 × 4 = 144 → **4.000**."
+},
+{
+"t": "num",
+"q": "**236 × ___ = 188.800**",
+"a": [
+800
+],
+"why": "236 × 8 = 1.888 → **800**."
+},
+{
+"t": "num",
+"q": "**4.217 × ___ = 295.190**",
+"a": [
+70
+],
+"why": "4.217 × 7 = 29.519 → **70**."
+},
+{
+"t": "num",
+"q": "Serie: **50 → ×20 → ?**",
+"a": [
+1000
+],
+"show": "1.000"
+},
+{
+"t": "num",
+"q": "Sigue: **1.000 → ×20 → ?**",
+"a": [
+20000
+],
+"show": "20.000"
+},
+{
+"t": "num",
+"q": "Sigue: **20.000 → ×20 → ?**",
+"a": [
+400000
+],
+"show": "400.000"
+},
+{
+"t": "num",
+"q": "Y el último: **400.000 → ×20 → ?**",
+"a": [
+8000000
+],
+"show": "8.000.000",
+"why": "400.000 × 2 = 800.000 → añade un 0 → **8.000.000**: ¡ocho millones!"
+},
+{
+"t": "num",
+"q": "Escucha y calcula:",
+"a": [
+360000
+],
+"show": "360.000",
+"why": "9 × 4 = 36, y **cuatro** ceros → **360.000**.",
+"au": "au/3c9f1d32180d5bc8.mp3"
+}
+],
+"film": {
+"src": "films/ch33-ceros-v1.mp4",
+"dur": 93.3
+},
+"min": 14,
+"pay": 0.12,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u3-l4",
+"unit": 3,
+"label": "Lección 4",
+"title": "Operaciones combinadas",
+"pages": "18",
+"icon": "🧩",
+"intro": "Cuando hay varias operaciones, el orden es: **1.º** los paréntesis, **2.º** las multiplicaciones (y divisiones), **3.º** las sumas y restas, de izquierda a derecha. Truco del día: 5 + 2 × 3 **no** es 21, es **11** — ¡la multiplicación va primero! 🧩",
+"sections": [
+{
+"title": "Del cuaderno · p. 18 · ¿dónde está el error?",
+"icon": "📒",
+"from": 0,
+"n": 3
+},
+{
+"title": "Del cuaderno · p. 18 · pon los paréntesis",
+"icon": "📒",
+"from": 3,
+"n": 4
+},
+{
+"title": "Del cuaderno · p. 18 · el jeroglífico",
+"icon": "📒",
+"from": 7,
+"n": 4
+},
+{
+"title": "¿Qué va primero?",
+"icon": "🧠",
+"from": 11,
+"n": 6
+},
+{
+"title": "El truco de la edad",
+"icon": "🎂",
+"from": 17,
+"n": 2
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 19,
+"n": 1
+}
+],
+"items": [
+{
+"t": "num",
+"q": "Alguien escribió **9 − 1 × 6 = 48**. ¿Cuál es el resultado **correcto**?",
+"a": [
+3
+],
+"show": "3",
+"why": "Primero 1 × 6 = 6 → 9 − 6 = **3**. (48 sale de hacer 9 − 1 = 8 primero, ¡mal!)"
+},
+{
+"t": "num",
+"q": "Alguien escribió **12 × 3 + 2 × 5 = 300**. ¿Cuál es el correcto?",
+"a": [
+46
+],
+"show": "46",
+"why": "36 + 10 = **46**."
+},
+{
+"t": "num",
+"q": "Alguien escribió **16 × 11 − 4 × 3 − 2 = 112**. ¿Cuál es el correcto?",
+"a": [
+162
+],
+"show": "162",
+"why": "176 − 12 − 2 = **162**."
+},
+{
+"t": "choice",
+"q": "¿Dónde van los paréntesis para que **3 + 8 × 7 − 4 × 3 + 1 = 76**?",
+"opts": [
+"(3 + 8) × 7 − 4 × 3 + 1",
+"3 + 8 × (7 − 4) × 3 + 1",
+"3 + 8 × 7 − 4 × (3 + 1)"
+],
+"a": 1,
+"keep": true,
+"why": "7 − 4 = 3 → 3 + 8 × 3 × 3 + 1 = 3 + 72 + 1 = **76**."
+},
+{
+"t": "choice",
+"q": "¿Y para que dé **66**?",
+"opts": [
+"(3 + 8) × 7 − 4 × 3 + 1",
+"3 + 8 × (7 − 4) × 3 + 1",
+"3 + 8 × 7 − 4 × (3 + 1)"
+],
+"a": 0,
+"keep": true,
+"why": "11 × 7 = 77 → 77 − 12 + 1 = **66**."
+},
+{
+"t": "choice",
+"q": "¿Y para que dé **43**?",
+"opts": [
+"(3 + 8) × 7 − 4 × 3 + 1",
+"3 + 8 × (7 − 4) × 3 + 1",
+"3 + 8 × 7 − 4 × (3 + 1)"
+],
+"a": 2,
+"keep": true,
+"why": "4 × 4 = 16 → 3 + 56 − 16 = **43**."
+},
+{
+"t": "num",
+"q": "¿Y **sin** paréntesis? **3 + 8 × 7 − 4 × 3 + 1 =**",
+"a": [
+48
+],
+"show": "48",
+"why": "3 + 56 − 12 + 1 = **48**."
+},
+{
+"t": "num",
+"q": "Jeroglífico: **★ × ★ = 25**. ¿Cuánto vale ★?",
+"a": [
+5
+],
+"pre": "★ × ★ = 25\n◆ × ◆ × ★ = 45\n◆ × ★ × ☾ × ☾ = 60\n★ + ★ × ☾ − ◆ = ?"
+},
+{
+"t": "num",
+"q": "**◆ × ◆ × ★ = 45**. ¿Cuánto vale ◆?",
+"a": [
+3
+],
+"why": "◆ × ◆ × 5 = 45 → ◆ × ◆ = 9 → ◆ = **3**.",
+"pre": "★ × ★ = 25\n◆ × ◆ × ★ = 45\n◆ × ★ × ☾ × ☾ = 60\n★ + ★ × ☾ − ◆ = ?"
+},
+{
+"t": "num",
+"q": "**◆ × ★ × ☾ × ☾ = 60**. ¿Cuánto vale ☾?",
+"a": [
+2
+],
+"why": "3 × 5 = 15 → ☾ × ☾ = 60 : 15 = 4 → ☾ = **2**.",
+"pre": "★ × ★ = 25\n◆ × ◆ × ★ = 45\n◆ × ★ × ☾ × ☾ = 60\n★ + ★ × ☾ − ◆ = ?"
+},
+{
+"t": "num",
+"q": "Y por fin: **★ + ★ × ☾ − ◆ = ?**",
+"a": [
+12
+],
+"why": "5 + 5 × 2 − 3 → primero 5 × 2 = 10 → 5 + 10 − 3 = **12** (¡no 17!).",
+"pre": "★ × ★ = 25\n◆ × ◆ × ★ = 45\n◆ × ★ × ☾ × ☾ = 60\n★ + ★ × ☾ − ◆ = ?"
+},
+{
+"t": "num",
+"q": "Calcula: **2 + 3 × 4**",
+"a": [
+14
+],
+"show": "14"
+},
+{
+"t": "num",
+"q": "Calcula: **20 − 2 × 5**",
+"a": [
+10
+],
+"show": "10"
+},
+{
+"t": "num",
+"q": "Calcula: **(20 − 2) × 5**",
+"a": [
+90
+],
+"show": "90"
+},
+{
+"t": "num",
+"q": "Calcula: **6 × 5 − 4 × 3**",
+"a": [
+18
+],
+"show": "18"
+},
+{
+"t": "num",
+"q": "Calcula: **100 − 4 × 5 × 2**",
+"a": [
+60
+],
+"show": "60"
+},
+{
+"t": "choice",
+"q": "En **7 + 2 × 10**, ¿qué haces primero?",
+"opts": [
+"7 + 2",
+"2 × 10"
+],
+"a": 1,
+"keep": true,
+"why": "La multiplicación primero: 2 × 10 = 20 → 7 + 20 = **27**."
+},
+{
+"t": "num",
+"q": "Truco: mes × 2, + 5, × 50, + edad, − 250. Para alguien nacido en **junio** (6) con **10** años: **(6 × 2 + 5) × 50 + 10 − 250 =**",
+"a": [
+610
+],
+"show": "610",
+"why": "17 × 50 = 850 → 850 + 10 = 860 → 860 − 250 = **610** → mes **6**, edad **10**. ¡Funciona!"
+},
+{
+"t": "num",
+"q": "Ahora alguien nacido en **noviembre** (11) con **42** años: **(11 × 2 + 5) × 50 + 42 − 250 =**",
+"a": [
+1142
+],
+"show": "1.142",
+"why": "**1142** → mes **11**, edad **42**."
+},
+{
+"t": "num",
+"q": "Escucha y calcula (¡en el orden correcto!):",
+"a": [
+23
+],
+"why": "4 × 5 = 20 → 3 + 20 = **23**.",
+"au": "au/2446863f7bc93909.mp3"
+}
+],
+"film": {
+"src": "films/ch34-combinadas-v1.mp4",
+"dur": 112.6
+},
+"min": 16,
+"pay": 0.13,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u3-l5",
+"unit": 3,
+"label": "Lección 5",
+"title": "Potencias",
+"pages": "19",
+"icon": "🚀",
+"intro": "Una **potencia** es una multiplicación de factores **iguales**: 4³ = 4 × 4 × 4 = 64. El número de abajo es la **base** (el que se multiplica) y el pequeñito de arriba, el **exponente** (cuántas veces). Al cuadrado = exponente 2, al cubo = exponente 3. ¡Ojo! 2³ **no** es 2 × 3 🚀",
+"sections": [
+{
+"title": "Del cuaderno · p. 19 · como producto",
+"icon": "📒",
+"from": 0,
+"n": 6
+},
+{
+"title": "Del cuaderno · p. 19 · la base",
+"icon": "📒",
+"from": 6,
+"n": 6
+},
+{
+"title": "Del cuaderno · p. 19 · la serie del 1",
+"icon": "📒",
+"from": 12,
+"n": 4
+},
+{
+"title": "Del cuaderno · p. 19 · series y parejas",
+"icon": "📒",
+"from": 16,
+"n": 5
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 21,
+"n": 2
+}
+],
+"items": [
+{
+"t": "num",
+"q": "**6³ = 6 × 6 × 6 =**",
+"a": [
+216
+],
+"show": "216"
+},
+{
+"t": "order",
+"q": "Escribe **2⁵** como producto (ordena las fichas):",
+"words": [
+"2",
+"×",
+"2",
+"×",
+"2",
+"×",
+"2",
+"×",
+"2"
+],
+"a": [
+"2 × 2 × 2 × 2 × 2"
+],
+"why": "Exponente 5 → el 2 se multiplica **cinco veces**."
+},
+{
+"t": "num",
+"q": "**2⁵ = 2 × 2 × 2 × 2 × 2 =**",
+"a": [
+32
+],
+"show": "32"
+},
+{
+"t": "num",
+"q": "**8³ = 8 × 8 × 8 =**",
+"a": [
+512
+],
+"show": "512",
+"why": "8 × 8 = 64 → 64 × 8 = **512**."
+},
+{
+"t": "num",
+"q": "**10³ =**",
+"a": [
+1000
+],
+"show": "1.000",
+"why": "10 × 10 × 10 = **1.000**: ¡un 1 y tres ceros!"
+},
+{
+"t": "choice",
+"q": "**2³ = 6**",
+"opts": [
+"Verdadero ✔️",
+"Falso ✖️"
+],
+"a": 1,
+"keep": true,
+"why": "2³ = 2 × 2 × 2 = **8**. ¡No es 2 × 3!"
+},
+{
+"t": "num",
+"q": "**__² = 25**. ¿Cuál es la base?",
+"a": [
+5
+]
+},
+{
+"t": "num",
+"q": "**__² = 81**",
+"a": [
+9
+]
+},
+{
+"t": "num",
+"q": "**__² = 49**",
+"a": [
+7
+]
+},
+{
+"t": "num",
+"q": "**__² = 256**",
+"a": [
+16
+],
+"why": "16 × 16 = **256**."
+},
+{
+"t": "num",
+"q": "**__² = 121**",
+"a": [
+11
+]
+},
+{
+"t": "num",
+"q": "**__² = 64**",
+"a": [
+8
+],
+"why": "8 × 8 = 64. (¡Y también 4³ = 64 y 2⁶ = 64!)"
+},
+{
+"t": "num",
+"q": "**11² = 11 × 11 =**",
+"a": [
+121
+],
+"show": "121"
+},
+{
+"t": "num",
+"q": "**111² =**",
+"a": [
+12321
+],
+"show": "12.321"
+},
+{
+"t": "num",
+"q": "Sin calculadora: **11.111² = ?** (mira el patrón: 121, 12.321, 1.234.321…)",
+"a": [
+123454321
+],
+"show": "123.454.321",
+"why": "Sube hasta el 5 y baja: **123.454.321**."
+},
+{
+"t": "num",
+"q": "¿Y **111.111²**?",
+"a": [
+12345654321
+],
+"show": "12.345.654.321",
+"why": "Sube hasta el 6 y baja: **12.345.654.321**."
+},
+{
+"t": "num",
+"q": "Serie de cuadrados: **1 – 4 – 9 – 16 – 25 – 36 – ?**",
+"a": [
+49
+],
+"why": "1², 2², 3²… → 7² = **49**."
+},
+{
+"t": "num",
+"q": "Y el siguiente: **… 36 – 49 – ?**",
+"a": [
+64
+]
+},
+{
+"t": "num",
+"q": "Serie de cubos: **1 – 8 – 27 – 64 – 125 – 216 – ?**",
+"a": [
+343
+],
+"why": "7³ = 7 × 7 × 7 = **343**."
+},
+{
+"t": "num",
+"q": "Y el siguiente: **… 216 – 343 – ?**",
+"a": [
+512
+],
+"why": "8³ = **512**."
+},
+{
+"t": "match",
+"q": "Une cada potencia con su resultado:",
+"pairs": [
+[
+"12²",
+"144"
+],
+[
+"10³",
+"1.000"
+],
+[
+"8³",
+"512"
+],
+[
+"11²",
+"121"
+],
+[
+"9³",
+"729"
+],
+[
+"13²",
+"169"
+]
+]
+},
+{
+"t": "choice",
+"q": "Escucha. ¿Qué potencia es?",
+"opts": [
+"5²",
+"2⁵",
+"5³"
+],
+"a": 2,
+"why": "«Al cubo» = exponente **3**: 5³ = 125.",
+"au": "au/998097096609fb4a.mp3"
+},
+{
+"t": "num",
+"q": "Escucha y calcula:",
+"a": [
+49
+],
+"au": "au/e1ab9d59ddd093ec.mp3"
+}
+],
+"film": {
+"src": "films/ch35-potencias-v1.mp4",
+"dur": 89.2
+},
+"min": 17,
+"pay": 0.14,
+"subjectShort": "Mates"
+},
+{
+"id": "ma-u3-rep",
+"unit": 3,
+"label": "Repaso",
+"title": "El gran repaso de la multiplicación",
+"pages": "13–19",
+"icon": "🏆",
+"intro": "¡Todo el Tema 3 mezclado! Propiedades, multiplicar por decenas y centenas, operaciones combinadas y potencias. ¡A por ello! 💪",
+"sections": [
+{
+"title": "Propiedades",
+"icon": "⭐",
+"from": 0,
+"n": 5
+},
+{
+"title": "Ceros",
+"icon": "0️⃣",
+"from": 5,
+"n": 3
+},
+{
+"title": "Combinadas y potencias",
+"icon": "🧩",
+"from": 8,
+"n": 5
+},
+{
+"title": "Escucha",
+"icon": "🎧",
+"from": 13,
+"n": 1
+}
+],
+"items": [
+{
+"t": "choice",
+"q": "**7 × (10 + 4) = 7 × 10 + 7 × 4**",
+"opts": [
+"conmutativa",
+"asociativa",
+"distributiva"
+],
+"a": 2,
+"keep": true
+},
+{
+"t": "choice",
+"q": "**8 × 125 = 125 × 8**",
+"opts": [
+"conmutativa",
+"asociativa",
+"distributiva"
+],
+"a": 0,
+"keep": true
+},
+{
+"t": "num",
+"q": "Calcula: **15 × 99**",
+"a": [
+1485
+],
+"show": "1.485",
+"why": "15 × 100 − 15 = 1.500 − 15 = **1.485**."
+},
+{
+"t": "choice",
+"q": "¿En qué cofre va el pergamino **3 × (12 + 4)**?",
+"opts": [
+"48 (amarillo)",
+"78 (verde)",
+"50 (azul)"
+],
+"a": 0,
+"keep": true,
+"why": "3 × (12 + 4) = **48**. ¡El paréntesis primero!"
+},
+{
+"t": "choice",
+"q": "¿En qué cofre va el pergamino **2 × (45 − 21)**?",
+"opts": [
+"48 (amarillo)",
+"78 (verde)",
+"50 (azul)"
+],
+"a": 0,
+"keep": true,
+"why": "2 × (45 − 21) = **48**. ¡El paréntesis primero!"
+},
+{
+"t": "num",
+"q": "Calcula: **3.214 × 300**",
+"a": [
+964200
+],
+"show": "964.200",
+"why": "3.214 × 3 = 9.642 → y le añades los ceros (2): **964.200**."
+},
+{
+"t": "num",
+"q": "Calcula: **507 × 4.000**",
+"a": [
+2028000
+],
+"show": "2.028.000",
+"why": "507 × 4 = 2.028 → y le añades los ceros (3): **2.028.000**."
+},
+{
+"t": "num",
+"q": "**63 × ___ = 378.000**",
+"a": [
+6000
+],
+"show": "6.000"
+},
+{
+"t": "num",
+"q": "Calcula: **50 − 6 × 7**",
+"a": [
+8
+],
+"show": "8"
+},
+{
+"t": "num",
+"q": "Calcula: **(50 − 6) × 7**",
+"a": [
+308
+],
+"show": "308"
+},
+{
+"t": "num",
+"q": "Calcula: **4 + 3²**",
+"a": [
+13
+],
+"show": "13",
+"why": "3² = 9 → 4 + 9 = **13**."
+},
+{
+"t": "num",
+"q": "**2⁴ =**",
+"a": [
+16
+],
+"show": "16"
+},
+{
+"t": "num",
+"q": "Calcula: **15²**",
+"a": [
+225
+],
+"show": "225"
+},
+{
+"t": "num",
+"q": "Escucha y calcula:",
+"a": [
+3000
+],
+"show": "3.000",
+"au": "au/db26a5388d5e1f1c.mp3"
+}
+],
+"film": {
+"src": "films/ch36-repaso-v1.mp4",
+"dur": 92.5
+},
+"min": 10,
+"pay": 0.08,
+"subjectShort": "Mates"
 }
 ]);
