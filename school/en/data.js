@@ -5768,7 +5768,11 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/3e4ebc4084c239ad.mp3"
 }
 ],
-"min": 14,
+"film": {
+"src": "films/ch27-i-don-t-know-v2.mp4",
+"dur": 74.4
+},
+"min": 15,
 "pay": 0.12,
 "subjectShort": "English"
 },
@@ -6172,8 +6176,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/7fd73ff6a1ef3d4d.mp3"
 }
 ],
-"min": 11,
-"pay": 0.09,
+"film": {
+"src": "films/ch28-my-project-v2.mp4",
+"dur": 78.7
+},
+"min": 13,
+"pay": 0.11,
 "subjectShort": "English"
 },
 {
