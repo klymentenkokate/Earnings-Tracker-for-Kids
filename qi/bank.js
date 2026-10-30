@@ -153,6 +153,10 @@ const QI_BANK = [
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
+  a2: 'a2-black-box.mp4',
+  a3: 'a3-biggest-desert.mp4',
+  a4: 'a4-goldfish-memory.mp4',
+  a5: 'a5-how-many-senses.mp4',
   b1: 'b1-brain-power.mp4',
   b2: 'b2-polar-bear-skin.mp4',
   b3: 'b3-blind-bats.mp4',
