@@ -175,4 +175,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   c5: 'c5-lightning-twice.mp4',
   c6: 'c6-napoleons-height.mp4',
   c7: 'c7-rainbow-colours.mp4',
+  c8: 'c8-dog-eyes.mp4',
 };
