@@ -2783,8 +2783,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/a868d1e573ad9f82.mp3"
 }
 ],
-"min": 11,
-"pay": 0.09,
+"film": {
+"src": "films/ch16-it-s-a-lazy-day-v1.mp4",
+"dur": 85.5
+},
+"min": 13,
+"pay": 0.11,
 "subjectShort": "English"
 },
 {
