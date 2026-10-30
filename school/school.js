@@ -66,7 +66,7 @@ function renderSchool() {
       ? `<div class="sch-subject soon"><span class="sch-subj-emoji">${s.emoji}</span><span class="sch-subj-name">${schEsc(s.name)}</span><span class="sch-subj-sub">Pronto ✨</span></div>`
       : `<button class="sch-subject" onclick="openSchoolSubject('${s.id}')"><span class="sch-subj-emoji">${s.emoji}</span>
       <span class="sch-subj-name">${schEsc(s.name)}</span><span class="sch-subj-sub">${done} / ${packs.length} superadas</span></button>`;
-  }).join('') + `</div>`);
+  }).join('') + `</div>` + (typeof openQi === 'function' ? `<button class="sch-qi" onclick="openQi()"><span class="e">📢</span><span><b>Klaxon Quiz · juego en grupo</b><span>Preguntas trampa para jugar con amigos en la tele. ${qiLeft().length} sin ver.</span></span></button>` : ''));
 }
 
 function openSchoolSubject(id) {
