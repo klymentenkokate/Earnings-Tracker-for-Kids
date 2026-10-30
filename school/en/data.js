@@ -290,8 +290,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/be5e47caa6a59688.mp3"
 }
 ],
-"min": 9,
-"pay": 0.07,
+"film": {
+"src": "films/ch01-a-new-school-in-a-new-town-v2.mp4",
+"dur": 85.0
+},
+"min": 10,
+"pay": 0.08,
 "subjectShort": "English"
 },
 {
@@ -674,8 +678,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/22184aecaef8a17d.mp3"
 }
 ],
-"min": 12,
-"pay": 0.1,
+"film": {
+"src": "films/ch02-always-usually-sometimes-never-v1.mp4",
+"dur": 84.9
+},
+"min": 13,
+"pay": 0.11,
 "subjectShort": "English"
 },
 {
