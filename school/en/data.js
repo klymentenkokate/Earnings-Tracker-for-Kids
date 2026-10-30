@@ -3170,8 +3170,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/c63c0216e8ff4e7e.mp3"
 }
 ],
-"min": 10,
-"pay": 0.08,
+"film": {
+"src": "films/ch17-my-project-v2.mp4",
+"dur": 81.0
+},
+"min": 12,
+"pay": 0.1,
 "subjectShort": "English"
 }
 ]);
