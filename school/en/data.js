@@ -1069,8 +1069,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/0bed0832c7eaddd2.mp3"
 }
 ],
-"min": 12,
-"pay": 0.1,
+"film": {
+"src": "films/ch11-my-activities-party-v1.mp4",
+"dur": 80.9
+},
+"min": 14,
+"pay": 0.12,
 "subjectShort": "English"
 },
 {
@@ -1368,8 +1372,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/13dc4241777d7dc4.mp3"
 }
 ],
-"min": 11,
-"pay": 0.09,
+"film": {
+"src": "films/ch12-now-or-usually-v1.mp4",
+"dur": 70.1
+},
+"min": 12,
+"pay": 0.1,
 "subjectShort": "English"
 },
 {
