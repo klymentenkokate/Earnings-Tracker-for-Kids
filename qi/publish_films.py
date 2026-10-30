@@ -1,15 +1,15 @@
 """Copy the newest rendered Klaxon Quiz films into qi/films and list them in QI_FILMS (bank.js); bumps bank.js?v in index.html.
-    python qi/publish_films.py       (chNN -> id: ch01-08 = a1-a8, ch11-18 = b1-b8, ch21-28 = c1-c8)"""
+    python qi/publish_films.py       (chNN -> id: ch01-08 = a1-a8, ch11-18 = b1-b8, ch21-28 = c1-c8, ch31-38 = d1-d8)"""
 import re, shutil
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = Path.home() / "Documents" / "marketing agent" / "motion-studio" / "out" / "qi"
 bank = (ROOT / "qi" / "bank.js").read_text(encoding="utf-8")
 films = {}
-for n in list(range(1, 9)) + list(range(11, 19)) + list(range(21, 29)):
+for n in [k for s in range(4) for k in range(s * 10 + 1, s * 10 + 9)]:
     vids = sorted(OUT.glob(f"ch{n:02d}-*-v*.mp4"), key=lambda p: int(re.search(r"-v(\d+)\.mp4$", p.name).group(1)))
     if not vids: continue
-    qid = "abc"[n // 10] + str(n % 10)
+    qid = "abcd"[n // 10] + str(n % 10)
     topic = re.search(rf"id: '{qid}'.*?topic: '(.*?)',\s*$", bank, re.S | re.M).group(1).replace(chr(92), '').replace(chr(39), '')
     name = f"{qid}-{re.sub(r'[^a-z0-9]+', '-', topic.lower()).strip('-')}.mp4"
     dst = ROOT / "qi" / "films" / name
