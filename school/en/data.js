@@ -6822,8 +6822,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 ]
 }
 ],
-"min": 9,
-"pay": 0.07,
+"film": {
+"src": "films/ch31-getting-around-town-v1.mp4",
+"dur": 67.4
+},
+"min": 10,
+"pay": 0.08,
 "subjectShort": "English"
 },
 {
@@ -7100,7 +7104,11 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/cedf21e020238f3e.mp3"
 }
 ],
-"min": 8,
+"film": {
+"src": "films/ch32-there-was-there-were-v1.mp4",
+"dur": 57.2
+},
+"min": 9,
 "pay": 0.07,
 "subjectShort": "English"
 },
@@ -7300,8 +7308,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 ]
 }
 ],
-"min": 6,
-"pay": 0.05,
+"film": {
+"src": "films/ch33-denton-in-1964-v1.mp4",
+"dur": 62.5
+},
+"min": 7,
+"pay": 0.06,
 "subjectShort": "English"
 },
 {
@@ -7569,8 +7581,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 ]
 }
 ],
-"min": 6,
-"pay": 0.05,
+"film": {
+"src": "films/ch34-famous-buildings-v1.mp4",
+"dur": 75.7
+},
+"min": 8,
+"pay": 0.07,
 "subjectShort": "English"
 },
 {
@@ -7968,8 +7984,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 ]
 }
 ],
-"min": 10,
-"pay": 0.08,
+"film": {
+"src": "films/ch35-the-destruction-of-pompeii-v1.mp4",
+"dur": 68.2
+},
+"min": 12,
+"pay": 0.1,
 "subjectShort": "English"
 },
 {
@@ -8288,8 +8308,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/33b928551d113506.mp3"
 }
 ],
-"min": 10,
-"pay": 0.08,
+"film": {
+"src": "films/ch36-a-day-trip-to-london-v1.mp4",
+"dur": 77.0
+},
+"min": 12,
+"pay": 0.1,
 "subjectShort": "English"
 },
 {
@@ -8603,7 +8627,11 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/81cf240add1ae1a2.mp3"
 }
 ],
-"min": 8,
+"film": {
+"src": "films/ch37-my-project-v1.mp4",
+"dur": 61.5
+},
+"min": 9,
 "pay": 0.07,
 "subjectShort": "English"
 }
