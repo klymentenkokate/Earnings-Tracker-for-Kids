@@ -2371,8 +2371,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "keep": true
 }
 ],
-"min": 12,
-"pay": 0.1,
+"film": {
+"src": "films/ch15-mad-about-football-v2.mp4",
+"dur": 93.3
+},
+"min": 14,
+"pay": 0.12,
 "subjectShort": "English"
 },
 {
