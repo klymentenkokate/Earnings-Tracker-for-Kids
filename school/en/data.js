@@ -4022,8 +4022,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "why": "**grey** = gris (en inglés británico, con **e**). **It's got** = tiene."
 }
 ],
-"min": 11,
-"pay": 0.09,
+"film": {
+"src": "films/ch22-at-the-safari-park-v1.mp4",
+"dur": 75.1
+},
+"min": 12,
+"pay": 0.1,
 "subjectShort": "English"
 },
 {
@@ -4390,8 +4394,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/9d6d748931078624.mp3"
 }
 ],
-"min": 13,
-"pay": 0.11,
+"film": {
+"src": "films/ch23-which-animal-is-lighter-v1.mp4",
+"dur": 74.8
+},
+"min": 14,
+"pay": 0.12,
 "subjectShort": "English"
 },
 {
@@ -4662,8 +4670,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/a754c2ba4ed061a4.mp3"
 }
 ],
-"min": 9,
-"pay": 0.07,
+"film": {
+"src": "films/ch24-bigger-faster-stronger-v1.mp4",
+"dur": 61.2
+},
+"min": 10,
+"pay": 0.08,
 "subjectShort": "English"
 },
 {
@@ -5010,7 +5022,11 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "sayA": "au/7a5e67aaa455430b.mp3"
 }
 ],
-"min": 8,
+"film": {
+"src": "films/ch25-hobbies-v1.mp4",
+"dur": 75.8
+},
+"min": 9,
 "pay": 0.07,
 "subjectShort": "English"
 },
