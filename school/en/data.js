@@ -5381,8 +5381,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 ]
 }
 ],
-"min": 13,
-"pay": 0.11,
+"film": {
+"src": "films/ch26-closing-time-v1.mp4",
+"dur": 78.5
+},
+"min": 15,
+"pay": 0.12,
 "subjectShort": "English"
 },
 {
