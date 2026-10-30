@@ -1603,7 +1603,11 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/2d35acd1cd6a3c97.mp3"
 }
 ],
-"min": 8,
+"film": {
+"src": "films/ch13-every-weekend-or-in-this-picture-v1.mp4",
+"dur": 70.7
+},
+"min": 9,
 "pay": 0.07,
 "subjectShort": "English"
 },
@@ -1905,8 +1909,12 @@ schoolRegister({"id": "en", "name": "English", "emoji": "🇬🇧", "book": "Act
 "au": "au/1c7a1fe4f134312a.mp3"
 }
 ],
-"min": 9,
-"pay": 0.07,
+"film": {
+"src": "films/ch14-sports-v1.mp4",
+"dur": 73.2
+},
+"min": 10,
+"pay": 0.08,
 "subjectShort": "English"
 },
 {
