@@ -83,7 +83,7 @@ function openSchoolSubject(id) {
     const open = schoolState()['_open_' + id] === u.n;
     return `<div class="sch-unit${open ? ' open' : ''}" style="--uc:${u.color || '#6366f1'}">
       <button class="sch-unit-head" onclick="schoolToggleUnit('${id}',${u.n})">
-        <span class="sch-unit-n">${schEsc(s.unitWord || 'Unidad')} ${u.n}</span>
+        <span class="sch-unit-n">${u.label ? schEsc(u.label) : schEsc(s.unitWord || 'Unidad') + ' ' + u.n}</span>
         <span class="sch-unit-title">${schEsc(u.title)}</span>
         <span class="sch-unit-meta">${schEsc(s.pageWord || 'p.')} ${schEsc(u.pages)} · ${packs.length ? `${up}/${packs.length} ✅` : 'próximamente'}</span>
       </button>
