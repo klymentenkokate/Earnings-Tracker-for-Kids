@@ -102,7 +102,7 @@ const QI_BANK = [
     fact: 'Human blood is always red - bright red with oxygen, darker red without. Veins only look blue because of the way light passes through your skin.',
     factEs: 'La sangre humana siempre es roja: roja brillante con oxígeno y más oscura sin él. Las venas parecen azules por cómo pasa la luz a través de la piel.' },
   // Set C
-  { id: 'c1', set: 'C', emoji: '🦤', topic: 'Ostrich heads',
+  { id: 'c1', set: 'C', emoji: '🪶', topic: 'Ostrich heads',
     q: 'What does an ostrich do with its head when it\'s scared?', qes: '¿Qué hace un avestruz con la cabeza cuando tiene miedo?',
     trap: 'Buries it in the sand', trapEs: 'La mete en la arena',
     answer: 'It lies flat - or runs!', answerEs: '¡Se tumba o sale corriendo!',
@@ -153,4 +153,12 @@ const QI_BANK = [
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
+  b1: 'b1-brain-power.mp4',
+  b2: 'b2-polar-bear-skin.mp4',
+  b3: 'b3-blind-bats.mp4',
+  b4: 'b4-tallest-mountain.mp4',
+  b5: 'b5-light-bulb.mp4',
+  b6: 'b6-chameleon-colours.mp4',
+  b7: 'b7-hottest-planet.mp4',
+  b8: 'b8-blue-blood.mp4',
 };
