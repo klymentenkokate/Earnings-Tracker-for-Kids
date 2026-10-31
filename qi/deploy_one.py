@@ -1,6 +1,7 @@
 """Put one pipeline question live: its bank.js entry (from the spec's BANK) + its newest film, then commit + push.
     python qi/deploy_one.py h1
-Called by motion-studio/hf/qi/pipeline.sh after each render (31 Oct 2026). Safe to run again: a newer film version is re-deployed."""
+Called by motion-studio/hf/qi/pipeline.sh after each render (31 Oct 2026). Safe to run again: a newer film version is re-deployed.
+Commits only: qi/push_loop.sh pushes, one GitHub Pages build at a time (a build takes ~5.5 min, ~10 builds/hour max)."""
 import importlib.util
 import subprocess
 import sys
@@ -42,7 +43,6 @@ try:
     git("add", "qi/bank.js", "qi/films", "index.html")
     if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode:
         git("commit", "-q", "-m", f"Klaxon Quiz: {qid} {B['topic']} (question + film)\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>")
-        git("-c", "credential.helper=", "-c", "credential.helper=!gh auth git-credential", "push", "-q", "origin", "main")
-    print(f"{time.strftime('%H:%M')} LIVE {qid} {B['topic']}", flush=True)
+    print(f"{time.strftime('%H:%M')} COMMITTED {qid} {B['topic']}", flush=True)
 finally:
     lock.rmdir()
