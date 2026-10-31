@@ -491,6 +491,13 @@ const QI_BANK = [
     answer: 'Eighteen!', answerEs: '¡Dieciocho!',
     fact: 'Most cats have five toes on each front paw (one is a little thumb-like toe higher up) and four on each back paw: 18 altogether. Some cats are born with extra toes. And cats walk on their toes, not their whole foot - like tiptoeing all day.',
     factEs: 'La mayoría de los gatos tienen cinco dedos en cada pata delantera (uno es como un pulgar, más arriba) y cuatro en cada trasera: 18 en total. Algunos nacen con dedos de más. Y caminan de puntillas, sobre los dedos, todo el día.' },
+  // Set O (pipeline, one question at a time)
+  { id: 'o1', set: 'O', emoji: '⛵', topic: 'Vikings in America',
+    q: 'Who were the first Europeans to sail to America?', qes: '¿Quiénes fueron los primeros europeos en llegar a América?',
+    trap: 'Christopher Columbus', trapEs: 'Cristóbal Colón',
+    answer: 'The Vikings - about 500 years earlier!', answerEs: '¡Los vikingos, unos 500 años antes!',
+    fact: 'About 1,000 years ago, Vikings led by Leif Erikson sailed from Iceland and Greenland to the coast of what is now Canada, nearly 500 years before Columbus. Of course, people already lived in America long before any Europeans arrived. You can still visit the remains of a Viking camp in Newfoundland.',
+    factEs: 'Hace unos 1.000 años, vikingos guiados por Leif Erikson navegaron desde Islandia y Groenlandia hasta la costa del actual Canadá, casi 500 años antes que Colón. Y en América ya vivían personas mucho antes de que llegara ningún europeo. Aún se pueden visitar los restos de un campamento vikingo en Terranova.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -572,4 +579,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   n3: 'n3-swallowing-spiders.mp4',
   n4: 'n4-end-of-the-rainbow.mp4',
   n5: 'n5-cat-toes.mp4',
+  o1: 'o1-vikings-in-america.mp4',
 };
