@@ -293,6 +293,12 @@ const QI_BANK = [
     answer: 'Their pack, not the Moon!', answerEs: '¡A su manada, no a la luna!',
     fact: 'Wolves howl to call their pack together and to tell other wolves "this is our home". They point their noses up because the sound carries further: a howl can be heard about 10 km away. The Moon has nothing to do with it.',
     factEs: 'Los lobos aúllan para llamar a su manada y para avisar a otros lobos de que ese es su territorio. Levantan el hocico porque así el sonido llega más lejos: un aullido se oye a unos 10 km. La luna no tiene nada que ver.' },
+  { id: 'h4', set: 'H', emoji: '🦘', topic: 'Capital of Australia',
+    q: 'What is the capital city of Australia?', qes: '¿Cuál es la capital de Australia?',
+    trap: 'Sydney', trapEs: 'Sídney',
+    answer: 'Canberra!', answerEs: '¡Canberra!',
+    fact: 'Sydney and Melbourne both wanted to be the capital, so more than 100 years ago Australia built a brand new city between them: Canberra. And Australia is wider than the Moon!',
+    factEs: 'Sídney y Melbourne querían ser la capital, así que hace más de 100 años Australia construyó una ciudad nueva entre las dos: Canberra. ¡Y Australia es más ancha que la Luna!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -342,4 +348,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   h1: 'h1-koala-bears.mp4',
   h2: 'h2-mars-sunsets.mp4',
   h3: 'h3-wolves-and-the-moon.mp4',
+  h4: 'h4-capital-of-australia.mp4',
 };
