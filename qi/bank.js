@@ -1062,6 +1062,12 @@ const QI_BANK = [
     answer: 'Iron makes them extra strong!', answerEs: '¡El hierro los hace más fuertes!',
     fact: 'A beaver\'s front teeth have iron in their outer layer, the enamel, which turns them orange and makes them tough and hard to wear away. They need to be: beavers gnaw through whole trees. Their front teeth never stop growing, and all that gnawing keeps them from getting too long.',
     factEs: 'Los dientes delanteros del castor tienen hierro en su capa exterior, el esmalte, que los vuelve naranjas y muy resistentes. Lo necesitan: los castores roen árboles enteros. Sus dientes delanteros nunca dejan de crecer, y al roer se desgastan y no se hacen demasiado largos.' },
+  { id: 'ag3', set: 'AG', emoji: '🧊', topic: 'Icebergs',
+    q: 'How much of an iceberg is hidden under the water?', qes: '¿Cuánto de un iceberg queda escondido bajo el agua?',
+    trap: 'Just a little bit at the bottom', trapEs: 'Solo un poquito por abajo',
+    answer: 'About 90% of it!', answerEs: '¡Más o menos el 90%!',
+    fact: 'Ice floats because it is a little lighter than the same amount of water - but only a little. So only about one tenth of an iceberg sticks up above the sea, and around nine tenths is hidden underneath. That\'s why ships must steer well clear of them. Icebergs are made of fresh water: they break off glaciers made from snow that fell long ago.',
+    factEs: 'El hielo flota porque pesa un poco menos que la misma cantidad de agua, pero solo un poco. Por eso solo una décima parte del iceberg asoma y unas nueve décimas quedan bajo el mar. Los barcos deben alejarse mucho. Los icebergs son de agua dulce: se desprenden de glaciares hechos de nieve antigua.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1235,4 +1241,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   af5: 'af5-blinking.mp4',
   ag1: 'ag1-t-rex-arms.mp4',
   ag2: 'ag2-beaver-teeth.mp4',
+  ag3: 'ag3-icebergs.mp4',
 };
