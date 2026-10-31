@@ -1155,6 +1155,12 @@ const QI_BANK = [
     answer: 'Keratin - like your hair and nails!', answerEs: '¡De queratina, como tu pelo y tus uñas!',
     fact: 'A rhino\'s horn has no bone inside at all. It\'s made of keratin - the same stuff as your hair and fingernails - packed tightly into a hard, solid horn. Like your nails, it keeps growing all through the rhino\'s life. Rhinos use their horns to defend themselves, dig for water and push through bushes.',
     factEs: 'El cuerno del rinoceronte no tiene nada de hueso. Está hecho de queratina, lo mismo que tu pelo y tus uñas, muy apretada en un cuerno duro y macizo. Como tus uñas, crece durante toda la vida del rinoceronte. Lo usan para defenderse, cavar en busca de agua y abrirse paso entre arbustos.' },
+  { id: 'aj3', set: 'AJ', emoji: '🪒', topic: 'Shaving hair',
+    q: 'Does shaving make hair grow back thicker?', qes: '¿Afeitarse hace que el pelo crezca más grueso?',
+    trap: 'Yes - thicker and darker', trapEs: 'Sí, más grueso y más oscuro',
+    answer: 'No - it just feels that way!', answerEs: '¡No, solo lo parece!',
+    fact: 'Shaving can\'t change how thick, dark or fast your hair grows - that\'s controlled under the skin, and the razor only cuts the part sticking out. A hair naturally has a thin, soft tip. Shaving cuts it straight across, leaving a blunt end that feels prickly. New stubble also hasn\'t been faded by the sun yet, so it can look darker. Scientists tested this about 100 years ago, and again since.',
+    factEs: 'Afeitarse no cambia lo grueso, oscuro o rápido que crece el pelo: eso se controla bajo la piel, y la cuchilla solo corta lo que asoma. Un pelo tiene la punta fina y suave; al afeitarlo queda cortado en recto, con una punta roma que pincha. Y el pelo nuevo aún no lo ha aclarado el sol, así que parece más oscuro. Los científicos lo comprobaron hace unos 100 años, y otra vez después.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1343,4 +1349,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ai5: 'ai5-cheetah-sounds.mp4',
   aj1: 'aj1-woodlice.mp4',
   aj2: 'aj2-rhino-horns.mp4',
+  aj3: 'aj3-shaving-hair.mp4',
 };
