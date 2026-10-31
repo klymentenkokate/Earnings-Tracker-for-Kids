@@ -646,6 +646,13 @@ const QI_BANK = [
     answer: 'Yes!', answerEs: '¡Sí!',
     fact: 'Sunburn is caused by ultraviolet (UV) light, which you can\'t see or feel. Most of it passes straight through thin clouds, so you can burn even when it feels cool and grey. Snow, sand and water bounce UV back at you too - so sun cream still matters.',
     factEs: 'Las quemaduras las causa la luz ultravioleta (UV), que no se ve ni se nota. Casi toda atraviesa las nubes finas, así que te puedes quemar aunque el día sea fresco y gris. La nieve, la arena y el agua también te devuelven los rayos UV: la crema solar sigue importando.' },
+  // Set T (pipeline, one question at a time)
+  { id: 't1', set: 'T', emoji: '🐦', topic: 'Hummingbird feet',
+    q: 'Can a hummingbird walk?', qes: '¿Puede caminar un colibrí?',
+    trap: 'Yes, like any other bird', trapEs: 'Sí, como cualquier pájaro',
+    answer: 'Hardly at all - it shuffles or flies!', answerEs: '¡Casi nada: se arrastra un poco o vuela!',
+    fact: 'Hummingbirds have tiny, weak feet, made for perching, not walking or hopping. To move even a little way along a branch, they shuffle sideways or just fly. They can also fly backwards, and their wings beat up to about 80 times a second.',
+    factEs: 'Los colibríes tienen patitas diminutas y débiles, hechas para posarse, no para andar ni saltar. Para moverse un poco por una rama, se arrastran de lado o simplemente vuelan. Además pueden volar hacia atrás, y sus alas baten hasta unas 80 veces por segundo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -752,4 +759,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   s3: 's3-tallest-grass.mp4',
   s4: 's4-snail-teeth.mp4',
   s5: 's5-sunburn-on-cloudy-days.mp4',
+  t1: 't1-hummingbird-feet.mp4',
 };
