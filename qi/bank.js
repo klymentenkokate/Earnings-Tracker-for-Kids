@@ -312,6 +312,12 @@ const QI_BANK = [
     answer: 'The kiwi!', answerEs: '¡El kiwi!',
     fact: 'An ostrich egg is the biggest egg, but it\'s tiny next to a huge ostrich. A kiwi\'s egg is about a fifth of the mum\'s weight - like a human baby the size of a three-year-old. Kiwis can\'t fly, and they sniff out food with nostrils at the tip of their beak.',
     factEs: 'El huevo de avestruz es el más grande, pero es pequeño comparado con el avestruz. El del kiwi pesa una quinta parte de la madre. Los kiwis no vuelan y huelen la comida con orificios en la punta del pico.' },
+  { id: 'i2', set: 'I', emoji: '🦷', topic: 'Hardest part of you',
+    q: 'What is the hardest part of your body?', qes: '¿Cuál es la parte más dura de tu cuerpo?',
+    trap: 'Your bones', trapEs: 'Los huesos',
+    answer: 'The enamel on your teeth!', answerEs: '¡El esmalte de los dientes!',
+    fact: 'The shiny white outside of your teeth, called enamel, is harder than any bone. It has to be: you chew thousands of times every day. But enamel can\'t grow back, so brushing matters.',
+    factEs: 'La capa blanca y brillante de los dientes, el esmalte, es más dura que cualquier hueso. Masticas miles de veces al día. Pero el esmalte no vuelve a crecer: por eso hay que cepillarse.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -364,4 +370,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   h4: 'h4-capital-of-australia.mp4',
   h5: 'h5-a-day-on-venus.mp4',
   i1: 'i1-kiwi-eggs.mp4',
+  i2: 'i2-hardest-part-of-you.mp4',
 };
