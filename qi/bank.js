@@ -305,6 +305,13 @@ const QI_BANK = [
     answer: 'One spin - its day is longer than its year!', answerEs: '¡Una vuelta sobre sí mismo: su día dura más que su año!',
     fact: 'Venus spins very slowly: one spin takes 243 Earth days, but one trip around the Sun takes only 225. And it spins backwards, so on Venus the Sun rises in the west.',
     factEs: 'Venus gira muy despacio: una vuelta sobre sí mismo tarda 243 días terrestres, pero una vuelta al Sol solo 225. Y gira al revés, así que allí el Sol sale por el oeste.' },
+  // Set I (pipeline, one question at a time)
+  { id: 'i1', set: 'I', emoji: '🥚', topic: 'Kiwi eggs',
+    q: 'Which bird lays the biggest egg for the size of its body?', qes: '¿Qué ave pone el huevo más grande en proporción a su cuerpo?',
+    trap: 'The ostrich', trapEs: 'El avestruz',
+    answer: 'The kiwi!', answerEs: '¡El kiwi!',
+    fact: 'An ostrich egg is the biggest egg, but it\'s tiny next to a huge ostrich. A kiwi\'s egg is about a fifth of the mum\'s weight - like a human baby the size of a three-year-old. Kiwis can\'t fly, and they sniff out food with nostrils at the tip of their beak.',
+    factEs: 'El huevo de avestruz es el más grande, pero es pequeño comparado con el avestruz. El del kiwi pesa una quinta parte de la madre. Los kiwis no vuelan y huelen la comida con orificios en la punta del pico.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -356,4 +363,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   h3: 'h3-wolves-and-the-moon.mp4',
   h4: 'h4-capital-of-australia.mp4',
   h5: 'h5-a-day-on-venus.mp4',
+  i1: 'i1-kiwi-eggs.mp4',
 };
