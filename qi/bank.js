@@ -454,6 +454,12 @@ const QI_BANK = [
     answer: 'Nothing - and you can\'t really do it anyway!', answerEs: '¡Nada, y además casi no se puede!',
     fact: 'Your eyes can\'t pop out from a sneeze: muscles, skin and bone hold them in safely. Closing your eyes when you sneeze is an automatic reflex, so it\'s very hard to keep them open. Bright sunlight makes about 1 in 4 people sneeze.',
     factEs: 'Los ojos no se salen al estornudar: los sujetan músculos, piel y hueso. Cerrarlos al estornudar es un reflejo automático, por eso cuesta mucho mantenerlos abiertos. La luz fuerte del sol hace estornudar a 1 de cada 4 personas más o menos.' },
+  { id: 'm5', set: 'M', emoji: '⛈️', topic: 'Thunder and lightning',
+    q: 'In a storm, which comes first: the lightning or the thunder?', qes: 'En una tormenta, ¿qué llega primero: el rayo o el trueno?',
+    trap: 'The lightning comes first', trapEs: 'Primero el rayo',
+    answer: 'They happen at the same time!', answerEs: '¡Ocurren a la vez!',
+    fact: 'Lightning makes the thunder: both happen at the same moment. Light reaches you almost instantly, but sound is much slower - about 1 km every 3 seconds. Count the seconds between flash and bang and divide by 3 to find how many km away the storm is. Lightning is about five times hotter than the surface of the Sun.',
+    factEs: 'El rayo hace el trueno: los dos ocurren a la vez. La luz llega casi al instante, pero el sonido es más lento: 1 km cada 3 segundos. Cuenta los segundos entre el destello y el trueno y divide entre 3 para saber a cuántos km está la tormenta. Un rayo está unas cinco veces más caliente que la superficie del Sol.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -529,4 +535,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   m2: 'm2-octopus-hearts.mp4',
   m3: 'm3-where-oxygen-comes-from.mp4',
   m4: 'm4-sneezing-eyes.mp4',
+  m5: 'm5-thunder-and-lightning.mp4',
 };
