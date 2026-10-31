@@ -1068,6 +1068,12 @@ const QI_BANK = [
     answer: 'About 90% of it!', answerEs: '¡Más o menos el 90%!',
     fact: 'Ice floats because it is a little lighter than the same amount of water - but only a little. So only about one tenth of an iceberg sticks up above the sea, and around nine tenths is hidden underneath. That\'s why ships must steer well clear of them. Icebergs are made of fresh water: they break off glaciers made from snow that fell long ago.',
     factEs: 'El hielo flota porque pesa un poco menos que la misma cantidad de agua, pero solo un poco. Por eso solo una décima parte del iceberg asoma y unas nueve décimas quedan bajo el mar. Los barcos deben alejarse mucho. Los icebergs son de agua dulce: se desprenden de glaciares hechos de nieve antigua.' },
+  { id: 'ag4', set: 'AG', emoji: '👣', topic: 'Moon footprints',
+    q: 'Are the astronauts\' footprints still on the Moon?', qes: '¿Siguen en la Luna las huellas de los astronautas?',
+    trap: 'No - they blew away long ago', trapEs: 'No, se las llevó el viento hace mucho',
+    answer: 'Yes - and they could last millions of years!', answerEs: '¡Sí, y podrían durar millones de años!',
+    fact: 'The Moon has no air, so there is no wind to blow footprints away and no rain to wash them off. The footprints astronauts left more than 50 years ago are almost certainly still there, and could last for millions of years. Only tiny space rocks hitting the ground very slowly wear them away.',
+    factEs: 'La Luna no tiene aire, así que no hay viento que borre las huellas ni lluvia que las lave. Las huellas que dejaron los astronautas hace más de 50 años casi seguro siguen allí, y podrían durar millones de años. Solo las diminutas rocas espaciales que caen las desgastan, muy despacio.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1242,4 +1248,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ag1: 'ag1-t-rex-arms.mp4',
   ag2: 'ag2-beaver-teeth.mp4',
   ag3: 'ag3-icebergs.mp4',
+  ag4: 'ag4-moon-footprints.mp4',
 };
