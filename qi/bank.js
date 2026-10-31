@@ -727,6 +727,12 @@ const QI_BANK = [
     answer: 'No - they lie down to chew and rest!', answerEs: '¡No, se tumban para rumiar y descansar!',
     fact: 'It\'s an old saying, but there\'s no good evidence that cows can forecast rain. Cows lie down for many hours every day just to rest and to chew the cud. Cows sleep only around four hours a day, mostly in short naps.',
     factEs: 'Es un dicho antiguo, pero no hay pruebas de que las vacas predigan la lluvia. Se tumban muchas horas al día para descansar y rumiar. Las vacas duermen solo unas cuatro horas al día, casi siempre en siestas cortas.' },
+  { id: 'v4', set: 'V', emoji: '🐸', topic: 'Frogs drinking',
+    q: 'How does a frog drink water?', qes: '¿Cómo bebe agua una rana?',
+    trap: 'With its mouth, like us', trapEs: 'Con la boca, como nosotros',
+    answer: 'Through its skin!', answerEs: '¡A través de la piel!',
+    fact: 'Frogs don\'t sip water with their mouths. They soak it up through their skin, especially a thin patch on their tummy and thighs sometimes called the \'drinking patch\'. That\'s why frogs need to stay damp. Some frogs can even breathe through their skin underwater.',
+    factEs: 'Las ranas no beben con la boca. Absorben el agua por la piel, sobre todo por una zona fina de la barriga y los muslos. Por eso necesitan estar húmedas. Algunas ranas incluso respiran por la piel bajo el agua.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -846,4 +852,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   v1: 'v1-zebra-colours.mp4',
   v2: 'v2-one-big-ocean.mp4',
   v3: 'v3-cows-lying-down.mp4',
+  v4: 'v4-frogs-drinking.mp4',
 };
