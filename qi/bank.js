@@ -380,6 +380,12 @@ const QI_BANK = [
     answer: 'Nowhere - the Earth turns away from it!', answerEs: '¡A ningún sitio: la Tierra gira y le da la espalda!',
     fact: 'The Sun doesn\'t move round us. The Earth spins once a day, so your side turns away from the Sun (night) and back towards it (morning). When it\'s night for you, it\'s daytime on the other side of the world.',
     factEs: 'El Sol no da vueltas a nuestro alrededor. La Tierra gira una vez al día: tu lado se aparta del Sol (noche) y vuelve a mirarlo (mañana). Cuando es de noche para ti, es de día al otro lado del mundo.' },
+  { id: 'k3', set: 'K', emoji: '🪶', topic: 'Feathers or bricks',
+    q: 'Which is heavier: a kilo of feathers or a kilo of bricks?', qes: '¿Qué pesa más: un kilo de plumas o un kilo de ladrillos?',
+    trap: 'The bricks', trapEs: 'Los ladrillos',
+    answer: 'Neither - they both weigh a kilo!', answerEs: '¡Ninguno: los dos pesan un kilo!',
+    fact: 'A kilo is a kilo, whatever it\'s made of. Bricks feel heavier because they\'re packed tight into a small space; a kilo of feathers would fill a huge bag. A litre of water weighs about one kilo.',
+    factEs: 'Un kilo es un kilo, sea de lo que sea. Los ladrillos parecen más pesados porque ocupan poco sitio; un kilo de plumas llenaría una bolsa enorme. Un litro de agua pesa más o menos un kilo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -443,4 +449,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   j5: 'j5-sunlights-journey.mp4',
   k1: 'k1-snake-tongues.mp4',
   k2: 'k2-where-the-sun-goes.mp4',
+  k3: 'k3-feathers-or-bricks.mp4',
 };
