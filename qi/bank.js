@@ -764,6 +764,12 @@ const QI_BANK = [
     answer: 'Stars - probably many more!', answerEs: '¡Estrellas, seguramente muchas más!',
     fact: 'Scientists estimate the Universe holds more stars than all the grains of sand on every beach on Earth put together - a number with over 20 zeros. Yet on a clear, dark night, you can only see a few thousand stars with your own eyes.',
     factEs: 'Los científicos calculan que en el universo hay más estrellas que granos de arena en todas las playas de la Tierra juntas: un número con más de 20 ceros. Aun así, en una noche oscura solo vemos unos pocos miles a simple vista.' },
+  { id: 'w5', set: 'W', emoji: '🐬', topic: 'Dolphin sleep',
+    q: 'How do dolphins sleep without drowning?', qes: '¿Cómo duermen los delfines sin ahogarse?',
+    trap: 'They don\'t sleep at all', trapEs: 'No duermen nunca',
+    answer: 'Half their brain sleeps at a time!', answerEs: '¡Duerme solo media cabeza cada vez!',
+    fact: 'Dolphins have to choose to breathe, so they can\'t fully switch off. Instead, one half of the brain sleeps while the other half stays awake to swim, breathe and watch for danger - then they swap. They often keep the eye opposite the awake half open.',
+    factEs: 'Los delfines tienen que acordarse de respirar, así que no pueden apagarse del todo. Duerme una mitad del cerebro mientras la otra nada, respira y vigila; luego se cambian. A menudo tienen abierto el ojo del lado despierto contrario.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -889,4 +895,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   w2: 'w2-snowflakes.mp4',
   w3: 'w3-venus-flytrap.mp4',
   w4: 'w4-stars-and-sand.mp4',
+  w5: 'w5-dolphin-sleep.mp4',
 };
