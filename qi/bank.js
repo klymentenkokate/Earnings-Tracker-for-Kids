@@ -925,6 +925,13 @@ const QI_BANK = [
     answer: 'It does a wiggle dance!', answerEs: '¡Bailando un baile meneado!',
     fact: 'A honeybee that finds good flowers comes home and does a \'waggle dance\' on the honeycomb. The direction it waggles shows which way to fly compared with the Sun, and how long it waggles shows how far away the flowers are. The other bees feel the dance in the dark hive and fly straight there.',
     factEs: 'Cuando una abeja encuentra buenas flores, vuelve y hace un \'baile del meneo\' en el panal. La dirección en que se menea indica hacia dónde volar respecto al Sol, y cuánto rato se menea, lo lejos que están. Las demás sienten el baile en la colmena oscura y vuelan directas.' },
+  // Set AC (pipeline, one question at a time)
+  { id: 'ac1', set: 'AC', emoji: '🐸', topic: 'Toads and warts',
+    q: 'Can you catch warts from touching a toad?', qes: '¿Te pueden salir verrugas por tocar un sapo?',
+    trap: 'Yes - toads are warty!', trapEs: '¡Sí, los sapos tienen verrugas!',
+    answer: 'No - warts come from a human virus!', answerEs: '¡No: las verrugas vienen de un virus humano!',
+    fact: 'The bumps on a toad\'s skin aren\'t warts at all - they\'re glands that can ooze a bitter liquid to make predators spit them out. Human warts are caused by a virus that only spreads between people. So wash your hands after holding a toad, but you won\'t get warts from it!',
+    factEs: 'Los bultos de la piel del sapo no son verrugas: son glándulas que sueltan un líquido amargo para que los depredadores lo escupan. Las verrugas de las personas las causa un virus que solo pasa entre personas. Lávate las manos después de coger un sapo, ¡pero no te saldrán verrugas!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1076,4 +1083,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ab3: 'ab3-contagious-yawns.mp4',
   ab4: 'ab4-hippo-milk.mp4',
   ab5: 'ab5-honeybee-dance.mp4',
+  ac1: 'ac1-toads-and-warts.mp4',
 };
