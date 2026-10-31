@@ -1118,6 +1118,12 @@ const QI_BANK = [
     answer: 'No - it\'s the roof of your mouth!', answerEs: '¡No, es el paladar!',
     fact: 'Your brain stays warm the whole time. Brain freeze starts when something very cold touches the roof of your mouth: the blood vessels there quickly shrink and then widen again, and nerves send a pain message that you feel in your forehead. Eating cold things slowly, or pressing your tongue to the roof of your mouth to warm it, helps it go away.',
     factEs: 'El cerebro sigue calentito todo el rato. El dolor empieza cuando algo muy frío toca el paladar: los vasos sanguíneos de ahí se encogen de golpe y luego se ensanchan, y los nervios mandan un aviso de dolor que notas en la frente. Comer despacio lo frío, o apretar la lengua contra el paladar para calentarlo, ayuda a que se pase.' },
+  { id: 'ai2', set: 'AI', emoji: '🐍', topic: 'Snake jaws',
+    q: 'Do snakes unhinge their jaws to swallow big meals?', qes: '¿Las serpientes se desencajan la mandíbula para tragar presas grandes?',
+    trap: 'Yes - they pop their jaws out of place', trapEs: 'Sí, se sacan la mandíbula de su sitio',
+    answer: 'No - their jaw stretches apart!', answerEs: '¡No, su mandíbula se estira!',
+    fact: 'Snakes don\'t unhinge or dislocate anything. The two halves of a snake\'s lower jaw aren\'t joined at the chin like ours - they\'re tied together by a stretchy band, so they can spread far apart. Lots of bones in its skull can move too. The snake then \'walks\' its jaws over its meal, one side at a time, pulling it in.',
+    factEs: 'Las serpientes no se desencajan nada. Las dos mitades de su mandíbula inferior no están unidas en la barbilla como las nuestras: las une una banda elástica, así que se separan mucho. Muchos huesos del cráneo también se mueven. Luego la serpiente «camina» con las mandíbulas sobre la presa, un lado y luego el otro, y se la va tragando.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1300,4 +1306,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ah4: 'ah4-jellyfish-brains.mp4',
   ah5: 'ah5-resting-sharks.mp4',
   ai1: 'ai1-brain-freeze.mp4',
+  ai2: 'ai2-snake-jaws.mp4',
 };
