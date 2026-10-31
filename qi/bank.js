@@ -845,6 +845,12 @@ const QI_BANK = [
     answer: 'About as big as a small car!', answerEs: '¡Como un coche pequeño!',
     fact: 'A blue whale\'s heart weighs about as much as a small car, around 180 kg. Its biggest blood vessels are so wide that a small child could almost crawl through them. When a blue whale dives, its heart can slow down to just a few beats a minute.',
     factEs: 'El corazón de la ballena azul pesa como un coche pequeño, unos 180 kg. Sus vasos sanguíneos más grandes son tan anchos que casi cabría un niño pequeño gateando. Al bucear, su corazón puede bajar a solo unos latidos por minuto.' },
+  { id: 'z3', set: 'Z', emoji: '🦘', topic: 'Kangaroos backwards',
+    q: 'Can a kangaroo hop backwards?', qes: '¿Puede un canguro saltar hacia atrás?',
+    trap: 'Yes, easily', trapEs: 'Sí, fácilmente',
+    answer: 'Not really - it can only bounce forwards!', answerEs: '¡En realidad no: solo bota hacia delante!',
+    fact: 'A kangaroo\'s big back legs move together and its long, heavy tail helps it balance, so it can\'t easily hop backwards. That\'s one reason the kangaroo and the emu are on Australia\'s coat of arms - both are said to always move forward. A big kangaroo can jump about 8 metres in one bound.',
+    factEs: 'Las grandes patas traseras del canguro se mueven juntas y su cola larga y pesada le da equilibrio, así que no puede saltar fácilmente hacia atrás. Por eso, entre otras cosas, el canguro y el emú están en el escudo de Australia: siempre avanzan. Un canguro grande puede saltar unos 8 metros de una vez.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -983,4 +989,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   y5: 'y5-giraffe-sleep.mp4',
   z1: 'z1-pencil-lead.mp4',
   z2: 'z2-whale-hearts.mp4',
+  z3: 'z3-kangaroos-backwards.mp4',
 };
