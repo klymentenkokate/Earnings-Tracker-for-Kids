@@ -485,6 +485,12 @@ const QI_BANK = [
     answer: 'It hasn\'t got one - a rainbow is really a circle!', answerEs: '¡No tiene final: en realidad es un círculo!',
     fact: 'A rainbow is really a whole circle of light; the ground just hides the bottom half. From a plane you can sometimes see the full circle. And it moves when you move, so you can never reach the end. No two people ever see exactly the same rainbow.',
     factEs: 'Un arcoíris es en realidad un círculo de luz entero; el suelo tapa la mitad de abajo. Desde un avión a veces se ve el círculo completo. Y se mueve cuando tú te mueves, así que nunca llegas al final. Nadie ve nunca exactamente el mismo arcoíris que otra persona.' },
+  { id: 'n5', set: 'N', emoji: '🐱', topic: 'Cat toes',
+    q: 'How many toes does a cat usually have?', qes: '¿Cuántos dedos suele tener un gato?',
+    trap: 'Twenty - five on each paw', trapEs: 'Veinte: cinco en cada pata',
+    answer: 'Eighteen!', answerEs: '¡Dieciocho!',
+    fact: 'Most cats have five toes on each front paw (one is a little thumb-like toe higher up) and four on each back paw: 18 altogether. Some cats are born with extra toes. And cats walk on their toes, not their whole foot - like tiptoeing all day.',
+    factEs: 'La mayoría de los gatos tienen cinco dedos en cada pata delantera (uno es como un pulgar, más arriba) y cuatro en cada trasera: 18 en total. Algunos nacen con dedos de más. Y caminan de puntillas, sobre los dedos, todo el día.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -565,4 +571,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   n2: 'n2-shark-bones.mp4',
   n3: 'n3-swallowing-spiders.mp4',
   n4: 'n4-end-of-the-rainbow.mp4',
+  n5: 'n5-cat-toes.mp4',
 };
