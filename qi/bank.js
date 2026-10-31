@@ -653,6 +653,12 @@ const QI_BANK = [
     answer: 'Hardly at all - it shuffles or flies!', answerEs: '¡Casi nada: se arrastra un poco o vuela!',
     fact: 'Hummingbirds have tiny, weak feet, made for perching, not walking or hopping. To move even a little way along a branch, they shuffle sideways or just fly. They can also fly backwards, and their wings beat up to about 80 times a second.',
     factEs: 'Los colibríes tienen patitas diminutas y débiles, hechas para posarse, no para andar ni saltar. Para moverse un poco por una rama, se arrastran de lado o simplemente vuelan. Además pueden volar hacia atrás, y sus alas baten hasta unas 80 veces por segundo.' },
+  { id: 't2', set: 'T', emoji: '🌙', topic: 'Moonlight',
+    q: 'Where does moonlight come from?', qes: '¿De dónde sale la luz de la Luna?',
+    trap: 'The Moon glows by itself', trapEs: 'La Luna brilla sola',
+    answer: 'It\'s sunlight bouncing off the Moon!', answerEs: '¡Es luz del Sol que rebota en la Luna!',
+    fact: 'The Moon makes no light of its own. It\'s a big grey rock lit up by the Sun, like a ball lit by a torch. The Moon\'s shapes - full, half, crescent - are just how much of its sunny side we can see from Earth.',
+    factEs: 'La Luna no tiene luz propia. Es una gran roca gris iluminada por el Sol, como una pelota iluminada por una linterna. Sus formas (llena, media, creciente) dependen de cuánto vemos de su lado iluminado desde la Tierra.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -760,4 +766,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   s4: 's4-snail-teeth.mp4',
   s5: 's5-sunburn-on-cloudy-days.mp4',
   t1: 't1-hummingbird-feet.mp4',
+  t2: 't2-moonlight.mp4',
 };
