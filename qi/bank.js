@@ -702,6 +702,12 @@ const QI_BANK = [
     answer: 'So they can drop straight into flight!', answerEs: '¡Para dejarse caer y echar a volar!',
     fact: 'Bats\' wings can\'t lift them straight up off the ground like a bird\'s, and their legs are too thin to run for a take-off. So they hang upside down, and to fly they just let go, drop and open their wings. Special tendons lock their claws shut, so hanging takes no effort - even when asleep.',
     factEs: 'Las alas del murciélago no le levantan del suelo como a un pájaro, y sus patas son muy finas para coger carrerilla. Por eso cuelgan boca abajo: para volar se sueltan, caen y abren las alas. Unos tendones especiales cierran sus garras, así que colgar no les cuesta nada, ni dormidos.' },
+  { id: 'u5', set: 'U', emoji: '🏔️', topic: 'Mount Everest growing',
+    q: 'Is Mount Everest getting taller or shorter?', qes: '¿El Everest está creciendo o encogiendo?',
+    trap: 'Neither - mountains don\'t change', trapEs: 'Ni una cosa ni otra: las montañas no cambian',
+    answer: 'Taller - a few millimetres a year!', answerEs: '¡Más alto, unos milímetros al año!',
+    fact: 'The Himalayas formed when India crashed slowly into the rest of Asia, and the two are still pushing together, so Everest rises by a few millimetres a year. Wind, ice and rain wear a little away too, but overall it\'s still growing. The top of Everest is made of rock that was once at the bottom of the sea.',
+    factEs: 'El Himalaya se formó cuando la India chocó despacio con el resto de Asia, y siguen empujándose, así que el Everest sube unos milímetros al año. El viento, el hielo y la lluvia lo desgastan un poco, pero en total sigue creciendo. La cima del Everest es de roca que estuvo en el fondo del mar.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -817,4 +823,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   u2: 'u2-tiger-stripes.mp4',
   u3: 'u3-ants-and-sleep.mp4',
   u4: 'u4-bats-upside-down.mp4',
+  u5: 'u5-mount-everest-growing.mp4',
 };
