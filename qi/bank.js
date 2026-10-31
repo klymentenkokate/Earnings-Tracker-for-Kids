@@ -1043,6 +1043,12 @@ const QI_BANK = [
     answer: 'No - sea turtles can\'t!', answerEs: '¡No, las tortugas marinas no pueden!',
     fact: 'Many land tortoises and pond turtles can tuck their head inside their shell, but sea turtles can\'t - their shells are flatter and lighter for fast swimming, with no room inside. Instead, they rely on speed and their tough, scaly heads. Some sea turtles swim thousands of kilometres back to lay eggs on the very beach where they hatched.',
     factEs: 'Muchas tortugas de tierra y de estanque meten la cabeza en el caparazón, pero las marinas no: su caparazón es más plano y ligero para nadar rápido, sin hueco dentro. Se defienden con su velocidad y su cabeza dura y escamosa. Algunas nadan miles de kilómetros para poner huevos en la misma playa donde nacieron.' },
+  { id: 'af5', set: 'AF', emoji: '👁️', topic: 'Blinking',
+    q: 'How many times do you blink in a day?', qes: '¿Cuántas veces parpadeas al día?',
+    trap: 'Just a few times', trapEs: 'Solo unas pocas veces',
+    answer: 'Around 15,000 times!', answerEs: '¡Unas 15.000 veces!',
+    fact: 'Most people blink about 15 times a minute, which adds up to roughly 15,000 times a day - and your brain hides the tiny moments of darkness, so you don\'t notice. Each blink spreads tears across your eyes to keep them wet and clean. When you stare at a screen you blink much less, which is why eyes can feel dry.',
+    factEs: 'Solemos parpadear unas 15 veces por minuto: unas 15.000 al día. Y el cerebro esconde esos instantes de oscuridad, así que no los notas. Cada parpadeo reparte lágrimas para mantener los ojos húmedos y limpios. Mirando una pantalla parpadeas mucho menos: por eso los ojos se secan.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1213,4 +1219,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   af2: 'af2-ladybird-spots.mp4',
   af3: 'af3-hedgehog-spines.mp4',
   af4: 'af4-turtle-shells.mp4',
+  af5: 'af5-blinking.mp4',
 };
