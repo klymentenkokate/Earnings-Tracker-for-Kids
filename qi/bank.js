@@ -677,6 +677,13 @@ const QI_BANK = [
     answer: 'The lightning - about five times hotter!', answerEs: '¡El rayo, unas cinco veces más!',
     fact: 'The air in a lightning bolt can reach about 30,000 °C - around five times hotter than the surface of the Sun, which is about 5,500 °C. It only lasts a tiny fraction of a second. That sudden heat makes the air burst outwards, and that\'s the bang of thunder.',
     factEs: 'El aire de un rayo puede llegar a unos 30.000 °C, unas cinco veces más que la superficie del Sol, que está a unos 5.500 °C. Solo dura una fracción de segundo. Ese calor repentino hace que el aire explote hacia fuera: ese es el trueno.' },
+  // Set U (pipeline, one question at a time)
+  { id: 'u1', set: 'U', emoji: '💧', topic: 'Raindrop shape',
+    q: 'What shape is a falling raindrop?', qes: '¿Qué forma tiene una gota de lluvia al caer?',
+    trap: 'A teardrop, pointy at the top', trapEs: 'De lágrima, con punta arriba',
+    answer: 'Round - or squashed like a bun!', answerEs: '¡Redonda, o aplastada como un bollo!',
+    fact: 'Small raindrops are round. As bigger drops fall, the air pushes up on their bottoms and flattens them into a shape like a burger bun. If a drop gets too big, it splits into smaller drops. The pointy teardrop shape is only in drawings.',
+    factEs: 'Las gotas pequeñas son redondas. Al caer, el aire empuja por debajo a las más grandes y las aplasta como un pan de hamburguesa. Si una gota crece demasiado, se parte en gotas más pequeñas. La forma de lágrima con punta solo existe en los dibujos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -788,4 +795,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   t3: 't3-honey-that-lasts.mp4',
   t4: 't4-rabbits-and-carrots.mp4',
   t5: 't5-lightning-heat.mp4',
+  u1: 'u1-raindrop-shape.mp4',
 };
