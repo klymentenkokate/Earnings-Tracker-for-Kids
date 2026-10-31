@@ -826,6 +826,12 @@ const QI_BANK = [
     answer: 'To keep cool - they can hardly sweat!', answerEs: '¡Para refrescarse: casi no sudan!',
     fact: 'Pigs have very few sweat glands, so they can\'t cool down by sweating like we do. Rolling in mud keeps them cool, and the mud also works like sun cream and keeps biting insects off. Given the choice, pigs keep their sleeping area clean and use a separate spot as a toilet.',
     factEs: 'Los cerdos casi no tienen glándulas de sudor, así que no pueden refrescarse sudando como nosotros. Revolcarse en el barro les enfría, y además el barro funciona como crema solar y aleja a los insectos. Si pueden, mantienen limpio su sitio de dormir y usan otro rincón como baño.' },
+  { id: 'y5', set: 'Y', emoji: '🦒', topic: 'Giraffe sleep',
+    q: 'How much do giraffes sleep each day?', qes: '¿Cuánto duermen las jirafas al día?',
+    trap: 'About eight hours, like us', trapEs: 'Unas ocho horas, como nosotros',
+    answer: 'Often less than two hours, in short naps!', answerEs: '¡A menudo menos de dos horas, en siestas cortas!',
+    fact: 'Wild giraffes often sleep for less than two hours a day, in naps of just a few minutes, many of them standing up, so they can run from lions quickly. When they do lie down for a deep sleep, they sometimes rest their head on their back leg, curling their long neck round like a hook.',
+    factEs: 'Las jirafas salvajes a menudo duermen menos de dos horas al día, en siestas de unos minutos, muchas de pie, para poder huir de los leones. Cuando se tumban para dormir profundo, a veces apoyan la cabeza en la pata trasera, curvando el cuello como un gancho.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -961,4 +967,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   y2: 'y2-wrinkly-fingers.mp4',
   y3: 'y3-sea-otters.mp4',
   y4: 'y4-pigs-and-mud.mp4',
+  y5: 'y5-giraffe-sleep.mp4',
 };
