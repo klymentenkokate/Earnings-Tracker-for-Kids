@@ -479,6 +479,12 @@ const QI_BANK = [
     answer: 'Almost certainly none!', answerEs: '¡Casi seguro que ninguna!',
     fact: 'The \'eight spiders a year\' story is a myth that spread around the internet. A sleeping person breathes, snores and has a thumping heartbeat - to a spider that feels like a big, scary animal, so they keep well away. Some baby spiders can fly long distances by floating on silk threads in the wind.',
     factEs: 'Lo de \'ocho arañas al año\' es un mito de internet. Una persona dormida respira, ronca y su corazón late: para una araña es un animal enorme y peligroso, así que se aleja. Algunas arañas bebé vuelan lejos flotando en hilos de seda con el viento.' },
+  { id: 'n4', set: 'N', emoji: '🌈', topic: 'End of the rainbow',
+    q: 'Where is the end of a rainbow?', qes: '¿Dónde termina un arcoíris?',
+    trap: 'Where the pot of gold is', trapEs: 'Donde está la olla de oro',
+    answer: 'It hasn\'t got one - a rainbow is really a circle!', answerEs: '¡No tiene final: en realidad es un círculo!',
+    fact: 'A rainbow is really a whole circle of light; the ground just hides the bottom half. From a plane you can sometimes see the full circle. And it moves when you move, so you can never reach the end. No two people ever see exactly the same rainbow.',
+    factEs: 'Un arcoíris es en realidad un círculo de luz entero; el suelo tapa la mitad de abajo. Desde un avión a veces se ve el círculo completo. Y se mueve cuando tú te mueves, así que nunca llegas al final. Nadie ve nunca exactamente el mismo arcoíris que otra persona.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -558,4 +564,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   n1: 'n1-carrots-and-the-dark.mp4',
   n2: 'n2-shark-bones.mp4',
   n3: 'n3-swallowing-spiders.mp4',
+  n4: 'n4-end-of-the-rainbow.mp4',
 };
