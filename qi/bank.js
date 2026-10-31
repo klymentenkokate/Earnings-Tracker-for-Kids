@@ -690,6 +690,12 @@ const QI_BANK = [
     answer: 'Still stripy!', answerEs: '¡Seguiría a rayas!',
     fact: 'A tiger\'s stripes aren\'t just on its fur - its skin is stripy too, with dark skin under the dark stripes. No two tigers have the same pattern, just like our fingerprints. The stripes help tigers hide in tall grass and shadows.',
     factEs: 'Las rayas del tigre no están solo en el pelo: su piel también es a rayas, más oscura bajo las rayas oscuras. No hay dos tigres con el mismo dibujo, como nuestras huellas. Las rayas les ayudan a esconderse entre la hierba alta y las sombras.' },
+  { id: 'u3', set: 'U', emoji: '🐜', topic: 'Ants and sleep',
+    q: 'How do worker ants sleep?', qes: '¿Cómo duermen las hormigas obreras?',
+    trap: 'They never sleep - always busy!', trapEs: 'No duermen nunca, ¡siempre trabajan!',
+    answer: 'Hundreds of tiny naps a day!', answerEs: '¡Cientos de siestas cortitas al día!',
+    fact: 'Ants look busy all the time, but worker ants do rest: scientists found some take hundreds of naps a day, each lasting only about a minute. Their queen sleeps much longer. Some queen ants can live for over 20 years.',
+    factEs: 'Las hormigas parecen siempre ocupadas, pero las obreras sí descansan: los científicos vieron que algunas echan cientos de siestas al día, de un minuto cada una. Su reina duerme mucho más. Algunas reinas viven más de 20 años.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -803,4 +809,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   t5: 't5-lightning-heat.mp4',
   u1: 'u1-raindrop-shape.mp4',
   u2: 'u2-tiger-stripes.mp4',
+  u3: 'u3-ants-and-sleep.mp4',
 };
