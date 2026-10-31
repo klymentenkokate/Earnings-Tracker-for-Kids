@@ -460,6 +460,13 @@ const QI_BANK = [
     answer: 'They happen at the same time!', answerEs: '¡Ocurren a la vez!',
     fact: 'Lightning makes the thunder: both happen at the same moment. Light reaches you almost instantly, but sound is much slower - about 1 km every 3 seconds. Count the seconds between flash and bang and divide by 3 to find how many km away the storm is. Lightning is about five times hotter than the surface of the Sun.',
     factEs: 'El rayo hace el trueno: los dos ocurren a la vez. La luz llega casi al instante, pero el sonido es más lento: 1 km cada 3 segundos. Cuenta los segundos entre el destello y el trueno y divide entre 3 para saber a cuántos km está la tormenta. Un rayo está unas cinco veces más caliente que la superficie del Sol.' },
+  // Set N (pipeline, one question at a time)
+  { id: 'n1', set: 'N', emoji: '🥕', topic: 'Carrots and the dark',
+    q: 'Will eating lots of carrots let you see in the dark?', qes: '¿Comer muchas zanahorias te deja ver en la oscuridad?',
+    trap: 'Yes - like a cat!', trapEs: '¡Sí, como un gato!',
+    answer: 'No!', answerEs: '¡No!',
+    fact: 'Carrots have vitamin A, which helps keep your eyes healthy, but eating more won\'t give you night vision. The story was spread on purpose during a war about 80 years ago, to hide that pilots were using a new invention, radar, to find planes in the dark.',
+    factEs: 'Las zanahorias tienen vitamina A, que cuida los ojos, pero comer más no te da visión nocturna. La historia se difundió a propósito en una guerra hace unos 80 años, para ocultar que los pilotos usaban un invento nuevo, el radar.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -536,4 +543,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   m3: 'm3-where-oxygen-comes-from.mp4',
   m4: 'm4-sneezing-eyes.mp4',
   m5: 'm5-thunder-and-lightning.mp4',
+  n1: 'n1-carrots-and-the-dark.mp4',
 };
