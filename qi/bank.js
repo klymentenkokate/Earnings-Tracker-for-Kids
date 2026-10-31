@@ -746,6 +746,12 @@ const QI_BANK = [
     answer: 'About the same - and the ostrich can keep it up longer!', answerEs: '¡Casi igual, y el avestruz aguanta más!',
     fact: 'An ostrich can sprint at about 70 km an hour, close to a racehorse\'s top speed, and it can keep up a fast pace for much longer. Each stride can be about 4 metres long. Ostriches can\'t fly, so running is how they escape danger.',
     factEs: 'Un avestruz puede correr a unos 70 km por hora, casi lo mismo que un caballo de carreras, y aguanta el ritmo rápido mucho más tiempo. Cada zancada puede medir unos 4 metros. Los avestruces no vuelan, así que corriendo escapan del peligro.' },
+  { id: 'w2', set: 'W', emoji: '❄️', topic: 'Snowflakes',
+    q: 'What colour is snow, really?', qes: '¿De qué color es la nieve, de verdad?',
+    trap: 'White', trapEs: 'Blanca',
+    answer: 'It\'s see-through - it only looks white!', answerEs: '¡Es transparente, solo parece blanca!',
+    fact: 'Each snowflake is made of clear ice, like a tiny window. But a pile of snow has millions of ice crystals bouncing light around in every direction, and all those colours mixed together look white to us. Almost every snowflake has six sides or six arms.',
+    factEs: 'Cada copo de nieve es hielo transparente, como una ventanita. Pero un montón de nieve tiene millones de cristales que rebotan la luz en todas direcciones, y todos esos colores mezclados nos parecen blancos. Casi todos los copos tienen seis lados o seis brazos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -868,4 +874,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   v4: 'v4-frogs-drinking.mp4',
   v5: 'v5-strongest-muscle.mp4',
   w1: 'w1-ostrich-speed.mp4',
+  w2: 'w2-snowflakes.mp4',
 };
