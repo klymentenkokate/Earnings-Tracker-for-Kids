@@ -739,6 +739,13 @@ const QI_BANK = [
     answer: 'Your heart!', answerEs: '¡El corazón!',
     fact: 'Your heart is a muscle that beats about 100,000 times every day and never takes a break to rest, from before you\'re born until the end of your life. Arm and leg muscles get tired and need rest, but heart muscle is a special kind that keeps going.',
     factEs: 'El corazón es un músculo que late unas 100.000 veces al día y nunca descansa, desde antes de nacer hasta el final de la vida. Los músculos de brazos y piernas se cansan, pero el del corazón es especial y sigue y sigue.' },
+  // Set W (pipeline, one question at a time)
+  { id: 'w1', set: 'W', emoji: '🏃', topic: 'Ostrich speed',
+    q: 'Which can run faster: a racehorse or an ostrich?', qes: '¿Quién corre más rápido: un caballo de carreras o un avestruz?',
+    trap: 'The racehorse', trapEs: 'El caballo',
+    answer: 'About the same - and the ostrich can keep it up longer!', answerEs: '¡Casi igual, y el avestruz aguanta más!',
+    fact: 'An ostrich can sprint at about 70 km an hour, close to a racehorse\'s top speed, and it can keep up a fast pace for much longer. Each stride can be about 4 metres long. Ostriches can\'t fly, so running is how they escape danger.',
+    factEs: 'Un avestruz puede correr a unos 70 km por hora, casi lo mismo que un caballo de carreras, y aguanta el ritmo rápido mucho más tiempo. Cada zancada puede medir unos 4 metros. Los avestruces no vuelan, así que corriendo escapan del peligro.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -860,4 +867,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   v3: 'v3-cows-lying-down.mp4',
   v4: 'v4-frogs-drinking.mp4',
   v5: 'v5-strongest-muscle.mp4',
+  w1: 'w1-ostrich-speed.mp4',
 };
