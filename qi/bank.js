@@ -318,6 +318,12 @@ const QI_BANK = [
     answer: 'The enamel on your teeth!', answerEs: '¡El esmalte de los dientes!',
     fact: 'The shiny white outside of your teeth, called enamel, is harder than any bone. It has to be: you chew thousands of times every day. But enamel can\'t grow back, so brushing matters.',
     factEs: 'La capa blanca y brillante de los dientes, el esmalte, es más dura que cualquier hueso. Masticas miles de veces al día. Pero el esmalte no vuelve a crecer: por eso hay que cepillarse.' },
+  { id: 'i3', set: 'I', emoji: '👶', topic: 'Baby bones',
+    q: 'Who has more bones: a baby or a grown-up?', qes: '¿Quién tiene más huesos: un bebé o un adulto?',
+    trap: 'A grown-up', trapEs: 'Un adulto',
+    answer: 'A baby!', answerEs: '¡Un bebé!',
+    fact: 'A newborn baby has about 300 bones and soft bits. As you grow, many of them join together, so a grown-up has 206. A baby\'s skull has soft gaps that close up as it grows.',
+    factEs: 'Un recién nacido tiene unos 300 huesos y partes blandas. Al crecer, muchos se unen, y un adulto tiene 206. El cráneo del bebé tiene huecos blandos que se cierran al crecer.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -371,4 +377,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   h5: 'h5-a-day-on-venus.mp4',
   i1: 'i1-kiwi-eggs.mp4',
   i2: 'i2-hardest-part-of-you.mp4',
+  i3: 'i3-baby-bones.mp4',
 };
