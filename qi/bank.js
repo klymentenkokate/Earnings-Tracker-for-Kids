@@ -919,6 +919,12 @@ const QI_BANK = [
     answer: 'White, like other milk!', answerEs: '¡Blanca, como las demás leches!',
     fact: 'The \'pink hippo milk\' story spread all over the internet, but it isn\'t true - hippo milk is white or creamy, like other mammals\' milk. The idea probably came from the red-orange liquid hippos ooze from their skin, which works like sun cream. Baby hippos can even drink milk underwater, closing their ears and nostrils.',
     factEs: 'Lo de la \'leche rosa de hipopótamo\' se extendió por internet, pero no es verdad: es blanca o cremosa, como la de otros mamíferos. La idea quizá vino del líquido rojo anaranjado que sueltan por la piel, que funciona como crema solar. Las crías incluso maman bajo el agua, cerrando orejas y nariz.' },
+  { id: 'ab5', set: 'AB', emoji: '🐝', topic: 'Honeybee dance',
+    q: 'How does a honeybee tell the hive where to find flowers?', qes: '¿Cómo le dice una abeja a la colmena dónde hay flores?',
+    trap: 'It buzzes the way there', trapEs: 'Zumbando el camino',
+    answer: 'It does a wiggle dance!', answerEs: '¡Bailando un baile meneado!',
+    fact: 'A honeybee that finds good flowers comes home and does a \'waggle dance\' on the honeycomb. The direction it waggles shows which way to fly compared with the Sun, and how long it waggles shows how far away the flowers are. The other bees feel the dance in the dark hive and fly straight there.',
+    factEs: 'Cuando una abeja encuentra buenas flores, vuelve y hace un \'baile del meneo\' en el panal. La dirección en que se menea indica hacia dónde volar respecto al Sol, y cuánto rato se menea, lo lejos que están. Las demás sienten el baile en la colmena oscura y vuelan directas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1069,4 +1075,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ab2: 'ab2-smell-of-rain.mp4',
   ab3: 'ab3-contagious-yawns.mp4',
   ab4: 'ab4-hippo-milk.mp4',
+  ab5: 'ab5-honeybee-dance.mp4',
 };
