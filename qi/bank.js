@@ -560,6 +560,12 @@ const QI_BANK = [
     answer: 'It can\'t jump at all!', answerEs: '¡No puede saltar nada!',
     fact: 'Elephants are very strong, but they\'re so heavy - up to 6 tonnes - that they always keep at least one foot on the ground, even when they\'re going fast. Their leg bones point straight down, like pillars. Elephants can still \'run\' at about 25 km an hour.',
     factEs: 'Los elefantes son muy fuertes, pero pesan tanto (hasta 6 toneladas) que siempre mantienen al menos una pata en el suelo, incluso cuando van rápido. Sus huesos de las patas son rectos, como columnas. Aun así \'corren\' a unos 25 km por hora.' },
+  { id: 'q2', set: 'Q', emoji: '😮', topic: 'Hiccups',
+    q: 'What makes the \'hic\' sound when you hiccup?', qes: '¿Qué hace el sonido \'hip\' cuando tienes hipo?',
+    trap: 'Your tummy', trapEs: 'La barriga',
+    answer: 'Your throat snapping shut!', answerEs: '¡La garganta cerrándose de golpe!',
+    fact: 'A hiccup starts when the big breathing muscle under your lungs, the diaphragm, suddenly twitches and pulls air in. A split second later the top of your throat snaps shut - and that\'s the \'hic\'. Babies hiccup even before they\'re born.',
+    factEs: 'El hipo empieza cuando el gran músculo de respirar bajo los pulmones, el diafragma, da un tirón y mete aire. Un instante después la garganta se cierra de golpe: ese es el \'hip\'. Los bebés tienen hipo incluso antes de nacer.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -652,4 +658,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   p4: 'p4-koala-fingerprints.mp4',
   p5: 'p5-bananas-and-radiation.mp4',
   q1: 'q1-elephant-jumps.mp4',
+  q2: 'q2-hiccups.mp4',
 };
