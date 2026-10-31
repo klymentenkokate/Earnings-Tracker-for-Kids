@@ -541,6 +541,12 @@ const QI_BANK = [
     answer: 'Sand!', answerEs: '¡De arena!',
     fact: 'Glass is made by heating sand until it melts - more than 1,500 °C, much hotter than any oven at home - then letting it cool. When lightning strikes a sandy beach it can make natural glass tubes in the sand.',
     factEs: 'El cristal se hace calentando arena hasta que se derrite, a más de 1.500 °C, mucho más que cualquier horno de casa, y dejándola enfriar. Cuando un rayo cae en una playa puede formar tubos de cristal natural en la arena.' },
+  { id: 'p4', set: 'P', emoji: '🐨', topic: 'Koala fingerprints',
+    q: 'Which animal has fingerprints almost exactly like ours?', qes: '¿Qué animal tiene huellas dactilares casi iguales a las nuestras?',
+    trap: 'Chimpanzees - they\'re our closest cousins', trapEs: 'Los chimpancés, nuestros primos',
+    answer: 'The koala!', answerEs: '¡El koala!',
+    fact: 'Chimps and gorillas do have fingerprints, but koalas\' fingerprints look so much like ours that even experts with a microscope find them hard to tell apart. They probably help koalas grip branches and feel which leaves to eat. Every person\'s fingerprints are different - even twins\'.',
+    factEs: 'Los chimpancés y gorilas también tienen huellas, pero las del koala se parecen tanto a las nuestras que hasta los expertos con microscopio las confunden. Seguramente les ayudan a agarrar ramas y elegir hojas. Las huellas de cada persona son distintas, incluso las de los gemelos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -630,4 +636,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   p1: 'p1-ostrich-eyes.mp4',
   p2: 'p2-moon-colours.mp4',
   p3: 'p3-glass.mp4',
+  p4: 'p4-koala-fingerprints.mp4',
 };
