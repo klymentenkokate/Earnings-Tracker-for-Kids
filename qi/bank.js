@@ -1099,6 +1099,12 @@ const QI_BANK = [
     answer: 'A bubble of gas in the joint!', answerEs: '¡Una burbuja de gas en la articulación!',
     fact: 'Your knuckle joints are filled with a slippery fluid. When you pull the joint apart, a tiny bubble of gas suddenly forms in that fluid - and that makes the pop. Your bones aren\'t cracking at all. You usually have to wait about 20 minutes before the same knuckle can pop again. One doctor cracked the knuckles of just one hand for 60 years, and both hands ended up the same.',
     factEs: 'Las articulaciones de los nudillos tienen un líquido resbaladizo. Al separarlas, de golpe se forma una burbujita de gas en ese líquido, y eso hace el crac. Los huesos no se rompen. Suele haber que esperar unos 20 minutos para que el mismo nudillo vuelva a sonar. Un médico se tronó los nudillos de una sola mano durante 60 años, y las dos manos acabaron igual.' },
+  { id: 'ah4', set: 'AH', emoji: '🪼', topic: 'Jellyfish brains',
+    q: 'Where is a jellyfish\'s brain?', qes: '¿Dónde tiene el cerebro una medusa?',
+    trap: 'In the middle of its head', trapEs: 'En el centro de la cabeza',
+    answer: 'Nowhere - it doesn\'t have one!', answerEs: '¡En ningún sitio: no tiene!',
+    fact: 'A jellyfish has no brain at all - and no heart, bones or blood either. Instead it has a nerve net: a web of nerves spread all through its body that lets it sense things and swim. Jellyfish are about 95% water. Some box jellyfish even have 24 eyes, and still no brain to look with!',
+    factEs: 'La medusa no tiene cerebro, ni corazón, ni huesos, ni sangre. En su lugar tiene una red nerviosa: una telaraña de nervios por todo el cuerpo que le permite notar cosas y nadar. Las medusas son agua en un 95%. ¡Algunas medusas de caja tienen 24 ojos y aun así no tienen cerebro!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1278,4 +1284,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ah1: 'ah1-duck-echoes.mp4',
   ah2: 'ah2-goats-and-tin-cans.mp4',
   ah3: 'ah3-cracking-knuckles.mp4',
+  ah4: 'ah4-jellyfish-brains.mp4',
 };
