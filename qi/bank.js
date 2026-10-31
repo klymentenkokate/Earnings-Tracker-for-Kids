@@ -863,6 +863,13 @@ const QI_BANK = [
     answer: 'No - it\'s cold light!', answerEs: '¡No, es luz fría!',
     fact: 'A firefly makes light with a chemical reaction inside its tail, and almost all the energy turns into light, not heat - so it\'s called \'cold light\'. An old-style light bulb turns most of its energy into heat instead. Fireflies flash in patterns to find each other, and fireflies are actually beetles, not flies.',
     factEs: 'La luciérnaga hace luz con una reacción química en la cola, y casi toda la energía se vuelve luz, no calor: por eso se llama \'luz fría\'. Una bombilla antigua convierte casi toda su energía en calor. Las luciérnagas parpadean en patrones para encontrarse, y en realidad son escarabajos, no moscas.' },
+  // Set AA (pipeline, one question at a time)
+  { id: 'aa1', set: 'AA', emoji: '⚡', topic: 'Electric eels',
+    q: 'What kind of eel is an electric eel?', qes: '¿Qué tipo de anguila es la anguila eléctrica?',
+    trap: 'A zappy eel', trapEs: 'Una anguila que da calambres',
+    answer: 'It isn\'t an eel at all - it\'s a knifefish!', answerEs: '¡No es una anguila: es un pez cuchillo!',
+    fact: 'Electric eels look like eels, but they belong to a different group of fish called knifefish, closer to catfish. They make electricity with special body cells that work like a stack of batteries - a big one can give a shock of over 600 volts. They also have to swim up to the surface to gulp air.',
+    factEs: 'Las anguilas eléctricas parecen anguilas, pero son de otro grupo de peces, los peces cuchillo, más cercanos a los bagres. Hacen electricidad con células especiales que funcionan como un montón de pilas: una grande puede dar una descarga de más de 600 voltios. Además tienen que subir a la superficie a respirar aire.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1004,4 +1011,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   z3: 'z3-kangaroos-backwards.mp4',
   z4: 'z4-earths-core.mp4',
   z5: 'z5-firefly-light.mp4',
+  aa1: 'aa1-electric-eels.mp4',
 };
