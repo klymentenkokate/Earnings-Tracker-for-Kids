@@ -628,6 +628,12 @@ const QI_BANK = [
     answer: 'Round!', answerEs: '¡Redonda!',
     fact: 'The soapy skin of a bubble pulls itself as tight as it can, and the shape that holds the most air with the least skin is a sphere. So whatever shape the wand is, a floating bubble always ends up round. The colours on a bubble come from light bouncing off its very thin skin.',
     factEs: 'La piel de jabón de la pompa se estira todo lo que puede, y la forma que guarda más aire con menos piel es una esfera. Así que tenga la forma que tenga el aro, la pompa que flota acaba redonda. Los colores salen de la luz que rebota en su piel finísima.' },
+  { id: 's3', set: 'S', emoji: '🎋', topic: 'Tallest grass',
+    q: 'What kind of plant is bamboo?', qes: '¿Qué tipo de planta es el bambú?',
+    trap: 'A tree', trapEs: 'Un árbol',
+    answer: 'A giant grass!', answerEs: '¡Una hierba gigante!',
+    fact: 'Bamboo is a grass, like the grass in a lawn, just enormous - some kinds grow over 30 metres tall. It\'s also the fastest-growing plant in the world: some bamboo can grow almost a metre in a single day.',
+    factEs: 'El bambú es una hierba, como la del césped, pero enorme: algunas clases superan los 30 metros. Además es la planta que crece más rápido del mundo: algunos bambúes crecen casi un metro en un solo día.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -731,4 +737,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   r5: 'r5-bird-bones.mp4',
   s1: 's1-seahorse-dads.mp4',
   s2: 's2-bubble-shapes.mp4',
+  s3: 's3-tallest-grass.mp4',
 };
