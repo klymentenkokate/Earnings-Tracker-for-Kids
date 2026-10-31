@@ -795,6 +795,12 @@ const QI_BANK = [
     answer: 'Yes - hidden inside their feathers!', answerEs: '¡Sí, escondidas bajo las plumas!',
     fact: 'Penguins do have knees, and thigh bones too, but they\'re tucked up inside the body under all those feathers, so you only see the short bit below. Their legs are bent like they\'re always squatting, which is why they waddle. Some penguins can toboggan on their tummies across the ice.',
     factEs: 'Los pingüinos sí tienen rodillas, y también fémur, pero están metidos dentro del cuerpo bajo las plumas, así que solo vemos el trocito de abajo. Tienen las patas dobladas como si estuvieran siempre en cuclillas, por eso caminan balanceándose. Algunos se deslizan sobre la barriga por el hielo.' },
+  { id: 'x5', set: 'X', emoji: '🥥', topic: 'Coconuts',
+    q: 'What kind of nut is a coconut?', qes: '¿Qué tipo de fruto seco es un coco?',
+    trap: 'A giant nut', trapEs: 'Un fruto seco gigante',
+    answer: 'It isn\'t a true nut - it\'s a seed inside a fruit!', answerEs: '¡No es un fruto seco de verdad: es una semilla dentro de un fruto!',
+    fact: 'A coconut is a fruit with a hard stone inside, like a giant cherry or peach - the brown hairy ball you see in shops is the stone, with the seed inside. Coconuts can float, so they can drift across oceans and grow on faraway beaches.',
+    factEs: 'El coco es un fruto con un hueso duro dentro, como una cereza o un melocotón gigante: la bola marrón y peluda de las tiendas es el hueso, con la semilla dentro. Los cocos flotan, así que pueden cruzar océanos y crecer en playas lejanas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -925,4 +931,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   x2: 'x2-owls-and-wisdom.mp4',
   x3: 'x3-wombat-poo.mp4',
   x4: 'x4-penguin-knees.mp4',
+  x5: 'x5-coconuts.mp4',
 };
