@@ -355,6 +355,12 @@ const QI_BANK = [
     answer: 'A tiny bit of space dust burning up!', answerEs: '¡Un trocito de polvo espacial que se quema!',
     fact: 'A shooting star isn\'t a star at all. It\'s a tiny bit of space rock or dust, often no bigger than a grain of sand, rushing into our air so fast that it gets hot and glows. Tonnes of space dust land on Earth every day.',
     factEs: 'Una estrella fugaz no es una estrella. Es un trocito de roca o polvo espacial, a menudo como un grano de arena, que entra tan rápido en el aire que se calienta y brilla. Cada día caen en la Tierra toneladas de polvo espacial.' },
+  { id: 'j4', set: 'J', emoji: '🐧', topic: 'Penguins and polar bears',
+    q: 'Where can you see wild penguins and polar bears together?', qes: '¿Dónde puedes ver pingüinos y osos polares salvajes juntos?',
+    trap: 'At the North Pole', trapEs: 'En el Polo Norte',
+    answer: 'Nowhere - they live at opposite ends of the Earth!', answerEs: '¡En ningún sitio: viven en extremos opuestos de la Tierra!',
+    fact: 'Polar bears live in the far north, around the Arctic. Wild penguins live in the southern half of the world, like Antarctica. They only ever meet in zoos. A few penguins even live near the equator, on the Galápagos Islands.',
+    factEs: 'Los osos polares viven en el norte, en el Ártico. Los pingüinos salvajes viven en la mitad sur del mundo, como la Antártida. Solo se encuentran en los zoos. Algunos pingüinos viven cerca del ecuador, en las islas Galápagos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -414,4 +420,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   j1: 'j1-sunflowers.mp4',
   j2: 'j2-pineapples.mp4',
   j3: 'j3-shooting-stars.mp4',
+  j4: 'j4-penguins-and-polar-bears.mp4',
 };
