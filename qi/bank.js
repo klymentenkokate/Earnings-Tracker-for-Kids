@@ -975,6 +975,12 @@ const QI_BANK = [
     answer: 'No - it can make you sick!', answerEs: '¡No, te puede sentar mal!',
     fact: 'Cactuses do store water, but inside it\'s a thick, bitter, slimy juice, not a pool of fresh water, and in many cactuses it contains acids that can upset your tummy - which makes you lose even more water. Cactuses store water so well because their spines are leaves that lose almost none of it.',
     factEs: 'Los cactus guardan agua, pero dentro es un jugo espeso, amargo y viscoso, no agua fresca, y en muchos lleva ácidos que sientan mal a la barriga, lo que te hace perder aún más agua. Los cactus guardan tan bien el agua porque sus espinas son hojas que casi no la pierden.' },
+  { id: 'ad4', set: 'AD', emoji: '🥶', topic: 'Goosebumps',
+    q: 'Why do we get goosebumps?', qes: '¿Por qué se nos pone la piel de gallina?',
+    trap: 'Our skin is shivering', trapEs: 'Porque la piel tiembla',
+    answer: 'Tiny muscles pull our hairs up - left over from furry ancestors!', answerEs: '¡Músculos diminutos levantan los pelos, un resto de antepasados peludos!',
+    fact: 'Each hair on your skin has a tiny muscle. When you\'re cold or scared, these muscles tighten and pull the hairs upright, making little bumps. For furry animals this fluffs up their fur to trap warm air or look bigger to enemies - like a cat puffing up. We don\'t have much fur any more, so we just get the bumps!',
+    factEs: 'Cada pelo de tu piel tiene un músculo diminuto. Con frío o miedo, se contraen y levantan los pelos, formando bultitos. A los animales peludos les ahueca el pelo para guardar calor o parecer más grandes, como un gato erizado. Nosotros ya casi no tenemos pelo, ¡así que solo nos salen los bultitos!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1134,4 +1140,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ad1: 'ad1-crocodile-tears.mp4',
   ad2: 'ad2-squirrels-and-nuts.mp4',
   ad3: 'ad3-cactus-water.mp4',
+  ad4: 'ad4-goosebumps.mp4',
 };
