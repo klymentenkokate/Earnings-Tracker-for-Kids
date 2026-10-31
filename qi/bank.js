@@ -876,6 +876,12 @@ const QI_BANK = [
     answer: 'The biggest kind of dolphin!', answerEs: '¡El delfín más grande!',
     fact: 'Killer whales, or orcas, are really the largest members of the dolphin family. They live in close family groups called pods, led by the grandmothers, and each pod has its own \'accent\' of clicks and whistles. Orcas can live as long as people do.',
     factEs: 'Las orcas son en realidad los miembros más grandes de la familia de los delfines. Viven en grupos familiares llamados manadas, guiadas por las abuelas, y cada manada tiene su propio \'acento\' de chasquidos y silbidos. Las orcas pueden vivir tanto como las personas.' },
+  { id: 'aa3', set: 'AA', emoji: '☁️', topic: 'Cloud weight',
+    q: 'How much does a fluffy white cloud weigh?', qes: '¿Cuánto pesa una nube blanca y esponjosa?',
+    trap: 'Almost nothing - it\'s light as a feather', trapEs: 'Casi nada, es ligera como una pluma',
+    answer: 'About as much as 100 elephants!', answerEs: '¡Como unos 100 elefantes!',
+    fact: 'A small fluffy cloud holds roughly 500 tonnes of water, as tiny droplets spread out over a huge space - about as heavy as 100 elephants. It floats because the droplets are so small and spread out, and the warm air rising underneath holds them up.',
+    factEs: 'Una nube pequeña y esponjosa contiene unas 500 toneladas de agua en gotitas diminutas repartidas por un espacio enorme: como unos 100 elefantes. Flota porque las gotas son pequeñísimas y están muy separadas, y el aire caliente que sube las sostiene.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1019,4 +1025,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   z5: 'z5-firefly-light.mp4',
   aa1: 'aa1-electric-eels.mp4',
   aa2: 'aa2-killer-whales.mp4',
+  aa3: 'aa3-cloud-weight.mp4',
 };
