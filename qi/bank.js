@@ -578,6 +578,12 @@ const QI_BANK = [
     answer: 'No - but it can turn about three-quarters of the way!', answerEs: '¡No, pero puede girar unas tres cuartas partes!',
     fact: 'An owl can turn its head about 270 degrees - three-quarters of a full circle - but not all the way round. It has to, because its eyes are fixed and can\'t move in their sockets. Owls have 14 neck bones; you have 7.',
     factEs: 'Un búho puede girar la cabeza unos 270 grados, tres cuartas partes de una vuelta, pero no entera. Lo necesita porque sus ojos no se mueven dentro de la cabeza. Los búhos tienen 14 huesos en el cuello; tú tienes 7.' },
+  { id: 'q5', set: 'Q', emoji: '🚰', topic: 'Water from taps',
+    q: 'How old is the water that comes out of your tap?', qes: '¿Qué edad tiene el agua que sale de tu grifo?',
+    trap: 'Brand new - made fresh at the waterworks', trapEs: 'Nueva, hecha en la potabilizadora',
+    answer: 'Billions of years old!', answerEs: '¡Miles de millones de años!',
+    fact: 'Water isn\'t made new: the same water goes round and round in the water cycle - sea, clouds, rain, rivers, taps - and the waterworks only cleans it. Most of Earth\'s water is billions of years old, so your glass may hold water that dinosaurs once drank.',
+    factEs: 'El agua no se fabrica: la misma agua da vueltas en el ciclo del agua (mar, nubes, lluvia, ríos, grifos) y la potabilizadora solo la limpia. Casi toda el agua de la Tierra tiene miles de millones de años: tu vaso puede tener agua que bebieron los dinosaurios.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -673,4 +679,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   q2: 'q2-hiccups.mp4',
   q3: 'q3-deserts-at-night.mp4',
   q4: 'q4-owl-heads.mp4',
+  q5: 'q5-water-from-taps.mp4',
 };
