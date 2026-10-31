@@ -436,6 +436,12 @@ const QI_BANK = [
     answer: 'Red and orange!', answerEs: '¡Rojo y naranja!',
     fact: 'Hippos ooze a red-orange liquid from their skin. It isn\'t blood and it isn\'t really sweat: it works like sun cream, protecting their skin from the hot sun, and helps keep germs away. And hippos can\'t really swim - they walk and bounce along the bottom of the river.',
     factEs: 'Los hipopótamos sueltan por la piel un líquido rojo anaranjado. No es sangre ni sudor de verdad: funciona como crema solar y ayuda a alejar los gérmenes. Y no saben nadar bien: caminan y botan por el fondo del río.' },
+  { id: 'm2', set: 'M', emoji: '🐙', topic: 'Octopus hearts',
+    q: 'How many hearts does an octopus have?', qes: '¿Cuántos corazones tiene un pulpo?',
+    trap: 'One, like us', trapEs: 'Uno, como nosotros',
+    answer: 'Three!', answerEs: '¡Tres!',
+    fact: 'An octopus has three hearts: two pump blood through its gills to pick up oxygen, and one pumps it round the rest of its body. Its blood is blue. When it swims, the body heart stops beating, so octopuses would rather crawl.',
+    factEs: 'El pulpo tiene tres corazones: dos bombean sangre por las branquias para coger oxígeno y uno la reparte por el cuerpo. Su sangre es azul. Cuando nada, el corazón del cuerpo se para, por eso prefiere arrastrarse.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -508,4 +514,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   l4: 'l4-peanuts.mp4',
   l5: 'l5-tongue-map.mp4',
   m1: 'm1-hippo-sweat.mp4',
+  m2: 'm2-octopus-hearts.mp4',
 };
