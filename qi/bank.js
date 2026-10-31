@@ -1080,6 +1080,13 @@ const QI_BANK = [
     answer: 'No - mostly just honeybees stinging us!', answerEs: '¡No, sobre todo las abejas melíferas que nos pican!',
     fact: 'A worker honeybee\'s sting has tiny backward hooks. In thick, stretchy skin like ours it gets stuck, and when the bee pulls away it tears off, so the bee dies. But it can sting other insects and survive. Bumblebees and wasps have smooth stings and can sting again and again. And male bees can\'t sting at all!',
     factEs: 'El aguijón de la abeja obrera melífera tiene ganchitos hacia atrás. En una piel gruesa y elástica como la nuestra se engancha, y al irse se le arranca, así que muere. Pero puede picar a otros insectos y sobrevivir. Los abejorros y las avispas tienen aguijón liso y pueden picar una y otra vez. ¡Y los machos no pican!' },
+  // Set AH (pipeline, one question at a time)
+  { id: 'ah1', set: 'AH', emoji: '🦆', topic: 'Duck echoes',
+    q: 'Does a duck\'s quack echo?', qes: '¿El cuac de un pato hace eco?',
+    trap: 'No - a quack never echoes', trapEs: 'No, el cuac nunca hace eco',
+    answer: 'Yes - it echoes like any sound!', answerEs: '¡Sí, hace eco como cualquier sonido!',
+    fact: 'People used to say a duck\'s quack is the one sound that doesn\'t echo. Sound scientists tested it with a real duck in a special echo room - and the quack echoed. It is just hard to hear, because a quack fades away slowly and the echo blends into the end of it. Every sound bounces off walls and cliffs, quacks included.',
+    factEs: 'Se decía que el cuac del pato es el único sonido sin eco. Unos científicos del sonido lo probaron con un pato de verdad en una sala de eco, y el cuac hizo eco. Cuesta oírlo porque el cuac se apaga despacio y el eco se mezcla con el final. Todo sonido rebota en paredes y acantilados, también los cuacs.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1256,4 +1263,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ag3: 'ag3-icebergs.mp4',
   ag4: 'ag4-moon-footprints.mp4',
   ag5: 'ag5-bee-stings.mp4',
+  ah1: 'ah1-duck-echoes.mp4',
 };
