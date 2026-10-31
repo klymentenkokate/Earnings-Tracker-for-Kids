@@ -820,6 +820,12 @@ const QI_BANK = [
     answer: 'The thickest fur of any animal!', answerEs: '¡Con el pelo más denso de todos los animales!',
     fact: 'Unlike whales and seals, sea otters have very little blubber. Instead they have the thickest fur of any animal - up to about a million hairs in a patch the size of a postage stamp - which traps air to keep the water off their skin. Sea otters sometimes hold paws while they sleep so they don\'t drift apart.',
     factEs: 'A diferencia de ballenas y focas, las nutrias marinas casi no tienen grasa. Tienen el pelo más denso de todos los animales: hasta un millón de pelos en un trocito como un sello, que atrapa aire y mantiene el agua lejos de la piel. A veces se dan la mano al dormir para no separarse.' },
+  { id: 'y4', set: 'Y', emoji: '🐷', topic: 'Pigs and mud',
+    q: 'Why do pigs roll in mud?', qes: '¿Por qué se revuelcan los cerdos en el barro?',
+    trap: 'Because they\'re dirty animals', trapEs: 'Porque son animales sucios',
+    answer: 'To keep cool - they can hardly sweat!', answerEs: '¡Para refrescarse: casi no sudan!',
+    fact: 'Pigs have very few sweat glands, so they can\'t cool down by sweating like we do. Rolling in mud keeps them cool, and the mud also works like sun cream and keeps biting insects off. Given the choice, pigs keep their sleeping area clean and use a separate spot as a toilet.',
+    factEs: 'Los cerdos casi no tienen glándulas de sudor, así que no pueden refrescarse sudando como nosotros. Revolcarse en el barro les enfría, y además el barro funciona como crema solar y aleja a los insectos. Si pueden, mantienen limpio su sitio de dormir y usan otro rincón como baño.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -954,4 +960,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   y1: 'y1-lobster-colours.mp4',
   y2: 'y2-wrinkly-fingers.mp4',
   y3: 'y3-sea-otters.mp4',
+  y4: 'y4-pigs-and-mud.mp4',
 };
