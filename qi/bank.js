@@ -956,6 +956,13 @@ const QI_BANK = [
     answer: 'The Earth is tilted!', answerEs: '¡La Tierra está inclinada!',
     fact: 'The Earth is tilted, so for part of the year your half of the world leans towards the Sun: the Sun climbs higher, shines more directly and days are longer - that\'s summer. It isn\'t about distance: the Earth is actually closest to the Sun in early January, during the northern winter! That\'s also why Australia has summer at Christmas.',
     factEs: 'La Tierra está inclinada, así que parte del año tu mitad del mundo se inclina hacia el Sol: el Sol sube más, da más de lleno y los días son más largos. Eso es el verano. No es por la distancia: la Tierra está más cerca del Sol a principios de enero, ¡en el invierno del norte! Por eso en Australia es verano en Navidad.' },
+  // Set AD (pipeline, one question at a time)
+  { id: 'ad1', set: 'AD', emoji: '🐊', topic: 'Crocodile tears',
+    q: 'Do crocodiles really cry?', qes: '¿Lloran de verdad los cocodrilos?',
+    trap: 'No - \'crocodile tears\' are pretend!', trapEs: 'No, las \'lágrimas de cocodrilo\' son de mentira',
+    answer: 'Yes - real tears, especially while eating!', answerEs: '¡Sí, lágrimas de verdad, sobre todo al comer!',
+    fact: 'Crocodiles really do make tears, to keep their eyes clean and wet. Scientists watched crocodiles\' close relatives, caimans, and found their eyes often got teary while they were eating - possibly because chomping pushes on the tear glands. They\'re not sad, though! \'Crocodile tears\' still means pretend crying.',
+    factEs: 'Los cocodrilos sí hacen lágrimas, para limpiar y mojar los ojos. Los científicos vieron que a sus parientes, los caimanes, se les humedecen los ojos mientras comen, quizá porque al masticar se aprietan las glándulas. ¡Pero no están tristes! \'Lágrimas de cocodrilo\' sigue significando llanto fingido.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1112,4 +1119,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ac3: 'ac3-peacock-tails.mp4',
   ac4: 'ac4-cats-and-milk.mp4',
   ac5: 'ac5-why-summer-is-hot.mp4',
+  ad1: 'ad1-crocodile-tears.mp4',
 };
