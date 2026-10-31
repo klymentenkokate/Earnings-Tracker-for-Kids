@@ -987,6 +987,13 @@ const QI_BANK = [
     answer: 'No - it swaps front and back!', answerEs: '¡No, cambia delante y detrás!',
     fact: 'Wave your right hand at a mirror: the hand in the mirror waving is still on the right side of the picture, straight in front of your right hand. What a mirror really flips is front and back, like turning a glove inside out. It only looks like left and right swapped because we imagine walking round to stand where our reflection is.',
     factEs: 'Saluda con la mano derecha a un espejo: la mano reflejada sigue en el lado derecho, justo delante de tu mano. Lo que el espejo invierte es delante y detrás, como dar la vuelta a un guante. Solo parece que cambia izquierda y derecha porque nos imaginamos rodeando el espejo hasta ponernos en el sitio del reflejo.' },
+  // Set AE (pipeline, one question at a time)
+  { id: 'ae1', set: 'AE', emoji: '🦁', topic: 'Lion hunters',
+    q: 'In a lion pride, who does most of the hunting?', qes: 'En una manada de leones, ¿quién caza más?',
+    trap: 'The big male lion', trapEs: 'El gran león macho',
+    answer: 'The lionesses!', answerEs: '¡Las leonas!',
+    fact: 'In most lion prides, the lionesses do most of the hunting, working together as a team to stalk and surround their prey. The males mostly guard the pride\'s territory, and their roar can be heard about 8 km away. Lions are the only big cats that live in big family groups.',
+    factEs: 'En la mayoría de las manadas, las leonas cazan casi siempre, trabajando en equipo para acechar y rodear a la presa. Los machos sobre todo vigilan el territorio, y su rugido se oye a unos 8 km. Los leones son los únicos grandes felinos que viven en grandes grupos familiares.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1148,4 +1155,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ad3: 'ad3-cactus-water.mp4',
   ad4: 'ad4-goosebumps.mp4',
   ad5: 'ad5-mirrors.mp4',
+  ae1: 'ae1-lion-hunters.mp4',
 };
