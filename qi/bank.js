@@ -1093,6 +1093,12 @@ const QI_BANK = [
     answer: 'No - they just nibble the paper label!', answerEs: '¡No, solo mordisquean la etiqueta de papel!',
     fact: 'Goats are very curious and explore things with their lips, a bit like we use our hands. So a goat might nibble the paper label off a can - paper is made from plants - but it won\'t eat the metal. Goats are actually quite fussy eaters: they like leaves, twigs and shrubs best, and often turn up their noses at dirty or trampled food.',
     factEs: 'Las cabras son muy curiosas y exploran con los labios, como nosotros con las manos. Puede que mordisqueen la etiqueta de papel de una lata (el papel viene de las plantas), pero no se comen el metal. En realidad son bastante exigentes: prefieren hojas, ramitas y arbustos, y rechazan la comida sucia o pisoteada.' },
+  { id: 'ah3', set: 'AH', emoji: '✊', topic: 'Cracking knuckles',
+    q: 'What makes the pop when you crack your knuckles?', qes: '¿Qué hace el crac cuando te truenas los nudillos?',
+    trap: 'Your bones cracking', trapEs: 'Tus huesos rompiéndose',
+    answer: 'A bubble of gas in the joint!', answerEs: '¡Una burbuja de gas en la articulación!',
+    fact: 'Your knuckle joints are filled with a slippery fluid. When you pull the joint apart, a tiny bubble of gas suddenly forms in that fluid - and that makes the pop. Your bones aren\'t cracking at all. You usually have to wait about 20 minutes before the same knuckle can pop again. One doctor cracked the knuckles of just one hand for 60 years, and both hands ended up the same.',
+    factEs: 'Las articulaciones de los nudillos tienen un líquido resbaladizo. Al separarlas, de golpe se forma una burbujita de gas en ese líquido, y eso hace el crac. Los huesos no se rompen. Suele haber que esperar unos 20 minutos para que el mismo nudillo vuelva a sonar. Un médico se tronó los nudillos de una sola mano durante 60 años, y las dos manos acabaron igual.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1271,4 +1277,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ag5: 'ag5-bee-stings.mp4',
   ah1: 'ah1-duck-echoes.mp4',
   ah2: 'ah2-goats-and-tin-cans.mp4',
+  ah3: 'ah3-cracking-knuckles.mp4',
 };
