@@ -808,6 +808,12 @@ const QI_BANK = [
     answer: 'Mostly greeny-blue or brown!', answerEs: '¡Casi siempre verde azulado o marrón!',
     fact: 'Most lobsters are a dark greeny-blue or brown, which helps them hide on the seabed. Their shells hold a red colour hidden by other colours; cooking breaks those other colours down, so the red shows. Very rarely, lobsters are born bright blue - about 1 in 2 million.',
     factEs: 'Casi todas las langostas son de un verde azulado oscuro o marrones, para esconderse en el fondo. Su caparazón guarda un color rojo tapado por otros; al cocinarlas, esos otros se rompen y aparece el rojo. Muy raramente nacen azul brillante: más o menos 1 de cada 2 millones.' },
+  { id: 'y2', set: 'Y', emoji: '🛁', topic: 'Wrinkly fingers',
+    q: 'Why do your fingers go wrinkly in the bath?', qes: '¿Por qué se te arrugan los dedos en el baño?',
+    trap: 'They soak up water and swell', trapEs: 'Absorben agua y se hinchan',
+    answer: 'Your nerves make them wrinkle on purpose!', answerEs: '¡Tus nervios los arrugan a propósito!',
+    fact: 'It isn\'t just soaking: if the nerves in a finger are damaged, it doesn\'t wrinkle at all. Your body squeezes the tiny blood vessels under the skin, and the skin folds. Scientists think the wrinkles may help you grip wet things, like tyre treads.',
+    factEs: 'No es solo que se mojen: si los nervios de un dedo están dañados, no se arruga. El cuerpo aprieta los vasitos de sangre bajo la piel y esta se pliega. Los científicos creen que las arrugas ayudan a agarrar cosas mojadas, como las ruedas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -940,4 +946,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   x4: 'x4-penguin-knees.mp4',
   x5: 'x5-coconuts.mp4',
   y1: 'y1-lobster-colours.mp4',
+  y2: 'y2-wrinkly-fingers.mp4',
 };
