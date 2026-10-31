@@ -1167,6 +1167,12 @@ const QI_BANK = [
     answer: 'No - you can do it any day!', answerEs: '¡No, se puede cualquier día!',
     fact: 'Some people say the first day of spring - the equinox, when day and night are about the same length - is the only day an egg will stand on its end. But the Sun and Earth don\'t pull on an egg any differently that day. With a steady hand and lots of patience you can balance an egg any day of the year: tiny bumps on the shell act like little legs.',
     factEs: 'Hay quien dice que el primer día de primavera, el equinoccio, cuando el día y la noche duran casi lo mismo, es el único día en que un huevo se sostiene de pie. Pero ese día el Sol y la Tierra no tiran del huevo de forma distinta. Con pulso firme y mucha paciencia puedes ponerlo de pie cualquier día del año: los bultitos de la cáscara hacen de patitas.' },
+  { id: 'aj5', set: 'AJ', emoji: '🌊', topic: 'Blue sea',
+    q: 'Is the sea blue because it reflects the sky?', qes: '¿El mar es azul porque refleja el cielo?',
+    trap: 'Yes - it\'s a giant mirror of the sky', trapEs: 'Sí, es un espejo gigante del cielo',
+    answer: 'Mostly no - water itself is a little blue!', answerEs: '¡Casi no: el agua en sí es un poco azul!',
+    fact: 'Sunlight is a mix of all the colours. Water soaks up the red and orange light a little more than the blue, so the deeper the water, the bluer it looks - even on a cloudy day. A glass of water looks clear because there\'s too little water to notice the blue. The sky\'s reflection adds a bit of extra blue on top, and tiny sea plants can make the sea look green.',
+    factEs: 'La luz del sol mezcla todos los colores. El agua absorbe un poco más la luz roja y naranja que la azul, así que cuanto más profunda, más azul se ve, incluso con nubes. Un vaso de agua parece transparente porque hay muy poca para notar el azul. El reflejo del cielo añade un poco más de azul, y las plantitas del mar pueden volverlo verde.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1357,4 +1363,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aj2: 'aj2-rhino-horns.mp4',
   aj3: 'aj3-shaving-hair.mp4',
   aj4: 'aj4-balancing-eggs.mp4',
+  aj5: 'aj5-blue-sea.mp4',
 };
