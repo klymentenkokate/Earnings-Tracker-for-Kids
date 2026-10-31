@@ -467,6 +467,12 @@ const QI_BANK = [
     answer: 'No!', answerEs: '¡No!',
     fact: 'Carrots have vitamin A, which helps keep your eyes healthy, but eating more won\'t give you night vision. The story was spread on purpose during a war about 80 years ago, to hide that pilots were using a new invention, radar, to find planes in the dark.',
     factEs: 'Las zanahorias tienen vitamina A, que cuida los ojos, pero comer más no te da visión nocturna. La historia se difundió a propósito en una guerra hace unos 80 años, para ocultar que los pilotos usaban un invento nuevo, el radar.' },
+  { id: 'n2', set: 'N', emoji: '🦈', topic: 'Shark bones',
+    q: 'How many bones does a shark have?', qes: '¿Cuántos huesos tiene un tiburón?',
+    trap: 'Hundreds, like a big fish', trapEs: 'Cientos, como un pez grande',
+    answer: 'None at all!', answerEs: '¡Ninguno!',
+    fact: 'A shark\'s skeleton is made of cartilage, the bendy stuff in your nose and ears. It\'s lighter than bone, so sharks can swim fast and turn quickly. Sharks have been around for longer than trees.',
+    factEs: 'El esqueleto del tiburón es de cartílago, lo blandito de tu nariz y tus orejas. Pesa menos que el hueso, así que nada rápido y gira con facilidad. Los tiburones existen desde antes que los árboles.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -544,4 +550,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   m4: 'm4-sneezing-eyes.mp4',
   m5: 'm5-thunder-and-lightning.mp4',
   n1: 'n1-carrots-and-the-dark.mp4',
+  n2: 'n2-shark-bones.mp4',
 };
