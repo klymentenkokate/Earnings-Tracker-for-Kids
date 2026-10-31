@@ -888,6 +888,12 @@ const QI_BANK = [
     answer: 'Nothing at all - space is silent!', answerEs: '¡Nada: el espacio es silencioso!',
     fact: 'Sound needs something to travel through, like air or water, because it\'s a wave of tiny pushes passing from one bit of stuff to the next. Space is almost completely empty, so there\'s nothing to carry the sound. Astronauts talk to each other by radio, which uses radio waves instead of sound.',
     factEs: 'El sonido necesita algo por donde viajar, como el aire o el agua, porque es una onda de empujoncitos que pasa de un trocito al siguiente. El espacio está casi vacío, así que no hay nada que lleve el sonido. Los astronautas hablan por radio, que usa ondas de radio en vez de sonido.' },
+  { id: 'aa5', set: 'AA', emoji: '🍌', topic: 'Banana bunches',
+    q: 'Which way do bananas grow on the plant?', qes: '¿Hacia dónde crecen los plátanos en la planta?',
+    trap: 'Hanging down', trapEs: 'Colgando hacia abajo',
+    answer: 'Curving up towards the sky!', answerEs: '¡Curvándose hacia el cielo!',
+    fact: 'Bananas start off pointing down, then curve upwards as they grow, reaching for the light - that\'s what gives them their bend. A whole bunch, called a hand, grows from one giant flower stalk. The banana plant isn\'t really a tree either: its \'trunk\' is made of tightly rolled leaves.',
+    factEs: 'Los plátanos empiezan apuntando hacia abajo y luego se curvan hacia arriba al crecer, buscando la luz: por eso están doblados. Cada racimo crece de un tallo de flor gigante. Y la planta del plátano no es un árbol: su \'tronco\' son hojas muy enrolladas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1033,4 +1039,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aa2: 'aa2-killer-whales.mp4',
   aa3: 'aa3-cloud-weight.mp4',
   aa4: 'aa4-sound-in-space.mp4',
+  aa5: 'aa5-banana-bunches.mp4',
 };
