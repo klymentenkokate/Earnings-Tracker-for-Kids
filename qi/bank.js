@@ -1074,6 +1074,12 @@ const QI_BANK = [
     answer: 'Yes - and they could last millions of years!', answerEs: '¡Sí, y podrían durar millones de años!',
     fact: 'The Moon has no air, so there is no wind to blow footprints away and no rain to wash them off. The footprints astronauts left more than 50 years ago are almost certainly still there, and could last for millions of years. Only tiny space rocks hitting the ground very slowly wear them away.',
     factEs: 'La Luna no tiene aire, así que no hay viento que borre las huellas ni lluvia que las lave. Las huellas que dejaron los astronautas hace más de 50 años casi seguro siguen allí, y podrían durar millones de años. Solo las diminutas rocas espaciales que caen las desgastan, muy despacio.' },
+  { id: 'ag5', set: 'AG', emoji: '🐝', topic: 'Bee stings',
+    q: 'Does every bee die after it stings?', qes: '¿Todas las abejas mueren después de picar?',
+    trap: 'Yes - every bee dies after one sting', trapEs: 'Sí, todas mueren tras picar una vez',
+    answer: 'No - mostly just honeybees stinging us!', answerEs: '¡No, sobre todo las abejas melíferas que nos pican!',
+    fact: 'A worker honeybee\'s sting has tiny backward hooks. In thick, stretchy skin like ours it gets stuck, and when the bee pulls away it tears off, so the bee dies. But it can sting other insects and survive. Bumblebees and wasps have smooth stings and can sting again and again. And male bees can\'t sting at all!',
+    factEs: 'El aguijón de la abeja obrera melífera tiene ganchitos hacia atrás. En una piel gruesa y elástica como la nuestra se engancha, y al irse se le arranca, así que muere. Pero puede picar a otros insectos y sobrevivir. Los abejorros y las avispas tienen aguijón liso y pueden picar una y otra vez. ¡Y los machos no pican!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1249,4 +1255,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ag2: 'ag2-beaver-teeth.mp4',
   ag3: 'ag3-icebergs.mp4',
   ag4: 'ag4-moon-footprints.mp4',
+  ag5: 'ag5-bee-stings.mp4',
 };
