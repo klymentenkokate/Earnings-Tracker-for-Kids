@@ -814,6 +814,12 @@ const QI_BANK = [
     answer: 'Your nerves make them wrinkle on purpose!', answerEs: '¡Tus nervios los arrugan a propósito!',
     fact: 'It isn\'t just soaking: if the nerves in a finger are damaged, it doesn\'t wrinkle at all. Your body squeezes the tiny blood vessels under the skin, and the skin folds. Scientists think the wrinkles may help you grip wet things, like tyre treads.',
     factEs: 'No es solo que se mojen: si los nervios de un dedo están dañados, no se arruga. El cuerpo aprieta los vasitos de sangre bajo la piel y esta se pliega. Los científicos creen que las arrugas ayudan a agarrar cosas mojadas, como las ruedas.' },
+  { id: 'y3', set: 'Y', emoji: '🦦', topic: 'Sea otters',
+    q: 'How do sea otters stay warm in icy water?', qes: '¿Cómo se mantienen calientes las nutrias marinas en agua helada?',
+    trap: 'A thick layer of fat, like a whale', trapEs: 'Con una capa gruesa de grasa, como la ballena',
+    answer: 'The thickest fur of any animal!', answerEs: '¡Con el pelo más denso de todos los animales!',
+    fact: 'Unlike whales and seals, sea otters have very little blubber. Instead they have the thickest fur of any animal - up to about a million hairs in a patch the size of a postage stamp - which traps air to keep the water off their skin. Sea otters sometimes hold paws while they sleep so they don\'t drift apart.',
+    factEs: 'A diferencia de ballenas y focas, las nutrias marinas casi no tienen grasa. Tienen el pelo más denso de todos los animales: hasta un millón de pelos en un trocito como un sello, que atrapa aire y mantiene el agua lejos de la piel. A veces se dan la mano al dormir para no separarse.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -947,4 +953,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   x5: 'x5-coconuts.mp4',
   y1: 'y1-lobster-colours.mp4',
   y2: 'y2-wrinkly-fingers.mp4',
+  y3: 'y3-sea-otters.mp4',
 };
