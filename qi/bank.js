@@ -361,6 +361,12 @@ const QI_BANK = [
     answer: 'Nowhere - they live at opposite ends of the Earth!', answerEs: '¡En ningún sitio: viven en extremos opuestos de la Tierra!',
     fact: 'Polar bears live in the far north, around the Arctic. Wild penguins live in the southern half of the world, like Antarctica. They only ever meet in zoos. A few penguins even live near the equator, on the Galápagos Islands.',
     factEs: 'Los osos polares viven en el norte, en el Ártico. Los pingüinos salvajes viven en la mitad sur del mundo, como la Antártida. Solo se encuentran en los zoos. Algunos pingüinos viven cerca del ecuador, en las islas Galápagos.' },
+  { id: 'j5', set: 'J', emoji: '☀️', topic: 'Sunlight\'s journey',
+    q: 'How long does light from the Sun take to reach us?', qes: '¿Cuánto tarda la luz del Sol en llegar hasta nosotros?',
+    trap: 'No time at all - it\'s instant', trapEs: 'Nada: llega al instante',
+    answer: 'About 8 minutes!', answerEs: '¡Unos 8 minutos!',
+    fact: 'Light is the fastest thing there is, but the Sun is 150 million km away, so its light takes about 8 minutes to get here. When you see the Sun, you\'re seeing it as it was 8 minutes ago. Light from the Moon takes just over 1 second.',
+    factEs: 'La luz es lo más rápido que existe, pero el Sol está a 150 millones de km, así que su luz tarda unos 8 minutos en llegar. Cuando ves el Sol, lo ves como era hace 8 minutos. La luz de la Luna tarda poco más de 1 segundo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -421,4 +427,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   j2: 'j2-pineapples.mp4',
   j3: 'j3-shooting-stars.mp4',
   j4: 'j4-penguins-and-polar-bears.mp4',
+  j5: 'j5-sunlights-journey.mp4',
 };
