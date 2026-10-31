@@ -721,6 +721,12 @@ const QI_BANK = [
     answer: 'Just one big connected ocean!', answerEs: '¡Solo uno, todo conectado!',
     fact: 'We give five parts of the ocean different names - Pacific, Atlantic, Indian, Southern and Arctic - but they all join up, so it\'s really one world ocean. It covers about 70 percent of the planet. A fish could swim from one \'ocean\' to all the others without ever leaving the water.',
     factEs: 'Ponemos nombres a cinco partes del océano (Pacífico, Atlántico, Índico, Austral y Ártico), pero todas están unidas: en realidad es un solo océano mundial. Cubre más o menos el 70 % del planeta. Un pez podría nadar de uno a todos los demás sin salir del agua.' },
+  { id: 'v3', set: 'V', emoji: '🐄', topic: 'Cows lying down',
+    q: 'Do cows lie down when it\'s going to rain?', qes: '¿Se tumban las vacas cuando va a llover?',
+    trap: 'Yes - they can tell rain is coming', trapEs: 'Sí, notan que va a llover',
+    answer: 'No - they lie down to chew and rest!', answerEs: '¡No, se tumban para rumiar y descansar!',
+    fact: 'It\'s an old saying, but there\'s no good evidence that cows can forecast rain. Cows lie down for many hours every day just to rest and to chew the cud. Cows sleep only around four hours a day, mostly in short naps.',
+    factEs: 'Es un dicho antiguo, pero no hay pruebas de que las vacas predigan la lluvia. Se tumban muchas horas al día para descansar y rumiar. Las vacas duermen solo unas cuatro horas al día, casi siempre en siestas cortas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -839,4 +845,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   u5: 'u5-mount-everest-growing.mp4',
   v1: 'v1-zebra-colours.mp4',
   v2: 'v2-one-big-ocean.mp4',
+  v3: 'v3-cows-lying-down.mp4',
 };
