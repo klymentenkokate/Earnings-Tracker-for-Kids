@@ -1087,6 +1087,12 @@ const QI_BANK = [
     answer: 'Yes - it echoes like any sound!', answerEs: '¡Sí, hace eco como cualquier sonido!',
     fact: 'People used to say a duck\'s quack is the one sound that doesn\'t echo. Sound scientists tested it with a real duck in a special echo room - and the quack echoed. It is just hard to hear, because a quack fades away slowly and the echo blends into the end of it. Every sound bounces off walls and cliffs, quacks included.',
     factEs: 'Se decía que el cuac del pato es el único sonido sin eco. Unos científicos del sonido lo probaron con un pato de verdad en una sala de eco, y el cuac hizo eco. Cuesta oírlo porque el cuac se apaga despacio y el eco se mezcla con el final. Todo sonido rebota en paredes y acantilados, también los cuacs.' },
+  { id: 'ah2', set: 'AH', emoji: '🐐', topic: 'Goats and tin cans',
+    q: 'Do goats eat tin cans?', qes: '¿Las cabras comen latas?',
+    trap: 'Yes - goats eat anything!', trapEs: '¡Sí, las cabras comen de todo!',
+    answer: 'No - they just nibble the paper label!', answerEs: '¡No, solo mordisquean la etiqueta de papel!',
+    fact: 'Goats are very curious and explore things with their lips, a bit like we use our hands. So a goat might nibble the paper label off a can - paper is made from plants - but it won\'t eat the metal. Goats are actually quite fussy eaters: they like leaves, twigs and shrubs best, and often turn up their noses at dirty or trampled food.',
+    factEs: 'Las cabras son muy curiosas y exploran con los labios, como nosotros con las manos. Puede que mordisqueen la etiqueta de papel de una lata (el papel viene de las plantas), pero no se comen el metal. En realidad son bastante exigentes: prefieren hojas, ramitas y arbustos, y rechazan la comida sucia o pisoteada.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1264,4 +1270,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ag4: 'ag4-moon-footprints.mp4',
   ag5: 'ag5-bee-stings.mp4',
   ah1: 'ah1-duck-echoes.mp4',
+  ah2: 'ah2-goats-and-tin-cans.mp4',
 };
