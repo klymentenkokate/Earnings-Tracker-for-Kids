@@ -770,6 +770,13 @@ const QI_BANK = [
     answer: 'Half their brain sleeps at a time!', answerEs: '¡Duerme solo media cabeza cada vez!',
     fact: 'Dolphins have to choose to breathe, so they can\'t fully switch off. Instead, one half of the brain sleeps while the other half stays awake to swim, breathe and watch for danger - then they swap. They often keep the eye opposite the awake half open.',
     factEs: 'Los delfines tienen que acordarse de respirar, así que no pueden apagarse del todo. Duerme una mitad del cerebro mientras la otra nada, respira y vigila; luego se cambian. A menudo tienen abierto el ojo del lado despierto contrario.' },
+  // Set X (pipeline, one question at a time)
+  { id: 'x1', set: 'X', emoji: '⭐', topic: 'Starfish',
+    q: 'What kind of fish is a starfish?', qes: '¿Qué tipo de pez es una estrella de mar?',
+    trap: 'A star-shaped fish', trapEs: 'Un pez con forma de estrella',
+    answer: 'It isn\'t a fish at all!', answerEs: '¡No es un pez!',
+    fact: 'Starfish have no backbone, no gills and no fins, so scientists prefer to call them \'sea stars\'. They\'re relatives of sea urchins. Many can grow back a lost arm, and they have a tiny eye at the tip of each arm.',
+    factEs: 'Las estrellas de mar no tienen columna, ni branquias, ni aletas, así que no son peces. Son parientes de los erizos de mar. Muchas pueden regenerar un brazo perdido, y tienen un ojito en la punta de cada brazo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -896,4 +903,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   w3: 'w3-venus-flytrap.mp4',
   w4: 'w4-stars-and-sand.mp4',
   w5: 'w5-dolphin-sleep.mp4',
+  x1: 'x1-starfish.mp4',
 };
