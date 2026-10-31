@@ -1142,6 +1142,13 @@ const QI_BANK = [
     answer: 'No - it purrs and chirps like a bird!', answerEs: '¡No, ronronea y pía como un pájaro!',
     fact: 'Only lions, tigers, leopards and jaguars can roar - they have a special stretchy voice box. A cheetah can\'t. Instead it purrs like a house cat, and calls to its cubs with a high chirp that sounds a lot like a bird. Cheetahs are the fastest land animals: they can sprint at around 100 km/h, as fast as a car on a motorway.',
     factEs: 'Solo los leones, tigres, leopardos y jaguares pueden rugir: tienen una laringe especial y elástica. El guepardo no. En cambio, ronronea como un gato de casa y llama a sus crías con un gorjeo agudo que parece de pájaro. Los guepardos son los animales terrestres más rápidos: corren a unos 100 km/h, como un coche en la autopista.' },
+  // Set AJ (pipeline, one question at a time)
+  { id: 'aj1', set: 'AJ', emoji: '🪲', topic: 'Woodlice',
+    q: 'Is a woodlouse an insect?', qes: '¿La cochinilla es un insecto?',
+    trap: 'Yes - it\'s a creepy-crawly bug', trapEs: 'Sí, es un bichito',
+    answer: 'No - it\'s related to crabs and shrimps!', answerEs: '¡No, es pariente de cangrejos y gambas!',
+    fact: 'A woodlouse is a crustacean, the same family as crabs, lobsters and shrimps - one of the very few that live on land. Insects have 6 legs, but a woodlouse has 14. It breathes through gill-like parts that need to stay damp, which is why woodlice hide under logs and stones, and some can roll into a ball.',
+    factEs: 'La cochinilla es un crustáceo, de la misma familia que cangrejos, langostas y gambas, y uno de los pocos que viven en tierra. Los insectos tienen 6 patas, pero la cochinilla tiene 14. Respira con unas partes parecidas a branquias que deben estar húmedas: por eso se esconde bajo troncos y piedras, y algunas se hacen una bola.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1328,4 +1335,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ai3: 'ai3-fish-drinking.mp4',
   ai4: 'ai4-dogs-and-chocolate.mp4',
   ai5: 'ai5-cheetah-sounds.mp4',
+  aj1: 'aj1-woodlice.mp4',
 };
