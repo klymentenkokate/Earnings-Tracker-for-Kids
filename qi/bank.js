@@ -994,6 +994,12 @@ const QI_BANK = [
     answer: 'The lionesses!', answerEs: '¡Las leonas!',
     fact: 'In most lion prides, the lionesses do most of the hunting, working together as a team to stalk and surround their prey. The males mostly guard the pride\'s territory, and their roar can be heard about 8 km away. Lions are the only big cats that live in big family groups.',
     factEs: 'En la mayoría de las manadas, las leonas cazan casi siempre, trabajando en equipo para acechar y rodear a la presa. Los machos sobre todo vigilan el territorio, y su rugido se oye a unos 8 km. Los leones son los únicos grandes felinos que viven en grandes grupos familiares.' },
+  { id: 'ae2', set: 'AE', emoji: '🍓', topic: 'Strawberry seeds',
+    q: 'What are the little yellow \'seeds\' on the outside of a strawberry?', qes: '¿Qué son las \'semillitas\' amarillas de fuera de la fresa?',
+    trap: 'Seeds, of course', trapEs: 'Semillas, claro',
+    answer: 'Each one is a tiny fruit with a seed inside!', answerEs: '¡Cada una es una frutita con una semilla dentro!',
+    fact: 'Each little yellow speck on a strawberry is actually a tiny dry fruit called an achene, and the real seed is inside it. The red juicy part is the swollen flower base. A strawberry has about 200 of these on its outside - the only fruit that wears its seeds on the outside.',
+    factEs: 'Cada puntito amarillo de la fresa es en realidad una frutita seca llamada aquenio, y la semilla de verdad está dentro. La parte roja y jugosa es la base hinchada de la flor. Una fresa tiene unos 200 por fuera: es la única fruta que lleva sus semillas por fuera.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1156,4 +1162,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ad4: 'ad4-goosebumps.mp4',
   ad5: 'ad5-mirrors.mp4',
   ae1: 'ae1-lion-hunters.mp4',
+  ae2: 'ae2-strawberry-seeds.mp4',
 };
