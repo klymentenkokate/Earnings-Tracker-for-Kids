@@ -529,6 +529,12 @@ const QI_BANK = [
     answer: 'Its eye!', answerEs: '¡El ojo!',
     fact: 'An ostrich\'s eye is about 5 cm across - the biggest eye of any land animal - and each eye is bigger than its brain. Big eyes help it spot danger far away across the open plains. And an ostrich can run at about 70 km an hour.',
     factEs: 'El ojo del avestruz mide unos 5 cm, el más grande de cualquier animal terrestre, y cada ojo es más grande que su cerebro. Los ojos grandes le ayudan a ver el peligro de lejos en las llanuras. Y un avestruz corre a unos 70 km por hora.' },
+  { id: 'p2', set: 'P', emoji: '🌕', topic: 'Moon colours',
+    q: 'What colour is the Moon\'s ground, close up?', qes: '¿De qué color es el suelo de la Luna visto de cerca?',
+    trap: 'Bright white or silver', trapEs: 'Blanco brillante o plateado',
+    answer: 'Dark grey - like an old road!', answerEs: '¡Gris oscuro, como una carretera vieja!',
+    fact: 'The Moon looks bright white in the night sky because the Sun is shining on it, but its ground is actually dark grey, about as dark as an old road. Astronauts\' footprints on the Moon could last for millions of years, because there\'s no wind or rain to wipe them away.',
+    factEs: 'La Luna parece blanca porque el Sol la ilumina, pero su suelo es gris oscuro, como una carretera vieja. Las huellas de los astronautas en la Luna pueden durar millones de años, porque allí no hay viento ni lluvia que las borren.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -616,4 +622,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   o4: 'o4-why-cats-purr.mp4',
   o5: 'o5-coldest-place.mp4',
   p1: 'p1-ostrich-eyes.mp4',
+  p2: 'p2-moon-colours.mp4',
 };
