@@ -1006,6 +1006,12 @@ const QI_BANK = [
     answer: 'By panting!', answerEs: '¡Jadeando!',
     fact: 'Dogs can only sweat a little, through the pads of their paws. To cool down they pant: breathing fast with their tongue out makes water evaporate from their mouth and tongue, and that carries heat away. That\'s why a hot dog leaves damp paw prints on the floor.',
     factEs: 'Los perros solo sudan un poco, por las almohadillas de las patas. Para refrescarse jadean: al respirar rápido con la lengua fuera, el agua se evapora de la boca y la lengua y se lleva el calor. Por eso un perro acalorado deja huellas húmedas en el suelo.' },
+  { id: 'ae4', set: 'AE', emoji: '🍎', topic: 'Apples float',
+    q: 'Drop an apple into a bucket of water. What happens?', qes: 'Echa una manzana a un cubo de agua. ¿Qué pasa?',
+    trap: 'It sinks - apples are heavy and solid', trapEs: 'Se hunde: es pesada y maciza',
+    answer: 'It floats!', answerEs: '¡Flota!',
+    fact: 'About a quarter of an apple is air, trapped in tiny pockets between its cells, which makes it lighter than the same amount of water - so it floats. That\'s how the Halloween game of apple bobbing works! A pear, with less air inside, often sinks.',
+    factEs: 'Más o menos una cuarta parte de la manzana es aire, atrapado en huequitos entre sus células, así que pesa menos que la misma cantidad de agua: por eso flota. ¡Así funciona el juego de Halloween de pescar manzanas con la boca! Una pera, con menos aire, a menudo se hunde.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1170,4 +1176,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ae1: 'ae1-lion-hunters.mp4',
   ae2: 'ae2-strawberry-seeds.mp4',
   ae3: 'ae3-dog-sweat.mp4',
+  ae4: 'ae4-apples-float.mp4',
 };
