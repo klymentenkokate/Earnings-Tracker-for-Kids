@@ -622,6 +622,12 @@ const QI_BANK = [
     answer: 'The dad!', answerEs: '¡El padre!',
     fact: 'The mum seahorse puts her eggs into a pouch on the dad\'s tummy. He carries them for a few weeks, then gives birth to hundreds of tiny baby seahorses - sometimes more than a thousand at once. Seahorses are fish, even though they swim upright.',
     factEs: 'La mamá caballito de mar pone los huevos en una bolsa de la barriga del papá. Él los lleva unas semanas y luego da a luz a cientos de crías, a veces más de mil a la vez. Los caballitos de mar son peces, aunque naden de pie.' },
+  { id: 's2', set: 'S', emoji: '🫧', topic: 'Bubble shapes',
+    q: 'If you blow a bubble with a square wand, what shape is the bubble?', qes: 'Si haces una pompa con un aro cuadrado, ¿qué forma tiene la pompa?',
+    trap: 'Square, like the wand', trapEs: 'Cuadrada, como el aro',
+    answer: 'Round!', answerEs: '¡Redonda!',
+    fact: 'The soapy skin of a bubble pulls itself as tight as it can, and the shape that holds the most air with the least skin is a sphere. So whatever shape the wand is, a floating bubble always ends up round. The colours on a bubble come from light bouncing off its very thin skin.',
+    factEs: 'La piel de jabón de la pompa se estira todo lo que puede, y la forma que guarda más aire con menos piel es una esfera. Así que tenga la forma que tenga el aro, la pompa que flota acaba redonda. Los colores salen de la luz que rebota en su piel finísima.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -724,4 +730,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   r4: 'r4-sea-salt.mp4',
   r5: 'r5-bird-bones.mp4',
   s1: 's1-seahorse-dads.mp4',
+  s2: 's2-bubble-shapes.mp4',
 };
