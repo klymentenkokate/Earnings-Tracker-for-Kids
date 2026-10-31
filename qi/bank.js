@@ -603,6 +603,12 @@ const QI_BANK = [
     answer: 'Its feathery antennae!', answerEs: '¡Con sus antenas peludas!',
     fact: 'Mosquitoes don\'t have ears. They hear with their feathery antennae, which wobble when sound waves hit them. The whine you hear is their wings beating hundreds of times a second - and males find females by listening for the sound of their wings.',
     factEs: 'Los mosquitos no tienen orejas. Oyen con sus antenas peludas, que tiemblan cuando les llega el sonido. El zumbido que oyes son sus alas batiendo cientos de veces por segundo, y los machos encuentran a las hembras escuchando ese sonido.' },
+  { id: 'r4', set: 'R', emoji: '🧂', topic: 'Sea salt',
+    q: 'Where does the salt in the sea come from?', qes: '¿De dónde sale la sal del mar?',
+    trap: 'Salty fish, or a salt machine at the bottom', trapEs: 'De peces salados o de una máquina de sal en el fondo',
+    answer: 'From rocks on land, carried by rivers!', answerEs: '¡De las rocas, la traen los ríos!',
+    fact: 'Rain slowly wears away rocks and washes tiny bits of salt into rivers, and rivers carry it to the sea. When sea water evaporates into clouds, the salt stays behind, so over millions of years the sea got saltier and saltier. If all the sea\'s salt were spread over the land, it would make a layer taller than a 40-storey building.',
+    factEs: 'La lluvia desgasta las rocas y arrastra trocitos de sal a los ríos, y los ríos la llevan al mar. Cuando el agua del mar se evapora, la sal se queda, así que en millones de años el mar se ha vuelto cada vez más salado. Si toda la sal del mar se extendiera sobre la tierra, haría una capa más alta que un edificio de 40 pisos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -702,4 +708,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   r1: 'r1-sloth-swimming.mp4',
   r2: 'r2-diamonds.mp4',
   r3: 'r3-mosquito-ears.mp4',
+  r4: 'r4-sea-salt.mp4',
 };
