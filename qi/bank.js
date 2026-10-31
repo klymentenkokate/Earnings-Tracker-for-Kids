@@ -659,6 +659,12 @@ const QI_BANK = [
     answer: 'It\'s sunlight bouncing off the Moon!', answerEs: '¡Es luz del Sol que rebota en la Luna!',
     fact: 'The Moon makes no light of its own. It\'s a big grey rock lit up by the Sun, like a ball lit by a torch. The Moon\'s shapes - full, half, crescent - are just how much of its sunny side we can see from Earth.',
     factEs: 'La Luna no tiene luz propia. Es una gran roca gris iluminada por el Sol, como una pelota iluminada por una linterna. Sus formas (llena, media, creciente) dependen de cuánto vemos de su lado iluminado desde la Tierra.' },
+  { id: 't3', set: 'T', emoji: '🍯', topic: 'Honey that lasts',
+    q: 'How long can a sealed jar of honey stay good to eat?', qes: '¿Cuánto tiempo puede durar un tarro de miel cerrado?',
+    trap: 'About a year, like jam', trapEs: 'Un año, como la mermelada',
+    answer: 'Thousands of years!', answerEs: '¡Miles de años!',
+    fact: 'Honey has very little water and is slightly acidic, so germs can\'t grow in it. Archaeologists have found pots of honey in ancient Egyptian tombs that were thousands of years old and still not spoiled. To make one jar, bees visit about two million flowers.',
+    factEs: 'La miel tiene muy poca agua y es un poco ácida, así que los gérmenes no pueden crecer en ella. Los arqueólogos han encontrado miel en tumbas del antiguo Egipto de hace miles de años que seguía sin estropearse. Para un tarro, las abejas visitan unos dos millones de flores.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -767,4 +773,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   s5: 's5-sunburn-on-cloudy-days.mp4',
   t1: 't1-hummingbird-feet.mp4',
   t2: 't2-moonlight.mp4',
+  t3: 't3-honey-that-lasts.mp4',
 };
