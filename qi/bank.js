@@ -1161,6 +1161,12 @@ const QI_BANK = [
     answer: 'No - it just feels that way!', answerEs: '¡No, solo lo parece!',
     fact: 'Shaving can\'t change how thick, dark or fast your hair grows - that\'s controlled under the skin, and the razor only cuts the part sticking out. A hair naturally has a thin, soft tip. Shaving cuts it straight across, leaving a blunt end that feels prickly. New stubble also hasn\'t been faded by the sun yet, so it can look darker. Scientists tested this about 100 years ago, and again since.',
     factEs: 'Afeitarse no cambia lo grueso, oscuro o rápido que crece el pelo: eso se controla bajo la piel, y la cuchilla solo corta lo que asoma. Un pelo tiene la punta fina y suave; al afeitarlo queda cortado en recto, con una punta roma que pincha. Y el pelo nuevo aún no lo ha aclarado el sol, así que parece más oscuro. Los científicos lo comprobaron hace unos 100 años, y otra vez después.' },
+  { id: 'aj4', set: 'AJ', emoji: '🥚', topic: 'Balancing eggs',
+    q: 'Can you only stand an egg on its end on the first day of spring?', qes: '¿Solo se puede poner un huevo de pie el primer día de primavera?',
+    trap: 'Yes - only on that special day', trapEs: 'Sí, solo ese día especial',
+    answer: 'No - you can do it any day!', answerEs: '¡No, se puede cualquier día!',
+    fact: 'Some people say the first day of spring - the equinox, when day and night are about the same length - is the only day an egg will stand on its end. But the Sun and Earth don\'t pull on an egg any differently that day. With a steady hand and lots of patience you can balance an egg any day of the year: tiny bumps on the shell act like little legs.',
+    factEs: 'Hay quien dice que el primer día de primavera, el equinoccio, cuando el día y la noche duran casi lo mismo, es el único día en que un huevo se sostiene de pie. Pero ese día el Sol y la Tierra no tiran del huevo de forma distinta. Con pulso firme y mucha paciencia puedes ponerlo de pie cualquier día del año: los bultitos de la cáscara hacen de patitas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1350,4 +1356,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aj1: 'aj1-woodlice.mp4',
   aj2: 'aj2-rhino-horns.mp4',
   aj3: 'aj3-shaving-hair.mp4',
+  aj4: 'aj4-balancing-eggs.mp4',
 };
