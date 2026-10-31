@@ -1,15 +1,18 @@
 """Copy the newest rendered Klaxon Quiz films into qi/films and list them in QI_FILMS (bank.js); bumps bank.js?v in index.html.
-    python qi/publish_films.py       (chNN -> id: ch01-08 = a1-a8, ch11-18 = b1-b8, ch21-28 = c1-c8, ch31-38 = d1-d8, ch41-48 = e1-e8, ch51-58 = f1-f8, ch61-68 = g1-g8, ... : set letter = tens, question = units)"""
+    python qi/publish_films.py       (chNN -> id: ch01-08 = a1-a8, ch11-18 = b1-b8, ch21-28 = c1-c8, ch31-38 = d1-d8, ch41-48 = e1-e8, ch51-58 = f1-f8, ch61-68 = g1-g8, ... : set letter = tens, question = units; after z: aa = ch261.., ab = ch271..)"""
 import re, shutil
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = Path.home() / "Documents" / "marketing agent" / "motion-studio" / "out" / "qi"
 bank = (ROOT / "qi" / "bank.js").read_text(encoding="utf-8")
 films = {}
-for n in [k for s in range(26) for k in range(s * 10 + 1, s * 10 + 9)]:
+def code_of(s):   # set index -> code: 0..25 = a..z, then 26 = aa, 27 = ab, ..
+    return chr(97 + s) if s < 26 else chr(97 + (s - 26) // 26) + chr(97 + (s - 26) % 26)
+chapters = sorted({int(m.group(1)) for p in OUT.glob("ch*-v*.mp4") if (m := re.match(r"ch(\d+)-", p.name))})
+for n in [c for c in chapters if 1 <= c % 10 <= 8]:
     vids = sorted(OUT.glob(f"ch{n:02d}-*-v*.mp4"), key=lambda p: int(re.search(r"-v(\d+)\.mp4$", p.name).group(1)))
     if not vids: continue
-    qid = chr(97 + n // 10) + str(n % 10)
+    qid = code_of(n // 10) + str(n % 10)
     mt = re.search(rf"id: '{qid}'.*?topic: '(.*?)',\s*$", bank, re.S | re.M)
     if not mt: continue   # film rendered before its question reached the bank (pipeline): deploy_one adds both
     topic = mt.group(1).replace(chr(92), '').replace(chr(39), '')

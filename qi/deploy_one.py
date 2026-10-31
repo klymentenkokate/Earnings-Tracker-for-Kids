@@ -27,7 +27,7 @@ try:
     bank_p = ROOT / "qi" / "bank.js"
     bank = bank_p.read_text(encoding="utf-8")
     if f"id: '{qid}'" not in bank:
-        S = qid[0].upper()
+        S = qid.rstrip('0123456789').upper()   # set code: one letter, then AA, AB, .. after Z
         entry = (f"  // Set {S} (pipeline, one question at a time)\n" if f"set: '{S}'" not in bank else "") + \
             f"  {{ id: '{qid}', set: '{S}', emoji: {js(B['emoji'])}, topic: {js(B['topic'])},\n" \
             f"    q: {js(B['q'])}, qes: {js(B['qes'])},\n" \
