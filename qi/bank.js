@@ -386,6 +386,12 @@ const QI_BANK = [
     answer: 'Neither - they both weigh a kilo!', answerEs: '¡Ninguno: los dos pesan un kilo!',
     fact: 'A kilo is a kilo, whatever it\'s made of. Bricks feel heavier because they\'re packed tight into a small space; a kilo of feathers would fill a huge bag. A litre of water weighs about one kilo.',
     factEs: 'Un kilo es un kilo, sea de lo que sea. Los ladrillos parecen más pesados porque ocupan poco sitio; un kilo de plumas llenaría una bolsa enorme. Un litro de agua pesa más o menos un kilo.' },
+  { id: 'k4', set: 'K', emoji: '🐝', topic: 'Bee eyes',
+    q: 'How many eyes does a honeybee have?', qes: '¿Cuántos ojos tiene una abeja?',
+    trap: 'Two', trapEs: 'Dos',
+    answer: 'Five!', answerEs: '¡Cinco!',
+    fact: 'A honeybee has two big eyes on the sides of its head, made of thousands of tiny lenses, and three small eyes on top that help it tell light from dark and keep flying straight. Bees can also see ultraviolet colours that we can\'t.',
+    factEs: 'La abeja tiene dos ojos grandes a los lados, hechos de miles de lentes diminutas, y tres ojitos arriba que distinguen la luz y la oscuridad y la ayudan a volar recta. Además ven colores ultravioleta que nosotros no vemos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -450,4 +456,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   k1: 'k1-snake-tongues.mp4',
   k2: 'k2-where-the-sun-goes.mp4',
   k3: 'k3-feathers-or-bricks.mp4',
+  k4: 'k4-bee-eyes.mp4',
 };
