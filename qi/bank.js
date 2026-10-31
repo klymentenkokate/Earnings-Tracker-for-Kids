@@ -1031,6 +1031,12 @@ const QI_BANK = [
     answer: 'No - the spots show what kind of ladybird it is!', answerEs: '¡No, los puntos dicen de qué especie es!',
     fact: 'A ladybird\'s spots don\'t change as it gets older. The number and pattern of spots tells you which kind of ladybird it is - like the 7-spot or the 2-spot - and there are thousands of kinds. Their bright colours warn birds \'I taste horrible!\', and most ladybirds only live about a year.',
     factEs: 'Los puntos de la mariquita no cambian al envejecer. El número y el dibujo dicen qué tipo de mariquita es, como la de 7 puntos o la de 2, y hay miles de tipos. Sus colores vivos avisan a los pájaros: \'¡Sé fatal!\'. Y casi todas viven solo un año más o menos.' },
+  { id: 'af3', set: 'AF', emoji: '🦔', topic: 'Hedgehog spines',
+    q: 'Can a hedgehog shoot its spines at an enemy?', qes: '¿Puede un erizo disparar sus púas a un enemigo?',
+    trap: 'Yes - it fires them like darts!', trapEs: '¡Sí, las dispara como dardos!',
+    answer: 'No - it rolls into a spiky ball!', answerEs: '¡No, se hace una bola de pinchos!',
+    fact: 'No animal can shoot its spines. A hedgehog defends itself by rolling into a tight, spiky ball, using a ring of strong muscle like a drawstring bag. A hedgehog has around 5,000-7,000 spines, made of keratin like your fingernails, and they\'re hollow so they\'re light. Old spines drop out and new ones grow.',
+    factEs: 'Ningún animal dispara sus púas. El erizo se defiende haciéndose una bola de pinchos, con un músculo en forma de anillo que cierra como una bolsa con cordón. Un erizo tiene unas 5.000-7.000 púas, de queratina como tus uñas, y huecas para pesar poco. Las viejas se caen y salen nuevas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1199,4 +1205,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ae5: 'ae5-owl-pellets.mp4',
   af1: 'af1-panda-colours.mp4',
   af2: 'af2-ladybird-spots.mp4',
+  af3: 'af3-hedgehog-spines.mp4',
 };
