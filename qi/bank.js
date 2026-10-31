@@ -1124,6 +1124,12 @@ const QI_BANK = [
     answer: 'No - their jaw stretches apart!', answerEs: '¡No, su mandíbula se estira!',
     fact: 'Snakes don\'t unhinge or dislocate anything. The two halves of a snake\'s lower jaw aren\'t joined at the chin like ours - they\'re tied together by a stretchy band, so they can spread far apart. Lots of bones in its skull can move too. The snake then \'walks\' its jaws over its meal, one side at a time, pulling it in.',
     factEs: 'Las serpientes no se desencajan nada. Las dos mitades de su mandíbula inferior no están unidas en la barbilla como las nuestras: las une una banda elástica, así que se separan mucho. Muchos huesos del cráneo también se mueven. Luego la serpiente «camina» con las mandíbulas sobre la presa, un lado y luego el otro, y se la va tragando.' },
+  { id: 'ai3', set: 'AI', emoji: '🐟', topic: 'Fish drinking',
+    q: 'Do fish drink water?', qes: '¿Los peces beben agua?',
+    trap: 'No - they live in it, so they don\'t need to', trapEs: 'No, viven en ella, no lo necesitan',
+    answer: 'Sea fish drink lots of it!', answerEs: '¡Los peces de mar beben mucha!',
+    fact: 'Salty sea water slowly pulls water out of a sea fish\'s body, so sea fish have to keep drinking - and they get rid of the extra salt through their gills. River and pond fish have the opposite problem: fresh water keeps soaking into their bodies, so they hardly drink at all and wee out lots of water instead.',
+    factEs: 'El agua salada del mar va sacando agua del cuerpo de los peces marinos, así que tienen que beber sin parar, y expulsan la sal sobrante por las branquias. Los peces de río y estanque tienen el problema contrario: el agua dulce les entra en el cuerpo, así que casi no beben y hacen mucho pis.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1307,4 +1313,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ah5: 'ah5-resting-sharks.mp4',
   ai1: 'ai1-brain-freeze.mp4',
   ai2: 'ai2-snake-jaws.mp4',
+  ai3: 'ai3-fish-drinking.mp4',
 };
