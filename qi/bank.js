@@ -522,6 +522,13 @@ const QI_BANK = [
     answer: 'The South Pole - by a lot!', answerEs: '¡El Polo Sur, y mucho!',
     fact: 'The North Pole sits on sea ice floating on the ocean, and the water underneath keeps it a little warmer. The South Pole is on a huge frozen continent, Antarctica, nearly 3 km high, so it\'s much colder. Antarctica is also the windiest continent on Earth.',
     factEs: 'El Polo Norte está sobre hielo que flota en el mar, y el agua de debajo lo templa un poco. El Polo Sur está en un continente helado enorme, la Antártida, a casi 3 km de altura, así que es mucho más frío. La Antártida es además el continente con más viento.' },
+  // Set P (pipeline, one question at a time)
+  { id: 'p1', set: 'P', emoji: '👁️', topic: 'Ostrich eyes',
+    q: 'Which is bigger: an ostrich\'s eye or its brain?', qes: '¿Qué es más grande: el ojo de un avestruz o su cerebro?',
+    trap: 'Its brain, of course', trapEs: 'El cerebro, claro',
+    answer: 'Its eye!', answerEs: '¡El ojo!',
+    fact: 'An ostrich\'s eye is about 5 cm across - the biggest eye of any land animal - and each eye is bigger than its brain. Big eyes help it spot danger far away across the open plains. And an ostrich can run at about 70 km an hour.',
+    factEs: 'El ojo del avestruz mide unos 5 cm, el más grande de cualquier animal terrestre, y cada ojo es más grande que su cerebro. Los ojos grandes le ayudan a ver el peligro de lejos en las llanuras. Y un avestruz corre a unos 70 km por hora.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -608,4 +615,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   o3: 'o3-fingernails.mp4',
   o4: 'o4-why-cats-purr.mp4',
   o5: 'o5-coldest-place.mp4',
+  p1: 'p1-ostrich-eyes.mp4',
 };
