@@ -634,6 +634,12 @@ const QI_BANK = [
     answer: 'A giant grass!', answerEs: '¡Una hierba gigante!',
     fact: 'Bamboo is a grass, like the grass in a lawn, just enormous - some kinds grow over 30 metres tall. It\'s also the fastest-growing plant in the world: some bamboo can grow almost a metre in a single day.',
     factEs: 'El bambú es una hierba, como la del césped, pero enorme: algunas clases superan los 30 metros. Además es la planta que crece más rápido del mundo: algunos bambúes crecen casi un metro en un solo día.' },
+  { id: 's4', set: 'S', emoji: '🐌', topic: 'Snail teeth',
+    q: 'How many teeth does a garden snail have?', qes: '¿Cuántos dientes tiene un caracol de jardín?',
+    trap: 'None - snails don\'t have teeth!', trapEs: 'Ninguno, ¡los caracoles no tienen dientes!',
+    answer: 'Thousands!', answerEs: '¡Miles!',
+    fact: 'A garden snail has a ribbon-like tongue called a radula, covered in rows of thousands of tiny teeth. It works like a cheese grater to scrape up leaves. The teeth wear down, so new ones keep growing all the time.',
+    factEs: 'El caracol de jardín tiene una lengua como una cinta, llamada rádula, cubierta de filas con miles de dientes diminutos. Funciona como un rallador para raspar hojas. Los dientes se gastan, así que siempre le crecen nuevos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -738,4 +744,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   s1: 's1-seahorse-dads.mp4',
   s2: 's2-bubble-shapes.mp4',
   s3: 's3-tallest-grass.mp4',
+  s4: 's4-snail-teeth.mp4',
 };
