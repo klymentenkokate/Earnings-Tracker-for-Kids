@@ -777,6 +777,12 @@ const QI_BANK = [
     answer: 'It isn\'t a fish at all!', answerEs: '¡No es un pez!',
     fact: 'Starfish have no backbone, no gills and no fins, so scientists prefer to call them \'sea stars\'. They\'re relatives of sea urchins. Many can grow back a lost arm, and they have a tiny eye at the tip of each arm.',
     factEs: 'Las estrellas de mar no tienen columna, ni branquias, ni aletas, así que no son peces. Son parientes de los erizos de mar. Muchas pueden regenerar un brazo perdido, y tienen un ojito en la punta de cada brazo.' },
+  { id: 'x2', set: 'X', emoji: '🦉', topic: 'Owls and wisdom',
+    q: 'Are owls the cleverest birds?', qes: '¿Son los búhos los pájaros más listos?',
+    trap: 'Yes - the wise old owl!', trapEs: '¡Sí, el sabio búho!',
+    answer: 'No - crows and parrots are much cleverer!', answerEs: '¡No, los cuervos y los loros son mucho más listos!',
+    fact: 'Owls are brilliant hunters with amazing hearing, but in puzzle tests they don\'t do especially well. Crows can use and even make tools, and some parrots can learn hundreds of words. Owls look wise because of their big, forward-facing eyes - a bit like ours.',
+    factEs: 'Los búhos son grandes cazadores con un oído increíble, pero en pruebas de ingenio no destacan. Los cuervos usan e incluso fabrican herramientas, y algunos loros aprenden cientos de palabras. Los búhos parecen sabios por sus grandes ojos de frente, como los nuestros.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -904,4 +910,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   w4: 'w4-stars-and-sand.mp4',
   w5: 'w5-dolphin-sleep.mp4',
   x1: 'x1-starfish.mp4',
+  x2: 'x2-owls-and-wisdom.mp4',
 };
