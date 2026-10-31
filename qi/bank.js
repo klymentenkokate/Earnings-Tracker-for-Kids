@@ -448,6 +448,12 @@ const QI_BANK = [
     answer: 'Tiny plants in the sea!', answerEs: '¡De plantitas diminutas del mar!',
     fact: 'Forests make lots of oxygen, but about half of all the oxygen on Earth is made in the ocean, by plankton - tiny plants and plant-like living things floating near the surface, too small to see. A single drop of seawater can hold thousands of them.',
     factEs: 'Los bosques fabrican mucho oxígeno, pero más o menos la mitad del oxígeno de la Tierra se hace en el océano, gracias al plancton: plantitas diminutas que flotan cerca de la superficie. Una sola gota de agua de mar puede tener miles.' },
+  { id: 'm4', set: 'M', emoji: '🤧', topic: 'Sneezing eyes',
+    q: 'What happens if you sneeze with your eyes open?', qes: '¿Qué pasa si estornudas con los ojos abiertos?',
+    trap: 'Your eyes pop out!', trapEs: '¡Se te salen los ojos!',
+    answer: 'Nothing - and you can\'t really do it anyway!', answerEs: '¡Nada, y además casi no se puede!',
+    fact: 'Your eyes can\'t pop out from a sneeze: muscles, skin and bone hold them in safely. Closing your eyes when you sneeze is an automatic reflex, so it\'s very hard to keep them open. Bright sunlight makes about 1 in 4 people sneeze.',
+    factEs: 'Los ojos no se salen al estornudar: los sujetan músculos, piel y hueso. Cerrarlos al estornudar es un reflejo automático, por eso cuesta mucho mantenerlos abiertos. La luz fuerte del sol hace estornudar a 1 de cada 4 personas más o menos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -522,4 +528,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   m1: 'm1-hippo-sweat.mp4',
   m2: 'm2-octopus-hearts.mp4',
   m3: 'm3-where-oxygen-comes-from.mp4',
+  m4: 'm4-sneezing-eyes.mp4',
 };
