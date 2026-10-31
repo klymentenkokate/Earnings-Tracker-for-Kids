@@ -572,6 +572,12 @@ const QI_BANK = [
     answer: 'Freezing cold!', answerEs: '¡Muy frío!',
     fact: 'Deserts have hardly any clouds or water in the air to hold the day\'s heat in like a blanket, so once the Sun sets the heat escapes into the sky. The Sahara can go from over 40 °C in the day to near freezing at night. Desert foxes have huge ears to help them lose heat in the day.',
     factEs: 'En el desierto casi no hay nubes ni agua en el aire que guarden el calor como una manta, así que al ponerse el Sol el calor se escapa al cielo. El Sáhara puede pasar de más de 40 °C de día a casi helar de noche. Los zorros del desierto tienen orejas enormes para soltar calor de día.' },
+  { id: 'q4', set: 'Q', emoji: '🦉', topic: 'Owl heads',
+    q: 'Can an owl turn its head all the way round?', qes: '¿Puede un búho girar la cabeza una vuelta entera?',
+    trap: 'Yes - right round in a full circle!', trapEs: '¡Sí, una vuelta completa!',
+    answer: 'No - but it can turn about three-quarters of the way!', answerEs: '¡No, pero puede girar unas tres cuartas partes!',
+    fact: 'An owl can turn its head about 270 degrees - three-quarters of a full circle - but not all the way round. It has to, because its eyes are fixed and can\'t move in their sockets. Owls have 14 neck bones; you have 7.',
+    factEs: 'Un búho puede girar la cabeza unos 270 grados, tres cuartas partes de una vuelta, pero no entera. Lo necesita porque sus ojos no se mueven dentro de la cabeza. Los búhos tienen 14 huesos en el cuello; tú tienes 7.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -666,4 +672,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   q1: 'q1-elephant-jumps.mp4',
   q2: 'q2-hiccups.mp4',
   q3: 'q3-deserts-at-night.mp4',
+  q4: 'q4-owl-heads.mp4',
 };
