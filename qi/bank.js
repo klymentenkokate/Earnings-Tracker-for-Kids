@@ -969,6 +969,12 @@ const QI_BANK = [
     answer: 'Lots are never found - and some grow into trees!', answerEs: '¡Muchas nunca se encuentran, y algunas se convierten en árboles!',
     fact: 'Squirrels bury thousands of nuts in autumn and have very good memories and noses, but they don\'t find them all. The forgotten ones can sprout, so squirrels accidentally plant lots of new oak and walnut trees. Some squirrels even pretend to bury a nut to trick anyone watching!',
     factEs: 'Las ardillas entierran miles de nueces en otoño y tienen buena memoria y olfato, pero no las encuentran todas. Las olvidadas pueden brotar, así que las ardillas plantan sin querer muchos robles y nogales. ¡Algunas incluso fingen enterrar una nuez para engañar a quien las mira!' },
+  { id: 'ad3', set: 'AD', emoji: '🌵', topic: 'Cactus water',
+    q: 'If you\'re lost in the desert, should you drink water from a cactus?', qes: 'Si te pierdes en el desierto, ¿debes beber agua de un cactus?',
+    trap: 'Yes - cactuses are full of fresh water!', trapEs: '¡Sí, los cactus están llenos de agua dulce!',
+    answer: 'No - it can make you sick!', answerEs: '¡No, te puede sentar mal!',
+    fact: 'Cactuses do store water, but inside it\'s a thick, bitter, slimy juice, not a pool of fresh water, and in many cactuses it contains acids that can upset your tummy - which makes you lose even more water. Cactuses store water so well because their spines are leaves that lose almost none of it.',
+    factEs: 'Los cactus guardan agua, pero dentro es un jugo espeso, amargo y viscoso, no agua fresca, y en muchos lleva ácidos que sientan mal a la barriga, lo que te hace perder aún más agua. Los cactus guardan tan bien el agua porque sus espinas son hojas que casi no la pierden.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1127,4 +1133,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ac5: 'ac5-why-summer-is-hot.mp4',
   ad1: 'ad1-crocodile-tears.mp4',
   ad2: 'ad2-squirrels-and-nuts.mp4',
+  ad3: 'ad3-cactus-water.mp4',
 };
