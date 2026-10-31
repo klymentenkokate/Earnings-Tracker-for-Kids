@@ -615,6 +615,13 @@ const QI_BANK = [
     answer: 'Many are hollow, with air inside!', answerEs: '¡Muchos son huecos, con aire dentro!',
     fact: 'Many of a flying bird\'s bones are hollow, with thin criss-cross struts inside like a bridge, and some even connect to its air sacs. That makes them light but strong - perfect for flying. A frigatebird\'s whole skeleton can weigh less than its feathers.',
     factEs: 'Muchos huesos de las aves que vuelan son huecos, con puntales finos cruzados por dentro como un puente, y algunos se conectan con sus sacos de aire. Así son ligeros pero fuertes, perfectos para volar. El esqueleto entero de una fragata puede pesar menos que sus plumas.' },
+  // Set S (pipeline, one question at a time)
+  { id: 's1', set: 'S', emoji: '🐴', topic: 'Seahorse dads',
+    q: 'In seahorse families, who gives birth to the babies?', qes: 'En las familias de caballitos de mar, ¿quién da a luz a las crías?',
+    trap: 'The mum, of course', trapEs: 'La madre, claro',
+    answer: 'The dad!', answerEs: '¡El padre!',
+    fact: 'The mum seahorse puts her eggs into a pouch on the dad\'s tummy. He carries them for a few weeks, then gives birth to hundreds of tiny baby seahorses - sometimes more than a thousand at once. Seahorses are fish, even though they swim upright.',
+    factEs: 'La mamá caballito de mar pone los huevos en una bolsa de la barriga del papá. Él los lleva unas semanas y luego da a luz a cientos de crías, a veces más de mil a la vez. Los caballitos de mar son peces, aunque naden de pie.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -716,4 +723,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   r3: 'r3-mosquito-ears.mp4',
   r4: 'r4-sea-salt.mp4',
   r5: 'r5-bird-bones.mp4',
+  s1: 's1-seahorse-dads.mp4',
 };
