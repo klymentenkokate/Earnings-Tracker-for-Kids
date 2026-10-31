@@ -498,6 +498,12 @@ const QI_BANK = [
     answer: 'The Vikings - about 500 years earlier!', answerEs: '¡Los vikingos, unos 500 años antes!',
     fact: 'About 1,000 years ago, Vikings led by Leif Erikson sailed from Iceland and Greenland to the coast of what is now Canada, nearly 500 years before Columbus. Of course, people already lived in America long before any Europeans arrived. You can still visit the remains of a Viking camp in Newfoundland.',
     factEs: 'Hace unos 1.000 años, vikingos guiados por Leif Erikson navegaron desde Islandia y Groenlandia hasta la costa del actual Canadá, casi 500 años antes que Colón. Y en América ya vivían personas mucho antes de que llegara ningún europeo. Aún se pueden visitar los restos de un campamento vikingo en Terranova.' },
+  { id: 'o2', set: 'O', emoji: '🐔', topic: 'Most common bird',
+    q: 'Which is the most common bird in the world?', qes: '¿Cuál es el ave más común del mundo?',
+    trap: 'The pigeon or the sparrow', trapEs: 'La paloma o el gorrión',
+    answer: 'The chicken!', answerEs: '¡La gallina!',
+    fact: 'Pigeons and sparrows are everywhere in towns, but people keep more than 20 billion chickens on farms around the world - far more than any other bird. That\'s about three chickens for every person on Earth.',
+    factEs: 'Las palomas y los gorriones están por todas partes, pero en las granjas del mundo hay más de 20.000 millones de gallinas, muchas más que de cualquier otra ave. Son unas tres gallinas por cada persona de la Tierra.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -580,4 +586,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   n4: 'n4-end-of-the-rainbow.mp4',
   n5: 'n5-cat-toes.mp4',
   o1: 'o1-vikings-in-america.mp4',
+  o2: 'o2-most-common-bird.mp4',
 };
