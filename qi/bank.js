@@ -504,6 +504,12 @@ const QI_BANK = [
     answer: 'The chicken!', answerEs: '¡La gallina!',
     fact: 'Pigeons and sparrows are everywhere in towns, but people keep more than 20 billion chickens on farms around the world - far more than any other bird. That\'s about three chickens for every person on Earth.',
     factEs: 'Las palomas y los gorriones están por todas partes, pero en las granjas del mundo hay más de 20.000 millones de gallinas, muchas más que de cualquier otra ave. Son unas tres gallinas por cada persona de la Tierra.' },
+  { id: 'o3', set: 'O', emoji: '💅', topic: 'Fingernails',
+    q: 'What are your fingernails made of?', qes: '¿De qué están hechas tus uñas?',
+    trap: 'Bone', trapEs: 'De hueso',
+    answer: 'Keratin - the same stuff as hair!', answerEs: '¡De queratina, lo mismo que el pelo!',
+    fact: 'Nails aren\'t bone. They\'re made of keratin, the same tough stuff as your hair, a horse\'s hooves and a rhino\'s horn. That\'s why cutting them doesn\'t hurt. Fingernails grow about three times faster than toenails.',
+    factEs: 'Las uñas no son hueso. Son de queratina, el mismo material duro del pelo, los cascos de los caballos y el cuerno del rinoceronte. Por eso no duele cortarlas. Las uñas de las manos crecen unas tres veces más rápido que las de los pies.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -587,4 +593,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   n5: 'n5-cat-toes.mp4',
   o1: 'o1-vikings-in-america.mp4',
   o2: 'o2-most-common-bird.mp4',
+  o3: 'o3-fingernails.mp4',
 };
