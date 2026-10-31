@@ -411,6 +411,12 @@ const QI_BANK = [
     answer: 'Our Moon!', answerEs: '¡Nuestra Luna!',
     fact: 'Our Moon is about 3,500 km across; Pluto is only about 2,400 km. Pluto is so small that scientists now call it a dwarf planet. And Pluto has a giant heart-shaped plain of ice on it.',
     factEs: 'Nuestra Luna mide unos 3.500 km de ancho; Plutón, solo unos 2.400. Plutón es tan pequeño que ahora se le llama planeta enano. Y tiene una enorme llanura de hielo con forma de corazón.' },
+  { id: 'l3', set: 'L', emoji: '🦋', topic: 'Butterfly taste',
+    q: 'What does a butterfly taste with?', qes: '¿Con qué saborea una mariposa?',
+    trap: 'Its mouth or tongue', trapEs: 'Con la boca o la lengua',
+    answer: 'Its feet!', answerEs: '¡Con las patas!',
+    fact: 'Butterflies have taste sensors on their feet. When one lands on a leaf, it can tell straight away if it\'s good to eat, or a good place to lay eggs. It drinks nectar through a long tube-tongue that curls up like a garden hose.',
+    factEs: 'Las mariposas tienen sensores del gusto en las patas. Al posarse en una hoja saben enseguida si es buena para comer o para poner huevos. Beben néctar con una lengua larga en forma de tubo que se enrolla como una manguera.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -479,4 +485,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   k5: 'k5-giraffe-necks.mp4',
   l1: 'l1-spiders.mp4',
   l2: 'l2-moon-or-pluto.mp4',
+  l3: 'l3-butterfly-taste.mp4',
 };
