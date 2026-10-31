@@ -553,6 +553,13 @@ const QI_BANK = [
     answer: 'Yes - a tiny, totally harmless bit!', answerEs: '¡Sí, un poquito y sin ningún peligro!',
     fact: 'Bananas are full of potassium, and a very small part of all potassium gives off a tiny bit of radiation. It\'s completely harmless - your own body has potassium too, so you\'re a tiny bit radioactive as well! You\'d have to eat millions of bananas at once for it to matter.',
     factEs: 'Los plátanos tienen mucho potasio, y una parte muy pequeña de todo el potasio suelta un poquito de radiación. No hace ningún daño: tu cuerpo también tiene potasio, ¡así que tú también eres un poquito radiactivo! Tendrías que comer millones de plátanos de golpe para que importara.' },
+  // Set Q (pipeline, one question at a time)
+  { id: 'q1', set: 'Q', emoji: '🐘', topic: 'Elephant jumps',
+    q: 'How high can an elephant jump?', qes: '¿Cuánto puede saltar un elefante?',
+    trap: 'Quite high - they\'re so strong!', trapEs: 'Bastante alto, ¡son muy fuertes!',
+    answer: 'It can\'t jump at all!', answerEs: '¡No puede saltar nada!',
+    fact: 'Elephants are very strong, but they\'re so heavy - up to 6 tonnes - that they always keep at least one foot on the ground, even when they\'re going fast. Their leg bones point straight down, like pillars. Elephants can still \'run\' at about 25 km an hour.',
+    factEs: 'Los elefantes son muy fuertes, pero pesan tanto (hasta 6 toneladas) que siempre mantienen al menos una pata en el suelo, incluso cuando van rápido. Sus huesos de las patas son rectos, como columnas. Aun así \'corren\' a unos 25 km por hora.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -644,4 +651,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   p3: 'p3-glass.mp4',
   p4: 'p4-koala-fingerprints.mp4',
   p5: 'p5-bananas-and-radiation.mp4',
+  q1: 'q1-elephant-jumps.mp4',
 };
