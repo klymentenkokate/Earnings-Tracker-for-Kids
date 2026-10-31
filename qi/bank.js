@@ -423,6 +423,12 @@ const QI_BANK = [
     answer: 'It isn\'t a nut - it\'s a bean that grows underground!', answerEs: '¡No es un fruto seco: es una legumbre que crece bajo tierra!',
     fact: 'A peanut is a legume, in the same family as peas and beans. Its flowers bend down and push into the soil, and the pods grow underground. It takes over 500 peanuts to make one jar of peanut butter.',
     factEs: 'El cacahuete es una legumbre, de la familia de los guisantes y las judías. Sus flores se doblan y se meten en la tierra, y las vainas crecen bajo el suelo. Hacen falta más de 500 cacahuetes para un tarro de crema de cacahuete.' },
+  { id: 'l5', set: 'L', emoji: '👅', topic: 'Tongue map',
+    q: 'Which part of your tongue tastes sweet things?', qes: '¿Qué parte de la lengua nota el sabor dulce?',
+    trap: 'Only the tip', trapEs: 'Solo la punta',
+    answer: 'All of it!', answerEs: '¡Toda la lengua!',
+    fact: 'Old school books showed a \'tongue map\' with sweet at the tip and bitter at the back, but it was a mistake. Taste buds all over your tongue can taste sweet, salty, sour, bitter and savoury. You have thousands of taste buds, and they are replaced about every two weeks.',
+    factEs: 'Los libros antiguos traían un \'mapa de la lengua\' con lo dulce en la punta, pero era un error. Las papilas de toda la lengua notan dulce, salado, ácido, amargo y sabroso. Tienes miles de papilas y se renuevan cada dos semanas más o menos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -493,4 +499,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   l2: 'l2-moon-or-pluto.mp4',
   l3: 'l3-butterfly-taste.mp4',
   l4: 'l4-peanuts.mp4',
+  l5: 'l5-tongue-map.mp4',
 };
