@@ -932,6 +932,12 @@ const QI_BANK = [
     answer: 'No - warts come from a human virus!', answerEs: '¡No: las verrugas vienen de un virus humano!',
     fact: 'The bumps on a toad\'s skin aren\'t warts at all - they\'re glands that can ooze a bitter liquid to make predators spit them out. Human warts are caused by a virus that only spreads between people. So wash your hands after holding a toad, but you won\'t get warts from it!',
     factEs: 'Los bultos de la piel del sapo no son verrugas: son glándulas que sueltan un líquido amargo para que los depredadores lo escupan. Las verrugas de las personas las causa un virus que solo pasa entre personas. Lávate las manos después de coger un sapo, ¡pero no te saldrán verrugas!' },
+  { id: 'ac2', set: 'AC', emoji: '💇', topic: 'Haircuts',
+    q: 'Does cutting your hair make it grow back faster?', qes: '¿Cortarte el pelo hace que crezca más rápido?',
+    trap: 'Yes - and thicker too!', trapEs: '¡Sí, y más fuerte!',
+    answer: 'No - it grows at the same speed!', answerEs: '¡No, crece a la misma velocidad!',
+    fact: 'Hair grows from tiny roots under your skin called follicles, and scissors never touch them, so a haircut can\'t change how fast it grows - about 1 cm a month. Freshly cut hair can feel thicker because the blunt ends feel stiffer, but it isn\'t really. You have around 100,000 hairs on your head.',
+    factEs: 'El pelo crece desde raíces diminutas bajo la piel, los folículos, y las tijeras nunca las tocan, así que cortarlo no cambia su velocidad: crece más o menos 1 cm al mes. El pelo recién cortado parece más grueso porque las puntas rectas se notan más duras, pero no lo es. Tienes unos 100.000 pelos en la cabeza.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1084,4 +1090,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ab4: 'ab4-hippo-milk.mp4',
   ab5: 'ab5-honeybee-dance.mp4',
   ac1: 'ac1-toads-and-warts.mp4',
+  ac2: 'ac2-haircuts.mp4',
 };
