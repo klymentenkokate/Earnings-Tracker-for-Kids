@@ -857,6 +857,12 @@ const QI_BANK = [
     answer: 'A solid ball of metal!', answerEs: '¡Una bola de metal sólido!',
     fact: 'The inner core is a solid ball of mostly iron and nickel, about as hot as the surface of the Sun. It stays solid because the weight of the whole planet pressing on it is so enormous. Around it is a liquid metal outer core, and its swirling helps make Earth\'s magnetic field - the reason compasses work.',
     factEs: 'El núcleo interno es una bola sólida, sobre todo de hierro y níquel, casi tan caliente como la superficie del Sol. Sigue sólido porque el peso de todo el planeta lo aprieta muchísimo. Alrededor hay un núcleo externo de metal líquido, cuyo giro ayuda a crear el campo magnético: por eso funcionan las brújulas.' },
+  { id: 'z5', set: 'Z', emoji: '✨', topic: 'Firefly light',
+    q: 'Is a firefly\'s glow hot, like a light bulb?', qes: '¿La luz de una luciérnaga quema, como una bombilla?',
+    trap: 'Yes - all lights get hot', trapEs: 'Sí, todas las luces calientan',
+    answer: 'No - it\'s cold light!', answerEs: '¡No, es luz fría!',
+    fact: 'A firefly makes light with a chemical reaction inside its tail, and almost all the energy turns into light, not heat - so it\'s called \'cold light\'. An old-style light bulb turns most of its energy into heat instead. Fireflies flash in patterns to find each other, and fireflies are actually beetles, not flies.',
+    factEs: 'La luciérnaga hace luz con una reacción química en la cola, y casi toda la energía se vuelve luz, no calor: por eso se llama \'luz fría\'. Una bombilla antigua convierte casi toda su energía en calor. Las luciérnagas parpadean en patrones para encontrarse, y en realidad son escarabajos, no moscas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -997,4 +1003,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   z2: 'z2-whale-hearts.mp4',
   z3: 'z3-kangaroos-backwards.mp4',
   z4: 'z4-earths-core.mp4',
+  z5: 'z5-firefly-light.mp4',
 };
