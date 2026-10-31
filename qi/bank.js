@@ -398,6 +398,13 @@ const QI_BANK = [
     answer: 'Seven - the same as you!', answerEs: '¡Siete, igual que tú!',
     fact: 'A giraffe has seven neck bones, exactly like you and almost every other mammal. Each of its neck bones is just much, much longer - some are as long as your arm from elbow to fingertips. A giraffe\'s tongue is about 45 cm long.',
     factEs: 'La jirafa tiene siete huesos en el cuello, igual que tú y casi todos los mamíferos. Solo que cada uno es muchísimo más largo. Y su lengua mide unos 45 cm.' },
+  // Set L (pipeline, one question at a time)
+  { id: 'l1', set: 'L', emoji: '🕷️', topic: 'Spiders',
+    q: 'What kind of insect is a spider?', qes: '¿Qué tipo de insecto es una araña?',
+    trap: 'A creepy-crawly insect', trapEs: 'Un insecto de los que reptan',
+    answer: 'It isn\'t an insect at all!', answerEs: '¡No es un insecto!',
+    fact: 'Insects have six legs and three body parts. Spiders have eight legs and two body parts, so they belong to a different group called arachnids, with scorpions and ticks. Spider silk is stronger than steel of the same thickness.',
+    factEs: 'Los insectos tienen seis patas y tres partes del cuerpo. Las arañas tienen ocho patas y dos partes, así que son arácnidos, como los escorpiones. La seda de araña es más fuerte que un hilo de acero del mismo grosor.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -464,4 +471,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   k3: 'k3-feathers-or-bricks.mp4',
   k4: 'k4-bee-eyes.mp4',
   k5: 'k5-giraffe-necks.mp4',
+  l1: 'l1-spiders.mp4',
 };
