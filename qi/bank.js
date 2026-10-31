@@ -535,6 +535,12 @@ const QI_BANK = [
     answer: 'Dark grey - like an old road!', answerEs: '¡Gris oscuro, como una carretera vieja!',
     fact: 'The Moon looks bright white in the night sky because the Sun is shining on it, but its ground is actually dark grey, about as dark as an old road. Astronauts\' footprints on the Moon could last for millions of years, because there\'s no wind or rain to wipe them away.',
     factEs: 'La Luna parece blanca porque el Sol la ilumina, pero su suelo es gris oscuro, como una carretera vieja. Las huellas de los astronautas en la Luna pueden durar millones de años, porque allí no hay viento ni lluvia que las borren.' },
+  { id: 'p3', set: 'P', emoji: '🪟', topic: 'Glass',
+    q: 'What is glass made from?', qes: '¿De qué está hecho el cristal?',
+    trap: 'Ice or plastic', trapEs: 'De hielo o de plástico',
+    answer: 'Sand!', answerEs: '¡De arena!',
+    fact: 'Glass is made by heating sand until it melts - more than 1,500 °C, much hotter than any oven at home - then letting it cool. When lightning strikes a sandy beach it can make natural glass tubes in the sand.',
+    factEs: 'El cristal se hace calentando arena hasta que se derrite, a más de 1.500 °C, mucho más que cualquier horno de casa, y dejándola enfriar. Cuando un rayo cae en una playa puede formar tubos de cristal natural en la arena.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -623,4 +629,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   o5: 'o5-coldest-place.mp4',
   p1: 'p1-ostrich-eyes.mp4',
   p2: 'p2-moon-colours.mp4',
+  p3: 'p3-glass.mp4',
 };
