@@ -963,6 +963,12 @@ const QI_BANK = [
     answer: 'Yes - real tears, especially while eating!', answerEs: '¡Sí, lágrimas de verdad, sobre todo al comer!',
     fact: 'Crocodiles really do make tears, to keep their eyes clean and wet. Scientists watched crocodiles\' close relatives, caimans, and found their eyes often got teary while they were eating - possibly because chomping pushes on the tear glands. They\'re not sad, though! \'Crocodile tears\' still means pretend crying.',
     factEs: 'Los cocodrilos sí hacen lágrimas, para limpiar y mojar los ojos. Los científicos vieron que a sus parientes, los caimanes, se les humedecen los ojos mientras comen, quizá porque al masticar se aprietan las glándulas. ¡Pero no están tristes! \'Lágrimas de cocodrilo\' sigue significando llanto fingido.' },
+  { id: 'ad2', set: 'AD', emoji: '🐿️', topic: 'Squirrels and nuts',
+    q: 'What happens to most of the nuts a squirrel buries?', qes: '¿Qué pasa con la mayoría de las nueces que entierra una ardilla?',
+    trap: 'The squirrel digs them all back up', trapEs: 'La ardilla las desentierra todas',
+    answer: 'Lots are never found - and some grow into trees!', answerEs: '¡Muchas nunca se encuentran, y algunas se convierten en árboles!',
+    fact: 'Squirrels bury thousands of nuts in autumn and have very good memories and noses, but they don\'t find them all. The forgotten ones can sprout, so squirrels accidentally plant lots of new oak and walnut trees. Some squirrels even pretend to bury a nut to trick anyone watching!',
+    factEs: 'Las ardillas entierran miles de nueces en otoño y tienen buena memoria y olfato, pero no las encuentran todas. Las olvidadas pueden brotar, así que las ardillas plantan sin querer muchos robles y nogales. ¡Algunas incluso fingen enterrar una nuez para engañar a quien las mira!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1120,4 +1126,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ac4: 'ac4-cats-and-milk.mp4',
   ac5: 'ac5-why-summer-is-hot.mp4',
   ad1: 'ad1-crocodile-tears.mp4',
+  ad2: 'ad2-squirrels-and-nuts.mp4',
 };
