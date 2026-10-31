@@ -591,6 +591,12 @@ const QI_BANK = [
     answer: 'Swimming!', answerEs: '¡Nadar!',
     fact: 'Sloths are very slow on land, but they\'re good swimmers: they paddle with their long arms and can move about three times faster in water than on the ground. They can also hold their breath for up to about 40 minutes by slowing their heart right down.',
     factEs: 'Los perezosos son muy lentos en tierra, pero nadan bien: reman con sus brazos largos y en el agua van unas tres veces más rápido. Además aguantan la respiración hasta unos 40 minutos frenando mucho el corazón.' },
+  { id: 'r2', set: 'R', emoji: '💎', topic: 'Diamonds',
+    q: 'What are diamonds made from?', qes: '¿De qué están hechos los diamantes?',
+    trap: 'Squashed coal', trapEs: 'De carbón aplastado',
+    answer: 'Carbon deep inside the Earth - not coal!', answerEs: '¡De carbono en lo más hondo de la Tierra, no de carbón!',
+    fact: 'Diamonds are made of carbon, squeezed and heated about 150 km underground - far deeper than any coal - over billions of years. Volcanoes carried them up near the surface. Diamonds are the hardest natural material on Earth.',
+    factEs: 'Los diamantes son carbono apretado y calentado a unos 150 km bajo tierra, mucho más hondo que el carbón, durante miles de millones de años. Los volcanes los subieron cerca de la superficie. Son el material natural más duro de la Tierra.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -688,4 +694,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   q4: 'q4-owl-heads.mp4',
   q5: 'q5-water-from-taps.mp4',
   r1: 'r1-sloth-swimming.mp4',
+  r2: 'r2-diamonds.mp4',
 };
