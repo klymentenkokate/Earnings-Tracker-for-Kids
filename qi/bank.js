@@ -336,6 +336,13 @@ const QI_BANK = [
     answer: 'Never - the shell is part of its skeleton!', answerEs: '¡Nunca: el caparazón es parte de su esqueleto!',
     fact: 'A tortoise\'s shell is joined to its backbone and ribs - it\'s part of its skeleton, so it can never come out. The shell is alive and grows with the tortoise, and it can even feel when you touch it.',
     factEs: 'El caparazón de la tortuga está unido a su columna y sus costillas: es parte de su esqueleto, así que nunca puede salir. Está vivo, crece con la tortuga y hasta siente cuando lo tocas.' },
+  // Set J (pipeline, one question at a time)
+  { id: 'j1', set: 'J', emoji: '🌻', topic: 'Sunflowers',
+    q: 'Which way do grown-up sunflowers face during the day?', qes: '¿Hacia dónde miran los girasoles ya crecidos durante el día?',
+    trap: 'They follow the Sun across the sky', trapEs: 'Siguen al Sol por el cielo',
+    answer: 'East, all day long!', answerEs: '¡Al este, todo el día!',
+    fact: 'Young sunflowers do turn to follow the Sun, and swing back east at night. But once a sunflower has grown its big flower, it stops moving and faces east, where the morning Sun warms it up and brings more bees.',
+    factEs: 'Los girasoles jóvenes sí siguen al Sol y por la noche vuelven al este. Pero cuando ya tienen la flor grande, se quedan quietos mirando al este: el sol de la mañana los calienta y atrae más abejas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -392,4 +399,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   i3: 'i3-baby-bones.mp4',
   i4: 'i4-cow-stomachs.mp4',
   i5: 'i5-tortoise-shells.mp4',
+  j1: 'j1-sunflowers.mp4',
 };
