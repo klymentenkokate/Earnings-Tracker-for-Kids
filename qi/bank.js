@@ -882,6 +882,12 @@ const QI_BANK = [
     answer: 'About as much as 100 elephants!', answerEs: '¡Como unos 100 elefantes!',
     fact: 'A small fluffy cloud holds roughly 500 tonnes of water, as tiny droplets spread out over a huge space - about as heavy as 100 elephants. It floats because the droplets are so small and spread out, and the warm air rising underneath holds them up.',
     factEs: 'Una nube pequeña y esponjosa contiene unas 500 toneladas de agua en gotitas diminutas repartidas por un espacio enorme: como unos 100 elefantes. Flota porque las gotas son pequeñísimas y están muy separadas, y el aire caliente que sube las sostiene.' },
+  { id: 'aa4', set: 'AA', emoji: '🚀', topic: 'Sound in space',
+    q: 'What would a huge explosion in space sound like?', qes: '¿Cómo sonaría una gran explosión en el espacio?',
+    trap: 'A giant BOOM!', trapEs: '¡Un BUM enorme!',
+    answer: 'Nothing at all - space is silent!', answerEs: '¡Nada: el espacio es silencioso!',
+    fact: 'Sound needs something to travel through, like air or water, because it\'s a wave of tiny pushes passing from one bit of stuff to the next. Space is almost completely empty, so there\'s nothing to carry the sound. Astronauts talk to each other by radio, which uses radio waves instead of sound.',
+    factEs: 'El sonido necesita algo por donde viajar, como el aire o el agua, porque es una onda de empujoncitos que pasa de un trocito al siguiente. El espacio está casi vacío, así que no hay nada que lleve el sonido. Los astronautas hablan por radio, que usa ondas de radio en vez de sonido.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1026,4 +1032,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aa1: 'aa1-electric-eels.mp4',
   aa2: 'aa2-killer-whales.mp4',
   aa3: 'aa3-cloud-weight.mp4',
+  aa4: 'aa4-sound-in-space.mp4',
 };
