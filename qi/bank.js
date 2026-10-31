@@ -330,6 +330,12 @@ const QI_BANK = [
     answer: 'One - with four parts!', answerEs: '¡Uno, con cuatro partes!',
     fact: 'A cow has one big stomach split into four parts, or chambers. Grass goes into the first part, comes back up to be chewed again (that\'s chewing the cud), then moves on. Cows chew for about 8 hours a day.',
     factEs: 'La vaca tiene un solo estómago grande dividido en cuatro partes. La hierba entra en la primera, vuelve a la boca para masticarla otra vez (rumiar) y sigue su camino. Las vacas mastican unas 8 horas al día.' },
+  { id: 'i5', set: 'I', emoji: '🐢', topic: 'Tortoise shells',
+    q: 'Can a tortoise climb out of its shell?', qes: '¿Puede una tortuga salir de su caparazón?',
+    trap: 'Yes, like a snail or a hermit crab', trapEs: 'Sí, como un caracol o un cangrejo ermitaño',
+    answer: 'Never - the shell is part of its skeleton!', answerEs: '¡Nunca: el caparazón es parte de su esqueleto!',
+    fact: 'A tortoise\'s shell is joined to its backbone and ribs - it\'s part of its skeleton, so it can never come out. The shell is alive and grows with the tortoise, and it can even feel when you touch it.',
+    factEs: 'El caparazón de la tortuga está unido a su columna y sus costillas: es parte de su esqueleto, así que nunca puede salir. Está vivo, crece con la tortuga y hasta siente cuando lo tocas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -385,4 +391,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   i2: 'i2-hardest-part-of-you.mp4',
   i3: 'i3-baby-bones.mp4',
   i4: 'i4-cow-stomachs.mp4',
+  i5: 'i5-tortoise-shells.mp4',
 };
