@@ -665,6 +665,12 @@ const QI_BANK = [
     answer: 'Thousands of years!', answerEs: '¡Miles de años!',
     fact: 'Honey has very little water and is slightly acidic, so germs can\'t grow in it. Archaeologists have found pots of honey in ancient Egyptian tombs that were thousands of years old and still not spoiled. To make one jar, bees visit about two million flowers.',
     factEs: 'La miel tiene muy poca agua y es un poco ácida, así que los gérmenes no pueden crecer en ella. Los arqueólogos han encontrado miel en tumbas del antiguo Egipto de hace miles de años que seguía sin estropearse. Para un tarro, las abejas visitan unos dos millones de flores.' },
+  { id: 't4', set: 'T', emoji: '🐰', topic: 'Rabbits and carrots',
+    q: 'What should a pet rabbit mostly eat?', qes: '¿Qué debe comer sobre todo un conejo de mascota?',
+    trap: 'Carrots!', trapEs: '¡Zanahorias!',
+    answer: 'Hay and grass!', answerEs: '¡Heno y hierba!',
+    fact: 'Wild rabbits mostly eat grass, and pet rabbits need lots of hay. Carrots are sugary, so they\'re only an occasional treat. Chewing hay also wears down rabbits\' teeth, which never stop growing.',
+    factEs: 'Los conejos salvajes comen sobre todo hierba, y los de mascota necesitan mucho heno. Las zanahorias tienen mucho azúcar, así que son solo un premio de vez en cuando. Masticar heno además desgasta sus dientes, que nunca dejan de crecer.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -774,4 +780,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   t1: 't1-hummingbird-feet.mp4',
   t2: 't2-moonlight.mp4',
   t3: 't3-honey-that-lasts.mp4',
+  t4: 't4-rabbits-and-carrots.mp4',
 };
