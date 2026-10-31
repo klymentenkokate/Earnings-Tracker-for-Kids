@@ -349,6 +349,12 @@ const QI_BANK = [
     answer: 'Low down, in the middle of a spiky plant!', answerEs: '¡Abajo, en el centro de una planta con pinchos!',
     fact: 'A pineapple grows on a short, spiky plant close to the ground, one fruit in the middle of each plant. It takes about two years to grow. You can even grow a new plant from the leafy top of a pineapple.',
     factEs: 'La piña crece en una planta baja con hojas de pinchos, cerca del suelo, una fruta en el centro de cada planta. Tarda unos dos años en crecer. Incluso puedes plantar la corona de hojas de una piña.' },
+  { id: 'j3', set: 'J', emoji: '🌠', topic: 'Shooting stars',
+    q: 'What is a shooting star?', qes: '¿Qué es una estrella fugaz?',
+    trap: 'A star falling from the sky', trapEs: 'Una estrella que cae del cielo',
+    answer: 'A tiny bit of space dust burning up!', answerEs: '¡Un trocito de polvo espacial que se quema!',
+    fact: 'A shooting star isn\'t a star at all. It\'s a tiny bit of space rock or dust, often no bigger than a grain of sand, rushing into our air so fast that it gets hot and glows. Tonnes of space dust land on Earth every day.',
+    factEs: 'Una estrella fugaz no es una estrella. Es un trocito de roca o polvo espacial, a menudo como un grano de arena, que entra tan rápido en el aire que se calienta y brilla. Cada día caen en la Tierra toneladas de polvo espacial.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -407,4 +413,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   i5: 'i5-tortoise-shells.mp4',
   j1: 'j1-sunflowers.mp4',
   j2: 'j2-pineapples.mp4',
+  j3: 'j3-shooting-stars.mp4',
 };
