@@ -950,6 +950,12 @@ const QI_BANK = [
     answer: 'Fresh water!', answerEs: '¡Agua fresca!',
     fact: 'Kittens drink their mum\'s milk, but most grown-up cats can\'t digest the sugar in cow\'s milk properly, so it can give them a tummy ache. Fresh water is what they need. Cats often prefer moving water, which is why some love drinking from a dripping tap.',
     factEs: 'Los gatitos toman leche de su madre, pero casi todos los gatos adultos no digieren bien el azúcar de la leche de vaca, y les puede doler la barriga. Lo que necesitan es agua fresca. A muchos gatos les gusta el agua en movimiento: por eso algunos beben del grifo que gotea.' },
+  { id: 'ac5', set: 'AC', emoji: '☀️', topic: 'Why summer is hot',
+    q: 'Why is it hotter in summer than in winter?', qes: '¿Por qué hace más calor en verano que en invierno?',
+    trap: 'The Earth is closer to the Sun', trapEs: 'La Tierra está más cerca del Sol',
+    answer: 'The Earth is tilted!', answerEs: '¡La Tierra está inclinada!',
+    fact: 'The Earth is tilted, so for part of the year your half of the world leans towards the Sun: the Sun climbs higher, shines more directly and days are longer - that\'s summer. It isn\'t about distance: the Earth is actually closest to the Sun in early January, during the northern winter! That\'s also why Australia has summer at Christmas.',
+    factEs: 'La Tierra está inclinada, así que parte del año tu mitad del mundo se inclina hacia el Sol: el Sol sube más, da más de lleno y los días son más largos. Eso es el verano. No es por la distancia: la Tierra está más cerca del Sol a principios de enero, ¡en el invierno del norte! Por eso en Australia es verano en Navidad.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1105,4 +1111,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ac2: 'ac2-haircuts.mp4',
   ac3: 'ac3-peacock-tails.mp4',
   ac4: 'ac4-cats-and-milk.mp4',
+  ac5: 'ac5-why-summer-is-hot.mp4',
 };
