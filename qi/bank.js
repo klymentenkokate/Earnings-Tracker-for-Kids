@@ -324,6 +324,12 @@ const QI_BANK = [
     answer: 'A baby!', answerEs: '¡Un bebé!',
     fact: 'A newborn baby has about 300 bones and soft bits. As you grow, many of them join together, so a grown-up has 206. A baby\'s skull has soft gaps that close up as it grows.',
     factEs: 'Un recién nacido tiene unos 300 huesos y partes blandas. Al crecer, muchos se unen, y un adulto tiene 206. El cráneo del bebé tiene huecos blandos que se cierran al crecer.' },
+  { id: 'i4', set: 'I', emoji: '🐄', topic: 'Cow stomachs',
+    q: 'How many stomachs does a cow have?', qes: '¿Cuántos estómagos tiene una vaca?',
+    trap: 'Four', trapEs: 'Cuatro',
+    answer: 'One - with four parts!', answerEs: '¡Uno, con cuatro partes!',
+    fact: 'A cow has one big stomach split into four parts, or chambers. Grass goes into the first part, comes back up to be chewed again (that\'s chewing the cud), then moves on. Cows chew for about 8 hours a day.',
+    factEs: 'La vaca tiene un solo estómago grande dividido en cuatro partes. La hierba entra en la primera, vuelve a la boca para masticarla otra vez (rumiar) y sigue su camino. Las vacas mastican unas 8 horas al día.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -378,4 +384,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   i1: 'i1-kiwi-eggs.mp4',
   i2: 'i2-hardest-part-of-you.mp4',
   i3: 'i3-baby-bones.mp4',
+  i4: 'i4-cow-stomachs.mp4',
 };
