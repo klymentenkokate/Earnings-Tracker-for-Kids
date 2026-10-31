@@ -870,6 +870,12 @@ const QI_BANK = [
     answer: 'It isn\'t an eel at all - it\'s a knifefish!', answerEs: '¡No es una anguila: es un pez cuchillo!',
     fact: 'Electric eels look like eels, but they belong to a different group of fish called knifefish, closer to catfish. They make electricity with special body cells that work like a stack of batteries - a big one can give a shock of over 600 volts. They also have to swim up to the surface to gulp air.',
     factEs: 'Las anguilas eléctricas parecen anguilas, pero son de otro grupo de peces, los peces cuchillo, más cercanos a los bagres. Hacen electricidad con células especiales que funcionan como un montón de pilas: una grande puede dar una descarga de más de 600 voltios. Además tienen que subir a la superficie a respirar aire.' },
+  { id: 'aa2', set: 'AA', emoji: '🐋', topic: 'Killer whales',
+    q: 'What kind of animal is a killer whale?', qes: '¿Qué tipo de animal es la orca?',
+    trap: 'A kind of whale', trapEs: 'Una ballena',
+    answer: 'The biggest kind of dolphin!', answerEs: '¡El delfín más grande!',
+    fact: 'Killer whales, or orcas, are really the largest members of the dolphin family. They live in close family groups called pods, led by the grandmothers, and each pod has its own \'accent\' of clicks and whistles. Orcas can live as long as people do.',
+    factEs: 'Las orcas son en realidad los miembros más grandes de la familia de los delfines. Viven en grupos familiares llamados manadas, guiadas por las abuelas, y cada manada tiene su propio \'acento\' de chasquidos y silbidos. Las orcas pueden vivir tanto como las personas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1012,4 +1018,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   z4: 'z4-earths-core.mp4',
   z5: 'z5-firefly-light.mp4',
   aa1: 'aa1-electric-eels.mp4',
+  aa2: 'aa2-killer-whales.mp4',
 };
