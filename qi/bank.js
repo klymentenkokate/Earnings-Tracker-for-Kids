@@ -566,6 +566,12 @@ const QI_BANK = [
     answer: 'Your throat snapping shut!', answerEs: '¡La garganta cerrándose de golpe!',
     fact: 'A hiccup starts when the big breathing muscle under your lungs, the diaphragm, suddenly twitches and pulls air in. A split second later the top of your throat snaps shut - and that\'s the \'hic\'. Babies hiccup even before they\'re born.',
     factEs: 'El hipo empieza cuando el gran músculo de respirar bajo los pulmones, el diafragma, da un tirón y mete aire. Un instante después la garganta se cierra de golpe: ese es el \'hip\'. Los bebés tienen hipo incluso antes de nacer.' },
+  { id: 'q3', set: 'Q', emoji: '🏜️', topic: 'Deserts at night',
+    q: 'What\'s a sandy desert like at night?', qes: '¿Cómo es un desierto de arena por la noche?',
+    trap: 'Still boiling hot', trapEs: 'Sigue ardiendo de calor',
+    answer: 'Freezing cold!', answerEs: '¡Muy frío!',
+    fact: 'Deserts have hardly any clouds or water in the air to hold the day\'s heat in like a blanket, so once the Sun sets the heat escapes into the sky. The Sahara can go from over 40 °C in the day to near freezing at night. Desert foxes have huge ears to help them lose heat in the day.',
+    factEs: 'En el desierto casi no hay nubes ni agua en el aire que guarden el calor como una manta, así que al ponerse el Sol el calor se escapa al cielo. El Sáhara puede pasar de más de 40 °C de día a casi helar de noche. Los zorros del desierto tienen orejas enormes para soltar calor de día.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -659,4 +665,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   p5: 'p5-bananas-and-radiation.mp4',
   q1: 'q1-elephant-jumps.mp4',
   q2: 'q2-hiccups.mp4',
+  q3: 'q3-deserts-at-night.mp4',
 };
