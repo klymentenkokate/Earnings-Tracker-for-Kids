@@ -684,6 +684,12 @@ const QI_BANK = [
     answer: 'Round - or squashed like a bun!', answerEs: '¡Redonda, o aplastada como un bollo!',
     fact: 'Small raindrops are round. As bigger drops fall, the air pushes up on their bottoms and flattens them into a shape like a burger bun. If a drop gets too big, it splits into smaller drops. The pointy teardrop shape is only in drawings.',
     factEs: 'Las gotas pequeñas son redondas. Al caer, el aire empuja por debajo a las más grandes y las aplasta como un pan de hamburguesa. Si una gota crece demasiado, se parte en gotas más pequeñas. La forma de lágrima con punta solo existe en los dibujos.' },
+  { id: 'u2', set: 'U', emoji: '🐯', topic: 'Tiger stripes',
+    q: 'If you shaved a tiger, what would its skin look like?', qes: 'Si raparas a un tigre, ¿cómo sería su piel?',
+    trap: 'Plain, like ours', trapEs: 'Lisa, como la nuestra',
+    answer: 'Still stripy!', answerEs: '¡Seguiría a rayas!',
+    fact: 'A tiger\'s stripes aren\'t just on its fur - its skin is stripy too, with dark skin under the dark stripes. No two tigers have the same pattern, just like our fingerprints. The stripes help tigers hide in tall grass and shadows.',
+    factEs: 'Las rayas del tigre no están solo en el pelo: su piel también es a rayas, más oscura bajo las rayas oscuras. No hay dos tigres con el mismo dibujo, como nuestras huellas. Las rayas les ayudan a esconderse entre la hierba alta y las sombras.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -796,4 +802,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   t4: 't4-rabbits-and-carrots.mp4',
   t5: 't5-lightning-heat.mp4',
   u1: 'u1-raindrop-shape.mp4',
+  u2: 'u2-tiger-stripes.mp4',
 };
