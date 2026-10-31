@@ -609,6 +609,12 @@ const QI_BANK = [
     answer: 'From rocks on land, carried by rivers!', answerEs: '¡De las rocas, la traen los ríos!',
     fact: 'Rain slowly wears away rocks and washes tiny bits of salt into rivers, and rivers carry it to the sea. When sea water evaporates into clouds, the salt stays behind, so over millions of years the sea got saltier and saltier. If all the sea\'s salt were spread over the land, it would make a layer taller than a 40-storey building.',
     factEs: 'La lluvia desgasta las rocas y arrastra trocitos de sal a los ríos, y los ríos la llevan al mar. Cuando el agua del mar se evapora, la sal se queda, así que en millones de años el mar se ha vuelto cada vez más salado. Si toda la sal del mar se extendiera sobre la tierra, haría una capa más alta que un edificio de 40 pisos.' },
+  { id: 'r5', set: 'R', emoji: '🐦', topic: 'Bird bones',
+    q: 'What\'s special about the inside of a flying bird\'s bones?', qes: '¿Qué tienen de especial por dentro los huesos de un pájaro que vuela?',
+    trap: 'Nothing - they\'re solid like ours', trapEs: 'Nada, son macizos como los nuestros',
+    answer: 'Many are hollow, with air inside!', answerEs: '¡Muchos son huecos, con aire dentro!',
+    fact: 'Many of a flying bird\'s bones are hollow, with thin criss-cross struts inside like a bridge, and some even connect to its air sacs. That makes them light but strong - perfect for flying. A frigatebird\'s whole skeleton can weigh less than its feathers.',
+    factEs: 'Muchos huesos de las aves que vuelan son huecos, con puntales finos cruzados por dentro como un puente, y algunos se conectan con sus sacos de aire. Así son ligeros pero fuertes, perfectos para volar. El esqueleto entero de una fragata puede pesar menos que sus plumas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -709,4 +715,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   r2: 'r2-diamonds.mp4',
   r3: 'r3-mosquito-ears.mp4',
   r4: 'r4-sea-salt.mp4',
+  r5: 'r5-bird-bones.mp4',
 };
