@@ -281,6 +281,12 @@ const QI_BANK = [
     answer: 'It isn\'t a bear at all!', answerEs: '¡No es un oso!',
     fact: 'Koalas are marsupials, like kangaroos: their babies, called joeys, grow up in their mum\'s pouch. Their closest cousin is the wombat. And koalas sleep up to 20 hours a day.',
     factEs: 'Los koalas son marsupiales, como los canguros: sus crías crecen en la bolsa de su madre. Su pariente más cercano es el wombat. Y duermen hasta 20 horas al día.' },
+  { id: 'h2', set: 'H', emoji: '🔴', topic: 'Mars sunsets',
+    q: 'What colour is a sunset on Mars?', qes: '¿De qué color es una puesta de sol en Marte?',
+    trap: 'Red', trapEs: 'Roja',
+    answer: 'Blue!', answerEs: '¡Azul!',
+    fact: 'Mars is the red planet, but its sunsets are blue. Tiny dust in the air lets blue light through best near the Sun. Robots on Mars have photographed them. Mars also has the tallest volcano in the solar system.',
+    factEs: 'Marte es el planeta rojo, pero sus atardeceres son azules: el polvo fino del aire deja pasar mejor la luz azul cerca del Sol. Los robots de Marte los han fotografiado. Marte tiene además el volcán más alto del sistema solar.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -328,4 +334,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   g4: 'g4-most-dangerous-animal.mp4',
   g5: 'g5-chilli-heat.mp4',
   h1: 'h1-koala-bears.mp4',
+  h2: 'h2-mars-sunsets.mp4',
 };
