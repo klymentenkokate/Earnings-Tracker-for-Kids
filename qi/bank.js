@@ -1012,6 +1012,12 @@ const QI_BANK = [
     answer: 'It floats!', answerEs: '¡Flota!',
     fact: 'About a quarter of an apple is air, trapped in tiny pockets between its cells, which makes it lighter than the same amount of water - so it floats. That\'s how the Halloween game of apple bobbing works! A pear, with less air inside, often sinks.',
     factEs: 'Más o menos una cuarta parte de la manzana es aire, atrapado en huequitos entre sus células, así que pesa menos que la misma cantidad de agua: por eso flota. ¡Así funciona el juego de Halloween de pescar manzanas con la boca! Una pera, con menos aire, a menudo se hunde.' },
+  { id: 'ae5', set: 'AE', emoji: '🦉', topic: 'Owl pellets',
+    q: 'An owl swallows a mouse whole. What happens to the bones and fur?', qes: 'Un búho se traga un ratón entero. ¿Qué pasa con los huesos y el pelo?',
+    trap: 'They come out the other end as poo', trapEs: 'Salen por el otro lado, como caca',
+    answer: 'The owl coughs them up in a neat little pellet!', answerEs: '¡El búho los escupe en una bolita!',
+    fact: 'An owl\'s stomach can\'t digest bones, fur or feathers, so it squashes them into a neat little bundle called a pellet and coughs it back up through its beak, a few hours after eating. Scientists and school classes pull owl pellets apart to see exactly what the owl ate - you can often find whole tiny skulls!',
+    factEs: 'El estómago del búho no digiere huesos, pelo ni plumas, así que los aprieta en un paquetito llamado egagrópila y lo escupe por el pico unas horas después de comer. Científicos y colegios desmontan egagrópilas para ver qué comió el búho: ¡a menudo salen calaveritas enteras!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1177,4 +1183,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ae2: 'ae2-strawberry-seeds.mp4',
   ae3: 'ae3-dog-sweat.mp4',
   ae4: 'ae4-apples-float.mp4',
+  ae5: 'ae5-owl-pellets.mp4',
 };
