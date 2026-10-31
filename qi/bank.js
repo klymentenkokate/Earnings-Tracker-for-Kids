@@ -715,6 +715,12 @@ const QI_BANK = [
     answer: 'Black!', answerEs: '¡Negra!',
     fact: 'Under its fur, a zebra\'s skin is dark all over. Its white stripes are just places where the hair grows without colour. Scientists think the stripes help keep biting flies away. Every zebra\'s stripes are different.',
     factEs: 'Bajo el pelo, la piel de la cebra es oscura por completo. Las rayas blancas son solo zonas donde el pelo crece sin color. Los científicos creen que las rayas ayudan a alejar a las moscas que pican. Las rayas de cada cebra son distintas.' },
+  { id: 'v2', set: 'V', emoji: '🌊', topic: 'One big ocean',
+    q: 'How many oceans are there on Earth, really?', qes: '¿Cuántos océanos hay de verdad en la Tierra?',
+    trap: 'Five separate oceans', trapEs: 'Cinco océanos separados',
+    answer: 'Just one big connected ocean!', answerEs: '¡Solo uno, todo conectado!',
+    fact: 'We give five parts of the ocean different names - Pacific, Atlantic, Indian, Southern and Arctic - but they all join up, so it\'s really one world ocean. It covers about 70 percent of the planet. A fish could swim from one \'ocean\' to all the others without ever leaving the water.',
+    factEs: 'Ponemos nombres a cinco partes del océano (Pacífico, Atlántico, Índico, Austral y Ártico), pero todas están unidas: en realidad es un solo océano mundial. Cubre más o menos el 70 % del planeta. Un pez podría nadar de uno a todos los demás sin salir del agua.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -832,4 +838,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   u4: 'u4-bats-upside-down.mp4',
   u5: 'u5-mount-everest-growing.mp4',
   v1: 'v1-zebra-colours.mp4',
+  v2: 'v2-one-big-ocean.mp4',
 };
