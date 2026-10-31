@@ -417,6 +417,12 @@ const QI_BANK = [
     answer: 'Its feet!', answerEs: '¡Con las patas!',
     fact: 'Butterflies have taste sensors on their feet. When one lands on a leaf, it can tell straight away if it\'s good to eat, or a good place to lay eggs. It drinks nectar through a long tube-tongue that curls up like a garden hose.',
     factEs: 'Las mariposas tienen sensores del gusto en las patas. Al posarse en una hoja saben enseguida si es buena para comer o para poner huevos. Beben néctar con una lengua larga en forma de tubo que se enrolla como una manguera.' },
+  { id: 'l4', set: 'L', emoji: '🥜', topic: 'Peanuts',
+    q: 'What kind of nut is a peanut?', qes: '¿Qué tipo de fruto seco es un cacahuete?',
+    trap: 'A nut that grows on a tree', trapEs: 'Un fruto seco de árbol',
+    answer: 'It isn\'t a nut - it\'s a bean that grows underground!', answerEs: '¡No es un fruto seco: es una legumbre que crece bajo tierra!',
+    fact: 'A peanut is a legume, in the same family as peas and beans. Its flowers bend down and push into the soil, and the pods grow underground. It takes over 500 peanuts to make one jar of peanut butter.',
+    factEs: 'El cacahuete es una legumbre, de la familia de los guisantes y las judías. Sus flores se doblan y se meten en la tierra, y las vainas crecen bajo el suelo. Hacen falta más de 500 cacahuetes para un tarro de crema de cacahuete.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -486,4 +492,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   l1: 'l1-spiders.mp4',
   l2: 'l2-moon-or-pluto.mp4',
   l3: 'l3-butterfly-taste.mp4',
+  l4: 'l4-peanuts.mp4',
 };
