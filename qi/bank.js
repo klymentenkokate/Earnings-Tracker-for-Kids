@@ -783,6 +783,12 @@ const QI_BANK = [
     answer: 'No - crows and parrots are much cleverer!', answerEs: '¡No, los cuervos y los loros son mucho más listos!',
     fact: 'Owls are brilliant hunters with amazing hearing, but in puzzle tests they don\'t do especially well. Crows can use and even make tools, and some parrots can learn hundreds of words. Owls look wise because of their big, forward-facing eyes - a bit like ours.',
     factEs: 'Los búhos son grandes cazadores con un oído increíble, pero en pruebas de ingenio no destacan. Los cuervos usan e incluso fabrican herramientas, y algunos loros aprenden cientos de palabras. Los búhos parecen sabios por sus grandes ojos de frente, como los nuestros.' },
+  { id: 'x3', set: 'X', emoji: '🟫', topic: 'Wombat poo',
+    q: 'What shape is a wombat\'s poo?', qes: '¿Qué forma tiene la caca del wombat?',
+    trap: 'Round, like little balls', trapEs: 'Redonda, como bolitas',
+    answer: 'Cube-shaped!', answerEs: '¡Con forma de cubo!',
+    fact: 'Wombats are the only animals known to make cube-shaped poo. The last part of their gut squeezes it into blocks with flat sides. They stack them on rocks and logs to mark their territory - and cubes don\'t roll away. A wombat can make around 80-100 cubes a night.',
+    factEs: 'Los wombats son los únicos animales conocidos que hacen caca con forma de cubo. La última parte de su intestino la aprieta en bloques con caras planas. Los colocan sobre rocas y troncos para marcar su territorio, y los cubos no ruedan. Un wombat puede hacer unos 80-100 cubos por noche.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -911,4 +917,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   w5: 'w5-dolphin-sleep.mp4',
   x1: 'x1-starfish.mp4',
   x2: 'x2-owls-and-wisdom.mp4',
+  x3: 'x3-wombat-poo.mp4',
 };
