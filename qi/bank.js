@@ -429,6 +429,13 @@ const QI_BANK = [
     answer: 'All of it!', answerEs: '¡Toda la lengua!',
     fact: 'Old school books showed a \'tongue map\' with sweet at the tip and bitter at the back, but it was a mistake. Taste buds all over your tongue can taste sweet, salty, sour, bitter and savoury. You have thousands of taste buds, and they are replaced about every two weeks.',
     factEs: 'Los libros antiguos traían un \'mapa de la lengua\' con lo dulce en la punta, pero era un error. Las papilas de toda la lengua notan dulce, salado, ácido, amargo y sabroso. Tienes miles de papilas y se renuevan cada dos semanas más o menos.' },
+  // Set M (pipeline, one question at a time)
+  { id: 'm1', set: 'M', emoji: '🦛', topic: 'Hippo sweat',
+    q: 'What colour is a hippo\'s \'sweat\'?', qes: '¿De qué color es el \'sudor\' de un hipopótamo?',
+    trap: 'See-through, like ours', trapEs: 'Transparente, como el nuestro',
+    answer: 'Red and orange!', answerEs: '¡Rojo y naranja!',
+    fact: 'Hippos ooze a red-orange liquid from their skin. It isn\'t blood and it isn\'t really sweat: it works like sun cream, protecting their skin from the hot sun, and helps keep germs away. And hippos can\'t really swim - they walk and bounce along the bottom of the river.',
+    factEs: 'Los hipopótamos sueltan por la piel un líquido rojo anaranjado. No es sangre ni sudor de verdad: funciona como crema solar y ayuda a alejar los gérmenes. Y no saben nadar bien: caminan y botan por el fondo del río.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -500,4 +507,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   l3: 'l3-butterfly-taste.mp4',
   l4: 'l4-peanuts.mp4',
   l5: 'l5-tongue-map.mp4',
+  m1: 'm1-hippo-sweat.mp4',
 };
