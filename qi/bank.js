@@ -584,6 +584,13 @@ const QI_BANK = [
     answer: 'Billions of years old!', answerEs: '¡Miles de millones de años!',
     fact: 'Water isn\'t made new: the same water goes round and round in the water cycle - sea, clouds, rain, rivers, taps - and the waterworks only cleans it. Most of Earth\'s water is billions of years old, so your glass may hold water that dinosaurs once drank.',
     factEs: 'El agua no se fabrica: la misma agua da vueltas en el ciclo del agua (mar, nubes, lluvia, ríos, grifos) y la potabilizadora solo la limpia. Casi toda el agua de la Tierra tiene miles de millones de años: tu vaso puede tener agua que bebieron los dinosaurios.' },
+  // Set R (pipeline, one question at a time)
+  { id: 'r1', set: 'R', emoji: '🦥', topic: 'Sloth swimming',
+    q: 'What is a sloth surprisingly good at?', qes: '¿En qué es sorprendentemente bueno un perezoso?',
+    trap: 'Nothing - it\'s the laziest animal!', trapEs: 'En nada, ¡es el más vago!',
+    answer: 'Swimming!', answerEs: '¡Nadar!',
+    fact: 'Sloths are very slow on land, but they\'re good swimmers: they paddle with their long arms and can move about three times faster in water than on the ground. They can also hold their breath for up to about 40 minutes by slowing their heart right down.',
+    factEs: 'Los perezosos son muy lentos en tierra, pero nadan bien: reman con sus brazos largos y en el agua van unas tres veces más rápido. Además aguantan la respiración hasta unos 40 minutos frenando mucho el corazón.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -680,4 +687,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   q3: 'q3-deserts-at-night.mp4',
   q4: 'q4-owl-heads.mp4',
   q5: 'q5-water-from-taps.mp4',
+  r1: 'r1-sloth-swimming.mp4',
 };
