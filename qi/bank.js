@@ -473,6 +473,12 @@ const QI_BANK = [
     answer: 'None at all!', answerEs: '¡Ninguno!',
     fact: 'A shark\'s skeleton is made of cartilage, the bendy stuff in your nose and ears. It\'s lighter than bone, so sharks can swim fast and turn quickly. Sharks have been around for longer than trees.',
     factEs: 'El esqueleto del tiburón es de cartílago, lo blandito de tu nariz y tus orejas. Pesa menos que el hueso, así que nada rápido y gira con facilidad. Los tiburones existen desde antes que los árboles.' },
+  { id: 'n3', set: 'N', emoji: '😴', topic: 'Swallowing spiders',
+    q: 'How many spiders do you swallow in your sleep each year?', qes: '¿Cuántas arañas te tragas dormido cada año?',
+    trap: 'About eight', trapEs: 'Unas ocho',
+    answer: 'Almost certainly none!', answerEs: '¡Casi seguro que ninguna!',
+    fact: 'The \'eight spiders a year\' story is a myth that spread around the internet. A sleeping person breathes, snores and has a thumping heartbeat - to a spider that feels like a big, scary animal, so they keep well away. Some baby spiders can fly long distances by floating on silk threads in the wind.',
+    factEs: 'Lo de \'ocho arañas al año\' es un mito de internet. Una persona dormida respira, ronca y su corazón late: para una araña es un animal enorme y peligroso, así que se aleja. Algunas arañas bebé vuelan lejos flotando en hilos de seda con el viento.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -551,4 +557,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   m5: 'm5-thunder-and-lightning.mp4',
   n1: 'n1-carrots-and-the-dark.mp4',
   n2: 'n2-shark-bones.mp4',
+  n3: 'n3-swallowing-spiders.mp4',
 };
