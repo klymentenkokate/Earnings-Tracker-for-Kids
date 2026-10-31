@@ -1056,6 +1056,12 @@ const QI_BANK = [
     answer: 'No - they were very strong for their size!', answerEs: '¡No, eran muy fuertes para su tamaño!',
     fact: 'T. rex\'s arms were short - about as long as a grown-up person\'s arm - but they were thick with muscle. Scientists estimate each arm could lift around 200 kg, as much as several grown-ups. Nobody knows for sure what they were used for: maybe gripping prey, or pushing itself up from the ground.',
     factEs: 'Los brazos del T. rex eran cortos, como el brazo de una persona adulta, pero muy musculosos. Los científicos calculan que cada brazo podía levantar unos 200 kg, como varias personas. Nadie sabe seguro para qué los usaba: quizá para sujetar presas o levantarse del suelo.' },
+  { id: 'ag2', set: 'AG', emoji: '🦫', topic: 'Beaver teeth',
+    q: 'Why are a beaver\'s front teeth orange?', qes: '¿Por qué los dientes delanteros del castor son naranjas?',
+    trap: 'Because beavers never brush them', trapEs: 'Porque los castores nunca se los cepillan',
+    answer: 'Iron makes them extra strong!', answerEs: '¡El hierro los hace más fuertes!',
+    fact: 'A beaver\'s front teeth have iron in their outer layer, the enamel, which turns them orange and makes them tough and hard to wear away. They need to be: beavers gnaw through whole trees. Their front teeth never stop growing, and all that gnawing keeps them from getting too long.',
+    factEs: 'Los dientes delanteros del castor tienen hierro en su capa exterior, el esmalte, que los vuelve naranjas y muy resistentes. Lo necesitan: los castores roen árboles enteros. Sus dientes delanteros nunca dejan de crecer, y al roer se desgastan y no se hacen demasiado largos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1228,4 +1234,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   af4: 'af4-turtle-shells.mp4',
   af5: 'af5-blinking.mp4',
   ag1: 'ag1-t-rex-arms.mp4',
+  ag2: 'ag2-beaver-teeth.mp4',
 };
