@@ -901,6 +901,12 @@ const QI_BANK = [
     answer: 'No - usually only the head end can survive!', answerEs: '¡No, normalmente solo sobrevive la parte de la cabeza!',
     fact: 'An earthworm\'s important parts, like its brain and its five heart-like pumps, are near the head end. Sometimes the head end can heal and grow a new tail, but the tail end can\'t grow a new head, so you don\'t get two worms. Worms breathe through their skin, which is why they come up when the ground is flooded.',
     factEs: 'Las partes importantes de la lombriz, como su cerebro y sus cinco bombas parecidas a corazones, están cerca de la cabeza. A veces la parte de la cabeza se cura y le crece una cola nueva, pero la cola no puede hacer una cabeza nueva, así que no salen dos lombrices. Las lombrices respiran por la piel; por eso salen cuando el suelo se inunda.' },
+  { id: 'ab2', set: 'AB', emoji: '🌧️', topic: 'Smell of rain',
+    q: 'What makes that lovely smell after rain?', qes: '¿Qué produce ese olor tan rico después de la lluvia?',
+    trap: 'The rain water itself', trapEs: 'El agua de la lluvia',
+    answer: 'Tiny soil bacteria and plant oils, thrown into the air!', answerEs: '¡Bacterias del suelo y aceites de plantas lanzados al aire!',
+    fact: 'Rain water has no smell. The smell, called petrichor, comes from a chemical made by tiny bacteria in the soil, plus oils from plants. When raindrops hit dry ground, they trap little air bubbles that pop and fling these smells up into the air. Our noses are extremely good at smelling it - better than a shark smelling blood.',
+    factEs: 'El agua de lluvia no huele. El olor, llamado petricor, viene de una sustancia de bacterias diminutas del suelo y de aceites de plantas. Al caer en tierra seca, las gotas atrapan burbujitas que explotan y lanzan esos olores al aire. Nuestra nariz lo detecta muy bien: mejor que un tiburón la sangre.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1048,4 +1054,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aa4: 'aa4-sound-in-space.mp4',
   aa5: 'aa5-banana-bunches.mp4',
   ab1: 'ab1-earthworm-hearts.mp4',
+  ab2: 'ab2-smell-of-rain.mp4',
 };
