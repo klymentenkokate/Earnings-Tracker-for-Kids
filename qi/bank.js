@@ -343,6 +343,12 @@ const QI_BANK = [
     answer: 'East, all day long!', answerEs: '¡Al este, todo el día!',
     fact: 'Young sunflowers do turn to follow the Sun, and swing back east at night. But once a sunflower has grown its big flower, it stops moving and faces east, where the morning Sun warms it up and brings more bees.',
     factEs: 'Los girasoles jóvenes sí siguen al Sol y por la noche vuelven al este. Pero cuando ya tienen la flor grande, se quedan quietos mirando al este: el sol de la mañana los calienta y atrae más abejas.' },
+  { id: 'j2', set: 'J', emoji: '🍍', topic: 'Pineapples',
+    q: 'Where do pineapples grow?', qes: '¿Dónde crecen las piñas?',
+    trap: 'On trees, like apples', trapEs: 'En árboles, como las manzanas',
+    answer: 'Low down, in the middle of a spiky plant!', answerEs: '¡Abajo, en el centro de una planta con pinchos!',
+    fact: 'A pineapple grows on a short, spiky plant close to the ground, one fruit in the middle of each plant. It takes about two years to grow. You can even grow a new plant from the leafy top of a pineapple.',
+    factEs: 'La piña crece en una planta baja con hojas de pinchos, cerca del suelo, una fruta en el centro de cada planta. Tarda unos dos años en crecer. Incluso puedes plantar la corona de hojas de una piña.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -400,4 +406,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   i4: 'i4-cow-stomachs.mp4',
   i5: 'i5-tortoise-shells.mp4',
   j1: 'j1-sunflowers.mp4',
+  j2: 'j2-pineapples.mp4',
 };
