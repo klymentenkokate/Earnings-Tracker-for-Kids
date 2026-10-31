@@ -758,6 +758,12 @@ const QI_BANK = [
     answer: 'It counts touches on tiny trigger hairs!', answerEs: '¡Cuenta los toques en unos pelitos!',
     fact: 'Inside each trap are tiny trigger hairs. If one hair is touched twice, or two hairs are touched quickly, the trap snaps shut in a fraction of a second. One touch isn\'t enough, so a falling raindrop won\'t fool it. Plants have no eyes - it \'counts\' instead.',
     factEs: 'Dentro de cada trampa hay pelitos sensibles. Si se toca uno dos veces, o dos seguidos, la trampa se cierra en una fracción de segundo. Un solo toque no basta, así que una gota de lluvia no la engaña. Las plantas no tienen ojos: la dionea cuenta.' },
+  { id: 'w4', set: 'W', emoji: '⭐', topic: 'Stars and sand',
+    q: 'Are there more stars in the sky or grains of sand on all Earth\'s beaches?', qes: '¿Hay más estrellas en el cielo o granos de arena en todas las playas?',
+    trap: 'Grains of sand - surely!', trapEs: '¡Granos de arena, seguro!',
+    answer: 'Stars - probably many more!', answerEs: '¡Estrellas, seguramente muchas más!',
+    fact: 'Scientists estimate the Universe holds more stars than all the grains of sand on every beach on Earth put together - a number with over 20 zeros. Yet on a clear, dark night, you can only see a few thousand stars with your own eyes.',
+    factEs: 'Los científicos calculan que en el universo hay más estrellas que granos de arena en todas las playas de la Tierra juntas: un número con más de 20 ceros. Aun así, en una noche oscura solo vemos unos pocos miles a simple vista.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -882,4 +888,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   w1: 'w1-ostrich-speed.mp4',
   w2: 'w2-snowflakes.mp4',
   w3: 'w3-venus-flytrap.mp4',
+  w4: 'w4-stars-and-sand.mp4',
 };
