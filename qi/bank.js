@@ -510,6 +510,12 @@ const QI_BANK = [
     answer: 'Keratin - the same stuff as hair!', answerEs: '¡De queratina, lo mismo que el pelo!',
     fact: 'Nails aren\'t bone. They\'re made of keratin, the same tough stuff as your hair, a horse\'s hooves and a rhino\'s horn. That\'s why cutting them doesn\'t hurt. Fingernails grow about three times faster than toenails.',
     factEs: 'Las uñas no son hueso. Son de queratina, el mismo material duro del pelo, los cascos de los caballos y el cuerno del rinoceronte. Por eso no duele cortarlas. Las uñas de las manos crecen unas tres veces más rápido que las de los pies.' },
+  { id: 'o4', set: 'O', emoji: '😺', topic: 'Why cats purr',
+    q: 'Why do cats purr?', qes: '¿Por qué ronronean los gatos?',
+    trap: 'Only because they\'re happy', trapEs: 'Solo porque están contentos',
+    answer: 'For lots of reasons - even when they\'re hurt or scared!', answerEs: '¡Por muchas razones, incluso cuando les duele algo o tienen miedo!',
+    fact: 'Cats purr when they\'re happy, but also when they\'re hurt, scared or poorly - it seems to help them calm down. Tiny kittens purr to tell their mum they\'re OK. Lions and tigers can\'t purr - they roar instead - but cheetahs can.',
+    factEs: 'Los gatos ronronean cuando están contentos, pero también cuando les duele algo, tienen miedo o están malitos: parece que les ayuda a calmarse. Los gatitos ronronean para decirle a su madre que están bien. Los leones y tigres no ronronean, rugen; los guepardos sí ronronean.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -594,4 +600,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   o1: 'o1-vikings-in-america.mp4',
   o2: 'o2-most-common-bird.mp4',
   o3: 'o3-fingernails.mp4',
+  o4: 'o4-why-cats-purr.mp4',
 };
