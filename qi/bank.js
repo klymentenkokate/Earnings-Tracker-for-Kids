@@ -374,6 +374,12 @@ const QI_BANK = [
     answer: 'To smell!', answerEs: '¡Para oler!',
     fact: 'A snake\'s tongue can\'t sting. It flicks out to catch tiny smells from the air, then carries them to a special smelling spot in the roof of its mouth. Its forked tongue even tells it which side a smell is coming from.',
     factEs: 'La lengua de la serpiente no pica. La saca para atrapar olores del aire y los lleva a un punto especial del paladar que sirve para oler. Su lengua bífida le dice incluso de qué lado viene el olor.' },
+  { id: 'k2', set: 'K', emoji: '🌅', topic: 'Where the Sun goes',
+    q: 'Where does the Sun go at night?', qes: '¿A dónde se va el Sol por la noche?',
+    trap: 'It goes down behind the hills', trapEs: 'Se esconde detrás de las montañas',
+    answer: 'Nowhere - the Earth turns away from it!', answerEs: '¡A ningún sitio: la Tierra gira y le da la espalda!',
+    fact: 'The Sun doesn\'t move round us. The Earth spins once a day, so your side turns away from the Sun (night) and back towards it (morning). When it\'s night for you, it\'s daytime on the other side of the world.',
+    factEs: 'El Sol no da vueltas a nuestro alrededor. La Tierra gira una vez al día: tu lado se aparta del Sol (noche) y vuelve a mirarlo (mañana). Cuando es de noche para ti, es de día al otro lado del mundo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -436,4 +442,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   j4: 'j4-penguins-and-polar-bears.mp4',
   j5: 'j5-sunlights-journey.mp4',
   k1: 'k1-snake-tongues.mp4',
+  k2: 'k2-where-the-sun-goes.mp4',
 };
