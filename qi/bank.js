@@ -708,6 +708,13 @@ const QI_BANK = [
     answer: 'Taller - a few millimetres a year!', answerEs: '¡Más alto, unos milímetros al año!',
     fact: 'The Himalayas formed when India crashed slowly into the rest of Asia, and the two are still pushing together, so Everest rises by a few millimetres a year. Wind, ice and rain wear a little away too, but overall it\'s still growing. The top of Everest is made of rock that was once at the bottom of the sea.',
     factEs: 'El Himalaya se formó cuando la India chocó despacio con el resto de Asia, y siguen empujándose, así que el Everest sube unos milímetros al año. El viento, el hielo y la lluvia lo desgastan un poco, pero en total sigue creciendo. La cima del Everest es de roca que estuvo en el fondo del mar.' },
+  // Set V (pipeline, one question at a time)
+  { id: 'v1', set: 'V', emoji: '🦓', topic: 'Zebra colours',
+    q: 'What colour is a zebra\'s skin under its fur?', qes: '¿De qué color es la piel de la cebra bajo el pelo?',
+    trap: 'White with black stripes', trapEs: 'Blanca con rayas negras',
+    answer: 'Black!', answerEs: '¡Negra!',
+    fact: 'Under its fur, a zebra\'s skin is dark all over. Its white stripes are just places where the hair grows without colour. Scientists think the stripes help keep biting flies away. Every zebra\'s stripes are different.',
+    factEs: 'Bajo el pelo, la piel de la cebra es oscura por completo. Las rayas blancas son solo zonas donde el pelo crece sin color. Los científicos creen que las rayas ayudan a alejar a las moscas que pican. Las rayas de cada cebra son distintas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -824,4 +831,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   u3: 'u3-ants-and-sleep.mp4',
   u4: 'u4-bats-upside-down.mp4',
   u5: 'u5-mount-everest-growing.mp4',
+  v1: 'v1-zebra-colours.mp4',
 };
