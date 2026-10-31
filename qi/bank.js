@@ -597,6 +597,12 @@ const QI_BANK = [
     answer: 'Carbon deep inside the Earth - not coal!', answerEs: '¡De carbono en lo más hondo de la Tierra, no de carbón!',
     fact: 'Diamonds are made of carbon, squeezed and heated about 150 km underground - far deeper than any coal - over billions of years. Volcanoes carried them up near the surface. Diamonds are the hardest natural material on Earth.',
     factEs: 'Los diamantes son carbono apretado y calentado a unos 150 km bajo tierra, mucho más hondo que el carbón, durante miles de millones de años. Los volcanes los subieron cerca de la superficie. Son el material natural más duro de la Tierra.' },
+  { id: 'r3', set: 'R', emoji: '🦟', topic: 'Mosquito ears',
+    q: 'What does a mosquito hear with?', qes: '¿Con qué oye un mosquito?',
+    trap: 'Tiny ears on its head', trapEs: 'Con orejitas en la cabeza',
+    answer: 'Its feathery antennae!', answerEs: '¡Con sus antenas peludas!',
+    fact: 'Mosquitoes don\'t have ears. They hear with their feathery antennae, which wobble when sound waves hit them. The whine you hear is their wings beating hundreds of times a second - and males find females by listening for the sound of their wings.',
+    factEs: 'Los mosquitos no tienen orejas. Oyen con sus antenas peludas, que tiemblan cuando les llega el sonido. El zumbido que oyes son sus alas batiendo cientos de veces por segundo, y los machos encuentran a las hembras escuchando ese sonido.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -695,4 +701,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   q5: 'q5-water-from-taps.mp4',
   r1: 'r1-sloth-swimming.mp4',
   r2: 'r2-diamonds.mp4',
+  r3: 'r3-mosquito-ears.mp4',
 };
