@@ -894,6 +894,13 @@ const QI_BANK = [
     answer: 'Curving up towards the sky!', answerEs: '¡Curvándose hacia el cielo!',
     fact: 'Bananas start off pointing down, then curve upwards as they grow, reaching for the light - that\'s what gives them their bend. A whole bunch, called a hand, grows from one giant flower stalk. The banana plant isn\'t really a tree either: its \'trunk\' is made of tightly rolled leaves.',
     factEs: 'Los plátanos empiezan apuntando hacia abajo y luego se curvan hacia arriba al crecer, buscando la luz: por eso están doblados. Cada racimo crece de un tallo de flor gigante. Y la planta del plátano no es un árbol: su \'tronco\' son hojas muy enrolladas.' },
+  // Set AB (pipeline, one question at a time)
+  { id: 'ab1', set: 'AB', emoji: '🪱', topic: 'Earthworm hearts',
+    q: 'If you cut an earthworm in half, do you get two worms?', qes: 'Si cortas una lombriz por la mitad, ¿salen dos lombrices?',
+    trap: 'Yes - two wriggly worms!', trapEs: '¡Sí, dos lombrices!',
+    answer: 'No - usually only the head end can survive!', answerEs: '¡No, normalmente solo sobrevive la parte de la cabeza!',
+    fact: 'An earthworm\'s important parts, like its brain and its five heart-like pumps, are near the head end. Sometimes the head end can heal and grow a new tail, but the tail end can\'t grow a new head, so you don\'t get two worms. Worms breathe through their skin, which is why they come up when the ground is flooded.',
+    factEs: 'Las partes importantes de la lombriz, como su cerebro y sus cinco bombas parecidas a corazones, están cerca de la cabeza. A veces la parte de la cabeza se cura y le crece una cola nueva, pero la cola no puede hacer una cabeza nueva, así que no salen dos lombrices. Las lombrices respiran por la piel; por eso salen cuando el suelo se inunda.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1040,4 +1047,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aa3: 'aa3-cloud-weight.mp4',
   aa4: 'aa4-sound-in-space.mp4',
   aa5: 'aa5-banana-bunches.mp4',
+  ab1: 'ab1-earthworm-hearts.mp4',
 };
