@@ -832,6 +832,13 @@ const QI_BANK = [
     answer: 'Often less than two hours, in short naps!', answerEs: '¡A menudo menos de dos horas, en siestas cortas!',
     fact: 'Wild giraffes often sleep for less than two hours a day, in naps of just a few minutes, many of them standing up, so they can run from lions quickly. When they do lie down for a deep sleep, they sometimes rest their head on their back leg, curling their long neck round like a hook.',
     factEs: 'Las jirafas salvajes a menudo duermen menos de dos horas al día, en siestas de unos minutos, muchas de pie, para poder huir de los leones. Cuando se tumban para dormir profundo, a veces apoyan la cabeza en la pata trasera, curvando el cuello como un gancho.' },
+  // Set Z (pipeline, one question at a time)
+  { id: 'z1', set: 'Z', emoji: '✏️', topic: 'Pencil lead',
+    q: 'How much lead is in a pencil?', qes: '¿Cuánto plomo tiene un lápiz?',
+    trap: 'Quite a lot - it\'s called pencil lead!', trapEs: '¡Bastante, se llama mina de plomo!',
+    answer: 'None at all - it\'s graphite!', answerEs: '¡Nada: es grafito!',
+    fact: 'Pencil \'lead\' is really graphite, a soft, grey form of carbon, mixed with clay. Long ago people thought graphite was a kind of lead, and the name stuck. Graphite is made of the same stuff as diamonds - just arranged differently. One pencil can draw a line several kilometres long.',
+    factEs: 'La \'mina\' del lápiz es grafito, una forma blanda y gris del carbono, mezclada con arcilla. Hace mucho se creía que el grafito era plomo, y el nombre se quedó. El grafito es de lo mismo que los diamantes, solo que ordenado distinto. Un lápiz puede trazar una línea de varios kilómetros.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -968,4 +975,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   y3: 'y3-sea-otters.mp4',
   y4: 'y4-pigs-and-mud.mp4',
   y5: 'y5-giraffe-sleep.mp4',
+  z1: 'z1-pencil-lead.mp4',
 };
