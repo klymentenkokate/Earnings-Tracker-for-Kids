@@ -981,6 +981,12 @@ const QI_BANK = [
     answer: 'Tiny muscles pull our hairs up - left over from furry ancestors!', answerEs: '¡Músculos diminutos levantan los pelos, un resto de antepasados peludos!',
     fact: 'Each hair on your skin has a tiny muscle. When you\'re cold or scared, these muscles tighten and pull the hairs upright, making little bumps. For furry animals this fluffs up their fur to trap warm air or look bigger to enemies - like a cat puffing up. We don\'t have much fur any more, so we just get the bumps!',
     factEs: 'Cada pelo de tu piel tiene un músculo diminuto. Con frío o miedo, se contraen y levantan los pelos, formando bultitos. A los animales peludos les ahueca el pelo para guardar calor o parecer más grandes, como un gato erizado. Nosotros ya casi no tenemos pelo, ¡así que solo nos salen los bultitos!' },
+  { id: 'ad5', set: 'AD', emoji: '🪞', topic: 'Mirrors',
+    q: 'Does a mirror swap left and right?', qes: '¿Un espejo cambia la izquierda por la derecha?',
+    trap: 'Yes - it swaps left and right!', trapEs: '¡Sí, cambia izquierda y derecha!',
+    answer: 'No - it swaps front and back!', answerEs: '¡No, cambia delante y detrás!',
+    fact: 'Wave your right hand at a mirror: the hand in the mirror waving is still on the right side of the picture, straight in front of your right hand. What a mirror really flips is front and back, like turning a glove inside out. It only looks like left and right swapped because we imagine walking round to stand where our reflection is.',
+    factEs: 'Saluda con la mano derecha a un espejo: la mano reflejada sigue en el lado derecho, justo delante de tu mano. Lo que el espejo invierte es delante y detrás, como dar la vuelta a un guante. Solo parece que cambia izquierda y derecha porque nos imaginamos rodeando el espejo hasta ponernos en el sitio del reflejo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1141,4 +1147,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ad2: 'ad2-squirrels-and-nuts.mp4',
   ad3: 'ad3-cactus-water.mp4',
   ad4: 'ad4-goosebumps.mp4',
+  ad5: 'ad5-mirrors.mp4',
 };
