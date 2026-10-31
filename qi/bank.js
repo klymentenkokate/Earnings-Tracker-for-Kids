@@ -789,6 +789,12 @@ const QI_BANK = [
     answer: 'Cube-shaped!', answerEs: '¡Con forma de cubo!',
     fact: 'Wombats are the only animals known to make cube-shaped poo. The last part of their gut squeezes it into blocks with flat sides. They stack them on rocks and logs to mark their territory - and cubes don\'t roll away. A wombat can make around 80-100 cubes a night.',
     factEs: 'Los wombats son los únicos animales conocidos que hacen caca con forma de cubo. La última parte de su intestino la aprieta en bloques con caras planas. Los colocan sobre rocas y troncos para marcar su territorio, y los cubos no ruedan. Un wombat puede hacer unos 80-100 cubos por noche.' },
+  { id: 'x4', set: 'X', emoji: '🐧', topic: 'Penguin knees',
+    q: 'Do penguins have knees?', qes: '¿Tienen rodillas los pingüinos?',
+    trap: 'No - just short little legs', trapEs: 'No, solo patitas cortas',
+    answer: 'Yes - hidden inside their feathers!', answerEs: '¡Sí, escondidas bajo las plumas!',
+    fact: 'Penguins do have knees, and thigh bones too, but they\'re tucked up inside the body under all those feathers, so you only see the short bit below. Their legs are bent like they\'re always squatting, which is why they waddle. Some penguins can toboggan on their tummies across the ice.',
+    factEs: 'Los pingüinos sí tienen rodillas, y también fémur, pero están metidos dentro del cuerpo bajo las plumas, así que solo vemos el trocito de abajo. Tienen las patas dobladas como si estuvieran siempre en cuclillas, por eso caminan balanceándose. Algunos se deslizan sobre la barriga por el hielo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -918,4 +924,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   x1: 'x1-starfish.mp4',
   x2: 'x2-owls-and-wisdom.mp4',
   x3: 'x3-wombat-poo.mp4',
+  x4: 'x4-penguin-knees.mp4',
 };
