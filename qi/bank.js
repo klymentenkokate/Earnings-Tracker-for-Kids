@@ -851,6 +851,12 @@ const QI_BANK = [
     answer: 'Not really - it can only bounce forwards!', answerEs: '¡En realidad no: solo bota hacia delante!',
     fact: 'A kangaroo\'s big back legs move together and its long, heavy tail helps it balance, so it can\'t easily hop backwards. That\'s one reason the kangaroo and the emu are on Australia\'s coat of arms - both are said to always move forward. A big kangaroo can jump about 8 metres in one bound.',
     factEs: 'Las grandes patas traseras del canguro se mueven juntas y su cola larga y pesada le da equilibrio, así que no puede saltar fácilmente hacia atrás. Por eso, entre otras cosas, el canguro y el emú están en el escudo de Australia: siempre avanzan. Un canguro grande puede saltar unos 8 metros de una vez.' },
+  { id: 'z4', set: 'Z', emoji: '🌍', topic: 'Earth\'s core',
+    q: 'What is the very centre of the Earth made of?', qes: '¿De qué está hecho el centro de la Tierra?',
+    trap: 'Hot runny lava', trapEs: 'Lava caliente y líquida',
+    answer: 'A solid ball of metal!', answerEs: '¡Una bola de metal sólido!',
+    fact: 'The inner core is a solid ball of mostly iron and nickel, about as hot as the surface of the Sun. It stays solid because the weight of the whole planet pressing on it is so enormous. Around it is a liquid metal outer core, and its swirling helps make Earth\'s magnetic field - the reason compasses work.',
+    factEs: 'El núcleo interno es una bola sólida, sobre todo de hierro y níquel, casi tan caliente como la superficie del Sol. Sigue sólido porque el peso de todo el planeta lo aprieta muchísimo. Alrededor hay un núcleo externo de metal líquido, cuyo giro ayuda a crear el campo magnético: por eso funcionan las brújulas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -990,4 +996,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   z1: 'z1-pencil-lead.mp4',
   z2: 'z2-whale-hearts.mp4',
   z3: 'z3-kangaroos-backwards.mp4',
+  z4: 'z4-earths-core.mp4',
 };
