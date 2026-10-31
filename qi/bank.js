@@ -1049,6 +1049,13 @@ const QI_BANK = [
     answer: 'Around 15,000 times!', answerEs: '¡Unas 15.000 veces!',
     fact: 'Most people blink about 15 times a minute, which adds up to roughly 15,000 times a day - and your brain hides the tiny moments of darkness, so you don\'t notice. Each blink spreads tears across your eyes to keep them wet and clean. When you stare at a screen you blink much less, which is why eyes can feel dry.',
     factEs: 'Solemos parpadear unas 15 veces por minuto: unas 15.000 al día. Y el cerebro esconde esos instantes de oscuridad, así que no los notas. Cada parpadeo reparte lágrimas para mantener los ojos húmedos y limpios. Mirando una pantalla parpadeas mucho menos: por eso los ojos se secan.' },
+  // Set AG (pipeline, one question at a time)
+  { id: 'ag1', set: 'AG', emoji: '🦖', topic: 'T. rex arms',
+    q: 'Were T. rex\'s tiny arms weak and useless?', qes: '¿Los bracitos del T. rex eran débiles e inútiles?',
+    trap: 'Yes - they were too short to do anything', trapEs: 'Sí, eran demasiado cortos para nada',
+    answer: 'No - they were very strong for their size!', answerEs: '¡No, eran muy fuertes para su tamaño!',
+    fact: 'T. rex\'s arms were short - about as long as a grown-up person\'s arm - but they were thick with muscle. Scientists estimate each arm could lift around 200 kg, as much as several grown-ups. Nobody knows for sure what they were used for: maybe gripping prey, or pushing itself up from the ground.',
+    factEs: 'Los brazos del T. rex eran cortos, como el brazo de una persona adulta, pero muy musculosos. Los científicos calculan que cada brazo podía levantar unos 200 kg, como varias personas. Nadie sabe seguro para qué los usaba: quizá para sujetar presas o levantarse del suelo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1220,4 +1227,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   af3: 'af3-hedgehog-spines.mp4',
   af4: 'af4-turtle-shells.mp4',
   af5: 'af5-blinking.mp4',
+  ag1: 'ag1-t-rex-arms.mp4',
 };
