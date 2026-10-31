@@ -640,6 +640,12 @@ const QI_BANK = [
     answer: 'Thousands!', answerEs: '¡Miles!',
     fact: 'A garden snail has a ribbon-like tongue called a radula, covered in rows of thousands of tiny teeth. It works like a cheese grater to scrape up leaves. The teeth wear down, so new ones keep growing all the time.',
     factEs: 'El caracol de jardín tiene una lengua como una cinta, llamada rádula, cubierta de filas con miles de dientes diminutos. Funciona como un rallador para raspar hojas. Los dientes se gastan, así que siempre le crecen nuevos.' },
+  { id: 's5', set: 'S', emoji: '⛅', topic: 'Sunburn on cloudy days',
+    q: 'Can you get sunburnt on a cloudy day?', qes: '¿Te puedes quemar con el sol en un día nublado?',
+    trap: 'No - the clouds block the Sun', trapEs: 'No, las nubes tapan el sol',
+    answer: 'Yes!', answerEs: '¡Sí!',
+    fact: 'Sunburn is caused by ultraviolet (UV) light, which you can\'t see or feel. Most of it passes straight through thin clouds, so you can burn even when it feels cool and grey. Snow, sand and water bounce UV back at you too - so sun cream still matters.',
+    factEs: 'Las quemaduras las causa la luz ultravioleta (UV), que no se ve ni se nota. Casi toda atraviesa las nubes finas, así que te puedes quemar aunque el día sea fresco y gris. La nieve, la arena y el agua también te devuelven los rayos UV: la crema solar sigue importando.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -745,4 +751,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   s2: 's2-bubble-shapes.mp4',
   s3: 's3-tallest-grass.mp4',
   s4: 's4-snail-teeth.mp4',
+  s5: 's5-sunburn-on-cloudy-days.mp4',
 };
