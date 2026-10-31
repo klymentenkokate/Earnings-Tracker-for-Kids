@@ -405,6 +405,12 @@ const QI_BANK = [
     answer: 'It isn\'t an insect at all!', answerEs: '¡No es un insecto!',
     fact: 'Insects have six legs and three body parts. Spiders have eight legs and two body parts, so they belong to a different group called arachnids, with scorpions and ticks. Spider silk is stronger than steel of the same thickness.',
     factEs: 'Los insectos tienen seis patas y tres partes del cuerpo. Las arañas tienen ocho patas y dos partes, así que son arácnidos, como los escorpiones. La seda de araña es más fuerte que un hilo de acero del mismo grosor.' },
+  { id: 'l2', set: 'L', emoji: '🌑', topic: 'Moon or Pluto',
+    q: 'Which is bigger: our Moon or Pluto?', qes: '¿Qué es más grande: nuestra Luna o Plutón?',
+    trap: 'Pluto - it\'s a planet!', trapEs: 'Plutón: ¡es un planeta!',
+    answer: 'Our Moon!', answerEs: '¡Nuestra Luna!',
+    fact: 'Our Moon is about 3,500 km across; Pluto is only about 2,400 km. Pluto is so small that scientists now call it a dwarf planet. And Pluto has a giant heart-shaped plain of ice on it.',
+    factEs: 'Nuestra Luna mide unos 3.500 km de ancho; Plutón, solo unos 2.400. Plutón es tan pequeño que ahora se le llama planeta enano. Y tiene una enorme llanura de hielo con forma de corazón.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -472,4 +478,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   k4: 'k4-bee-eyes.mp4',
   k5: 'k5-giraffe-necks.mp4',
   l1: 'l1-spiders.mp4',
+  l2: 'l2-moon-or-pluto.mp4',
 };
