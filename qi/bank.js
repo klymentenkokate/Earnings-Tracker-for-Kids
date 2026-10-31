@@ -801,6 +801,13 @@ const QI_BANK = [
     answer: 'It isn\'t a true nut - it\'s a seed inside a fruit!', answerEs: '¡No es un fruto seco de verdad: es una semilla dentro de un fruto!',
     fact: 'A coconut is a fruit with a hard stone inside, like a giant cherry or peach - the brown hairy ball you see in shops is the stone, with the seed inside. Coconuts can float, so they can drift across oceans and grow on faraway beaches.',
     factEs: 'El coco es un fruto con un hueso duro dentro, como una cereza o un melocotón gigante: la bola marrón y peluda de las tiendas es el hueso, con la semilla dentro. Los cocos flotan, así que pueden cruzar océanos y crecer en playas lejanas.' },
+  // Set Y (pipeline, one question at a time)
+  { id: 'y1', set: 'Y', emoji: '🦞', topic: 'Lobster colours',
+    q: 'What colour is a live lobster in the sea?', qes: '¿De qué color es una langosta viva en el mar?',
+    trap: 'Bright red', trapEs: 'Rojo vivo',
+    answer: 'Mostly greeny-blue or brown!', answerEs: '¡Casi siempre verde azulado o marrón!',
+    fact: 'Most lobsters are a dark greeny-blue or brown, which helps them hide on the seabed. Their shells hold a red colour hidden by other colours; cooking breaks those other colours down, so the red shows. Very rarely, lobsters are born bright blue - about 1 in 2 million.',
+    factEs: 'Casi todas las langostas son de un verde azulado oscuro o marrones, para esconderse en el fondo. Su caparazón guarda un color rojo tapado por otros; al cocinarlas, esos otros se rompen y aparece el rojo. Muy raramente nacen azul brillante: más o menos 1 de cada 2 millones.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -932,4 +939,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   x3: 'x3-wombat-poo.mp4',
   x4: 'x4-penguin-knees.mp4',
   x5: 'x5-coconuts.mp4',
+  y1: 'y1-lobster-colours.mp4',
 };
