@@ -442,6 +442,12 @@ const QI_BANK = [
     answer: 'Three!', answerEs: '¡Tres!',
     fact: 'An octopus has three hearts: two pump blood through its gills to pick up oxygen, and one pumps it round the rest of its body. Its blood is blue. When it swims, the body heart stops beating, so octopuses would rather crawl.',
     factEs: 'El pulpo tiene tres corazones: dos bombean sangre por las branquias para coger oxígeno y uno la reparte por el cuerpo. Su sangre es azul. Cuando nada, el corazón del cuerpo se para, por eso prefiere arrastrarse.' },
+  { id: 'm3', set: 'M', emoji: '🌊', topic: 'Where oxygen comes from',
+    q: 'Where does about half of the oxygen we breathe come from?', qes: '¿De dónde sale más o menos la mitad del oxígeno que respiramos?',
+    trap: 'The rainforests', trapEs: 'De las selvas',
+    answer: 'Tiny plants in the sea!', answerEs: '¡De plantitas diminutas del mar!',
+    fact: 'Forests make lots of oxygen, but about half of all the oxygen on Earth is made in the ocean, by plankton - tiny plants and plant-like living things floating near the surface, too small to see. A single drop of seawater can hold thousands of them.',
+    factEs: 'Los bosques fabrican mucho oxígeno, pero más o menos la mitad del oxígeno de la Tierra se hace en el océano, gracias al plancton: plantitas diminutas que flotan cerca de la superficie. Una sola gota de agua de mar puede tener miles.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -515,4 +521,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   l5: 'l5-tongue-map.mp4',
   m1: 'm1-hippo-sweat.mp4',
   m2: 'm2-octopus-hearts.mp4',
+  m3: 'm3-where-oxygen-comes-from.mp4',
 };
