@@ -907,6 +907,12 @@ const QI_BANK = [
     answer: 'Tiny soil bacteria and plant oils, thrown into the air!', answerEs: '¡Bacterias del suelo y aceites de plantas lanzados al aire!',
     fact: 'Rain water has no smell. The smell, called petrichor, comes from a chemical made by tiny bacteria in the soil, plus oils from plants. When raindrops hit dry ground, they trap little air bubbles that pop and fling these smells up into the air. Our noses are extremely good at smelling it - better than a shark smelling blood.',
     factEs: 'El agua de lluvia no huele. El olor, llamado petricor, viene de una sustancia de bacterias diminutas del suelo y de aceites de plantas. Al caer en tierra seca, las gotas atrapan burbujitas que explotan y lanzan esos olores al aire. Nuestra nariz lo detecta muy bien: mejor que un tiburón la sangre.' },
+  { id: 'ab3', set: 'AB', emoji: '🥱', topic: 'Contagious yawns',
+    q: 'Why do we yawn when we see someone else yawn?', qes: '¿Por qué bostezamos al ver bostezar a otro?',
+    trap: 'Because we\'re bored or sleepy too', trapEs: 'Porque también estamos aburridos o con sueño',
+    answer: 'Nobody knows for sure - but it happens most with people we\'re close to!', answerEs: '¡Nadie lo sabe seguro, pero pasa más con la gente cercana!',
+    fact: 'Scientists still aren\'t sure why yawns are catching. We\'re more likely to catch a yawn from family and friends than from strangers, which may be linked to how our brains copy and connect with people we care about. Even reading about yawning can make you yawn - are you yawning yet?',
+    factEs: 'Los científicos aún no saben del todo por qué los bostezos se contagian. Se contagian más de familia y amigos que de desconocidos, quizá porque el cerebro copia y conecta con la gente que queremos. Hasta leer sobre bostezos puede hacerte bostezar... ¿ya estás bostezando?' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1055,4 +1061,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aa5: 'aa5-banana-bunches.mp4',
   ab1: 'ab1-earthworm-hearts.mp4',
   ab2: 'ab2-smell-of-rain.mp4',
+  ab3: 'ab3-contagious-yawns.mp4',
 };
