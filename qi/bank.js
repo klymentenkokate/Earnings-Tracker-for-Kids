@@ -367,6 +367,13 @@ const QI_BANK = [
     answer: 'About 8 minutes!', answerEs: '¡Unos 8 minutos!',
     fact: 'Light is the fastest thing there is, but the Sun is 150 million km away, so its light takes about 8 minutes to get here. When you see the Sun, you\'re seeing it as it was 8 minutes ago. Light from the Moon takes just over 1 second.',
     factEs: 'La luz es lo más rápido que existe, pero el Sol está a 150 millones de km, así que su luz tarda unos 8 minutos en llegar. Cuando ves el Sol, lo ves como era hace 8 minutos. La luz de la Luna tarda poco más de 1 segundo.' },
+  // Set K (pipeline, one question at a time)
+  { id: 'k1', set: 'K', emoji: '🐍', topic: 'Snake tongues',
+    q: 'Why does a snake keep flicking its tongue out?', qes: '¿Por qué una serpiente saca la lengua una y otra vez?',
+    trap: 'To sting or to scare you', trapEs: 'Para picar o para asustarte',
+    answer: 'To smell!', answerEs: '¡Para oler!',
+    fact: 'A snake\'s tongue can\'t sting. It flicks out to catch tiny smells from the air, then carries them to a special smelling spot in the roof of its mouth. Its forked tongue even tells it which side a smell is coming from.',
+    factEs: 'La lengua de la serpiente no pica. La saca para atrapar olores del aire y los lleva a un punto especial del paladar que sirve para oler. Su lengua bífida le dice incluso de qué lado viene el olor.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -428,4 +435,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   j3: 'j3-shooting-stars.mp4',
   j4: 'j4-penguins-and-polar-bears.mp4',
   j5: 'j5-sunlights-journey.mp4',
+  k1: 'k1-snake-tongues.mp4',
 };
