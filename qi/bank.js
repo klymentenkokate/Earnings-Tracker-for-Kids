@@ -696,6 +696,12 @@ const QI_BANK = [
     answer: 'Hundreds of tiny naps a day!', answerEs: '¡Cientos de siestas cortitas al día!',
     fact: 'Ants look busy all the time, but worker ants do rest: scientists found some take hundreds of naps a day, each lasting only about a minute. Their queen sleeps much longer. Some queen ants can live for over 20 years.',
     factEs: 'Las hormigas parecen siempre ocupadas, pero las obreras sí descansan: los científicos vieron que algunas echan cientos de siestas al día, de un minuto cada una. Su reina duerme mucho más. Algunas reinas viven más de 20 años.' },
+  { id: 'u4', set: 'U', emoji: '🦇', topic: 'Bats upside down',
+    q: 'Why do bats hang upside down?', qes: '¿Por qué los murciélagos cuelgan boca abajo?',
+    trap: 'Because they like it', trapEs: 'Porque les gusta',
+    answer: 'So they can drop straight into flight!', answerEs: '¡Para dejarse caer y echar a volar!',
+    fact: 'Bats\' wings can\'t lift them straight up off the ground like a bird\'s, and their legs are too thin to run for a take-off. So they hang upside down, and to fly they just let go, drop and open their wings. Special tendons lock their claws shut, so hanging takes no effort - even when asleep.',
+    factEs: 'Las alas del murciélago no le levantan del suelo como a un pájaro, y sus patas son muy finas para coger carrerilla. Por eso cuelgan boca abajo: para volar se sueltan, caen y abren las alas. Unos tendones especiales cierran sus garras, así que colgar no les cuesta nada, ni dormidos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -810,4 +816,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   u1: 'u1-raindrop-shape.mp4',
   u2: 'u2-tiger-stripes.mp4',
   u3: 'u3-ants-and-sleep.mp4',
+  u4: 'u4-bats-upside-down.mp4',
 };
