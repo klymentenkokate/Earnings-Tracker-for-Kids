@@ -671,6 +671,12 @@ const QI_BANK = [
     answer: 'Hay and grass!', answerEs: '¡Heno y hierba!',
     fact: 'Wild rabbits mostly eat grass, and pet rabbits need lots of hay. Carrots are sugary, so they\'re only an occasional treat. Chewing hay also wears down rabbits\' teeth, which never stop growing.',
     factEs: 'Los conejos salvajes comen sobre todo hierba, y los de mascota necesitan mucho heno. Las zanahorias tienen mucho azúcar, así que son solo un premio de vez en cuando. Masticar heno además desgasta sus dientes, que nunca dejan de crecer.' },
+  { id: 't5', set: 'T', emoji: '⚡', topic: 'Lightning heat',
+    q: 'Which is hotter: a bolt of lightning or the surface of the Sun?', qes: '¿Qué está más caliente: un rayo o la superficie del Sol?',
+    trap: 'The Sun, of course', trapEs: 'El Sol, claro',
+    answer: 'The lightning - about five times hotter!', answerEs: '¡El rayo, unas cinco veces más!',
+    fact: 'The air in a lightning bolt can reach about 30,000 °C - around five times hotter than the surface of the Sun, which is about 5,500 °C. It only lasts a tiny fraction of a second. That sudden heat makes the air burst outwards, and that\'s the bang of thunder.',
+    factEs: 'El aire de un rayo puede llegar a unos 30.000 °C, unas cinco veces más que la superficie del Sol, que está a unos 5.500 °C. Solo dura una fracción de segundo. Ese calor repentino hace que el aire explote hacia fuera: ese es el trueno.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -781,4 +787,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   t2: 't2-moonlight.mp4',
   t3: 't3-honey-that-lasts.mp4',
   t4: 't4-rabbits-and-carrots.mp4',
+  t5: 't5-lightning-heat.mp4',
 };
