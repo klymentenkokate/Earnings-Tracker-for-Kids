@@ -274,6 +274,13 @@ const QI_BANK = [
     answer: 'The white pith inside!', answerEs: '¡La parte blanca de dentro!',
     fact: 'The heat is made in the white, spongy pith that holds the seeds. The seeds only taste hot because they touch it - scrape out the pith and the chilli gets much milder. Birds can\'t feel chilli heat at all.',
     factEs: 'El picante se fabrica en la parte blanca y esponjosa que sujeta las semillas. Las semillas solo pican porque la tocan: si quitas esa parte, el chile pica mucho menos. Los pájaros no notan el picante.' },
+  // Set H (pipeline, one question at a time)
+  { id: 'h1', set: 'H', emoji: '🐨', topic: 'Koala bears',
+    q: 'What kind of bear is a koala?', qes: '¿Qué tipo de oso es un koala?',
+    trap: 'A koala bear', trapEs: 'Un oso koala',
+    answer: 'It isn\'t a bear at all!', answerEs: '¡No es un oso!',
+    fact: 'Koalas are marsupials, like kangaroos: their babies, called joeys, grow up in their mum\'s pouch. Their closest cousin is the wombat. And koalas sleep up to 20 hours a day.',
+    factEs: 'Los koalas son marsupiales, como los canguros: sus crías crecen en la bolsa de su madre. Su pariente más cercano es el wombat. Y duermen hasta 20 horas al día.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -320,4 +327,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   g3: 'g3-seen-from-the-moon.mp4',
   g4: 'g4-most-dangerous-animal.mp4',
   g5: 'g5-chilli-heat.mp4',
+  h1: 'h1-koala-bears.mp4',
 };
