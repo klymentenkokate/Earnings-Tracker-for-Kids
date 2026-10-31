@@ -1105,6 +1105,12 @@ const QI_BANK = [
     answer: 'Nowhere - it doesn\'t have one!', answerEs: '¡En ningún sitio: no tiene!',
     fact: 'A jellyfish has no brain at all - and no heart, bones or blood either. Instead it has a nerve net: a web of nerves spread all through its body that lets it sense things and swim. Jellyfish are about 95% water. Some box jellyfish even have 24 eyes, and still no brain to look with!',
     factEs: 'La medusa no tiene cerebro, ni corazón, ni huesos, ni sangre. En su lugar tiene una red nerviosa: una telaraña de nervios por todo el cuerpo que le permite notar cosas y nadar. Las medusas son agua en un 95%. ¡Algunas medusas de caja tienen 24 ojos y aun así no tienen cerebro!' },
+  { id: 'ah5', set: 'AH', emoji: '🦈', topic: 'Resting sharks',
+    q: 'Do all sharks have to keep swimming to breathe?', qes: '¿Todos los tiburones tienen que nadar sin parar para respirar?',
+    trap: 'Yes - if a shark stops, it can\'t breathe', trapEs: 'Sí, si un tiburón para, no puede respirar',
+    answer: 'No - some can rest on the sea floor!', answerEs: '¡No, algunos descansan en el fondo del mar!',
+    fact: 'Some sharks, like great whites, do need to keep swimming so water rushes over their gills. But many others, like nurse sharks, can lie still on the sea floor: they pump water over their gills using their cheek muscles. Sharks breathe by taking oxygen out of the water, a bit like we take it out of the air.',
+    factEs: 'Algunos tiburones, como el tiburón blanco, sí tienen que nadar para que el agua pase por sus branquias. Pero muchos otros, como el tiburón nodriza, pueden quedarse quietos en el fondo: bombean agua por las branquias con los músculos de las mejillas. Los tiburones sacan el oxígeno del agua, como nosotros del aire.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1285,4 +1291,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ah2: 'ah2-goats-and-tin-cans.mp4',
   ah3: 'ah3-cracking-knuckles.mp4',
   ah4: 'ah4-jellyfish-brains.mp4',
+  ah5: 'ah5-resting-sharks.mp4',
 };
