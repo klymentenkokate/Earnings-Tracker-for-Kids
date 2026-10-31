@@ -1143,7 +1143,7 @@ const QI_BANK = [
     fact: 'Only lions, tigers, leopards and jaguars can roar - they have a special stretchy voice box. A cheetah can\'t. Instead it purrs like a house cat, and calls to its cubs with a high chirp that sounds a lot like a bird. Cheetahs are the fastest land animals: they can sprint at around 100 km/h, as fast as a car on a motorway.',
     factEs: 'Solo los leones, tigres, leopardos y jaguares pueden rugir: tienen una laringe especial y elástica. El guepardo no. En cambio, ronronea como un gato de casa y llama a sus crías con un gorjeo agudo que parece de pájaro. Los guepardos son los animales terrestres más rápidos: corren a unos 100 km/h, como un coche en la autopista.' },
   // Set AJ (pipeline, one question at a time)
-  { id: 'aj1', set: 'AJ', emoji: '🪲', topic: 'Woodlice',
+  { id: 'aj1', set: 'AJ', emoji: '🦐', topic: 'Woodlice',
     q: 'Is a woodlouse an insect?', qes: '¿La cochinilla es un insecto?',
     trap: 'Yes - it\'s a creepy-crawly bug', trapEs: 'Sí, es un bichito',
     answer: 'No - it\'s related to crabs and shrimps!', answerEs: '¡No, es pariente de cangrejos y gambas!',
