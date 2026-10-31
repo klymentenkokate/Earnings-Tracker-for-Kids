@@ -1018,6 +1018,13 @@ const QI_BANK = [
     answer: 'The owl coughs them up in a neat little pellet!', answerEs: '¡El búho los escupe en una bolita!',
     fact: 'An owl\'s stomach can\'t digest bones, fur or feathers, so it squashes them into a neat little bundle called a pellet and coughs it back up through its beak, a few hours after eating. Scientists and school classes pull owl pellets apart to see exactly what the owl ate - you can often find whole tiny skulls!',
     factEs: 'El estómago del búho no digiere huesos, pelo ni plumas, así que los aprieta en un paquetito llamado egagrópila y lo escupe por el pico unas horas después de comer. Científicos y colegios desmontan egagrópilas para ver qué comió el búho: ¡a menudo salen calaveritas enteras!' },
+  // Set AF (pipeline, one question at a time)
+  { id: 'af1', set: 'AF', emoji: '🐼', topic: 'Panda colours',
+    q: 'What colour is a newborn giant panda?', qes: '¿De qué color es un oso panda recién nacido?',
+    trap: 'Black and white, like its mum', trapEs: 'Blanco y negro, como su madre',
+    answer: 'Pink!', answerEs: '¡Rosa!',
+    fact: 'A newborn giant panda is pink, almost hairless and tiny - about the size of a stick of butter, around 1/900th of its mum\'s weight. Its black-and-white patches start to show after about a week, as its fur grows in. Pandas spend about 12 hours a day eating bamboo.',
+    factEs: 'Un panda recién nacido es rosa, casi sin pelo y diminuto: como una barra de mantequilla, unas 900 veces más ligero que su madre. Sus manchas blancas y negras aparecen a la semana, cuando le crece el pelo. Los pandas pasan unas 12 horas al día comiendo bambú.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1184,4 +1191,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ae3: 'ae3-dog-sweat.mp4',
   ae4: 'ae4-apples-float.mp4',
   ae5: 'ae5-owl-pellets.mp4',
+  af1: 'af1-panda-colours.mp4',
 };
