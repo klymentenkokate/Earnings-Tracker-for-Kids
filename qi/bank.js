@@ -1136,6 +1136,12 @@ const QI_BANK = [
     answer: 'No - chocolate can make dogs very ill!', answerEs: '¡No, el chocolate puede poner muy malo a un perro!',
     fact: 'Chocolate contains a substance called theobromine. Our bodies break it down quickly, but a dog\'s body is very slow at it, so it builds up and can make the dog very ill. Dark chocolate is the most dangerous. If a dog eats chocolate, tell a grown-up straight away so they can call a vet. Dog treats from a pet shop are the safe choice.',
     factEs: 'El chocolate tiene una sustancia llamada teobromina. Nuestro cuerpo la elimina rápido, pero el de un perro es muy lento, así que se acumula y puede ponerlo muy malo. El chocolate negro es el más peligroso. Si un perro come chocolate, avisa enseguida a un adulto para que llame al veterinario. Los premios para perros de la tienda de mascotas son lo seguro.' },
+  { id: 'ai5', set: 'AI', emoji: '🐆', topic: 'Cheetah sounds',
+    q: 'Can a cheetah roar like a lion?', qes: '¿Puede un guepardo rugir como un león?',
+    trap: 'Yes - all big cats roar', trapEs: 'Sí, todos los grandes felinos rugen',
+    answer: 'No - it purrs and chirps like a bird!', answerEs: '¡No, ronronea y pía como un pájaro!',
+    fact: 'Only lions, tigers, leopards and jaguars can roar - they have a special stretchy voice box. A cheetah can\'t. Instead it purrs like a house cat, and calls to its cubs with a high chirp that sounds a lot like a bird. Cheetahs are the fastest land animals: they can sprint at around 100 km/h, as fast as a car on a motorway.',
+    factEs: 'Solo los leones, tigres, leopardos y jaguares pueden rugir: tienen una laringe especial y elástica. El guepardo no. En cambio, ronronea como un gato de casa y llama a sus crías con un gorjeo agudo que parece de pájaro. Los guepardos son los animales terrestres más rápidos: corren a unos 100 km/h, como un coche en la autopista.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1321,4 +1327,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ai2: 'ai2-snake-jaws.mp4',
   ai3: 'ai3-fish-drinking.mp4',
   ai4: 'ai4-dogs-and-chocolate.mp4',
+  ai5: 'ai5-cheetah-sounds.mp4',
 };
