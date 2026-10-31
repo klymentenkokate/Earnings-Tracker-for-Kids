@@ -752,6 +752,12 @@ const QI_BANK = [
     answer: 'It\'s see-through - it only looks white!', answerEs: '¡Es transparente, solo parece blanca!',
     fact: 'Each snowflake is made of clear ice, like a tiny window. But a pile of snow has millions of ice crystals bouncing light around in every direction, and all those colours mixed together look white to us. Almost every snowflake has six sides or six arms.',
     factEs: 'Cada copo de nieve es hielo transparente, como una ventanita. Pero un montón de nieve tiene millones de cristales que rebotan la luz en todas direcciones, y todos esos colores mezclados nos parecen blancos. Casi todos los copos tienen seis lados o seis brazos.' },
+  { id: 'w3', set: 'W', emoji: '🪴', topic: 'Venus flytrap',
+    q: 'How does a Venus flytrap know when to snap shut?', qes: '¿Cómo sabe una dionea cuándo cerrarse?',
+    trap: 'It sees the fly', trapEs: 'Ve a la mosca',
+    answer: 'It counts touches on tiny trigger hairs!', answerEs: '¡Cuenta los toques en unos pelitos!',
+    fact: 'Inside each trap are tiny trigger hairs. If one hair is touched twice, or two hairs are touched quickly, the trap snaps shut in a fraction of a second. One touch isn\'t enough, so a falling raindrop won\'t fool it. Plants have no eyes - it \'counts\' instead.',
+    factEs: 'Dentro de cada trampa hay pelitos sensibles. Si se toca uno dos veces, o dos seguidos, la trampa se cierra en una fracción de segundo. Un solo toque no basta, así que una gota de lluvia no la engaña. Las plantas no tienen ojos: la dionea cuenta.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -875,4 +881,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   v5: 'v5-strongest-muscle.mp4',
   w1: 'w1-ostrich-speed.mp4',
   w2: 'w2-snowflakes.mp4',
+  w3: 'w3-venus-flytrap.mp4',
 };
