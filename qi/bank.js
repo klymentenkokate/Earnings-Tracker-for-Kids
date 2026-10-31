@@ -1111,6 +1111,13 @@ const QI_BANK = [
     answer: 'No - some can rest on the sea floor!', answerEs: '¡No, algunos descansan en el fondo del mar!',
     fact: 'Some sharks, like great whites, do need to keep swimming so water rushes over their gills. But many others, like nurse sharks, can lie still on the sea floor: they pump water over their gills using their cheek muscles. Sharks breathe by taking oxygen out of the water, a bit like we take it out of the air.',
     factEs: 'Algunos tiburones, como el tiburón blanco, sí tienen que nadar para que el agua pase por sus branquias. Pero muchos otros, como el tiburón nodriza, pueden quedarse quietos en el fondo: bombean agua por las branquias con los músculos de las mejillas. Los tiburones sacan el oxígeno del agua, como nosotros del aire.' },
+  // Set AI (pipeline, one question at a time)
+  { id: 'ai1', set: 'AI', emoji: '🍦', topic: 'Brain freeze',
+    q: 'When you get brain freeze, is your brain freezing?', qes: 'Cuando te da el «dolor de helado», ¿se te congela el cerebro?',
+    trap: 'Yes - the cold reaches your brain', trapEs: 'Sí, el frío llega al cerebro',
+    answer: 'No - it\'s the roof of your mouth!', answerEs: '¡No, es el paladar!',
+    fact: 'Your brain stays warm the whole time. Brain freeze starts when something very cold touches the roof of your mouth: the blood vessels there quickly shrink and then widen again, and nerves send a pain message that you feel in your forehead. Eating cold things slowly, or pressing your tongue to the roof of your mouth to warm it, helps it go away.',
+    factEs: 'El cerebro sigue calentito todo el rato. El dolor empieza cuando algo muy frío toca el paladar: los vasos sanguíneos de ahí se encogen de golpe y luego se ensanchan, y los nervios mandan un aviso de dolor que notas en la frente. Comer despacio lo frío, o apretar la lengua contra el paladar para calentarlo, ayuda a que se pase.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1292,4 +1299,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ah3: 'ah3-cracking-knuckles.mp4',
   ah4: 'ah4-jellyfish-brains.mp4',
   ah5: 'ah5-resting-sharks.mp4',
+  ai1: 'ai1-brain-freeze.mp4',
 };
