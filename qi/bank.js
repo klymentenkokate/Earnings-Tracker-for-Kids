@@ -299,6 +299,12 @@ const QI_BANK = [
     answer: 'Canberra!', answerEs: '¡Canberra!',
     fact: 'Sydney and Melbourne both wanted to be the capital, so more than 100 years ago Australia built a brand new city between them: Canberra. And Australia is wider than the Moon!',
     factEs: 'Sídney y Melbourne querían ser la capital, así que hace más de 100 años Australia construyó una ciudad nueva entre las dos: Canberra. ¡Y Australia es más ancha que la Luna!' },
+  { id: 'h5', set: 'H', emoji: '🪐', topic: 'A day on Venus',
+    q: 'On Venus, which takes longer: one spin, or one trip around the Sun?', qes: 'En Venus, ¿qué tarda más: una vuelta sobre sí mismo o una vuelta al Sol?',
+    trap: 'The trip around the Sun (a year)', trapEs: 'La vuelta al Sol (un año)',
+    answer: 'One spin - its day is longer than its year!', answerEs: '¡Una vuelta sobre sí mismo: su día dura más que su año!',
+    fact: 'Venus spins very slowly: one spin takes 243 Earth days, but one trip around the Sun takes only 225. And it spins backwards, so on Venus the Sun rises in the west.',
+    factEs: 'Venus gira muy despacio: una vuelta sobre sí mismo tarda 243 días terrestres, pero una vuelta al Sol solo 225. Y gira al revés, así que allí el Sol sale por el oeste.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -349,4 +355,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   h2: 'h2-mars-sunsets.mp4',
   h3: 'h3-wolves-and-the-moon.mp4',
   h4: 'h4-capital-of-australia.mp4',
+  h5: 'h5-a-day-on-venus.mp4',
 };
