@@ -1130,6 +1130,12 @@ const QI_BANK = [
     answer: 'Sea fish drink lots of it!', answerEs: '¡Los peces de mar beben mucha!',
     fact: 'Salty sea water slowly pulls water out of a sea fish\'s body, so sea fish have to keep drinking - and they get rid of the extra salt through their gills. River and pond fish have the opposite problem: fresh water keeps soaking into their bodies, so they hardly drink at all and wee out lots of water instead.',
     factEs: 'El agua salada del mar va sacando agua del cuerpo de los peces marinos, así que tienen que beber sin parar, y expulsan la sal sobrante por las branquias. Los peces de río y estanque tienen el problema contrario: el agua dulce les entra en el cuerpo, así que casi no beben y hacen mucho pis.' },
+  { id: 'ai4', set: 'AI', emoji: '🐕', topic: 'Dogs and chocolate',
+    q: 'Is a bit of chocolate a nice treat for a dog?', qes: '¿Un poco de chocolate es un buen premio para un perro?',
+    trap: 'Yes - dogs love sweet treats', trapEs: 'Sí, a los perros les encantan los dulces',
+    answer: 'No - chocolate can make dogs very ill!', answerEs: '¡No, el chocolate puede poner muy malo a un perro!',
+    fact: 'Chocolate contains a substance called theobromine. Our bodies break it down quickly, but a dog\'s body is very slow at it, so it builds up and can make the dog very ill. Dark chocolate is the most dangerous. If a dog eats chocolate, tell a grown-up straight away so they can call a vet. Dog treats from a pet shop are the safe choice.',
+    factEs: 'El chocolate tiene una sustancia llamada teobromina. Nuestro cuerpo la elimina rápido, pero el de un perro es muy lento, así que se acumula y puede ponerlo muy malo. El chocolate negro es el más peligroso. Si un perro come chocolate, avisa enseguida a un adulto para que llame al veterinario. Los premios para perros de la tienda de mascotas son lo seguro.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1314,4 +1320,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ai1: 'ai1-brain-freeze.mp4',
   ai2: 'ai2-snake-jaws.mp4',
   ai3: 'ai3-fish-drinking.mp4',
+  ai4: 'ai4-dogs-and-chocolate.mp4',
 };
