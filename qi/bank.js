@@ -733,6 +733,12 @@ const QI_BANK = [
     answer: 'Through its skin!', answerEs: '¡A través de la piel!',
     fact: 'Frogs don\'t sip water with their mouths. They soak it up through their skin, especially a thin patch on their tummy and thighs sometimes called the \'drinking patch\'. That\'s why frogs need to stay damp. Some frogs can even breathe through their skin underwater.',
     factEs: 'Las ranas no beben con la boca. Absorben el agua por la piel, sobre todo por una zona fina de la barriga y los muslos. Por eso necesitan estar húmedas. Algunas ranas incluso respiran por la piel bajo el agua.' },
+  { id: 'v5', set: 'V', emoji: '💪', topic: 'Strongest muscle',
+    q: 'Which muscle never gets tired, however hard it works?', qes: '¿Qué músculo nunca se cansa, por mucho que trabaje?',
+    trap: 'Your arm muscles', trapEs: 'Los músculos del brazo',
+    answer: 'Your heart!', answerEs: '¡El corazón!',
+    fact: 'Your heart is a muscle that beats about 100,000 times every day and never takes a break to rest, from before you\'re born until the end of your life. Arm and leg muscles get tired and need rest, but heart muscle is a special kind that keeps going.',
+    factEs: 'El corazón es un músculo que late unas 100.000 veces al día y nunca descansa, desde antes de nacer hasta el final de la vida. Los músculos de brazos y piernas se cansan, pero el del corazón es especial y sigue y sigue.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -853,4 +859,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   v2: 'v2-one-big-ocean.mp4',
   v3: 'v3-cows-lying-down.mp4',
   v4: 'v4-frogs-drinking.mp4',
+  v5: 'v5-strongest-muscle.mp4',
 };
