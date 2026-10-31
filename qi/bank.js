@@ -938,6 +938,12 @@ const QI_BANK = [
     answer: 'No - it grows at the same speed!', answerEs: '¡No, crece a la misma velocidad!',
     fact: 'Hair grows from tiny roots under your skin called follicles, and scissors never touch them, so a haircut can\'t change how fast it grows - about 1 cm a month. Freshly cut hair can feel thicker because the blunt ends feel stiffer, but it isn\'t really. You have around 100,000 hairs on your head.',
     factEs: 'El pelo crece desde raíces diminutas bajo la piel, los folículos, y las tijeras nunca las tocan, así que cortarlo no cambia su velocidad: crece más o menos 1 cm al mes. El pelo recién cortado parece más grueso porque las puntas rectas se notan más duras, pero no lo es. Tienes unos 100.000 pelos en la cabeza.' },
+  { id: 'ac3', set: 'AC', emoji: '🦚', topic: 'Peacock tails',
+    q: 'Which peafowl has the big, colourful tail?', qes: '¿Qué pavo real tiene la gran cola de colores?',
+    trap: 'The peahen - the girl', trapEs: 'La pava, la hembra',
+    answer: 'Only the boy - the peacock!', answerEs: '¡Solo el macho, el pavo real!',
+    fact: 'Only male peafowl, called peacocks, grow the huge shimmering tail; the females, called peahens, are mostly brown and grey, which helps them hide on their nests. The peacock shakes his fan to show off to the peahens. The \'tail\' is really long back feathers called a train, with the real tail underneath holding it up.',
+    factEs: 'Solo los machos, los pavos reales, tienen la enorme cola brillante; las hembras, las pavas, son sobre todo marrones y grises, para esconderse en el nido. El macho sacude su abanico para lucirse ante las hembras. Esa \'cola\' en realidad son plumas largas de la espalda; la cola de verdad está debajo y las sostiene.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1091,4 +1097,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ab5: 'ab5-honeybee-dance.mp4',
   ac1: 'ac1-toads-and-warts.mp4',
   ac2: 'ac2-haircuts.mp4',
+  ac3: 'ac3-peacock-tails.mp4',
 };
