@@ -1037,6 +1037,12 @@ const QI_BANK = [
     answer: 'No - it rolls into a spiky ball!', answerEs: '¡No, se hace una bola de pinchos!',
     fact: 'No animal can shoot its spines. A hedgehog defends itself by rolling into a tight, spiky ball, using a ring of strong muscle like a drawstring bag. A hedgehog has around 5,000-7,000 spines, made of keratin like your fingernails, and they\'re hollow so they\'re light. Old spines drop out and new ones grow.',
     factEs: 'Ningún animal dispara sus púas. El erizo se defiende haciéndose una bola de pinchos, con un músculo en forma de anillo que cierra como una bolsa con cordón. Un erizo tiene unas 5.000-7.000 púas, de queratina como tus uñas, y huecas para pesar poco. Las viejas se caen y salen nuevas.' },
+  { id: 'af4', set: 'AF', emoji: '🐢', topic: 'Turtle shells',
+    q: 'Can a sea turtle pull its head into its shell?', qes: '¿Puede una tortuga marina meter la cabeza en el caparazón?',
+    trap: 'Yes - all turtles can hide inside', trapEs: 'Sí, todas las tortugas se esconden dentro',
+    answer: 'No - sea turtles can\'t!', answerEs: '¡No, las tortugas marinas no pueden!',
+    fact: 'Many land tortoises and pond turtles can tuck their head inside their shell, but sea turtles can\'t - their shells are flatter and lighter for fast swimming, with no room inside. Instead, they rely on speed and their tough, scaly heads. Some sea turtles swim thousands of kilometres back to lay eggs on the very beach where they hatched.',
+    factEs: 'Muchas tortugas de tierra y de estanque meten la cabeza en el caparazón, pero las marinas no: su caparazón es más plano y ligero para nadar rápido, sin hueco dentro. Se defienden con su velocidad y su cabeza dura y escamosa. Algunas nadan miles de kilómetros para poner huevos en la misma playa donde nacieron.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1206,4 +1212,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   af1: 'af1-panda-colours.mp4',
   af2: 'af2-ladybird-spots.mp4',
   af3: 'af3-hedgehog-spines.mp4',
+  af4: 'af4-turtle-shells.mp4',
 };
