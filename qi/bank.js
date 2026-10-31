@@ -839,6 +839,12 @@ const QI_BANK = [
     answer: 'None at all - it\'s graphite!', answerEs: '¡Nada: es grafito!',
     fact: 'Pencil \'lead\' is really graphite, a soft, grey form of carbon, mixed with clay. Long ago people thought graphite was a kind of lead, and the name stuck. Graphite is made of the same stuff as diamonds - just arranged differently. One pencil can draw a line several kilometres long.',
     factEs: 'La \'mina\' del lápiz es grafito, una forma blanda y gris del carbono, mezclada con arcilla. Hace mucho se creía que el grafito era plomo, y el nombre se quedó. El grafito es de lo mismo que los diamantes, solo que ordenado distinto. Un lápiz puede trazar una línea de varios kilómetros.' },
+  { id: 'z2', set: 'Z', emoji: '🐋', topic: 'Whale hearts',
+    q: 'How big is a blue whale\'s heart?', qes: '¿Qué tamaño tiene el corazón de una ballena azul?',
+    trap: 'About as big as a football', trapEs: 'Como un balón de fútbol',
+    answer: 'About as big as a small car!', answerEs: '¡Como un coche pequeño!',
+    fact: 'A blue whale\'s heart weighs about as much as a small car, around 180 kg. Its biggest blood vessels are so wide that a small child could almost crawl through them. When a blue whale dives, its heart can slow down to just a few beats a minute.',
+    factEs: 'El corazón de la ballena azul pesa como un coche pequeño, unos 180 kg. Sus vasos sanguíneos más grandes son tan anchos que casi cabría un niño pequeño gateando. Al bucear, su corazón puede bajar a solo unos latidos por minuto.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -976,4 +982,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   y4: 'y4-pigs-and-mud.mp4',
   y5: 'y5-giraffe-sleep.mp4',
   z1: 'z1-pencil-lead.mp4',
+  z2: 'z2-whale-hearts.mp4',
 };
