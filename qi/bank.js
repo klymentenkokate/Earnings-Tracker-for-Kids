@@ -392,6 +392,12 @@ const QI_BANK = [
     answer: 'Five!', answerEs: '¡Cinco!',
     fact: 'A honeybee has two big eyes on the sides of its head, made of thousands of tiny lenses, and three small eyes on top that help it tell light from dark and keep flying straight. Bees can also see ultraviolet colours that we can\'t.',
     factEs: 'La abeja tiene dos ojos grandes a los lados, hechos de miles de lentes diminutas, y tres ojitos arriba que distinguen la luz y la oscuridad y la ayudan a volar recta. Además ven colores ultravioleta que nosotros no vemos.' },
+  { id: 'k5', set: 'K', emoji: '🦒', topic: 'Giraffe necks',
+    q: 'How many bones are in a giraffe\'s neck?', qes: '¿Cuántos huesos tiene el cuello de una jirafa?',
+    trap: 'Loads - dozens and dozens!', trapEs: '¡Muchísimos, decenas!',
+    answer: 'Seven - the same as you!', answerEs: '¡Siete, igual que tú!',
+    fact: 'A giraffe has seven neck bones, exactly like you and almost every other mammal. Each of its neck bones is just much, much longer - some are as long as your arm from elbow to fingertips. A giraffe\'s tongue is about 45 cm long.',
+    factEs: 'La jirafa tiene siete huesos en el cuello, igual que tú y casi todos los mamíferos. Solo que cada uno es muchísimo más largo. Y su lengua mide unos 45 cm.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -457,4 +463,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   k2: 'k2-where-the-sun-goes.mp4',
   k3: 'k3-feathers-or-bricks.mp4',
   k4: 'k4-bee-eyes.mp4',
+  k5: 'k5-giraffe-necks.mp4',
 };
