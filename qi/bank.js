@@ -516,6 +516,12 @@ const QI_BANK = [
     answer: 'For lots of reasons - even when they\'re hurt or scared!', answerEs: '¡Por muchas razones, incluso cuando les duele algo o tienen miedo!',
     fact: 'Cats purr when they\'re happy, but also when they\'re hurt, scared or poorly - it seems to help them calm down. Tiny kittens purr to tell their mum they\'re OK. Lions and tigers can\'t purr - they roar instead - but cheetahs can.',
     factEs: 'Los gatos ronronean cuando están contentos, pero también cuando les duele algo, tienen miedo o están malitos: parece que les ayuda a calmarse. Los gatitos ronronean para decirle a su madre que están bien. Los leones y tigres no ronronean, rugen; los guepardos sí ronronean.' },
+  { id: 'o5', set: 'O', emoji: '🥶', topic: 'Coldest place',
+    q: 'Which is colder: the North Pole or the South Pole?', qes: '¿Qué es más frío: el Polo Norte o el Polo Sur?',
+    trap: 'The North Pole', trapEs: 'El Polo Norte',
+    answer: 'The South Pole - by a lot!', answerEs: '¡El Polo Sur, y mucho!',
+    fact: 'The North Pole sits on sea ice floating on the ocean, and the water underneath keeps it a little warmer. The South Pole is on a huge frozen continent, Antarctica, nearly 3 km high, so it\'s much colder. Antarctica is also the windiest continent on Earth.',
+    factEs: 'El Polo Norte está sobre hielo que flota en el mar, y el agua de debajo lo templa un poco. El Polo Sur está en un continente helado enorme, la Antártida, a casi 3 km de altura, así que es mucho más frío. La Antártida es además el continente con más viento.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -601,4 +607,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   o2: 'o2-most-common-bird.mp4',
   o3: 'o3-fingernails.mp4',
   o4: 'o4-why-cats-purr.mp4',
+  o5: 'o5-coldest-place.mp4',
 };
