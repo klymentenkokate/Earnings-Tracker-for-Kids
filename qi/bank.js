@@ -913,6 +913,12 @@ const QI_BANK = [
     answer: 'Nobody knows for sure - but it happens most with people we\'re close to!', answerEs: '¡Nadie lo sabe seguro, pero pasa más con la gente cercana!',
     fact: 'Scientists still aren\'t sure why yawns are catching. We\'re more likely to catch a yawn from family and friends than from strangers, which may be linked to how our brains copy and connect with people we care about. Even reading about yawning can make you yawn - are you yawning yet?',
     factEs: 'Los científicos aún no saben del todo por qué los bostezos se contagian. Se contagian más de familia y amigos que de desconocidos, quizá porque el cerebro copia y conecta con la gente que queremos. Hasta leer sobre bostezos puede hacerte bostezar... ¿ya estás bostezando?' },
+  { id: 'ab4', set: 'AB', emoji: '🦛', topic: 'Hippo milk',
+    q: 'What colour is hippo milk?', qes: '¿De qué color es la leche de hipopótamo?',
+    trap: 'Pink!', trapEs: '¡Rosa!',
+    answer: 'White, like other milk!', answerEs: '¡Blanca, como las demás leches!',
+    fact: 'The \'pink hippo milk\' story spread all over the internet, but it isn\'t true - hippo milk is white or creamy, like other mammals\' milk. The idea probably came from the red-orange liquid hippos ooze from their skin, which works like sun cream. Baby hippos can even drink milk underwater, closing their ears and nostrils.',
+    factEs: 'Lo de la \'leche rosa de hipopótamo\' se extendió por internet, pero no es verdad: es blanca o cremosa, como la de otros mamíferos. La idea quizá vino del líquido rojo anaranjado que sueltan por la piel, que funciona como crema solar. Las crías incluso maman bajo el agua, cerrando orejas y nariz.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1062,4 +1068,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ab1: 'ab1-earthworm-hearts.mp4',
   ab2: 'ab2-smell-of-rain.mp4',
   ab3: 'ab3-contagious-yawns.mp4',
+  ab4: 'ab4-hippo-milk.mp4',
 };
