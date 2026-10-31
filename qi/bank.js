@@ -1025,6 +1025,12 @@ const QI_BANK = [
     answer: 'Pink!', answerEs: '¡Rosa!',
     fact: 'A newborn giant panda is pink, almost hairless and tiny - about the size of a stick of butter, around 1/900th of its mum\'s weight. Its black-and-white patches start to show after about a week, as its fur grows in. Pandas spend about 12 hours a day eating bamboo.',
     factEs: 'Un panda recién nacido es rosa, casi sin pelo y diminuto: como una barra de mantequilla, unas 900 veces más ligero que su madre. Sus manchas blancas y negras aparecen a la semana, cuando le crece el pelo. Los pandas pasan unas 12 horas al día comiendo bambú.' },
+  { id: 'af2', set: 'AF', emoji: '🐞', topic: 'Ladybird spots',
+    q: 'Can you tell a ladybird\'s age by counting its spots?', qes: '¿Se puede saber la edad de una mariquita contando sus puntos?',
+    trap: 'Yes - one spot for each year!', trapEs: '¡Sí, un punto por cada año!',
+    answer: 'No - the spots show what kind of ladybird it is!', answerEs: '¡No, los puntos dicen de qué especie es!',
+    fact: 'A ladybird\'s spots don\'t change as it gets older. The number and pattern of spots tells you which kind of ladybird it is - like the 7-spot or the 2-spot - and there are thousands of kinds. Their bright colours warn birds \'I taste horrible!\', and most ladybirds only live about a year.',
+    factEs: 'Los puntos de la mariquita no cambian al envejecer. El número y el dibujo dicen qué tipo de mariquita es, como la de 7 puntos o la de 2, y hay miles de tipos. Sus colores vivos avisan a los pájaros: \'¡Sé fatal!\'. Y casi todas viven solo un año más o menos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1192,4 +1198,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ae4: 'ae4-apples-float.mp4',
   ae5: 'ae5-owl-pellets.mp4',
   af1: 'af1-panda-colours.mp4',
+  af2: 'af2-ladybird-spots.mp4',
 };
