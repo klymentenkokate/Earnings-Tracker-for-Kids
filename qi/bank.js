@@ -1527,6 +1527,12 @@ const QI_BANK = [
     answer: 'No - knights could run and climb!', answerEs: '¡No, podían correr y trepar!',
     fact: 'A full suit of battle armour weighed about 15 to 25 kilos - less than the kit many modern soldiers carry. Because the weight was spread all over the body, a fit knight could run, lie down and get back up, climb a ladder and jump onto his horse by himself. People have tested this wearing copies of old armour. The idea of knights being lifted by cranes mostly comes from old films, not from history.',
     factEs: 'Una armadura completa de batalla pesaba unos 15 a 25 kilos, menos que el equipo de muchos soldados de hoy. Como el peso se repartía por todo el cuerpo, un caballero en forma podía correr, tumbarse y levantarse, subir una escalera y montar a caballo él solo. Se ha comprobado con copias de armaduras antiguas. La idea de subir a los caballeros con grúas viene sobre todo de películas antiguas, no de la historia.' },
+  { id: 'av3', set: 'AV', emoji: '🧶', topic: 'Clothes moths',
+    q: 'Do moths flutter into your cupboard and eat holes in your jumpers?', qes: '¿Las polillas entran volando en el armario y se comen tus jerséis?',
+    trap: 'Yes - hungry moths!', trapEs: '¡Sí, polillas hambrientas!',
+    answer: 'Not the grown-ups - their babies do!', answerEs: '¡Las adultas no, sus crías sí!',
+    fact: 'Grown-up clothes moths don\'t eat anything at all - they can\'t, because their mouths don\'t work. The holes are made by their tiny caterpillar babies, called larvae, which munch on wool, silk and fur in dark, quiet cupboards. And only a few kinds of moth do this: almost all of the many thousands of moth species, like the ones that flutter around lamps at night, never go near your clothes.',
+    factEs: 'Las polillas de la ropa adultas no comen nada: no pueden, porque su boca no funciona. Los agujeros los hacen sus diminutas crías, unas orugas llamadas larvas, que mastican lana, seda y piel en armarios oscuros y tranquilos. Y solo unas pocas clases de polilla lo hacen: casi todas las miles de especies, como las que revolotean alrededor de las lámparas, nunca se acercan a tu ropa.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1775,4 +1781,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   au5: 'au5-bones-in-your-body.mp4',
   av1: 'av1-swan-wings.mp4',
   av2: 'av2-knights-in-armour.mp4',
+  av3: 'av3-clothes-moths.mp4',
 };
