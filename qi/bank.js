@@ -1266,6 +1266,13 @@ const QI_BANK = [
     answer: 'No - they took off in America!', answerEs: '¡No, se hicieron famosas en Estados Unidos!',
     fact: 'Fortune cookies became popular in restaurants in California, in the United States, a little over a hundred years ago. Historians think the idea came from Japan, where an old crispy cracker is baked with a little paper fortune tucked into its fold. Later, Chinese restaurants in America started handing them out and they became famous. In China itself they are rare.',
     factEs: 'Las galletas de la suerte se hicieron populares en restaurantes de California, en Estados Unidos, hace algo más de cien años. Los historiadores creen que la idea vino de Japón, donde hay una galleta crujiente tradicional con un papelito de la suerte metido en su pliegue. Después, los restaurantes chinos de Estados Unidos empezaron a regalarlas y se hicieron famosas. En la propia China son raras.' },
+  // Set AN (pipeline, one question at a time)
+  { id: 'an1', set: 'AN', emoji: '🦍', topic: 'Gorilla chests',
+    q: 'When gorillas beat their chests, do they use their fists?', qes: 'Cuando los gorilas se golpean el pecho, ¿usan los puños?',
+    trap: 'Yes - with clenched fists', trapEs: 'Sí, con los puños cerrados',
+    answer: 'No - with flat, cupped hands!', answerEs: '¡No, con las manos abiertas y ahuecadas!',
+    fact: 'Gorillas slap their chests with open, cupped hands. That makes a loud \'pok-pok-pok\' drumming sound that can carry more than a kilometre through the forest. Big males drum to show off and to tell other gorillas where they are - and bigger gorillas make deeper sounds, so others can tell how big they are just by listening. Young gorillas drum when they play, too.',
+    factEs: 'Los gorilas se dan palmadas en el pecho con las manos abiertas y ahuecadas. Eso hace un fuerte «pok-pok-pok», como un tambor, que se oye a más de un kilómetro por la selva. Los machos grandes lo hacen para presumir y para decir a otros gorilas dónde están; además, los gorilas más grandes suenan más grave, así que los demás saben lo grandes que son solo con escuchar. Los gorilas jóvenes también tamborilean cuando juegan.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1472,4 +1479,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   am3: 'am3-planet-rings.mp4',
   am4: 'am4-cars-and-lightning.mp4',
   am5: 'am5-fortune-cookies.mp4',
+  an1: 'an1-gorilla-chests.mp4',
 };
