@@ -1316,6 +1316,12 @@ const QI_BANK = [
     answer: 'No - only things that get too close!', answerEs: '¡No, solo lo que se acerca demasiado!',
     fact: 'A black hole\'s gravity is incredibly strong, but only up close. From far away it pulls just like any star or planet with the same mass. If the Sun were magically swapped for a black hole of exactly the same mass, the Earth would keep going round it on the same path - it would just get very cold and dark! Things only fall in if they wander too close.',
     factEs: 'La gravedad de un agujero negro es increíblemente fuerte, pero solo de cerca. Desde lejos atrae igual que cualquier estrella o planeta con la misma masa. Si el Sol se cambiara por arte de magia por un agujero negro con exactamente la misma masa, la Tierra seguiría girando a su alrededor por el mismo camino: ¡solo que haría mucho frío y estaría muy oscuro! Las cosas solo caen dentro si se acercan demasiado.' },
+  { id: 'ao4', set: 'AO', emoji: '🌳', topic: 'Humans and chimps',
+    q: 'Did humans evolve from chimpanzees?', qes: '¿Los humanos evolucionamos de los chimpancés?',
+    trap: 'Yes - chimps turned into us', trapEs: 'Sí, los chimpancés se convirtieron en nosotros',
+    answer: 'No - we\'re cousins!', answerEs: '¡No, somos primos!',
+    fact: 'Humans and chimpanzees share a common ancestor - an ape that lived roughly six to seven million years ago. Some of its descendants became today\'s chimps and bonobos, and others became humans. So chimps aren\'t our great-great-grandparents: they\'re more like distant cousins, who have been changing for just as long as we have. We still share about 98 percent of our DNA, which is why we look so alike.',
+    factEs: 'Los humanos y los chimpancés tenemos un antepasado común: un simio que vivió hace unos seis o siete millones de años. Algunos de sus descendientes se convirtieron en los chimpancés y bonobos de hoy, y otros en humanos. Así que los chimpancés no son nuestros tatarabuelos: son más bien primos lejanos, que han cambiado durante el mismo tiempo que nosotros. Todavía compartimos cerca del 98 por ciento del ADN, y por eso nos parecemos tanto.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1530,4 +1536,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ao1: 'ao1-catching-a-cold.mp4',
   ao2: 'ao2-is-the-sun-on-fire.mp4',
   ao3: 'ao3-black-holes.mp4',
+  ao4: 'ao4-humans-and-chimps.mp4',
 };
