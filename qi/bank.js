@@ -1173,6 +1173,13 @@ const QI_BANK = [
     answer: 'Mostly no - water itself is a little blue!', answerEs: '¡Casi no: el agua en sí es un poco azul!',
     fact: 'Sunlight is a mix of all the colours. Water soaks up the red and orange light a little more than the blue, so the deeper the water, the bluer it looks - even on a cloudy day. A glass of water looks clear because there\'s too little water to notice the blue. The sky\'s reflection adds a bit of extra blue on top, and tiny sea plants can make the sea look green.',
     factEs: 'La luz del sol mezcla todos los colores. El agua absorbe un poco más la luz roja y naranja que la azul, así que cuanto más profunda, más azul se ve, incluso con nubes. Un vaso de agua parece transparente porque hay muy poca para notar el azul. El reflejo del cielo añade un poco más de azul, y las plantitas del mar pueden volverlo verde.' },
+  // Set AK (pipeline, one question at a time)
+  { id: 'ak1', set: 'AK', emoji: '🐚', topic: 'Seashell sounds',
+    q: 'When you hold a seashell to your ear, do you hear the sea?', qes: 'Cuando te pones una caracola en la oreja, ¿oyes el mar?',
+    trap: 'Yes - the shell remembers the sea', trapEs: 'Sí, la caracola recuerda el mar',
+    answer: 'No - it\'s the sounds around you!', answerEs: '¡No, son los sonidos de alrededor!',
+    fact: 'The whooshing comes from the quiet sounds all around you - voices, traffic, wind, even air moving. They bounce around inside the curly shell, and its shape makes some of them louder, so it sounds like waves. A cup or your own cupped hand over your ear makes a similar whoosh. In a perfectly silent room, a shell would be almost silent too.',
+    factEs: 'El susurro viene de los sonidos suaves que te rodean: voces, tráfico, viento, hasta el aire moviéndose. Rebotan dentro de la caracola, y su forma hace más fuertes algunos, así que suena como olas. Un vaso o tu mano ahuecada sobre la oreja hacen un susurro parecido. En una sala totalmente silenciosa, la caracola casi no sonaría.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1364,4 +1371,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aj3: 'aj3-shaving-hair.mp4',
   aj4: 'aj4-balancing-eggs.mp4',
   aj5: 'aj5-blue-sea.mp4',
+  ak1: 'ak1-seashell-sounds.mp4',
 };
