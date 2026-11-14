@@ -1297,6 +1297,13 @@ const QI_BANK = [
     answer: 'Neither - they\'re rodents from South America!', answerEs: '¡Ni una cosa ni otra: son roedores de Sudamérica!',
     fact: 'Guinea pigs are rodents, like hamsters and mice, and they come from the Andes mountains in South America, where people have kept them for thousands of years. Nobody knows for sure how they got their English name. They may be called \'pigs\' because they squeak, squeal and grunt, and \'guinea\' may once have just meant somewhere far away.',
     factEs: 'Las cobayas, también llamadas conejillos de Indias, son roedores, como los hámsteres y los ratones, y vienen de los Andes, en Sudamérica, donde la gente las cría desde hace miles de años. Nadie sabe con seguridad de dónde sale su nombre en inglés, «guinea pig». Quizá las llamaron «cerdos» porque chillan y gruñen, y «guinea» quizá solo significaba un lugar muy lejano.' },
+  // Set AO (pipeline, one question at a time)
+  { id: 'ao1', set: 'AO', emoji: '🤧', topic: 'Catching a cold',
+    q: 'Can you catch a cold just from going out in cold weather with wet hair?', qes: '¿Puedes resfriarte solo por salir con frío y el pelo mojado?',
+    trap: 'Yes - the cold gives you a cold', trapEs: 'Sí, el frío te resfría',
+    answer: 'No - colds come from germs!', answerEs: '¡No, los resfriados vienen de gérmenes!',
+    fact: 'Colds are caused by tiny germs called viruses, which spread from person to person through sneezes, coughs and hands. Being chilly can\'t give you a cold if there\'s no virus around. We catch more colds in winter because people crowd together indoors, and cold viruses survive better in cold, dry air. Washing your hands is one of the best ways to dodge them.',
+    factEs: 'Los resfriados los causan unos gérmenes diminutos llamados virus, que pasan de una persona a otra con los estornudos, la tos y las manos. Pasar frío no te resfría si no hay ningún virus cerca. En invierno nos resfriamos más porque estamos todos juntos en interiores, y los virus del resfriado aguantan mejor en el aire frío y seco. Lavarse las manos es una de las mejores formas de esquivarlos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1508,4 +1515,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   an3: 'an3-reading-in-the-dark.mp4',
   an4: 'an4-slimy-snakes.mp4',
   an5: 'an5-guinea-pigs.mp4',
+  ao1: 'ao1-catching-a-cold.mp4',
 };
