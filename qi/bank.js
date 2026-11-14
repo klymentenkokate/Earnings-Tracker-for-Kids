@@ -1353,6 +1353,12 @@ const QI_BANK = [
     answer: 'No - but gently guide them back to bed!', answerEs: '¡No, pero llévalo con cuidado a la cama!',
     fact: 'Waking a sleepwalker won\'t hurt them, though they may feel confused or startled for a moment. The real danger is the sleepwalker tripping, falling or wandering somewhere unsafe. Sleep experts say the kindest thing is to gently guide them back to bed - and if they wake up on the way, that\'s fine. Sleepwalking is quite common in children, and most grow out of it.',
     factEs: 'Despertar a un sonámbulo no le hace daño, aunque puede sentirse confundido o asustado un momento. El peligro de verdad es que tropiece, se caiga o vaya a algún sitio peligroso. Los expertos en sueño dicen que lo mejor es llevarlo con suavidad de vuelta a la cama, y si se despierta por el camino, no pasa nada. El sonambulismo es bastante común en los niños, y casi todos lo superan al crecer.' },
+  { id: 'ap5', set: 'AP', emoji: '🌤️', topic: 'Blue sky',
+    q: 'Is the sky blue because it reflects the sea?', qes: '¿El cielo es azul porque refleja el mar?',
+    trap: 'Yes - it mirrors the ocean', trapEs: 'Sí, hace de espejo del mar',
+    answer: 'No - the air scatters blue light!', answerEs: '¡No, el aire dispersa la luz azul!',
+    fact: 'Sunlight looks white, but it\'s a mix of all the colours. When it hits the tiny bits of gas in the air, the blue light gets bounced around - scattered - much more than red or yellow light. That scattered blue reaches our eyes from every part of the sky, so the whole sky looks blue, even over a desert far from any sea. At sunset, the light crosses much more air, so most of the blue is scattered away and we see reds and oranges.',
+    factEs: 'La luz del Sol parece blanca, pero es una mezcla de todos los colores. Cuando choca con las partículas diminutas de gas del aire, la luz azul rebota y se dispersa mucho más que la roja o la amarilla. Esa luz azul nos llega desde todo el cielo, así que el cielo entero se ve azul, incluso sobre un desierto lejos del mar. Al atardecer, la luz atraviesa mucho más aire, casi todo el azul se dispersa por el camino y vemos rojos y naranjas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1573,4 +1579,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ap2: 'ap2-elephant-trunks.mp4',
   ap3: 'ap3-nostril-breathing.mp4',
   ap4: 'ap4-sleepwalkers.mp4',
+  ap5: 'ap5-blue-sky.mp4',
 };
