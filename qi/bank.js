@@ -1273,6 +1273,12 @@ const QI_BANK = [
     answer: 'No - with flat, cupped hands!', answerEs: '¡No, con las manos abiertas y ahuecadas!',
     fact: 'Gorillas slap their chests with open, cupped hands. That makes a loud \'pok-pok-pok\' drumming sound that can carry more than a kilometre through the forest. Big males drum to show off and to tell other gorillas where they are - and bigger gorillas make deeper sounds, so others can tell how big they are just by listening. Young gorillas drum when they play, too.',
     factEs: 'Los gorilas se dan palmadas en el pecho con las manos abiertas y ahuecadas. Eso hace un fuerte «pok-pok-pok», como un tambor, que se oye a más de un kilómetro por la selva. Los machos grandes lo hacen para presumir y para decir a otros gorilas dónde están; además, los gorilas más grandes suenan más grave, así que los demás saben lo grandes que son solo con escuchar. Los gorilas jóvenes también tamborilean cuando juegan.' },
+  { id: 'an2', set: 'AN', emoji: '🐝', topic: 'Bumblebee flight',
+    q: 'Did scientists once prove that bumblebees shouldn\'t be able to fly?', qes: '¿Demostraron los científicos que los abejorros no deberían poder volar?',
+    trap: 'Yes - science says they can\'t', trapEs: 'Sí, la ciencia dice que no pueden',
+    answer: 'No - bees fly just fine!', answerEs: '¡No, las abejas vuelan perfectamente!',
+    fact: 'About 90 years ago a story spread that someone had done the sums and found a bumblebee was too heavy for its tiny wings. But that quick sum treated the bee\'s wings like the stiff, still wings of an aeroplane. A bumblebee\'s wings flap about 200 times a second and twist as they go, stirring up tiny whirlwinds of air that lift the bee. Scientists have filmed this in slow motion, so we know exactly how they fly.',
+    factEs: 'Hace unos 90 años se extendió la historia de que alguien había hecho las cuentas y un abejorro pesaba demasiado para sus alitas. Pero esa cuenta rápida trataba sus alas como las alas rígidas y quietas de un avión. Las alas del abejorro baten unas 200 veces por segundo y se retuercen al moverse, creando remolinos diminutos de aire que lo levantan. Los científicos lo han grabado a cámara lenta, así que sabemos exactamente cómo vuelan.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1480,4 +1486,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   am4: 'am4-cars-and-lightning.mp4',
   am5: 'am5-fortune-cookies.mp4',
   an1: 'an1-gorilla-chests.mp4',
+  an2: 'an2-bumblebee-flight.mp4',
 };
