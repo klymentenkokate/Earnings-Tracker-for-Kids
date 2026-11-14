@@ -1428,6 +1428,12 @@ const QI_BANK = [
     answer: 'No - most are rock and gravel!', answerEs: '¡No, la mayoría son roca y grava!',
     fact: 'Only about a fifth of the world\'s deserts are covered in sand. Most are stony plains, gravel, bare rock and dry mountains. Even in the Sahara, sand dunes cover only about a quarter of it. A desert is about being dry, not sandy - which is why icy Antarctica counts as a desert too: it gets hardly any snow.',
     factEs: 'Solo alrededor de una quinta parte de los desiertos del mundo está cubierta de arena. La mayoría son llanuras pedregosas, grava, roca desnuda y montañas secas. Incluso en el Sáhara, las dunas cubren solo alrededor de una cuarta parte. Un desierto es un lugar seco, no arenoso: por eso la helada Antártida también cuenta como desierto, porque casi no nieva.' },
+  { id: 'as2', set: 'AS', emoji: '👍', topic: 'Gladiator thumbs',
+    q: 'Did a Roman crowd give a thumbs-up to spare a gladiator\'s life?', qes: '¿El público romano levantaba el pulgar para perdonar la vida a un gladiador?',
+    trap: 'Yes - thumbs up meant live', trapEs: 'Sí, pulgar arriba era vivir',
+    answer: 'No - nobody knows for sure!', answerEs: '¡No, nadie lo sabe con seguridad!',
+    fact: 'Roman writers mention the crowd \'turning their thumbs\', but they never clearly say which way meant live or die. The famous thumbs-up, thumbs-down idea mostly comes from a painting made in 1872. Some historians think a thumb tucked inside a closed fist may have meant \'spare him\'. Gladiators were expensive to train, so many fights didn\'t end in death at all - a beaten fighter was often spared.',
+    factEs: 'Los escritores romanos cuentan que el público «giraba el pulgar», pero nunca dicen claramente qué dirección significaba vivir o morir. La famosa idea del pulgar arriba o abajo viene sobre todo de un cuadro pintado en 1872. Algunos historiadores creen que un pulgar escondido dentro del puño cerrado podía significar «perdónalo». Entrenar a un gladiador costaba mucho, así que muchas luchas no acababan en muerte: al perdedor a menudo se le perdonaba.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1660,4 +1666,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ar4: 'ar4-penguins-and-planes.mp4',
   ar5: 'ar5-swallowed-seeds.mp4',
   as1: 'as1-sandy-deserts.mp4',
+  as2: 'as2-gladiator-thumbs.mp4',
 };
