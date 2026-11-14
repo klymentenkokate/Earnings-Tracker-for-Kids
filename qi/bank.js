@@ -1508,6 +1508,12 @@ const QI_BANK = [
     answer: 'No - usually just warm or cool!', answerEs: '¡No, normalmente solo tibio o frío!',
     fact: 'As a space rock rushes through the air, only its outer skin gets hot enough to melt, and that melted layer is blown away. Then the air slows it right down for the last few kilometres, so the inside - which has been in freezing space for millions of years - never has time to heat up. People who\'ve picked up meteorites just after they landed usually found them warm or even cold to the touch.',
     factEs: 'Cuando una roca espacial atraviesa el aire, solo su capa exterior se calienta tanto como para fundirse, y esa capa fundida sale volando. Después, el aire la frena mucho en los últimos kilómetros, así que su interior, que ha pasado millones de años en el frío del espacio, no llega a calentarse. Las personas que han cogido meteoritos justo después de caer casi siempre los notaron tibios o incluso fríos.' },
+  { id: 'au5', set: 'AU', emoji: '🦴', topic: 'Bones in your body',
+    q: 'Are the bones inside you dry and dead, like a skeleton in a museum?', qes: '¿Los huesos de tu cuerpo están secos y muertos, como un esqueleto de museo?',
+    trap: 'Yes - dry and dead', trapEs: 'Sí, secos y muertos',
+    answer: 'No - they\'re alive and growing!', answerEs: '¡No, están vivos y crecen!',
+    fact: 'Living bones are full of blood vessels, nerves and busy cells. They\'re slightly bendy, pinkish, and constantly being broken down and rebuilt - you get a whole new skeleton\'s worth of bone roughly every ten years! That\'s why a broken bone can heal itself. Many bones also have soft marrow inside, which makes millions of new blood cells every second.',
+    factEs: 'Los huesos vivos están llenos de vasos sanguíneos, nervios y células muy activas. Son un poco flexibles, rosados, y se están deshaciendo y reconstruyendo todo el rato: ¡más o menos cada diez años tienes el equivalente a un esqueleto nuevo! Por eso un hueso roto puede curarse solo. Muchos huesos tienen además médula blanda dentro, que fabrica millones de células de sangre nuevas cada segundo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1753,4 +1759,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   au2: 'au2-dodo-birds.mp4',
   au3: 'au3-hot-volcano-rock.mp4',
   au4: 'au4-shooting-meteors.mp4',
+  au5: 'au5-bones-in-your-body.mp4',
 };
