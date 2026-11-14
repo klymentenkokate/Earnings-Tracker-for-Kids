@@ -1211,6 +1211,12 @@ const QI_BANK = [
     answer: 'No - it\'s harmless to people!', answerEs: '¡No, es inofensiva para las personas!',
     fact: 'It\'s a famous playground story, but it isn\'t true. \'Daddy longlegs\' is a nickname for a few different creatures. The cellar spider has weak venom that does almost nothing to people - its fangs can reach our skin, but a bite feels like a tiny sting at most. Harvestmen, also called daddy longlegs, aren\'t even spiders: they have no venom and spin no silk at all.',
     factEs: 'Es una historia muy famosa en el patio del colegio, pero no es verdad. «Papá patas largas» es el apodo de varios bichos distintos. La araña de bodega tiene un veneno débil que casi no hace nada a las personas: sus colmillos pueden llegar a nuestra piel, pero como mucho se nota un pinchacito. Los opiliones, que también reciben ese apodo, ni siquiera son arañas: no tienen veneno ni hacen seda.' },
+  { id: 'al2', set: 'AL', emoji: '🍭', topic: 'Sugar rush',
+    q: 'Does eating sugar make children go wild and hyper?', qes: '¿Comer azúcar hace que los niños se pongan como locos?',
+    trap: 'Yes - it\'s a sugar rush', trapEs: 'Sí, es el subidón de azúcar',
+    answer: 'No - scientists can\'t find a sugar rush!', answerEs: '¡No, los científicos no encuentran ningún subidón!',
+    fact: 'Scientists have tested this many times. Some children got sugar and others got a sugar-free drink, and nobody - not the children, not the grown-ups - knew who had which. The children behaved the same! In one test, parents who were told their child had sugar said the child was wilder, even though it was sugar-free. Parties are just exciting. (Too many sweets are still bad for your teeth, though!)',
+    factEs: 'Los científicos lo han comprobado muchas veces. Unos niños tomaron azúcar y otros una bebida sin azúcar, y nadie, ni los niños ni los mayores, sabía quién tenía cuál. ¡Los niños se portaron igual! En un experimento, a unos padres les dijeron que su hijo había tomado azúcar y dijeron que estaba más alborotado, aunque no había tomado nada. Las fiestas simplemente emocionan. (¡Eso sí, demasiados dulces siguen siendo malos para los dientes!)' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1408,4 +1414,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ak4: 'ak4-far-side-of-the-moon.mp4',
   ak5: 'ak5-boiling-water.mp4',
   al1: 'al1-daddy-longlegs.mp4',
+  al2: 'al2-sugar-rush.mp4',
 };
