@@ -1242,6 +1242,12 @@ const QI_BANK = [
     answer: 'No - wild bananas are rare!', answerEs: '¡No, los plátanos silvestres son raros!',
     fact: 'Wild monkeys eat lots of different things: figs and other fruit, leaves, flowers, seeds and even insects. The big, sweet yellow banana from the shop was created by farmers over thousands of years - wild bananas are small and full of hard seeds. Some zoos have even stopped giving their monkeys shop bananas, because they\'re so sugary that for a monkey they\'re like eating cake!',
     factEs: 'Los monos salvajes comen muchísimas cosas: higos y otras frutas, hojas, flores, semillas y hasta insectos. El plátano grande, dulce y amarillo de la tienda lo crearon los agricultores durante miles de años; los plátanos silvestres son pequeños y están llenos de semillas duras. Algunos zoos incluso han dejado de dar plátanos de tienda a sus monos, porque tienen tanto azúcar que para un mono son como comer tarta.' },
+  { id: 'am2', set: 'AM', emoji: '🐔', topic: 'Flying chickens',
+    q: 'Can chickens fly?', qes: '¿Las gallinas pueden volar?',
+    trap: 'No - they can\'t fly', trapEs: 'No, no pueden volar',
+    answer: 'Yes - just not very far!', answerEs: '¡Sí, pero no muy lejos!',
+    fact: 'Chickens can flap up onto fences, roofs and tree branches, and if they\'re allowed, many like to sleep up high. Farm chickens have heavy bodies for the size of their wings, so their flights are short - the longest chicken flight ever recorded lasted about 13 seconds. Their wild ancestor, a jungle bird called the red junglefowl, is a much better flier and roosts in trees at night.',
+    factEs: 'Las gallinas pueden subir aleteando a vallas, tejados y ramas, y si las dejan, a muchas les gusta dormir en alto. Las gallinas de granja tienen el cuerpo pesado para el tamaño de sus alas, así que sus vuelos son cortos: el vuelo de gallina más largo registrado duró unos 13 segundos. Su antepasado salvaje, un pájaro de la selva llamado gallo bankiva, vuela mucho mejor y duerme en los árboles.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1444,4 +1450,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   al4: 'al4-falling-coins.mp4',
   al5: 'al5-elephants-and-mice.mp4',
   am1: 'am1-monkeys-and-bananas.mp4',
+  am2: 'am2-flying-chickens.mp4',
 };
