@@ -1452,6 +1452,13 @@ const QI_BANK = [
     answer: 'No - they\'re lagomorphs!', answerEs: '¡No, son lagomorfos!',
     fact: 'Rabbits look a bit like big rodents, and like rodents their front teeth never stop growing. But rabbits belong to a different group called lagomorphs, along with hares and little pikas. Here\'s a clue: a rabbit has a second pair of tiny peg teeth hidden right behind its big top front teeth. Rodents, like mice, rats and squirrels, only have one pair.',
     factEs: 'Los conejos se parecen un poco a roedores grandes y, como ellos, sus dientes delanteros no paran de crecer. Pero los conejos pertenecen a otro grupo llamado lagomorfos, junto con las liebres y las pequeñas picas. Una pista: el conejo tiene un segundo par de dientecillos escondidos justo detrás de sus grandes dientes delanteros de arriba. Los roedores, como los ratones, las ratas y las ardillas, solo tienen un par.' },
+  // Set AT (pipeline, one question at a time)
+  { id: 'at1', set: 'AT', emoji: '🌙', topic: 'Moon in the daytime',
+    q: 'Can you only see the Moon at night?', qes: '¿Solo se puede ver la Luna de noche?',
+    trap: 'Yes - it comes out at night', trapEs: 'Sí, sale de noche',
+    answer: 'No - you can often see it by day!', answerEs: '¡No, muchas veces se ve de día!',
+    fact: 'The Moon stays up in the sky for about 12 hours at a time, just like the Sun, but it rises about 50 minutes later each day. So on many days it\'s up while the Sun is shining too. It\'s bright enough to see against the blue sky: look for a pale, whitish Moon on a sunny morning or afternoon - it\'s easiest to spot around half-Moon.',
+    factEs: 'La Luna está en el cielo unas 12 horas seguidas, igual que el Sol, pero sale unos 50 minutos más tarde cada día. Por eso muchos días está arriba mientras brilla el Sol. Es lo bastante brillante para verla sobre el cielo azul: busca una Luna pálida y blanquecina en una mañana o una tarde soleada; se ve mejor en cuarto creciente o menguante.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1688,4 +1695,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   as3: 'as3-tarantula-bites.mp4',
   as4: 'as4-pyramid-builders.mp4',
   as5: 'as5-rabbits-and-rodents.mp4',
+  at1: 'at1-moon-in-the-daytime.mp4',
 };
