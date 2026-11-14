@@ -1260,6 +1260,12 @@ const QI_BANK = [
     answer: 'No - it\'s the metal body!', answerEs: '¡No, es la carrocería de metal!',
     fact: 'A lightning bolt has just jumped through kilometres of air, so a few centimetres of rubber can\'t stop it. What protects you is the car\'s metal body and roof: the electricity flows around the outside of the metal and down into the ground, away from the people inside. So in a thunderstorm a car with a metal roof is a safe place - keep the windows shut and your hands in your lap. Open-top cars and bikes don\'t protect you.',
     factEs: 'Un rayo acaba de atravesar kilómetros de aire, así que unos centímetros de goma no pueden pararlo. Lo que te protege es la carrocería y el techo de metal: la electricidad corre por fuera del metal y baja al suelo, lejos de las personas de dentro. Por eso, en una tormenta, un coche con techo de metal es un lugar seguro: ventanillas cerradas y las manos en el regazo. Los descapotables y las bicis no te protegen.' },
+  { id: 'am5', set: 'AM', emoji: '🥠', topic: 'Fortune cookies',
+    q: 'Do fortune cookies come from China?', qes: '¿Las galletas de la suerte vienen de China?',
+    trap: 'Yes - from China', trapEs: 'Sí, de China',
+    answer: 'No - they took off in America!', answerEs: '¡No, se hicieron famosas en Estados Unidos!',
+    fact: 'Fortune cookies became popular in restaurants in California, in the United States, a little over a hundred years ago. Historians think the idea came from Japan, where an old crispy cracker is baked with a little paper fortune tucked into its fold. Later, Chinese restaurants in America started handing them out and they became famous. In China itself they are rare.',
+    factEs: 'Las galletas de la suerte se hicieron populares en restaurantes de California, en Estados Unidos, hace algo más de cien años. Los historiadores creen que la idea vino de Japón, donde hay una galleta crujiente tradicional con un papelito de la suerte metido en su pliegue. Después, los restaurantes chinos de Estados Unidos empezaron a regalarlas y se hicieron famosas. En la propia China son raras.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
