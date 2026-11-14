@@ -1465,6 +1465,12 @@ const QI_BANK = [
     answer: 'No - from nectar!', answerEs: '¡No, con néctar!',
     fact: 'Bees collect two different things from flowers. Pollen is a powdery, protein-rich food that they mostly feed to their babies. Honey is made from nectar, a sugary juice inside flowers. Bees carry nectar home in a special honey stomach, pass it from bee to bee, then fan it with their wings until most of the water dries out - and it turns into thick, sticky honey.',
     factEs: 'Las abejas recogen dos cosas distintas de las flores. El polen es un alimento en polvo, rico en proteínas, que dan sobre todo a sus crías. La miel se hace con néctar, un jugo azucarado del interior de las flores. Las abejas lo llevan a casa en un estómago especial para la miel, se lo pasan de una a otra y luego lo abanican con las alas hasta que se evapora casi toda el agua y se convierte en miel espesa y pegajosa.' },
+  { id: 'at3', set: 'AT', emoji: '🌳', topic: 'What trees are made of',
+    q: 'Do trees get most of their wood from the soil?', qes: '¿Los árboles sacan casi toda su madera de la tierra?',
+    trap: 'Yes - from the soil', trapEs: 'Sí, de la tierra',
+    answer: 'No - mostly from the air!', answerEs: '¡No, sobre todo del aire!',
+    fact: 'A tree\'s wood is made mostly of carbon, and that carbon comes from carbon dioxide, a gas in the air. The leaves use sunlight to join it with water and make sugar, which the tree builds into wood. The soil gives water and a small amount of minerals. About 400 years ago, a scientist grew a willow tree in a pot for five years: the tree gained about 74 kilos, but the soil lost only a tiny pinch!',
+    factEs: 'La madera de un árbol está hecha sobre todo de carbono, y ese carbono viene del dióxido de carbono, un gas del aire. Las hojas usan la luz del Sol para unirlo con agua y fabricar azúcar, que el árbol convierte en madera. La tierra aporta agua y un poquito de minerales. Hace unos 400 años, un científico cultivó un sauce en una maceta durante cinco años: el árbol ganó unos 74 kilos, ¡pero la tierra solo perdió una pizca!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1703,4 +1709,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   as5: 'as5-rabbits-and-rodents.mp4',
   at1: 'at1-moon-in-the-daytime.mp4',
   at2: 'at2-how-bees-make-honey.mp4',
+  at3: 'at3-what-trees-are-made-of.mp4',
 };
