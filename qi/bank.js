@@ -1496,6 +1496,12 @@ const QI_BANK = [
     answer: 'No - people and the animals they brought!', answerEs: '¡No, por las personas y los animales que trajeron!',
     fact: 'Dodos lived only on the island of Mauritius, where there were no predators, so they had no reason to be afraid. When sailors arrived in the late 1500s, they hunted dodos and brought rats, pigs, cats and monkeys, which ate dodo eggs from their nests on the ground. Within about 80 years, the dodos were gone. Scientists who studied dodo skulls found they had quite big brains for their size - they weren\'t stupid at all, just never needed to fear anyone.',
     factEs: 'Los dodos vivían solo en la isla Mauricio, donde no había depredadores, así que no tenían motivos para tener miedo. Cuando llegaron los marineros a finales del siglo XVI, los cazaron y trajeron ratas, cerdos, gatos y monos, que se comían los huevos de los nidos en el suelo. En unos 80 años, los dodos desaparecieron. Los científicos que estudiaron sus cráneos vieron que tenían un cerebro bastante grande para su tamaño: no eran nada tontos, simplemente nunca habían tenido que temer a nadie.' },
+  { id: 'au3', set: 'AU', emoji: '🌋', topic: 'Hot volcano rock',
+    q: 'Does the hot lava inside volcanoes come from the Earth\'s molten core?', qes: '¿La lava de los volcanes viene del núcleo fundido de la Tierra?',
+    trap: 'Yes - straight from the core', trapEs: 'Sí, directamente del núcleo',
+    answer: 'No - from much closer to the surface!', answerEs: '¡No, de mucho más cerca de la superficie!',
+    fact: 'The Earth\'s core is about 2,900 kilometres down - far too deep for volcanoes. Most magma forms much closer to the surface, roughly 50 to 200 kilometres down, where rock in the Earth\'s mantle partly melts. Surprisingly, most of the mantle isn\'t liquid at all: it\'s solid rock so hot that it creeps very slowly, like extremely thick toffee. Only small pockets melt and rise up to feed volcanoes.',
+    factEs: 'El núcleo de la Tierra está a unos 2.900 kilómetros de profundidad, demasiado hondo para los volcanes. Casi todo el magma se forma mucho más cerca de la superficie, a unos 50 o 200 kilómetros, donde la roca del manto se funde en parte. Sorprendentemente, casi todo el manto no es líquido: es roca sólida tan caliente que se mueve muy despacio, como un caramelo espesísimo. Solo pequeñas bolsas se funden y suben para alimentar los volcanes.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1739,4 +1745,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   at5: 'at5-cleopatra.mp4',
   au1: 'au1-spinach-and-strength.mp4',
   au2: 'au2-dodo-birds.mp4',
+  au3: 'au3-hot-volcano-rock.mp4',
 };
