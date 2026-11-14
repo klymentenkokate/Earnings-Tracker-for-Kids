@@ -1378,6 +1378,12 @@ const QI_BANK = [
     answer: 'No - that\'s usually a hawk!', answerEs: '¡No, suele ser un halcón colirrojo!',
     fact: 'Bald eagles actually make high, squeaky, chirping calls - a bit like a giggling seagull. Film-makers didn\'t think that sounded tough enough for such a mighty bird, so they often use the fierce screech of a red-tailed hawk instead. Next time you see an eagle soaring across a film screen, listen carefully: you\'re probably hearing a hawk!',
     factEs: 'Las águilas calvas en realidad hacen llamadas agudas, chillonas y entrecortadas, un poco como una gaviota riéndose. A los cineastas no les parecía un sonido lo bastante feroz para un ave tan imponente, así que muchas veces ponen el chillido del busardo colirrojo, una especie de halcón. La próxima vez que veas un águila volando en una película, escucha bien: ¡seguramente oyes a un halcón!' },
+  { id: 'aq4', set: 'AQ', emoji: '🦘', topic: 'Kangaroo name',
+    q: 'Does \'kangaroo\' mean \'I don\'t understand you\' in an Aboriginal language?', qes: '¿«Canguro» significa «no te entiendo» en una lengua aborigen?',
+    trap: 'Yes - it means \'I don\'t know\'', trapEs: 'Sí, significa «no lo sé»',
+    answer: 'No - it\'s the animal\'s real name!', answerEs: '¡No, es el nombre real del animal!',
+    fact: 'A popular story says that when James Cook\'s crew asked local people in Australia what the animal was called in 1770, they answered \'kangaroo\', meaning \'I don\'t understand you\'. But language experts later found that in Guugu Yimithirr, a language of northern Australia, \'gangurru\' really is the name for a type of large grey kangaroo. So it was a real word all along!',
+    factEs: 'Una historia muy contada dice que, en 1770, cuando la tripulación de James Cook preguntó en Australia cómo se llamaba el animal, la gente del lugar respondió «canguro», que significaría «no te entiendo». Pero más tarde, unos expertos en lenguas descubrieron que en guugu yimithirr, una lengua del norte de Australia, «gangurru» es de verdad el nombre de un tipo de canguro gris grande. ¡Así que siempre fue una palabra real!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1602,4 +1608,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aq1: 'aq1-housefly-lifespan.mp4',
   aq2: 'aq2-cats-in-the-dark.mp4',
   aq3: 'aq3-eagle-screech.mp4',
+  aq4: 'aq4-kangaroo-name.mp4',
 };
