@@ -1477,6 +1477,12 @@ const QI_BANK = [
     answer: 'No - it\'s the giant bell inside!', answerEs: '¡No, es la campana gigante de dentro!',
     fact: 'Big Ben is really the nickname of the huge bell that rings out the hours, hanging inside the tower. The tower used to be called simply the Clock Tower, and in 2012 it was renamed the Elizabeth Tower to celebrate Queen Elizabeth II. The bell weighs more than 13 tonnes - about as much as two elephants!',
     factEs: 'Big Ben es en realidad el apodo de la enorme campana que da las horas, colgada dentro de la torre. La torre se llamaba simplemente la Torre del Reloj, y en 2012 la rebautizaron como Torre Elizabeth en honor a la reina Isabel II. La campana pesa más de 13 toneladas, ¡más o menos como dos elefantes!' },
+  { id: 'at5', set: 'AT', emoji: '👑', topic: 'Cleopatra',
+    q: 'Did Queen Cleopatra come from an Egyptian family?', qes: '¿La reina Cleopatra venía de una familia egipcia?',
+    trap: 'Yes - Egyptian through and through', trapEs: 'Sí, egipcia de pies a cabeza',
+    answer: 'No - her family was Greek!', answerEs: '¡No, su familia era griega!',
+    fact: 'Cleopatra was born in Alexandria in Egypt and ruled it as queen, but her family, the Ptolemies, came from Macedonia in Greece. They ruled Egypt for nearly 300 years and mostly spoke Greek - Cleopatra is said to have been one of the first in her family to learn the Egyptian language. Here\'s a twist: she lived closer in time to the first Moon landing than to the building of the Great Pyramid!',
+    factEs: 'Cleopatra nació en Alejandría, en Egipto, y lo gobernó como reina, pero su familia, los Ptolomeos, venía de Macedonia, en Grecia. Gobernaron Egipto casi 300 años y hablaban sobre todo griego; se dice que Cleopatra fue de las primeras de su familia en aprender la lengua egipcia. Y un dato sorprendente: vivió más cerca en el tiempo de la llegada a la Luna que de la construcción de la Gran Pirámide.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1717,4 +1723,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   at2: 'at2-how-bees-make-honey.mp4',
   at3: 'at3-what-trees-are-made-of.mp4',
   at4: 'at4-big-ben.mp4',
+  at5: 'at5-cleopatra.mp4',
 };
