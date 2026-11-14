@@ -1198,6 +1198,12 @@ const QI_BANK = [
     answer: 'No - it gets just as much sunlight!', answerEs: '¡No, recibe la misma luz del sol!',
     fact: 'We always see the same face of the Moon, because it spins around exactly once each time it goes around the Earth. But the side we never see isn\'t dark - it has day and night just like the near side. At new Moon, when the side facing us looks dark, the far side is in full sunshine. Nobody saw it until a space probe photographed it in 1959.',
     factEs: 'Siempre vemos la misma cara de la Luna, porque gira sobre sí misma justo una vez cada vez que da la vuelta a la Tierra. Pero la cara que no vemos no está a oscuras: tiene día y noche como la otra. En luna nueva, cuando la cara que vemos parece oscura, la oculta está a pleno sol. Nadie la vio hasta que una sonda espacial la fotografió en 1959.' },
+  { id: 'ak5', set: 'AK', emoji: '🫖', topic: 'Boiling water',
+    q: 'Does water always boil at 100°C?', qes: '¿El agua siempre hierve a 100 °C?',
+    trap: 'Yes - everywhere in the world', trapEs: 'Sí, en todo el mundo',
+    answer: 'No - up a mountain it boils cooler!', answerEs: '¡No, en una montaña hierve más fría!',
+    fact: 'Water boils at about 100°C at sea level, where lots of air is pressing down on it. High up a mountain there\'s less air pressing down, so water boils at a lower temperature: on top of Mount Everest it boils at only about 70°C. That\'s why pasta and boiled eggs take longer to cook up high - the water bubbles away but isn\'t as hot.',
+    factEs: 'El agua hierve a unos 100 °C a nivel del mar, donde hay mucho aire empujándola. En lo alto de una montaña hay menos aire empujando, así que hierve a menos temperatura: en la cima del Everest, a solo unos 70 °C. Por eso la pasta y los huevos tardan más en cocerse en las alturas: el agua burbujea pero no está tan caliente.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1393,4 +1399,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ak2: 'ak2-cats-landing.mp4',
   ak3: 'ak3-dog-years.mp4',
   ak4: 'ak4-far-side-of-the-moon.mp4',
+  ak5: 'ak5-boiling-water.mp4',
 };
