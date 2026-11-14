@@ -1483,6 +1483,13 @@ const QI_BANK = [
     answer: 'No - her family was Greek!', answerEs: '¡No, su familia era griega!',
     fact: 'Cleopatra was born in Alexandria in Egypt and ruled it as queen, but her family, the Ptolemies, came from Macedonia in Greece. They ruled Egypt for nearly 300 years and mostly spoke Greek - Cleopatra is said to have been one of the first in her family to learn the Egyptian language. Here\'s a twist: she lived closer in time to the first Moon landing than to the building of the Great Pyramid!',
     factEs: 'Cleopatra nació en Alejandría, en Egipto, y lo gobernó como reina, pero su familia, los Ptolomeos, venía de Macedonia, en Grecia. Gobernaron Egipto casi 300 años y hablaban sobre todo griego; se dice que Cleopatra fue de las primeras de su familia en aprender la lengua egipcia. Y un dato sorprendente: vivió más cerca en el tiempo de la llegada a la Luna que de la construcción de la Gran Pirámide.' },
+  // Set AU (pipeline, one question at a time)
+  { id: 'au1', set: 'AU', emoji: '🥬', topic: 'Spinach and strength',
+    q: 'Is spinach one of the best foods for iron, the stuff that keeps your blood strong?', qes: '¿Las espinacas son de los mejores alimentos para el hierro, que mantiene fuerte la sangre?',
+    trap: 'Yes - packed with iron!', trapEs: '¡Sí, llenas de hierro!',
+    answer: 'No - not as good as people think!', answerEs: '¡No, no tanto como se cree!',
+    fact: 'Spinach does contain some iron, but no more than many other vegetables - and it also contains a natural chemical called oxalic acid that stops your body taking in much of that iron. Beans, lentils, meat and fortified cereals are better sources. Spinach is still a healthy food, full of vitamins - just not the iron superhero cartoons made it out to be.',
+    factEs: 'Las espinacas tienen algo de hierro, pero no más que muchas otras verduras, y además contienen una sustancia natural, el ácido oxálico, que impide que el cuerpo aproveche gran parte de ese hierro. Las alubias, las lentejas, la carne y los cereales enriquecidos son mejores fuentes. Las espinacas siguen siendo un alimento sano, llenas de vitaminas, pero no el superhéroe del hierro que pintaban los dibujos animados.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1724,4 +1731,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   at3: 'at3-what-trees-are-made-of.mp4',
   at4: 'at4-big-ben.mp4',
   at5: 'at5-cleopatra.mp4',
+  au1: 'au1-spinach-and-strength.mp4',
 };
