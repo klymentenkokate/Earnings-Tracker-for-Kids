@@ -1285,6 +1285,12 @@ const QI_BANK = [
     answer: 'No - it just makes them tired!', answerEs: '¡No, solo los cansa!',
     fact: 'Reading in dim light is harder work for your eyes. You squint and blink less, so your eyes can feel tired, achy and dry, and you might even get a headache. But after a rest your eyes go back to normal - there\'s no lasting damage. A good lamp just makes reading more comfortable. And here\'s something that really does help your eyes: scientists have found that children who play outdoors in daylight are less likely to become short-sighted.',
     factEs: 'Leer con poca luz es más trabajo para los ojos. Entrecierras los ojos y parpadeas menos, así que pueden notarse cansados, doloridos y secos, y hasta puede doler la cabeza. Pero después de descansar vuelven a la normalidad: no hay daño duradero. Una buena lámpara solo hace la lectura más cómoda. Y algo que sí ayuda a tus ojos: los científicos han visto que los niños que juegan al aire libre con luz de día tienen menos probabilidades de volverse miopes.' },
+  { id: 'an4', set: 'AN', emoji: '🐍', topic: 'Slimy snakes',
+    q: 'Are snakes slimy?', qes: '¿Las serpientes son viscosas?',
+    trap: 'Yes - slimy and wet', trapEs: 'Sí, viscosas y mojadas',
+    answer: 'No - they\'re dry and smooth!', answerEs: '¡No, son secas y suaves!',
+    fact: 'A snake is covered in dry scales made of keratin - the same stuff as your fingernails. The scales can be shiny, so a snake may look wet, but if you touch one it feels dry and smooth, a bit like a leather bag. The slimy animals are frogs, toads, slugs and worms: their damp skin stops them drying out, and frogs even breathe partly through their skin.',
+    factEs: 'Una serpiente está cubierta de escamas secas hechas de queratina, lo mismo que tus uñas. Las escamas pueden brillar, así que parece mojada, pero si la tocas está seca y suave, un poco como un bolso de cuero. Los animales viscosos son las ranas, los sapos, las babosas y las lombrices: su piel húmeda evita que se sequen, y las ranas hasta respiran en parte por la piel.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1494,4 +1500,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   an1: 'an1-gorilla-chests.mp4',
   an2: 'an2-bumblebee-flight.mp4',
   an3: 'an3-reading-in-the-dark.mp4',
+  an4: 'an4-slimy-snakes.mp4',
 };
