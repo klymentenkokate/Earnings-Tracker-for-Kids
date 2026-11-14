@@ -1304,6 +1304,12 @@ const QI_BANK = [
     answer: 'No - colds come from germs!', answerEs: '¡No, los resfriados vienen de gérmenes!',
     fact: 'Colds are caused by tiny germs called viruses, which spread from person to person through sneezes, coughs and hands. Being chilly can\'t give you a cold if there\'s no virus around. We catch more colds in winter because people crowd together indoors, and cold viruses survive better in cold, dry air. Washing your hands is one of the best ways to dodge them.',
     factEs: 'Los resfriados los causan unos gérmenes diminutos llamados virus, que pasan de una persona a otra con los estornudos, la tos y las manos. Pasar frío no te resfría si no hay ningún virus cerca. En invierno nos resfriamos más porque estamos todos juntos en interiores, y los virus del resfriado aguantan mejor en el aire frío y seco. Lavarse las manos es una de las mejores formas de esquivarlos.' },
+  { id: 'ao2', set: 'AO', emoji: '☀️', topic: 'Is the Sun on fire',
+    q: 'Is the Sun a giant ball of fire?', qes: '¿El Sol es una bola de fuego gigante?',
+    trap: 'Yes - one huge fire', trapEs: 'Sí, un fuego enorme',
+    answer: 'No - it isn\'t burning like a fire!', answerEs: '¡No, no arde como un fuego!',
+    fact: 'A fire needs fuel and oxygen from the air, and space has no air to burn with. Deep in the Sun\'s middle it is so hot and squashed that tiny hydrogen particles are smashed together to make helium. This is called nuclear fusion, and it gives out enormous amounts of light and heat. An ordinary fire would have burned out long ago - the Sun has been shining for about 4.6 billion years.',
+    factEs: 'Un fuego necesita combustible y oxígeno del aire, y en el espacio no hay aire para arder. En el centro del Sol hace tanto calor y hay tanta presión que unas partículas diminutas de hidrógeno chocan y se unen para formar helio. Se llama fusión nuclear y produce muchísima luz y calor. Un fuego normal se habría apagado hace mucho: el Sol lleva brillando unos 4.600 millones de años.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1516,4 +1522,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   an4: 'an4-slimy-snakes.mp4',
   an5: 'an5-guinea-pigs.mp4',
   ao1: 'ao1-catching-a-cold.mp4',
+  ao2: 'ao2-is-the-sun-on-fire.mp4',
 };
