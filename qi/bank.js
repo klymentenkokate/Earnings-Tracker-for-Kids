@@ -1204,6 +1204,13 @@ const QI_BANK = [
     answer: 'No - up a mountain it boils cooler!', answerEs: '¡No, en una montaña hierve más fría!',
     fact: 'Water boils at about 100°C at sea level, where lots of air is pressing down on it. High up a mountain there\'s less air pressing down, so water boils at a lower temperature: on top of Mount Everest it boils at only about 70°C. That\'s why pasta and boiled eggs take longer to cook up high - the water bubbles away but isn\'t as hot.',
     factEs: 'El agua hierve a unos 100 °C a nivel del mar, donde hay mucho aire empujándola. En lo alto de una montaña hay menos aire empujando, así que hierve a menos temperatura: en la cima del Everest, a solo unos 70 °C. Por eso la pasta y los huevos tardan más en cocerse en las alturas: el agua burbujea pero no está tan caliente.' },
+  // Set AL (pipeline, one question at a time)
+  { id: 'al1', set: 'AL', emoji: '🕷️', topic: 'Daddy longlegs',
+    q: 'Is the daddy longlegs the most venomous spider in the world - but with fangs too small to bite you?', qes: '¿Es el «papá patas largas» la araña más venenosa del mundo, pero con colmillos demasiado pequeños para morderte?',
+    trap: 'Yes - deadly venom, tiny fangs', trapEs: 'Sí, veneno mortal y colmillos diminutos',
+    answer: 'No - it\'s harmless to people!', answerEs: '¡No, es inofensiva para las personas!',
+    fact: 'It\'s a famous playground story, but it isn\'t true. \'Daddy longlegs\' is a nickname for a few different creatures. The cellar spider has weak venom that does almost nothing to people - its fangs can reach our skin, but a bite feels like a tiny sting at most. Harvestmen, also called daddy longlegs, aren\'t even spiders: they have no venom and spin no silk at all.',
+    factEs: 'Es una historia muy famosa en el patio del colegio, pero no es verdad. «Papá patas largas» es el apodo de varios bichos distintos. La araña de bodega tiene un veneno débil que casi no hace nada a las personas: sus colmillos pueden llegar a nuestra piel, pero como mucho se nota un pinchacito. Los opiliones, que también reciben ese apodo, ni siquiera son arañas: no tienen veneno ni hacen seda.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1400,4 +1407,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ak3: 'ak3-dog-years.mp4',
   ak4: 'ak4-far-side-of-the-moon.mp4',
   ak5: 'ak5-boiling-water.mp4',
+  al1: 'al1-daddy-longlegs.mp4',
 };
