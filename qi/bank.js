@@ -1440,6 +1440,12 @@ const QI_BANK = [
     answer: 'No - it\'s more like a bee sting!', answerEs: '¡No, es más como una picadura de abeja!',
     fact: 'Tarantulas look scary, but their venom is weak for people - a bite usually feels like a bee or wasp sting. Nobody is known to have died from a tarantula bite. Many tarantulas have a different trick: they flick tiny itchy hairs off their bottoms at enemies! Tarantulas are shy, and they would much rather hide than bite.',
     factEs: 'Las tarántulas dan miedo, pero su veneno es débil para las personas: una picadura suele sentirse como la de una abeja o una avispa. No se conoce a nadie que haya muerto por una picadura de tarántula. Muchas tarántulas tienen otro truco: ¡lanzan a sus enemigos pelitos que pican desde el trasero! Son tímidas y prefieren esconderse antes que morder.' },
+  { id: 'as4', set: 'AS', emoji: '🧱', topic: 'Pyramid builders',
+    q: 'Were the Egyptian pyramids built by slaves?', qes: '¿Las pirámides de Egipto las construyeron esclavos?',
+    trap: 'Yes - by slaves', trapEs: 'Sí, esclavos',
+    answer: 'No - by paid workers!', answerEs: '¡No, trabajadores con paga!',
+    fact: 'Archaeologists found the villages where the pyramid builders lived, near Giza. The workers ate bread and plenty of meat, had doctors who set their broken bones, and were buried in tombs next to the pyramids - an honour slaves would never have been given. Some were full-time experts, and others were farmers who took turns working, paid in food, beer and cloth. The slave idea comes partly from old Greek stories and from films.',
+    factEs: 'Los arqueólogos encontraron los poblados donde vivían los constructores de las pirámides, cerca de Guiza. Comían pan y bastante carne, tenían médicos que les curaban los huesos rotos y los enterraban en tumbas junto a las pirámides, un honor que nunca habrían recibido unos esclavos. Algunos eran expertos a tiempo completo y otros eran campesinos que trabajaban por turnos, pagados con comida, cerveza y tela. La idea de los esclavos viene en parte de antiguas historias griegas y de las películas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1674,4 +1680,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   as1: 'as1-sandy-deserts.mp4',
   as2: 'as2-gladiator-thumbs.mp4',
   as3: 'as3-tarantula-bites.mp4',
+  as4: 'as4-pyramid-builders.mp4',
 };
