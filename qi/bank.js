@@ -1490,6 +1490,12 @@ const QI_BANK = [
     answer: 'No - not as good as people think!', answerEs: '¡No, no tanto como se cree!',
     fact: 'Spinach does contain some iron, but no more than many other vegetables - and it also contains a natural chemical called oxalic acid that stops your body taking in much of that iron. Beans, lentils, meat and fortified cereals are better sources. Spinach is still a healthy food, full of vitamins - just not the iron superhero cartoons made it out to be.',
     factEs: 'Las espinacas tienen algo de hierro, pero no más que muchas otras verduras, y además contienen una sustancia natural, el ácido oxálico, que impide que el cuerpo aproveche gran parte de ese hierro. Las alubias, las lentejas, la carne y los cereales enriquecidos son mejores fuentes. Las espinacas siguen siendo un alimento sano, llenas de vitaminas, pero no el superhéroe del hierro que pintaban los dibujos animados.' },
+  { id: 'au2', set: 'AU', emoji: '🦤', topic: 'Dodo birds',
+    q: 'Did dodos die out because they were too stupid to survive?', qes: '¿Los dodos se extinguieron por ser demasiado tontos para sobrevivir?',
+    trap: 'Yes - they were silly birds', trapEs: 'Sí, eran unos pájaros bobos',
+    answer: 'No - people and the animals they brought!', answerEs: '¡No, por las personas y los animales que trajeron!',
+    fact: 'Dodos lived only on the island of Mauritius, where there were no predators, so they had no reason to be afraid. When sailors arrived in the late 1500s, they hunted dodos and brought rats, pigs, cats and monkeys, which ate dodo eggs from their nests on the ground. Within about 80 years, the dodos were gone. Scientists who studied dodo skulls found they had quite big brains for their size - they weren\'t stupid at all, just never needed to fear anyone.',
+    factEs: 'Los dodos vivían solo en la isla Mauricio, donde no había depredadores, así que no tenían motivos para tener miedo. Cuando llegaron los marineros a finales del siglo XVI, los cazaron y trajeron ratas, cerdos, gatos y monos, que se comían los huevos de los nidos en el suelo. En unos 80 años, los dodos desaparecieron. Los científicos que estudiaron sus cráneos vieron que tenían un cerebro bastante grande para su tamaño: no eran nada tontos, simplemente nunca habían tenido que temer a nadie.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1732,4 +1738,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   at4: 'at4-big-ben.mp4',
   at5: 'at5-cleopatra.mp4',
   au1: 'au1-spinach-and-strength.mp4',
+  au2: 'au2-dodo-birds.mp4',
 };
