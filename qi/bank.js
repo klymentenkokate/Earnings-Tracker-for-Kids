@@ -1192,6 +1192,12 @@ const QI_BANK = [
     answer: 'No - dogs grow up much faster at first!', answerEs: '¡No, los perros crecen mucho más rápido al principio!',
     fact: 'Dogs don\'t age at a steady seven-to-one. They grow up very fast: by its first birthday a dog is grown-up enough to be a bit like a teenager of about 15. After that, ageing slows down to roughly 4 or 5 \'human years\' each year. Size matters too - big dogs usually age faster and have shorter lives than small dogs.',
     factEs: 'Los perros no envejecen a un ritmo fijo de siete a uno. Crecen muy deprisa: al cumplir un año ya son como un adolescente de unos 15. Después se frena a unos 4 o 5 «años humanos» por año. El tamaño también cuenta: los perros grandes suelen envejecer más rápido y vivir menos que los pequeños.' },
+  { id: 'ak4', set: 'AK', emoji: '🌗', topic: 'Far side of the Moon',
+    q: 'Is the far side of the Moon always dark?', qes: '¿La cara oculta de la Luna está siempre a oscuras?',
+    trap: 'Yes - it\'s the dark side', trapEs: 'Sí, es la cara oscura',
+    answer: 'No - it gets just as much sunlight!', answerEs: '¡No, recibe la misma luz del sol!',
+    fact: 'We always see the same face of the Moon, because it spins around exactly once each time it goes around the Earth. But the side we never see isn\'t dark - it has day and night just like the near side. At new Moon, when the side facing us looks dark, the far side is in full sunshine. Nobody saw it until a space probe photographed it in 1959.',
+    factEs: 'Siempre vemos la misma cara de la Luna, porque gira sobre sí misma justo una vez cada vez que da la vuelta a la Tierra. Pero la cara que no vemos no está a oscuras: tiene día y noche como la otra. En luna nueva, cuando la cara que vemos parece oscura, la oculta está a pleno sol. Nadie la vio hasta que una sonda espacial la fotografió en 1959.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1386,4 +1392,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ak1: 'ak1-seashell-sounds.mp4',
   ak2: 'ak2-cats-landing.mp4',
   ak3: 'ak3-dog-years.mp4',
+  ak4: 'ak4-far-side-of-the-moon.mp4',
 };
