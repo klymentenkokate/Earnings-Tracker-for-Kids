@@ -1229,6 +1229,12 @@ const QI_BANK = [
     answer: 'No - it would just sting', answerEs: 'No, solo picaría un poco',
     fact: 'Things don\'t keep speeding up forever as they fall: the air pushes back on them. A small coin is light and flat, so it flutters and tumbles and never goes faster than about 40 kilometres an hour - about as fast as a car in town. It would sting, but not badly hurt you. Heavier things like pens, phones or stones can be dangerous, though, so never drop anything from up high!',
     factEs: 'Las cosas no aceleran sin parar al caer: el aire las frena. Una moneda pequeña es ligera y plana, así que da vueltas y nunca pasa de unos 40 kilómetros por hora, como un coche en la ciudad. Picaría, pero no te haría mucho daño. Eso sí, las cosas más pesadas, como bolígrafos, móviles o piedras, pueden ser peligrosas, ¡así que nunca tires nada desde arriba!' },
+  { id: 'al5', set: 'AL', emoji: '🐘', topic: 'Elephants and mice',
+    q: 'Are elephants scared of mice?', qes: '¿Los elefantes tienen miedo de los ratones?',
+    trap: 'Yes - they run from mice', trapEs: 'Sí, huyen de los ratones',
+    answer: 'No - there\'s no proof they are!', answerEs: '¡No, no hay pruebas de que lo tengan!',
+    fact: 'Cartoons love showing a giant elephant leaping onto a chair because of a tiny mouse, and an old story says mice might climb up an elephant\'s trunk. But there\'s no proof elephants fear mice - and elephants can\'t see very well, so they might not even notice one. Like most animals, they can be startled by a sudden surprise. What many African elephants really do run from is buzzing bees, so some farmers hang beehive fences around their fields!',
+    factEs: 'A los dibujos animados les encanta mostrar un elefante enorme subido a una silla por culpa de un ratoncito, y una vieja historia dice que los ratones podrían trepar por su trompa. Pero no hay pruebas de que les tengan miedo, y además los elefantes ven bastante mal, así que quizá ni lo noten. Como casi todos los animales, se asustan con una sorpresa repentina. De lo que sí huyen muchos elefantes africanos es del zumbido de las abejas: ¡algunos agricultores ponen vallas de colmenas alrededor de sus campos!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1429,4 +1435,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   al2: 'al2-sugar-rush.mp4',
   al3: 'al3-worms-cut-in-half.mp4',
   al4: 'al4-falling-coins.mp4',
+  al5: 'al5-elephants-and-mice.mp4',
 };
