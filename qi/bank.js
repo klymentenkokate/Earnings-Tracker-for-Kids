@@ -1310,6 +1310,12 @@ const QI_BANK = [
     answer: 'No - it isn\'t burning like a fire!', answerEs: '¡No, no arde como un fuego!',
     fact: 'A fire needs fuel and oxygen from the air, and space has no air to burn with. Deep in the Sun\'s middle it is so hot and squashed that tiny hydrogen particles are smashed together to make helium. This is called nuclear fusion, and it gives out enormous amounts of light and heat. An ordinary fire would have burned out long ago - the Sun has been shining for about 4.6 billion years.',
     factEs: 'Un fuego necesita combustible y oxígeno del aire, y en el espacio no hay aire para arder. En el centro del Sol hace tanto calor y hay tanta presión que unas partículas diminutas de hidrógeno chocan y se unen para formar helio. Se llama fusión nuclear y produce muchísima luz y calor. Un fuego normal se habría apagado hace mucho: el Sol lleva brillando unos 4.600 millones de años.' },
+  { id: 'ao3', set: 'AO', emoji: '🕳️', topic: 'Black holes',
+    q: 'Do black holes suck up everything around them, like giant vacuum cleaners?', qes: '¿Los agujeros negros se lo tragan todo a su alrededor, como aspiradoras gigantes?',
+    trap: 'Yes - cosmic vacuum cleaners', trapEs: 'Sí, aspiradoras cósmicas',
+    answer: 'No - only things that get too close!', answerEs: '¡No, solo lo que se acerca demasiado!',
+    fact: 'A black hole\'s gravity is incredibly strong, but only up close. From far away it pulls just like any star or planet with the same mass. If the Sun were magically swapped for a black hole of exactly the same mass, the Earth would keep going round it on the same path - it would just get very cold and dark! Things only fall in if they wander too close.',
+    factEs: 'La gravedad de un agujero negro es increíblemente fuerte, pero solo de cerca. Desde lejos atrae igual que cualquier estrella o planeta con la misma masa. Si el Sol se cambiara por arte de magia por un agujero negro con exactamente la misma masa, la Tierra seguiría girando a su alrededor por el mismo camino: ¡solo que haría mucho frío y estaría muy oscuro! Las cosas solo caen dentro si se acercan demasiado.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1523,4 +1529,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   an5: 'an5-guinea-pigs.mp4',
   ao1: 'ao1-catching-a-cold.mp4',
   ao2: 'ao2-is-the-sun-on-fire.mp4',
+  ao3: 'ao3-black-holes.mp4',
 };
