@@ -1180,6 +1180,12 @@ const QI_BANK = [
     answer: 'No - it\'s the sounds around you!', answerEs: '¡No, son los sonidos de alrededor!',
     fact: 'The whooshing comes from the quiet sounds all around you - voices, traffic, wind, even air moving. They bounce around inside the curly shell, and its shape makes some of them louder, so it sounds like waves. A cup or your own cupped hand over your ear makes a similar whoosh. In a perfectly silent room, a shell would be almost silent too.',
     factEs: 'El susurro viene de los sonidos suaves que te rodean: voces, tráfico, viento, hasta el aire moviéndose. Rebotan dentro de la caracola, y su forma hace más fuertes algunos, así que suena como olas. Un vaso o tu mano ahuecada sobre la oreja hacen un susurro parecido. En una sala totalmente silenciosa, la caracola casi no sonaría.' },
+  { id: 'ak2', set: 'AK', emoji: '🐈', topic: 'Cats landing',
+    q: 'Do cats always land on their feet?', qes: '¿Los gatos siempre caen de pie?',
+    trap: 'Yes - every single time', trapEs: 'Sí, todas las veces',
+    answer: 'No - but they\'re very good at it!', answerEs: '¡No, pero se les da muy bien!',
+    fact: 'Cats have a \'righting reflex\': as they fall, they twist their front half, then their back half, to turn feet-down, using their very bendy backbone. Kittens start learning it at about 3 to 4 weeks old. But a cat needs enough time in the air to turn, and it can still get badly hurt from a fall - so cats should never be dropped.',
+    factEs: 'Los gatos tienen un «reflejo de enderezamiento»: al caer giran primero la parte delantera y luego la trasera para ponerse patas abajo, gracias a su columna tan flexible. Los gatitos empiezan a aprenderlo hacia las 3 o 4 semanas. Pero el gato necesita tiempo en el aire para girarse, y aun así puede hacerse mucho daño: nunca hay que dejar caer a un gato.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1372,4 +1378,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aj4: 'aj4-balancing-eggs.mp4',
   aj5: 'aj5-blue-sea.mp4',
   ak1: 'ak1-seashell-sounds.mp4',
+  ak2: 'ak2-cats-landing.mp4',
 };
