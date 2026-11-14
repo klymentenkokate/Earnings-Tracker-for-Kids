@@ -1397,6 +1397,12 @@ const QI_BANK = [
     answer: 'No - they fly all the way themselves!', answerEs: '¡No, vuelan todo el camino ellos solos!',
     fact: 'It\'s a lovely old story, but hummingbirds and geese migrate at different times and on different routes. Before the trip, a ruby-throated hummingbird eats so much that it nearly doubles its weight. Then many fly non-stop across the Gulf of Mexico - about 800 kilometres - flapping their tiny wings the whole way.',
     factEs: 'Es una historia antigua muy bonita, pero los colibríes y los gansos migran en épocas distintas y por rutas distintas. Antes del viaje, el colibrí de garganta rubí come tanto que casi duplica su peso. Después, muchos cruzan el golfo de México sin parar, unos 800 kilómetros, batiendo sus alitas todo el camino.' },
+  { id: 'ar2', set: 'AR', emoji: '🍰', topic: 'Let them eat cake',
+    q: 'Did Queen Marie Antoinette say \'Let them eat cake\' about the hungry poor?', qes: '¿La reina María Antonieta dijo «que coman pasteles» sobre los pobres hambrientos?',
+    trap: 'Yes - she said it', trapEs: 'Sí, lo dijo',
+    answer: 'No - there\'s no proof she ever did!', answerEs: '¡No, no hay pruebas de que lo dijera!',
+    fact: 'A version of the phrase appears in a book by the writer Jean-Jacques Rousseau, written when Marie Antoinette was still a child far away in Austria. He wrote about \'a great princess\' who said the poor should eat brioche - a rich, buttery bread. Nobody from her own time recorded her saying it, and historians think the story was pinned on her later because she was so unpopular.',
+    factEs: 'Una versión de la frase aparece en un libro del escritor Jean-Jacques Rousseau, escrito cuando María Antonieta todavía era una niña en la lejana Austria. Él hablaba de «una gran princesa» que decía que los pobres comieran brioche, un pan rico y mantecoso. Nadie de su época anotó que ella lo dijera, y los historiadores creen que se lo atribuyeron más tarde porque era muy impopular.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1624,4 +1630,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aq4: 'aq4-kangaroo-name.mp4',
   aq5: 'aq5-einstein-and-maths.mp4',
   ar1: 'ar1-hummingbirds-and-geese.mp4',
+  ar2: 'ar2-let-them-eat-cake.mp4',
 };
