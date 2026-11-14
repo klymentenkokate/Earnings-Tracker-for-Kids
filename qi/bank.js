@@ -1186,6 +1186,12 @@ const QI_BANK = [
     answer: 'No - but they\'re very good at it!', answerEs: '¡No, pero se les da muy bien!',
     fact: 'Cats have a \'righting reflex\': as they fall, they twist their front half, then their back half, to turn feet-down, using their very bendy backbone. Kittens start learning it at about 3 to 4 weeks old. But a cat needs enough time in the air to turn, and it can still get badly hurt from a fall - so cats should never be dropped.',
     factEs: 'Los gatos tienen un «reflejo de enderezamiento»: al caer giran primero la parte delantera y luego la trasera para ponerse patas abajo, gracias a su columna tan flexible. Los gatitos empiezan a aprenderlo hacia las 3 o 4 semanas. Pero el gato necesita tiempo en el aire para girarse, y aun así puede hacerse mucho daño: nunca hay que dejar caer a un gato.' },
+  { id: 'ak3', set: 'AK', emoji: '🐶', topic: 'Dog years',
+    q: 'Is one dog year the same as seven human years?', qes: '¿Un año de perro equivale a siete años humanos?',
+    trap: 'Yes - just multiply by seven', trapEs: 'Sí, solo hay que multiplicar por siete',
+    answer: 'No - dogs grow up much faster at first!', answerEs: '¡No, los perros crecen mucho más rápido al principio!',
+    fact: 'Dogs don\'t age at a steady seven-to-one. They grow up very fast: by its first birthday a dog is grown-up enough to be a bit like a teenager of about 15. After that, ageing slows down to roughly 4 or 5 \'human years\' each year. Size matters too - big dogs usually age faster and have shorter lives than small dogs.',
+    factEs: 'Los perros no envejecen a un ritmo fijo de siete a uno. Crecen muy deprisa: al cumplir un año ya son como un adolescente de unos 15. Después se frena a unos 4 o 5 «años humanos» por año. El tamaño también cuenta: los perros grandes suelen envejecer más rápido y vivir menos que los pequeños.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1379,4 +1385,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aj5: 'aj5-blue-sea.mp4',
   ak1: 'ak1-seashell-sounds.mp4',
   ak2: 'ak2-cats-landing.mp4',
+  ak3: 'ak3-dog-years.mp4',
 };
