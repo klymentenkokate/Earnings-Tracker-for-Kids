@@ -1471,4 +1471,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   am2: 'am2-flying-chickens.mp4',
   am3: 'am3-planet-rings.mp4',
   am4: 'am4-cars-and-lightning.mp4',
+  am5: 'am5-fortune-cookies.mp4',
 };
