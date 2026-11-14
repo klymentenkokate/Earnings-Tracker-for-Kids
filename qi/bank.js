@@ -1514,6 +1514,13 @@ const QI_BANK = [
     answer: 'No - they\'re alive and growing!', answerEs: '¡No, están vivos y crecen!',
     fact: 'Living bones are full of blood vessels, nerves and busy cells. They\'re slightly bendy, pinkish, and constantly being broken down and rebuilt - you get a whole new skeleton\'s worth of bone roughly every ten years! That\'s why a broken bone can heal itself. Many bones also have soft marrow inside, which makes millions of new blood cells every second.',
     factEs: 'Los huesos vivos están llenos de vasos sanguíneos, nervios y células muy activas. Son un poco flexibles, rosados, y se están deshaciendo y reconstruyendo todo el rato: ¡más o menos cada diez años tienes el equivalente a un esqueleto nuevo! Por eso un hueso roto puede curarse solo. Muchos huesos tienen además médula blanda dentro, que fabrica millones de células de sangre nuevas cada segundo.' },
+  // Set AV (pipeline, one question at a time)
+  { id: 'av1', set: 'AV', emoji: '🦢', topic: 'Swan wings',
+    q: 'Can a swan break a grown-up\'s arm with one flap of its wing?', qes: '¿Un cisne puede romperle el brazo a un adulto con un aletazo?',
+    trap: 'Yes - one flap!', trapEs: '¡Sí, de un aletazo!',
+    answer: 'No - it\'s mostly a bluff!', answerEs: '¡No, casi todo es un farol!',
+    fact: 'Swans are big, strong birds, and they hiss, flap and charge to protect their nests and chicks. A hit from a wing can hurt and leave a bruise, but there\'s no reliable record of a swan ever breaking a grown-up\'s arm - their wing bones are hollow and light. Most of the hissing and flapping is a show to make you go away. So the swan wins anyway: always give a nesting swan plenty of space!',
+    factEs: 'Los cisnes son aves grandes y fuertes, y bufan, aletean y embisten para proteger sus nidos y sus crías. Un golpe de ala puede doler y dejar un moratón, pero no hay ningún caso fiable de un cisne que le haya roto el brazo a un adulto: sus huesos son huecos y ligeros. Casi todo ese bufido y aleteo es un espectáculo para que te vayas. Así que el cisne gana igual: ¡deja siempre mucho espacio a un cisne con nido!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1760,4 +1767,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   au3: 'au3-hot-volcano-rock.mp4',
   au4: 'au4-shooting-meteors.mp4',
   au5: 'au5-bones-in-your-body.mp4',
+  av1: 'av1-swan-wings.mp4',
 };
