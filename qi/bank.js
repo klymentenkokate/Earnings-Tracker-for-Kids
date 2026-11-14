@@ -1359,6 +1359,13 @@ const QI_BANK = [
     answer: 'No - the air scatters blue light!', answerEs: '¡No, el aire dispersa la luz azul!',
     fact: 'Sunlight looks white, but it\'s a mix of all the colours. When it hits the tiny bits of gas in the air, the blue light gets bounced around - scattered - much more than red or yellow light. That scattered blue reaches our eyes from every part of the sky, so the whole sky looks blue, even over a desert far from any sea. At sunset, the light crosses much more air, so most of the blue is scattered away and we see reds and oranges.',
     factEs: 'La luz del Sol parece blanca, pero es una mezcla de todos los colores. Cuando choca con las partículas diminutas de gas del aire, la luz azul rebota y se dispersa mucho más que la roja o la amarilla. Esa luz azul nos llega desde todo el cielo, así que el cielo entero se ve azul, incluso sobre un desierto lejos del mar. Al atardecer, la luz atraviesa mucho más aire, casi todo el azul se dispersa por el camino y vemos rojos y naranjas.' },
+  // Set AQ (pipeline, one question at a time)
+  { id: 'aq1', set: 'AQ', emoji: '🪰', topic: 'Housefly lifespan',
+    q: 'Does a housefly only live for one day?', qes: '¿Una mosca común vive solo un día?',
+    trap: 'Yes - just 24 hours', trapEs: 'Sí, solo 24 horas',
+    answer: 'No - about a month!', answerEs: '¡No, alrededor de un mes!',
+    fact: 'People mix up houseflies with mayflies. Some grown-up mayflies live only a day or even a few hours - but first they spend months as babies in ponds and rivers. A housefly usually lives about two to four weeks as an adult, and a mother fly can lay hundreds of eggs in that time. That\'s why flies are so hard to get rid of!',
+    factEs: 'La gente confunde las moscas comunes con las efímeras. Algunas efímeras adultas viven solo un día o incluso unas horas, pero antes pasan meses como crías en charcas y ríos. Una mosca común adulta suele vivir de dos a cuatro semanas, y una mosca madre puede poner cientos de huevos en ese tiempo. ¡Por eso cuesta tanto librarse de ellas!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1580,4 +1587,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ap3: 'ap3-nostril-breathing.mp4',
   ap4: 'ap4-sleepwalkers.mp4',
   ap5: 'ap5-blue-sky.mp4',
+  aq1: 'aq1-housefly-lifespan.mp4',
 };
