@@ -1390,6 +1390,13 @@ const QI_BANK = [
     answer: 'No - he was brilliant at it!', answerEs: '¡No, era brillante en ellas!',
     fact: 'Einstein was excellent at maths from a young age, and he taught himself algebra and geometry as a boy. The myth may come from a mix-up over his Swiss school reports, where 6 was the top mark, not the worst. He did fail part of a university entrance exam at 16 - about two years younger than most students - but his maths and physics results were outstanding. When he heard the rumour, he said he had never failed in mathematics.',
     factEs: 'Einstein era excelente en matemáticas desde pequeño, y aprendió solo álgebra y geometría cuando era niño. El mito quizá viene de una confusión con sus notas del colegio en Suiza, donde el 6 era la nota más alta, no la peor. Sí suspendió parte de un examen de acceso a la universidad a los 16 años, unos dos años más joven que los demás, pero sus resultados en matemáticas y física fueron sobresalientes. Cuando oyó el rumor, dijo que nunca había suspendido matemáticas.' },
+  // Set AR (pipeline, one question at a time)
+  { id: 'ar1', set: 'AR', emoji: '🐦', topic: 'Hummingbirds and geese',
+    q: 'Do hummingbirds hitch rides on the backs of geese when they migrate?', qes: '¿Los colibríes viajan montados en gansos cuando migran?',
+    trap: 'Yes - they ride on geese', trapEs: 'Sí, van montados en gansos',
+    answer: 'No - they fly all the way themselves!', answerEs: '¡No, vuelan todo el camino ellos solos!',
+    fact: 'It\'s a lovely old story, but hummingbirds and geese migrate at different times and on different routes. Before the trip, a ruby-throated hummingbird eats so much that it nearly doubles its weight. Then many fly non-stop across the Gulf of Mexico - about 800 kilometres - flapping their tiny wings the whole way.',
+    factEs: 'Es una historia antigua muy bonita, pero los colibríes y los gansos migran en épocas distintas y por rutas distintas. Antes del viaje, el colibrí de garganta rubí come tanto que casi duplica su peso. Después, muchos cruzan el golfo de México sin parar, unos 800 kilómetros, batiendo sus alitas todo el camino.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1616,4 +1623,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aq3: 'aq3-eagle-screech.mp4',
   aq4: 'aq4-kangaroo-name.mp4',
   aq5: 'aq5-einstein-and-maths.mp4',
+  ar1: 'ar1-hummingbirds-and-geese.mp4',
 };
