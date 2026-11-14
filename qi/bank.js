@@ -1322,6 +1322,12 @@ const QI_BANK = [
     answer: 'No - we\'re cousins!', answerEs: '¡No, somos primos!',
     fact: 'Humans and chimpanzees share a common ancestor - an ape that lived roughly six to seven million years ago. Some of its descendants became today\'s chimps and bonobos, and others became humans. So chimps aren\'t our great-great-grandparents: they\'re more like distant cousins, who have been changing for just as long as we have. We still share about 98 percent of our DNA, which is why we look so alike.',
     factEs: 'Los humanos y los chimpancés tenemos un antepasado común: un simio que vivió hace unos seis o siete millones de años. Algunos de sus descendientes se convirtieron en los chimpancés y bonobos de hoy, y otros en humanos. Así que los chimpancés no son nuestros tatarabuelos: son más bien primos lejanos, que han cambiado durante el mismo tiempo que nosotros. Todavía compartimos cerca del 98 por ciento del ADN, y por eso nos parecemos tanto.' },
+  { id: 'ao5', set: 'AO', emoji: '🦖', topic: 'Dinosaurs and people',
+    q: 'Did cavemen ever see a living T. rex?', qes: '¿Algún hombre de las cavernas vio un T. rex vivo?',
+    trap: 'Yes - they hunted dinosaurs', trapEs: 'Sí, cazaban dinosaurios',
+    answer: 'No - millions of years apart!', answerEs: '¡No, hay millones de años de diferencia!',
+    fact: 'The big dinosaurs, including T. rex, died out about 66 million years ago, after a huge asteroid hit the Earth. The first humans appeared only around 300,000 years ago. If all the time since T. rex were squeezed into a single day, people would only turn up in the last seven minutes. Cartoons that show cavemen with dinosaurs are just for fun!',
+    factEs: 'Los grandes dinosaurios, incluido el T. rex, desaparecieron hace unos 66 millones de años, después de que un asteroide enorme chocara contra la Tierra. Los primeros humanos aparecieron hace solo unos 300.000 años. Si todo el tiempo desde el T. rex cupiera en un solo día, las personas aparecerían en los últimos siete minutos. ¡Los dibujos de cavernícolas con dinosaurios son solo para divertirse!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1537,4 +1543,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ao2: 'ao2-is-the-sun-on-fire.mp4',
   ao3: 'ao3-black-holes.mp4',
   ao4: 'ao4-humans-and-chimps.mp4',
+  ao5: 'ao5-dinosaurs-and-people.mp4',
 };
