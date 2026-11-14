@@ -1539,6 +1539,12 @@ const QI_BANK = [
     answer: 'No - it\'s in the middle, tilted left!', answerEs: '¡No, está en el centro, inclinado a la izquierda!',
     fact: 'Your heart sits almost in the middle of your chest, between your two lungs and just behind your breastbone. It\'s tilted, so its pointy bottom end leans to the left - and the left side does the hardest pumping, sending blood all around your body. That\'s why you feel the beat most on the left. Your heart is about the size of your fist, and your left lung is a little smaller than your right one to make room for it.',
     factEs: 'Tu corazón está casi en el centro del pecho, entre los dos pulmones y justo detrás del esternón. Está inclinado, así que su punta de abajo se inclina hacia la izquierda, y el lado izquierdo es el que bombea más fuerte para mandar sangre a todo el cuerpo. Por eso notas el latido más a la izquierda. Tu corazón es más o menos del tamaño de tu puño, y tu pulmón izquierdo es un poco más pequeño que el derecho para dejarle sitio.' },
+  { id: 'av5', set: 'AV', emoji: '🐟', topic: 'Piranhas',
+    q: 'Can a school of piranhas eat a whole cow down to the bones in seconds?', qes: '¿Un banco de pirañas puede dejar una vaca en los huesos en segundos?',
+    trap: 'Yes - in seconds!', trapEs: '¡Sí, en segundos!',
+    answer: 'No - they\'re mostly shy fish!', answerEs: '¡No, casi todas son peces tímidos!',
+    fact: 'Piranhas do have very sharp teeth, but most of them are shy. They swim in groups mainly to stay safe from bigger hunters like river dolphins, caimans and birds. They eat insects, small fish, seeds, fruit and dead animals they find. Attacks on people are rare and usually just a nip, often when the water is low and food is scarce. The famous stories of piranhas stripping a cow in seconds came from staged shows, where starving fish had been trapped together on purpose.',
+    factEs: 'Las pirañas tienen dientes muy afilados, pero casi todas son tímidas. Nadan en grupo sobre todo para protegerse de cazadores más grandes, como delfines de río, caimanes y aves. Comen insectos, peces pequeños, semillas, fruta y animales muertos que encuentran. Los ataques a personas son raros y suelen ser solo un mordisquito, a menudo cuando hay poca agua y poca comida. Las famosas historias de pirañas que dejan una vaca en los huesos en segundos vienen de espectáculos preparados, con peces hambrientos encerrados a propósito.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1789,4 +1795,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   av2: 'av2-knights-in-armour.mp4',
   av3: 'av3-clothes-moths.mp4',
   av4: 'av4-where-your-heart-is.mp4',
+  av5: 'av5-piranhas.mp4',
 };
