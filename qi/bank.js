@@ -1384,6 +1384,12 @@ const QI_BANK = [
     answer: 'No - it\'s the animal\'s real name!', answerEs: '¡No, es el nombre real del animal!',
     fact: 'A popular story says that when James Cook\'s crew asked local people in Australia what the animal was called in 1770, they answered \'kangaroo\', meaning \'I don\'t understand you\'. But language experts later found that in Guugu Yimithirr, a language of northern Australia, \'gangurru\' really is the name for a type of large grey kangaroo. So it was a real word all along!',
     factEs: 'Una historia muy contada dice que, en 1770, cuando la tripulación de James Cook preguntó en Australia cómo se llamaba el animal, la gente del lugar respondió «canguro», que significaría «no te entiendo». Pero más tarde, unos expertos en lenguas descubrieron que en guugu yimithirr, una lengua del norte de Australia, «gangurru» es de verdad el nombre de un tipo de canguro gris grande. ¡Así que siempre fue una palabra real!' },
+  { id: 'aq5', set: 'AQ', emoji: '🧠', topic: 'Einstein and maths',
+    q: 'Did Albert Einstein fail maths at school?', qes: '¿Albert Einstein suspendió matemáticas en el colegio?',
+    trap: 'Yes - he failed maths', trapEs: 'Sí, suspendió matemáticas',
+    answer: 'No - he was brilliant at it!', answerEs: '¡No, era brillante en ellas!',
+    fact: 'Einstein was excellent at maths from a young age, and he taught himself algebra and geometry as a boy. The myth may come from a mix-up over his Swiss school reports, where 6 was the top mark, not the worst. He did fail part of a university entrance exam at 16 - about two years younger than most students - but his maths and physics results were outstanding. When he heard the rumour, he said he had never failed in mathematics.',
+    factEs: 'Einstein era excelente en matemáticas desde pequeño, y aprendió solo álgebra y geometría cuando era niño. El mito quizá viene de una confusión con sus notas del colegio en Suiza, donde el 6 era la nota más alta, no la peor. Sí suspendió parte de un examen de acceso a la universidad a los 16 años, unos dos años más joven que los demás, pero sus resultados en matemáticas y física fueron sobresalientes. Cuando oyó el rumor, dijo que nunca había suspendido matemáticas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1609,4 +1615,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aq2: 'aq2-cats-in-the-dark.mp4',
   aq3: 'aq3-eagle-screech.mp4',
   aq4: 'aq4-kangaroo-name.mp4',
+  aq5: 'aq5-einstein-and-maths.mp4',
 };
