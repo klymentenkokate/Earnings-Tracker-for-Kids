@@ -1521,6 +1521,12 @@ const QI_BANK = [
     answer: 'No - it\'s mostly a bluff!', answerEs: '¡No, casi todo es un farol!',
     fact: 'Swans are big, strong birds, and they hiss, flap and charge to protect their nests and chicks. A hit from a wing can hurt and leave a bruise, but there\'s no reliable record of a swan ever breaking a grown-up\'s arm - their wing bones are hollow and light. Most of the hissing and flapping is a show to make you go away. So the swan wins anyway: always give a nesting swan plenty of space!',
     factEs: 'Los cisnes son aves grandes y fuertes, y bufan, aletean y embisten para proteger sus nidos y sus crías. Un golpe de ala puede doler y dejar un moratón, pero no hay ningún caso fiable de un cisne que le haya roto el brazo a un adulto: sus huesos son huecos y ligeros. Casi todo ese bufido y aleteo es un espectáculo para que te vayas. Así que el cisne gana igual: ¡deja siempre mucho espacio a un cisne con nido!' },
+  { id: 'av2', set: 'AV', emoji: '🛡️', topic: 'Knights in armour',
+    q: 'Was a knight\'s armour so heavy that he needed a crane to get onto his horse?', qes: '¿La armadura de un caballero pesaba tanto que necesitaba una grúa para subir al caballo?',
+    trap: 'Yes - a crane!', trapEs: '¡Sí, una grúa!',
+    answer: 'No - knights could run and climb!', answerEs: '¡No, podían correr y trepar!',
+    fact: 'A full suit of battle armour weighed about 15 to 25 kilos - less than the kit many modern soldiers carry. Because the weight was spread all over the body, a fit knight could run, lie down and get back up, climb a ladder and jump onto his horse by himself. People have tested this wearing copies of old armour. The idea of knights being lifted by cranes mostly comes from old films, not from history.',
+    factEs: 'Una armadura completa de batalla pesaba unos 15 a 25 kilos, menos que el equipo de muchos soldados de hoy. Como el peso se repartía por todo el cuerpo, un caballero en forma podía correr, tumbarse y levantarse, subir una escalera y montar a caballo él solo. Se ha comprobado con copias de armaduras antiguas. La idea de subir a los caballeros con grúas viene sobre todo de películas antiguas, no de la historia.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1768,4 +1774,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   au4: 'au4-shooting-meteors.mp4',
   au5: 'au5-bones-in-your-body.mp4',
   av1: 'av1-swan-wings.mp4',
+  av2: 'av2-knights-in-armour.mp4',
 };
