@@ -1372,6 +1372,12 @@ const QI_BANK = [
     answer: 'No - they need a little light!', answerEs: '¡No, necesitan un poco de luz!',
     fact: 'Cats are brilliant at seeing in dim light - they need only about a sixth of the light that we do. Their pupils open very wide, and a shiny layer at the back of their eyes bounces light back through, which is why their eyes glow when a torch shines on them. But in complete darkness, with no light at all, a cat can\'t see either. Then it finds its way with its whiskers, ears and nose.',
     factEs: 'Los gatos ven genial con poca luz: necesitan solo una sexta parte de la luz que nosotros. Sus pupilas se abren muchísimo, y una capa brillante en el fondo del ojo devuelve la luz, por eso sus ojos brillan cuando los alumbra una linterna. Pero en la oscuridad total, sin nada de luz, un gato tampoco ve. Entonces se orienta con los bigotes, las orejas y la nariz.' },
+  { id: 'aq3', set: 'AQ', emoji: '🦅', topic: 'Eagle screech',
+    q: 'Does a bald eagle make that loud, fierce screech you hear in films?', qes: '¿El águila calva hace ese chillido fuerte y feroz de las películas?',
+    trap: 'Yes - that\'s the eagle\'s cry', trapEs: 'Sí, es el grito del águila',
+    answer: 'No - that\'s usually a hawk!', answerEs: '¡No, suele ser un halcón colirrojo!',
+    fact: 'Bald eagles actually make high, squeaky, chirping calls - a bit like a giggling seagull. Film-makers didn\'t think that sounded tough enough for such a mighty bird, so they often use the fierce screech of a red-tailed hawk instead. Next time you see an eagle soaring across a film screen, listen carefully: you\'re probably hearing a hawk!',
+    factEs: 'Las águilas calvas en realidad hacen llamadas agudas, chillonas y entrecortadas, un poco como una gaviota riéndose. A los cineastas no les parecía un sonido lo bastante feroz para un ave tan imponente, así que muchas veces ponen el chillido del busardo colirrojo, una especie de halcón. La próxima vez que veas un águila volando en una película, escucha bien: ¡seguramente oyes a un halcón!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1595,4 +1601,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ap5: 'ap5-blue-sky.mp4',
   aq1: 'aq1-housefly-lifespan.mp4',
   aq2: 'aq2-cats-in-the-dark.mp4',
+  aq3: 'aq3-eagle-screech.mp4',
 };
