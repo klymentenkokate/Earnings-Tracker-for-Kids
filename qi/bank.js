@@ -1415,6 +1415,12 @@ const QI_BANK = [
     answer: 'No - they stay standing!', answerEs: '¡No, se quedan de pie!',
     fact: 'In the 1980s, pilots told funny stories about penguins leaning back to watch their helicopters fly over, until whole rows toppled over like dominoes. In 2000, scientists tested it by flying helicopters near king penguins. The penguins went quiet and some walked away - but not a single one fell over! Penguins are steady on their feet, and they can even lean back on their stiff tail feathers like a built-in stool.',
     factEs: 'En los años ochenta, unos pilotos contaban historias graciosas: los pingüinos se echaban hacia atrás para mirar sus helicópteros hasta caer en fila como fichas de dominó. En el año 2000, unos científicos lo comprobaron volando en helicóptero cerca de pingüinos rey. Los pingüinos se quedaron callados y algunos se alejaron, ¡pero ninguno se cayó! Los pingüinos tienen buen equilibrio y hasta pueden apoyarse en las plumas rígidas de la cola, como en un taburete.' },
+  { id: 'ar5', set: 'AR', emoji: '🍉', topic: 'Swallowed seeds',
+    q: 'If you swallow a watermelon seed, will a watermelon grow in your tummy?', qes: 'Si te tragas una pepita de sandía, ¿te crecerá una sandía en la barriga?',
+    trap: 'Yes - it\'ll sprout inside!', trapEs: '¡Sí, brotará dentro!',
+    answer: 'No - it just passes through!', answerEs: '¡No, simplemente sale!',
+    fact: 'A seed needs soil, light and air to sprout, and your tummy is a dark place full of strong acid - no good for growing plants! A swallowed watermelon seed simply travels through your body and comes out the other end in a day or two. Watermelon seeds are actually safe to eat - some people even roast them as a crunchy snack.',
+    factEs: 'Una semilla necesita tierra, luz y aire para brotar, y tu barriga es un lugar oscuro lleno de ácido fuerte: ¡nada bueno para las plantas! Una pepita de sandía que te tragas viaja por tu cuerpo y sale por el otro lado en uno o dos días. Las pepitas de sandía se pueden comer sin problema; hay quien incluso las tuesta como aperitivo crujiente.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1645,4 +1651,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ar2: 'ar2-let-them-eat-cake.mp4',
   ar3: 'ar3-walking-the-plank.mp4',
   ar4: 'ar4-penguins-and-planes.mp4',
+  ar5: 'ar5-swallowed-seeds.mp4',
 };
