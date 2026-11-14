@@ -1279,6 +1279,12 @@ const QI_BANK = [
     answer: 'No - bees fly just fine!', answerEs: '¡No, las abejas vuelan perfectamente!',
     fact: 'About 90 years ago a story spread that someone had done the sums and found a bumblebee was too heavy for its tiny wings. But that quick sum treated the bee\'s wings like the stiff, still wings of an aeroplane. A bumblebee\'s wings flap about 200 times a second and twist as they go, stirring up tiny whirlwinds of air that lift the bee. Scientists have filmed this in slow motion, so we know exactly how they fly.',
     factEs: 'Hace unos 90 años se extendió la historia de que alguien había hecho las cuentas y un abejorro pesaba demasiado para sus alitas. Pero esa cuenta rápida trataba sus alas como las alas rígidas y quietas de un avión. Las alas del abejorro baten unas 200 veces por segundo y se retuercen al moverse, creando remolinos diminutos de aire que lo levantan. Los científicos lo han grabado a cámara lenta, así que sabemos exactamente cómo vuelan.' },
+  { id: 'an3', set: 'AN', emoji: '📖', topic: 'Reading in the dark',
+    q: 'Does reading in dim light damage your eyes?', qes: '¿Leer con poca luz te estropea la vista?',
+    trap: 'Yes - it ruins your eyes', trapEs: 'Sí, te estropea los ojos',
+    answer: 'No - it just makes them tired!', answerEs: '¡No, solo los cansa!',
+    fact: 'Reading in dim light is harder work for your eyes. You squint and blink less, so your eyes can feel tired, achy and dry, and you might even get a headache. But after a rest your eyes go back to normal - there\'s no lasting damage. A good lamp just makes reading more comfortable. And here\'s something that really does help your eyes: scientists have found that children who play outdoors in daylight are less likely to become short-sighted.',
+    factEs: 'Leer con poca luz es más trabajo para los ojos. Entrecierras los ojos y parpadeas menos, así que pueden notarse cansados, doloridos y secos, y hasta puede doler la cabeza. Pero después de descansar vuelven a la normalidad: no hay daño duradero. Una buena lámpara solo hace la lectura más cómoda. Y algo que sí ayuda a tus ojos: los científicos han visto que los niños que juegan al aire libre con luz de día tienen menos probabilidades de volverse miopes.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1487,4 +1493,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   am5: 'am5-fortune-cookies.mp4',
   an1: 'an1-gorilla-chests.mp4',
   an2: 'an2-bumblebee-flight.mp4',
+  an3: 'an3-reading-in-the-dark.mp4',
 };
