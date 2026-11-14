@@ -1347,6 +1347,12 @@ const QI_BANK = [
     answer: 'No - they take turns!', answerEs: '¡No, se turnan!',
     fact: 'Most of the time one nostril does more of the breathing while the other rests a little: the inside of the resting side swells slightly. Every few hours they swap over. This is called the nasal cycle, and most people never notice it. Try it: gently block one nostril and breathe, then the other - one side usually feels clearer than the other.',
     factEs: 'Casi siempre, un orificio de la nariz hace más trabajo mientras el otro descansa un poco: el interior del lado que descansa se hincha ligeramente. Cada pocas horas se intercambian. Se llama ciclo nasal y casi nadie lo nota. Pruébalo: tápate con suavidad un orificio y respira, luego el otro: normalmente un lado se nota más despejado.' },
+  { id: 'ap4', set: 'AP', emoji: '🚶', topic: 'Sleepwalkers',
+    q: 'Is it dangerous to wake up a sleepwalker?', qes: '¿Es peligroso despertar a un sonámbulo?',
+    trap: 'Yes - it could harm them', trapEs: 'Sí, le podría hacer daño',
+    answer: 'No - but gently guide them back to bed!', answerEs: '¡No, pero llévalo con cuidado a la cama!',
+    fact: 'Waking a sleepwalker won\'t hurt them, though they may feel confused or startled for a moment. The real danger is the sleepwalker tripping, falling or wandering somewhere unsafe. Sleep experts say the kindest thing is to gently guide them back to bed - and if they wake up on the way, that\'s fine. Sleepwalking is quite common in children, and most grow out of it.',
+    factEs: 'Despertar a un sonámbulo no le hace daño, aunque puede sentirse confundido o asustado un momento. El peligro de verdad es que tropiece, se caiga o vaya a algún sitio peligroso. Los expertos en sueño dicen que lo mejor es llevarlo con suavidad de vuelta a la cama, y si se despierta por el camino, no pasa nada. El sonambulismo es bastante común en los niños, y casi todos lo superan al crecer.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1566,4 +1572,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ap1: 'ap1-kings-of-the-jungle.mp4',
   ap2: 'ap2-elephant-trunks.mp4',
   ap3: 'ap3-nostril-breathing.mp4',
+  ap4: 'ap4-sleepwalkers.mp4',
 };
