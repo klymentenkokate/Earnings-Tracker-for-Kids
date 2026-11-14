@@ -1533,6 +1533,12 @@ const QI_BANK = [
     answer: 'Not the grown-ups - their babies do!', answerEs: '¡Las adultas no, sus crías sí!',
     fact: 'Grown-up clothes moths don\'t eat anything at all - they can\'t, because their mouths don\'t work. The holes are made by their tiny caterpillar babies, called larvae, which munch on wool, silk and fur in dark, quiet cupboards. And only a few kinds of moth do this: almost all of the many thousands of moth species, like the ones that flutter around lamps at night, never go near your clothes.',
     factEs: 'Las polillas de la ropa adultas no comen nada: no pueden, porque su boca no funciona. Los agujeros los hacen sus diminutas crías, unas orugas llamadas larvas, que mastican lana, seda y piel en armarios oscuros y tranquilos. Y solo unas pocas clases de polilla lo hacen: casi todas las miles de especies, como las que revolotean alrededor de las lámparas, nunca se acercan a tu ropa.' },
+  { id: 'av4', set: 'AV', emoji: '🫀', topic: 'Where your heart is',
+    q: 'Is your heart on the left side of your chest?', qes: '¿Tu corazón está en el lado izquierdo del pecho?',
+    trap: 'Yes - on the left', trapEs: 'Sí, a la izquierda',
+    answer: 'No - it\'s in the middle, tilted left!', answerEs: '¡No, está en el centro, inclinado a la izquierda!',
+    fact: 'Your heart sits almost in the middle of your chest, between your two lungs and just behind your breastbone. It\'s tilted, so its pointy bottom end leans to the left - and the left side does the hardest pumping, sending blood all around your body. That\'s why you feel the beat most on the left. Your heart is about the size of your fist, and your left lung is a little smaller than your right one to make room for it.',
+    factEs: 'Tu corazón está casi en el centro del pecho, entre los dos pulmones y justo detrás del esternón. Está inclinado, así que su punta de abajo se inclina hacia la izquierda, y el lado izquierdo es el que bombea más fuerte para mandar sangre a todo el cuerpo. Por eso notas el latido más a la izquierda. Tu corazón es más o menos del tamaño de tu puño, y tu pulmón izquierdo es un poco más pequeño que el derecho para dejarle sitio.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1782,4 +1788,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   av1: 'av1-swan-wings.mp4',
   av2: 'av2-knights-in-armour.mp4',
   av3: 'av3-clothes-moths.mp4',
+  av4: 'av4-where-your-heart-is.mp4',
 };
