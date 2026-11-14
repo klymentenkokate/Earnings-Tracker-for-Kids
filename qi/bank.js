@@ -1328,6 +1328,13 @@ const QI_BANK = [
     answer: 'No - millions of years apart!', answerEs: '¡No, hay millones de años de diferencia!',
     fact: 'The big dinosaurs, including T. rex, died out about 66 million years ago, after a huge asteroid hit the Earth. The first humans appeared only around 300,000 years ago. If all the time since T. rex were squeezed into a single day, people would only turn up in the last seven minutes. Cartoons that show cavemen with dinosaurs are just for fun!',
     factEs: 'Los grandes dinosaurios, incluido el T. rex, desaparecieron hace unos 66 millones de años, después de que un asteroide enorme chocara contra la Tierra. Los primeros humanos aparecieron hace solo unos 300.000 años. Si todo el tiempo desde el T. rex cupiera en un solo día, las personas aparecerían en los últimos siete minutos. ¡Los dibujos de cavernícolas con dinosaurios son solo para divertirse!' },
+  // Set AP (pipeline, one question at a time)
+  { id: 'ap1', set: 'AP', emoji: '🦁', topic: 'Kings of the jungle',
+    q: 'Do lions live in the jungle?', qes: '¿Los leones viven en la selva?',
+    trap: 'Yes - kings of the jungle!', trapEs: '¡Sí, son los reyes de la selva!',
+    answer: 'No - they live on grassy plains!', answerEs: '¡No, viven en llanuras de hierba!',
+    fact: 'Lions are called the \'king of the jungle\', but almost all wild lions live on Africa\'s savannas - wide grasslands with only a few scattered trees - and in dry scrub and open woodland. A small group also lives in the Gir Forest in India, which is a dry forest, not a steamy rainforest. Lions like open land, where they can spot their prey from far away and hunt together as a team.',
+    factEs: 'Al león lo llaman «el rey de la selva», pero casi todos los leones salvajes viven en las sabanas de África, grandes praderas con pocos árboles, y en matorrales secos y bosques abiertos. Un pequeño grupo vive también en el bosque de Gir, en la India, que es un bosque seco, no una selva tropical. A los leones les gusta el terreno abierto, donde ven a sus presas desde lejos y cazan en equipo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1544,4 +1551,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ao3: 'ao3-black-holes.mp4',
   ao4: 'ao4-humans-and-chimps.mp4',
   ao5: 'ao5-dinosaurs-and-people.mp4',
+  ap1: 'ap1-kings-of-the-jungle.mp4',
 };
