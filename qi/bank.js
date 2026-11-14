@@ -1254,6 +1254,12 @@ const QI_BANK = [
     answer: 'No - four planets have rings!', answerEs: '¡No, cuatro planetas tienen anillos!',
     fact: 'Jupiter, Uranus and Neptune have rings too - but theirs are thin and dark, made of dust and dark rock, so they are very hard to see. Astronomers only found them in the late 1970s and 1980s, with special telescopes and space probes. Saturn\'s rings are the bright, famous ones because they\'re made of billions of chunks of ice, and ice reflects sunlight brilliantly.',
     factEs: 'Júpiter, Urano y Neptuno también tienen anillos, pero son finos y oscuros, de polvo y roca oscura, y por eso cuesta mucho verlos. Los astrónomos no los descubrieron hasta finales de los años setenta y los ochenta, con telescopios especiales y sondas espaciales. Los anillos de Saturno son los famosos y brillantes porque están hechos de miles de millones de trozos de hielo, y el hielo refleja muy bien la luz del Sol.' },
+  { id: 'am4', set: 'AM', emoji: '🚗', topic: 'Cars and lightning',
+    q: 'Does a car keep you safe from lightning because of its rubber tyres?', qes: '¿Un coche te protege de los rayos gracias a sus neumáticos de goma?',
+    trap: 'Yes - the rubber tyres', trapEs: 'Sí, por los neumáticos de goma',
+    answer: 'No - it\'s the metal body!', answerEs: '¡No, es la carrocería de metal!',
+    fact: 'A lightning bolt has just jumped through kilometres of air, so a few centimetres of rubber can\'t stop it. What protects you is the car\'s metal body and roof: the electricity flows around the outside of the metal and down into the ground, away from the people inside. So in a thunderstorm a car with a metal roof is a safe place - keep the windows shut and your hands in your lap. Open-top cars and bikes don\'t protect you.',
+    factEs: 'Un rayo acaba de atravesar kilómetros de aire, así que unos centímetros de goma no pueden pararlo. Lo que te protege es la carrocería y el techo de metal: la electricidad corre por fuera del metal y baja al suelo, lejos de las personas de dentro. Por eso, en una tormenta, un coche con techo de metal es un lugar seguro: ventanillas cerradas y las manos en el regazo. Los descapotables y las bicis no te protegen.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1458,4 +1464,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   am1: 'am1-monkeys-and-bananas.mp4',
   am2: 'am2-flying-chickens.mp4',
   am3: 'am3-planet-rings.mp4',
+  am4: 'am4-cars-and-lightning.mp4',
 };
