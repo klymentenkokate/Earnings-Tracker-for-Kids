@@ -1248,6 +1248,12 @@ const QI_BANK = [
     answer: 'Yes - just not very far!', answerEs: '¡Sí, pero no muy lejos!',
     fact: 'Chickens can flap up onto fences, roofs and tree branches, and if they\'re allowed, many like to sleep up high. Farm chickens have heavy bodies for the size of their wings, so their flights are short - the longest chicken flight ever recorded lasted about 13 seconds. Their wild ancestor, a jungle bird called the red junglefowl, is a much better flier and roosts in trees at night.',
     factEs: 'Las gallinas pueden subir aleteando a vallas, tejados y ramas, y si las dejan, a muchas les gusta dormir en alto. Las gallinas de granja tienen el cuerpo pesado para el tamaño de sus alas, así que sus vuelos son cortos: el vuelo de gallina más largo registrado duró unos 13 segundos. Su antepasado salvaje, un pájaro de la selva llamado gallo bankiva, vuela mucho mejor y duerme en los árboles.' },
+  { id: 'am3', set: 'AM', emoji: '🪐', topic: 'Planet rings',
+    q: 'Is Saturn the only planet with rings?', qes: '¿Saturno es el único planeta con anillos?',
+    trap: 'Yes - only Saturn', trapEs: 'Sí, solo Saturno',
+    answer: 'No - four planets have rings!', answerEs: '¡No, cuatro planetas tienen anillos!',
+    fact: 'Jupiter, Uranus and Neptune have rings too - but theirs are thin and dark, made of dust and dark rock, so they are very hard to see. Astronomers only found them in the late 1970s and 1980s, with special telescopes and space probes. Saturn\'s rings are the bright, famous ones because they\'re made of billions of chunks of ice, and ice reflects sunlight brilliantly.',
+    factEs: 'Júpiter, Urano y Neptuno también tienen anillos, pero son finos y oscuros, de polvo y roca oscura, y por eso cuesta mucho verlos. Los astrónomos no los descubrieron hasta finales de los años setenta y los ochenta, con telescopios especiales y sondas espaciales. Los anillos de Saturno son los famosos y brillantes porque están hechos de miles de millones de trozos de hielo, y el hielo refleja muy bien la luz del Sol.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1451,4 +1457,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   al5: 'al5-elephants-and-mice.mp4',
   am1: 'am1-monkeys-and-bananas.mp4',
   am2: 'am2-flying-chickens.mp4',
+  am3: 'am3-planet-rings.mp4',
 };
