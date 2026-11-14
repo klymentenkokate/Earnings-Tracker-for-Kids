@@ -1446,6 +1446,12 @@ const QI_BANK = [
     answer: 'No - by paid workers!', answerEs: '¡No, trabajadores con paga!',
     fact: 'Archaeologists found the villages where the pyramid builders lived, near Giza. The workers ate bread and plenty of meat, had doctors who set their broken bones, and were buried in tombs next to the pyramids - an honour slaves would never have been given. Some were full-time experts, and others were farmers who took turns working, paid in food, beer and cloth. The slave idea comes partly from old Greek stories and from films.',
     factEs: 'Los arqueólogos encontraron los poblados donde vivían los constructores de las pirámides, cerca de Guiza. Comían pan y bastante carne, tenían médicos que les curaban los huesos rotos y los enterraban en tumbas junto a las pirámides, un honor que nunca habrían recibido unos esclavos. Algunos eran expertos a tiempo completo y otros eran campesinos que trabajaban por turnos, pagados con comida, cerveza y tela. La idea de los esclavos viene en parte de antiguas historias griegas y de las películas.' },
+  { id: 'as5', set: 'AS', emoji: '🐰', topic: 'Rabbits and rodents',
+    q: 'Are rabbits a kind of rodent?', qes: '¿Los conejos son un tipo de roedor?',
+    trap: 'Yes - like mice and rats', trapEs: 'Sí, como los ratones y las ratas',
+    answer: 'No - they\'re lagomorphs!', answerEs: '¡No, son lagomorfos!',
+    fact: 'Rabbits look a bit like big rodents, and like rodents their front teeth never stop growing. But rabbits belong to a different group called lagomorphs, along with hares and little pikas. Here\'s a clue: a rabbit has a second pair of tiny peg teeth hidden right behind its big top front teeth. Rodents, like mice, rats and squirrels, only have one pair.',
+    factEs: 'Los conejos se parecen un poco a roedores grandes y, como ellos, sus dientes delanteros no paran de crecer. Pero los conejos pertenecen a otro grupo llamado lagomorfos, junto con las liebres y las pequeñas picas. Una pista: el conejo tiene un segundo par de dientecillos escondidos justo detrás de sus grandes dientes delanteros de arriba. Los roedores, como los ratones, las ratas y las ardillas, solo tienen un par.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1681,4 +1687,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   as2: 'as2-gladiator-thumbs.mp4',
   as3: 'as3-tarantula-bites.mp4',
   as4: 'as4-pyramid-builders.mp4',
+  as5: 'as5-rabbits-and-rodents.mp4',
 };
