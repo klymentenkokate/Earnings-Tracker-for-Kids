@@ -1459,6 +1459,12 @@ const QI_BANK = [
     answer: 'No - you can often see it by day!', answerEs: '¡No, muchas veces se ve de día!',
     fact: 'The Moon stays up in the sky for about 12 hours at a time, just like the Sun, but it rises about 50 minutes later each day. So on many days it\'s up while the Sun is shining too. It\'s bright enough to see against the blue sky: look for a pale, whitish Moon on a sunny morning or afternoon - it\'s easiest to spot around half-Moon.',
     factEs: 'La Luna está en el cielo unas 12 horas seguidas, igual que el Sol, pero sale unos 50 minutos más tarde cada día. Por eso muchos días está arriba mientras brilla el Sol. Es lo bastante brillante para verla sobre el cielo azul: busca una Luna pálida y blanquecina en una mañana o una tarde soleada; se ve mejor en cuarto creciente o menguante.' },
+  { id: 'at2', set: 'AT', emoji: '🍯', topic: 'How bees make honey',
+    q: 'Do bees make honey from pollen?', qes: '¿Las abejas hacen la miel con polen?',
+    trap: 'Yes - from pollen', trapEs: 'Sí, con polen',
+    answer: 'No - from nectar!', answerEs: '¡No, con néctar!',
+    fact: 'Bees collect two different things from flowers. Pollen is a powdery, protein-rich food that they mostly feed to their babies. Honey is made from nectar, a sugary juice inside flowers. Bees carry nectar home in a special honey stomach, pass it from bee to bee, then fan it with their wings until most of the water dries out - and it turns into thick, sticky honey.',
+    factEs: 'Las abejas recogen dos cosas distintas de las flores. El polen es un alimento en polvo, rico en proteínas, que dan sobre todo a sus crías. La miel se hace con néctar, un jugo azucarado del interior de las flores. Las abejas lo llevan a casa en un estómago especial para la miel, se lo pasan de una a otra y luego lo abanican con las alas hasta que se evapora casi toda el agua y se convierte en miel espesa y pegajosa.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1696,4 +1702,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   as4: 'as4-pyramid-builders.mp4',
   as5: 'as5-rabbits-and-rodents.mp4',
   at1: 'at1-moon-in-the-daytime.mp4',
+  at2: 'at2-how-bees-make-honey.mp4',
 };
