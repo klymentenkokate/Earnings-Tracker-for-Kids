@@ -1502,6 +1502,12 @@ const QI_BANK = [
     answer: 'No - from much closer to the surface!', answerEs: '¡No, de mucho más cerca de la superficie!',
     fact: 'The Earth\'s core is about 2,900 kilometres down - far too deep for volcanoes. Most magma forms much closer to the surface, roughly 50 to 200 kilometres down, where rock in the Earth\'s mantle partly melts. Surprisingly, most of the mantle isn\'t liquid at all: it\'s solid rock so hot that it creeps very slowly, like extremely thick toffee. Only small pockets melt and rise up to feed volcanoes.',
     factEs: 'El núcleo de la Tierra está a unos 2.900 kilómetros de profundidad, demasiado hondo para los volcanes. Casi todo el magma se forma mucho más cerca de la superficie, a unos 50 o 200 kilómetros, donde la roca del manto se funde en parte. Sorprendentemente, casi todo el manto no es líquido: es roca sólida tan caliente que se mueve muy despacio, como un caramelo espesísimo. Solo pequeñas bolsas se funden y suben para alimentar los volcanes.' },
+  { id: 'au4', set: 'AU', emoji: '☄️', topic: 'Shooting meteors',
+    q: 'When a meteorite lands, is it always glowing hot?', qes: 'Cuando cae un meteorito, ¿siempre llega al rojo vivo?',
+    trap: 'Yes - red hot!', trapEs: '¡Sí, al rojo vivo!',
+    answer: 'No - usually just warm or cool!', answerEs: '¡No, normalmente solo tibio o frío!',
+    fact: 'As a space rock rushes through the air, only its outer skin gets hot enough to melt, and that melted layer is blown away. Then the air slows it right down for the last few kilometres, so the inside - which has been in freezing space for millions of years - never has time to heat up. People who\'ve picked up meteorites just after they landed usually found them warm or even cold to the touch.',
+    factEs: 'Cuando una roca espacial atraviesa el aire, solo su capa exterior se calienta tanto como para fundirse, y esa capa fundida sale volando. Después, el aire la frena mucho en los últimos kilómetros, así que su interior, que ha pasado millones de años en el frío del espacio, no llega a calentarse. Las personas que han cogido meteoritos justo después de caer casi siempre los notaron tibios o incluso fríos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1746,4 +1752,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   au1: 'au1-spinach-and-strength.mp4',
   au2: 'au2-dodo-birds.mp4',
   au3: 'au3-hot-volcano-rock.mp4',
+  au4: 'au4-shooting-meteors.mp4',
 };
