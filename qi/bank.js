@@ -1291,6 +1291,12 @@ const QI_BANK = [
     answer: 'No - they\'re dry and smooth!', answerEs: '¡No, son secas y suaves!',
     fact: 'A snake is covered in dry scales made of keratin - the same stuff as your fingernails. The scales can be shiny, so a snake may look wet, but if you touch one it feels dry and smooth, a bit like a leather bag. The slimy animals are frogs, toads, slugs and worms: their damp skin stops them drying out, and frogs even breathe partly through their skin.',
     factEs: 'Una serpiente está cubierta de escamas secas hechas de queratina, lo mismo que tus uñas. Las escamas pueden brillar, así que parece mojada, pero si la tocas está seca y suave, un poco como un bolso de cuero. Los animales viscosos son las ranas, los sapos, las babosas y las lombrices: su piel húmeda evita que se sequen, y las ranas hasta respiran en parte por la piel.' },
+  { id: 'an5', set: 'AN', emoji: '🐹', topic: 'Guinea pigs',
+    q: 'Do guinea pigs come from Guinea - and are they a kind of pig?', qes: '¿Las cobayas vienen de Guinea y son una especie de cerdo?',
+    trap: 'Yes - little pigs from Guinea', trapEs: 'Sí, cerditos de Guinea',
+    answer: 'Neither - they\'re rodents from South America!', answerEs: '¡Ni una cosa ni otra: son roedores de Sudamérica!',
+    fact: 'Guinea pigs are rodents, like hamsters and mice, and they come from the Andes mountains in South America, where people have kept them for thousands of years. Nobody knows for sure how they got their English name. They may be called \'pigs\' because they squeak, squeal and grunt, and \'guinea\' may once have just meant somewhere far away.',
+    factEs: 'Las cobayas, también llamadas conejillos de Indias, son roedores, como los hámsteres y los ratones, y vienen de los Andes, en Sudamérica, donde la gente las cría desde hace miles de años. Nadie sabe con seguridad de dónde sale su nombre en inglés, «guinea pig». Quizá las llamaron «cerdos» porque chillan y gruñen, y «guinea» quizá solo significaba un lugar muy lejano.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1501,4 +1507,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   an2: 'an2-bumblebee-flight.mp4',
   an3: 'an3-reading-in-the-dark.mp4',
   an4: 'an4-slimy-snakes.mp4',
+  an5: 'an5-guinea-pigs.mp4',
 };
