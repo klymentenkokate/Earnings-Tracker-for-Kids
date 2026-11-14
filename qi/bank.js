@@ -1335,6 +1335,12 @@ const QI_BANK = [
     answer: 'No - they live on grassy plains!', answerEs: '¡No, viven en llanuras de hierba!',
     fact: 'Lions are called the \'king of the jungle\', but almost all wild lions live on Africa\'s savannas - wide grasslands with only a few scattered trees - and in dry scrub and open woodland. A small group also lives in the Gir Forest in India, which is a dry forest, not a steamy rainforest. Lions like open land, where they can spot their prey from far away and hunt together as a team.',
     factEs: 'Al león lo llaman «el rey de la selva», pero casi todos los leones salvajes viven en las sabanas de África, grandes praderas con pocos árboles, y en matorrales secos y bosques abiertos. Un pequeño grupo vive también en el bosque de Gir, en la India, que es un bosque seco, no una selva tropical. A los leones les gusta el terreno abierto, donde ven a sus presas desde lejos y cazan en equipo.' },
+  { id: 'ap2', set: 'AP', emoji: '🐘', topic: 'Elephant trunks',
+    q: 'Do elephants drink through their trunks, like a straw?', qes: '¿Los elefantes beben por la trompa, como con una pajita?',
+    trap: 'Yes - like a giant straw', trapEs: 'Sí, como una pajita gigante',
+    answer: 'No - they squirt water into their mouths!', answerEs: '¡No, se echan el agua en la boca!',
+    fact: 'An elephant\'s trunk is its nose, joined to its upper lip. To drink, it sucks water a little way up the trunk, then curls the trunk round to its mouth and squirts the water in. Drinking straight through the trunk would be like drinking through your nose! A big elephant\'s trunk can carry several litres of water at a time, and it has no bones at all - just a huge number of muscles.',
+    factEs: 'La trompa del elefante es su nariz, unida al labio de arriba. Para beber, sorbe agua un poco por la trompa, luego la dobla hacia la boca y se echa el agua dentro. ¡Beber directamente por la trompa sería como beber por la nariz! La trompa de un elefante grande puede llevar varios litros de agua de una vez, y no tiene ningún hueso: solo muchísimos músculos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1552,4 +1558,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ao4: 'ao4-humans-and-chimps.mp4',
   ao5: 'ao5-dinosaurs-and-people.mp4',
   ap1: 'ap1-kings-of-the-jungle.mp4',
+  ap2: 'ap2-elephant-trunks.mp4',
 };
