@@ -1403,6 +1403,12 @@ const QI_BANK = [
     answer: 'No - there\'s no proof she ever did!', answerEs: '¡No, no hay pruebas de que lo dijera!',
     fact: 'A version of the phrase appears in a book by the writer Jean-Jacques Rousseau, written when Marie Antoinette was still a child far away in Austria. He wrote about \'a great princess\' who said the poor should eat brioche - a rich, buttery bread. Nobody from her own time recorded her saying it, and historians think the story was pinned on her later because she was so unpopular.',
     factEs: 'Una versión de la frase aparece en un libro del escritor Jean-Jacques Rousseau, escrito cuando María Antonieta todavía era una niña en la lejana Austria. Él hablaba de «una gran princesa» que decía que los pobres comieran brioche, un pan rico y mantecoso. Nadie de su época anotó que ella lo dijera, y los historiadores creen que se lo atribuyeron más tarde porque era muy impopular.' },
+  { id: 'ar3', set: 'AR', emoji: '☠️', topic: 'Walking the plank',
+    q: 'Did pirates often make their prisoners walk the plank?', qes: '¿Los piratas solían obligar a sus prisioneros a caminar por la tabla?',
+    trap: 'Yes - all the time!', trapEs: '¡Sí, todo el rato!',
+    answer: 'No - hardly ever!', answerEs: '¡No, casi nunca!',
+    fact: 'Walking the plank is famous from books, plays and films, but there are only a handful of real records of it ever happening - mostly from the late 1700s and 1800s, after the most famous pirates had gone. Real pirates mainly wanted ships, cargo and money, and they often let captured sailors go or asked them to join the crew. The idea became famous through stories like Peter Pan.',
+    factEs: 'Lo de caminar por la tabla es famoso por libros, obras de teatro y películas, pero solo hay un puñado de casos reales registrados, sobre todo de finales del siglo XVIII y del XIX, cuando los piratas más famosos ya no estaban. Los piratas de verdad querían sobre todo barcos, mercancías y dinero, y muchas veces soltaban a los marineros capturados o les pedían que se unieran a la tripulación. La idea se hizo famosa gracias a historias como Peter Pan.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1631,4 +1637,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aq5: 'aq5-einstein-and-maths.mp4',
   ar1: 'ar1-hummingbirds-and-geese.mp4',
   ar2: 'ar2-let-them-eat-cake.mp4',
+  ar3: 'ar3-walking-the-plank.mp4',
 };
