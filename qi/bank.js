@@ -1421,6 +1421,13 @@ const QI_BANK = [
     answer: 'No - it just passes through!', answerEs: '¡No, simplemente sale!',
     fact: 'A seed needs soil, light and air to sprout, and your tummy is a dark place full of strong acid - no good for growing plants! A swallowed watermelon seed simply travels through your body and comes out the other end in a day or two. Watermelon seeds are actually safe to eat - some people even roast them as a crunchy snack.',
     factEs: 'Una semilla necesita tierra, luz y aire para brotar, y tu barriga es un lugar oscuro lleno de ácido fuerte: ¡nada bueno para las plantas! Una pepita de sandía que te tragas viaja por tu cuerpo y sale por el otro lado en uno o dos días. Las pepitas de sandía se pueden comer sin problema; hay quien incluso las tuesta como aperitivo crujiente.' },
+  // Set AS (pipeline, one question at a time)
+  { id: 'as1', set: 'AS', emoji: '🏜️', topic: 'Sandy deserts',
+    q: 'Are most deserts covered in sand dunes?', qes: '¿La mayoría de los desiertos están cubiertos de dunas de arena?',
+    trap: 'Yes - sand everywhere', trapEs: 'Sí, arena por todas partes',
+    answer: 'No - most are rock and gravel!', answerEs: '¡No, la mayoría son roca y grava!',
+    fact: 'Only about a fifth of the world\'s deserts are covered in sand. Most are stony plains, gravel, bare rock and dry mountains. Even in the Sahara, sand dunes cover only about a quarter of it. A desert is about being dry, not sandy - which is why icy Antarctica counts as a desert too: it gets hardly any snow.',
+    factEs: 'Solo alrededor de una quinta parte de los desiertos del mundo está cubierta de arena. La mayoría son llanuras pedregosas, grava, roca desnuda y montañas secas. Incluso en el Sáhara, las dunas cubren solo alrededor de una cuarta parte. Un desierto es un lugar seco, no arenoso: por eso la helada Antártida también cuenta como desierto, porque casi no nieva.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1652,4 +1659,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ar3: 'ar3-walking-the-plank.mp4',
   ar4: 'ar4-penguins-and-planes.mp4',
   ar5: 'ar5-swallowed-seeds.mp4',
+  as1: 'as1-sandy-deserts.mp4',
 };
