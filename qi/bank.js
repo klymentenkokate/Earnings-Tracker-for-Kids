@@ -1366,6 +1366,12 @@ const QI_BANK = [
     answer: 'No - about a month!', answerEs: '¡No, alrededor de un mes!',
     fact: 'People mix up houseflies with mayflies. Some grown-up mayflies live only a day or even a few hours - but first they spend months as babies in ponds and rivers. A housefly usually lives about two to four weeks as an adult, and a mother fly can lay hundreds of eggs in that time. That\'s why flies are so hard to get rid of!',
     factEs: 'La gente confunde las moscas comunes con las efímeras. Algunas efímeras adultas viven solo un día o incluso unas horas, pero antes pasan meses como crías en charcas y ríos. Una mosca común adulta suele vivir de dos a cuatro semanas, y una mosca madre puede poner cientos de huevos en ese tiempo. ¡Por eso cuesta tanto librarse de ellas!' },
+  { id: 'aq2', set: 'AQ', emoji: '🐈', topic: 'Cats in the dark',
+    q: 'Can cats see in total darkness?', qes: '¿Los gatos ven en la oscuridad total?',
+    trap: 'Yes - even in pitch black', trapEs: 'Sí, incluso en la oscuridad total',
+    answer: 'No - they need a little light!', answerEs: '¡No, necesitan un poco de luz!',
+    fact: 'Cats are brilliant at seeing in dim light - they need only about a sixth of the light that we do. Their pupils open very wide, and a shiny layer at the back of their eyes bounces light back through, which is why their eyes glow when a torch shines on them. But in complete darkness, with no light at all, a cat can\'t see either. Then it finds its way with its whiskers, ears and nose.',
+    factEs: 'Los gatos ven genial con poca luz: necesitan solo una sexta parte de la luz que nosotros. Sus pupilas se abren muchísimo, y una capa brillante en el fondo del ojo devuelve la luz, por eso sus ojos brillan cuando los alumbra una linterna. Pero en la oscuridad total, sin nada de luz, un gato tampoco ve. Entonces se orienta con los bigotes, las orejas y la nariz.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1588,4 +1594,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ap4: 'ap4-sleepwalkers.mp4',
   ap5: 'ap5-blue-sky.mp4',
   aq1: 'aq1-housefly-lifespan.mp4',
+  aq2: 'aq2-cats-in-the-dark.mp4',
 };
