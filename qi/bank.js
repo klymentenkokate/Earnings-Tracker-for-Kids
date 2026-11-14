@@ -1223,6 +1223,12 @@ const QI_BANK = [
     answer: 'No - at most, one half survives', answerEs: 'No, como mucho sobrevive una mitad',
     fact: 'Both halves wriggle for a while, but that\'s just their nerves still twitching. If the cut is far enough behind the worm\'s important organs, the head end can sometimes heal and grow a new tail. The tail end can\'t grow a new head, so it dies. Tiny flatworms called planarians really can grow back from pieces - but earthworms can\'t, so please leave worms in one piece!',
     factEs: 'Las dos mitades se retuercen un rato, pero son solo los nervios que siguen moviéndose. Si el corte queda lo bastante lejos de los órganos importantes, a veces la parte de la cabeza se cura y le crece una cola nueva. La parte de la cola no puede crear una cabeza nueva, así que muere. Unos gusanos planos diminutos, las planarias, sí pueden regenerarse a partir de trozos, pero las lombrices no. ¡Así que deja a las lombrices enteras!' },
+  { id: 'al4', set: 'AL', emoji: '🪙', topic: 'Falling coins',
+    q: 'If a small coin fell from the top of a skyscraper, could it seriously hurt someone below?', qes: 'Si una moneda pequeña cayera desde lo alto de un rascacielos, ¿podría herir gravemente a alguien abajo?',
+    trap: 'Yes - like a tiny bullet', trapEs: 'Sí, como una bala diminuta',
+    answer: 'No - it would just sting', answerEs: 'No, solo picaría un poco',
+    fact: 'Things don\'t keep speeding up forever as they fall: the air pushes back on them. A small coin is light and flat, so it flutters and tumbles and never goes faster than about 40 kilometres an hour - about as fast as a car in town. It would sting, but not badly hurt you. Heavier things like pens, phones or stones can be dangerous, though, so never drop anything from up high!',
+    factEs: 'Las cosas no aceleran sin parar al caer: el aire las frena. Una moneda pequeña es ligera y plana, así que da vueltas y nunca pasa de unos 40 kilómetros por hora, como un coche en la ciudad. Picaría, pero no te haría mucho daño. Eso sí, las cosas más pesadas, como bolígrafos, móviles o piedras, pueden ser peligrosas, ¡así que nunca tires nada desde arriba!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1422,4 +1428,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   al1: 'al1-daddy-longlegs.mp4',
   al2: 'al2-sugar-rush.mp4',
   al3: 'al3-worms-cut-in-half.mp4',
+  al4: 'al4-falling-coins.mp4',
 };
