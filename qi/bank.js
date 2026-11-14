@@ -1409,6 +1409,12 @@ const QI_BANK = [
     answer: 'No - hardly ever!', answerEs: '¡No, casi nunca!',
     fact: 'Walking the plank is famous from books, plays and films, but there are only a handful of real records of it ever happening - mostly from the late 1700s and 1800s, after the most famous pirates had gone. Real pirates mainly wanted ships, cargo and money, and they often let captured sailors go or asked them to join the crew. The idea became famous through stories like Peter Pan.',
     factEs: 'Lo de caminar por la tabla es famoso por libros, obras de teatro y películas, pero solo hay un puñado de casos reales registrados, sobre todo de finales del siglo XVIII y del XIX, cuando los piratas más famosos ya no estaban. Los piratas de verdad querían sobre todo barcos, mercancías y dinero, y muchas veces soltaban a los marineros capturados o les pedían que se unieran a la tripulación. La idea se hizo famosa gracias a historias como Peter Pan.' },
+  { id: 'ar4', set: 'AR', emoji: '🐧', topic: 'Penguins and planes',
+    q: 'Do penguins fall over backwards when they watch planes fly overhead?', qes: '¿Los pingüinos se caen de espaldas al mirar los aviones que pasan por encima?',
+    trap: 'Yes - they topple over!', trapEs: '¡Sí, se caen!',
+    answer: 'No - they stay standing!', answerEs: '¡No, se quedan de pie!',
+    fact: 'In the 1980s, pilots told funny stories about penguins leaning back to watch their helicopters fly over, until whole rows toppled over like dominoes. In 2000, scientists tested it by flying helicopters near king penguins. The penguins went quiet and some walked away - but not a single one fell over! Penguins are steady on their feet, and they can even lean back on their stiff tail feathers like a built-in stool.',
+    factEs: 'En los años ochenta, unos pilotos contaban historias graciosas: los pingüinos se echaban hacia atrás para mirar sus helicópteros hasta caer en fila como fichas de dominó. En el año 2000, unos científicos lo comprobaron volando en helicóptero cerca de pingüinos rey. Los pingüinos se quedaron callados y algunos se alejaron, ¡pero ninguno se cayó! Los pingüinos tienen buen equilibrio y hasta pueden apoyarse en las plumas rígidas de la cola, como en un taburete.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1638,4 +1644,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ar1: 'ar1-hummingbirds-and-geese.mp4',
   ar2: 'ar2-let-them-eat-cake.mp4',
   ar3: 'ar3-walking-the-plank.mp4',
+  ar4: 'ar4-penguins-and-planes.mp4',
 };
