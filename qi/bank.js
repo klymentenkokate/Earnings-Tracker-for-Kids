@@ -1235,6 +1235,13 @@ const QI_BANK = [
     answer: 'No - there\'s no proof they are!', answerEs: '¡No, no hay pruebas de que lo tengan!',
     fact: 'Cartoons love showing a giant elephant leaping onto a chair because of a tiny mouse, and an old story says mice might climb up an elephant\'s trunk. But there\'s no proof elephants fear mice - and elephants can\'t see very well, so they might not even notice one. Like most animals, they can be startled by a sudden surprise. What many African elephants really do run from is buzzing bees, so some farmers hang beehive fences around their fields!',
     factEs: 'A los dibujos animados les encanta mostrar un elefante enorme subido a una silla por culpa de un ratoncito, y una vieja historia dice que los ratones podrían trepar por su trompa. Pero no hay pruebas de que les tengan miedo, y además los elefantes ven bastante mal, así que quizá ni lo noten. Como casi todos los animales, se asustan con una sorpresa repentina. De lo que sí huyen muchos elefantes africanos es del zumbido de las abejas: ¡algunos agricultores ponen vallas de colmenas alrededor de sus campos!' },
+  // Set AM (pipeline, one question at a time)
+  { id: 'am1', set: 'AM', emoji: '🐒', topic: 'Monkeys and bananas',
+    q: 'Do monkeys in the wild mostly eat bananas?', qes: '¿Los monos salvajes comen sobre todo plátanos?',
+    trap: 'Yes - bananas all day', trapEs: 'Sí, plátanos todo el día',
+    answer: 'No - wild bananas are rare!', answerEs: '¡No, los plátanos silvestres son raros!',
+    fact: 'Wild monkeys eat lots of different things: figs and other fruit, leaves, flowers, seeds and even insects. The big, sweet yellow banana from the shop was created by farmers over thousands of years - wild bananas are small and full of hard seeds. Some zoos have even stopped giving their monkeys shop bananas, because they\'re so sugary that for a monkey they\'re like eating cake!',
+    factEs: 'Los monos salvajes comen muchísimas cosas: higos y otras frutas, hojas, flores, semillas y hasta insectos. El plátano grande, dulce y amarillo de la tienda lo crearon los agricultores durante miles de años; los plátanos silvestres son pequeños y están llenos de semillas duras. Algunos zoos incluso han dejado de dar plátanos de tienda a sus monos, porque tienen tanto azúcar que para un mono son como comer tarta.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1436,4 +1443,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   al3: 'al3-worms-cut-in-half.mp4',
   al4: 'al4-falling-coins.mp4',
   al5: 'al5-elephants-and-mice.mp4',
+  am1: 'am1-monkeys-and-bananas.mp4',
 };
