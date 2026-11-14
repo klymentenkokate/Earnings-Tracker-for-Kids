@@ -1341,6 +1341,12 @@ const QI_BANK = [
     answer: 'No - they squirt water into their mouths!', answerEs: '¡No, se echan el agua en la boca!',
     fact: 'An elephant\'s trunk is its nose, joined to its upper lip. To drink, it sucks water a little way up the trunk, then curls the trunk round to its mouth and squirts the water in. Drinking straight through the trunk would be like drinking through your nose! A big elephant\'s trunk can carry several litres of water at a time, and it has no bones at all - just a huge number of muscles.',
     factEs: 'La trompa del elefante es su nariz, unida al labio de arriba. Para beber, sorbe agua un poco por la trompa, luego la dobla hacia la boca y se echa el agua dentro. ¡Beber directamente por la trompa sería como beber por la nariz! La trompa de un elefante grande puede llevar varios litros de agua de una vez, y no tiene ningún hueso: solo muchísimos músculos.' },
+  { id: 'ap3', set: 'AP', emoji: '👃', topic: 'Nostril breathing',
+    q: 'Do you always breathe equally through both nostrils?', qes: '¿Respiras siempre igual por los dos orificios de la nariz?',
+    trap: 'Yes - both, all the time', trapEs: 'Sí, por los dos, siempre',
+    answer: 'No - they take turns!', answerEs: '¡No, se turnan!',
+    fact: 'Most of the time one nostril does more of the breathing while the other rests a little: the inside of the resting side swells slightly. Every few hours they swap over. This is called the nasal cycle, and most people never notice it. Try it: gently block one nostril and breathe, then the other - one side usually feels clearer than the other.',
+    factEs: 'Casi siempre, un orificio de la nariz hace más trabajo mientras el otro descansa un poco: el interior del lado que descansa se hincha ligeramente. Cada pocas horas se intercambian. Se llama ciclo nasal y casi nadie lo nota. Pruébalo: tápate con suavidad un orificio y respira, luego el otro: normalmente un lado se nota más despejado.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1559,4 +1565,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ao5: 'ao5-dinosaurs-and-people.mp4',
   ap1: 'ap1-kings-of-the-jungle.mp4',
   ap2: 'ap2-elephant-trunks.mp4',
+  ap3: 'ap3-nostril-breathing.mp4',
 };
