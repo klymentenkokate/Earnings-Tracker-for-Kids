@@ -1434,6 +1434,12 @@ const QI_BANK = [
     answer: 'No - nobody knows for sure!', answerEs: '¡No, nadie lo sabe con seguridad!',
     fact: 'Roman writers mention the crowd \'turning their thumbs\', but they never clearly say which way meant live or die. The famous thumbs-up, thumbs-down idea mostly comes from a painting made in 1872. Some historians think a thumb tucked inside a closed fist may have meant \'spare him\'. Gladiators were expensive to train, so many fights didn\'t end in death at all - a beaten fighter was often spared.',
     factEs: 'Los escritores romanos cuentan que el público «giraba el pulgar», pero nunca dicen claramente qué dirección significaba vivir o morir. La famosa idea del pulgar arriba o abajo viene sobre todo de un cuadro pintado en 1872. Algunos historiadores creen que un pulgar escondido dentro del puño cerrado podía significar «perdónalo». Entrenar a un gladiador costaba mucho, así que muchas luchas no acababan en muerte: al perdedor a menudo se le perdonaba.' },
+  { id: 'as3', set: 'AS', emoji: '🕷️', topic: 'Tarantula bites',
+    q: 'Can a tarantula\'s bite kill a person?', qes: '¿La picadura de una tarántula puede matar a una persona?',
+    trap: 'Yes - deadly venom!', trapEs: '¡Sí, veneno mortal!',
+    answer: 'No - it\'s more like a bee sting!', answerEs: '¡No, es más como una picadura de abeja!',
+    fact: 'Tarantulas look scary, but their venom is weak for people - a bite usually feels like a bee or wasp sting. Nobody is known to have died from a tarantula bite. Many tarantulas have a different trick: they flick tiny itchy hairs off their bottoms at enemies! Tarantulas are shy, and they would much rather hide than bite.',
+    factEs: 'Las tarántulas dan miedo, pero su veneno es débil para las personas: una picadura suele sentirse como la de una abeja o una avispa. No se conoce a nadie que haya muerto por una picadura de tarántula. Muchas tarántulas tienen otro truco: ¡lanzan a sus enemigos pelitos que pican desde el trasero! Son tímidas y prefieren esconderse antes que morder.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1667,4 +1673,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ar5: 'ar5-swallowed-seeds.mp4',
   as1: 'as1-sandy-deserts.mp4',
   as2: 'as2-gladiator-thumbs.mp4',
+  as3: 'as3-tarantula-bites.mp4',
 };
