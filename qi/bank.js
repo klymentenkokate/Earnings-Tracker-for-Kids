@@ -1762,6 +1762,13 @@ const QI_BANK = [
     answer: 'No - it\'s part of its body!', answerEs: '¡No, es parte de su cuerpo!',
     fact: 'In cartoons, snails slip out of their shells or swap them like houses - but a real snail\'s shell is joined to its body, and it grows along with the snail its whole life. Its heart, lungs and other important parts are tucked away inside the shell, so a snail can never leave it. The animals that really do swap shells are hermit crabs: they borrow empty shells and move into bigger ones as they grow.',
     factEs: 'En los dibujos animados, los caracoles se salen de su concha o la cambian como si fuera una casa, pero la concha de un caracol de verdad está unida a su cuerpo y crece con él toda su vida. Su corazón, sus pulmones y otras partes importantes están guardados dentro de la concha, así que un caracol nunca puede abandonarla. Los animales que de verdad cambian de concha son los cangrejos ermitaños: toman prestadas conchas vacías y se mudan a otras más grandes a medida que crecen.' },
+  // Set BD (pipeline, one question at a time)
+  { id: 'bd1', set: 'BD', emoji: '🦔', topic: 'Hedgehogs and milk',
+    q: 'Should you leave a bowl of milk out for hedgehogs?', qes: '¿Hay que dejar un cuenco de leche a los erizos?',
+    trap: 'Yes - they love it!', trapEs: '¡Sí, les encanta!',
+    answer: 'No - it upsets their tummies!', answerEs: '¡No, les sienta mal a la tripa!',
+    fact: 'For years, people put out bread and milk for hedgehogs. But hedgehogs can\'t properly digest the sugar in cow\'s milk, so it can give them a bad tummy - and bread fills them up without giving them the goodness they need. If you want to help a hedgehog in your garden, a shallow dish of fresh water and some meaty cat or dog food, or special hedgehog food, is much better.',
+    factEs: 'Durante años, la gente dejaba pan y leche a los erizos. Pero los erizos no pueden digerir bien el azúcar de la leche de vaca, así que les puede doler la tripa, y el pan los llena sin darles lo que necesitan. Si quieres ayudar a un erizo de tu jardín, es mucho mejor un plato bajo con agua fresca y un poco de comida de gato o de perro con carne, o comida especial para erizos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2048,4 +2055,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bc3: 'bc3-sun-at-midday.mp4',
   bc4: 'bc4-coral.mp4',
   bc5: 'bc5-snail-shells.mp4',
+  bd1: 'bd1-hedgehogs-and-milk.mp4',
 };
