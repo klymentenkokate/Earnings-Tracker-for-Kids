@@ -1583,6 +1583,12 @@ const QI_BANK = [
     answer: 'No - it\'s Sirius!', answerEs: '¡No, es Sirio!',
     fact: 'The North Star, Polaris, is famous because it sits almost exactly above the North Pole, so it hardly moves and always shows which way is north. But it isn\'t very bright at all - it\'s only around the 50th brightest star we can see. The brightest star in the night sky is Sirius, sometimes called the Dog Star. Only the Moon and a few planets, like Venus and Jupiter, outshine it.',
     factEs: 'La estrella polar, Polaris, es famosa porque está casi justo encima del Polo Norte, así que casi no se mueve y siempre indica dónde está el norte. Pero no es muy brillante: es más o menos la estrella número 50 en brillo de las que podemos ver. La estrella más brillante del cielo nocturno es Sirio, a veces llamada la Estrella del Perro. Solo la Luna y algunos planetas, como Venus y Júpiter, brillan más que ella.' },
+  { id: 'ax2', set: 'AX', emoji: '🔴', topic: 'Why Mars is red',
+    q: 'Is Mars red because it\'s so hot?', qes: '¿Marte es rojo porque hace mucho calor?',
+    trap: 'Yes - it\'s boiling!', trapEs: '¡Sí, está hirviendo!',
+    answer: 'No - it\'s rusty dust!', answerEs: '¡No, es polvo oxidado!',
+    fact: 'Mars looks red, so it\'s easy to imagine it\'s burning hot - but it\'s actually freezing, about minus 60 degrees Celsius on average, much colder than anywhere people live on Earth. Its red colour comes from iron in its rocks and dust that has slowly rusted, just like an old bike left out in the rain. Strong winds blow that rusty dust all over the planet and even into its sky.',
+    factEs: 'Marte se ve rojo, así que es fácil imaginar que está ardiendo, pero en realidad hace un frío tremendo: unos 60 grados bajo cero de media, mucho más frío que cualquier lugar donde vive gente en la Tierra. Su color rojo viene del hierro de sus rocas y su polvo, que se ha oxidado poco a poco, igual que una bici vieja que se queda bajo la lluvia. Vientos fuertes reparten ese polvo oxidado por todo el planeta e incluso por su cielo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1840,4 +1846,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aw4: 'aw4-whale-spouts.mp4',
   aw5: 'aw5-which-mosquitoes-bite.mp4',
   ax1: 'ax1-brightest-star.mp4',
+  ax2: 'ax2-why-mars-is-red.mp4',
 };
