@@ -1899,6 +1899,12 @@ const QI_BANK = [
     answer: 'No - they follow the pipe!', answerEs: '¡No, siguen la flauta!',
     fact: 'Snakes have no outside ears, so they can\'t hear a tune the way we do - they mostly feel low rumbles through the ground and through their jaw bones. When a snake charmer plays, the cobra sways because it\'s watching the pipe moving back and forth, and it keeps facing it as if it might be a threat. So the snake isn\'t dancing to the music at all - it\'s keeping an eye on the waving pipe.',
     factEs: 'Las serpientes no tienen orejas por fuera, así que no pueden oír una melodía como nosotros: sobre todo notan vibraciones graves a través del suelo y de los huesos de la mandíbula. Cuando el encantador toca, la cobra se balancea porque está mirando la flauta que se mueve de un lado a otro, y se mantiene de cara a ella como si pudiera ser una amenaza. Así que la serpiente no baila la música para nada: está vigilando la flauta que se mueve.' },
+  { id: 'bh3', set: 'BH', emoji: '🐶', topic: 'Dog noses',
+    q: 'Does a dry nose mean a dog is ill?', qes: '¿Una nariz seca significa que el perro está enfermo?',
+    trap: 'Yes - dry means ill!', trapEs: '¡Sí, seca es que está malo!',
+    answer: 'No - noses change all day!', answerEs: '¡No, la nariz cambia todo el día!',
+    fact: 'A healthy dog\'s nose can be wet one moment and dry the next. It often goes dry after a nap, after lying in the sun or near a heater, or simply because the dog hasn\'t licked it for a while. A dog licks its nose to keep it damp, because a wet nose catches smells better. A dry nose on its own doesn\'t tell you a dog is ill - if a dog seems unwell, tired or isn\'t eating, the person to ask is a vet.',
+    factEs: 'La nariz de un perro sano puede estar húmeda en un momento y seca al siguiente. Suele secarse después de una siesta, de tumbarse al sol o junto a la calefacción, o simplemente porque el perro no se la ha lamido en un rato. El perro se lame la nariz para mantenerla húmeda, porque así capta mejor los olores. Una nariz seca por sí sola no indica que un perro esté enfermo: si un perro parece malo, cansado o no come, hay que preguntar a un veterinario.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2207,4 +2213,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bg5: 'bg5-hailstones.mp4',
   bh1: 'bh1-taste-and-smell.mp4',
   bh2: 'bh2-snake-charmers.mp4',
+  bh3: 'bh3-dog-noses.mp4',
 };
