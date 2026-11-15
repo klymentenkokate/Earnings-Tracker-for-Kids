@@ -1936,6 +1936,12 @@ const QI_BANK = [
     answer: 'Most farm sheep can\'t - it never stops growing!', answerEs: 'La mayoría de las ovejas de granja no pueden: ¡la lana nunca deja de crecer!',
     fact: 'Wild sheep grow a woolly coat for winter and shed it every spring, because the follicles that grow their wool take a rest once a year. Over thousands of years, farmers kept the sheep whose wool never let go, so most farm sheep keep growing wool until they are sheared. In 2015 a lost sheep in Australia called Chris had gone about five years without a haircut: his fleece weighed 41 kg, a world record! Shearing doesn\'t hurt - wool has no nerves, just like your hair.',
     factEs: 'Las ovejas salvajes crían un abrigo de lana para el invierno y lo sueltan cada primavera, porque los folículos que hacen crecer la lana descansan una vez al año. Durante miles de años, los granjeros se quedaron con las ovejas cuya lana nunca se soltaba, así que a la mayoría de las ovejas de granja la lana les crece hasta que las esquilan. En 2015, una oveja perdida en Australia llamada Chris llevaba unos cinco años sin esquilar: ¡su vellón pesó 41 kg, un récord mundial! Esquilar no duele: la lana no tiene nervios, igual que tu pelo.' },
+  { id: 'bi4', set: 'BI', emoji: '🕸️', topic: 'Spider webs',
+    q: 'Why don\'t spiders stick to their own webs?', qes: '¿Por qué las arañas no se pegan a su propia telaraña?',
+    trap: 'Their feet are oily!', trapEs: '¡Tienen las patas aceitosas!',
+    answer: 'Most of the threads aren\'t sticky!', answerEs: '¡La mayoría de los hilos no son pegajosos!',
+    fact: 'Spiders don\'t have oily feet. In an orb web only the spiral thread is sticky - it is covered in tiny drops of glue - while the spokes the spider walks on are dry. And when it does touch the glue, it barely sticks: scientists studying golden orb-weavers in 2012 found their legs are covered in branching hairs, so only a few tips touch the glue, and they have a non-stick coating (legs washed with a chemical got stickier). Many spiders even eat their old web and use the silk to spin a new one!',
+    factEs: 'Las arañas no tienen las patas aceitosas. En una telaraña circular solo es pegajoso el hilo en espiral, cubierto de gotitas de pegamento, mientras que los radios por los que camina la araña están secos. Y cuando toca el pegamento, apenas se pega: unos científicos que estudiaron arañas de seda dorada en 2012 descubrieron que sus patas están cubiertas de pelos ramificados, así que solo unas pocas puntas tocan el pegamento, y además tienen una capa antiadherente (las patas lavadas con un producto químico se pegaban más). ¡Muchas arañas incluso se comen su telaraña vieja y usan la seda para tejer una nueva!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2250,4 +2256,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bi1: 'bi1-cricket-songs.mp4',
   bi2: 'bi2-whales-and-fish.mp4',
   bi3: 'bi3-sheep-wool.mp4',
+  bi4: 'bi4-spider-webs.mp4',
 };
