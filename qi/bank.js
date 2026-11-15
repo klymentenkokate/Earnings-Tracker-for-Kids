@@ -1713,6 +1713,12 @@ const QI_BANK = [
     answer: 'No - it\'s a fish!', answerEs: '¡No, es un pez!',
     fact: 'The whale shark is the biggest fish in the world - it can grow longer than a bus, which is how it got \'whale\' in its name. But it\'s a shark, and sharks are fish: it breathes through gills, instead of coming up to the surface to breathe air like whales do. Even though it\'s enormous, it eats only tiny food like plankton and little fish, sieved from the water as it swims along with its huge mouth wide open. It\'s gentle and harmless to people.',
     factEs: 'El tiburón ballena es el pez más grande del mundo: puede ser más largo que un autobús, y por eso lleva \'ballena\' en su nombre. Pero es un tiburón, y los tiburones son peces: respira por branquias, en vez de subir a la superficie a respirar aire como las ballenas. Aunque es enorme, solo come comida diminuta como plancton y pececillos, que filtra del agua mientras nada con su enorme boca abierta. Es tranquilo e inofensivo para las personas.' },
+  { id: 'bb3', set: 'BB', emoji: '🍄', topic: 'Mushrooms',
+    q: 'Are mushrooms a kind of plant?', qes: '¿Las setas son plantas?',
+    trap: 'Yes - they grow in soil!', trapEs: '¡Sí, crecen en la tierra!',
+    answer: 'No - they\'re fungi!', answerEs: '¡No, son hongos!',
+    fact: 'Mushrooms grow out of the ground, so they look like plants, but they belong to a completely different group of living things called fungi. Plants use sunlight to make their own food; fungi can\'t, so they feed on dead leaves, old wood and other things, slowly breaking them down. The mushroom you see is only a small part of the fungus - most of it is a web of tiny threads hidden underground. Some wild mushrooms are very poisonous, so never pick or eat them.',
+    factEs: 'Las setas salen del suelo, así que parecen plantas, pero pertenecen a un grupo de seres vivos completamente distinto: los hongos. Las plantas usan la luz del sol para fabricar su comida; los hongos no pueden, así que se alimentan de hojas muertas, madera vieja y otras cosas, que descomponen poco a poco. La seta que ves es solo una pequeña parte del hongo: casi todo es una red de hilos diminutos escondida bajo tierra. Algunas setas silvestres son muy venenosas, así que nunca las cojas ni te las comas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1991,4 +1997,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ba5: 'ba5-dolphins-and-water.mp4',
   bb1: 'bb1-sneezing-and-your-heart.mp4',
   bb2: 'bb2-whale-sharks.mp4',
+  bb3: 'bb3-mushrooms.mp4',
 };
