@@ -1700,6 +1700,13 @@ const QI_BANK = [
     answer: 'No - they get it from food!', answerEs: '¡No, la sacan de la comida!',
     fact: 'Dolphins spend their whole lives in salty water, but they don\'t drink it - all that salt would make them ill, just as it would make us ill. Instead, they get almost all the water they need from the fish and squid they eat, which are full of water. Their bodies also make a little extra water as they turn food into energy. So a dolphin swimming in the sea is never really thirsty.',
     factEs: 'Los delfines pasan toda su vida en agua salada, pero no la beben: tanta sal les haría daño, igual que a nosotros. En cambio, sacan casi toda el agua que necesitan de los peces y calamares que comen, que están llenos de agua. Su cuerpo también fabrica un poco de agua extra al convertir la comida en energía. Así que un delfín nadando en el mar nunca tiene sed de verdad.' },
+  // Set BB (pipeline, one question at a time)
+  { id: 'bb1', set: 'BB', emoji: '🤧', topic: 'Sneezing and your heart',
+    q: 'Does your heart stop when you sneeze?', qes: '¿Se te para el corazón cuando estornudas?',
+    trap: 'Yes - for a moment!', trapEs: '¡Sí, por un momento!',
+    answer: 'No - it keeps beating!', answerEs: '¡No, sigue latiendo!',
+    fact: 'When you sneeze, you take a deep breath and then squeeze your chest hard, which changes the pressure inside it. That can make your next heartbeat arrive a tiny bit later than usual, so it might feel like a little skip - but your heart keeps beating the whole time. Its rhythm is controlled by its own electrical signals, and a sneeze doesn\'t switch them off.',
+    factEs: 'Cuando estornudas, respiras hondo y luego aprietas el pecho con fuerza, lo que cambia la presión dentro de él. Eso puede hacer que el siguiente latido llegue un poquito más tarde de lo normal, así que puede parecer un pequeño salto, pero tu corazón sigue latiendo todo el tiempo. Su ritmo lo controlan sus propias señales eléctricas, y un estornudo no las apaga.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1976,4 +1983,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ba3: 'ba3-dead-stars.mp4',
   ba4: 'ba4-salt-in-boiling-water.mp4',
   ba5: 'ba5-dolphins-and-water.mp4',
+  bb1: 'bb1-sneezing-and-your-heart.mp4',
 };
