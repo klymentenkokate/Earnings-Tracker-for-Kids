@@ -1657,6 +1657,12 @@ const QI_BANK = [
     answer: 'No - weeks or more!', answerEs: '¡No, semanas o más!',
     fact: 'Most adult butterflies live for around two to four weeks, and some live much longer: monarch butterflies that fly south for the winter can live for eight or nine months. The one-day story probably comes from mayflies, which often live for only a day once they have wings. And a butterfly\'s life starts long before it can fly - first as an egg, then a caterpillar, then a chrysalis.',
     factEs: 'Casi todas las mariposas adultas viven entre dos y cuatro semanas, y algunas mucho más: las mariposas monarca que vuelan al sur para pasar el invierno pueden vivir ocho o nueve meses. La historia del único día seguramente viene de las efímeras, que muchas veces solo viven un día cuando ya tienen alas. Y la vida de una mariposa empieza mucho antes de que pueda volar: primero es un huevo, luego una oruga y luego una crisálida.' },
+  { id: 'az4', set: 'AZ', emoji: '🌾', topic: 'Birds and rice',
+    q: 'Does uncooked rice make birds explode?', qes: '¿El arroz crudo hace explotar a los pájaros?',
+    trap: 'Yes - kaboom!', trapEs: '¡Sí, bum!',
+    answer: 'No - they\'re fine!', answerEs: '¡No, están bien!',
+    fact: 'Some people stopped throwing rice at weddings because of a story that birds would eat it, then the rice would swell up inside them and make them burst. But wild birds eat uncooked rice in rice fields all the time, and it doesn\'t swell up inside them - rice only softens and grows when it\'s cooked in hot water for a long time. Bird experts say the story simply isn\'t true.',
+    factEs: 'Algunas personas dejaron de tirar arroz en las bodas por una historia: que los pájaros se lo comerían, el arroz se hincharía dentro de ellos y los haría reventar. Pero los pájaros salvajes comen arroz crudo en los arrozales todo el tiempo, y no se les hincha dentro: el arroz solo se ablanda y crece cuando se cuece en agua caliente durante un buen rato. Los expertos en aves dicen que la historia simplemente no es cierta.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1926,4 +1932,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   az1: 'az1-glow-worms.mp4',
   az2: 'az2-quicksand.mp4',
   az3: 'az3-butterfly-lifespan.mp4',
+  az4: 'az4-birds-and-rice.mp4',
 };
