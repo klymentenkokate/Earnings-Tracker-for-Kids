@@ -1769,6 +1769,12 @@ const QI_BANK = [
     answer: 'No - it upsets their tummies!', answerEs: '¡No, les sienta mal a la tripa!',
     fact: 'For years, people put out bread and milk for hedgehogs. But hedgehogs can\'t properly digest the sugar in cow\'s milk, so it can give them a bad tummy - and bread fills them up without giving them the goodness they need. If you want to help a hedgehog in your garden, a shallow dish of fresh water and some meaty cat or dog food, or special hedgehog food, is much better.',
     factEs: 'Durante años, la gente dejaba pan y leche a los erizos. Pero los erizos no pueden digerir bien el azúcar de la leche de vaca, así que les puede doler la tripa, y el pan los llena sin darles lo que necesitan. Si quieres ayudar a un erizo de tu jardín, es mucho mejor un plato bajo con agua fresca y un poco de comida de gato o de perro con carne, o comida especial para erizos.' },
+  { id: 'bd2', set: 'BD', emoji: '🦀', topic: 'Crabs walking',
+    q: 'Can crabs only walk sideways?', qes: '¿Los cangrejos solo pueden andar de lado?',
+    trap: 'Yes - only sideways!', trapEs: '¡Sí, solo de lado!',
+    answer: 'No - some walk forwards!', answerEs: '¡No, algunos andan hacia delante!',
+    fact: 'Most crabs do scuttle sideways, because their legs bend at the joints in a way that makes side-stepping the fastest and easiest way to move. But they can also shuffle forwards and backwards a little, and a few kinds of crab - like the soldier crabs that march across Australian beaches in big groups - walk forwards just like we do.',
+    factEs: 'La mayoría de los cangrejos sí corretean de lado, porque sus patas se doblan por las articulaciones de una forma que hace que ir de lado sea lo más rápido y fácil. Pero también pueden moverse un poco hacia delante y hacia atrás, y algunas clases de cangrejo, como los cangrejos soldado que desfilan en grandes grupos por las playas de Australia, andan hacia delante igual que nosotros.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2056,4 +2062,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bc4: 'bc4-coral.mp4',
   bc5: 'bc5-snail-shells.mp4',
   bd1: 'bd1-hedgehogs-and-milk.mp4',
+  bd2: 'bd2-crabs-walking.mp4',
 };
