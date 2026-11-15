@@ -1645,6 +1645,12 @@ const QI_BANK = [
     answer: 'No - they\'re beetles!', answerEs: '¡No, son escarabajos!',
     fact: 'In Britain and the rest of Europe, glow-worms are beetles. The ones you see shining are mostly the females: they have no wings and look a bit like grubs, and they glow green-yellow from the tip of their tail to call flying males to them. In New Zealand and Australia, the famous cave glow-worms are something else again - baby flies that hang sticky threads from the ceiling to catch food. None of them are real worms.',
     factEs: 'En Gran Bretaña y el resto de Europa, los gusanos de luz son escarabajos. Los que ves brillar son sobre todo las hembras: no tienen alas, parecen larvas y brillan de color verde amarillento por la punta de la cola para llamar a los machos, que sí vuelan. En Nueva Zelanda y Australia, los famosos gusanos de luz de las cuevas son otra cosa: crías de mosca que cuelgan hilos pegajosos del techo para atrapar comida. Ninguno es un gusano de verdad.' },
+  { id: 'az2', set: 'AZ', emoji: '🏖️', topic: 'Quicksand',
+    q: 'Can quicksand suck you all the way under?', qes: '¿Las arenas movedizas te pueden tragar entero?',
+    trap: 'Yes - glug, glug!', trapEs: '¡Sí, glu, glu!',
+    answer: 'No - you\'d float!', answerEs: '¡No, flotarías!',
+    fact: 'In films, people sink into quicksand without a trace - but real quicksand is just sand with lots of water mixed in, and it\'s heavier than a person. That means you can\'t sink deeper than about your waist. The real problem is getting stuck, because pulling hard makes the sand grip tighter. The trick is to stay calm, lean back, spread your arms and wiggle your legs slowly so water seeps in and you float free.',
+    factEs: 'En las películas, la gente se hunde en arenas movedizas sin dejar rastro, pero las arenas movedizas de verdad son solo arena con mucha agua, y pesan más que una persona. Eso significa que no te puedes hundir más allá de la cintura más o menos. El problema real es quedarse atascado, porque si tiras con fuerza la arena aprieta más. El truco es mantener la calma, echarse hacia atrás, abrir los brazos y mover las piernas despacio para que entre agua y puedas flotar.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1912,4 +1918,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ay4: 'ay4-five-second-rule.mp4',
   ay5: 'ay5-fastest-animal.mp4',
   az1: 'az1-glow-worms.mp4',
+  az2: 'az2-quicksand.mp4',
 };
