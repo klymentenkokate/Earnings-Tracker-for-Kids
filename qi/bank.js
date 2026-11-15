@@ -1793,6 +1793,13 @@ const QI_BANK = [
     answer: 'No - lots of colours!', answerEs: '¡No, hay de muchos colores!',
     fact: 'The red ladybird with black spots is the one everyone pictures, but there are thousands of kinds of ladybird around the world. Some are yellow, orange, pink or black; some have red spots on black; some have stripes, squiggles or no spots at all. Their bright colours work like a warning sign, telling birds and other hungry animals that they taste horrible.',
     factEs: 'La mariquita roja con puntos negros es la que todo el mundo se imagina, pero en el mundo hay miles de clases de mariquitas. Algunas son amarillas, naranjas, rosas o negras; otras tienen puntos rojos sobre negro; y otras tienen rayas, garabatos o ningún punto. Sus colores vivos funcionan como una señal de aviso que les dice a los pájaros y a otros animales hambrientos que saben fatal.' },
+  // Set BE (pipeline, one question at a time)
+  { id: 'be1', set: 'BE', emoji: '🧑‍🚀', topic: 'Floating astronauts',
+    q: 'Do astronauts float because there\'s no gravity in space?', qes: '¿Los astronautas flotan porque en el espacio no hay gravedad?',
+    trap: 'Yes - no gravity!', trapEs: '¡Sí, no hay gravedad!',
+    answer: 'No - they\'re falling!', answerEs: '¡No, están cayendo!',
+    fact: 'Up where the space station flies, about 400 kilometres above us, the Earth\'s gravity is still almost as strong as on the ground - about nine-tenths as strong. Astronauts float because the space station and everyone in it are falling around the Earth all the time. They\'re also zooming sideways so fast - about 28,000 kilometres an hour - that they keep missing the ground, so they fall round and round in orbit. Everything inside falls together, and that feels just like floating.',
+    factEs: 'Allí donde vuela la estación espacial, a unos 400 kilómetros sobre nosotros, la gravedad de la Tierra es casi tan fuerte como en el suelo: unas nueve décimas partes. Los astronautas flotan porque la estación y todos los que van dentro están cayendo alrededor de la Tierra todo el tiempo. Además avanzan de lado tan rápido, a unos 28.000 kilómetros por hora, que nunca llegan a tocar el suelo, así que caen dando vueltas y vueltas en órbita. Todo lo de dentro cae a la vez, y eso se siente igual que flotar.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2084,4 +2091,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bd3: 'bd3-sitting-close-to-the-tv.mp4',
   bd4: 'bd4-tadpoles.mp4',
   bd5: 'bd5-ladybird-colours.mp4',
+  be1: 'be1-floating-astronauts.mp4',
 };
