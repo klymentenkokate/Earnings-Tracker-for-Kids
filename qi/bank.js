@@ -1545,6 +1545,13 @@ const QI_BANK = [
     answer: 'No - they\'re mostly shy fish!', answerEs: '¡No, casi todas son peces tímidos!',
     fact: 'Piranhas do have very sharp teeth, but most of them are shy. They swim in groups mainly to stay safe from bigger hunters like river dolphins, caimans and birds. They eat insects, small fish, seeds, fruit and dead animals they find. Attacks on people are rare and usually just a nip, often when the water is low and food is scarce. The famous stories of piranhas stripping a cow in seconds came from staged shows, where starving fish had been trapped together on purpose.',
     factEs: 'Las pirañas tienen dientes muy afilados, pero casi todas son tímidas. Nadan en grupo sobre todo para protegerse de cazadores más grandes, como delfines de río, caimanes y aves. Comen insectos, peces pequeños, semillas, fruta y animales muertos que encuentran. Los ataques a personas son raros y suelen ser solo un mordisquito, a menudo cuando hay poca agua y poca comida. Las famosas historias de pirañas que dejan una vaca en los huesos en segundos vienen de espectáculos preparados, con peces hambrientos encerrados a propósito.' },
+  // Set AW (pipeline, one question at a time)
+  { id: 'aw1', set: 'AW', emoji: '🐻‍❄️', topic: 'Left-handed polar bears',
+    q: 'Are all polar bears left-handed?', qes: '¿Todos los osos polares son zurdos?',
+    trap: 'Yes - all lefties!', trapEs: '¡Sí, todos zurdos!',
+    answer: 'No - they use both paws!', answerEs: '¡No, usan las dos patas!',
+    fact: 'It\'s an old story, told for years by explorers, but scientists who have watched lots of polar bears hunting, swimming and playing found no sign of it: they use their right and left paws just as much. A polar bear\'s huge front paws, as wide as a dinner plate, work like snowshoes on the ice and paddles in the water - and both of them are used for grabbing food. There\'s no proof that polar bears favour one side at all.',
+    factEs: 'Es una historia antigua que contaron exploradores durante años, pero los científicos que han observado a muchos osos polares cazando, nadando y jugando no encontraron ninguna señal: usan la pata derecha y la izquierda por igual. Sus enormes patas delanteras, anchas como un plato, funcionan como raquetas de nieve en el hielo y como remos en el agua, y las dos sirven para atrapar comida. No hay ninguna prueba de que los osos polares prefieran un lado.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1796,4 +1803,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   av3: 'av3-clothes-moths.mp4',
   av4: 'av4-where-your-heart-is.mp4',
   av5: 'av5-piranhas.mp4',
+  aw1: 'aw1-left-handed-polar-bears.mp4',
 };
