@@ -1632,6 +1632,12 @@ const QI_BANK = [
     answer: 'No - germs are faster!', answerEs: '¡No, los gérmenes son más rápidos!',
     fact: 'Scientists tested the five-second rule by dropping foods like watermelon, bread and gummy sweets onto different floors. Germs started moving onto the food in less than one second. Wet, sticky foods picked up the most, and carpet passed on fewer germs than tiles or metal. Most dropped food won\'t make you ill, but there is no magic safe time - if it lands somewhere dirty, it\'s best not to eat it.',
     factEs: 'Unos científicos pusieron a prueba la regla de los cinco segundos dejando caer alimentos como sandía, pan y gominolas sobre distintos suelos. Los gérmenes empezaron a pasar a la comida en menos de un segundo. Los alimentos húmedos y pegajosos recogieron más, y la moqueta pasó menos gérmenes que las baldosas o el metal. Casi nunca te pondrás malo por comida caída, pero no hay un tiempo mágico seguro: si cae en un sitio sucio, mejor no comerla.' },
+  { id: 'ay5', set: 'AY', emoji: '🐆', topic: 'Fastest animal',
+    q: 'Is the cheetah the fastest animal in the world?', qes: '¿El guepardo es el animal más rápido del mundo?',
+    trap: 'Yes - the cheetah!', trapEs: '¡Sí, el guepardo!',
+    answer: 'No - a falcon is!', answerEs: '¡No, un halcón!',
+    fact: 'The cheetah is the fastest runner on land, reaching around 100 kilometres an hour in short bursts. But the fastest animal of all is a bird: the peregrine falcon. When it spots its prey, it folds in its wings and dives from high in the sky at over 300 kilometres an hour - about as fast as a high-speed train. Flying along normally it\'s much slower, but nothing alive moves faster than a diving peregrine.',
+    factEs: 'El guepardo es el corredor más rápido en tierra: alcanza unos 100 kilómetros por hora en carreras cortas. Pero el animal más rápido de todos es un ave: el halcón peregrino. Cuando ve una presa, pliega las alas y se lanza en picado desde lo alto a más de 300 kilómetros por hora, tan rápido como un tren de alta velocidad. Volando normal es mucho más lento, pero ningún ser vivo va más rápido que un halcón peregrino en picado.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1897,4 +1903,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ay2: 'ay2-sea-sponges.mp4',
   ay3: 'ay3-colour-of-snow.mp4',
   ay4: 'ay4-five-second-rule.mp4',
+  ay5: 'ay5-fastest-animal.mp4',
 };
