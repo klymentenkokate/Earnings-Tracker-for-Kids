@@ -1682,6 +1682,12 @@ const QI_BANK = [
     answer: 'No - hair can\'t change!', answerEs: '¡No, el pelo no cambia!',
     fact: 'Old stories say people\'s hair turned white overnight after a terrible shock. But the hair you can see on your head isn\'t alive any more, so its colour can\'t suddenly change. Hair turns grey or white slowly, as new hairs grow in without any colour - mostly because people get older, and partly because of the genes in their family. Stress might make some people go grey a little sooner, but never overnight.',
     factEs: 'Las historias antiguas dicen que a algunas personas el pelo se les volvió blanco en una noche tras un susto terrible. Pero el pelo que ves en tu cabeza ya no está vivo, así que su color no puede cambiar de repente. El pelo se vuelve gris o blanco poco a poco, cuando crecen pelos nuevos sin color, sobre todo porque la gente se hace mayor, y en parte por los genes de su familia. El estrés puede hacer que algunas personas tengan canas un poco antes, pero nunca de un día para otro.' },
+  { id: 'ba3', set: 'BA', emoji: '🌌', topic: 'Dead stars',
+    q: 'Are most of the stars you see at night already dead?', qes: '¿La mayoría de las estrellas que ves de noche ya están muertas?',
+    trap: 'Yes - long gone!', trapEs: '¡Sí, desaparecieron hace mucho!',
+    answer: 'No - still shining!', answerEs: '¡No, siguen brillando!',
+    fact: 'Starlight takes a long time to reach us, so people often say the stars we see might have died long ago. But almost every star you can see with your own eyes is in our own neighbourhood of the galaxy, so its light has been travelling for a few years, or a few thousand years at most. Stars live for millions or even billions of years, so nearly all of them are still shining right now.',
+    factEs: 'La luz de las estrellas tarda mucho en llegarnos, así que la gente suele decir que las estrellas que vemos quizá murieron hace mucho. Pero casi todas las estrellas que puedes ver a simple vista están en nuestro propio barrio de la galaxia, así que su luz lleva viajando unos pocos años, o unos pocos miles de años como mucho. Las estrellas viven millones o incluso miles de millones de años, así que casi todas siguen brillando ahora mismo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1955,4 +1961,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   az5: 'az5-teeth-and-bones.mp4',
   ba1: 'ba1-llama-spit.mp4',
   ba2: 'ba2-hair-turning-white.mp4',
+  ba3: 'ba3-dead-stars.mp4',
 };
