@@ -1558,6 +1558,12 @@ const QI_BANK = [
     answer: 'No - pigs can see the sky!', answerEs: '¡No, los cerdos ven el cielo!',
     fact: 'A pig\'s thick, strong neck doesn\'t bend back very far, so it can\'t tip its head right back like you can. But it can still lift its snout up high, and its eyes sit on the sides of its head, giving it a very wide view - so a pig can see the sky just fine. Pigs are also very clever: they can learn their names, and some have even learned to play simple video games with a joystick using their snouts!',
     factEs: 'El cuello grueso y fuerte de un cerdo no se dobla mucho hacia atrás, así que no puede echar la cabeza atrás del todo como tú. Pero sí puede levantar el hocico bien alto, y sus ojos están a los lados de la cabeza, lo que le da una vista muy amplia: un cerdo puede ver el cielo sin problema. Además, los cerdos son muy listos: aprenden su nombre, ¡y algunos hasta han aprendido a jugar a videojuegos sencillos moviendo un joystick con el hocico!' },
+  { id: 'aw3', set: 'AW', emoji: '🍎', topic: 'Newton\'s apple',
+    q: 'Did Isaac Newton discover gravity when an apple fell on his head?', qes: '¿Isaac Newton descubrió la gravedad cuando le cayó una manzana en la cabeza?',
+    trap: 'Yes - bonk!', trapEs: '¡Sí, en toda la cabeza!',
+    answer: 'No - he just watched one fall!', answerEs: '¡No, solo vio caer una!',
+    fact: 'Newton himself told a friend that, years earlier, he was sitting in his garden when he saw an apple drop from a tree. It made him wonder why apples always fall straight down, never sideways or up - and whether the same pull might reach all the way to the Moon. Nobody who knew him ever said the apple hit his head; that bit was added later to make the story funnier. The very tree still grows in the garden of his old family home in England.',
+    factEs: 'El propio Newton contó a un amigo que, años antes, estaba sentado en su jardín cuando vio caer una manzana de un árbol. Eso le hizo preguntarse por qué las manzanas siempre caen hacia abajo, nunca de lado ni hacia arriba, y si esa misma fuerza llegaría hasta la Luna. Nadie que lo conociera dijo nunca que la manzana le diera en la cabeza; eso se añadió después para que la historia fuera más graciosa. Ese mismo árbol sigue creciendo en el jardín de su antigua casa familiar en Inglaterra.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1811,4 +1817,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   av5: 'av5-piranhas.mp4',
   aw1: 'aw1-left-handed-polar-bears.mp4',
   aw2: 'aw2-pigs-and-the-sky.mp4',
+  aw3: 'aw3-newtons-apple.mp4',
 };
