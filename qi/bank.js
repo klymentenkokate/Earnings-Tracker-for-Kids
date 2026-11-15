@@ -1651,6 +1651,12 @@ const QI_BANK = [
     answer: 'No - you\'d float!', answerEs: '¡No, flotarías!',
     fact: 'In films, people sink into quicksand without a trace - but real quicksand is just sand with lots of water mixed in, and it\'s heavier than a person. That means you can\'t sink deeper than about your waist. The real problem is getting stuck, because pulling hard makes the sand grip tighter. The trick is to stay calm, lean back, spread your arms and wiggle your legs slowly so water seeps in and you float free.',
     factEs: 'En las películas, la gente se hunde en arenas movedizas sin dejar rastro, pero las arenas movedizas de verdad son solo arena con mucha agua, y pesan más que una persona. Eso significa que no te puedes hundir más allá de la cintura más o menos. El problema real es quedarse atascado, porque si tiras con fuerza la arena aprieta más. El truco es mantener la calma, echarse hacia atrás, abrir los brazos y mover las piernas despacio para que entre agua y puedas flotar.' },
+  { id: 'az3', set: 'AZ', emoji: '🦋', topic: 'Butterfly lifespan',
+    q: 'Do butterflies only live for one day?', qes: '¿Las mariposas solo viven un día?',
+    trap: 'Yes - just one day!', trapEs: '¡Sí, solo un día!',
+    answer: 'No - weeks or more!', answerEs: '¡No, semanas o más!',
+    fact: 'Most adult butterflies live for around two to four weeks, and some live much longer: monarch butterflies that fly south for the winter can live for eight or nine months. The one-day story probably comes from mayflies, which often live for only a day once they have wings. And a butterfly\'s life starts long before it can fly - first as an egg, then a caterpillar, then a chrysalis.',
+    factEs: 'Casi todas las mariposas adultas viven entre dos y cuatro semanas, y algunas mucho más: las mariposas monarca que vuelan al sur para pasar el invierno pueden vivir ocho o nueve meses. La historia del único día seguramente viene de las efímeras, que muchas veces solo viven un día cuando ya tienen alas. Y la vida de una mariposa empieza mucho antes de que pueda volar: primero es un huevo, luego una oruga y luego una crisálida.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1919,4 +1925,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ay5: 'ay5-fastest-animal.mp4',
   az1: 'az1-glow-worms.mp4',
   az2: 'az2-quicksand.mp4',
+  az3: 'az3-butterfly-lifespan.mp4',
 };
