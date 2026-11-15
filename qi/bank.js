@@ -1638,6 +1638,13 @@ const QI_BANK = [
     answer: 'No - a falcon is!', answerEs: '¡No, un halcón!',
     fact: 'The cheetah is the fastest runner on land, reaching around 100 kilometres an hour in short bursts. But the fastest animal of all is a bird: the peregrine falcon. When it spots its prey, it folds in its wings and dives from high in the sky at over 300 kilometres an hour - about as fast as a high-speed train. Flying along normally it\'s much slower, but nothing alive moves faster than a diving peregrine.',
     factEs: 'El guepardo es el corredor más rápido en tierra: alcanza unos 100 kilómetros por hora en carreras cortas. Pero el animal más rápido de todos es un ave: el halcón peregrino. Cuando ve una presa, pliega las alas y se lanza en picado desde lo alto a más de 300 kilómetros por hora, tan rápido como un tren de alta velocidad. Volando normal es mucho más lento, pero ningún ser vivo va más rápido que un halcón peregrino en picado.' },
+  // Set AZ (pipeline, one question at a time)
+  { id: 'az1', set: 'AZ', emoji: '🪲', topic: 'Glow-worms',
+    q: 'Are glow-worms a kind of worm?', qes: '¿Los gusanos de luz son gusanos de verdad?',
+    trap: 'Yes - glowing worms!', trapEs: '¡Sí, gusanos que brillan!',
+    answer: 'No - they\'re beetles!', answerEs: '¡No, son escarabajos!',
+    fact: 'In Britain and the rest of Europe, glow-worms are beetles. The ones you see shining are mostly the females: they have no wings and look a bit like grubs, and they glow green-yellow from the tip of their tail to call flying males to them. In New Zealand and Australia, the famous cave glow-worms are something else again - baby flies that hang sticky threads from the ceiling to catch food. None of them are real worms.',
+    factEs: 'En Gran Bretaña y el resto de Europa, los gusanos de luz son escarabajos. Los que ves brillar son sobre todo las hembras: no tienen alas, parecen larvas y brillan de color verde amarillento por la punta de la cola para llamar a los machos, que sí vuelan. En Nueva Zelanda y Australia, los famosos gusanos de luz de las cuevas son otra cosa: crías de mosca que cuelgan hilos pegajosos del techo para atrapar comida. Ninguno es un gusano de verdad.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1904,4 +1911,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ay3: 'ay3-colour-of-snow.mp4',
   ay4: 'ay4-five-second-rule.mp4',
   ay5: 'ay5-fastest-animal.mp4',
+  az1: 'az1-glow-worms.mp4',
 };
