@@ -1849,6 +1849,12 @@ const QI_BANK = [
     answer: 'No - it protects your ears!', answerEs: '¡No, protege tus oídos!',
     fact: 'Earwax is made on purpose by your body, in the skin of your ear canal. It\'s sticky so it can trap dust and germs before they get deep inside, it stops the skin in your ears getting dry and itchy, and it slowly moves outwards on its own, carrying the trapped dirt with it. That\'s why doctors say you should never poke cotton buds or anything else into your ears - it can push the wax deeper or hurt your eardrum.',
     factEs: 'La cera de los oídos la fabrica tu cuerpo a propósito, en la piel del conducto del oído. Es pegajosa para atrapar el polvo y los gérmenes antes de que entren muy adentro, evita que la piel de los oídos se seque y pique, y poco a poco sale hacia fuera ella sola, llevándose la suciedad atrapada. Por eso los médicos dicen que nunca debes meterte bastoncillos ni nada en los oídos: puedes empujar la cera más adentro o hacerte daño en el tímpano.' },
+  { id: 'bf5', set: 'BF', emoji: '🐛', topic: 'Inside a chrysalis',
+    q: 'Does a caterpillar just grow wings inside its chrysalis?', qes: '¿A la oruga solo le crecen alas dentro de la crisálida?',
+    trap: 'Yes - it just adds wings!', trapEs: '¡Sí, solo le salen alas!',
+    answer: 'No - it mostly melts!', answerEs: '¡No, casi se deshace!',
+    fact: 'Inside its chrysalis, a caterpillar doesn\'t simply sprout a pair of wings. Special juices break most of its body down into a kind of soup. Only small groups of cells stay ready and waiting - and they use the soup to build a completely new body, with wings, long legs, big eyes and a curly drinking-straw mouth. A few weeks later, a butterfly climbs out.',
+    factEs: 'Dentro de su crisálida, a la oruga no le salen simplemente un par de alas. Unos jugos especiales deshacen casi todo su cuerpo en una especie de sopa. Solo unos grupitos de células se quedan preparados, y usan esa sopa para construir un cuerpo completamente nuevo, con alas, patas largas, ojos grandes y una boca como una pajita enrollada. Unas semanas después, sale una mariposa.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2149,4 +2155,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bf2: 'bf2-moonbows.mp4',
   bf3: 'bf3-sleeping-fish.mp4',
   bf4: 'bf4-earwax.mp4',
+  bf5: 'bf5-inside-a-chrysalis.mp4',
 };
