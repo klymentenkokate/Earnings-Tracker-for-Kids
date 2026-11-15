@@ -1676,6 +1676,12 @@ const QI_BANK = [
     answer: 'No - mostly at llamas!', answerEs: '¡No, sobre todo a otras llamas!',
     fact: 'Llamas are famous for spitting, but they mostly spit at each other - when they argue over food, or to tell another llama to back off. Their spit isn\'t just saliva: it\'s a smelly mix with some of the food from their stomach. A llama that has been treated kindly by people very rarely spits at humans; when it happens, the person has usually just got caught in the middle of a llama argument.',
     factEs: 'Las llamas son famosas por escupir, pero sobre todo se escupen entre ellas: cuando discuten por la comida o para decirle a otra llama que se aparte. Su escupitajo no es solo saliva: es una mezcla apestosa con algo de comida de su estómago. Una llama a la que la gente ha tratado bien casi nunca escupe a las personas; cuando pasa, normalmente es porque alguien se ha metido en medio de una pelea de llamas.' },
+  { id: 'ba2', set: 'BA', emoji: '😱', topic: 'Hair turning white',
+    q: 'Can a big fright turn your hair white overnight?', qes: '¿Un susto muy grande puede volverte el pelo blanco en una noche?',
+    trap: 'Yes - in one night!', trapEs: '¡Sí, en una noche!',
+    answer: 'No - hair can\'t change!', answerEs: '¡No, el pelo no cambia!',
+    fact: 'Old stories say people\'s hair turned white overnight after a terrible shock. But the hair you can see on your head isn\'t alive any more, so its colour can\'t suddenly change. Hair turns grey or white slowly, as new hairs grow in without any colour - mostly because people get older, and partly because of the genes in their family. Stress might make some people go grey a little sooner, but never overnight.',
+    factEs: 'Las historias antiguas dicen que a algunas personas el pelo se les volvió blanco en una noche tras un susto terrible. Pero el pelo que ves en tu cabeza ya no está vivo, así que su color no puede cambiar de repente. El pelo se vuelve gris o blanco poco a poco, cuando crecen pelos nuevos sin color, sobre todo porque la gente se hace mayor, y en parte por los genes de su familia. El estrés puede hacer que algunas personas tengan canas un poco antes, pero nunca de un día para otro.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1948,4 +1954,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   az4: 'az4-birds-and-rice.mp4',
   az5: 'az5-teeth-and-bones.mp4',
   ba1: 'ba1-llama-spit.mp4',
+  ba2: 'ba2-hair-turning-white.mp4',
 };
