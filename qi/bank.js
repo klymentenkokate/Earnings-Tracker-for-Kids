@@ -1552,6 +1552,12 @@ const QI_BANK = [
     answer: 'No - they use both paws!', answerEs: '¡No, usan las dos patas!',
     fact: 'It\'s an old story, told for years by explorers, but scientists who have watched lots of polar bears hunting, swimming and playing found no sign of it: they use their right and left paws just as much. A polar bear\'s huge front paws, as wide as a dinner plate, work like snowshoes on the ice and paddles in the water - and both of them are used for grabbing food. There\'s no proof that polar bears favour one side at all.',
     factEs: 'Es una historia antigua que contaron exploradores durante años, pero los científicos que han observado a muchos osos polares cazando, nadando y jugando no encontraron ninguna señal: usan la pata derecha y la izquierda por igual. Sus enormes patas delanteras, anchas como un plato, funcionan como raquetas de nieve en el hielo y como remos en el agua, y las dos sirven para atrapar comida. No hay ninguna prueba de que los osos polares prefieran un lado.' },
+  { id: 'aw2', set: 'AW', emoji: '🐷', topic: 'Pigs and the sky',
+    q: 'Is it impossible for a pig to look up at the sky?', qes: '¿Es imposible que un cerdo mire al cielo?',
+    trap: 'Yes - pigs can\'t look up', trapEs: 'Sí, no pueden mirar arriba',
+    answer: 'No - pigs can see the sky!', answerEs: '¡No, los cerdos ven el cielo!',
+    fact: 'A pig\'s thick, strong neck doesn\'t bend back very far, so it can\'t tip its head right back like you can. But it can still lift its snout up high, and its eyes sit on the sides of its head, giving it a very wide view - so a pig can see the sky just fine. Pigs are also very clever: they can learn their names, and some have even learned to play simple video games with a joystick using their snouts!',
+    factEs: 'El cuello grueso y fuerte de un cerdo no se dobla mucho hacia atrás, así que no puede echar la cabeza atrás del todo como tú. Pero sí puede levantar el hocico bien alto, y sus ojos están a los lados de la cabeza, lo que le da una vista muy amplia: un cerdo puede ver el cielo sin problema. Además, los cerdos son muy listos: aprenden su nombre, ¡y algunos hasta han aprendido a jugar a videojuegos sencillos moviendo un joystick con el hocico!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1804,4 +1810,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   av4: 'av4-where-your-heart-is.mp4',
   av5: 'av5-piranhas.mp4',
   aw1: 'aw1-left-handed-polar-bears.mp4',
+  aw2: 'aw2-pigs-and-the-sky.mp4',
 };
