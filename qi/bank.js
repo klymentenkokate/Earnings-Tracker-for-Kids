@@ -1905,6 +1905,12 @@ const QI_BANK = [
     answer: 'No - noses change all day!', answerEs: '¡No, la nariz cambia todo el día!',
     fact: 'A healthy dog\'s nose can be wet one moment and dry the next. It often goes dry after a nap, after lying in the sun or near a heater, or simply because the dog hasn\'t licked it for a while. A dog licks its nose to keep it damp, because a wet nose catches smells better. A dry nose on its own doesn\'t tell you a dog is ill - if a dog seems unwell, tired or isn\'t eating, the person to ask is a vet.',
     factEs: 'La nariz de un perro sano puede estar húmeda en un momento y seca al siguiente. Suele secarse después de una siesta, de tumbarse al sol o junto a la calefacción, o simplemente porque el perro no se la ha lamido en un rato. El perro se lame la nariz para mantenerla húmeda, porque así capta mejor los olores. Una nariz seca por sí sola no indica que un perro esté enfermo: si un perro parece malo, cansado o no come, hay que preguntar a un veterinario.' },
+  { id: 'bh4', set: 'BH', emoji: '🐎', topic: 'Sleeping horses',
+    q: 'Do horses only ever sleep standing up?', qes: '¿Los caballos solo duermen de pie?',
+    trap: 'Yes - always standing!', trapEs: '¡Sí, siempre de pie!',
+    answer: 'No - they lie down too!', answerEs: '¡No, también se tumban!',
+    fact: 'Horses can doze standing up, thanks to a special system in their legs that locks the joints so they don\'t fall over - handy for a big animal that might need to run from danger quickly. But for the deepest kind of sleep, horses have to lie down, either flat on their side or resting on their tummy. They only do it for short spells, adding up to a few hours a day, usually when they feel safe.',
+    factEs: 'Los caballos pueden dormitar de pie, gracias a un sistema especial en las patas que bloquea las articulaciones para no caerse; muy útil para un animal grande que quizá tenga que huir rápido de un peligro. Pero para el sueño más profundo, los caballos tienen que tumbarse, de lado o apoyados sobre la tripa. Solo lo hacen durante ratos cortos, que suman unas pocas horas al día, normalmente cuando se sienten seguros.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2214,4 +2220,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bh1: 'bh1-taste-and-smell.mp4',
   bh2: 'bh2-snake-charmers.mp4',
   bh3: 'bh3-dog-noses.mp4',
+  bh4: 'bh4-sleeping-horses.mp4',
 };
