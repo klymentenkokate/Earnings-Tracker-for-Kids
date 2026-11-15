@@ -1601,6 +1601,12 @@ const QI_BANK = [
     answer: 'No - it\'s in your genes!', answerEs: '¡No, depende de tus genes!',
     fact: 'For generations, children were told to eat their crusts to get curly hair - probably a clever trick so that no bread was wasted. Whether your hair grows curly or straight depends on the shape of the tiny pockets in your skin that each hair grows from: round ones make straight hair, flatter oval ones make waves and curls. That shape is mostly passed down to you from your family. Crusts are perfectly good food, but they won\'t change your hair at all.',
     factEs: 'Durante generaciones, a los niños les dijeron que se comieran las cortezas para tener el pelo rizado, seguramente un truco para no desperdiciar pan. Que el pelo crezca rizado o liso depende de la forma de los pequeños huecos de la piel de donde sale cada pelo: los redondos dan pelo liso y los más planos y ovalados dan ondas y rizos. Esa forma la heredas sobre todo de tu familia. Las cortezas son buena comida, pero no cambian tu pelo para nada.' },
+  { id: 'ax5', set: 'AX', emoji: '🪲', topic: 'Earwigs and ears',
+    q: 'Do earwigs crawl into people\'s ears?', qes: '¿Las tijeretas se meten en las orejas de la gente?',
+    trap: 'Yes - it\'s in the name!', trapEs: '¡Sí, por eso se llaman así!',
+    answer: 'No - they like leaves!', answerEs: '¡No, prefieren las hojas!',
+    fact: 'The English name comes from an old belief that earwigs crept into sleeping people\'s ears. In fact, earwigs live outdoors under bark, stones and fallen leaves, where they eat plants and tiny insects, and they\'re no more likely to wander into an ear than any other small bug. The pincers on their tail are for defending themselves and for helping to fold their wings - most earwigs can fly, though they hardly ever do.',
+    factEs: 'Su nombre en inglés, earwig, viene de una vieja creencia: que se metían en las orejas de la gente dormida. En realidad, las tijeretas viven al aire libre bajo la corteza, las piedras y las hojas caídas, donde comen plantas e insectos diminutos, y no es más probable que entren en una oreja que cualquier otro bichito. Las pinzas de su cola sirven para defenderse y para ayudar a plegar las alas: casi todas las tijeretas pueden volar, aunque casi nunca lo hacen.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1861,4 +1867,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ax2: 'ax2-why-mars-is-red.mp4',
   ax3: 'ax3-swimming-after-eating.mp4',
   ax4: 'ax4-bread-crusts-and-curls.mp4',
+  ax5: 'ax5-earwigs-and-ears.mp4',
 };
