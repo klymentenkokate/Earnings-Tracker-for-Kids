@@ -1707,6 +1707,12 @@ const QI_BANK = [
     answer: 'No - it keeps beating!', answerEs: '¡No, sigue latiendo!',
     fact: 'When you sneeze, you take a deep breath and then squeeze your chest hard, which changes the pressure inside it. That can make your next heartbeat arrive a tiny bit later than usual, so it might feel like a little skip - but your heart keeps beating the whole time. Its rhythm is controlled by its own electrical signals, and a sneeze doesn\'t switch them off.',
     factEs: 'Cuando estornudas, respiras hondo y luego aprietas el pecho con fuerza, lo que cambia la presión dentro de él. Eso puede hacer que el siguiente latido llegue un poquito más tarde de lo normal, así que puede parecer un pequeño salto, pero tu corazón sigue latiendo todo el tiempo. Su ritmo lo controlan sus propias señales eléctricas, y un estornudo no las apaga.' },
+  { id: 'bb2', set: 'BB', emoji: '🦈', topic: 'Whale sharks',
+    q: 'Is a whale shark a kind of whale?', qes: '¿El tiburón ballena es una ballena?',
+    trap: 'Yes - it\'s a whale!', trapEs: '¡Sí, es una ballena!',
+    answer: 'No - it\'s a fish!', answerEs: '¡No, es un pez!',
+    fact: 'The whale shark is the biggest fish in the world - it can grow longer than a bus, which is how it got \'whale\' in its name. But it\'s a shark, and sharks are fish: it breathes through gills, instead of coming up to the surface to breathe air like whales do. Even though it\'s enormous, it eats only tiny food like plankton and little fish, sieved from the water as it swims along with its huge mouth wide open. It\'s gentle and harmless to people.',
+    factEs: 'El tiburón ballena es el pez más grande del mundo: puede ser más largo que un autobús, y por eso lleva \'ballena\' en su nombre. Pero es un tiburón, y los tiburones son peces: respira por branquias, en vez de subir a la superficie a respirar aire como las ballenas. Aunque es enorme, solo come comida diminuta como plancton y pececillos, que filtra del agua mientras nada con su enorme boca abierta. Es tranquilo e inofensivo para las personas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1984,4 +1990,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ba4: 'ba4-salt-in-boiling-water.mp4',
   ba5: 'ba5-dolphins-and-water.mp4',
   bb1: 'bb1-sneezing-and-your-heart.mp4',
+  bb2: 'bb2-whale-sharks.mp4',
 };
