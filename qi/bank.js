@@ -1738,6 +1738,12 @@ const QI_BANK = [
     answer: 'No - a bit squashed!', answerEs: '¡No, un poco aplastada!',
     fact: 'From space the Earth looks perfectly round, but it\'s actually a little fatter around its middle - the equator - than it is from pole to pole. That\'s because the Earth spins, and the spinning pushes its middle outwards a little. The difference is only about 43 kilometres, which is tiny compared with the whole planet, so it still looks round in photos.',
     factEs: 'Desde el espacio la Tierra parece perfectamente redonda, pero en realidad es un poco más ancha por el medio, por el ecuador, que de polo a polo. Es porque la Tierra gira, y al girar su parte central se ensancha un poco hacia fuera. La diferencia es solo de unos 43 kilómetros, muy poco comparado con todo el planeta, así que en las fotos sigue pareciendo redonda.' },
+  { id: 'bc2', set: 'BC', emoji: '🐝', topic: 'Honey-making bees',
+    q: 'Do all bees make honey?', qes: '¿Todas las abejas hacen miel?',
+    trap: 'Yes - every bee!', trapEs: '¡Sí, todas!',
+    answer: 'No - only a few!', answerEs: '¡No, solo unas pocas!',
+    fact: 'There are around 20,000 different kinds of bee in the world, but only a small number make and store honey - mainly honeybees, plus some stingless bees in warm countries. Most kinds of bee don\'t live in big hives at all: they live alone, and a mother bee builds a little nest in the ground or inside a hollow stem, leaving pollen and nectar for her young. Honey-makers or not, all bees help flowers by carrying pollen from one to another.',
+    factEs: 'En el mundo hay unas 20.000 clases distintas de abejas, pero solo unas pocas hacen y guardan miel: sobre todo las abejas melíferas, y algunas abejas sin aguijón de países cálidos. La mayoría de las clases de abeja ni siquiera viven en grandes colmenas: viven solas, y una abeja madre construye un pequeño nido en el suelo o dentro de un tallo hueco, y deja polen y néctar para sus crías. Hagan miel o no, todas las abejas ayudan a las flores llevando polen de una a otra.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2020,4 +2026,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bb4: 'bb4-thundersnow.mp4',
   bb5: 'bb5-dog-tail-wags.mp4',
   bc1: 'bc1-earths-shape.mp4',
+  bc2: 'bc2-honey-making-bees.mp4',
 };
