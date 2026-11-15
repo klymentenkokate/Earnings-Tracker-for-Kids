@@ -1607,6 +1607,13 @@ const QI_BANK = [
     answer: 'No - they like leaves!', answerEs: '¡No, prefieren las hojas!',
     fact: 'The English name comes from an old belief that earwigs crept into sleeping people\'s ears. In fact, earwigs live outdoors under bark, stones and fallen leaves, where they eat plants and tiny insects, and they\'re no more likely to wander into an ear than any other small bug. The pincers on their tail are for defending themselves and for helping to fold their wings - most earwigs can fly, though they hardly ever do.',
     factEs: 'Su nombre en inglés, earwig, viene de una vieja creencia: que se metían en las orejas de la gente dormida. En realidad, las tijeretas viven al aire libre bajo la corteza, las piedras y las hojas caídas, donde comen plantas e insectos diminutos, y no es más probable que entren en una oreja que cualquier otro bichito. Las pinzas de su cola sirven para defenderse y para ayudar a plegar las alas: casi todas las tijeretas pueden volar, aunque casi nunca lo hacen.' },
+  // Set AY (pipeline, one question at a time)
+  { id: 'ay1', set: 'AY', emoji: '🥚', topic: 'Brown or white eggs',
+    q: 'Are brown eggs healthier than white eggs?', qes: '¿Los huevos morenos son más sanos que los blancos?',
+    trap: 'Yes - brown is better!', trapEs: '¡Sí, los morenos son mejores!',
+    answer: 'No - they\'re the same!', answerEs: '¡No, son iguales!',
+    fact: 'Lots of people think brown eggs are healthier, like brown bread - but the colour of the shell only depends on which breed of hen laid it. Crack them open and a brown egg and a white egg are just as good for you. What makes more difference is what the hen eats and how fresh the egg is. Shell colour is a bit like hair colour: it\'s just how that kind of hen is made.',
+    factEs: 'Mucha gente cree que los huevos morenos son más sanos, como el pan integral, pero el color de la cáscara solo depende de la raza de la gallina que lo puso. Al abrirlos, un huevo moreno y uno blanco son igual de buenos para ti. Lo que más importa es lo que come la gallina y lo fresco que está el huevo. El color de la cáscara es como el color del pelo: así es ese tipo de gallina.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1868,4 +1875,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ax3: 'ax3-swimming-after-eating.mp4',
   ax4: 'ax4-bread-crusts-and-curls.mp4',
   ax5: 'ax5-earwigs-and-ears.mp4',
+  ay1: 'ay1-brown-or-white-eggs.mp4',
 };
