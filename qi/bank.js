@@ -1595,6 +1595,12 @@ const QI_BANK = [
     answer: 'No - you can swim!', answerEs: '¡No, puedes nadar!',
     fact: 'Lots of grown-ups were told as children to wait half an hour after lunch, or they would get a cramp and sink. Doctors and water-safety experts have looked into it and found no proof that anyone has ever drowned because they swam after a meal. After a really huge feast you might feel full and a bit slow, so a gentle swim is more comfortable. The rules that really keep you safe are different: swim where a grown-up can see you, and where there is a lifeguard.',
     factEs: 'A muchos adultos les dijeron de pequeños que esperaran media hora después de comer, o les daría un calambre y se hundirían. Médicos y expertos en seguridad en el agua lo han estudiado y no han encontrado ninguna prueba de que alguien se haya ahogado por nadar después de comer. Después de un banquete enorme puedes sentirte lleno y algo lento, así que es más cómodo nadar con calma. Las reglas que de verdad te protegen son otras: nada donde un adulto pueda verte y donde haya socorrista.' },
+  { id: 'ax4', set: 'AX', emoji: '🍞', topic: 'Bread crusts and curls',
+    q: 'Do bread crusts make your hair curly?', qes: '¿Las cortezas del pan rizan el pelo?',
+    trap: 'Yes - eat up for curls!', trapEs: '¡Sí, cómetelas y tendrás rizos!',
+    answer: 'No - it\'s in your genes!', answerEs: '¡No, depende de tus genes!',
+    fact: 'For generations, children were told to eat their crusts to get curly hair - probably a clever trick so that no bread was wasted. Whether your hair grows curly or straight depends on the shape of the tiny pockets in your skin that each hair grows from: round ones make straight hair, flatter oval ones make waves and curls. That shape is mostly passed down to you from your family. Crusts are perfectly good food, but they won\'t change your hair at all.',
+    factEs: 'Durante generaciones, a los niños les dijeron que se comieran las cortezas para tener el pelo rizado, seguramente un truco para no desperdiciar pan. Que el pelo crezca rizado o liso depende de la forma de los pequeños huecos de la piel de donde sale cada pelo: los redondos dan pelo liso y los más planos y ovalados dan ondas y rizos. Esa forma la heredas sobre todo de tu familia. Las cortezas son buena comida, pero no cambian tu pelo para nada.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1854,4 +1860,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ax1: 'ax1-brightest-star.mp4',
   ax2: 'ax2-why-mars-is-red.mp4',
   ax3: 'ax3-swimming-after-eating.mp4',
+  ax4: 'ax4-bread-crusts-and-curls.mp4',
 };
