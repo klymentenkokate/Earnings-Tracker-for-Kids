@@ -1725,6 +1725,12 @@ const QI_BANK = [
     answer: 'Yes - it\'s thundersnow!', answerEs: '¡Sí, es una tormenta de nieve con truenos!',
     fact: 'Thunderstorms are most common in warm weather, but they can happen in snowstorms too - it\'s called thundersnow. It\'s rare, because snowstorms don\'t usually have the strong rising air needed to build up enough electricity for lightning. When it does happen, the thick falling snow soaks up the sound, so the thunder is muffled and can only be heard much closer than in a summer storm.',
     factEs: 'Las tormentas con truenos son más frecuentes cuando hace calor, pero también pueden darse en tormentas de nieve: en inglés se llama \'thundersnow\'. Es raro, porque las tormentas de nieve no suelen tener el aire que sube con fuerza necesario para acumular electricidad suficiente para los rayos. Cuando pasa, la nieve espesa que cae absorbe el sonido, así que el trueno suena apagado y solo se oye mucho más cerca que en una tormenta de verano.' },
+  { id: 'bb5', set: 'BB', emoji: '🐕', topic: 'Dog tail wags',
+    q: 'Does a wagging tail always mean a dog is happy?', qes: '¿Un perro que mueve la cola siempre está contento?',
+    trap: 'Yes - always!', trapEs: '¡Sí, siempre!',
+    answer: 'No - not always!', answerEs: '¡No, no siempre!',
+    fact: 'A wag can mean lots of different things. A loose, wide, wiggly wag - often with the dog\'s whole back end swaying - usually means a happy, friendly dog. But a stiff tail held high and wagging fast can mean a dog is excited or on edge, and a low tail wagging quickly can mean it\'s nervous. So look at the whole dog - its ears, body and face - and always ask the owner before you stroke a dog you don\'t know.',
+    factEs: 'Mover la cola puede significar muchas cosas distintas. Un meneo suelto, amplio y ondulante, a menudo con toda la parte de atrás balanceándose, suele significar un perro contento y amistoso. Pero una cola rígida, alta y moviéndose rápido puede indicar que el perro está nervioso o en tensión, y una cola baja moviéndose deprisa puede significar que tiene miedo. Así que fíjate en todo el perro, en sus orejas, su cuerpo y su cara, y pregunta siempre al dueño antes de acariciar a un perro que no conoces.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2005,4 +2011,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bb2: 'bb2-whale-sharks.mp4',
   bb3: 'bb3-mushrooms.mp4',
   bb4: 'bb4-thundersnow.mp4',
+  bb5: 'bb5-dog-tail-wags.mp4',
 };
