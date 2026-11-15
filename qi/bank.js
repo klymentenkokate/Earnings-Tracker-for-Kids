@@ -1614,6 +1614,12 @@ const QI_BANK = [
     answer: 'No - they\'re the same!', answerEs: '¡No, son iguales!',
     fact: 'Lots of people think brown eggs are healthier, like brown bread - but the colour of the shell only depends on which breed of hen laid it. Crack them open and a brown egg and a white egg are just as good for you. What makes more difference is what the hen eats and how fresh the egg is. Shell colour is a bit like hair colour: it\'s just how that kind of hen is made.',
     factEs: 'Mucha gente cree que los huevos morenos son más sanos, como el pan integral, pero el color de la cáscara solo depende de la raza de la gallina que lo puso. Al abrirlos, un huevo moreno y uno blanco son igual de buenos para ti. Lo que más importa es lo que come la gallina y lo fresco que está el huevo. El color de la cáscara es como el color del pelo: así es ese tipo de gallina.' },
+  { id: 'ay2', set: 'AY', emoji: '🧽', topic: 'Sea sponges',
+    q: 'Is a sea sponge a kind of plant?', qes: '¿Una esponja de mar es una planta?',
+    trap: 'Yes - a sea plant!', trapEs: '¡Sí, una planta marina!',
+    answer: 'No - it\'s an animal!', answerEs: '¡No, es un animal!',
+    fact: 'Sea sponges stay stuck to one spot on the seabed their whole lives, so they look a lot like plants - but they are animals, some of the simplest on Earth. A sponge has no brain, no heart and no muscles. Its body is full of tiny holes: it pumps seawater through them and catches tiny bits of food floating in it. Unlike a plant, it can\'t make its own food from sunlight. Most kitchen sponges today are made in factories, not taken from the sea.',
+    factEs: 'Las esponjas de mar se quedan pegadas en el mismo sitio del fondo marino toda su vida, así que parecen plantas, pero son animales, de los más sencillos de la Tierra. Una esponja no tiene cerebro, ni corazón, ni músculos. Su cuerpo está lleno de agujeritos: bombea agua de mar a través de ellos y atrapa trocitos de comida que flotan en ella. A diferencia de una planta, no puede fabricar su comida con la luz del sol. Hoy, casi todas las esponjas de cocina se hacen en fábricas, no se sacan del mar.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1876,4 +1882,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ax4: 'ax4-bread-crusts-and-curls.mp4',
   ax5: 'ax5-earwigs-and-ears.mp4',
   ay1: 'ay1-brown-or-white-eggs.mp4',
+  ay2: 'ay2-sea-sponges.mp4',
 };
