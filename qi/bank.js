@@ -1955,6 +1955,12 @@ const QI_BANK = [
     answer: 'Millions of tiny hairs on their toes!', answerEs: '¡Con millones de pelitos diminutos en los dedos!',
     fact: 'A gecko\'s toes are covered in millions of tiny hairs, and each hair splits into hundreds of even tinier tips. Those billions of tips get so close to the wall that their molecules pull on the wall\'s molecules - a very weak pull called the van der Waals force, but billions of them together hold the gecko easily. Geckos still stick in a vacuum, so it isn\'t suction, and they grip surfaces that water slides off, so it isn\'t glue. To let go, they peel their toes off like a sticker!',
     factEs: 'Los dedos de un gecko están cubiertos de millones de pelitos diminutos, y cada pelo se divide en cientos de puntas aún más pequeñas. Esos miles de millones de puntas se acercan tanto a la pared que sus moléculas tiran de las moléculas de la pared: una fuerza muy débil llamada fuerza de van der Waals, pero miles de millones juntas sujetan al gecko sin problema. Los geckos se siguen pegando en el vacío, así que no son ventosas, y se agarran a superficies en las que el agua resbala, así que tampoco es pegamento. ¡Para soltarse, despegan los dedos como una pegatina!' },
+  { id: 'bj2', set: 'BJ', emoji: '🍿', topic: 'Popcorn',
+    q: 'What makes popcorn pop?', qes: '¿Qué hace que las palomitas exploten?',
+    trap: 'Hot air bursting out!', trapEs: '¡Aire caliente que sale de golpe!',
+    answer: 'Water inside turning into steam!', answerEs: '¡El agua de dentro convirtiéndose en vapor!',
+    fact: 'Every popcorn kernel has a little water inside, sealed in by a hard, waterproof shell. In a hot pan the water turns into steam, which needs far more room, so the pressure builds until, at about 180 degrees, the shell bursts and the soft starch puffs up into crunchy foam. In 2015 scientists filmed it with super-fast cameras: the popcorn jumps off a little \'leg\' of starch, and the pop sound is the steam rushing out. Ordinary corn won\'t pop - its shell leaks!',
+    factEs: 'Cada grano de palomita tiene un poco de agua dentro, sellada por una cáscara dura e impermeable. En una sartén caliente el agua se convierte en vapor, que necesita mucho más espacio, así que la presión sube hasta que, a unos 180 grados, la cáscara revienta y el almidón blando se hincha en una espuma crujiente. En 2015 unos científicos lo grabaron con cámaras superrápidas: la palomita salta apoyándose en una \'pata\' de almidón, y el sonido del pop es el vapor saliendo. El maíz normal no explota: ¡su cáscara deja escapar el vapor!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2272,4 +2278,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bi4: 'bi4-spider-webs.mp4',
   bi5: 'bi5-onion-tears.mp4',
   bj1: 'bj1-gecko-feet.mp4',
+  bj2: 'bj2-popcorn.mp4',
 };
