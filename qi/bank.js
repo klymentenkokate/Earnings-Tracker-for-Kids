@@ -1930,6 +1930,12 @@ const QI_BANK = [
     answer: 'No - it\'s a mammal, like you!', answerEs: '¡No, es un mamífero, como tú!',
     fact: 'A whale is a mammal, not a fish. Fish take oxygen out of the water with their gills, but a whale has lungs and must swim up to breathe air through the blowhole on top of its head. A fish\'s tail stands up and swings side to side; a whale\'s tail lies flat and beats up and down, the way running mammals bend their backs. Fossils show whales\' ancestors walked on land about 50 million years ago. Whale mothers feed their babies milk, and whales even have a few hairs!',
     factEs: 'La ballena es un mamífero, no un pez. Los peces sacan el oxígeno del agua con las branquias, pero la ballena tiene pulmones y debe subir a respirar aire por el espiráculo que tiene encima de la cabeza. La cola de un pez está de pie y se mueve de lado a lado; la de la ballena está tumbada y sube y baja, como la espalda de un mamífero que corre. Los fósiles muestran que los antepasados de las ballenas caminaban por tierra hace unos 50 millones de años. Las ballenas madre alimentan a sus crías con leche, ¡y las ballenas hasta tienen algunos pelos!' },
+  { id: 'bi3', set: 'BI', emoji: '🐑', topic: 'Sheep wool',
+    q: 'Do sheep shed their wool by themselves?', qes: '¿Las ovejas sueltan la lana solas?',
+    trap: 'Yes - every spring!', trapEs: '¡Sí, cada primavera!',
+    answer: 'Most farm sheep can\'t - it never stops growing!', answerEs: 'La mayoría de las ovejas de granja no pueden: ¡la lana nunca deja de crecer!',
+    fact: 'Wild sheep grow a woolly coat for winter and shed it every spring, because the follicles that grow their wool take a rest once a year. Over thousands of years, farmers kept the sheep whose wool never let go, so most farm sheep keep growing wool until they are sheared. In 2015 a lost sheep in Australia called Chris had gone about five years without a haircut: his fleece weighed 41 kg, a world record! Shearing doesn\'t hurt - wool has no nerves, just like your hair.',
+    factEs: 'Las ovejas salvajes crían un abrigo de lana para el invierno y lo sueltan cada primavera, porque los folículos que hacen crecer la lana descansan una vez al año. Durante miles de años, los granjeros se quedaron con las ovejas cuya lana nunca se soltaba, así que a la mayoría de las ovejas de granja la lana les crece hasta que las esquilan. En 2015, una oveja perdida en Australia llamada Chris llevaba unos cinco años sin esquilar: ¡su vellón pesó 41 kg, un récord mundial! Esquilar no duele: la lana no tiene nervios, igual que tu pelo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2243,4 +2249,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bh5: 'bh5-comet-tails.mp4',
   bi1: 'bi1-cricket-songs.mp4',
   bi2: 'bi2-whales-and-fish.mp4',
+  bi3: 'bi3-sheep-wool.mp4',
 };
