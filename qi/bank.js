@@ -1806,6 +1806,12 @@ const QI_BANK = [
     answer: 'No - only a few!', answerEs: '¡No, solo a unos pocos!',
     fact: 'Magnets pull strongly on iron, and on steel, which is mostly iron - plus a couple of rarer metals called nickel and cobalt. But lots of metals aren\'t pulled by a magnet at all: aluminium foil and drinks cans, copper wires, and gold and silver jewellery won\'t stick. So if you test things around the house with a fridge magnet, you\'ll find plenty of shiny metal objects that it simply ignores.',
     factEs: 'Los imanes atraen con fuerza el hierro y el acero, que es casi todo hierro, además de un par de metales más raros llamados níquel y cobalto. Pero muchos metales no los atrae un imán en absoluto: el papel de aluminio y las latas de refresco, los cables de cobre, y las joyas de oro y plata no se pegan. Así que si pruebas cosas de casa con un imán de nevera, encontrarás muchos objetos metálicos brillantes a los que simplemente ignora.' },
+  { id: 'be3', set: 'BE', emoji: '🥔', topic: 'Potatoes',
+    q: 'Are potatoes the roots of the potato plant?', qes: '¿Las patatas son las raíces de la planta?',
+    trap: 'Yes - they\'re roots!', trapEs: '¡Sí, son raíces!',
+    answer: 'No - they\'re stems!', answerEs: '¡No, son tallos!',
+    fact: 'Potatoes grow underground, so most people think they\'re roots - but they\'re really swollen parts of the plant\'s underground stems, called tubers, where it stores food for later. You can tell because a potato has \'eyes\': little buds that can sprout into new shoots and leaves, which roots can\'t do. That\'s why an old potato left in a cupboard starts growing shoots. Carrots, on the other hand, really are roots.',
+    factEs: 'Las patatas crecen bajo tierra, así que casi todo el mundo cree que son raíces, pero en realidad son partes hinchadas de los tallos subterráneos de la planta, llamadas tubérculos, donde guarda comida para más adelante. Se nota porque la patata tiene \'ojos\': pequeñas yemas que pueden brotar y dar tallos y hojas nuevos, algo que las raíces no pueden hacer. Por eso a una patata vieja olvidada en un armario le salen brotes. Las zanahorias, en cambio, sí son raíces de verdad.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2099,4 +2105,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bd5: 'bd5-ladybird-colours.mp4',
   be1: 'be1-floating-astronauts.mp4',
   be2: 'be2-magnets-and-metal.mp4',
+  be3: 'be3-potatoes.mp4',
 };
