@@ -1886,6 +1886,13 @@ const QI_BANK = [
     answer: 'No - mostly in warm months!', answerEs: '¡No, sobre todo con calor!',
     fact: 'Hailstones are balls of ice, so it seems they should come in winter - but hail usually falls in spring and summer. It forms inside tall thunderstorm clouds, which need warm, rising air to grow. Strong winds inside the cloud toss raindrops high up where it\'s freezing, so they turn to ice; they fall, get thrown up again, and add a new layer of ice each time, a bit like an onion. When they\'re too heavy for the wind to hold, they fall as hail.',
     factEs: 'Los granizos son bolas de hielo, así que parece que deberían caer en invierno, pero el granizo suele caer en primavera y verano. Se forma dentro de nubes de tormenta muy altas, que necesitan aire cálido que sube para crecer. Los vientos fuertes dentro de la nube lanzan las gotas de lluvia muy arriba, donde hace un frío helador, y se convierten en hielo; caen, vuelven a subir y cada vez ganan una capa nueva de hielo, un poco como una cebolla. Cuando pesan demasiado para que el viento las sostenga, caen como granizo.' },
+  // Set BH (pipeline, one question at a time)
+  { id: 'bh1', set: 'BH', emoji: '👃', topic: 'Taste and smell',
+    q: 'Does your tongue do all your tasting?', qes: '¿Tu lengua se encarga de todo el sabor?',
+    trap: 'Yes - it\'s the tongue!', trapEs: '¡Sí, es la lengua!',
+    answer: 'No - your nose helps a lot!', answerEs: '¡No, la nariz ayuda mucho!',
+    fact: 'Your tongue can only pick up a few basic tastes: sweet, salty, sour, bitter and savoury. Most of what we call flavour - like the difference between strawberry and banana - actually comes from smell. As you chew, smells from the food float up the back of your throat to your nose. That\'s why food tastes of almost nothing when you have a blocked nose from a cold. Try holding your nose while eating a jelly bean, then let go!',
+    factEs: 'Tu lengua solo detecta unos pocos sabores básicos: dulce, salado, ácido, amargo y sabroso. Casi todo lo que llamamos sabor, como la diferencia entre fresa y plátano, en realidad viene del olfato. Al masticar, los olores de la comida suben por la parte de atrás de la garganta hasta la nariz. Por eso la comida casi no sabe a nada cuando tienes la nariz tapada por un resfriado. ¡Prueba a taparte la nariz mientras comes una gominola y luego suéltala!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2192,4 +2199,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bg3: 'bg3-hens-and-eggs.mp4',
   bg4: 'bg4-bear-hibernation.mp4',
   bg5: 'bg5-hailstones.mp4',
+  bh1: 'bh1-taste-and-smell.mp4',
 };
