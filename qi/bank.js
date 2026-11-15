@@ -1967,6 +1967,12 @@ const QI_BANK = [
     answer: 'The leaves pull it up!', answerEs: '¡Las hojas tiran de ella hacia arriba!',
     fact: 'Leaves have tiny holes called stomata. When the sun warms a leaf, water evaporates out of them. Inside the tree, water fills thin tubes like millions of straws, and water molecules cling to each other in a chain - so every drop that leaves at the top tugs the next one up, all the way from the roots. In 1727 Stephen Hales weighed a sunflower in a sealed pot and found it lost more than half a litre of water in one hot day. A big oak can lift hundreds of litres a day!',
     factEs: 'Las hojas tienen agujeritos diminutos llamados estomas. Cuando el sol calienta una hoja, el agua se evapora por ellos. Dentro del árbol, el agua llena tubitos finos como millones de pajitas, y las moléculas de agua se agarran unas a otras como una cadena, así que cada gota que sale por arriba tira de la siguiente, desde las raíces. En 1727, Stephen Hales pesó un girasol en una maceta sellada y vio que perdía más de medio litro de agua en un día de calor. ¡Un roble grande puede subir cientos de litros al día!' },
+  { id: 'bj4', set: 'BJ', emoji: '✨', topic: 'Glow sticks',
+    q: 'What makes a glow stick glow?', qes: '¿Qué hace que una barra luminosa brille?',
+    trap: 'A tiny battery inside!', trapEs: '¡Una pila diminuta dentro!',
+    answer: 'Two chemicals mixing together!', answerEs: '¡Dos sustancias químicas que se mezclan!',
+    fact: 'A glow stick is a plastic tube of liquid with a thin glass tube of a second liquid inside. Bending it snaps the glass, the two liquids mix and react, and the energy they release makes a dye glow - that\'s called chemiluminescence. The dye decides the colour, and the light is cold: the stick hardly warms up. In hot water a glow stick shines brighter but runs out sooner; in ice water it is dimmer but lasts longer. Under ultraviolet light, even an unused glow stick glows!',
+    factEs: 'Una barra luminosa es un tubo de plástico con un líquido y, dentro, un tubito de cristal con otro líquido. Al doblarla, el cristal se rompe, los dos líquidos se mezclan y reaccionan, y la energía que sueltan hace brillar un tinte: eso se llama quimioluminiscencia. El tinte decide el color, y la luz es fría: la barra casi no se calienta. En agua caliente brilla más pero dura menos; en agua con hielo brilla menos pero dura más. ¡Con luz ultravioleta, hasta una barra sin usar brilla!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2286,4 +2292,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bj1: 'bj1-gecko-feet.mp4',
   bj2: 'bj2-popcorn.mp4',
   bj3: 'bj3-tree-water.mp4',
+  bj4: 'bj4-glow-sticks.mp4',
 };
