@@ -1855,6 +1855,13 @@ const QI_BANK = [
     answer: 'No - it mostly melts!', answerEs: '¡No, casi se deshace!',
     fact: 'Inside its chrysalis, a caterpillar doesn\'t simply sprout a pair of wings. Special juices break most of its body down into a kind of soup. Only small groups of cells stay ready and waiting - and they use the soup to build a completely new body, with wings, long legs, big eyes and a curly drinking-straw mouth. A few weeks later, a butterfly climbs out.',
     factEs: 'Dentro de su crisálida, a la oruga no le salen simplemente un par de alas. Unos jugos especiales deshacen casi todo su cuerpo en una especie de sopa. Solo unos grupitos de células se quedan preparados, y usan esa sopa para construir un cuerpo completamente nuevo, con alas, patas largas, ojos grandes y una boca como una pajita enrollada. Unas semanas después, sale una mariposa.' },
+  // Set BG (pipeline, one question at a time)
+  { id: 'bg1', set: 'BG', emoji: '🍁', topic: 'Autumn leaves',
+    q: 'Does cold weather paint leaves yellow and orange in autumn?', qes: '¿El frío pinta las hojas de amarillo y naranja en otoño?',
+    trap: 'Yes - the cold does it!', trapEs: '¡Sí, lo hace el frío!',
+    answer: 'No - the colours were hiding!', answerEs: '¡No, los colores estaban escondidos!',
+    fact: 'Leaves are green because they are full of a green substance called chlorophyll, which helps them make food from sunlight. The yellow and orange colours are in the leaf all summer too - they\'re just hidden by all that green. In autumn, when the days get shorter, the tree stops making chlorophyll, the green fades away, and the yellows and oranges finally show. Some trees also make brand-new red colours in autumn.',
+    factEs: 'Las hojas son verdes porque están llenas de una sustancia verde llamada clorofila, que les ayuda a fabricar comida con la luz del sol. Los colores amarillo y naranja también están en la hoja todo el verano, solo que el verde los tapa. En otoño, cuando los días se acortan, el árbol deja de fabricar clorofila, el verde desaparece, y por fin se ven los amarillos y naranjas. Algunos árboles también fabrican colores rojos nuevos en otoño.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2156,4 +2163,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bf3: 'bf3-sleeping-fish.mp4',
   bf4: 'bf4-earwax.mp4',
   bf5: 'bf5-inside-a-chrysalis.mp4',
+  bg1: 'bg1-autumn-leaves.mp4',
 };
