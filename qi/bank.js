@@ -1818,6 +1818,12 @@ const QI_BANK = [
     answer: 'No - it\'s our air!', answerEs: '¡No, es nuestro aire!',
     fact: 'Stars shine with a steady light. They only seem to twinkle because their light has to pass through the Earth\'s air on its way to our eyes, and that air is always moving: warm and cool patches bend the light a tiny bit this way and that, so the little point of starlight seems to flicker and jump. Astronauts above the air see the stars shining perfectly steadily. Planets usually twinkle less, because they look like tiny discs rather than points.',
     factEs: 'Las estrellas brillan con una luz constante. Solo parece que parpadean porque su luz tiene que atravesar el aire de la Tierra de camino a nuestros ojos, y ese aire siempre se está moviendo: zonas cálidas y frías desvían la luz un poquito hacia un lado y otro, y el puntito de luz parece temblar y saltar. Los astronautas, por encima del aire, ven las estrellas brillar sin parpadear. Los planetas suelen parpadear menos, porque se ven como discos diminutos y no como puntos.' },
+  { id: 'be5', set: 'BE', emoji: '🌋', topic: 'Underwater volcanoes',
+    q: 'Are most volcanoes on land?', qes: '¿La mayoría de los volcanes están en tierra?',
+    trap: 'Yes - on mountains!', trapEs: '¡Sí, en las montañas!',
+    answer: 'No - under the sea!', answerEs: '¡No, bajo el mar!',
+    fact: 'When we picture a volcano, we imagine a smoking mountain. But most of the Earth\'s volcanoes are hidden under the oceans, especially along long underwater mountain ranges where the sea floor is slowly splitting apart and hot rock rises up. Scientists think there are hundreds of thousands of volcanoes under the sea, though most of them are quiet. Some islands, like Hawaii and Iceland, began as undersea volcanoes that grew tall enough to poke out of the water.',
+    factEs: 'Cuando imaginamos un volcán, pensamos en una montaña echando humo. Pero la mayoría de los volcanes de la Tierra están escondidos bajo los océanos, sobre todo a lo largo de largas cordilleras submarinas donde el fondo del mar se va separando poco a poco y sube roca caliente. Los científicos creen que hay cientos de miles de volcanes bajo el mar, aunque la mayoría están tranquilos. Algunas islas, como Hawái e Islandia, empezaron como volcanes submarinos que crecieron lo bastante como para asomar fuera del agua.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2113,4 +2119,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   be2: 'be2-magnets-and-metal.mp4',
   be3: 'be3-potatoes.mp4',
   be4: 'be4-twinkling-stars.mp4',
+  be5: 'be5-underwater-volcanoes.mp4',
 };
