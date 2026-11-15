@@ -1564,6 +1564,12 @@ const QI_BANK = [
     answer: 'No - he just watched one fall!', answerEs: '¡No, solo vio caer una!',
     fact: 'Newton himself told a friend that, years earlier, he was sitting in his garden when he saw an apple drop from a tree. It made him wonder why apples always fall straight down, never sideways or up - and whether the same pull might reach all the way to the Moon. Nobody who knew him ever said the apple hit his head; that bit was added later to make the story funnier. The very tree still grows in the garden of his old family home in England.',
     factEs: 'El propio Newton contó a un amigo que, años antes, estaba sentado en su jardín cuando vio caer una manzana de un árbol. Eso le hizo preguntarse por qué las manzanas siempre caen hacia abajo, nunca de lado ni hacia arriba, y si esa misma fuerza llegaría hasta la Luna. Nadie que lo conociera dijo nunca que la manzana le diera en la cabeza; eso se añadió después para que la historia fuera más graciosa. Ese mismo árbol sigue creciendo en el jardín de su antigua casa familiar en Inglaterra.' },
+  { id: 'aw4', set: 'AW', emoji: '🐳', topic: 'Whale spouts',
+    q: 'When a whale spouts, is it squirting out a fountain of seawater?', qes: 'Cuando una ballena echa un chorro, ¿está soltando una fuente de agua de mar?',
+    trap: 'Yes - a water fountain!', trapEs: '¡Sí, una fuente de agua!',
+    answer: 'No - it\'s mostly its breath!', answerEs: '¡No, casi todo es su aliento!',
+    fact: 'A whale\'s spout, called its blow, is mostly the whale breathing out. It blasts warm, damp air from its lungs through the blowhole on top of its head, and the air turns into a cloud of mist as it cools - just like your breath on a frosty morning - along with a little seawater that was sitting on top of the blowhole. A blue whale\'s blow can shoot up about as high as a three-storey house, and experts can tell some kinds of whale apart just by the shape of their spout.',
+    factEs: 'El chorro de una ballena, llamado soplo, es sobre todo la ballena echando el aire. Expulsa aire caliente y húmedo de sus pulmones por el espiráculo que tiene en lo alto de la cabeza, y ese aire se convierte en una nube de vapor al enfriarse, igual que tu aliento en una mañana helada, junto con un poco de agua de mar que había encima del espiráculo. El soplo de una ballena azul puede subir tan alto como una casa de tres pisos, y los expertos distinguen algunas clases de ballena solo por la forma de su chorro.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1818,4 +1824,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aw1: 'aw1-left-handed-polar-bears.mp4',
   aw2: 'aw2-pigs-and-the-sky.mp4',
   aw3: 'aw3-newtons-apple.mp4',
+  aw4: 'aw4-whale-spouts.mp4',
 };
