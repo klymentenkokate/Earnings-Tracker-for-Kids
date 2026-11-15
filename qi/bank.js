@@ -1973,6 +1973,12 @@ const QI_BANK = [
     answer: 'Two chemicals mixing together!', answerEs: '¡Dos sustancias químicas que se mezclan!',
     fact: 'A glow stick is a plastic tube of liquid with a thin glass tube of a second liquid inside. Bending it snaps the glass, the two liquids mix and react, and the energy they release makes a dye glow - that\'s called chemiluminescence. The dye decides the colour, and the light is cold: the stick hardly warms up. In hot water a glow stick shines brighter but runs out sooner; in ice water it is dimmer but lasts longer. Under ultraviolet light, even an unused glow stick glows!',
     factEs: 'Una barra luminosa es un tubo de plástico con un líquido y, dentro, un tubito de cristal con otro líquido. Al doblarla, el cristal se rompe, los dos líquidos se mezclan y reaccionan, y la energía que sueltan hace brillar un tinte: eso se llama quimioluminiscencia. El tinte decide el color, y la luz es fría: la barra casi no se calienta. En agua caliente brilla más pero dura menos; en agua con hielo brilla menos pero dura más. ¡Con luz ultravioleta, hasta una barra sin usar brilla!' },
+  { id: 'bj5', set: 'BJ', emoji: '🐦', topic: 'Birds on wires',
+    q: 'Why don\'t birds get zapped on power lines?', qes: '¿Por qué los pájaros no se electrocutan en los cables?',
+    trap: 'Their feet are like rubber!', trapEs: '¡Sus patas son como de goma!',
+    answer: 'Both feet are on the same wire!', answerEs: '¡Tienen las dos patas en el mismo cable!',
+    fact: 'Electricity only flows from a high-voltage place to a lower one, a bit like water only flows downhill. A bird sitting on one wire has both feet at the same voltage, so there\'s no reason for electricity to go through it - it just keeps flowing along the wire. But if an animal touches two wires, or a wire and the pole, electricity rushes through it. That\'s why big birds sometimes get hurt, why squirrels cause power cuts, and why people must always stay far away from power lines!',
+    factEs: 'La electricidad solo fluye de un sitio con mucho voltaje a otro con menos, un poco como el agua solo baja cuesta abajo. Un pájaro posado en un cable tiene las dos patas al mismo voltaje, así que la electricidad no tiene por qué pasar por él: sigue por el cable. Pero si un animal toca dos cables, o un cable y el poste, la electricidad lo atraviesa. Por eso a veces se hacen daño los pájaros grandes, por eso las ardillas provocan apagones, ¡y por eso las personas siempre deben alejarse de los cables eléctricos!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2293,4 +2299,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bj2: 'bj2-popcorn.mp4',
   bj3: 'bj3-tree-water.mp4',
   bj4: 'bj4-glow-sticks.mp4',
+  bj5: 'bj5-birds-on-wires.mp4',
 };
