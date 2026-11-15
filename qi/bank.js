@@ -1744,6 +1744,12 @@ const QI_BANK = [
     answer: 'No - only a few!', answerEs: '¡No, solo unas pocas!',
     fact: 'There are around 20,000 different kinds of bee in the world, but only a small number make and store honey - mainly honeybees, plus some stingless bees in warm countries. Most kinds of bee don\'t live in big hives at all: they live alone, and a mother bee builds a little nest in the ground or inside a hollow stem, leaving pollen and nectar for her young. Honey-makers or not, all bees help flowers by carrying pollen from one to another.',
     factEs: 'En el mundo hay unas 20.000 clases distintas de abejas, pero solo unas pocas hacen y guardan miel: sobre todo las abejas melíferas, y algunas abejas sin aguijón de países cálidos. La mayoría de las clases de abeja ni siquiera viven en grandes colmenas: viven solas, y una abeja madre construye un pequeño nido en el suelo o dentro de un tallo hueco, y deja polen y néctar para sus crías. Hagan miel o no, todas las abejas ayudan a las flores llevando polen de una a otra.' },
+  { id: 'bc3', set: 'BC', emoji: '☀️', topic: 'Sun at midday',
+    q: 'Is the Sun always straight overhead at midday?', qes: '¿El Sol está siempre justo encima de nosotros a mediodía?',
+    trap: 'Yes - right above!', trapEs: '¡Sí, justo encima!',
+    answer: 'No - only near the equator!', answerEs: '¡No, solo cerca del ecuador!',
+    fact: 'At midday the Sun reaches its highest point in the sky, but in most places that still isn\'t straight overhead. Only near the middle of the Earth, between two imaginary lines called the tropics, can the Sun ever be right above your head - and even there, only on certain days of the year. In places like Britain or Spain the midday Sun is always a bit to the south, which is why you still have a shadow at lunchtime.',
+    factEs: 'A mediodía el Sol llega a su punto más alto en el cielo, pero en la mayoría de los sitios eso no es justo encima de nosotros. Solo cerca del centro de la Tierra, entre dos líneas imaginarias llamadas trópicos, puede estar el Sol justo sobre tu cabeza, y aun allí solo ciertos días del año. En lugares como Gran Bretaña o España el Sol de mediodía siempre está un poco hacia el sur, y por eso a la hora de comer sigues teniendo sombra.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2027,4 +2033,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bb5: 'bb5-dog-tail-wags.mp4',
   bc1: 'bc1-earths-shape.mp4',
   bc2: 'bc2-honey-making-bees.mp4',
+  bc3: 'bc3-sun-at-midday.mp4',
 };
