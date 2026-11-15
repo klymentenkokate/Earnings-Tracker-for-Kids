@@ -1924,6 +1924,12 @@ const QI_BANK = [
     answer: 'No - they rub their wings!', answerEs: '¡No, se frotan las alas!',
     fact: 'A cricket\'s chirp doesn\'t come from its mouth. A male cricket rubs his front wings together: under one wing is a vein with a row of tiny teeth (the file), and the other wing has a hard edge (the scraper). Each tooth it hits makes the wing shake, and a thin patch called the harp makes the sound loud - scientists call this stridulation. Crickets chirp faster when it\'s warm, and they hear the chirps with tiny eardrums on their front legs, just below the knees!',
     factEs: 'El canto del grillo no sale de su boca. El grillo macho frota sus alas delanteras: bajo un ala hay una vena con una fila de dientes diminutos (la lima), y la otra ala tiene un borde duro (el raspador). Cada diente que golpea hace vibrar el ala, y una zona fina llamada arpa hace que el sonido suene fuerte: los científicos lo llaman estridulación. Los grillos cantan más rápido cuando hace calor, ¡y oyen los cantos con tímpanos diminutos en las patas delanteras, justo debajo de las rodillas!' },
+  { id: 'bi2', set: 'BI', emoji: '🐋', topic: 'Whales and fish',
+    q: 'Is a whale a big fish?', qes: '¿Una ballena es un pez grande?',
+    trap: 'Yes - it lives in the sea!', trapEs: '¡Sí, vive en el mar!',
+    answer: 'No - it\'s a mammal, like you!', answerEs: '¡No, es un mamífero, como tú!',
+    fact: 'A whale is a mammal, not a fish. Fish take oxygen out of the water with their gills, but a whale has lungs and must swim up to breathe air through the blowhole on top of its head. A fish\'s tail stands up and swings side to side; a whale\'s tail lies flat and beats up and down, the way running mammals bend their backs. Fossils show whales\' ancestors walked on land about 50 million years ago. Whale mothers feed their babies milk, and whales even have a few hairs!',
+    factEs: 'La ballena es un mamífero, no un pez. Los peces sacan el oxígeno del agua con las branquias, pero la ballena tiene pulmones y debe subir a respirar aire por el espiráculo que tiene encima de la cabeza. La cola de un pez está de pie y se mueve de lado a lado; la de la ballena está tumbada y sube y baja, como la espalda de un mamífero que corre. Los fósiles muestran que los antepasados de las ballenas caminaban por tierra hace unos 50 millones de años. Las ballenas madre alimentan a sus crías con leche, ¡y las ballenas hasta tienen algunos pelos!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2236,4 +2242,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bh4: 'bh4-sleeping-horses.mp4',
   bh5: 'bh5-comet-tails.mp4',
   bi1: 'bi1-cricket-songs.mp4',
+  bi2: 'bi2-whales-and-fish.mp4',
 };
