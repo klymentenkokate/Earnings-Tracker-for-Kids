@@ -1942,6 +1942,12 @@ const QI_BANK = [
     answer: 'Most of the threads aren\'t sticky!', answerEs: '¡La mayoría de los hilos no son pegajosos!',
     fact: 'Spiders don\'t have oily feet. In an orb web only the spiral thread is sticky - it is covered in tiny drops of glue - while the spokes the spider walks on are dry. And when it does touch the glue, it barely sticks: scientists studying golden orb-weavers in 2012 found their legs are covered in branching hairs, so only a few tips touch the glue, and they have a non-stick coating (legs washed with a chemical got stickier). Many spiders even eat their old web and use the silk to spin a new one!',
     factEs: 'Las arañas no tienen las patas aceitosas. En una telaraña circular solo es pegajoso el hilo en espiral, cubierto de gotitas de pegamento, mientras que los radios por los que camina la araña están secos. Y cuando toca el pegamento, apenas se pega: unos científicos que estudiaron arañas de seda dorada en 2012 descubrieron que sus patas están cubiertas de pelos ramificados, así que solo unas pocas puntas tocan el pegamento, y además tienen una capa antiadherente (las patas lavadas con un producto químico se pegaban más). ¡Muchas arañas incluso se comen su telaraña vieja y usan la seda para tejer una nueva!' },
+  { id: 'bi5', set: 'BI', emoji: '🧅', topic: 'Onion tears',
+    q: 'Why do onions make you cry?', qes: '¿Por qué las cebollas te hacen llorar?',
+    trap: 'The juice squirts in your eyes!', trapEs: '¡El jugo te salpica los ojos!',
+    answer: 'Cutting them makes an invisible gas!', answerEs: '¡Al cortarlas sueltan un gas invisible!',
+    fact: 'Inside every onion cell, a sulfur chemical and an enzyme are kept apart. When a knife bursts the cells, they mix, and enzymes turn the sulfur chemical into a gas that floats up into the air. When it reaches your eyes it sets off tiny pain nerves, so your eyes make tears to wash it away. In 2002 scientists in Japan found the enzyme that makes the tear gas. A cold onion lets out less gas, and a sharp knife squashes fewer cells - so both mean fewer tears!',
+    factEs: 'Dentro de cada célula de la cebolla, una sustancia con azufre y una enzima están separadas. Cuando el cuchillo rompe las células, se mezclan, y las enzimas convierten la sustancia en un gas que sube por el aire. Cuando llega a tus ojos activa unos nervios diminutos de dolor, y tus ojos hacen lágrimas para limpiarlo. En 2002 unos científicos en Japón encontraron la enzima que fabrica el gas que hace llorar. Una cebolla fría suelta menos gas y un cuchillo afilado aplasta menos células: ¡así lloras menos!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2257,4 +2263,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bi2: 'bi2-whales-and-fish.mp4',
   bi3: 'bi3-sheep-wool.mp4',
   bi4: 'bi4-spider-webs.mp4',
+  bi5: 'bi5-onion-tears.mp4',
 };
