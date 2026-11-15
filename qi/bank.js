@@ -1862,6 +1862,12 @@ const QI_BANK = [
     answer: 'No - the colours were hiding!', answerEs: '¡No, los colores estaban escondidos!',
     fact: 'Leaves are green because they are full of a green substance called chlorophyll, which helps them make food from sunlight. The yellow and orange colours are in the leaf all summer too - they\'re just hidden by all that green. In autumn, when the days get shorter, the tree stops making chlorophyll, the green fades away, and the yellows and oranges finally show. Some trees also make brand-new red colours in autumn.',
     factEs: 'Las hojas son verdes porque están llenas de una sustancia verde llamada clorofila, que les ayuda a fabricar comida con la luz del sol. Los colores amarillo y naranja también están en la hoja todo el verano, solo que el verde los tapa. En otoño, cuando los días se acortan, el árbol deja de fabricar clorofila, el verde desaparece, y por fin se ven los amarillos y naranjas. Algunos árboles también fabrican colores rojos nuevos en otoño.' },
+  { id: 'bg2', set: 'BG', emoji: '🦇', topic: 'Vampire bats',
+    q: 'Do vampire bats suck blood like a straw?', qes: '¿Los murciélagos vampiro chupan sangre como con una pajita?',
+    trap: 'Yes - slurp!', trapEs: '¡Sí, sorbe!',
+    answer: 'No - they lap it up!', answerEs: '¡No, la lamen!',
+    fact: 'Vampire bats do drink blood, but they don\'t suck it. A vampire bat makes a tiny cut with its sharp front teeth - usually on a sleeping cow, horse or bird - and then laps up the blood with its tongue, a bit like a cat drinking milk. Its spit has a special ingredient that stops the blood from clotting. It only drinks about two tablespoons a night, and most animals don\'t even wake up.',
+    factEs: 'Los murciélagos vampiro sí beben sangre, pero no la chupan. Un murciélago vampiro hace un cortecito con sus afilados dientes delanteros, normalmente a una vaca, un caballo o un pájaro dormidos, y luego lame la sangre con la lengua, un poco como un gato bebiendo leche. Su saliva tiene un ingrediente especial que impide que la sangre se coagule. Solo bebe unas dos cucharadas por noche, y la mayoría de los animales ni se despiertan.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2164,4 +2170,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bf4: 'bf4-earwax.mp4',
   bf5: 'bf5-inside-a-chrysalis.mp4',
   bg1: 'bg1-autumn-leaves.mp4',
+  bg2: 'bg2-vampire-bats.mp4',
 };
