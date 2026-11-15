@@ -1576,6 +1576,13 @@ const QI_BANK = [
     answer: 'No - only the mums-to-be!', answerEs: '¡No, solo las hembras que van a poner huevos!',
     fact: 'Only female mosquitoes bite, and only when they\'re getting ready to lay eggs - blood gives them the extra protein their eggs need. Male mosquitoes never bite at all. For everyday energy, both males and females sip sweet nectar and plant juices, a bit like tiny bees. Most kinds of mosquito don\'t even like people: many prefer the blood of birds, frogs or other animals. A female finds you by sensing the carbon dioxide you breathe out, and the warmth and smell of your skin.',
     factEs: 'Solo pican las hembras de mosquito, y solo cuando se preparan para poner huevos: la sangre les da las proteínas extra que necesitan sus huevos. Los machos no pican nunca. Para tener energía cada día, machos y hembras beben néctar dulce y jugos de plantas, un poco como abejas diminutas. Muchas clases de mosquito ni siquiera prefieren a las personas: les gusta más la sangre de aves, ranas u otros animales. Una hembra te encuentra notando el dióxido de carbono que echas al respirar, y el calor y el olor de tu piel.' },
+  // Set AX (pipeline, one question at a time)
+  { id: 'ax1', set: 'AX', emoji: '⭐', topic: 'Brightest star',
+    q: 'Is the North Star the brightest star in the night sky?', qes: '¿La estrella polar es la estrella más brillante del cielo nocturno?',
+    trap: 'Yes - the North Star!', trapEs: '¡Sí, la estrella polar!',
+    answer: 'No - it\'s Sirius!', answerEs: '¡No, es Sirio!',
+    fact: 'The North Star, Polaris, is famous because it sits almost exactly above the North Pole, so it hardly moves and always shows which way is north. But it isn\'t very bright at all - it\'s only around the 50th brightest star we can see. The brightest star in the night sky is Sirius, sometimes called the Dog Star. Only the Moon and a few planets, like Venus and Jupiter, outshine it.',
+    factEs: 'La estrella polar, Polaris, es famosa porque está casi justo encima del Polo Norte, así que casi no se mueve y siempre indica dónde está el norte. Pero no es muy brillante: es más o menos la estrella número 50 en brillo de las que podemos ver. La estrella más brillante del cielo nocturno es Sirio, a veces llamada la Estrella del Perro. Solo la Luna y algunos planetas, como Venus y Júpiter, brillan más que ella.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1832,4 +1839,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aw3: 'aw3-newtons-apple.mp4',
   aw4: 'aw4-whale-spouts.mp4',
   aw5: 'aw5-which-mosquitoes-bite.mp4',
+  ax1: 'ax1-brightest-star.mp4',
 };
