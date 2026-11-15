@@ -1874,6 +1874,12 @@ const QI_BANK = [
     answer: 'No - hens lay anyway!', answerEs: '¡No, las gallinas ponen igual!',
     fact: 'A hen lays eggs whether or not there\'s a rooster around - a healthy young hen can lay almost one egg a day. Without a rooster the eggs can never hatch into chicks, and those are the eggs we usually buy in shops. A rooster is only needed if you want chicks: then a hen sits on her eggs to keep them warm for about three weeks until they hatch.',
     factEs: 'Una gallina pone huevos haya o no haya un gallo cerca: una gallina joven y sana puede poner casi un huevo al día. Sin gallo, los huevos nunca pueden convertirse en pollitos, y esos son los huevos que solemos comprar en las tiendas. El gallo solo hace falta si quieres pollitos: entonces la gallina se sienta sobre sus huevos para darles calor unas tres semanas, hasta que nacen.' },
+  { id: 'bg4', set: 'BG', emoji: '🐻', topic: 'Bear hibernation',
+    q: 'Do bears sleep all winter without ever waking up?', qes: '¿Los osos duermen todo el invierno sin despertarse nunca?',
+    trap: 'Yes - fast asleep!', trapEs: '¡Sí, profundamente dormidos!',
+    answer: 'No - they can wake!', answerEs: '¡No, pueden despertarse!',
+    fact: 'Bears spend the winter in a den in a very deep rest, without eating, drinking or going to the toilet for months. Their heartbeat and breathing slow right down, but their body stays fairly warm, so they can wake up if they\'re disturbed and sometimes shuffle around in the den. Mother bears even give birth to tiny cubs in the middle of winter and look after them in the den until spring.',
+    factEs: 'Los osos pasan el invierno en una guarida en un descanso muy profundo, sin comer, beber ni ir al baño durante meses. Su corazón y su respiración van mucho más despacio, pero su cuerpo se mantiene bastante caliente, así que pueden despertarse si alguien los molesta y a veces se mueven un poco por la guarida. Las osas incluso dan a luz a oseznos diminutos en pleno invierno y los cuidan en la guarida hasta la primavera.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2178,4 +2184,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bg1: 'bg1-autumn-leaves.mp4',
   bg2: 'bg2-vampire-bats.mp4',
   bg3: 'bg3-hens-and-eggs.mp4',
+  bg4: 'bg4-bear-hibernation.mp4',
 };
