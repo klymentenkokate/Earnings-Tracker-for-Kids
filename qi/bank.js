@@ -1775,6 +1775,12 @@ const QI_BANK = [
     answer: 'No - some walk forwards!', answerEs: '¡No, algunos andan hacia delante!',
     fact: 'Most crabs do scuttle sideways, because their legs bend at the joints in a way that makes side-stepping the fastest and easiest way to move. But they can also shuffle forwards and backwards a little, and a few kinds of crab - like the soldier crabs that march across Australian beaches in big groups - walk forwards just like we do.',
     factEs: 'La mayoría de los cangrejos sí corretean de lado, porque sus patas se doblan por las articulaciones de una forma que hace que ir de lado sea lo más rápido y fácil. Pero también pueden moverse un poco hacia delante y hacia atrás, y algunas clases de cangrejo, como los cangrejos soldado que desfilan en grandes grupos por las playas de Australia, andan hacia delante igual que nosotros.' },
+  { id: 'bd3', set: 'BD', emoji: '📺', topic: 'Sitting close to the TV',
+    q: 'Does sitting close to the TV damage your eyes?', qes: '¿Sentarse cerca de la tele daña los ojos?',
+    trap: 'Yes - square eyes!', trapEs: '¡Sí, ojos cuadrados!',
+    answer: 'No - just tired eyes!', answerEs: '¡No, solo ojos cansados!',
+    fact: 'Grown-ups often warn that sitting too close to the TV will ruin your eyes, or give you \'square eyes\'. Eye doctors say it won\'t cause any lasting damage. Children can focus on close-up things more easily than adults, so they often like to sit near the screen. Staring at any screen for a long time can make your eyes feel tired and dry, though, because you blink less - so it\'s good to take breaks and look at something far away.',
+    factEs: 'Los adultos suelen avisar de que sentarse demasiado cerca de la tele te estropea los ojos o te los deja \'cuadrados\'. Los oftalmólogos dicen que no causa ningún daño duradero. Los niños enfocan las cosas de cerca con más facilidad que los adultos, por eso a menudo les gusta sentarse cerca de la pantalla. Eso sí, mirar cualquier pantalla mucho rato puede cansar y secar los ojos, porque parpadeas menos; así que es bueno hacer descansos y mirar algo lejano.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2063,4 +2069,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bc5: 'bc5-snail-shells.mp4',
   bd1: 'bd1-hedgehogs-and-milk.mp4',
   bd2: 'bd2-crabs-walking.mp4',
+  bd3: 'bd3-sitting-close-to-the-tv.mp4',
 };
