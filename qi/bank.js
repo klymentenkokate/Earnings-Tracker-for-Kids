@@ -1570,6 +1570,12 @@ const QI_BANK = [
     answer: 'No - it\'s mostly its breath!', answerEs: '¡No, casi todo es su aliento!',
     fact: 'A whale\'s spout, called its blow, is mostly the whale breathing out. It blasts warm, damp air from its lungs through the blowhole on top of its head, and the air turns into a cloud of mist as it cools - just like your breath on a frosty morning - along with a little seawater that was sitting on top of the blowhole. A blue whale\'s blow can shoot up about as high as a three-storey house, and experts can tell some kinds of whale apart just by the shape of their spout.',
     factEs: 'El chorro de una ballena, llamado soplo, es sobre todo la ballena echando el aire. Expulsa aire caliente y húmedo de sus pulmones por el espiráculo que tiene en lo alto de la cabeza, y ese aire se convierte en una nube de vapor al enfriarse, igual que tu aliento en una mañana helada, junto con un poco de agua de mar que había encima del espiráculo. El soplo de una ballena azul puede subir tan alto como una casa de tres pisos, y los expertos distinguen algunas clases de ballena solo por la forma de su chorro.' },
+  { id: 'aw5', set: 'AW', emoji: '🦟', topic: 'Which mosquitoes bite',
+    q: 'Do all mosquitoes bite people and drink blood?', qes: '¿Todos los mosquitos pican a la gente y beben sangre?',
+    trap: 'Yes - every one!', trapEs: '¡Sí, todos!',
+    answer: 'No - only the mums-to-be!', answerEs: '¡No, solo las hembras que van a poner huevos!',
+    fact: 'Only female mosquitoes bite, and only when they\'re getting ready to lay eggs - blood gives them the extra protein their eggs need. Male mosquitoes never bite at all. For everyday energy, both males and females sip sweet nectar and plant juices, a bit like tiny bees. Most kinds of mosquito don\'t even like people: many prefer the blood of birds, frogs or other animals. A female finds you by sensing the carbon dioxide you breathe out, and the warmth and smell of your skin.',
+    factEs: 'Solo pican las hembras de mosquito, y solo cuando se preparan para poner huevos: la sangre les da las proteínas extra que necesitan sus huevos. Los machos no pican nunca. Para tener energía cada día, machos y hembras beben néctar dulce y jugos de plantas, un poco como abejas diminutas. Muchas clases de mosquito ni siquiera prefieren a las personas: les gusta más la sangre de aves, ranas u otros animales. Una hembra te encuentra notando el dióxido de carbono que echas al respirar, y el calor y el olor de tu piel.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1825,4 +1831,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aw2: 'aw2-pigs-and-the-sky.mp4',
   aw3: 'aw3-newtons-apple.mp4',
   aw4: 'aw4-whale-spouts.mp4',
+  aw5: 'aw5-which-mosquitoes-bite.mp4',
 };
