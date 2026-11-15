@@ -1620,6 +1620,12 @@ const QI_BANK = [
     answer: 'No - it\'s an animal!', answerEs: '¡No, es un animal!',
     fact: 'Sea sponges stay stuck to one spot on the seabed their whole lives, so they look a lot like plants - but they are animals, some of the simplest on Earth. A sponge has no brain, no heart and no muscles. Its body is full of tiny holes: it pumps seawater through them and catches tiny bits of food floating in it. Unlike a plant, it can\'t make its own food from sunlight. Most kitchen sponges today are made in factories, not taken from the sea.',
     factEs: 'Las esponjas de mar se quedan pegadas en el mismo sitio del fondo marino toda su vida, así que parecen plantas, pero son animales, de los más sencillos de la Tierra. Una esponja no tiene cerebro, ni corazón, ni músculos. Su cuerpo está lleno de agujeritos: bombea agua de mar a través de ellos y atrapa trocitos de comida que flotan en ella. A diferencia de una planta, no puede fabricar su comida con la luz del sol. Hoy, casi todas las esponjas de cocina se hacen en fábricas, no se sacan del mar.' },
+  { id: 'ay3', set: 'AY', emoji: '❄️', topic: 'Colour of snow',
+    q: 'Is snow white?', qes: '¿La nieve es blanca?',
+    trap: 'Yes - pure white!', trapEs: '¡Sí, blanquísima!',
+    answer: 'No - it\'s clear ice!', answerEs: '¡No, es hielo transparente!',
+    fact: 'Snow is made of tiny ice crystals, and ice on its own is clear, like glass. Snow only looks white because millions of crystals, with air in between, bounce the light around in every direction. Sunlight is a mix of all the colours of the rainbow, and when all those colours bounce back to your eyes together, you see white. The same thing makes bubbles in foam and crushed ice look white too.',
+    factEs: 'La nieve está hecha de diminutos cristales de hielo, y el hielo por sí solo es transparente, como el cristal. La nieve solo parece blanca porque millones de cristales, con aire entre ellos, hacen rebotar la luz en todas direcciones. La luz del sol es una mezcla de todos los colores del arcoíris, y cuando todos esos colores vuelven juntos a tus ojos, ves blanco. Lo mismo hace que la espuma y el hielo picado parezcan blancos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1883,4 +1889,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ax5: 'ax5-earwigs-and-ears.mp4',
   ay1: 'ay1-brown-or-white-eggs.mp4',
   ay2: 'ay2-sea-sponges.mp4',
+  ay3: 'ay3-colour-of-snow.mp4',
 };
