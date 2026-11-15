@@ -1948,6 +1948,13 @@ const QI_BANK = [
     answer: 'Cutting them makes an invisible gas!', answerEs: '¡Al cortarlas sueltan un gas invisible!',
     fact: 'Inside every onion cell, a sulfur chemical and an enzyme are kept apart. When a knife bursts the cells, they mix, and enzymes turn the sulfur chemical into a gas that floats up into the air. When it reaches your eyes it sets off tiny pain nerves, so your eyes make tears to wash it away. In 2002 scientists in Japan found the enzyme that makes the tear gas. A cold onion lets out less gas, and a sharp knife squashes fewer cells - so both mean fewer tears!',
     factEs: 'Dentro de cada célula de la cebolla, una sustancia con azufre y una enzima están separadas. Cuando el cuchillo rompe las células, se mezclan, y las enzimas convierten la sustancia en un gas que sube por el aire. Cuando llega a tus ojos activa unos nervios diminutos de dolor, y tus ojos hacen lágrimas para limpiarlo. En 2002 unos científicos en Japón encontraron la enzima que fabrica el gas que hace llorar. Una cebolla fría suelta menos gas y un cuchillo afilado aplasta menos células: ¡así lloras menos!' },
+  // Set BJ (pipeline, one question at a time)
+  { id: 'bj1', set: 'BJ', emoji: '🦎', topic: 'Gecko feet',
+    q: 'How do geckos climb up walls?', qes: '¿Cómo trepan las paredes los geckos?',
+    trap: 'With suction cups on their toes!', trapEs: '¡Con ventosas en los dedos!',
+    answer: 'Millions of tiny hairs on their toes!', answerEs: '¡Con millones de pelitos diminutos en los dedos!',
+    fact: 'A gecko\'s toes are covered in millions of tiny hairs, and each hair splits into hundreds of even tinier tips. Those billions of tips get so close to the wall that their molecules pull on the wall\'s molecules - a very weak pull called the van der Waals force, but billions of them together hold the gecko easily. Geckos still stick in a vacuum, so it isn\'t suction, and they grip surfaces that water slides off, so it isn\'t glue. To let go, they peel their toes off like a sticker!',
+    factEs: 'Los dedos de un gecko están cubiertos de millones de pelitos diminutos, y cada pelo se divide en cientos de puntas aún más pequeñas. Esos miles de millones de puntas se acercan tanto a la pared que sus moléculas tiran de las moléculas de la pared: una fuerza muy débil llamada fuerza de van der Waals, pero miles de millones juntas sujetan al gecko sin problema. Los geckos se siguen pegando en el vacío, así que no son ventosas, y se agarran a superficies en las que el agua resbala, así que tampoco es pegamento. ¡Para soltarse, despegan los dedos como una pegatina!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2264,4 +2271,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bi3: 'bi3-sheep-wool.mp4',
   bi4: 'bi4-spider-webs.mp4',
   bi5: 'bi5-onion-tears.mp4',
+  bj1: 'bj1-gecko-feet.mp4',
 };
