@@ -1917,6 +1917,13 @@ const QI_BANK = [
     answer: 'No - it points away from the Sun!', answerEs: '¡No, apunta lejos del Sol!',
     fact: 'A comet is a big lump of ice, rock and dust. Far from the Sun it has no tail at all. As it comes closer, the Sun\'s heat turns some of its ice into gas, and the gas and dust are pushed away by sunlight and by a stream of tiny particles from the Sun called the solar wind. So a comet\'s tail always points away from the Sun - and when the comet is heading back out into space, its tail actually goes in front of it!',
     factEs: 'Un cometa es un gran trozo de hielo, roca y polvo. Lejos del Sol no tiene cola. Al acercarse, el calor del Sol convierte parte de su hielo en gas, y el gas y el polvo son empujados por la luz del Sol y por una corriente de partículas diminutas que sale del Sol llamada viento solar. Así que la cola de un cometa siempre apunta lejos del Sol, ¡y cuando el cometa se aleja de nuevo hacia el espacio, su cola va por delante!' },
+  // Set BI (pipeline, one question at a time)
+  { id: 'bi1', set: 'BI', emoji: '🦗', topic: 'Cricket songs',
+    q: 'Do crickets sing with their mouths?', qes: '¿Los grillos cantan con la boca?',
+    trap: 'Yes - just like birds!', trapEs: '¡Sí, como los pájaros!',
+    answer: 'No - they rub their wings!', answerEs: '¡No, se frotan las alas!',
+    fact: 'A cricket\'s chirp doesn\'t come from its mouth. A male cricket rubs his front wings together: under one wing is a vein with a row of tiny teeth (the file), and the other wing has a hard edge (the scraper). Each tooth it hits makes the wing shake, and a thin patch called the harp makes the sound loud - scientists call this stridulation. Crickets chirp faster when it\'s warm, and they hear the chirps with tiny eardrums on their front legs, just below the knees!',
+    factEs: 'El canto del grillo no sale de su boca. El grillo macho frota sus alas delanteras: bajo un ala hay una vena con una fila de dientes diminutos (la lima), y la otra ala tiene un borde duro (el raspador). Cada diente que golpea hace vibrar el ala, y una zona fina llamada arpa hace que el sonido suene fuerte: los científicos lo llaman estridulación. Los grillos cantan más rápido cuando hace calor, ¡y oyen los cantos con tímpanos diminutos en las patas delanteras, justo debajo de las rodillas!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2228,4 +2235,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bh3: 'bh3-dog-noses.mp4',
   bh4: 'bh4-sleeping-horses.mp4',
   bh5: 'bh5-comet-tails.mp4',
+  bi1: 'bi1-cricket-songs.mp4',
 };
