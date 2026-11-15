@@ -1688,6 +1688,12 @@ const QI_BANK = [
     answer: 'No - still shining!', answerEs: '¡No, siguen brillando!',
     fact: 'Starlight takes a long time to reach us, so people often say the stars we see might have died long ago. But almost every star you can see with your own eyes is in our own neighbourhood of the galaxy, so its light has been travelling for a few years, or a few thousand years at most. Stars live for millions or even billions of years, so nearly all of them are still shining right now.',
     factEs: 'La luz de las estrellas tarda mucho en llegarnos, así que la gente suele decir que las estrellas que vemos quizá murieron hace mucho. Pero casi todas las estrellas que puedes ver a simple vista están en nuestro propio barrio de la galaxia, así que su luz lleva viajando unos pocos años, o unos pocos miles de años como mucho. Las estrellas viven millones o incluso miles de millones de años, así que casi todas siguen brillando ahora mismo.' },
+  { id: 'ba4', set: 'BA', emoji: '🧂', topic: 'Salt in boiling water',
+    q: 'Does adding salt make water boil faster?', qes: '¿Echar sal hace que el agua hierva antes?',
+    trap: 'Yes - much faster!', trapEs: '¡Sí, mucho antes!',
+    answer: 'No - a tiny bit slower!', answerEs: '¡No, un poquito más tarde!',
+    fact: 'Lots of cooks put salt in the water for pasta, and some people think it makes the water boil sooner. In fact, salt makes water boil at a slightly higher temperature, so it can take a tiny bit longer - though with a normal pinch the difference is so small you\'d never notice. The salt is really there for flavour. The fizz you see when you tip salt into hot water is just air and steam escaping around the grains, not real boiling.',
+    factEs: 'Muchos cocineros echan sal al agua de la pasta, y algunas personas creen que así hierve antes. En realidad, la sal hace que el agua hierva a una temperatura un poco más alta, así que puede tardar un poquito más, aunque con una pizca normal la diferencia es tan pequeña que nunca lo notarías. La sal está ahí para dar sabor. El burbujeo que ves al echar sal en agua caliente es solo aire y vapor que escapan alrededor de los granos, no un hervor de verdad.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1962,4 +1968,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ba1: 'ba1-llama-spit.mp4',
   ba2: 'ba2-hair-turning-white.mp4',
   ba3: 'ba3-dead-stars.mp4',
+  ba4: 'ba4-salt-in-boiling-water.mp4',
 };
