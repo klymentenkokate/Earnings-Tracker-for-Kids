@@ -1831,6 +1831,12 @@ const QI_BANK = [
     answer: 'Yes - they have salt glands!', answerEs: '¡Sí, tienen glándulas de sal!',
     fact: 'For people, drinking seawater is dangerous, because our bodies can\'t get rid of all that salt. But seagulls and many other seabirds can drink it safely. Just above their eyes they have special salt glands that filter the extra salt out of their blood. The salty liquid then trickles out through their nostrils and runs down the beak - which is why you sometimes see a seagull with a drip on the end of its beak.',
     factEs: 'Para las personas, beber agua de mar es peligroso, porque nuestro cuerpo no puede deshacerse de tanta sal. Pero las gaviotas y muchas otras aves marinas pueden beberla sin problema. Justo encima de los ojos tienen unas glándulas especiales que filtran la sal que sobra en su sangre. Ese líquido salado sale por los orificios de la nariz y baja por el pico; por eso a veces ves una gaviota con una gota en la punta del pico.' },
+  { id: 'bf2', set: 'BF', emoji: '🌈', topic: 'Moonbows',
+    q: 'Can you ever see a rainbow at night?', qes: '¿Se puede ver alguna vez un arcoíris de noche?',
+    trap: 'No - only in daytime!', trapEs: '¡No, solo de día!',
+    answer: 'Yes - it\'s a moonbow!', answerEs: '¡Sí, un arcoíris lunar!',
+    fact: 'Rainbows need light shining through raindrops, and usually that light comes from the Sun. But on a bright night, with a full or nearly full Moon low in the sky, moonlight can make a rainbow too - it\'s called a moonbow. Moonlight is much fainter than sunlight, so moonbows are rare and usually look pale or white to our eyes, although cameras can pick up their colours. They\'re seen most often near big waterfalls, where there\'s lots of spray in the air.',
+    factEs: 'Los arcoíris necesitan luz que atraviese gotas de lluvia, y normalmente esa luz viene del Sol. Pero en una noche clara, con la Luna llena o casi llena baja en el cielo, la luz de la Luna también puede formar un arcoíris: se llama arcoíris lunar. La luz de la Luna es mucho más débil que la del Sol, así que son raros y a nuestros ojos suelen parecer pálidos o blancos, aunque las cámaras sí captan sus colores. Se ven más a menudo cerca de grandes cascadas, donde hay mucha agua pulverizada en el aire.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2128,4 +2134,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   be4: 'be4-twinkling-stars.mp4',
   be5: 'be5-underwater-volcanoes.mp4',
   bf1: 'bf1-seagulls-and-seawater.mp4',
+  bf2: 'bf2-moonbows.mp4',
 };
