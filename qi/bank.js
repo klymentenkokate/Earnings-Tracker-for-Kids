@@ -1812,6 +1812,12 @@ const QI_BANK = [
     answer: 'No - they\'re stems!', answerEs: '¡No, son tallos!',
     fact: 'Potatoes grow underground, so most people think they\'re roots - but they\'re really swollen parts of the plant\'s underground stems, called tubers, where it stores food for later. You can tell because a potato has \'eyes\': little buds that can sprout into new shoots and leaves, which roots can\'t do. That\'s why an old potato left in a cupboard starts growing shoots. Carrots, on the other hand, really are roots.',
     factEs: 'Las patatas crecen bajo tierra, así que casi todo el mundo cree que son raíces, pero en realidad son partes hinchadas de los tallos subterráneos de la planta, llamadas tubérculos, donde guarda comida para más adelante. Se nota porque la patata tiene \'ojos\': pequeñas yemas que pueden brotar y dar tallos y hojas nuevos, algo que las raíces no pueden hacer. Por eso a una patata vieja olvidada en un armario le salen brotes. Las zanahorias, en cambio, sí son raíces de verdad.' },
+  { id: 'be4', set: 'BE', emoji: '✨', topic: 'Twinkling stars',
+    q: 'Do stars really twinkle?', qes: '¿Las estrellas parpadean de verdad?',
+    trap: 'Yes - they flicker!', trapEs: '¡Sí, parpadean!',
+    answer: 'No - it\'s our air!', answerEs: '¡No, es nuestro aire!',
+    fact: 'Stars shine with a steady light. They only seem to twinkle because their light has to pass through the Earth\'s air on its way to our eyes, and that air is always moving: warm and cool patches bend the light a tiny bit this way and that, so the little point of starlight seems to flicker and jump. Astronauts above the air see the stars shining perfectly steadily. Planets usually twinkle less, because they look like tiny discs rather than points.',
+    factEs: 'Las estrellas brillan con una luz constante. Solo parece que parpadean porque su luz tiene que atravesar el aire de la Tierra de camino a nuestros ojos, y ese aire siempre se está moviendo: zonas cálidas y frías desvían la luz un poquito hacia un lado y otro, y el puntito de luz parece temblar y saltar. Los astronautas, por encima del aire, ven las estrellas brillar sin parpadear. Los planetas suelen parpadear menos, porque se ven como discos diminutos y no como puntos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2106,4 +2112,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   be1: 'be1-floating-astronauts.mp4',
   be2: 'be2-magnets-and-metal.mp4',
   be3: 'be3-potatoes.mp4',
+  be4: 'be4-twinkling-stars.mp4',
 };
