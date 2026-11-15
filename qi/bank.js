@@ -1589,6 +1589,12 @@ const QI_BANK = [
     answer: 'No - it\'s rusty dust!', answerEs: '¡No, es polvo oxidado!',
     fact: 'Mars looks red, so it\'s easy to imagine it\'s burning hot - but it\'s actually freezing, about minus 60 degrees Celsius on average, much colder than anywhere people live on Earth. Its red colour comes from iron in its rocks and dust that has slowly rusted, just like an old bike left out in the rain. Strong winds blow that rusty dust all over the planet and even into its sky.',
     factEs: 'Marte se ve rojo, así que es fácil imaginar que está ardiendo, pero en realidad hace un frío tremendo: unos 60 grados bajo cero de media, mucho más frío que cualquier lugar donde vive gente en la Tierra. Su color rojo viene del hierro de sus rocas y su polvo, que se ha oxidado poco a poco, igual que una bici vieja que se queda bajo la lluvia. Vientos fuertes reparten ese polvo oxidado por todo el planeta e incluso por su cielo.' },
+  { id: 'ax3', set: 'AX', emoji: '🏊', topic: 'Swimming after eating',
+    q: 'Must you wait 30 minutes after eating before you swim?', qes: '¿Hay que esperar 30 minutos después de comer para nadar?',
+    trap: 'Yes, or you\'ll sink!', trapEs: '¡Sí, o te hundirás!',
+    answer: 'No - you can swim!', answerEs: '¡No, puedes nadar!',
+    fact: 'Lots of grown-ups were told as children to wait half an hour after lunch, or they would get a cramp and sink. Doctors and water-safety experts have looked into it and found no proof that anyone has ever drowned because they swam after a meal. After a really huge feast you might feel full and a bit slow, so a gentle swim is more comfortable. The rules that really keep you safe are different: swim where a grown-up can see you, and where there is a lifeguard.',
+    factEs: 'A muchos adultos les dijeron de pequeños que esperaran media hora después de comer, o les daría un calambre y se hundirían. Médicos y expertos en seguridad en el agua lo han estudiado y no han encontrado ninguna prueba de que alguien se haya ahogado por nadar después de comer. Después de un banquete enorme puedes sentirte lleno y algo lento, así que es más cómodo nadar con calma. Las reglas que de verdad te protegen son otras: nada donde un adulto pueda verte y donde haya socorrista.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1847,4 +1853,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   aw5: 'aw5-which-mosquitoes-bite.mp4',
   ax1: 'ax1-brightest-star.mp4',
   ax2: 'ax2-why-mars-is-red.mp4',
+  ax3: 'ax3-swimming-after-eating.mp4',
 };
