@@ -1781,6 +1781,12 @@ const QI_BANK = [
     answer: 'No - just tired eyes!', answerEs: '¡No, solo ojos cansados!',
     fact: 'Grown-ups often warn that sitting too close to the TV will ruin your eyes, or give you \'square eyes\'. Eye doctors say it won\'t cause any lasting damage. Children can focus on close-up things more easily than adults, so they often like to sit near the screen. Staring at any screen for a long time can make your eyes feel tired and dry, though, because you blink less - so it\'s good to take breaks and look at something far away.',
     factEs: 'Los adultos suelen avisar de que sentarse demasiado cerca de la tele te estropea los ojos o te los deja \'cuadrados\'. Los oftalmólogos dicen que no causa ningún daño duradero. Los niños enfocan las cosas de cerca con más facilidad que los adultos, por eso a menudo les gusta sentarse cerca de la pantalla. Eso sí, mirar cualquier pantalla mucho rato puede cansar y secar los ojos, porque parpadeas menos; así que es bueno hacer descansos y mirar algo lejano.' },
+  { id: 'bd4', set: 'BD', emoji: '🐸', topic: 'Tadpoles',
+    q: 'Does every frog start life as a tadpole?', qes: '¿Todas las ranas empiezan su vida como renacuajos?',
+    trap: 'Yes - every single one!', trapEs: '¡Sí, todas y cada una!',
+    answer: 'No - some hatch as froglets!', answerEs: '¡No, algunas nacen ya como ranitas!',
+    fact: 'Most frogs lay their eggs in water, and these hatch into swimming tadpoles that slowly grow legs and lose their tails. But some frogs skip the tadpole stage altogether: many rainforest frogs lay their eggs on damp ground, and tiny froglets hatch straight out, looking like miniature grown-ups. In a few kinds, the parents even carry their eggs or babies around on their backs.',
+    factEs: 'La mayoría de las ranas ponen sus huevos en el agua, y de ellos salen renacuajos nadadores a los que poco a poco les crecen patas y se les va la cola. Pero algunas ranas se saltan la fase de renacuajo: muchas ranas de la selva ponen sus huevos en suelo húmedo, y de ellos salen directamente ranitas diminutas, como adultos en miniatura. En algunas clases, los padres incluso llevan los huevos o las crías a la espalda.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2070,4 +2076,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bd1: 'bd1-hedgehogs-and-milk.mp4',
   bd2: 'bd2-crabs-walking.mp4',
   bd3: 'bd3-sitting-close-to-the-tv.mp4',
+  bd4: 'bd4-tadpoles.mp4',
 };
