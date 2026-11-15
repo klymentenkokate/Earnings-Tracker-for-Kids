@@ -1880,6 +1880,12 @@ const QI_BANK = [
     answer: 'No - they can wake!', answerEs: '¡No, pueden despertarse!',
     fact: 'Bears spend the winter in a den in a very deep rest, without eating, drinking or going to the toilet for months. Their heartbeat and breathing slow right down, but their body stays fairly warm, so they can wake up if they\'re disturbed and sometimes shuffle around in the den. Mother bears even give birth to tiny cubs in the middle of winter and look after them in the den until spring.',
     factEs: 'Los osos pasan el invierno en una guarida en un descanso muy profundo, sin comer, beber ni ir al baño durante meses. Su corazón y su respiración van mucho más despacio, pero su cuerpo se mantiene bastante caliente, así que pueden despertarse si alguien los molesta y a veces se mueven un poco por la guarida. Las osas incluso dan a luz a oseznos diminutos en pleno invierno y los cuidan en la guarida hasta la primavera.' },
+  { id: 'bg5', set: 'BG', emoji: '🧊', topic: 'Hailstones',
+    q: 'Does hail only fall in winter?', qes: '¿El granizo solo cae en invierno?',
+    trap: 'Yes - it\'s ice!', trapEs: '¡Sí, es hielo!',
+    answer: 'No - mostly in warm months!', answerEs: '¡No, sobre todo con calor!',
+    fact: 'Hailstones are balls of ice, so it seems they should come in winter - but hail usually falls in spring and summer. It forms inside tall thunderstorm clouds, which need warm, rising air to grow. Strong winds inside the cloud toss raindrops high up where it\'s freezing, so they turn to ice; they fall, get thrown up again, and add a new layer of ice each time, a bit like an onion. When they\'re too heavy for the wind to hold, they fall as hail.',
+    factEs: 'Los granizos son bolas de hielo, así que parece que deberían caer en invierno, pero el granizo suele caer en primavera y verano. Se forma dentro de nubes de tormenta muy altas, que necesitan aire cálido que sube para crecer. Los vientos fuertes dentro de la nube lanzan las gotas de lluvia muy arriba, donde hace un frío helador, y se convierten en hielo; caen, vuelven a subir y cada vez ganan una capa nueva de hielo, un poco como una cebolla. Cuando pesan demasiado para que el viento las sostenga, caen como granizo.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2185,4 +2191,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bg2: 'bg2-vampire-bats.mp4',
   bg3: 'bg3-hens-and-eggs.mp4',
   bg4: 'bg4-bear-hibernation.mp4',
+  bg5: 'bg5-hailstones.mp4',
 };
