@@ -1787,6 +1787,12 @@ const QI_BANK = [
     answer: 'No - some hatch as froglets!', answerEs: '¡No, algunas nacen ya como ranitas!',
     fact: 'Most frogs lay their eggs in water, and these hatch into swimming tadpoles that slowly grow legs and lose their tails. But some frogs skip the tadpole stage altogether: many rainforest frogs lay their eggs on damp ground, and tiny froglets hatch straight out, looking like miniature grown-ups. In a few kinds, the parents even carry their eggs or babies around on their backs.',
     factEs: 'La mayoría de las ranas ponen sus huevos en el agua, y de ellos salen renacuajos nadadores a los que poco a poco les crecen patas y se les va la cola. Pero algunas ranas se saltan la fase de renacuajo: muchas ranas de la selva ponen sus huevos en suelo húmedo, y de ellos salen directamente ranitas diminutas, como adultos en miniatura. En algunas clases, los padres incluso llevan los huevos o las crías a la espalda.' },
+  { id: 'bd5', set: 'BD', emoji: '🐞', topic: 'Ladybird colours',
+    q: 'Are all ladybirds red with black spots?', qes: '¿Todas las mariquitas son rojas con puntos negros?',
+    trap: 'Yes - red and spotty!', trapEs: '¡Sí, rojas y con puntos!',
+    answer: 'No - lots of colours!', answerEs: '¡No, hay de muchos colores!',
+    fact: 'The red ladybird with black spots is the one everyone pictures, but there are thousands of kinds of ladybird around the world. Some are yellow, orange, pink or black; some have red spots on black; some have stripes, squiggles or no spots at all. Their bright colours work like a warning sign, telling birds and other hungry animals that they taste horrible.',
+    factEs: 'La mariquita roja con puntos negros es la que todo el mundo se imagina, pero en el mundo hay miles de clases de mariquitas. Algunas son amarillas, naranjas, rosas o negras; otras tienen puntos rojos sobre negro; y otras tienen rayas, garabatos o ningún punto. Sus colores vivos funcionan como una señal de aviso que les dice a los pájaros y a otros animales hambrientos que saben fatal.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2077,4 +2083,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bd2: 'bd2-crabs-walking.mp4',
   bd3: 'bd3-sitting-close-to-the-tv.mp4',
   bd4: 'bd4-tadpoles.mp4',
+  bd5: 'bd5-ladybird-colours.mp4',
 };
