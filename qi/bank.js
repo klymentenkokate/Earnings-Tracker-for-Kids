@@ -1626,6 +1626,12 @@ const QI_BANK = [
     answer: 'No - it\'s clear ice!', answerEs: '¡No, es hielo transparente!',
     fact: 'Snow is made of tiny ice crystals, and ice on its own is clear, like glass. Snow only looks white because millions of crystals, with air in between, bounce the light around in every direction. Sunlight is a mix of all the colours of the rainbow, and when all those colours bounce back to your eyes together, you see white. The same thing makes bubbles in foam and crushed ice look white too.',
     factEs: 'La nieve está hecha de diminutos cristales de hielo, y el hielo por sí solo es transparente, como el cristal. La nieve solo parece blanca porque millones de cristales, con aire entre ellos, hacen rebotar la luz en todas direcciones. La luz del sol es una mezcla de todos los colores del arcoíris, y cuando todos esos colores vuelven juntos a tus ojos, ves blanco. Lo mismo hace que la espuma y el hielo picado parezcan blancos.' },
+  { id: 'ay4', set: 'AY', emoji: '🍪', topic: 'Five-second rule',
+    q: 'Is dropped food safe if you pick it up within five seconds?', qes: '¿La comida que se cae es segura si la recoges en cinco segundos?',
+    trap: 'Yes - five-second rule!', trapEs: '¡Sí, la regla de los cinco segundos!',
+    answer: 'No - germs are faster!', answerEs: '¡No, los gérmenes son más rápidos!',
+    fact: 'Scientists tested the five-second rule by dropping foods like watermelon, bread and gummy sweets onto different floors. Germs started moving onto the food in less than one second. Wet, sticky foods picked up the most, and carpet passed on fewer germs than tiles or metal. Most dropped food won\'t make you ill, but there is no magic safe time - if it lands somewhere dirty, it\'s best not to eat it.',
+    factEs: 'Unos científicos pusieron a prueba la regla de los cinco segundos dejando caer alimentos como sandía, pan y gominolas sobre distintos suelos. Los gérmenes empezaron a pasar a la comida en menos de un segundo. Los alimentos húmedos y pegajosos recogieron más, y la moqueta pasó menos gérmenes que las baldosas o el metal. Casi nunca te pondrás malo por comida caída, pero no hay un tiempo mágico seguro: si cae en un sitio sucio, mejor no comerla.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1890,4 +1896,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ay1: 'ay1-brown-or-white-eggs.mp4',
   ay2: 'ay2-sea-sponges.mp4',
   ay3: 'ay3-colour-of-snow.mp4',
+  ay4: 'ay4-five-second-rule.mp4',
 };
