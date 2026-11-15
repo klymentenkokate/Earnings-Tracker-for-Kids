@@ -1750,6 +1750,12 @@ const QI_BANK = [
     answer: 'No - only near the equator!', answerEs: '¡No, solo cerca del ecuador!',
     fact: 'At midday the Sun reaches its highest point in the sky, but in most places that still isn\'t straight overhead. Only near the middle of the Earth, between two imaginary lines called the tropics, can the Sun ever be right above your head - and even there, only on certain days of the year. In places like Britain or Spain the midday Sun is always a bit to the south, which is why you still have a shadow at lunchtime.',
     factEs: 'A mediodía el Sol llega a su punto más alto en el cielo, pero en la mayoría de los sitios eso no es justo encima de nosotros. Solo cerca del centro de la Tierra, entre dos líneas imaginarias llamadas trópicos, puede estar el Sol justo sobre tu cabeza, y aun allí solo ciertos días del año. En lugares como Gran Bretaña o España el Sol de mediodía siempre está un poco hacia el sur, y por eso a la hora de comer sigues teniendo sombra.' },
+  { id: 'bc4', set: 'BC', emoji: '🪸', topic: 'Coral',
+    q: 'Is coral a kind of rock?', qes: '¿El coral es un tipo de roca?',
+    trap: 'Yes - a pretty rock!', trapEs: '¡Sí, una roca bonita!',
+    answer: 'No - it\'s built by animals!', answerEs: '¡No, lo construyen animales!',
+    fact: 'Coral reefs look like colourful rocks or underwater plants, but they are built by tiny animals called coral polyps. Each polyp has a soft body and builds a hard cup of limestone around itself to live in. Millions of polyps living side by side, over thousands of years, slowly build up a whole reef. Many corals also have tiny algae living inside them, which make food from sunlight and give the coral its bright colours.',
+    factEs: 'Los arrecifes de coral parecen rocas de colores o plantas submarinas, pero los construyen unos animales diminutos llamados pólipos de coral. Cada pólipo tiene un cuerpo blando y construye a su alrededor una copa dura de piedra caliza donde vivir. Millones de pólipos viviendo juntos, durante miles de años, van construyendo poco a poco todo un arrecife. Muchos corales también tienen algas diminutas viviendo dentro, que fabrican comida con la luz del sol y les dan sus colores tan vivos.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2034,4 +2040,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bc1: 'bc1-earths-shape.mp4',
   bc2: 'bc2-honey-making-bees.mp4',
   bc3: 'bc3-sun-at-midday.mp4',
+  bc4: 'bc4-coral.mp4',
 };
