@@ -1694,6 +1694,12 @@ const QI_BANK = [
     answer: 'No - a tiny bit slower!', answerEs: '¡No, un poquito más tarde!',
     fact: 'Lots of cooks put salt in the water for pasta, and some people think it makes the water boil sooner. In fact, salt makes water boil at a slightly higher temperature, so it can take a tiny bit longer - though with a normal pinch the difference is so small you\'d never notice. The salt is really there for flavour. The fizz you see when you tip salt into hot water is just air and steam escaping around the grains, not real boiling.',
     factEs: 'Muchos cocineros echan sal al agua de la pasta, y algunas personas creen que así hierve antes. En realidad, la sal hace que el agua hierva a una temperatura un poco más alta, así que puede tardar un poquito más, aunque con una pizca normal la diferencia es tan pequeña que nunca lo notarías. La sal está ahí para dar sabor. El burbujeo que ves al echar sal en agua caliente es solo aire y vapor que escapan alrededor de los granos, no un hervor de verdad.' },
+  { id: 'ba5', set: 'BA', emoji: '🐬', topic: 'Dolphins and water',
+    q: 'Do dolphins drink seawater?', qes: '¿Los delfines beben agua de mar?',
+    trap: 'Yes - gulp!', trapEs: '¡Sí, glup!',
+    answer: 'No - they get it from food!', answerEs: '¡No, la sacan de la comida!',
+    fact: 'Dolphins spend their whole lives in salty water, but they don\'t drink it - all that salt would make them ill, just as it would make us ill. Instead, they get almost all the water they need from the fish and squid they eat, which are full of water. Their bodies also make a little extra water as they turn food into energy. So a dolphin swimming in the sea is never really thirsty.',
+    factEs: 'Los delfines pasan toda su vida en agua salada, pero no la beben: tanta sal les haría daño, igual que a nosotros. En cambio, sacan casi toda el agua que necesitan de los peces y calamares que comen, que están llenos de agua. Su cuerpo también fabrica un poco de agua extra al convertir la comida en energía. Así que un delfín nadando en el mar nunca tiene sed de verdad.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1969,4 +1975,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   ba2: 'ba2-hair-turning-white.mp4',
   ba3: 'ba3-dead-stars.mp4',
   ba4: 'ba4-salt-in-boiling-water.mp4',
+  ba5: 'ba5-dolphins-and-water.mp4',
 };
