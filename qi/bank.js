@@ -1911,6 +1911,12 @@ const QI_BANK = [
     answer: 'No - they lie down too!', answerEs: '¡No, también se tumban!',
     fact: 'Horses can doze standing up, thanks to a special system in their legs that locks the joints so they don\'t fall over - handy for a big animal that might need to run from danger quickly. But for the deepest kind of sleep, horses have to lie down, either flat on their side or resting on their tummy. They only do it for short spells, adding up to a few hours a day, usually when they feel safe.',
     factEs: 'Los caballos pueden dormitar de pie, gracias a un sistema especial en las patas que bloquea las articulaciones para no caerse; muy útil para un animal grande que quizá tenga que huir rápido de un peligro. Pero para el sueño más profundo, los caballos tienen que tumbarse, de lado o apoyados sobre la tripa. Solo lo hacen durante ratos cortos, que suman unas pocas horas al día, normalmente cuando se sienten seguros.' },
+  { id: 'bh5', set: 'BH', emoji: '☄️', topic: 'Comet tails',
+    q: 'Does a comet\'s tail always stream out behind it?', qes: '¿La cola de un cometa siempre va detrás de él?',
+    trap: 'Yes - like a kite\'s tail!', trapEs: '¡Sí, como la cola de una cometa!',
+    answer: 'No - it points away from the Sun!', answerEs: '¡No, apunta lejos del Sol!',
+    fact: 'A comet is a big lump of ice, rock and dust. Far from the Sun it has no tail at all. As it comes closer, the Sun\'s heat turns some of its ice into gas, and the gas and dust are pushed away by sunlight and by a stream of tiny particles from the Sun called the solar wind. So a comet\'s tail always points away from the Sun - and when the comet is heading back out into space, its tail actually goes in front of it!',
+    factEs: 'Un cometa es un gran trozo de hielo, roca y polvo. Lejos del Sol no tiene cola. Al acercarse, el calor del Sol convierte parte de su hielo en gas, y el gas y el polvo son empujados por la luz del Sol y por una corriente de partículas diminutas que sale del Sol llamada viento solar. Así que la cola de un cometa siempre apunta lejos del Sol, ¡y cuando el cometa se aleja de nuevo hacia el espacio, su cola va por delante!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2221,4 +2227,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bh2: 'bh2-snake-charmers.mp4',
   bh3: 'bh3-dog-noses.mp4',
   bh4: 'bh4-sleeping-horses.mp4',
+  bh5: 'bh5-comet-tails.mp4',
 };
