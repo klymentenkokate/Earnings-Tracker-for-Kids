@@ -1719,6 +1719,12 @@ const QI_BANK = [
     answer: 'No - they\'re fungi!', answerEs: '¡No, son hongos!',
     fact: 'Mushrooms grow out of the ground, so they look like plants, but they belong to a completely different group of living things called fungi. Plants use sunlight to make their own food; fungi can\'t, so they feed on dead leaves, old wood and other things, slowly breaking them down. The mushroom you see is only a small part of the fungus - most of it is a web of tiny threads hidden underground. Some wild mushrooms are very poisonous, so never pick or eat them.',
     factEs: 'Las setas salen del suelo, así que parecen plantas, pero pertenecen a un grupo de seres vivos completamente distinto: los hongos. Las plantas usan la luz del sol para fabricar su comida; los hongos no pueden, así que se alimentan de hojas muertas, madera vieja y otras cosas, que descomponen poco a poco. La seta que ves es solo una pequeña parte del hongo: casi todo es una red de hilos diminutos escondida bajo tierra. Algunas setas silvestres son muy venenosas, así que nunca las cojas ni te las comas.' },
+  { id: 'bb4', set: 'BB', emoji: '🌨️', topic: 'Thundersnow',
+    q: 'Can you get thunder and lightning in a snowstorm?', qes: '¿Puede haber truenos y rayos en una tormenta de nieve?',
+    trap: 'No - only in summer!', trapEs: '¡No, solo en verano!',
+    answer: 'Yes - it\'s thundersnow!', answerEs: '¡Sí, es una tormenta de nieve con truenos!',
+    fact: 'Thunderstorms are most common in warm weather, but they can happen in snowstorms too - it\'s called thundersnow. It\'s rare, because snowstorms don\'t usually have the strong rising air needed to build up enough electricity for lightning. When it does happen, the thick falling snow soaks up the sound, so the thunder is muffled and can only be heard much closer than in a summer storm.',
+    factEs: 'Las tormentas con truenos son más frecuentes cuando hace calor, pero también pueden darse en tormentas de nieve: en inglés se llama \'thundersnow\'. Es raro, porque las tormentas de nieve no suelen tener el aire que sube con fuerza necesario para acumular electricidad suficiente para los rayos. Cuando pasa, la nieve espesa que cae absorbe el sonido, así que el trueno suena apagado y solo se oye mucho más cerca que en una tormenta de verano.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1998,4 +2004,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bb1: 'bb1-sneezing-and-your-heart.mp4',
   bb2: 'bb2-whale-sharks.mp4',
   bb3: 'bb3-mushrooms.mp4',
+  bb4: 'bb4-thundersnow.mp4',
 };
