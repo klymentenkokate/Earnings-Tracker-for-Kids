@@ -1856,7 +1856,7 @@ const QI_BANK = [
     fact: 'Inside its chrysalis, a caterpillar doesn\'t simply sprout a pair of wings. Special juices break most of its body down into a kind of soup. Only small groups of cells stay ready and waiting - and they use the soup to build a completely new body, with wings, long legs, big eyes and a curly drinking-straw mouth. A few weeks later, a butterfly climbs out.',
     factEs: 'Dentro de su crisálida, a la oruga no le salen simplemente un par de alas. Unos jugos especiales deshacen casi todo su cuerpo en una especie de sopa. Solo unos grupitos de células se quedan preparados, y usan esa sopa para construir un cuerpo completamente nuevo, con alas, patas largas, ojos grandes y una boca como una pajita enrollada. Unas semanas después, sale una mariposa.' },
   // Set BG (pipeline, one question at a time)
-  { id: 'bg1', set: 'BG', emoji: '🍁', topic: 'Autumn leaves',
+  { id: 'bg1', set: 'BG', emoji: '🍂', topic: 'Autumn leaves',
     q: 'Does cold weather paint leaves yellow and orange in autumn?', qes: '¿El frío pinta las hojas de amarillo y naranja en otoño?',
     trap: 'Yes - the cold does it!', trapEs: '¡Sí, lo hace el frío!',
     answer: 'No - the colours were hiding!', answerEs: '¡No, los colores estaban escondidos!',
