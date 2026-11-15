@@ -1731,6 +1731,13 @@ const QI_BANK = [
     answer: 'No - not always!', answerEs: '¡No, no siempre!',
     fact: 'A wag can mean lots of different things. A loose, wide, wiggly wag - often with the dog\'s whole back end swaying - usually means a happy, friendly dog. But a stiff tail held high and wagging fast can mean a dog is excited or on edge, and a low tail wagging quickly can mean it\'s nervous. So look at the whole dog - its ears, body and face - and always ask the owner before you stroke a dog you don\'t know.',
     factEs: 'Mover la cola puede significar muchas cosas distintas. Un meneo suelto, amplio y ondulante, a menudo con toda la parte de atrás balanceándose, suele significar un perro contento y amistoso. Pero una cola rígida, alta y moviéndose rápido puede indicar que el perro está nervioso o en tensión, y una cola baja moviéndose deprisa puede significar que tiene miedo. Así que fíjate en todo el perro, en sus orejas, su cuerpo y su cara, y pregunta siempre al dueño antes de acariciar a un perro que no conoces.' },
+  // Set BC (pipeline, one question at a time)
+  { id: 'bc1', set: 'BC', emoji: '🌍', topic: 'Earth\'s shape',
+    q: 'Is the Earth a perfectly round ball?', qes: '¿La Tierra es una bola perfectamente redonda?',
+    trap: 'Yes - perfectly round!', trapEs: '¡Sí, perfectamente redonda!',
+    answer: 'No - a bit squashed!', answerEs: '¡No, un poco aplastada!',
+    fact: 'From space the Earth looks perfectly round, but it\'s actually a little fatter around its middle - the equator - than it is from pole to pole. That\'s because the Earth spins, and the spinning pushes its middle outwards a little. The difference is only about 43 kilometres, which is tiny compared with the whole planet, so it still looks round in photos.',
+    factEs: 'Desde el espacio la Tierra parece perfectamente redonda, pero en realidad es un poco más ancha por el medio, por el ecuador, que de polo a polo. Es porque la Tierra gira, y al girar su parte central se ensancha un poco hacia fuera. La diferencia es solo de unos 43 kilómetros, muy poco comparado con todo el planeta, así que en las fotos sigue pareciendo redonda.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2012,4 +2019,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bb3: 'bb3-mushrooms.mp4',
   bb4: 'bb4-thundersnow.mp4',
   bb5: 'bb5-dog-tail-wags.mp4',
+  bc1: 'bc1-earths-shape.mp4',
 };
