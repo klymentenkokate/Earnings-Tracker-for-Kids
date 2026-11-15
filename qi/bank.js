@@ -1837,6 +1837,12 @@ const QI_BANK = [
     answer: 'Yes - it\'s a moonbow!', answerEs: '¡Sí, un arcoíris lunar!',
     fact: 'Rainbows need light shining through raindrops, and usually that light comes from the Sun. But on a bright night, with a full or nearly full Moon low in the sky, moonlight can make a rainbow too - it\'s called a moonbow. Moonlight is much fainter than sunlight, so moonbows are rare and usually look pale or white to our eyes, although cameras can pick up their colours. They\'re seen most often near big waterfalls, where there\'s lots of spray in the air.',
     factEs: 'Los arcoíris necesitan luz que atraviese gotas de lluvia, y normalmente esa luz viene del Sol. Pero en una noche clara, con la Luna llena o casi llena baja en el cielo, la luz de la Luna también puede formar un arcoíris: se llama arcoíris lunar. La luz de la Luna es mucho más débil que la del Sol, así que son raros y a nuestros ojos suelen parecer pálidos o blancos, aunque las cámaras sí captan sus colores. Se ven más a menudo cerca de grandes cascadas, donde hay mucha agua pulverizada en el aire.' },
+  { id: 'bf3', set: 'BF', emoji: '🐟', topic: 'Sleeping fish',
+    q: 'Do fish never sleep, because they have no eyelids?', qes: '¿Los peces nunca duermen porque no tienen párpados?',
+    trap: 'Yes - they never sleep!', trapEs: '¡Sí, nunca duermen!',
+    answer: 'No - they rest!', answerEs: '¡No, descansan!',
+    fact: 'Most fish have no eyelids, so their eyes stay open all the time - which is why people thought they never sleep. But scientists have found that fish do rest in a sleep-like way: they slow down, hover still or tuck themselves into a safe spot, and they\'re much slower to notice what\'s going on around them. Some parrotfish even wrap themselves in a bubble of slime before resting at night, like a sleeping bag!',
+    factEs: 'La mayoría de los peces no tienen párpados, así que sus ojos están siempre abiertos; por eso la gente creía que nunca duermen. Pero los científicos han descubierto que los peces sí descansan de una forma parecida a dormir: van más despacio, se quedan quietos flotando o se esconden en un sitio seguro, y tardan mucho más en darse cuenta de lo que pasa a su alrededor. ¡Algunos peces loro hasta se envuelven en una burbuja de baba antes de descansar por la noche, como un saco de dormir!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2135,4 +2141,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   be5: 'be5-underwater-volcanoes.mp4',
   bf1: 'bf1-seagulls-and-seawater.mp4',
   bf2: 'bf2-moonbows.mp4',
+  bf3: 'bf3-sleeping-fish.mp4',
 };
