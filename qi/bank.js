@@ -1669,6 +1669,13 @@ const QI_BANK = [
     answer: 'No - not bones!', answerEs: '¡No, no son huesos!',
     fact: 'Teeth and bones are both hard, white and full of calcium, so it\'s easy to mix them up. But bones are living parts of you that can mend themselves when they break, and many have soft marrow inside that makes new blood cells. Teeth can\'t grow back or repair themselves when they chip or get a hole - which is exactly why brushing every day and visiting the dentist matter so much.',
     factEs: 'Los dientes y los huesos son duros, blancos y llenos de calcio, así que es fácil confundirlos. Pero los huesos son partes vivas de ti que se reparan solas cuando se rompen, y muchos tienen médula blanda dentro que fabrica células de la sangre nuevas. Los dientes no vuelven a crecer ni se reparan cuando se rompen o tienen una caries; por eso es tan importante cepillarse cada día e ir al dentista.' },
+  // Set BA (pipeline, one question at a time)
+  { id: 'ba1', set: 'BA', emoji: '🦙', topic: 'Llama spit',
+    q: 'Do llamas love spitting at people?', qes: '¿A las llamas les encanta escupir a la gente?',
+    trap: 'Yes - splat!', trapEs: '¡Sí, plaf!',
+    answer: 'No - mostly at llamas!', answerEs: '¡No, sobre todo a otras llamas!',
+    fact: 'Llamas are famous for spitting, but they mostly spit at each other - when they argue over food, or to tell another llama to back off. Their spit isn\'t just saliva: it\'s a smelly mix with some of the food from their stomach. A llama that has been treated kindly by people very rarely spits at humans; when it happens, the person has usually just got caught in the middle of a llama argument.',
+    factEs: 'Las llamas son famosas por escupir, pero sobre todo se escupen entre ellas: cuando discuten por la comida o para decirle a otra llama que se aparte. Su escupitajo no es solo saliva: es una mezcla apestosa con algo de comida de su estómago. Una llama a la que la gente ha tratado bien casi nunca escupe a las personas; cuando pasa, normalmente es porque alguien se ha metido en medio de una pelea de llamas.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1940,4 +1947,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   az3: 'az3-butterfly-lifespan.mp4',
   az4: 'az4-birds-and-rice.mp4',
   az5: 'az5-teeth-and-bones.mp4',
+  ba1: 'ba1-llama-spit.mp4',
 };
