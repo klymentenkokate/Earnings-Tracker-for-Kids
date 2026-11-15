@@ -1824,6 +1824,13 @@ const QI_BANK = [
     answer: 'No - under the sea!', answerEs: '¡No, bajo el mar!',
     fact: 'When we picture a volcano, we imagine a smoking mountain. But most of the Earth\'s volcanoes are hidden under the oceans, especially along long underwater mountain ranges where the sea floor is slowly splitting apart and hot rock rises up. Scientists think there are hundreds of thousands of volcanoes under the sea, though most of them are quiet. Some islands, like Hawaii and Iceland, began as undersea volcanoes that grew tall enough to poke out of the water.',
     factEs: 'Cuando imaginamos un volcán, pensamos en una montaña echando humo. Pero la mayoría de los volcanes de la Tierra están escondidos bajo los océanos, sobre todo a lo largo de largas cordilleras submarinas donde el fondo del mar se va separando poco a poco y sube roca caliente. Los científicos creen que hay cientos de miles de volcanes bajo el mar, aunque la mayoría están tranquilos. Algunas islas, como Hawái e Islandia, empezaron como volcanes submarinos que crecieron lo bastante como para asomar fuera del agua.' },
+  // Set BF (pipeline, one question at a time)
+  { id: 'bf1', set: 'BF', emoji: '🐦', topic: 'Seagulls and seawater',
+    q: 'Can seagulls drink seawater?', qes: '¿Las gaviotas pueden beber agua de mar?',
+    trap: 'No - it\'s too salty!', trapEs: '¡No, es demasiado salada!',
+    answer: 'Yes - they have salt glands!', answerEs: '¡Sí, tienen glándulas de sal!',
+    fact: 'For people, drinking seawater is dangerous, because our bodies can\'t get rid of all that salt. But seagulls and many other seabirds can drink it safely. Just above their eyes they have special salt glands that filter the extra salt out of their blood. The salty liquid then trickles out through their nostrils and runs down the beak - which is why you sometimes see a seagull with a drip on the end of its beak.',
+    factEs: 'Para las personas, beber agua de mar es peligroso, porque nuestro cuerpo no puede deshacerse de tanta sal. Pero las gaviotas y muchas otras aves marinas pueden beberla sin problema. Justo encima de los ojos tienen unas glándulas especiales que filtran la sal que sobra en su sangre. Ese líquido salado sale por los orificios de la nariz y baja por el pico; por eso a veces ves una gaviota con una gota en la punta del pico.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2120,4 +2127,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   be3: 'be3-potatoes.mp4',
   be4: 'be4-twinkling-stars.mp4',
   be5: 'be5-underwater-volcanoes.mp4',
+  bf1: 'bf1-seagulls-and-seawater.mp4',
 };
