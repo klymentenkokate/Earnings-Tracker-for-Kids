@@ -1843,6 +1843,12 @@ const QI_BANK = [
     answer: 'No - they rest!', answerEs: '¡No, descansan!',
     fact: 'Most fish have no eyelids, so their eyes stay open all the time - which is why people thought they never sleep. But scientists have found that fish do rest in a sleep-like way: they slow down, hover still or tuck themselves into a safe spot, and they\'re much slower to notice what\'s going on around them. Some parrotfish even wrap themselves in a bubble of slime before resting at night, like a sleeping bag!',
     factEs: 'La mayoría de los peces no tienen párpados, así que sus ojos están siempre abiertos; por eso la gente creía que nunca duermen. Pero los científicos han descubierto que los peces sí descansan de una forma parecida a dormir: van más despacio, se quedan quietos flotando o se esconden en un sitio seguro, y tardan mucho más en darse cuenta de lo que pasa a su alrededor. ¡Algunos peces loro hasta se envuelven en una burbuja de baba antes de descansar por la noche, como un saco de dormir!' },
+  { id: 'bf4', set: 'BF', emoji: '👂', topic: 'Earwax',
+    q: 'Is earwax just dirt?', qes: '¿La cera de los oídos es solo suciedad?',
+    trap: 'Yes - yucky dirt!', trapEs: '¡Sí, suciedad asquerosa!',
+    answer: 'No - it protects your ears!', answerEs: '¡No, protege tus oídos!',
+    fact: 'Earwax is made on purpose by your body, in the skin of your ear canal. It\'s sticky so it can trap dust and germs before they get deep inside, it stops the skin in your ears getting dry and itchy, and it slowly moves outwards on its own, carrying the trapped dirt with it. That\'s why doctors say you should never poke cotton buds or anything else into your ears - it can push the wax deeper or hurt your eardrum.',
+    factEs: 'La cera de los oídos la fabrica tu cuerpo a propósito, en la piel del conducto del oído. Es pegajosa para atrapar el polvo y los gérmenes antes de que entren muy adentro, evita que la piel de los oídos se seque y pique, y poco a poco sale hacia fuera ella sola, llevándose la suciedad atrapada. Por eso los médicos dicen que nunca debes meterte bastoncillos ni nada en los oídos: puedes empujar la cera más adentro o hacerte daño en el tímpano.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2142,4 +2148,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bf1: 'bf1-seagulls-and-seawater.mp4',
   bf2: 'bf2-moonbows.mp4',
   bf3: 'bf3-sleeping-fish.mp4',
+  bf4: 'bf4-earwax.mp4',
 };
