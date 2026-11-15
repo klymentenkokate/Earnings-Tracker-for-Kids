@@ -1868,6 +1868,12 @@ const QI_BANK = [
     answer: 'No - they lap it up!', answerEs: '¡No, la lamen!',
     fact: 'Vampire bats do drink blood, but they don\'t suck it. A vampire bat makes a tiny cut with its sharp front teeth - usually on a sleeping cow, horse or bird - and then laps up the blood with its tongue, a bit like a cat drinking milk. Its spit has a special ingredient that stops the blood from clotting. It only drinks about two tablespoons a night, and most animals don\'t even wake up.',
     factEs: 'Los murciélagos vampiro sí beben sangre, pero no la chupan. Un murciélago vampiro hace un cortecito con sus afilados dientes delanteros, normalmente a una vaca, un caballo o un pájaro dormidos, y luego lame la sangre con la lengua, un poco como un gato bebiendo leche. Su saliva tiene un ingrediente especial que impide que la sangre se coagule. Solo bebe unas dos cucharadas por noche, y la mayoría de los animales ni se despiertan.' },
+  { id: 'bg3', set: 'BG', emoji: '🐔', topic: 'Hens and eggs',
+    q: 'Does a hen need a rooster to lay eggs?', qes: '¿Una gallina necesita un gallo para poner huevos?',
+    trap: 'Yes - no rooster, no eggs!', trapEs: '¡Sí, sin gallo no hay huevos!',
+    answer: 'No - hens lay anyway!', answerEs: '¡No, las gallinas ponen igual!',
+    fact: 'A hen lays eggs whether or not there\'s a rooster around - a healthy young hen can lay almost one egg a day. Without a rooster the eggs can never hatch into chicks, and those are the eggs we usually buy in shops. A rooster is only needed if you want chicks: then a hen sits on her eggs to keep them warm for about three weeks until they hatch.',
+    factEs: 'Una gallina pone huevos haya o no haya un gallo cerca: una gallina joven y sana puede poner casi un huevo al día. Sin gallo, los huevos nunca pueden convertirse en pollitos, y esos son los huevos que solemos comprar en las tiendas. El gallo solo hace falta si quieres pollitos: entonces la gallina se sienta sobre sus huevos para darles calor unas tres semanas, hasta que nacen.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2171,4 +2177,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bf5: 'bf5-inside-a-chrysalis.mp4',
   bg1: 'bg1-autumn-leaves.mp4',
   bg2: 'bg2-vampire-bats.mp4',
+  bg3: 'bg3-hens-and-eggs.mp4',
 };
