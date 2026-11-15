@@ -1663,6 +1663,12 @@ const QI_BANK = [
     answer: 'No - they\'re fine!', answerEs: '¡No, están bien!',
     fact: 'Some people stopped throwing rice at weddings because of a story that birds would eat it, then the rice would swell up inside them and make them burst. But wild birds eat uncooked rice in rice fields all the time, and it doesn\'t swell up inside them - rice only softens and grows when it\'s cooked in hot water for a long time. Bird experts say the story simply isn\'t true.',
     factEs: 'Algunas personas dejaron de tirar arroz en las bodas por una historia: que los pájaros se lo comerían, el arroz se hincharía dentro de ellos y los haría reventar. Pero los pájaros salvajes comen arroz crudo en los arrozales todo el tiempo, y no se les hincha dentro: el arroz solo se ablanda y crece cuando se cuece en agua caliente durante un buen rato. Los expertos en aves dicen que la historia simplemente no es cierta.' },
+  { id: 'az5', set: 'AZ', emoji: '🦷', topic: 'Teeth and bones',
+    q: 'Are your teeth bones?', qes: '¿Los dientes son huesos?',
+    trap: 'Yes - they\'re bones!', trapEs: '¡Sí, son huesos!',
+    answer: 'No - not bones!', answerEs: '¡No, no son huesos!',
+    fact: 'Teeth and bones are both hard, white and full of calcium, so it\'s easy to mix them up. But bones are living parts of you that can mend themselves when they break, and many have soft marrow inside that makes new blood cells. Teeth can\'t grow back or repair themselves when they chip or get a hole - which is exactly why brushing every day and visiting the dentist matter so much.',
+    factEs: 'Los dientes y los huesos son duros, blancos y llenos de calcio, así que es fácil confundirlos. Pero los huesos son partes vivas de ti que se reparan solas cuando se rompen, y muchos tienen médula blanda dentro que fabrica células de la sangre nuevas. Los dientes no vuelven a crecer ni se reparan cuando se rompen o tienen una caries; por eso es tan importante cepillarse cada día e ir al dentista.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -1933,4 +1939,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   az2: 'az2-quicksand.mp4',
   az3: 'az3-butterfly-lifespan.mp4',
   az4: 'az4-birds-and-rice.mp4',
+  az5: 'az5-teeth-and-bones.mp4',
 };
