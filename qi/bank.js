@@ -1800,6 +1800,12 @@ const QI_BANK = [
     answer: 'No - they\'re falling!', answerEs: '¡No, están cayendo!',
     fact: 'Up where the space station flies, about 400 kilometres above us, the Earth\'s gravity is still almost as strong as on the ground - about nine-tenths as strong. Astronauts float because the space station and everyone in it are falling around the Earth all the time. They\'re also zooming sideways so fast - about 28,000 kilometres an hour - that they keep missing the ground, so they fall round and round in orbit. Everything inside falls together, and that feels just like floating.',
     factEs: 'Allí donde vuela la estación espacial, a unos 400 kilómetros sobre nosotros, la gravedad de la Tierra es casi tan fuerte como en el suelo: unas nueve décimas partes. Los astronautas flotan porque la estación y todos los que van dentro están cayendo alrededor de la Tierra todo el tiempo. Además avanzan de lado tan rápido, a unos 28.000 kilómetros por hora, que nunca llegan a tocar el suelo, así que caen dando vueltas y vueltas en órbita. Todo lo de dentro cae a la vez, y eso se siente igual que flotar.' },
+  { id: 'be2', set: 'BE', emoji: '🧲', topic: 'Magnets and metal',
+    q: 'Do magnets stick to all metals?', qes: '¿Los imanes se pegan a todos los metales?',
+    trap: 'Yes - every metal!', trapEs: '¡Sí, a todos!',
+    answer: 'No - only a few!', answerEs: '¡No, solo a unos pocos!',
+    fact: 'Magnets pull strongly on iron, and on steel, which is mostly iron - plus a couple of rarer metals called nickel and cobalt. But lots of metals aren\'t pulled by a magnet at all: aluminium foil and drinks cans, copper wires, and gold and silver jewellery won\'t stick. So if you test things around the house with a fridge magnet, you\'ll find plenty of shiny metal objects that it simply ignores.',
+    factEs: 'Los imanes atraen con fuerza el hierro y el acero, que es casi todo hierro, además de un par de metales más raros llamados níquel y cobalto. Pero muchos metales no los atrae un imán en absoluto: el papel de aluminio y las latas de refresco, los cables de cobre, y las joyas de oro y plata no se pegan. Así que si pruebas cosas de casa con un imán de nevera, encontrarás muchos objetos metálicos brillantes a los que simplemente ignora.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2092,4 +2098,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bd4: 'bd4-tadpoles.mp4',
   bd5: 'bd5-ladybird-colours.mp4',
   be1: 'be1-floating-astronauts.mp4',
+  be2: 'be2-magnets-and-metal.mp4',
 };
