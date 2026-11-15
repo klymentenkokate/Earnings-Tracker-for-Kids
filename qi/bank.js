@@ -1893,6 +1893,12 @@ const QI_BANK = [
     answer: 'No - your nose helps a lot!', answerEs: '¡No, la nariz ayuda mucho!',
     fact: 'Your tongue can only pick up a few basic tastes: sweet, salty, sour, bitter and savoury. Most of what we call flavour - like the difference between strawberry and banana - actually comes from smell. As you chew, smells from the food float up the back of your throat to your nose. That\'s why food tastes of almost nothing when you have a blocked nose from a cold. Try holding your nose while eating a jelly bean, then let go!',
     factEs: 'Tu lengua solo detecta unos pocos sabores básicos: dulce, salado, ácido, amargo y sabroso. Casi todo lo que llamamos sabor, como la diferencia entre fresa y plátano, en realidad viene del olfato. Al masticar, los olores de la comida suben por la parte de atrás de la garganta hasta la nariz. Por eso la comida casi no sabe a nada cuando tienes la nariz tapada por un resfriado. ¡Prueba a taparte la nariz mientras comes una gominola y luego suéltala!' },
+  { id: 'bh2', set: 'BH', emoji: '🐍', topic: 'Snake charmers',
+    q: 'Do snakes dance to a snake charmer\'s music?', qes: '¿Las serpientes bailan con la música del encantador?',
+    trap: 'Yes - they love the tune!', trapEs: '¡Sí, les encanta la melodía!',
+    answer: 'No - they follow the pipe!', answerEs: '¡No, siguen la flauta!',
+    fact: 'Snakes have no outside ears, so they can\'t hear a tune the way we do - they mostly feel low rumbles through the ground and through their jaw bones. When a snake charmer plays, the cobra sways because it\'s watching the pipe moving back and forth, and it keeps facing it as if it might be a threat. So the snake isn\'t dancing to the music at all - it\'s keeping an eye on the waving pipe.',
+    factEs: 'Las serpientes no tienen orejas por fuera, así que no pueden oír una melodía como nosotros: sobre todo notan vibraciones graves a través del suelo y de los huesos de la mandíbula. Cuando el encantador toca, la cobra se balancea porque está mirando la flauta que se mueve de un lado a otro, y se mantiene de cara a ella como si pudiera ser una amenaza. Así que la serpiente no baila la música para nada: está vigilando la flauta que se mueve.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2200,4 +2206,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bg4: 'bg4-bear-hibernation.mp4',
   bg5: 'bg5-hailstones.mp4',
   bh1: 'bh1-taste-and-smell.mp4',
+  bh2: 'bh2-snake-charmers.mp4',
 };
