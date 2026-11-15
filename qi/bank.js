@@ -1756,6 +1756,12 @@ const QI_BANK = [
     answer: 'No - it\'s built by animals!', answerEs: '¡No, lo construyen animales!',
     fact: 'Coral reefs look like colourful rocks or underwater plants, but they are built by tiny animals called coral polyps. Each polyp has a soft body and builds a hard cup of limestone around itself to live in. Millions of polyps living side by side, over thousands of years, slowly build up a whole reef. Many corals also have tiny algae living inside them, which make food from sunlight and give the coral its bright colours.',
     factEs: 'Los arrecifes de coral parecen rocas de colores o plantas submarinas, pero los construyen unos animales diminutos llamados pólipos de coral. Cada pólipo tiene un cuerpo blando y construye a su alrededor una copa dura de piedra caliza donde vivir. Millones de pólipos viviendo juntos, durante miles de años, van construyendo poco a poco todo un arrecife. Muchos corales también tienen algas diminutas viviendo dentro, que fabrican comida con la luz del sol y les dan sus colores tan vivos.' },
+  { id: 'bc5', set: 'BC', emoji: '🐌', topic: 'Snail shells',
+    q: 'Can a snail crawl out of its shell?', qes: '¿Un caracol puede salirse de su concha?',
+    trap: 'Yes - and find a new one!', trapEs: '¡Sí, y buscarse otra!',
+    answer: 'No - it\'s part of its body!', answerEs: '¡No, es parte de su cuerpo!',
+    fact: 'In cartoons, snails slip out of their shells or swap them like houses - but a real snail\'s shell is joined to its body, and it grows along with the snail its whole life. Its heart, lungs and other important parts are tucked away inside the shell, so a snail can never leave it. The animals that really do swap shells are hermit crabs: they borrow empty shells and move into bigger ones as they grow.',
+    factEs: 'En los dibujos animados, los caracoles se salen de su concha o la cambian como si fuera una casa, pero la concha de un caracol de verdad está unida a su cuerpo y crece con él toda su vida. Su corazón, sus pulmones y otras partes importantes están guardados dentro de la concha, así que un caracol nunca puede abandonarla. Los animales que de verdad cambian de concha son los cangrejos ermitaños: toman prestadas conchas vacías y se mudan a otras más grandes a medida que crecen.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2041,4 +2047,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bc2: 'bc2-honey-making-bees.mp4',
   bc3: 'bc3-sun-at-midday.mp4',
   bc4: 'bc4-coral.mp4',
+  bc5: 'bc5-snail-shells.mp4',
 };
