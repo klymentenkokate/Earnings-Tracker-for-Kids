@@ -1961,6 +1961,12 @@ const QI_BANK = [
     answer: 'Water inside turning into steam!', answerEs: '¡El agua de dentro convirtiéndose en vapor!',
     fact: 'Every popcorn kernel has a little water inside, sealed in by a hard, waterproof shell. In a hot pan the water turns into steam, which needs far more room, so the pressure builds until, at about 180 degrees, the shell bursts and the soft starch puffs up into crunchy foam. In 2015 scientists filmed it with super-fast cameras: the popcorn jumps off a little \'leg\' of starch, and the pop sound is the steam rushing out. Ordinary corn won\'t pop - its shell leaks!',
     factEs: 'Cada grano de palomita tiene un poco de agua dentro, sellada por una cáscara dura e impermeable. En una sartén caliente el agua se convierte en vapor, que necesita mucho más espacio, así que la presión sube hasta que, a unos 180 grados, la cáscara revienta y el almidón blando se hincha en una espuma crujiente. En 2015 unos científicos lo grabaron con cámaras superrápidas: la palomita salta apoyándose en una \'pata\' de almidón, y el sonido del pop es el vapor saliendo. El maíz normal no explota: ¡su cáscara deja escapar el vapor!' },
+  { id: 'bj3', set: 'BJ', emoji: '🌳', topic: 'Tree water',
+    q: 'How does water get to the top of a tree?', qes: '¿Cómo llega el agua a lo alto de un árbol?',
+    trap: 'The roots pump it up!', trapEs: '¡Las raíces la bombean!',
+    answer: 'The leaves pull it up!', answerEs: '¡Las hojas tiran de ella hacia arriba!',
+    fact: 'Leaves have tiny holes called stomata. When the sun warms a leaf, water evaporates out of them. Inside the tree, water fills thin tubes like millions of straws, and water molecules cling to each other in a chain - so every drop that leaves at the top tugs the next one up, all the way from the roots. In 1727 Stephen Hales weighed a sunflower in a sealed pot and found it lost more than half a litre of water in one hot day. A big oak can lift hundreds of litres a day!',
+    factEs: 'Las hojas tienen agujeritos diminutos llamados estomas. Cuando el sol calienta una hoja, el agua se evapora por ellos. Dentro del árbol, el agua llena tubitos finos como millones de pajitas, y las moléculas de agua se agarran unas a otras como una cadena, así que cada gota que sale por arriba tira de la siguiente, desde las raíces. En 1727, Stephen Hales pesó un girasol en una maceta sellada y vio que perdía más de medio litro de agua en un día de calor. ¡Un roble grande puede subir cientos de litros al día!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2279,4 +2285,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bi5: 'bi5-onion-tears.mp4',
   bj1: 'bj1-gecko-feet.mp4',
   bj2: 'bj2-popcorn.mp4',
+  bj3: 'bj3-tree-water.mp4',
 };
