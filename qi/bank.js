@@ -1986,6 +1986,12 @@ const QI_BANK = [
     answer: 'The cold air around it, pushing it up!', answerEs: '¡El aire frío de alrededor, que lo empuja hacia arriba!',
     fact: 'Heating air makes its molecules zoom faster and spread out, and some get pushed out of the balloon\'s open bottom, so a balloon full of hot air is lighter than the same space full of cold air. The heavier cold air all around squeezes in underneath and pushes the balloon up, just like water pushes a beach ball back up (Archimedes worked this out over 2,200 years ago). Each cubic metre of hot air lifts only about a quarter of a kilo, so balloons have to be huge. The very first passengers, in France in 1783, were a sheep, a duck and a rooster!',
     factEs: 'Al calentar el aire, sus moléculas se mueven más rápido y se separan, y algunas salen por la boca abierta del globo, así que un globo lleno de aire caliente pesa menos que el mismo espacio lleno de aire frío. El aire frío, más pesado, se mete por debajo y empuja el globo hacia arriba, igual que el agua empuja una pelota de playa (Arquímedes lo descubrió hace más de 2.200 años). Cada metro cúbico de aire caliente levanta solo un cuarto de kilo, por eso los globos son enormes. Los primeros pasajeros, en Francia en 1783, ¡fueron una oveja, un pato y un gallo!' },
+  { id: 'bk2', set: 'BK', emoji: '🫧', topic: 'Submarines',
+    q: 'How does a submarine sink and rise?', qes: '¿Cómo se hunde y sube un submarino?',
+    trap: 'Its propellers push it down and up!', trapEs: '¡Sus hélices lo empujan hacia abajo y hacia arriba!',
+    answer: 'It changes its weight: water in to sink, air in to rise!', answerEs: '¡Cambia su peso: entra agua para hundirse y aire para subir!',
+    fact: 'A submarine has big ballast tanks. To dive, the crew opens vents on top: the air rushes out and seawater floods in, so the submarine gets heavier than the water it pushes aside and sinks. To come up, they blow squeezed air from strong bottles into the tanks, which pushes the water back out, and the submarine floats up. Many fish do the same with a gas bag called a swim bladder. Sharks don\'t have one, so most of them slowly sink if they stop swimming!',
+    factEs: 'Un submarino tiene grandes tanques de lastre. Para sumergirse, la tripulación abre unas válvulas arriba: el aire sale y entra agua de mar, así que el submarino pesa más que el agua que aparta y se hunde. Para subir, soplan aire comprimido de unas botellas muy fuertes dentro de los tanques, que empuja el agua hacia fuera, y el submarino flota hacia arriba. Muchos peces hacen lo mismo con una bolsa de gas llamada vejiga natatoria. Los tiburones no tienen, así que la mayoría se hunde poco a poco si deja de nadar.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2308,4 +2314,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bj4: 'bj4-glow-sticks.mp4',
   bj5: 'bj5-birds-on-wires.mp4',
   bk1: 'bk1-hot-air-balloons.mp4',
+  bk2: 'bk2-submarines.mp4',
 };
