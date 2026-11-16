@@ -1992,6 +1992,12 @@ const QI_BANK = [
     answer: 'It changes its weight: water in to sink, air in to rise!', answerEs: '¡Cambia su peso: entra agua para hundirse y aire para subir!',
     fact: 'A submarine has big ballast tanks. To dive, the crew opens vents on top: the air rushes out and seawater floods in, so the submarine gets heavier than the water it pushes aside and sinks. To come up, they blow squeezed air from strong bottles into the tanks, which pushes the water back out, and the submarine floats up. Many fish do the same with a gas bag called a swim bladder. Sharks don\'t have one, so most of them slowly sink if they stop swimming!',
     factEs: 'Un submarino tiene grandes tanques de lastre. Para sumergirse, la tripulación abre unas válvulas arriba: el aire sale y entra agua de mar, así que el submarino pesa más que el agua que aparta y se hunde. Para subir, soplan aire comprimido de unas botellas muy fuertes dentro de los tanques, que empuja el agua hacia fuera, y el submarino flota hacia arriba. Muchos peces hacen lo mismo con una bolsa de gas llamada vejiga natatoria. Los tiburones no tienen, así que la mayoría se hunde poco a poco si deja de nadar.' },
+  { id: 'bk3', set: 'BK', emoji: '🍲', topic: 'Microwave ovens',
+    q: 'Does a microwave cook food from the inside out?', qes: '¿El microondas cocina la comida de dentro hacia fuera?',
+    trap: 'Yes, it cooks from the inside out!', trapEs: '¡Sí, la cocina de dentro hacia fuera!',
+    answer: 'No! It heats the outside first, then the heat spreads in.', answerEs: '¡No! Calienta primero la parte de fuera y luego el calor va hacia dentro.',
+    fact: 'A part called a magnetron makes microwaves, which bounce around the metal box. They make the water in food twist back and forth billions of times a second, and that jiggling is heat. But microwaves only reach a couple of centimetres into the food, so the outside heats first and the middle warms up later, as the heat creeps inwards. That\'s why you stir, or let food stand for a minute. The microwave oven was found by accident in 1945, when a chocolate bar melted in an engineer\'s pocket!',
+    factEs: 'Una pieza llamada magnetrón fabrica microondas, que rebotan dentro de la caja de metal. Hacen que el agua de la comida gire de un lado a otro miles de millones de veces por segundo, y ese meneo es calor. Pero las microondas solo entran un par de centímetros en la comida, así que primero se calienta la parte de fuera y el centro se calienta después, cuando el calor va entrando poco a poco. Por eso hay que remover o dejar reposar la comida un minuto. El microondas se descubrió por casualidad en 1945, ¡cuando a un ingeniero se le derritió una chocolatina en el bolsillo!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2315,4 +2321,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bj5: 'bj5-birds-on-wires.mp4',
   bk1: 'bk1-hot-air-balloons.mp4',
   bk2: 'bk2-submarines.mp4',
+  bk3: 'bk3-microwave-ovens.mp4',
 };
