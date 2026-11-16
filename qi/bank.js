@@ -1998,6 +1998,12 @@ const QI_BANK = [
     answer: 'No! It heats the outside first, then the heat spreads in.', answerEs: '¡No! Calienta primero la parte de fuera y luego el calor va hacia dentro.',
     fact: 'A part called a magnetron makes microwaves, which bounce around the metal box. They make the water in food twist back and forth billions of times a second, and that jiggling is heat. But microwaves only reach a couple of centimetres into the food, so the outside heats first and the middle warms up later, as the heat creeps inwards. That\'s why you stir, or let food stand for a minute. The microwave oven was found by accident in 1945, when a chocolate bar melted in an engineer\'s pocket!',
     factEs: 'Una pieza llamada magnetrón fabrica microondas, que rebotan dentro de la caja de metal. Hacen que el agua de la comida gire de un lado a otro miles de millones de veces por segundo, y ese meneo es calor. Pero las microondas solo entran un par de centímetros en la comida, así que primero se calienta la parte de fuera y el centro se calienta después, cuando el calor va entrando poco a poco. Por eso hay que remover o dejar reposar la comida un minuto. El microondas se descubrió por casualidad en 1945, ¡cuando a un ingeniero se le derritió una chocolatina en el bolsillo!' },
+  { id: 'bk4', set: 'BK', emoji: '🪃', topic: 'Boomerangs',
+    q: 'Why does a boomerang come back?', qes: '¿Por qué vuelve un bumerán?',
+    trap: 'Because it\'s bent like a banana!', trapEs: '¡Porque está doblado como un plátano!',
+    answer: 'Its arms are wings and it spins, so it flies in a circle!', answerEs: '¡Sus brazos son alas y gira, así que vuela en círculo!',
+    fact: 'Each arm of a returning boomerang is shaped like a little aeroplane wing. You throw it almost upright, so the wings push it sideways and its path curves. And because it spins, the top arm rushes through the air faster than the bottom one and gets a bigger push. Spinning things don\'t tip over when pushed, they turn instead, so the boomerang keeps turning all the way round, back to you. It even works in space: in 2008 an astronaut threw one inside the space station, and it came back!',
+    factEs: 'Cada brazo de un bumerán que vuelve tiene forma de pequeña ala de avión. Se lanza casi de pie, así que las alas lo empujan de lado y su camino se curva. Y como gira, el brazo de arriba corta el aire más rápido que el de abajo y recibe un empujón más fuerte. Las cosas que giran no se caen cuando las empujas, sino que giran hacia un lado, así que el bumerán va girando hasta volver a ti. ¡Incluso funciona en el espacio: en 2008 un astronauta lanzó uno dentro de la estación espacial y volvió!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2322,4 +2328,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bk1: 'bk1-hot-air-balloons.mp4',
   bk2: 'bk2-submarines.mp4',
   bk3: 'bk3-microwave-ovens.mp4',
+  bk4: 'bk4-boomerangs.mp4',
 };
