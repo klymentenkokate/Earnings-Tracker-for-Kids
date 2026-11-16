@@ -1979,6 +1979,13 @@ const QI_BANK = [
     answer: 'Both feet are on the same wire!', answerEs: '¡Tienen las dos patas en el mismo cable!',
     fact: 'Electricity only flows from a high-voltage place to a lower one, a bit like water only flows downhill. A bird sitting on one wire has both feet at the same voltage, so there\'s no reason for electricity to go through it - it just keeps flowing along the wire. But if an animal touches two wires, or a wire and the pole, electricity rushes through it. That\'s why big birds sometimes get hurt, why squirrels cause power cuts, and why people must always stay far away from power lines!',
     factEs: 'La electricidad solo fluye de un sitio con mucho voltaje a otro con menos, un poco como el agua solo baja cuesta abajo. Un pájaro posado en un cable tiene las dos patas al mismo voltaje, así que la electricidad no tiene por qué pasar por él: sigue por el cable. Pero si un animal toca dos cables, o un cable y el poste, la electricidad lo atraviesa. Por eso a veces se hacen daño los pájaros grandes, por eso las ardillas provocan apagones, ¡y por eso las personas siempre deben alejarse de los cables eléctricos!' },
+  // Set BK (pipeline, one question at a time)
+  { id: 'bk1', set: 'BK', emoji: '🎈', topic: 'Hot-air balloons',
+    q: 'What lifts a hot-air balloon into the sky?', qes: '¿Qué hace subir a un globo aerostático?',
+    trap: 'The hot air rising!', trapEs: '¡El aire caliente que sube!',
+    answer: 'The cold air around it, pushing it up!', answerEs: '¡El aire frío de alrededor, que lo empuja hacia arriba!',
+    fact: 'Heating air makes its molecules zoom faster and spread out, and some get pushed out of the balloon\'s open bottom, so a balloon full of hot air is lighter than the same space full of cold air. The heavier cold air all around squeezes in underneath and pushes the balloon up, just like water pushes a beach ball back up (Archimedes worked this out over 2,200 years ago). Each cubic metre of hot air lifts only about a quarter of a kilo, so balloons have to be huge. The very first passengers, in France in 1783, were a sheep, a duck and a rooster!',
+    factEs: 'Al calentar el aire, sus moléculas se mueven más rápido y se separan, y algunas salen por la boca abierta del globo, así que un globo lleno de aire caliente pesa menos que el mismo espacio lleno de aire frío. El aire frío, más pesado, se mete por debajo y empuja el globo hacia arriba, igual que el agua empuja una pelota de playa (Arquímedes lo descubrió hace más de 2.200 años). Cada metro cúbico de aire caliente levanta solo un cuarto de kilo, por eso los globos son enormes. Los primeros pasajeros, en Francia en 1783, ¡fueron una oveja, un pato y un gallo!' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2300,4 +2307,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bj3: 'bj3-tree-water.mp4',
   bj4: 'bj4-glow-sticks.mp4',
   bj5: 'bj5-birds-on-wires.mp4',
+  bk1: 'bk1-hot-air-balloons.mp4',
 };
