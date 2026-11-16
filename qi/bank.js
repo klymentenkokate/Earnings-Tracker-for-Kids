@@ -2004,6 +2004,12 @@ const QI_BANK = [
     answer: 'Its arms are wings and it spins, so it flies in a circle!', answerEs: '¡Sus brazos son alas y gira, así que vuela en círculo!',
     fact: 'Each arm of a returning boomerang is shaped like a little aeroplane wing. You throw it almost upright, so the wings push it sideways and its path curves. And because it spins, the top arm rushes through the air faster than the bottom one and gets a bigger push. Spinning things don\'t tip over when pushed, they turn instead, so the boomerang keeps turning all the way round, back to you. It even works in space: in 2008 an astronaut threw one inside the space station, and it came back!',
     factEs: 'Cada brazo de un bumerán que vuelve tiene forma de pequeña ala de avión. Se lanza casi de pie, así que las alas lo empujan de lado y su camino se curva. Y como gira, el brazo de arriba corta el aire más rápido que el de abajo y recibe un empujón más fuerte. Las cosas que giran no se caen cuando las empujas, sino que giran hacia un lado, así que el bumerán va girando hasta volver a ti. ¡Incluso funciona en el espacio: en 2008 un astronauta lanzó uno dentro de la estación espacial y volvió!' },
+  { id: 'bk5', set: 'BK', emoji: '🥤', topic: 'Shaken cans',
+    q: 'Does tapping a shaken can stop it from spraying?', qes: '¿Dar golpecitos a una lata agitada evita que salpique?',
+    trap: 'Yes, tapping knocks the bubbles down!', trapEs: '¡Sí, los golpecitos bajan las burbujas!',
+    answer: 'No! Tapping doesn\'t help. Only waiting does.', answerEs: '¡No! Los golpecitos no sirven. Solo sirve esperar.',
+    fact: 'The fizz is carbon dioxide gas, squeezed into the drink so hard that it dissolves and hides in the liquid. Shaking mixes the gas at the top of the can into the drink as thousands of tiny bubbles. Open it straight away and the hidden gas rushes into all those little bubbles, they swell up and push the drink out. In 2018 scientists in Denmark shook about a thousand cans and tapped some of them: the tapped ones sprayed just as much. Waiting a few minutes lets the tiny bubbles float back up to the top.',
+    factEs: 'Las burbujas son dióxido de carbono, un gas que se mete en la bebida con tanta fuerza que se disuelve y se esconde en el líquido. Al agitar la lata, el gas de arriba se mezcla con la bebida en miles de burbujitas. Si la abres enseguida, el gas escondido entra de golpe en todas esas burbujitas, que se hinchan y empujan la bebida hacia fuera. En 2018, unos científicos de Dinamarca agitaron unas mil latas y dieron golpecitos a algunas: salpicaron igual. Esperar unos minutos deja que las burbujitas suban otra vez arriba.' },
 ];
 const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are rendered
   a1: 'a1-octopus-legs.mp4',
@@ -2329,4 +2335,5 @@ const QI_FILMS = {   // id -> film file in qi/films/, filled in as the films are
   bk2: 'bk2-submarines.mp4',
   bk3: 'bk3-microwave-ovens.mp4',
   bk4: 'bk4-boomerangs.mp4',
+  bk5: 'bk5-shaken-cans.mp4',
 };
