@@ -275,7 +275,7 @@ const olNope = n => ['¡Sigue pensando!', 'Revisa tu razonamiento paso a paso.',
 // he says lie are ignored ("Solo Bea; Ana y Carlos mienten").
 function olNums(s) {
   const t = s.replace(/(\d)[.\s](?=\d{3}(\D|$))/g, '$1');   // all answers are whole numbers: commas separate
-  return (t.match(/-?\d+(\.\d+)?/g) || []).map(Number);
+  return (t.match(/\d+(\.\d+)?/g) || []).map(Number);   // a hyphen is a minus sign, not a negative number
 }
 const olNorm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9ñ ]/g, ' ').replace(/\s+/g, ' ').trim();
 function olJudge(q, raw) {
@@ -285,7 +285,7 @@ function olJudge(q, raw) {
     if (!ns.length) return { unreadable: true, msg: '🤔 No veo ningún número. Escribe tu respuesta con cifras, por ejemplo <b>12</b>.' };
     const okSet = new Set([a.num, ...(a.also || [])]);
     const last = ns[ns.length - 1], hedged = / o /.test(' ' + olNorm(raw) + ' ');
-    const ok = (ns.includes(a.num) && ns.every(n => okSet.has(n))) || (last === a.num && !hedged);
+    const ok = !hedged && ((ns.includes(a.num) && ns.every(n => okSet.has(n))) || last === a.num);
     if (ok) return { ok: true };
     const trap = (q.traps || []).find(tr => tr.v === last) || (q.traps || []).find(tr => ns.includes(tr.v));
     return { ok: false, msg: trap ? trap.m : '' };
@@ -295,9 +295,15 @@ function olJudge(q, raw) {
   const n = ' ' + olNorm(txt) + ' ';
   const has = w => n.includes(' ' + olNorm(w) + ' ');
   let ok;
-  if (a.last) {
-    const pos = a.last.map(w => ({ w, i: n.lastIndexOf(' ' + olNorm(w) + ' ') })).filter(x => x.i >= 0).sort((x, y) => y.i - x.i);
-    ok = !!pos.length && a.text.some(w => olNorm(w) === olNorm(pos[0].w));
+  const isAns = w => a.text.some(t => olNorm(t) === olNorm(w));
+  if (a.last || a.first) {   // the last (or first) of these words he names decides
+    const list = a.last || a.first, at = w => a.last ? n.lastIndexOf(' ' + olNorm(w) + ' ') : n.indexOf(' ' + olNorm(w) + ' ');
+    const pos = list.map(w => ({ w, i: at(w) })).filter(x => x.i >= 0).sort((x, y) => a.last ? y.i - x.i : x.i - y.i);
+    ok = !!pos.length && isAns(pos[0].w);
+  } else if (a.mid) {        // the whole line written out: the middle one decides
+    const pos = a.mid.map(w => ({ w, i: n.indexOf(' ' + olNorm(w) + ' ') })).filter(x => x.i >= 0).sort((x, y) => x.i - y.i);
+    const pick = pos.length === a.mid.length ? pos[(a.mid.length - 1) / 2] : pos[0];   // fewer names: the first one decides
+    ok = !!pick && isAns(pick.w) && !/ o /.test(n);
   } else ok = a.text.some(has) && !(a.forbid || []).some(has);
   if (ok) return { ok: true };
   const trap = (q.traps || []).find(tr => has(String(tr.v)));
