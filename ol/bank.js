@@ -71,6 +71,36 @@ function odd(n) {           // squares built from odd L-shapes
   return s;
 }
 
+function barco(rise) {      // the ship's rope ladder; rise = hours of tide (1 rung each)
+  const wl = 250 - rise * 14, top = wl - 170;
+  let s = `<rect x="10" y="30" width="44" height="270" fill="#ced4da" stroke="#495057" stroke-width="3"/>`;
+  for (let k = 0; k <= 5; k++) s += `<line x1="36" x2="54" y1="${250 - k * 14}" y2="${250 - k * 14}" stroke="#212529" stroke-width="3"/><text x="30" y="${255 - k * 14}" font-size="12" text-anchor="end" fill="#212529">${k}</text>`;
+  s += `<path d="M110 ${top} H410 L380 ${wl + 40} H140 Z" fill="#e8590c" stroke="#7a2a05" stroke-width="4"/>`;
+  s += `<line x1="185" x2="185" y1="${top}" y2="${wl + 30}" stroke="#7a4b12" stroke-width="5"/><line x1="235" x2="235" y1="${top}" y2="${wl + 30}" stroke="#7a4b12" stroke-width="5"/>`;
+  for (let k = -1; k <= 10; k++) if (k) s += `<line x1="185" x2="235" y1="${wl - 14 * k}" y2="${wl - 14 * k}" stroke="#f4d58d" stroke-width="5"/>`;
+  s += `<text x="258" y="${wl - 140 + 6}" font-size="17" font-weight="900" fill="#fff">10</text><text x="258" y="${wl - 14 + 6}" font-size="17" font-weight="900" fill="#fff">1</text>`;
+  s += `<rect x="0" y="${wl}" width="420" height="${300 - wl}" fill="#339af0" fill-opacity=".78"/><path d="M0 ${wl} q15 -8 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0" fill="none" stroke="#1971c2" stroke-width="3"/>`;
+  return s;
+}
+function cubo(hl) {         // 3 × 3 × 3 painted cube; hl = paint counts to colour yellow (3 corner, 2 edge, 1 face)
+  const u = 46, cx = 150, cy = 165;
+  const P = (x, y, z) => `${(cx + (x - y) * u * 0.866).toFixed(1)},${(cy + (x + y) * u * 0.5 - z * u).toFixed(1)}`;
+  const paint = c => c.filter(v => v !== 1).length;
+  const face = (pts, cube, base) => `<polygon points="${pts.map(p => P(...p)).join(' ')}" fill="${(hl || []).includes(paint(cube)) ? '#ffd43b' : base}" stroke="#1d1442" stroke-width="2.5" stroke-linejoin="round"/>`;
+  let s = '';
+  for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++) s += face([[i, j, 3], [i + 1, j, 3], [i + 1, j + 1, 3], [i, j + 1, 3]], [i, j, 2], '#ff8787');
+  for (let j = 0; j < 3; j++) for (let k = 0; k < 3; k++) s += face([[3, j, k], [3, j + 1, k], [3, j + 1, k + 1], [3, j, k + 1]], [2, j, k], '#e03131');
+  for (let i = 0; i < 3; i++) for (let k = 0; k < 3; k++) s += face([[i, 3, k], [i + 1, 3, k], [i + 1, 3, k + 1], [i, 3, k + 1]], [i, 2, k], '#c92a2a');
+  return s;
+}
+function rejilla(rs) {      // the 2 × 3 grid with rectangles [row0, col0, row1, col1] drawn on it
+  const W = 100, X = 20, Y = 20, col = ['#e03131', '#1c7ed6', '#2f9e44', '#f08c00', '#ae3ec9', '#0c8599'];
+  let s = '';
+  for (let r = 0; r < 2; r++) for (let c = 0; c < 3; c++) s += `<rect x="${X + c * W}" y="${Y + r * W}" width="${W}" height="${W}" fill="#fff" stroke="#1d1442" stroke-width="4"/>`;
+  (rs || []).forEach(([r0, c0, r1, c1], k) => { const i = 7 + (k % 3) * 6;
+    s += `<rect class="pop" x="${X + c0 * W + i}" y="${Y + r0 * W + i}" width="${(c1 - c0 + 1) * W - 2 * i}" height="${(r1 - r0 + 1) * W - 2 * i}" rx="8" fill="${col[k % 6]}" fill-opacity=".2" stroke="${col[k % 6]}" stroke-width="5" style="animation-delay:${k * 160}ms"/>`; });
+  return s;
+}
 window.OL_BANK = [
 // ===================== NIVEL 1 · Pensador principiante =====================
 { id: 'calcetines', level: 1, emoji: '🧦', title: 'Calcetines a oscuras', cat: 'Pensar en el peor caso',
@@ -832,6 +862,262 @@ window.OL_BANK = [
     { clear: true, say: 'Del cero al noventa y nueve hay cien números: cincuenta parejas. Cincuenta por dieciocho: novecientos.', show: [{ t: 'eq', x: '50 parejas × 18 = **900**' }] },
     { say: 'Y no olvidemos el cien, que aporta un uno. Novecientos uno.', show: [{ t: 'eq', x: '900 + 1 = 901' }, { t: 'ans', x: '901' }] },
     { say: 'La idea clave: empareja cada número con el que le falta para noventa y nueve. Sus cifras siempre suman dieciocho.', show: [{ t: 'idea', x: '**Empareja** con lo que falta para 99: siempre **18**.' }] },
+  ] },
+// ===================== Batch 3 (21 Nov 2026): 3 more per level. Answers: verify3.py =====================
+// --- Nivel 1 ---
+{ id: 'ladrillo', level: 1, emoji: '🧱', title: 'El ladrillo misterioso', cat: 'Dibujar el problema',
+  q: 'Un ladrillo pesa **1 kg más medio ladrillo**.\n\n¿Cuántos kilos pesa un ladrillo **entero**?',
+  qSay: 'Un ladrillo pesa un kilo más medio ladrillo. ¿Cuántos kilos pesa un ladrillo entero?',
+  ask: '¿Cuántos kg pesa?', ph: 'Un número', ans: { num: 2, also: [1] },
+  traps: [{ v: 1.5, m: 'Cuidado: «medio ladrillo» no es medio kilo. ¿Cuánto pesa de verdad medio ladrillo?' }, { v: 1, m: 'Cuidado: «medio ladrillo» no es medio kilo (¡ni cero!). ¿Cuánto pesa de verdad medio ladrillo? Dibújalo.' }, { v: 5, m: 'Cuidado: «medio ladrillo» no es medio kilo. ¿Cuánto pesa de verdad medio ladrillo? Dibújalo partido en dos mitades.' }, { v: 3, m: 'Comprueba: si pesara 3 kg, medio ladrillo pesaría 1 kg y medio. ¿1 kg + 1 kg y medio da 3?' }, { v: 0.5, m: '¿Medio ladrillo pesa medio kilo? Dibuja el ladrillo partido en dos mitades.' }],
+  hints: ['**Dibuja** el ladrillo partido en **dos mitades** iguales.',
+    'El ladrillo entero = medio ladrillo + medio ladrillo. Y también = 1 kg + medio ladrillo. Compara las dos cosas.',
+    'Una mitad del dibujo es el «medio ladrillo». Entonces la **otra mitad** tiene que pesar…',
+    'Medio ladrillo pesa 1 kg. Las dos mitades pesan lo mismo. ¿Cuánto pesa el ladrillo entero?'],
+  answer: '2 kg', idea: 'Dibuja el ladrillo en **dos mitades**: una mitad es el «medio ladrillo», así que la otra mitad pesa **1 kg**.',
+  steps: ['Un ladrillo = medio ladrillo + medio ladrillo.', 'Un ladrillo = **1 kg** + medio ladrillo.', 'Comparando: la otra mitad pesa **1 kg**, así que medio ladrillo = 1 kg.', 'El ladrillo entero = 1 + 1 = **2 kg**. Comprueba: 1 kg + medio ladrillo (1 kg) = 2 kg ✓.'],
+  film: [
+    { clear: true, say: 'Un ladrillo pesa un kilo más medio ladrillo. Mucha gente dice enseguida: un kilo y medio. ¡Vamos a comprobarlo con un dibujo!', show: [{ t: 'h', x: '🧱 El ladrillo misterioso' }, { t: 'eq', k: 'e', x: '🧱 = 1 kg + medio 🧱' }] },
+    { say: 'Dibujamos el ladrillo partido en dos mitades iguales.', show: [{ t: 'row', k: 'r', items: ['#ffa94d|½', '#ffa94d|½'], gap: 300 }] },
+    { say: 'Una de las mitades es el medio ladrillo del problema. Así que la otra mitad tiene que ser el kilo.', show: [{ t: 'row', k: 'r', items: ['#ffa94d|½', '!1 kg'] }] },
+    { say: 'Pero las dos mitades pesan lo mismo. Así que la primera mitad también pesa un kilo.', show: [{ t: 'row', k: 'r', items: ['!1 kg', '!1 kg'] }, { t: 'eq', k: 'e', x: 'medio 🧱 = **1 kg**' }] },
+    { clear: true, say: 'Un kilo más un kilo: el ladrillo pesa dos kilos. Comprobamos: un kilo, más medio ladrillo, que es otro kilo, dos. ¡Cuadra!', show: [{ t: 'eq', x: '🧱 = 1 kg + 1 kg = **2 kg** ✓' }, { t: 'ans', x: '2 kg' }] },
+    { say: 'La idea clave: dibuja el problema. Con el dibujo se ve que medio ladrillo pesa un kilo.', show: [{ t: 'idea', x: 'Dibuja **dos mitades**: si una es «medio ladrillo», la otra pesa **1 kg**.' }] },
+  ] },
+
+{ id: 'campanas', level: 1, emoji: '🔔', title: 'Las campanadas', cat: 'Contar los espacios',
+  q: 'El reloj de la plaza da las **6** con **6 campanadas**. Desde la primera campanada hasta la última pasan **5 segundos**.\n\nCuando da las **12**, con **12 campanadas**, ¿cuántos segundos pasan desde la primera hasta la última?',
+  qSay: 'El reloj de la plaza da las seis con seis campanadas. Desde la primera campanada hasta la última pasan cinco segundos. Cuando da las doce, con doce campanadas, ¿cuántos segundos pasan desde la primera hasta la última?',
+  ask: '¿Cuántos segundos?', ph: 'Un número', ans: { num: 11, also: [12, 1, 5, 6] },
+  traps: [{ v: 10, m: 'Parece el doble… pero ¿cuántos **espacios** hay entre 6 campanadas? Dibújalas.' }, { v: 12, m: '¿Cuánto tiempo pasa entre una campanada y la siguiente? Cuenta los **espacios**, no las campanadas.' }, { v: 1, m: 'Ese es el tiempo entre dos campanadas seguidas. ¿Y desde la primera hasta la última?' }, { v: 13, m: 'Dibuja 12 campanadas en fila: ¿cuántos espacios hay entre ellas?' }],
+  hints: ['**Dibuja** las 6 campanadas como puntos en una línea.',
+    'Entre 6 campanadas, ¿cuántos **espacios** hay? En esos espacios pasan los 5 segundos.',
+    '6 campanadas → 5 espacios → cada espacio dura 1 segundo. ¿Cuántos espacios hay entre 12 campanadas?',
+    'Entre 12 campanadas hay un espacio menos que campanadas. Cada espacio, 1 segundo.'],
+  answer: '11 segundos', idea: 'El tiempo pasa en los **espacios** entre campanadas, y siempre hay **un espacio menos** que campanadas.',
+  steps: ['6 campanadas tienen **5** espacios → 5 segundos : 5 = **1 segundo** por espacio.', '12 campanadas tienen **11** espacios.', '11 × 1 segundo = **11 segundos** (¡no 10!).'],
+  film: [
+    { clear: true, say: 'A las seis, seis campanadas, y de la primera a la última pasan cinco segundos. Mucha gente piensa: doce es el doble de seis, así que diez segundos. Vamos a verlo.', show: [{ t: 'row', k: 'r', items: Array(6).fill('🔔'), gap: 200 }] },
+    { say: 'Fíjate en los espacios entre campanadas. Entre seis campanadas solo hay cinco espacios.', show: [{ t: 'row', k: 'r', sm: true, items: ['🔔', '!1', '🔔', '!2', '🔔', '!3', '🔔', '!4', '🔔', '!5', '🔔'], gap: 90 }] },
+    { say: 'Los cinco segundos se reparten en cinco espacios: un segundo cada uno.', show: [{ t: 'eq', x: '5 segundos : 5 espacios = **1 segundo**' }] },
+    { clear: true, say: 'A las doce hay doce campanadas. Y entre ellas, once espacios. Siempre un espacio menos que campanadas.', show: [{ t: 'row', sm: true, items: Array(12).fill('🔔'), gap: 80 }, { t: 'eq', x: '12 campanadas → **11** espacios' }] },
+    { say: 'Once espacios de un segundo: once segundos.', show: [{ t: 'eq', x: '11 × 1 = **11** segundos' }, { t: 'ans', x: '11 segundos' }] },
+    { clear: true, say: 'La idea clave: cuenta los espacios, no las campanadas. Siempre hay uno menos.', show: [{ t: 'ans', x: '11 segundos' }, { t: 'idea', x: 'Cuenta los **espacios**: siempre hay **uno menos** que campanadas.' }] },
+  ] },
+
+{ id: 'barco', level: 1, emoji: '🚢', title: 'La escalera del barco', cat: 'Imaginar la situación',
+  q: 'Un barco está en el puerto. Por un costado cuelga una **escalera de cuerda**, y **10 peldaños** quedan por encima del agua.\n\nSube la marea: el agua sube **lo que mide 1 peldaño cada hora**.\n\nDespués de **3 horas**, ¿cuántos peldaños quedan por encima del agua?',
+  qSay: 'Un barco está en el puerto. Por un costado cuelga una escalera de cuerda, y diez peldaños quedan por encima del agua. Sube la marea: el agua sube lo que mide un peldaño cada hora. Después de tres horas, ¿cuántos peldaños quedan por encima del agua?',
+  pic: `<svg viewBox="0 0 420 300">${barco(0)}</svg>`,
+  ask: '¿Cuántos peldaños fuera del agua?', ph: 'Un número', ans: { num: 10, also: [1, 3] },
+  traps: [{ v: 7, m: 'Has hecho la cuenta… pero ¿has imaginado la escena de verdad? Mira bien el dibujo.' }, { v: 13, m: 'El agua sube, no baja. Y el barco… ¿qué hace?' }, { v: 0, m: 'Has hecho la cuenta… pero ¿has imaginado la escena de verdad? Mira bien el dibujo.' }],
+  why: '¿Por qué?',
+  hints: ['Antes de hacer cuentas, **imagina la escena** de verdad: un barco en el puerto, y el agua subiendo.',
+    'Mira el dibujo: el **muro** del puerto está fijo en el suelo. ¿Y el barco? ¿Está fijo?',
+    'Un barco **flota**. ¿Qué le pasa a algo que flota cuando sube el agua?',
+    'El barco sube con el agua, y la escalera está atada al barco. ¿Cambia el número de peldaños que quedan fuera?'],
+  answer: '10 peldaños (el barco flota y sube con el agua)', idea: 'Antes de hacer cuentas, **imagina la situación**: el barco flota, sube con la marea, y la escalera sube con él.',
+  steps: ['El barco **flota**: cuando el agua sube, el barco sube lo mismo.', 'La escalera está atada al barco: también sube lo mismo.', 'Siguen quedando **10** peldaños fuera. (10 − 3 = 7 solo sería verdad si la escalera estuviera clavada al muelle.)'],
+  film: [
+    { clear: true, say: 'Un barco en el puerto, con una escalera de cuerda colgando. Diez peldaños fuera del agua. A la izquierda, el muro del puerto, con marcas para medir la marea.', show: [{ t: 'svg', vb: '0 0 420 300', h: '66%', x: barco(0) }] },
+    { say: 'Sube la marea: un peldaño cada hora. Mucha gente calcula: diez menos tres, siete. Pero, ¿qué hace un barco cuando sube el agua?', show: [{ t: 'p', x: '10 − 3 = 7? 🤔' }] },
+    { clear: true, say: '¡Flota! El barco sube con el agua. Y la escalera, que está atada al barco, sube también.', show: [{ t: 'svg', vb: '0 0 420 300', h: '66%', x: barco(3) }] },
+    { say: 'En el muro del puerto, el agua ha subido tres marcas. Pero en la escalera siguen quedando diez peldaños fuera.', show: [{ t: 'ans', x: '10 peldaños' }] },
+    { clear: true, say: 'La idea clave: antes de hacer cuentas, imagina lo que pasa de verdad.', show: [{ t: 'ans', x: '10 peldaños' }, { t: 'idea', x: 'Antes de calcular, **imagina la escena**: el barco **flota** y sube con el agua.' }] },
+  ] },
+
+// --- Nivel 2 ---
+{ id: 'canicas', level: 2, emoji: '🔵', title: 'Las canicas', cat: 'Lo que no cambia',
+  q: 'Ana tiene **25 canicas** y Bea tiene **5**. Ana le da algunas canicas a Bea, y ahora **Bea tiene el doble que Ana**.\n\n¿Cuántas canicas le ha dado Ana a Bea?',
+  qSay: 'Ana tiene veinticinco canicas y Bea tiene cinco. Ana le da algunas canicas a Bea, y ahora Bea tiene el doble que Ana. ¿Cuántas canicas le ha dado Ana a Bea?',
+  ask: '¿Cuántas le ha dado?', ph: 'Un número', ans: { num: 15, also: [10, 20, 30, 3] },
+  traps: [{ v: 10, m: 'Esas son las que le **quedan** a Ana. ¿Cuántas le ha **dado**?' }, { v: 20, m: 'Esas son las que tiene Bea al final. ¿Cuántas le ha dado Ana?' }, { v: 5, m: 'Comprueba: si Ana le da 5, Ana tiene 20 y Bea 10. ¿Bea tiene el doble?' }, { v: 30, m: 'Ese es el total de canicas. Ahora piensa cómo se reparte al final.' }],
+  why: '¿Cómo lo has pensado?',
+  hints: ['Hay algo que **no cambia** cuando Ana le da canicas a Bea. ¿Qué es?',
+    'El **total** de canicas no cambia: 25 + 5 = 30.',
+    'Al final Bea tiene el doble que Ana: si Ana tiene **una parte**, Bea tiene **dos partes** iguales. 30 canicas en 3 partes…',
+    'Al final Ana tiene 10 y Bea 20. Ana empezó con 25: ¿cuántas ha dado?'],
+  answer: '15 canicas (al final Ana tiene 10 y Bea 20)', idea: 'Cuando las cosas pasan de uno a otro, **el total no cambia**. Empieza por el total y repártelo.',
+  steps: ['Total: 25 + 5 = **30** canicas, y no cambia.', 'Al final, Ana = 1 parte y Bea = 2 partes → 3 partes = 30 → 1 parte = **10**.', 'Ana acaba con 10 y Bea con 20 (el doble ✓).', 'Ana tenía 25 y acaba con 10 → ha dado 25 − 10 = **15**.'],
+  film: [
+    { clear: true, say: 'Ana tiene veinticinco canicas y Bea cinco. Ana le da algunas a Bea, y al final Bea tiene el doble que Ana.', show: [{ t: 'tbl', k: 't', head: true, rows: [['', 'Ana', 'Bea'], ['Al principio', 25, 5], ['Al final', '?', '?']] }] },
+    { say: 'Las canicas pasan de una a otra, pero no desaparecen. El total no cambia: treinta.', show: [{ t: 'eq', k: 'e', x: 'Total: 25 + 5 = **30**, siempre' }] },
+    { clear: true, say: 'Al final, Bea tiene el doble. Si Ana tiene una parte, Bea tiene dos partes iguales. Tres partes en total.', show: [{ t: 'row', k: 'r', items: ['#ffc9c9|A', '#a5d8ff|B', '#a5d8ff|B'], gap: 250 }, { t: 'eq', k: 'e', x: '3 partes = 30 canicas' }] },
+    { say: 'Treinta entre tres: diez cada parte. Ana tiene diez y Bea veinte.', show: [{ t: 'row', k: 'r', items: ['#ffc9c9|10', '#a5d8ff|10', '#a5d8ff|10'] }, { t: 'eq', k: 'e', x: '30 : 3 = **10** → Ana 10, Bea 20' }] },
+    { clear: true, say: 'Ana empezó con veinticinco y acaba con diez. Le ha dado quince.', show: [{ t: 'tbl', head: true, rows: [['', 'Ana', 'Bea'], ['Al principio', 25, 5], ['Al final', '!10', '!20']] }, { t: 'eq', x: '25 − 10 = **15**' }, { t: 'ans', x: '15 canicas' }] },
+    { clear: true, say: 'La idea clave: cuando las cosas pasan de uno a otro, el total no cambia. Empieza por el total.', show: [{ t: 'ans', x: '15 canicas' }, { t: 'idea', x: 'Pasan de uno a otro → **el total no cambia**. Empieza por ahí.' }] },
+  ] },
+
+{ id: 'torneo', level: 2, emoji: '🎾', title: 'El torneo de tenis', cat: 'Contar de otra forma',
+  q: 'En un torneo de tenis hay **32 jugadores**. En cada partido juegan dos, y **el que pierde queda eliminado**. Se juega hasta que solo queda **el campeón**.\n\n¿Cuántos **partidos** se juegan en total?',
+  qSay: 'En un torneo de tenis hay treinta y dos jugadores. En cada partido juegan dos, y el que pierde queda eliminado. Se juega hasta que solo queda el campeón. ¿Cuántos partidos se juegan en total?',
+  ask: '¿Cuántos partidos?', ph: 'Un número', ans: { num: 31, also: [16, 8, 4, 2, 1, 32] },
+  traps: [{ v: 16, m: 'Esos son los partidos de la **primera ronda**. ¿Y después?' }, { v: 32, m: 'Casi. ¿El campeón pierde algún partido?' }, { v: 30, m: 'Revisa las rondas: 16, 8, 4, 2… ¿y la final?' }, { v: 64, m: 'En cada partido juegan dos, pero solo **uno** queda eliminado.' }, { v: 15, m: '¿Has contado los 16 partidos de la primera ronda?' }, { v: 63, m: 'Has sumado **jugadores**. En cada partido juegan dos: ¿cuántos **partidos** hay en cada ronda?' }, { v: 62, m: 'Has sumado **jugadores**. En cada partido juegan dos: ¿cuántos **partidos** hay en cada ronda?' }],
+  why: '¿Cómo lo has contado?',
+  hints: ['Prueba primero con un torneo pequeño, de **4 jugadores**. ¿Cuántos partidos hay?',
+    'Con 32 jugadores, en la primera ronda hay 16 partidos y quedan 16 jugadores. Sigue ronda a ronda.',
+    'Hay un truco más rápido: en cada partido queda eliminado **un** jugador. ¿Cuántos jugadores tienen que quedar eliminados?',
+    'Quedan eliminados todos menos el campeón: 32 − 1. Y cada partido elimina a uno.'],
+  answer: '31 partidos', idea: 'Cada partido elimina **a un jugador**. Para que quede solo el campeón hay que eliminar a 31 → **31 partidos**.',
+  steps: ['Ronda a ronda: 16 + 8 + 4 + 2 + 1 = **31** partidos.', 'Más rápido: cada partido elimina a **un** jugador.', 'Hay que eliminar a todos menos al campeón: 32 − 1 = **31** → 31 partidos.', '¡Con 1000 jugadores serían 999 partidos, sin contar rondas!'],
+  film: [
+    { clear: true, say: 'Treinta y dos jugadores. En cada partido, el que pierde se va a casa. Hasta que solo queda el campeón.', show: [{ t: 'h', x: '🎾 Torneo de 32 jugadores' }, { t: 'eq', x: '32 jugadores → 🏆 1 campeón' }] },
+    { say: 'Podemos contar ronda a ronda. Primera ronda, dieciséis partidos. Quedan dieciséis jugadores: ocho partidos. Luego cuatro, dos, y la final.', show: [{ t: 'tbl', head: true, rows: [['Ronda', '1.ª', '2.ª', 'Cuartos', 'Semifinal', 'Final'], ['Partidos', 16, 8, 4, 2, 1]] }] },
+    { say: 'Dieciséis más ocho más cuatro más dos más uno: treinta y uno.', show: [{ t: 'eq', x: '16 + 8 + 4 + 2 + 1 = **31**' }] },
+    { clear: true, say: 'Pero hay un truco más rápido. En cada partido pierde uno, y se va a casa. Un partido, un eliminado.', show: [{ t: 'eq', x: '1 partido = **1** eliminado' }] },
+    { say: 'Al final se han ido todos menos el campeón: treinta y uno. Así que hubo treinta y un partidos.', show: [{ t: 'eq', x: '32 − 1 = **31** eliminados → **31** partidos' }, { t: 'ans', x: '31 partidos' }] },
+    { clear: true, say: 'La idea clave: cuenta de otra forma. En vez de contar partidos, cuenta a los que pierden.', show: [{ t: 'ans', x: '31 partidos' }, { t: 'idea', x: 'Cuenta a los que **pierden**: cada partido elimina a **uno**.' }] },
+  ] },
+
+{ id: 'botella', level: 2, emoji: '🫙', title: 'El bote de agua', cat: 'Comparar',
+  q: 'Un bote **lleno** de agua pesa **1000 gramos**. El mismo bote **lleno hasta la mitad** pesa **600 gramos**.\n\n¿Cuánto pesa el bote **vacío**?',
+  qSay: 'Un bote lleno de agua pesa mil gramos. El mismo bote, lleno hasta la mitad, pesa seiscientos gramos. ¿Cuánto pesa el bote vacío?',
+  ask: '¿Cuántos gramos?', ph: 'Un número', ans: { num: 200, also: [400, 800, 1000, 600, 2] },
+  traps: [{ v: 400, m: 'Eso pesa **la mitad del agua**. ¿Y el bote solo?' }, { v: 500, m: 'La mitad de 1000 es 500… pero ¡el bote también pesa algo!' }, { v: 800, m: 'Eso pesa toda el agua. ¿Y el bote solo?' }, { v: 100, m: 'Comprueba: si el bote pesara 100 g, toda el agua pesaría 900 g. Entonces, lleno hasta la mitad, ¿pesaría 600 g?' }],
+  hints: ['Compara los dos botes: ¿qué tiene uno que no tenga el otro?',
+    'La diferencia, 1000 − 600 = 400 gramos, es lo que pesa **la mitad del agua**.',
+    'Si la mitad del agua pesa 400 g, ¿cuánto pesa **toda** el agua?',
+    'Toda el agua pesa 800 g, y el bote lleno pesa 1000 g. ¿Qué queda si quitas el agua?'],
+  answer: '200 gramos', idea: '**Compara** los dos botes: la diferencia es la mitad del agua (400 g). Con eso sabes lo que pesa el agua, y lo que sobra es el bote.',
+  steps: ['Lleno − a la mitad = 1000 − 600 = **400 g** = la mitad del agua.', 'Toda el agua: 2 × 400 = **800 g**.', 'Bote vacío: 1000 − 800 = **200 g**.', 'Comprueba: 200 + 400 = 600 ✓.'],
+  film: [
+    { clear: true, say: 'Lleno, mil gramos. A la mitad, seiscientos. Mucha gente dice: la mitad de mil, quinientos. ¡Pero el bote también pesa!', show: [{ t: 'tbl', head: true, rows: [['', 'Pesa'], ['🫙 + 💧💧 lleno', '1000 g'], ['🫙 + 💧 a la mitad', '600 g']] }] },
+    { say: 'Comparamos. El bote lleno tiene la mitad del agua de más. Esa mitad del agua pesa mil menos seiscientos: cuatrocientos gramos.', show: [{ t: 'eq', x: '💧 = 1000 − 600 = **400 g**' }] },
+    { say: 'Así que toda el agua, las dos mitades, pesa ochocientos gramos.', show: [{ t: 'eq', x: '💧💧 = 2 × 400 = **800 g**' }] },
+    { clear: true, say: 'El bote lleno pesa mil. Si quitamos los ochocientos del agua, queda el bote: doscientos gramos.', show: [{ t: 'eq', x: '🫙 = 1000 − 800 = **200 g**' }, { t: 'ans', x: '200 g' }] },
+    { say: 'Comprobamos: doscientos del bote, más cuatrocientos de la mitad del agua, seiscientos. ¡Cuadra!', show: [{ t: 'eq', x: '200 + 400 = 600 ✓' }] },
+    { clear: true, say: 'La idea clave: compara las dos situaciones. La diferencia te dice cuánto pesa lo que ha cambiado.', show: [{ t: 'ans', x: '200 g' }, { t: 'idea', x: '**Compara**: la diferencia es lo que pesa el agua que falta.' }] },
+  ] },
+
+// --- Nivel 3 ---
+{ id: 'gallinas', level: 3, emoji: '🐔', title: 'Las gallinas ponedoras', cat: 'Ir a uno',
+  q: '**3 gallinas** ponen **3 huevos** en **3 días**.\n\nA ese mismo ritmo, ¿cuántos huevos ponen **6 gallinas** en **6 días**?',
+  qSay: 'Tres gallinas ponen tres huevos en tres días. A ese mismo ritmo, ¿cuántos huevos ponen seis gallinas en seis días?',
+  ask: '¿Cuántos huevos?', ph: 'Un número', ans: { num: 12, also: [1, 2, 3, 6] },
+  traps: [{ v: 6, m: '¡Es lo que parece! Comprueba con **una sola** gallina: ¿cuántos huevos pone en 3 días?' }, { v: 36, m: 'Ve primero a **una** gallina: ¿cuántos huevos pone en 3 días?' }, { v: 24, m: 'Revisa: ¿cuántos huevos pone **una** gallina en 6 días?' }, { v: 18, m: 'Paso a paso: primero, ¿cuántos huevos pone **una** gallina en 3 días?' }],
+  hints: ['Empieza por **una sola gallina**. Si 3 gallinas ponen 3 huevos en 3 días, ¿cuántos pone **una** gallina en esos 3 días?',
+    'Una gallina pone **1 huevo cada 3 días**. ¿Cuántas veces caben 3 días en 6 días?',
+    '¿Cuántos huevos pone **una** gallina en 6 días? Cuando lo sepas, piensa en las 6 gallinas.',
+    'Una gallina pone 2 huevos en 6 días. Tienes 6 gallinas: multiplica.'],
+  answer: '12 huevos', idea: 'Ve primero **a uno**: ¿cuánto hace **una** gallina? Después, multiplica por los días y por las gallinas.',
+  steps: ['3 gallinas, 3 huevos → cada gallina pone **1 huevo cada 3 días**.', 'En 6 días, cada gallina pone **2** huevos.', '6 gallinas × 2 huevos = **12** huevos.', '(Doble de gallinas → doble de huevos; doble de días → doble otra vez: 3 × 2 × 2 = 12.)'],
+  film: [
+    { clear: true, say: 'Tres gallinas, tres huevos, tres días. Mucha gente contesta: seis gallinas, seis días, seis huevos. ¡Pero no!', show: [{ t: 'row', items: ['🐔', '🐔', '🐔'] }, { t: 'eq', x: '3 gallinas · 3 días → 🥚🥚🥚' }] },
+    { say: 'Vamos primero a una sola gallina. Si tres gallinas ponen tres huevos, cada una pone uno. Una gallina pone un huevo cada tres días.', show: [{ t: 'eq', k: 'e', x: '🐔 · 3 días → 🥚' }] },
+    { say: 'En seis días, el doble de tiempo, una gallina pone dos huevos.', show: [{ t: 'eq', k: 'e', x: '🐔 · 6 días → 🥚🥚' }] },
+    { clear: true, say: 'Y tenemos seis gallinas, cada una con dos huevos. Seis por dos, doce.', show: [{ t: 'row', items: Array(6).fill('🐔'), gap: 100 }, { t: 'row', sm: true, items: Array(12).fill('🥚'), gap: 70 }, { t: 'eq', x: '6 × 2 = **12** huevos' }] },
+    { clear: true, say: 'Fíjate: doble de gallinas, doble de huevos. Doble de días, doble otra vez. Tres, por dos, por dos: doce.', show: [{ t: 'eq', x: '3 × 2 × 2 = **12**' }, { t: 'ans', x: '12 huevos' }] },
+    { clear: true, say: 'La idea clave: ve primero a uno. ¿Cuánto hace una sola gallina? Luego, multiplica.', show: [{ t: 'ans', x: '12 huevos' }, { t: 'idea', x: 'Ve primero **a uno**: ¿cuánto pone **una** gallina? Luego multiplica.' }] },
+  ] },
+
+{ id: 'nidosnitres', level: 3, emoji: '🎯', title: 'Ni entre 2 ni entre 3', cat: 'Buscar el patrón',
+  q: '¿Cuántos números del **1 al 100** **no** se pueden dividir exactamente **ni entre 2 ni entre 3**?\n(Por ejemplo, el 7 cuenta: 7 : 2 y 7 : 3 tienen resto. El 9 no cuenta: 9 : 3 = 3, exacto.)',
+  qSay: '¿Cuántos números del uno al cien no se pueden dividir exactamente, ni entre dos, ni entre tres? Por ejemplo, el siete cuenta: siete entre dos y siete entre tres tienen resto. El nueve no cuenta: nueve entre tres es tres, exacto.',
+  ask: '¿Cuántos números?', ph: 'Un número', ans: { num: 33, also: [1, 2, 3, 5, 6, 16, 32, 96, 97, 100] },
+  traps: [{ v: 17, m: 'Has quitado los de la tabla del 2 y los de la del 3… pero algunos, como el 6 o el 12, ¡los has quitado **dos veces**!' }, { v: 50, m: 'Esos son los que no se dividen entre 2. Pero algunos se dividen entre 3, como el 9 o el 15.' }, { v: 67, m: 'Esos son los que **sí** se dividen entre 2 o entre 3. Te preguntamos por los otros.' }, { v: 32, m: 'Casi. Revisa el final: ¿qué pasa con 97, 98, 99 y 100?' }, { v: 34, m: 'Casi. Revisa el final: ¿qué pasa con 97, 98, 99 y 100?' }, { v: 16, m: 'Esos son los **grupos** de 6. ¿Cuántos números valen en cada grupo?' }],
+  why: '¿Cómo los has contado?',
+  hints: ['Mira los números **de 6 en 6**: del 1 al 6, ¿cuáles valen?',
+    'Del 1 al 6 solo valen el **1** y el **5**. Del 7 al 12, el 7 y el 11. ¡Siempre **2 de cada 6**!',
+    'Del 1 al 96 hay 96 : 6 = 16 grupos de 6. ¿Cuántos números valen ahí? Luego mira los que faltan: 97, 98, 99 y 100.',
+    'En los 16 grupos valen 16 × 2 = 32. Ahora revisa 97, 98, 99 y 100 uno a uno.'],
+  answer: '33 números', idea: 'Busca el **patrón que se repite**: en cada grupo de 6 números seguidos, solo 2 no se dividen ni entre 2 ni entre 3.',
+  steps: ['Del 1 al 6 valen solo **1 y 5**. Y el patrón se repite cada 6: 7 y 11, 13 y 17…', 'Del 1 al 96 hay 96 : 6 = **16** grupos → 16 × 2 = **32** números.', 'Quedan 97, 98, 99, 100: 98 y 100 se dividen entre 2 y 99 entre 3 → solo vale el **97**.', 'Total: 32 + 1 = **33**.'],
+  film: [
+    { clear: true, say: 'Escribimos los números de seis en seis. Del uno al seis, ¿cuáles no se dividen ni entre dos ni entre tres?', show: [{ t: 'grid', k: 'g', n: 18, cols: 6 }] },
+    { say: 'El dos, el cuatro y el seis se dividen entre dos. El tres, entre tres. Solo quedan el uno y el cinco.', show: [{ t: 'grid', k: 'g', n: 18, cols: 6, hl: [1, 5], off: [2, 3, 4, 6] }] },
+    { say: 'Y en cada fila pasa lo mismo: siempre quedan dos, en las mismas columnas. Siete y once. Trece y diecisiete.', show: [{ t: 'grid', k: 'g', n: 18, cols: 6, hl: [1, 5, 7, 11, 13, 17], off: [2, 3, 4, 6, 8, 9, 10, 12, 14, 15, 16, 18] }] },
+    { clear: true, say: 'Del uno al noventa y seis hay dieciséis filas de seis. Dieciséis por dos: treinta y dos.', show: [{ t: 'eq', x: '96 : 6 = **16** filas' }, { t: 'eq', x: '16 × 2 = **32**' }] },
+    { say: 'Quedan noventa y siete, noventa y ocho, noventa y nueve y cien. El noventa y ocho y el cien son pares. El noventa y nueve se divide entre tres. Solo vale el noventa y siete.', show: [{ t: 'row', items: ['+97', '~98', '~99', '~100'] }] },
+    { clear: true, say: 'Treinta y dos más uno: treinta y tres números.', show: [{ t: 'eq', x: '32 + 1 = **33**' }, { t: 'ans', x: '33 números' }] },
+    { say: 'La idea clave: busca el patrón que se repite, cuenta un grupo y multiplica. Y revisa lo que sobra al final.', show: [{ t: 'idea', x: 'Busca el **patrón**: 2 de cada 6. Y revisa **el final**.' }] },
+  ] },
+
+{ id: 'producto', level: 3, emoji: '✖️', title: 'El mayor producto', cat: 'Construir el mejor número',
+  q: 'Con las cifras **1, 2, 3 y 4** (usando cada cifra **una sola vez**) formas **dos números de dos cifras** y los **multiplicas**.\n\n¿Cuál es el **mayor resultado** posible?',
+  qSay: 'Con las cifras uno, dos, tres y cuatro, usando cada cifra una sola vez, formas dos números de dos cifras, y los multiplicas. ¿Cuál es el mayor resultado posible?',
+  ask: '¿Cuál es el mayor resultado?', ph: 'Un número', ans: { num: 1312, also: [41, 32, 42, 31, 1302, 43, 21, 903] },
+  traps: [{ v: 1302, m: '¡Muy cerca! Prueba a cambiar de sitio las cifras de las **unidades**.' }, { v: 903, m: 'Pon las cifras grandes en las **decenas**.' }, { v: 4321, m: 'Tienen que ser **dos** números de dos cifras, y multiplicarlos.' }, { v: 1271, m: 'Revisa: ¿has usado cada cifra una sola vez?' }],
+  why: '¿Cómo sabes que es el mayor?',
+  hints: ['Para que el producto sea grande, ¿dónde tienen que ir las cifras grandes: en las **decenas** o en las unidades?',
+    'El 4 y el 3 van en las decenas: 4_ × 3_. Quedan el 1 y el 2, y hay **dos formas** de ponerlos. ¡Prueba las dos!',
+    'Las dos formas son 42 × 31 y 41 × 32. Calcula las dos.',
+    '42 × 31 = 1302. Ahora calcula 41 × 32 y compara.'],
+  answer: '1312 (41 × 32)', idea: 'Cifras grandes en las **decenas**. Y si dos números suman lo mismo, cuanto **más parecidos** sean, mayor es su producto.',
+  steps: ['Las decenas valen más → el 4 y el 3 van delante: 4_ × 3_.', 'Dos formas para el 1 y el 2: 42 × 31 = 1302 y 41 × 32 = **1312**.', 'Gana **41 × 32**: los dos suman 73, pero 41 y 32 están más igualados que 42 y 31.', 'Las demás opciones son menores: por ejemplo, 43 × 21 = 903.'],
+  film: [
+    { clear: true, say: 'Cifras uno, dos, tres y cuatro. Dos números de dos cifras, y los multiplicamos. ¿Cuál es el mayor resultado?', show: [{ t: 'row', items: ['1', '2', '3', '4'] }] },
+    { say: 'Las decenas valen diez veces más. Así que el cuatro y el tres van delante.', show: [{ t: 'eq', k: 'e', x: '**4**_ × **3**_' }] },
+    { say: 'Quedan el uno y el dos. Primera forma: cuarenta y dos por treinta y uno. Sale mil trescientos dos.', show: [{ t: 'eq', k: 'e', x: '42 × 31 = 1302' }] },
+    { say: 'Segunda forma: cuarenta y uno por treinta y dos. Sale mil trescientos doce. ¡Un poco más!', show: [{ t: 'eq', k: 'e2', x: '41 × 32 = **1312**' }, { t: 'ans', x: '1312' }] },
+    { clear: true, say: '¿Por qué gana? Las dos parejas suman setenta y tres. Pero cuarenta y uno y treinta y dos están más igualados. Pasa siempre: cinco por cinco, veinticinco, es más que nueve por uno, nueve.', show: [{ t: 'eq', x: '42 + 31 = 73 · 41 + 32 = 73' }, { t: 'p', x: 'Misma suma: gana la pareja **más igualada** (5 × 5 = 25 > 9 × 1 = 9)' }] },
+    { clear: true, say: 'La idea clave: las cifras grandes, delante. Y si suman lo mismo, cuanto más parecidos son los números, mayor es el producto.', show: [{ t: 'ans', x: '1312' }, { t: 'idea', x: 'Grandes **delante**; y, con la misma suma, gana la pareja **más igualada**.' }] },
+  ] },
+
+// --- Nivel 4 ---
+{ id: 'cubo', level: 4, emoji: '🧊', title: 'El cubo pintado', cat: 'Ver en 3D',
+  q: 'Un **cubo grande** está hecho con **27 cubitos** (3 × 3 × 3). Pintamos de rojo **todas sus caras por fuera**, y después lo separamos en los 27 cubitos.\n\n¿Cuántos cubitos tienen **exactamente 2 caras** pintadas?',
+  qSay: 'Un cubo grande está hecho con veintisiete cubitos, tres por tres por tres. Pintamos de rojo todas sus caras por fuera, y después lo separamos en los veintisiete cubitos. ¿Cuántos cubitos tienen exactamente dos caras pintadas?',
+  pic: `<svg viewBox="0 0 300 320">${cubo([])}</svg>`,
+  ask: '¿Cuántos cubitos?', ph: 'Un número', ans: { num: 12, also: [8, 6, 1, 27, 2, 3, 4] },
+  traps: [{ v: 8, m: 'Esos son los de las **esquinas**: tienen 3 caras pintadas.' }, { v: 6, m: 'Esos son los del **centro de cada cara**: tienen 1 sola cara pintada.' }, { v: 24, m: 'Cuidado: cada borde lo comparten **dos** caras. ¿Has contado algún cubito dos veces?' }, { v: 1, m: 'Ese es el del centro, escondido: no tiene ninguna cara pintada.' }, { v: 9, m: 'Esos son los que se ven en el dibujo. ¡Algunos están escondidos detrás!' }, { v: 26, m: 'Esos son todos los que tienen **alguna** cara pintada. ¿Cuántos tienen **exactamente 2**?' }, { v: 4, m: 'Esos son los bordes de **una** cara. ¡El cubo tiene más caras y más bordes!' }],
+  hints: ['Piensa **dónde** está cada cubito: en una esquina, en el medio de un **borde** (arista), en el centro de una cara, o escondido dentro.',
+    'Los de las **esquinas** tienen 3 caras pintadas. Los del **centro de una cara**, 1. ¿Y los del medio de un borde?',
+    'En el medio de cada borde (arista) del cubo hay un cubito con 2 caras pintadas. ¿Cuántas aristas tiene un cubo?',
+    'Cuenta las aristas: 4 arriba, 4 abajo y 4 de pie.'],
+  answer: '12 cubitos', idea: 'Clasifica cada cubito por **dónde está**: esquina (3 caras), arista (2), centro de cara (1), dentro (0). Los de 2 caras están en las **12 aristas**.',
+  steps: ['Esquinas: **8** cubitos con 3 caras pintadas.', 'Medio de cada arista: **12** aristas → **12** cubitos con 2 caras.', 'Centro de cada cara: **6** cubitos con 1 cara.', 'Dentro: **1** sin pintar. Comprueba: 8 + 12 + 6 + 1 = 27 ✓.'],
+  film: [
+    { clear: true, say: 'Un cubo de tres por tres por tres, veintisiete cubitos, pintado por fuera. ¿Cuántos cubitos tienen exactamente dos caras pintadas?', show: [{ t: 'svg', k: 'c', vb: '0 0 300 320', h: '62%', x: cubo([]) }] },
+    { say: 'Miremos dónde está cada cubito. En las esquinas hay ocho cubitos, cada uno con tres caras pintadas. Aquí ves siete; el octavo está detrás, abajo.', show: [{ t: 'svg', k: 'c', vb: '0 0 300 320', h: '62%', x: cubo([3]) }, { t: 'p', k: 'p', x: 'Esquinas: **8** cubitos con 3 caras' }] },
+    { say: 'En el centro de cada cara hay un cubito con una sola cara pintada. Aquí ves tres; los otros tres están en las caras de detrás. Seis caras, seis cubitos.', show: [{ t: 'svg', k: 'c', vb: '0 0 300 320', h: '62%', x: cubo([1]) }, { t: 'p', k: 'p', x: 'Centro de cada cara: **6** con 1 cara' }] },
+    { say: 'Y en el medio de cada arista, es decir, de cada borde, hay un cubito con dos caras pintadas. Aquí ves nueve; otros tres están escondidos detrás.', show: [{ t: 'svg', k: 'c', vb: '0 0 300 320', h: '62%', x: cubo([2]) }, { t: 'p', k: 'p', x: 'Medio de cada arista: **2** caras' }] },
+    { clear: true, say: 'Un cubo tiene cuatro aristas arriba, cuatro abajo, y cuatro de pie. Doce aristas, doce cubitos.', show: [{ t: 'eq', x: '4 + 4 + 4 = **12** aristas' }, { t: 'ans', x: '12 cubitos' }] },
+    { clear: true, say: 'Comprobamos: ocho esquinas, doce aristas, seis caras, y uno escondido dentro. Ocho más doce más seis más uno: veintisiete. ¡Están todos!', show: [{ t: 'tbl', head: true, rows: [['Dónde', 'Esquina', 'Arista', 'Cara', 'Dentro'], ['Caras pintadas', 3, '!2', 1, 0], ['Cubitos', 8, '!12', 6, 1]] }, { t: 'eq', x: '8 + 12 + 6 + 1 = 27 ✓' }] },
+    { clear: true, say: 'La idea clave: clasifica cada pieza por dónde está, y comprueba que no te falta ninguna.', show: [{ t: 'ans', x: '12 cubitos' }, { t: 'idea', x: 'Clasifica por **dónde está** cada cubito, y comprueba que suman **27**.' }] },
+  ] },
+
+{ id: 'carrera', level: 4, emoji: '🏃', title: 'La carrera de 100 metros', cat: 'Pensar en un momento',
+  q: 'En una carrera de **100 metros**, cuando **Ana** llega a la meta, **Bea** va por el metro **90**. En otra carrera de 100 metros, cuando **Bea** llega a la meta, **Carla** va por el metro **90**.\n\nAhora corren **las tres juntas**, cada una a la misma velocidad de siempre. Cuando Ana llega a la meta, ¿**cuántos metros le faltan a Carla**?',
+  qSay: 'En una carrera de cien metros, cuando Ana llega a la meta, Bea va por el metro noventa. En otra carrera de cien metros, cuando Bea llega a la meta, Carla va por el metro noventa. Ahora corren las tres juntas, cada una a la misma velocidad de siempre. Cuando Ana llega a la meta, ¿cuántos metros le faltan a Carla?',
+  ask: '¿Cuántos metros le faltan a Carla?', ph: 'Un número', ans: { num: 19, also: [81, 90, 100, 9, 10] },
+  traps: [{ v: 20, m: '¡Es lo que parece! Pero Carla va 10 m detrás de Bea solo cuando **Bea llega a la meta**. Cuando Ana llega, Bea solo lleva 90 m…' }, { v: 81, m: 'Ahí va Carla cuando Ana llega a la meta. ¿Cuántos metros le **faltan**?' }, { v: 10, m: 'Eso le falta a **Bea**. ¿Y a Carla?' }, { v: 18, m: 'Revisa: por cada 10 metros que corre Bea, Carla corre 9. ¿Cuánto corre Carla mientras Bea corre 90?' }, { v: 80, m: 'Revisa: por cada 10 metros que corre Bea, Carla corre 9. ¿Cuánto corre Carla mientras Bea corre 90?' }],
+  why: '¿Cómo lo has pensado?',
+  hints: ['Piensa en el momento en que **Ana llega a la meta**: ¿dónde está Bea? ¿Y Carla?',
+    'Cuando Ana llega, Bea lleva **90 m**. Y cuando Bea corre 100 m, Carla corre 90 m: por cada **10 m** de Bea, Carla corre **9 m**.',
+    'Mientras Bea corre 90 m (9 veces 10 m), ¿cuántos metros corre Carla?',
+    'Carla corre 9 veces 9 metros. ¿Cuánto le falta para llegar a 100?'],
+  answer: '19 metros (Carla va por el metro 81)', idea: 'Carla **no** va siempre 10 m detrás de Bea: va 1 m detrás por cada 10 m que corre Bea. Cuando Ana llega, Bea lleva 90 m y Carla **81 m**.',
+  steps: ['Cuando Ana llega a la meta (100 m), Bea lleva **90 m**.', 'Carla corre **9 m** por cada **10 m** de Bea (90 de cada 100).', 'Mientras Bea corre 90 m = 9 × 10 m, Carla corre 9 × 9 = **81 m**.', 'A Carla le faltan 100 − 81 = **19 m**, no 20.'],
+  film: [
+    { clear: true, say: 'Ana le saca diez metros a Bea, y Bea le saca diez metros a Carla. Mucha gente piensa: a Carla le faltan veinte. ¡Vamos a ver!', show: [{ t: 'tbl', k: 't', head: true, rows: [['', 'Ana', 'Bea', 'Carla'], ['Cuando Ana llega', '100 m', '90 m', '?']] }] },
+    { say: 'Cuando Bea corre cien metros, Carla corre noventa. Es decir, por cada diez metros de Bea, Carla corre nueve.', show: [{ t: 'eq', k: 'e', x: 'Bea 10 m → Carla **9 m**' }] },
+    { say: 'Cuando Ana llega a la meta, Bea ha corrido noventa metros: nueve veces diez. Así que Carla ha corrido nueve veces nueve: ochenta y uno.', show: [{ t: 'eq', k: 'e', x: 'Bea 90 m = 9 × 10 → Carla 9 × 9 = **81 m**' }] },
+    { say: 'Carla va por el metro ochenta y uno. Le faltan diecinueve metros.', show: [{ t: 'tbl', k: 't', head: true, rows: [['', 'Ana', 'Bea', 'Carla'], ['Cuando Ana llega', '100 m', '90 m', '!81 m']] }, { t: 'eq', k: 'e', x: '100 − 81 = **19 m**' }, { t: 'ans', x: '19 metros' }] },
+    { clear: true, say: '¿Por qué no veinte? Porque Carla va diez metros detrás de Bea solo cuando Bea llega a la meta. Cuando Bea lleva noventa, Carla va solo nueve metros detrás. Bea, diez detrás de Ana; Carla, nueve detrás de Bea: diez más nueve, diecinueve.', show: [{ t: 'eq', x: 'Bea 90 m · Carla 81 m → **9 m** detrás' }, { t: 'eq', x: '10 + 9 = **19**' }] },
+    { clear: true, say: 'La idea clave: cuidado con sumar ventajas. Piensa en un momento concreto, y en dónde está cada una.', show: [{ t: 'ans', x: '19 metros' }, { t: 'idea', x: 'No sumes ventajas sin pensar: mira **un momento** y dónde está **cada una**.' }] },
+  ] },
+
+{ id: 'rectangulos', level: 4, emoji: '🟦', title: 'Rectángulos escondidos', cat: 'Contar con orden',
+  q: 'En esta cuadrícula de **2 filas y 3 columnas** hay muchos **rectángulos** escondidos, de distintos tamaños.\n\n¿Cuántos hay en total? (Los cuadrados también cuentan como rectángulos, y la cuadrícula entera también.)',
+  qSay: 'En esta cuadrícula de dos filas y tres columnas hay muchos rectángulos escondidos, de distintos tamaños. ¿Cuántos hay en total? Los cuadrados también cuentan como rectángulos, y la cuadrícula entera también.',
+  pic: `<svg viewBox="0 0 340 240">${rejilla([])}</svg>`,
+  ask: '¿Cuántos rectángulos?', ph: 'Un número', ans: { num: 18, also: [1, 2, 3, 4, 6, 12] },
+  traps: [{ v: 6, m: 'Esos son los pequeños. ¿Y los que se forman juntando casillas?' }, { v: 17, m: '¿Has contado la cuadrícula entera?' }, { v: 12, m: '¿Y los rectángulos que ocupan **las dos filas**?' }, { v: 15, m: '¿Has contado los de 2 × 2 casillas y la cuadrícula entera?' }, { v: 9, m: 'Ve por tamaños: ¿cuántos hay de 2 casillas tumbados? ¿Y de pie?' }],
+  hints: ['Cuenta **por tamaños**, con orden: primero los de 1 casilla, luego los de 2 casillas…',
+    'De una fila de alto: de 1 casilla hay 6, de 2 casillas hay 4 (2 en cada fila) y de 3 casillas hay 2.',
+    'Ahora los que ocupan **las dos filas**: de 1 columna de ancho, de 2 columnas y de 3 columnas.',
+    'De dos filas: 3 de una columna, 2 de dos columnas y 1 de tres (la cuadrícula entera). Suma todo.'],
+  answer: '18 rectángulos', idea: 'Cuenta **por tamaños** y con orden, para no repetir ni olvidar ninguno.',
+  steps: ['De 1 fila de alto: 1 casilla → **6**, 2 casillas → **4**, 3 casillas → **2**. Son 12.', 'De 2 filas de alto: 1 columna → **3**, 2 columnas → **2**, 3 columnas → **1**. Son 6.', 'Total: 12 + 6 = **18**.', 'Truco extra: el ancho se puede elegir de 3 + 2 + 1 = 6 formas, y el alto de 3 (fila de arriba, de abajo o las dos): 6 × 3 = 18.'],
+  film: [
+    { clear: true, say: 'Una cuadrícula de dos filas y tres columnas. ¿Cuántos rectángulos hay? Contamos por tamaños, con orden.', show: [{ t: 'svg', k: 'g', vb: '0 0 340 240', h: '52%', x: rejilla([]) }] },
+    { say: 'Los de una casilla: seis.', show: [{ t: 'svg', k: 'g', vb: '0 0 340 240', h: '52%', x: rejilla([[0, 0, 0, 0], [0, 1, 0, 1], [0, 2, 0, 2], [1, 0, 1, 0], [1, 1, 1, 1], [1, 2, 1, 2]]) }, { t: 'p', k: 'p', x: '1 casilla: **6**' }] },
+    { say: 'Los de dos casillas, tumbados: dos en cada fila. Cuatro.', show: [{ t: 'svg', k: 'g', vb: '0 0 340 240', h: '52%', x: rejilla([[0, 0, 0, 1], [0, 1, 0, 2], [1, 0, 1, 1], [1, 1, 1, 2]]) }, { t: 'p', k: 'p', x: '2 casillas tumbados: **4**' }] },
+    { say: 'Los de tres casillas, una fila entera: dos.', show: [{ t: 'svg', k: 'g', vb: '0 0 340 240', h: '52%', x: rejilla([[0, 0, 0, 2], [1, 0, 1, 2]]) }, { t: 'p', k: 'p', x: '3 casillas tumbados: **2**' }] },
+    { say: 'Ahora los que ocupan las dos filas. De una columna de ancho: tres.', show: [{ t: 'svg', k: 'g', vb: '0 0 340 240', h: '52%', x: rejilla([[0, 0, 1, 0], [0, 1, 1, 1], [0, 2, 1, 2]]) }, { t: 'p', k: 'p', x: 'De pie, 1 columna: **3**' }] },
+    { say: 'De dos columnas: dos. Y la cuadrícula entera: uno.', show: [{ t: 'svg', k: 'g', vb: '0 0 340 240', h: '52%', x: rejilla([[0, 0, 1, 1], [0, 1, 1, 2], [0, 0, 1, 2]]) }, { t: 'p', k: 'p', x: '2 columnas: **2** · entera: **1**' }] },
+    { clear: true, say: 'Sumamos todo. Seis, cuatro y dos: doce. Tres, dos y uno: seis. Doce más seis: dieciocho.', show: [{ t: 'tbl', head: true, rows: [['', '1 columna', '2 columnas', '3 columnas'], ['1 fila', 6, 4, 2], ['2 filas', 3, 2, 1]] }, { t: 'eq', x: '12 + 6 = **18**' }, { t: 'ans', x: '18 rectángulos' }] },
+    { clear: true, say: 'La idea clave: cuenta por tamaños y con orden. Así no se te escapa ninguno, ni cuentas uno dos veces.', show: [{ t: 'ans', x: '18 rectángulos' }, { t: 'idea', x: 'Cuenta **por tamaños** y con **orden**: ni repites ni olvidas.' }] },
   ] },
 ];
 })();
