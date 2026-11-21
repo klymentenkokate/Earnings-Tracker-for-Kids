@@ -31,7 +31,8 @@ function olSolvedIds(level) {   // problems of this level solved by anyone in th
   Object.values(olState().log).forEach(p => Object.entries(p).forEach(([id, r]) => { if (r.ok) ids.add(id); }));
   return OL_BANK.filter(q => q.level === level && ids.has(q.id)).map(q => q.id);
 }
-function olOpenLevel() {        // highest playable level
+function olOpenLevel() {        // highest playable level: all four open (her call, 21 Nov 2026)
+  return 4;
   let open = 1;
   while (open < 4 && olSolvedIds(open).length >= OL_UNLOCK) open++;
   return Math.max(open, olState().open || 1);
