@@ -96,6 +96,7 @@ function openSchoolSubject(id) {
     <div class="oz-reward-card"><div class="oz-reward-title">${passed} / ${all.length} prácticas superadas · ${schMoney(earned)} de ${schMoney(total)}</div>
       <div class="oz-reward-sub">Cada práctica se paga una vez, cuando aciertas el 80 % o más. Busca la página de tu cuaderno 📒</div>
       <div class="oz-reward-track"><div class="oz-reward-fill" style="width:${all.length ? passed / all.length * 100 : 0}%"></div></div></div>
+    ${id === 'ma' && typeof olTile === 'function' ? olTile() : ''}
     ${units}`);
 }
 function schoolToggleUnit(id, n) {
