@@ -101,6 +101,81 @@ function rejilla(rs) {      // the 2 × 3 grid with rectangles [row0, col0, row1
     s += `<rect class="pop" x="${X + c0 * W + i}" y="${Y + r0 * W + i}" width="${(c1 - c0 + 1) * W - 2 * i}" height="${(r1 - r0 + 1) * W - 2 * i}" rx="8" fill="${col[k % 6]}" fill-opacity=".2" stroke="${col[k % 6]}" stroke-width="5" style="animation-delay:${k * 160}ms"/>`; });
   return s;
 }
+function mesas(n) {         // n square tables pushed into one long table; one person on each free side
+  const S = 60, x0 = 200 - n * S / 2, y0 = 70;
+  let s = `<rect x="${x0}" y="${y0}" width="${n * S}" height="${S}" rx="4" fill="#d9a066" stroke="#7a4b12" stroke-width="4"/>`;
+  for (let k = 1; k < n; k++) s += `<line x1="${x0 + k * S}" x2="${x0 + k * S}" y1="${y0}" y2="${y0 + S}" stroke="#7a4b12" stroke-width="2.5" stroke-dasharray="6 5"/>`;
+  const seat = (x, y) => `<circle cx="${x}" cy="${y}" r="15" fill="#ffd43b" stroke="#1d1442" stroke-width="3"/><circle cx="${x - 5}" cy="${y - 3}" r="2.2" fill="#1d1442"/><circle cx="${x + 5}" cy="${y - 3}" r="2.2" fill="#1d1442"/><path d="M${x - 5} ${y + 5} q5 4 10 0" fill="none" stroke="#1d1442" stroke-width="2"/>`;
+  for (let k = 0; k < n; k++) s += seat(x0 + k * S + S / 2, y0 - 26) + seat(x0 + k * S + S / 2, y0 + S + 26);
+  return s + seat(x0 - 26, y0 + S / 2) + seat(x0 + n * S + 26, y0 + S / 2);
+}
+function cerillas(n, col) { // n matchstick squares in a row; col: first square blue, each new square's 3 sticks green
+  const S = 50, x0 = (300 - n * S) / 2, y0 = 30;
+  const stick = (x1, y1, x2, y2, c) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${c}" stroke-width="7" stroke-linecap="round"/><circle cx="${x2}" cy="${y2}" r="5.5" fill="#e03131"/>`;
+  let s = '';
+  for (let k = 0; k < n; k++) {
+    const c = !col ? '#e8b04a' : k ? '#51cf66' : '#4dabf7', x = x0 + k * S;
+    if (k === 0) s += stick(x, y0 + S - 5, x, y0 + 5, c);
+    s += stick(x + 5, y0, x + S - 5, y0, c) + stick(x + 5, y0 + S, x + S - 5, y0 + S, c) + stick(x + S, y0 + S - 5, x + S, y0 + 5, c);
+  }
+  return s;
+}
+function pizza(cuts, nums) { // round pizza; cuts = [[normal angle°, distance from the centre]]; nums: number the 7 pieces of the 3-cut picture
+  const cx = 150, cy = 150, R = 120;
+  let s = `<circle cx="${cx}" cy="${cy}" r="${R + 9}" fill="#e8a33d"/><circle cx="${cx}" cy="${cy}" r="${R}" fill="#ffd8a8" stroke="#d9480f" stroke-width="3"/>`;
+  [[105, 95], [200, 112], [168, 205], [92, 178], [212, 172], [140, 140], [150, 62], [62, 140], [238, 140]].forEach(([x, y]) => s += `<circle cx="${x}" cy="${y}" r="10" fill="#e03131" opacity=".8"/>`);
+  (cuts || []).forEach(([a, d]) => { const r = a * Math.PI / 180, nx = Math.cos(r), ny = Math.sin(r), h = Math.sqrt(R * R - d * d);
+    s += `<line x1="${(cx + d * nx - h * ny).toFixed(1)}" y1="${(cy + d * ny + h * nx).toFixed(1)}" x2="${(cx + d * nx + h * ny).toFixed(1)}" y2="${(cy + d * ny - h * nx).toFixed(1)}" stroke="#1d1442" stroke-width="5" stroke-linecap="round"/>`; });
+  if (nums) [[0, 0], [90, 84], [210, 84], [330, 84], [270, 100], [30, 100], [150, 100]].forEach(([a, q], k) => { const r = a * Math.PI / 180, x = (cx + q * Math.cos(r)).toFixed(1), y = cy + q * Math.sin(r);
+    s += `<circle cx="${x}" cy="${y.toFixed(1)}" r="15" fill="#fff" stroke="#1d1442" stroke-width="2.5"/><text x="${x}" y="${(y + 6).toFixed(1)}" font-size="17" font-weight="900" text-anchor="middle" fill="#1d1442">${k + 1}</text>`; });
+  return s;
+}
+function vias(h) {          // 360 km of track at 1 px per km; the two trains after h hours (50 and 70 km/h)
+  const a = 30 + 50 * h, b = 390 - 70 * h, meet = a >= b;
+  let s = `<line x1="30" x2="390" y1="70" y2="70" stroke="#495057" stroke-width="4"/>`;
+  for (let x = 30; x <= 390; x += 12) s += `<line x1="${x}" x2="${x}" y1="64" y2="76" stroke="#adb5bd" stroke-width="2"/>`;
+  s += `<circle cx="30" cy="70" r="7" fill="#1d1442"/><circle cx="390" cy="70" r="7" fill="#1d1442"/>`;
+  if (!h) s += `<line x1="30" x2="390" y1="96" y2="96" stroke="#495057" stroke-width="2"/><rect x="170" y="84" width="80" height="24" fill="#fff"/><text x="210" y="102" font-size="17" font-weight="900" text-anchor="middle" fill="#1d1442">360 km</text>`;
+  else s += `<line x1="30" x2="${a}" y1="92" y2="92" stroke="#1c7ed6" stroke-width="6"/><line x1="${b}" x2="390" y1="100" y2="100" stroke="#e03131" stroke-width="6"/>`
+    + `<text x="${(30 + a) / 2}" y="120" font-size="15" font-weight="900" text-anchor="middle" fill="#1c7ed6">${50 * h} km</text><text x="${(b + 390) / 2}" y="120" font-size="15" font-weight="900" text-anchor="middle" fill="#e03131">${70 * h} km</text>`;
+  s += `<text x="${meet ? a - 16 : a}" y="58" font-size="28" text-anchor="middle">🚆</text><text x="${meet ? b + 16 : b}" y="58" font-size="28" text-anchor="middle">🚆</text>`;
+  if (!h) s += `<text x="${a + 6}" y="20" font-size="14" font-weight="900" fill="#1c7ed6">50 km/h →</text><text x="${b - 6}" y="20" font-size="14" font-weight="900" text-anchor="end" fill="#e03131">← 70 km/h</text>`;
+  return s;
+}
+function calles(nums, paths) { // 3 × 2 blocks of streets; corner (i, j): i to the right 0-3, j up 0-2; nums[j][i] at corners ('!' = gold); paths like 'RRUUR'
+  const X = i => 50 + i * 80, Y = j => 210 - j * 80, col = ['#e03131', '#1c7ed6', '#2f9e44'];
+  let s = '';
+  for (let i = 0; i < 3; i++) for (let j = 0; j < 2; j++) s += `<rect x="${X(i) + 10}" y="${Y(j + 1) + 10}" width="60" height="60" rx="6" fill="#ced4da"/>`;
+  for (let i = 0; i <= 3; i++) s += `<line x1="${X(i)}" x2="${X(i)}" y1="${Y(0)}" y2="${Y(2)}" stroke="#868e96" stroke-width="3"/>`;
+  for (let j = 0; j <= 2; j++) s += `<line x1="${X(0)}" x2="${X(3)}" y1="${Y(j)}" y2="${Y(j)}" stroke="#868e96" stroke-width="3"/>`;
+  (paths || []).forEach((p, k) => { const o = (k - (paths.length - 1) / 2) * 6; let i = 0, j = 0, d = `M${X(0) + o} ${Y(0) - o}`;
+    for (const c of p) { if (c === 'R') i++; else j++; d += ` L${X(i) + o} ${Y(j) - o}`; }
+    s += `<path d="${d}" fill="none" stroke="${col[k % 3]}" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>`; });
+  (nums || []).forEach((row, j) => (row || []).forEach((v, i) => { if (v == null) return; v = String(v); const hl = v[0] === '!'; if (hl) v = v.slice(1);
+    s += `<circle cx="${X(i)}" cy="${Y(j)}" r="16" fill="${hl ? '#ffd43b' : '#fff'}" stroke="#1d1442" stroke-width="2.5"/><text x="${X(i)}" y="${Y(j) + 6}" font-size="17" font-weight="900" text-anchor="middle" fill="#1d1442">${v}</text>`; }));
+  return s + `<text x="4" y="252" font-size="30">🏠</text><text x="300" y="32" font-size="30">🏫</text>`;
+}
+function corro(out, hl) {   // 10 children in a ring, 1 at the top, numbered clockwise; out = crossed out, hl = gold
+  const o = new Set(out || []), w = new Set(hl || []);
+  let s = `<circle cx="150" cy="140" r="100" fill="none" stroke="#dee2e6" stroke-width="4" stroke-dasharray="6 8"/><text x="150" y="154" font-size="40" text-anchor="middle" fill="#adb5bd">↻</text>`;
+  for (let k = 1; k <= 10; k++) { const r = ((k - 1) * 36 - 90) * Math.PI / 180, x = +(150 + 100 * Math.cos(r)).toFixed(1), y = +(140 + 100 * Math.sin(r)).toFixed(1), gone = o.has(k);
+    s += `<circle cx="${x}" cy="${y}" r="24" fill="${gone ? '#f1f3f5' : w.has(k) ? '#ffd43b' : '#a5d8ff'}" stroke="${gone ? '#adb5bd' : '#1d1442'}" stroke-width="3"/><text x="${x}" y="${y + 7}" font-size="20" font-weight="900" text-anchor="middle" fill="${gone ? '#adb5bd' : '#1d1442'}">${k}</text>`;
+    if (gone) s += `<path d="M${x - 14} ${y - 14} L${x + 14} ${y + 14} M${x + 14} ${y - 14} L${x - 14} ${y + 14}" stroke="#e03131" stroke-width="4" stroke-linecap="round"/>`; }
+  return s;
+}
+function tomos(st) {        // three volumes seen from above, spines towards you (bottom); 2 px per mm. st 1: page 1 of vol 1; 2: + last page of vol 3; 3: + the moth's path
+  const col = ['#1864ab', '#c92a2a', '#2b8a3e'];
+  let s = '';
+  for (let k = 0; k < 3; k++) { const x = 20 + k * 100;
+    s += `<rect x="${x + 10}" y="50" width="80" height="120" fill="#fff9db"/>`;
+    for (let p = x + 16; p < x + 90; p += 6) s += `<line x1="${p}" x2="${p}" y1="52" y2="168" stroke="#e9dfb3" stroke-width="1.5"/>`;
+    s += `<rect x="${x}" y="46" width="10" height="138" fill="${col[k]}"/><rect x="${x + 90}" y="46" width="10" height="138" fill="${col[k]}"/><rect x="${x}" y="170" width="100" height="14" fill="${col[k]}"/>`
+      + `<text x="${x + 50}" y="181.5" font-size="11" font-weight="900" text-anchor="middle" fill="#fff">TOMO ${k + 1}</text>`; }
+  if (st >= 1) s += `<line x1="109" x2="109" y1="50" y2="170" stroke="#f08c00" stroke-width="5"/><text x="109" y="38" font-size="13" font-weight="900" text-anchor="middle" fill="#d9480f">1.ª página ↓</text>`;
+  if (st >= 2) s += `<line x1="231" x2="231" y1="50" y2="170" stroke="#f08c00" stroke-width="5"/><text x="231" y="38" font-size="13" font-weight="900" text-anchor="middle" fill="#d9480f">↓ última página</text>`;
+  if (st >= 3) s += `<line x1="109" x2="231" y1="110" y2="110" stroke="#e03131" stroke-width="5" stroke-dasharray="9 6"/><text x="104" y="106" font-size="22" text-anchor="end">🐛</text>`;
+  return s + `<text x="170" y="210" font-size="14" font-weight="700" text-anchor="middle" fill="#495057">👀 Tú, mirando los lomos</text>`;
+}
 window.OL_BANK = [
 // ===================== NIVEL 1 · Pensador principiante =====================
 { id: 'calcetines', level: 1, emoji: '🧦', title: 'Calcetines a oscuras', cat: 'Pensar en el peor caso',
@@ -1119,5 +1194,259 @@ window.OL_BANK = [
     { clear: true, say: 'Sumamos todo. Seis, cuatro y dos: doce. Tres, dos y uno: seis. Doce más seis: dieciocho.', show: [{ t: 'tbl', head: true, rows: [['', '1 columna', '2 columnas', '3 columnas'], ['1 fila', 6, 4, 2], ['2 filas', 3, 2, 1]] }, { t: 'eq', x: '12 + 6 = **18**' }, { t: 'ans', x: '18 rectángulos' }] },
     { clear: true, say: 'La idea clave: cuenta por tamaños y con orden. Así no se te escapa ninguno, ni cuentas uno dos veces.', show: [{ t: 'ans', x: '18 rectángulos' }, { t: 'idea', x: 'Cuenta **por tamaños** y con **orden**: ni repites ni olvidas.' }] },
   ] },
+// ===================== Batch 4 (21 Nov 2026): 3 more per level. Answers: verify4.py =====================
+// --- Nivel 1 ---
+{ id: 'mesas', level: 1, emoji: '🍽️', title: 'La mesa larga', cat: 'Dibujar el problema',
+  q: 'En una **mesa cuadrada** se sientan **4 personas**, una en cada lado.\n\nPara una fiesta juntamos **5 mesas** iguales en fila, formando una mesa larga. ¿Cuántas personas se pueden sentar, una en cada lado libre?',
+  qSay: 'En una mesa cuadrada se sientan cuatro personas, una en cada lado. Para una fiesta juntamos cinco mesas iguales en fila, formando una mesa larga. ¿Cuántas personas se pueden sentar, una en cada lado libre?',
+  pic: `<svg viewBox="0 0 400 200">${mesas(1)}</svg>`,
+  ask: '¿Cuántas personas?', ph: 'Un número', ans: { num: 12, also: [5, 2, 10, 6, 4, 1, 3, 8, 20] },
+  traps: [{ v: 20, m: 'Has hecho la cuenta… pero ¿has **dibujado** las 5 mesas juntas, como en la fiesta? Cuenta las personas una a una.' }, { v: 10, m: '¿Y en las dos **puntas** de la mesa larga?' }, { v: 11, m: 'Revisa las dos **puntas** de la mesa larga.' }, { v: 16, m: 'Dibuja las 5 mesas juntas y cuenta los lados **libres**, uno a uno.' }, { v: 14, m: 'Dibuja las 5 mesas juntas y cuenta los lados **libres**, uno a uno.' }],
+  hints: ['**Dibuja** las mesas juntas y pon una persona en cada lado libre.',
+    'Prueba primero con **2 mesas** juntas: ¿cuántas personas caben?',
+    'En la mesa larga, cada mesa tiene una persona **arriba** y una **abajo**. ¿Y en las puntas?',
+    'Arriba 5, abajo 5, y una en cada punta.'],
+  answer: '12 personas', idea: 'Dibuja el problema: al juntar las mesas, los lados que se tocan **desaparecen**.',
+  steps: ['Arriba: una persona por mesa → **5**.', 'Abajo: otras **5**.', 'En las dos puntas: **2**.', '5 + 5 + 2 = **12** (no 20: los lados pegados no cuentan).'],
+  film: [
+    { clear: true, say: 'Una mesa cuadrada: cuatro personas, una en cada lado. ¿Y si juntamos cinco mesas? Mucha gente dice: cinco por cuatro, veinte. ¡Vamos a dibujarlo!', show: [{ t: 'svg', k: 'm', vb: '0 0 400 200', h: '50%', x: mesas(1) }] },
+    { say: 'Juntamos dos mesas. Los lados que se tocan quedan pegados: ahí no se sienta nadie. Caben seis.', show: [{ t: 'svg', k: 'm', vb: '0 0 400 200', h: '50%', x: mesas(2) }, { t: 'eq', k: 'e', x: '2 mesas → **6** personas' }] },
+    { say: 'Ahora, cinco mesas en fila. Arriba, una persona por mesa: cinco. Abajo, otras cinco.', show: [{ t: 'svg', k: 'm', vb: '0 0 400 200', h: '50%', x: mesas(5) }, { t: 'eq', k: 'e', x: '5 arriba + 5 abajo' }] },
+    { say: 'Y en las dos puntas, una persona en cada una. Cinco más cinco más dos: doce.', show: [{ t: 'eq', k: 'e', x: '5 + 5 + 2 = **12**' }, { t: 'ans', x: '12 personas' }] },
+    { clear: true, say: 'La idea clave: dibuja el problema. Al juntar las mesas, los lados que se tocan desaparecen.', show: [{ t: 'ans', x: '12 personas' }, { t: 'idea', x: 'Dibújalo: al juntar las mesas, los lados que se tocan **desaparecen**.' }] },
+  ] },
+
+{ id: 'lapiz', level: 1, emoji: '✏️', title: 'El cuaderno y el lápiz', cat: 'Comprobar la primera idea',
+  q: 'Un **cuaderno** y un **lápiz** cuestan juntos **110 céntimos**.\nEl cuaderno cuesta **100 céntimos más** que el lápiz.\n\n¿Cuántos céntimos cuesta el **lápiz**?',
+  qSay: 'Un cuaderno y un lápiz cuestan juntos ciento diez céntimos. El cuaderno cuesta cien céntimos más que el lápiz. ¿Cuántos céntimos cuesta el lápiz?',
+  ask: '¿Cuántos céntimos?', ph: 'Un número', ans: { num: 5, also: [105, 110, 100, 10, 2] },
+  traps: [{ v: 10, m: 'Comprueba: si el lápiz costara 10, el cuaderno costaría 100 más. ¿Cuánto costarían **juntos**?' }, { v: 105, m: 'Ese es el precio del **cuaderno**. ¿Y el del lápiz?' }, { v: 100, m: 'Comprueba: si el cuaderno costara 100 y el lápiz 10, ¿costaría el cuaderno 100 céntimos **más** que el lápiz?' }, { v: 55, m: 'Comprueba: si el lápiz costara 55, ¿costaría el cuaderno 100 más?' }, { v: 0, m: 'Comprueba: si el lápiz no costara nada, ¿cuánto costarían juntos?' }],
+  hints: ['¿Has **comprobado** la primera respuesta que se te ha ocurrido? Súmala con el precio del cuaderno.',
+    '**Dibuja** dos barras: el lápiz, y el cuaderno, que es como el lápiz **más 100**.',
+    'Las dos barras juntas valen 110. Si quitas los 100 de más, ¿cuánto queda?',
+    'Quedan 10 céntimos, y eso es lo que cuestan **dos** lápices.'],
+  answer: '5 céntimos (y el cuaderno, 105)', idea: '**Comprueba** siempre la primera idea: con el lápiz a 10, juntos costarían 120, no 110.',
+  steps: ['El cuaderno = lápiz + 100.', 'Juntos: lápiz + lápiz + 100 = 110.', 'Dos lápices = 110 − 100 = 10 → un lápiz = **5** céntimos.', 'Comprueba: cuaderno 105, lápiz 5 → 105 − 5 = 100 ✓ y 105 + 5 = 110 ✓.'],
+  film: [
+    { clear: true, say: 'Un cuaderno y un lápiz cuestan ciento diez céntimos. El cuaderno cuesta cien más. Casi todo el mundo dice: el lápiz, diez céntimos. ¡Comprobemos!', show: [{ t: 'eq', x: '📓 + ✏️ = 110' }, { t: 'eq', x: '📓 = ✏️ + 100' }] },
+    { say: 'Si el lápiz costara diez, el cuaderno costaría cien más: ciento diez. Y juntos, ciento veinte. ¡No cuadra!', show: [{ t: 'eq', k: 'c', x: '✏️ 10 → 📓 110 → juntos **120** ✗' }] },
+    { clear: true, say: 'Dibujemos. El lápiz es una barra pequeña. El cuaderno es una barra igual, más cien.', show: [{ t: 'row', label: '✏️', items: ['#a5d8ff|✏️'] }, { t: 'row', label: '📓', items: ['#a5d8ff|✏️', '#ffd43b|100'] }] },
+    { say: 'Todo junto vale ciento diez. Si quitamos los cien, quedan diez céntimos para dos lápices.', show: [{ t: 'eq', x: '✏️ + ✏️ = 110 − 100 = **10**' }] },
+    { say: 'Así que el lápiz cuesta cinco céntimos, y el cuaderno, ciento cinco. Juntos, ciento diez. ¡Ahora sí cuadra!', show: [{ t: 'eq', x: '✏️ = **5** · 📓 = 105 · 5 + 105 = 110 ✓' }, { t: 'ans', x: '5 céntimos' }] },
+    { clear: true, say: 'La idea clave: comprueba siempre la primera respuesta que se te ocurre. Si no cuadra, dibuja.', show: [{ t: 'ans', x: '5 céntimos' }, { t: 'idea', x: '**Comprueba** la primera idea. Si no cuadra, dibuja las dos barras.' }] },
+  ] },
+
+{ id: 'sumaedades', level: 1, emoji: '👩‍👧', title: 'La suma de edades', cat: 'Pasa para todos',
+  q: 'Hoy, **Marta** y **su madre** tienen entre las dos **40 años** (si sumas sus edades, da 40).\n\n¿Cuánto sumarán sus edades **dentro de 5 años**?',
+  qSay: 'Hoy, Marta y su madre tienen entre las dos cuarenta años: si sumas sus edades, da cuarenta. ¿Cuánto sumarán sus edades dentro de cinco años?',
+  ask: '¿Cuántos años sumarán?', ph: 'Un número', ans: { num: 50, also: [40, 5, 10, 2, 15, 30, 35] },
+  traps: [{ v: 45, m: 'Compruébalo con **edades inventadas**: Marta 10 y su madre 30. ¿Cuántos años tendrá cada una dentro de 5 años?' }, { v: 40, m: 'Al pasar 5 años, ¿siguen teniendo la misma edad?' }, { v: 35, m: 'Dentro de 5 años serán **mayores**, no más jóvenes.' }, { v: 80, m: 'Prueba con edades inventadas: Marta 10 y su madre 30. ¿Cuántos años tendrá cada una dentro de 5 años?' }],
+  hints: ['Prueba con **edades inventadas** que sumen 40: por ejemplo, Marta 10 y su madre 30.',
+    'Dentro de 5 años, ¿cuántos años tendrá Marta? ¿Y su madre?',
+    'Las **dos** cumplen años. ¿Cuántos años de más suman entre las dos?',
+    'Marta suma 5 años y su madre otros 5: 40 + 10.'],
+  answer: '50 años', idea: 'El tiempo pasa **para todos**: 2 personas × 5 años = **10** años más en la suma.',
+  steps: ['Ejemplo: Marta 10 y su madre 30 → suman 40.', 'Dentro de 5 años: Marta 15 y su madre 35 → suman **50**.', 'Siempre es así: cada una suma 5 años → 40 + 5 + 5 = **50**.'],
+  film: [
+    { clear: true, say: 'Marta y su madre suman cuarenta años. ¿Y dentro de cinco años? Mucha gente dice: cuarenta y cinco.', show: [{ t: 'eq', x: '👧 + 👩 = 40 años' }] },
+    { say: 'Probemos con un ejemplo. Marta tiene diez años y su madre treinta. Suman cuarenta.', show: [{ t: 'tbl', k: 't', head: true, rows: [['', '👧 Marta', '👩 Madre', 'Suma'], ['Hoy', 10, 30, 40]] }] },
+    { say: 'Dentro de cinco años, Marta tendrá quince, y su madre treinta y cinco. ¡Las dos cumplen años!', show: [{ t: 'tbl', k: 't', head: true, rows: [['', '👧 Marta', '👩 Madre', 'Suma'], ['Hoy', 10, 30, 40], ['Dentro de 5 años', '!15', '!35', '?']] }] },
+    { say: 'Quince más treinta y cinco: cincuenta. Cinco años más cada una: diez años más en total.', show: [{ t: 'tbl', k: 't', head: true, rows: [['', '👧 Marta', '👩 Madre', 'Suma'], ['Hoy', 10, 30, 40], ['Dentro de 5 años', 15, 35, '!50']] }, { t: 'eq', x: '40 + 5 + 5 = **50**' }, { t: 'ans', x: '50 años' }] },
+    { clear: true, say: 'La idea clave: cuando pasa el tiempo, todos cumplen años. Cuenta cuántas personas hay.', show: [{ t: 'ans', x: '50 años' }, { t: 'idea', x: 'El tiempo pasa **para todos**: 2 personas × 5 años = **10** años más.' }] },
+  ] },
+
+// --- Nivel 2 ---
+{ id: 'cerillas', level: 2, emoji: '🔥', title: 'Cuadrados de cerillas', cat: 'Buscar el patrón',
+  q: 'Con cerillas formamos **cuadrados en fila**, pegados unos a otros.\n**1 cuadrado** → **4** cerillas · **2 cuadrados** → **7** cerillas · **3 cuadrados** → **10** cerillas\n\n¿Cuántas cerillas hacen falta para **10 cuadrados** en fila?',
+  qSay: 'Con cerillas formamos cuadrados en fila, pegados unos a otros. Un cuadrado, cuatro cerillas. Dos cuadrados, siete cerillas. Tres cuadrados, diez cerillas. ¿Cuántas cerillas hacen falta para diez cuadrados en fila?',
+  pic: `<svg viewBox="0 0 300 110">${cerillas(3)}</svg>`,
+  ask: '¿Cuántas cerillas?', ph: 'Un número', ans: { num: 31, also: [1, 3, 4, 9, 10, 27, 30, 7, 13, 16, 19, 22, 25, 28, 40] },
+  traps: [{ v: 40, m: 'Comprueba con los datos: si fuera 4 por cuadrado, 2 cuadrados serían 8 cerillas. ¿Cuántas dice el enunciado?' }, { v: 30, m: 'Casi. Revisa el primer cuadrado: ¿cuántas cerillas tiene?' }, { v: 34, m: 'Revisa: ¿cuántas cerillas se añaden cada vez que pones un cuadrado más?' }, { v: 28, m: 'Revisa: después del primer cuadrado, ¿cuántos cuadrados **más** pones?' }, { v: 13, m: 'Esas son para 4 cuadrados. ¡Sigue hasta 10!' }],
+  hints: ['Mira los números: 4, 7, 10… ¿cuánto aumentan cada vez?',
+    'Cada cuadrado nuevo añade **3** cerillas: arriba, abajo y a la derecha. El lado izquierdo ya estaba.',
+    'El primer cuadrado necesita 4 cerillas. Después de él, ¿cuántos cuadrados más hay que poner hasta llegar a 10?',
+    'El primero, 4 cerillas; los otros 9, 3 cerillas cada uno.'],
+  answer: '31 cerillas', idea: 'Busca el **patrón**: cada cuadrado nuevo añade **3** cerillas, porque comparte un lado con el anterior.',
+  steps: ['4, 7, 10… → cada cuadrado nuevo añade **3** cerillas.', 'El primero: 4. Los otros 9: 9 × 3 = 27.', '4 + 27 = **31** cerillas.', 'Otra forma: 1 cerilla al principio + 3 por cada cuadrado → 1 + 3 × 10 = 31.'],
+  film: [
+    { clear: true, say: 'Cuadrados de cerillas en fila. Uno, cuatro cerillas. Dos, siete. Tres, diez. ¿Y diez cuadrados? Mucha gente dice: diez por cuatro, cuarenta.', show: [{ t: 'svg', k: 'c', vb: '0 0 300 110', h: '40%', x: cerillas(3) }] },
+    { say: 'Pero los cuadrados están pegados: comparten un lado. El primero usa cuatro cerillas, en azul. Cada cuadrado nuevo solo necesita tres más, en verde.', show: [{ t: 'svg', k: 'c', vb: '0 0 300 110', h: '40%', x: cerillas(3, 1) }, { t: 'eq', k: 'e', x: '4, 7, 10… → **+3** cada vez' }] },
+    { say: 'Para diez cuadrados: el primero, cuatro cerillas. Y los otros nueve, tres cada uno: veintisiete.', show: [{ t: 'eq', k: 'e', x: '4 + 9 × 3 = 4 + 27' }] },
+    { say: 'Cuatro más veintisiete: treinta y una cerillas.', show: [{ t: 'eq', k: 'e', x: '4 + 27 = **31**' }, { t: 'ans', x: '31 cerillas' }] },
+    { clear: true, say: 'Otra forma de verlo: una cerilla al principio, la de la izquierda, y tres por cada cuadrado. Uno más treinta: treinta y uno.', show: [{ t: 'svg', vb: '0 0 300 110', h: '40%', x: cerillas(5, 1) }, { t: 'eq', x: '1 + 3 × 10 = **31**' }] },
+    { clear: true, say: 'La idea clave: busca el patrón. ¿Cuánto se añade cada vez, y por qué?', show: [{ t: 'ans', x: '31 cerillas' }, { t: 'idea', x: 'Busca el **patrón**: cada cuadrado nuevo añade **3** cerillas.' }] },
+  ] },
+
+{ id: 'papel', level: 2, emoji: '📄', title: 'Doblar y agujerear', cat: 'Duplicar',
+  q: 'Doblas una hoja de papel **por la mitad**. Luego la vuelves a doblar por la mitad, y otra vez más: **3 dobleces**.\n\nCon la hoja doblada, haces **un agujero** en el centro con un punzón, que atraviesa todo el papel.\n\nAl desdoblar la hoja, ¿cuántos agujeros hay?',
+  qSay: 'Doblas una hoja de papel por la mitad. Luego la vuelves a doblar por la mitad, y otra vez más: tres dobleces. Con la hoja doblada, haces un agujero en el centro con un punzón, que atraviesa todo el papel. Al desdoblar la hoja, ¿cuántos agujeros hay?',
+  ask: '¿Cuántos agujeros?', ph: 'Un número', ans: { num: 8, also: [1, 2, 4, 3] },
+  traps: [{ v: 3, m: 'Esos son los **dobleces**. Cuando doblas, ¿qué le pasa al número de **capas** de papel?' }, { v: 6, m: 'Coge una hoja de verdad, dóblala 3 veces y cuenta las **capas** con cuidado.' }, { v: 4, m: 'Revisa: con 2 dobleces ya hay 4 capas. ¿Y con el tercero?' }, { v: 1, m: 'El agujero atraviesa **todas** las capas del papel doblado.' }, { v: 16, m: 'Revisa: ¿cuántas capas hay después de 3 dobleces? Cuenta doblez a doblez.' }],
+  hints: ['El agujero atraviesa todas las **capas** de papel. Cuenta las capas.',
+    'Sin doblar: 1 capa. Con 1 doblez: 2 capas. ¿Y con 2 dobleces?',
+    'Cada doblez **duplica** las capas: 1, 2, 4…',
+    'Con 3 dobleces hay 8 capas, y cada capa tiene su agujero.'],
+  answer: '8 agujeros', idea: 'Cada doblez **duplica** las capas: 1, 2, 4, 8. El agujero atraviesa todas.',
+  steps: ['Sin doblar: **1** capa.', '1 doblez: **2** capas · 2 dobleces: **4** · 3 dobleces: **8**.', 'El agujero atraviesa las 8 capas → **8** agujeros al desdoblar.'],
+  film: [
+    { clear: true, say: 'Una hoja, tres dobleces y un agujero. ¿Cuántos agujeros al desdoblar? Mucha gente dice tres, o seis. Contemos las capas de papel.', show: [{ t: 'h', x: '📄 Doblar y agujerear' }, { t: 'row', k: 'r', label: 'Sin doblar', items: ['#a5d8ff|1'] }] },
+    { say: 'Doblamos por la mitad: ahora hay dos capas de papel, una encima de otra.', show: [{ t: 'row', k: 'r', label: '1 doblez', items: ['#a5d8ff|1', '#a5d8ff|2'] }] },
+    { say: 'Doblamos otra vez: cada una de las dos capas se dobla. Cuatro capas.', show: [{ t: 'row', k: 'r', label: '2 dobleces', items: ['#a5d8ff|1', '#a5d8ff|2', '#a5d8ff|3', '#a5d8ff|4'] }] },
+    { say: 'Y el tercer doblez: ocho capas. ¡Cada doblez duplica las capas!', show: [{ t: 'row', k: 'r', sm: true, label: '3 dobleces', items: [1, 2, 3, 4, 5, 6, 7, 8].map(n => '#a5d8ff|' + n) }] },
+    { clear: true, say: 'El agujero atraviesa las ocho capas: un agujero en cada una. Al desdoblar, ocho agujeros.', show: [{ t: 'tbl', head: true, rows: [['Dobleces', 0, 1, 2, 3], ['Capas', 1, 2, 4, '!8']] }, { t: 'eq', x: '1 → 2 → 4 → **8**' }, { t: 'ans', x: '8 agujeros' }] },
+    { clear: true, say: 'La idea clave: cada doblez duplica. Con un doblez más, serían dieciséis.', show: [{ t: 'ans', x: '8 agujeros' }, { t: 'idea', x: 'Cada doblez **duplica** las capas: 1, 2, 4, **8**, 16…' }] },
+  ] },
+
+{ id: 'pizza', level: 2, emoji: '🍕', title: 'Tres cortes a la pizza', cat: 'Probar y mejorar',
+  q: 'Tienes una **pizza redonda** y haces **3 cortes rectos** con un cuchillo largo, de arriba abajo y de lado a lado de la pizza, **sin mover los trozos**.\n\n¿Cuál es el **mayor número de trozos** que puedes conseguir? (Los trozos no tienen que ser iguales.)',
+  qSay: 'Tienes una pizza redonda y haces tres cortes rectos con un cuchillo largo, de arriba abajo y de lado a lado de la pizza, sin mover los trozos. ¿Cuál es el mayor número de trozos que puedes conseguir? Los trozos no tienen que ser iguales.',
+  pic: `<svg viewBox="0 0 300 300">${pizza([])}</svg>`,
+  ask: '¿Cuántos trozos como máximo?', ph: 'Un número', ans: { num: 7, also: [1, 2, 3, 4] },
+  traps: [{ v: 6, m: 'Con 6 trozos vas bien… pero ¿se puede conseguir **más**? Dibuja los cortes de otra forma.' }, { v: 8, m: '¿Has partido la pizza en dos capas? No vale: cada corte va de arriba abajo, como se corta siempre una pizza. Dibuja tus cortes vistos desde arriba y cuenta los trozos.' }, { v: 5, m: 'Dibuja y prueba otras formas de cortar: ¿se puede conseguir más?' }, { v: 4, m: 'Con 2 cortes ya salen 4. ¿Y con el tercero?' }, { v: 3, m: 'Prueba a que los cortes se **crucen**.' }],
+  why: '¿Cómo has cortado?',
+  hints: ['**Dibuja** pizzas y prueba. Con 1 corte, 2 trozos. Con 2 cortes que se cruzan, 4.',
+    'El tercer corte: cada trozo que **atraviesa** lo parte en dos. ¿Cuántos trozos puede atravesar como mucho?',
+    'Si el tercer corte pasa por el mismo punto que los otros dos, atraviesa solo 2 trozos. ¿Y si cruza a cada uno **en un sitio distinto**?',
+    'Cruzando a los otros dos cortes en sitios distintos, el tercer corte atraviesa 3 trozos: 4 + 3.'],
+  answer: '7 trozos', idea: 'Cada corte nuevo tiene que **cruzar a todos** los anteriores, en sitios **distintos**: así atraviesa más trozos.',
+  steps: ['1 corte: **2** trozos.', '2 cortes que se cruzan: **4** trozos.', 'Si el 3.º corte pasa por el centro, atraviesa 2 trozos → 6.', 'Si cruza a los otros dos en sitios distintos, atraviesa **3** trozos → 4 + 3 = **7**.'],
+  film: [
+    { clear: true, say: 'Una pizza y tres cortes rectos. ¿Cuántos trozos como máximo? Lo normal es cortar por el centro: seis trozos. ¿Se puede conseguir más?', show: [{ t: 'svg', k: 'z', vb: '0 0 300 300', h: '58%', x: pizza([[90, 0], [30, 0], [150, 0]]) }, { t: 'p', k: 'p', x: 'Por el centro: **6** trozos' }] },
+    { say: 'Vamos paso a paso. Un corte: dos trozos.', show: [{ t: 'svg', k: 'z', vb: '0 0 300 300', h: '58%', x: pizza([[90, 30]]) }, { t: 'p', k: 'p', x: '1 corte → **2**' }] },
+    { say: 'Dos cortes que se cruzan: cuatro trozos.', show: [{ t: 'svg', k: 'z', vb: '0 0 300 300', h: '58%', x: pizza([[90, 30], [210, 30]]) }, { t: 'p', k: 'p', x: '2 cortes → **4**' }] },
+    { say: 'Ahora el tercer corte. Si cruza a los otros dos en sitios distintos, atraviesa tres trozos, y parte cada uno en dos. ¡Tres trozos más!', show: [{ t: 'svg', k: 'z', vb: '0 0 300 300', h: '58%', x: pizza([[90, 30], [210, 30], [330, 30]]) }, { t: 'p', k: 'p', x: '3 cortes → 4 + 3 = **7**' }] },
+    { say: 'Cuéntalos: un triangulito en el centro, y seis trozos alrededor. ¡Siete trozos!', show: [{ t: 'svg', k: 'z', vb: '0 0 300 300', h: '58%', x: pizza([[90, 30], [210, 30], [330, 30]], 1) }, { t: 'p', k: 'p', x: '**7** trozos' }, { t: 'ans', x: '7 trozos' }] },
+    { clear: true, say: 'La idea clave: cada corte nuevo tiene que cruzar a todos los anteriores, en sitios distintos. Así parte más trozos.', show: [{ t: 'ans', x: '7 trozos' }, { t: 'idea', x: 'Que cada corte nuevo **cruce a todos** los anteriores, en puntos **distintos**.' }] },
+  ] },
+
+// --- Nivel 3 ---
+{ id: 'trenes', level: 3, emoji: '🚆', title: 'Los dos trenes', cat: 'Juntar velocidades',
+  q: 'Dos ciudades están a **360 km**. A la misma hora sale un tren de cada ciudad, uno **hacia el otro**, por vías paralelas.\nUno va a **50 km por hora** y el otro a **70 km por hora**.\n\n¿Cuántas **horas** tardan en cruzarse?',
+  qSay: 'Dos ciudades están a trescientos sesenta kilómetros. A la misma hora sale un tren de cada ciudad, uno hacia el otro, por vías paralelas. Uno va a cincuenta kilómetros por hora y el otro a setenta kilómetros por hora. ¿Cuántas horas tardan en cruzarse?',
+  pic: `<svg viewBox="0 0 420 130">${vias(0)}</svg>`,
+  ask: '¿Cuántas horas?', ph: 'Un número', ans: { num: 3, also: [50, 70, 120, 360, 1, 150, 210] },
+  traps: [{ v: 6, m: 'Comprueba: en 6 horas, ¿cuántos km habría hecho cada tren? ¿Se habrían cruzado ya?' }, { v: 7, m: 'Comprueba: en ese tiempo, ¿cuántos km habría hecho cada tren? ¿Se habrían cruzado ya?' }, { v: 5, m: 'Comprueba: en 5 horas, ¿cuántos km habría hecho cada tren? ¿Se habrían cruzado ya?' }, { v: 18, m: 'Comprueba: en 18 horas, ¿cuántos km habría hecho cada tren? ¿Se habrían cruzado ya?' }, { v: 120, m: 'Eso es lo que se acercan en **una hora**. ¿Cuántas horas para 360 km?' }, { v: 180, m: 'Ese es el punto medio, pero los trenes no van igual de rápido. ¿Cuántas **horas** tardan?' }],
+  hints: ['Piensa en lo que pasa en **una hora**: ¿cuántos km recorre cada tren?',
+    'En una hora, uno recorre 50 km y el otro 70 km. ¿Cuántos km se ha acortado la distancia entre ellos?',
+    'Cada hora se acercan **120 km**. ¿Cuántas horas hacen falta para 360 km?',
+    '360 : 120.'],
+  answer: '3 horas', idea: 'Si van **uno hacia el otro**, suma lo que avanzan: se acercan 50 + 70 = **120 km** cada hora.',
+  steps: ['En 1 hora: 50 km + 70 km = **120 km** más cerca.', '360 : 120 = **3** horas.', 'Comprueba: en 3 horas, uno hace 150 km y el otro 210 km → 150 + 210 = 360 ✓.'],
+  film: [
+    { clear: true, say: 'Dos trenes, a trescientos sesenta kilómetros, van uno hacia el otro. Uno a cincuenta kilómetros por hora, el otro a setenta.', show: [{ t: 'svg', k: 'v', vb: '0 0 420 130', h: '42%', x: vias(0) }] },
+    { say: 'Miremos una hora. El primero avanza cincuenta, el segundo setenta. Entre los dos, se han acercado ciento veinte kilómetros.', show: [{ t: 'svg', k: 'v', vb: '0 0 420 130', h: '42%', x: vias(1) }, { t: 'eq', k: 'e', x: '50 + 70 = **120 km** cada hora' }] },
+    { say: 'Cada hora, ciento veinte kilómetros menos. Después de dos horas, doscientos cuarenta. ¿Cuántas veces cabe ciento veinte en trescientos sesenta? Tres.', show: [{ t: 'svg', k: 'v', vb: '0 0 420 130', h: '42%', x: vias(2) }, { t: 'eq', k: 'e', x: '360 : 120 = **3**' }] },
+    { say: 'A las tres horas se cruzan. Comprobamos: el primero ha hecho ciento cincuenta, el segundo doscientos diez. Suman trescientos sesenta. ¡Cuadra!', show: [{ t: 'svg', k: 'v', vb: '0 0 420 130', h: '42%', x: vias(3) }, { t: 'eq', k: 'e', x: '150 + 210 = 360 ✓' }, { t: 'ans', x: '3 horas' }] },
+    { clear: true, say: 'La idea clave: cuando dos van uno hacia el otro, suma lo que avanzan. Juntos se acercan ciento veinte kilómetros cada hora.', show: [{ t: 'ans', x: '3 horas' }, { t: 'idea', x: 'Si van **uno hacia el otro**, suma lo que avanzan: se acercan **120 km** cada hora.' }] },
+  ] },
+
+{ id: 'caminos', level: 3, emoji: '🗺️', title: 'Camino al cole', cat: 'Contar con orden',
+  q: 'Para ir de **casa** 🏠 al **cole** 🏫, Nora va por las calles de este barrio, siempre hacia la **derecha** → o hacia **arriba** ↑ (nunca hacia atrás).\n\n¿Cuántos **caminos distintos** puede seguir?',
+  qSay: 'Para ir de casa al cole, Nora va por las calles de este barrio, siempre hacia la derecha o hacia arriba, nunca hacia atrás. ¿Cuántos caminos distintos puede seguir?',
+  pic: `<svg viewBox="0 0 340 260">${calles()}</svg>`,
+  ask: '¿Cuántos caminos?', ph: 'Un número', ans: { num: 10, also: [1, 2, 3, 4, 5, 6] },
+  traps: [{ v: 5, m: 'Todos los caminos tienen 5 tramos, sí. Pero ¿cuántos caminos **distintos** hay?' }, { v: 6, m: 'Casi: es fácil olvidar alguno. Busca una forma de contar **con orden**.' }, { v: 7, m: 'Casi: es fácil olvidar alguno. Busca una forma de contar **con orden**.' }, { v: 8, m: 'Casi: es fácil olvidar alguno. Busca una forma de contar **con orden**.' }, { v: 9, m: 'Casi: es fácil olvidar alguno. Busca una forma de contar **con orden**.' }, { v: 12, m: '¿Has contado algún camino dos veces?' }, { v: 2, m: 'Esos son los caminos «por fuera». ¡Hay muchos más por dentro!' }],
+  hints: ['Dibuja algunos caminos. Todos tienen **3** tramos hacia la derecha y **2** hacia arriba, en distinto orden.',
+    'Escribe en cada **esquina** cuántos caminos llegan hasta ella. A las esquinas de abajo y de la izquierda solo llega **1** (todo recto).',
+    'A cada esquina se llega desde la esquina de su **izquierda** o desde la de **abajo**. Suma los dos números.',
+    'Fila del medio: 1, 2, 3, 4. Sigue sumando hasta el cole.'],
+  answer: '10 caminos', idea: 'No cuentes a ciegas: escribe en cada esquina cuántos caminos llegan, **sumando** los de la izquierda y los de abajo.',
+  steps: ['Fila de abajo y columna de la izquierda: **1** camino a cada esquina.', 'Cada esquina = la de su izquierda + la de abajo.', 'Fila del medio: 1, 2, 3, 4. Fila de arriba: 1, 3, 6, **10**.', 'Otra forma: los 5 tramos son 3 → y 2 ↑; basta elegir **cuáles 2** son ↑ → 10 formas.'],
+  film: [
+    { clear: true, say: 'De casa al cole, siempre hacia la derecha o hacia arriba. ¿Cuántos caminos hay? Dibujemos algunos.', show: [{ t: 'svg', k: 'c', vb: '0 0 340 260', h: '60%', x: calles(null, ['RRRUU', 'UURRR', 'RURUR']) }] },
+    { say: 'Hay muchos, y es fácil perderse contando. Mejor, contamos con orden: escribimos en cada esquina cuántos caminos llegan hasta ella.', show: [{ t: 'svg', k: 'c', vb: '0 0 340 260', h: '60%', x: calles() }] },
+    { say: 'A las esquinas de abajo y de la izquierda solo se llega de una forma: todo recto. Uno.', show: [{ t: 'svg', k: 'c', vb: '0 0 340 260', h: '60%', x: calles([[1, 1, 1, 1], [1], [1]]) }, { t: 'p', k: 'p', x: 'Todo recto: **1** camino' }] },
+    { say: 'A las demás se llega desde la izquierda o desde abajo: sumamos. Uno más uno, dos. Dos más uno, tres. Tres más uno, cuatro.', show: [{ t: 'svg', k: 'c', vb: '0 0 340 260', h: '60%', x: calles([[1, 1, 1, 1], [1, 2, 3, 4], [1]]) }, { t: 'p', k: 'p', x: 'izquierda + abajo' }] },
+    { say: 'Fila de arriba. Uno más dos, tres. Tres más tres, seis. Y seis más cuatro: diez. ¡Diez caminos hasta el cole!', show: [{ t: 'svg', k: 'c', vb: '0 0 340 260', h: '60%', x: calles([[1, 1, 1, 1], [1, 2, 3, 4], [1, 3, 6, '!10']]) }, { t: 'p', k: 'p', x: '6 + 4 = **10**' }, { t: 'ans', x: '10 caminos' }] },
+    { clear: true, say: 'La idea clave: no cuentes a ciegas. Escribe en cada esquina cuántos caminos llegan, y suma.', show: [{ t: 'ans', x: '10 caminos' }, { t: 'idea', x: 'En cada esquina, **suma** los caminos que llegan por la izquierda y por abajo.' }] },
+  ] },
+
+{ id: 'vuelta', level: 3, emoji: '🔄', title: 'Darle la vuelta', cat: 'Buscar el patrón',
+  q: 'Al número **12** le damos la vuelta y sale **21**, que es **9 más** que 12.\n\n¿Cuántos números de **dos cifras** aumentan **exactamente 9** al darles la vuelta? (El 12 cuenta.)',
+  qSay: 'Al número doce le damos la vuelta y sale veintiuno, que es nueve más que doce. ¿Cuántos números de dos cifras aumentan exactamente nueve al darles la vuelta? El doce cuenta.',
+  ask: '¿Cuántos números?', ph: 'Escribe cuántos hay', ans: { num: 8, also: [12, 21, 23, 32, 34, 43, 45, 54, 56, 65, 67, 76, 78, 87, 89, 98, 9, 1] },
+  traps: [{ v: 9, m: 'Revisa tu lista: ¿todos son de **dos cifras**? ¿Todos aumentan **exactamente** 9?' }, { v: 7, m: 'Casi. Revisa el principio y el final de tu lista.' }, { v: 1, m: 'El 12 es uno. Prueba con otros: ¿qué pasa con el 23?' }, { v: 2, m: 'Hay más. Prueba con muchos números y apunta los que funcionan.' }, { v: 10, m: 'Revisa tu lista: ¿todos aumentan **exactamente** 9?' }],
+  why: '¿Cuáles son?',
+  hints: ['Prueba con más números: ¿qué le pasa al 13? ¿Y al 23?',
+    'El 12 y el 23 funcionan. Mira sus cifras: ¿qué tienen en común?',
+    'Funciona cuando la cifra de las unidades es **una más** que la de las decenas.',
+    'Escríbelos con orden: 12, 23, 34… ¿Hasta dónde puedes llegar?'],
+  answer: '8 números: 12, 23, 34, 45, 56, 67, 78 y 89', idea: 'Prueba unos cuantos, busca el **patrón** (unidades = decenas + 1) y luego cuenta **con orden**.',
+  steps: ['Probando: 12 → 21 (+9), 23 → 32 (+9), 13 → 31 (+18), 15 → 51 (+36).', 'Aumenta 9 cuando las cifras se llevan **1**, con la mayor en las unidades.', 'Con orden: 12, 23, 34, 45, 56, 67, 78, 89 → **8** números.', '(01 no es de dos cifras, y después del 9 no hay cifra «10».)'],
+  film: [
+    { clear: true, say: 'Doce, al darle la vuelta, es veintiuno: nueve más. ¿Qué otros números hacen lo mismo? Probemos algunos.', show: [{ t: 'tbl', head: true, rows: [['Número', 'Al revés', 'Aumenta'], [12, 21, '!+9'], [13, 31, '+18'], [23, 32, '!+9'], [15, 51, '+36']] }] },
+    { say: 'Funcionan el doce y el veintitrés. Fíjate en sus cifras: la de las unidades es una más que la de las decenas.', show: [{ t: 'eq', k: 'e', x: 'unidades = decenas **+ 1**' }] },
+    { say: 'Y cuando las cifras están más lejos, aumenta más. En el trece se llevan dos: aumenta dieciocho, dos veces nueve.', show: [{ t: 'eq', k: 'e', x: '13 → 31: se llevan 2 → 2 × 9 = 18' }] },
+    { clear: true, say: 'Así que buscamos números con la cifra de las unidades una más que la de las decenas. Con orden: doce, veintitrés, treinta y cuatro… hasta ochenta y nueve.', show: [{ t: 'row', items: ['12', '23', '34', '45', '56', '67', '78', '89'], gap: 150 }] },
+    { say: '¿Y después? Haría falta una cifra diez: no existe. ¿Y cero uno? No es un número de dos cifras. Son ocho.', show: [{ t: 'eq', x: '**8** números' }, { t: 'ans', x: '8 números' }] },
+    { clear: true, say: 'La idea clave: prueba unos cuantos, busca el patrón, y luego cuenta con orden.', show: [{ t: 'ans', x: '8 números' }, { t: 'idea', x: 'Prueba, busca el **patrón** (unidades = decenas + 1) y cuenta **con orden**.' }] },
+  ] },
+
+// --- Nivel 4 ---
+{ id: 'abuela', level: 4, emoji: '🥚', title: 'Los huevos de la abuela', cat: 'Quitar lo que sobra',
+  q: 'La abuela tiene una cesta de huevos.\nSi los cuenta **de 2 en 2**, le sobra **1**. Si los cuenta **de 3 en 3**, **de 4 en 4**, **de 5 en 5** o **de 6 en 6**, también le sobra **1**.\nPero si los cuenta **de 7 en 7**, no le sobra **ninguno**.\n\nEn la cesta hay **menos de 400** huevos. ¿Cuántos hay?',
+  qSay: 'La abuela tiene una cesta de huevos. Si los cuenta de dos en dos, le sobra uno. Si los cuenta de tres en tres, de cuatro en cuatro, de cinco en cinco o de seis en seis, también le sobra uno. Pero si los cuenta de siete en siete, no le sobra ninguno. En la cesta hay menos de cuatrocientos huevos. ¿Cuántos hay?',
+  ask: '¿Cuántos huevos?', ph: 'Un número', ans: { num: 301, also: [60, 1, 61, 121, 181, 241, 7, 43, 2, 3, 4, 5, 6, 300, 361, 120, 180, 240, 360] },
+  traps: [{ v: 61, m: 'Muy bien con 2, 3, 4, 5 y 6. Pero ¿se pueden contar 61 huevos de 7 en 7 sin que sobre ninguno?' }, { v: 121, m: 'Muy bien con 2, 3, 4, 5 y 6. Pero ¿y de 7 en 7?' }, { v: 181, m: 'Muy bien con 2, 3, 4, 5 y 6. Pero ¿y de 7 en 7?' }, { v: 241, m: 'Muy bien con 2, 3, 4, 5 y 6. Pero ¿y de 7 en 7?' }, { v: 361, m: 'Muy bien con 2, 3, 4, 5 y 6. Pero ¿y de 7 en 7?' }, { v: 49, m: 'De 7 en 7 sí… pero de 2 en 2 ¿sobra 1? ¿Y de 3 en 3?' }, { v: 7, m: 'De 7 en 7 sí… pero ¿y de 3 en 3?' }, { v: 721, m: 'Funciona… ¡pero hay menos de 400 huevos!' }, { v: 60, m: 'Con 60, de 2 en 2 no sobra **nada**. Y la abuela tiene 1 de más…' }],
+  why: '¿Cómo lo has encontrado?',
+  hints: ['Aparta el huevo que sobra. ¿Qué pasa entonces al contar el resto de 2 en 2, de 3 en 3… hasta de 6 en 6?',
+    'Sin ese huevo, el número es **múltiplo** de 2, 3, 4, 5 y 6 a la vez. ¿Cuál es el más pequeño?',
+    'El más pequeño es **60**. Así que los huevos pueden ser 60 + 1, 120 + 1, 180 + 1… Ahora, de 7 en 7.',
+    'Prueba 61, 121, 181, 241, 301 y 361: ¿cuál se puede contar de 7 en 7 sin que sobre ninguno?'],
+  answer: '301 huevos', idea: '¿Siempre sobra **1**? Quítalo: lo que queda es múltiplo de todos (de 60). Luego busca el que va de 7 en 7.',
+  steps: ['Quitando el huevo que sobra, el resto es múltiplo de 2, 3, 4, 5 y 6 → múltiplo de **60**.', 'Posibles: 61, 121, 181, 241, 301, 361 (menos de 400).', 'De 7 en 7: solo **301** = 7 × 43.', 'Comprueba: 301 = 300 + 1, y 300 es múltiplo de 2, 3, 4, 5 y 6 ✓.'],
+  film: [
+    { clear: true, say: 'La abuela cuenta sus huevos. De dos en dos, sobra uno. Y de tres en tres, de cuatro en cuatro, de cinco en cinco y de seis en seis, también. De siete en siete, ninguno.', show: [{ t: 'tbl', head: true, rows: [['De … en …', 2, 3, 4, 5, 6, 7], ['Sobran', 1, 1, 1, 1, 1, '!0']] }] },
+    { say: 'Truco: apartamos el huevo que sobra. Lo que queda se puede contar de dos en dos, de tres en tres… hasta de seis en seis, sin que sobre nada.', show: [{ t: 'eq', x: '🥚 − 1 → múltiplo de 2, 3, 4, 5 y 6' }] },
+    { clear: true, say: 'Tiene que ser múltiplo de cuatro, de cinco y de tres. El más pequeño: cuatro por cinco por tres, sesenta. Y sesenta también es múltiplo de dos y de seis.', show: [{ t: 'eq', x: '4 × 5 × 3 = **60**' }] },
+    { say: 'Así que los huevos son sesenta más uno, o ciento veinte más uno… Menos de cuatrocientos: estos seis.', show: [{ t: 'row', k: 'r', items: ['61', '121', '181', '241', '301', '361'], gap: 200 }] },
+    { say: 'Ahora, de siete en siete. Sesenta y uno, no. Ciento veintiuno, no. Ciento ochenta y uno, no. Doscientos cuarenta y uno, no. ¡Trescientos uno, sí! Siete por cuarenta y tres.', show: [{ t: 'row', k: 'r', items: ['~61', '~121', '~181', '~241', '!301', '361'], gap: 0 }, { t: 'eq', k: 'e', x: '301 = 7 × 43 ✓' }] },
+    { say: '¿Y trescientos sesenta y uno? Tampoco va de siete en siete. Solo vale trescientos uno.', show: [{ t: 'row', k: 'r', items: ['~61', '~121', '~181', '~241', '!301', '~361'], gap: 0 }, { t: 'ans', x: '301 huevos' }] },
+    { clear: true, say: 'La idea clave: si siempre sobra uno, quita ese uno. Lo que queda es múltiplo de todos.', show: [{ t: 'ans', x: '301 huevos' }, { t: 'idea', x: '¿Siempre sobra **1**? Quítalo: lo que queda es **múltiplo** de todos.' }] },
+  ] },
+
+{ id: 'corro', level: 4, emoji: '🧒', title: 'El último del corro', cat: 'Probar con pocos',
+  q: '**10 niños** forman un corro, numerados del **1 al 10**. Van contando por orden: el **1 se queda**, el **2 sale**, el 3 se queda, el 4 sale… y así, **uno sí y uno no**, dando vueltas al corro sin parar, hasta que solo queda uno.\n\n¿Qué número tiene el **último** que queda?',
+  qSay: 'Diez niños forman un corro, numerados del uno al diez. Van contando por orden: el uno se queda, el dos sale, el tres se queda, el cuatro sale, y así, uno sí y uno no, dando vueltas al corro sin parar, hasta que solo queda uno. ¿Qué número tiene el último que queda?',
+  pic: `<svg viewBox="0 0 300 280">${corro()}</svg>`,
+  ask: '¿Qué número?', ph: 'Solo el número del que queda', ans: { num: 5, also: [2, 4, 6, 8, 10] },
+  traps: [{ v: 1, m: 'Revisa la segunda vuelta con cuidado. Ve tachando en un dibujo del corro.' }, { v: 7, m: 'Revisa la segunda vuelta con cuidado. Ve tachando en un dibujo del corro.' }, { v: 9, m: 'Revisa el final paso a paso: cuando quedan tres niños, ¿a quién le toca salir?' }, { v: 3, m: 'Revisa la segunda vuelta con cuidado. Ve tachando en un dibujo del corro.' }, { v: 2, m: 'Ese sale en la primera vuelta: ¡salen todos los pares!' }, { v: 4, m: 'Ese sale en la primera vuelta: ¡salen todos los pares!' }, { v: 6, m: 'Ese sale en la primera vuelta: ¡salen todos los pares!' }, { v: 8, m: 'Ese sale en la primera vuelta: ¡salen todos los pares!' }, { v: 10, m: 'Ese sale en la primera vuelta: ¡salen todos los pares!' }],
+  hints: ['**Dibuja** el corro con los 10 números y ve tachando, sin prisa.',
+    'En la primera vuelta salen todos los **pares**. Después del 10, ¿le toca al 1 quedarse o salir?',
+    'El 10 acaba de salir, así que al 1 le toca **quedarse**. Sale el 3, se queda el 5, sale el 7…',
+    'Quedan el 1, el 5 y el 9. El 9 se acaba de quedar: ahora sale el 1. ¿Y luego?'],
+  answer: 'El 5', idea: 'Juega despacio, tachando. Truco: con 2, 4, 8, 16… niños gana el que empieza; con 10, cuando salen 2 quedan 8 y empieza el 5.',
+  steps: ['1.ª vuelta: salen **2, 4, 6, 8, 10**.', 'Como el 10 acaba de salir, el 1 se queda: salen **3** y **7**.', 'Quedan 1, 5 y 9: sale el **1**, se queda el 5, sale el **9**.', 'Queda el **5**.'],
+  film: [
+    { clear: true, say: 'Diez niños en corro. Uno sí, uno no, dando vueltas, hasta que solo queda uno. Vamos a jugar despacio.', show: [{ t: 'svg', k: 'c', vb: '0 0 300 280', h: '60%', x: corro() }] },
+    { say: 'Primera vuelta: el uno se queda, el dos sale, el tres se queda, el cuatro sale… Salen todos los pares.', show: [{ t: 'svg', k: 'c', vb: '0 0 300 280', h: '60%', x: corro([2, 4, 6, 8, 10]) }, { t: 'p', k: 'p', x: 'Salen: 2, 4, 6, 8, 10' }] },
+    { say: 'Segunda vuelta. El diez acaba de salir, así que al uno le toca quedarse. Sale el tres. El cinco se queda, sale el siete, el nueve se queda.', show: [{ t: 'svg', k: 'c', vb: '0 0 300 280', h: '60%', x: corro([2, 4, 6, 8, 10, 3, 7]) }, { t: 'p', k: 'p', x: 'Salen: 3, 7' }] },
+    { say: 'Quedan el uno, el cinco y el nueve. El nueve se acaba de quedar, así que ahora sale el uno. El cinco se queda… y sale el nueve. ¡Gana el cinco!', show: [{ t: 'svg', k: 'c', vb: '0 0 300 280', h: '60%', x: corro([2, 4, 6, 8, 10, 3, 7, 1, 9], [5]) }, { t: 'p', k: 'p', x: 'Salen: 1, 9 → queda el **5**' }, { t: 'ans', x: 'El 5' }] },
+    { clear: true, say: 'Hay un truco. Si probamos con pocos niños, vemos que con dos, cuatro, ocho o dieciséis niños, siempre gana el primero que cuenta.', show: [{ t: 'tbl', head: true, rows: [['Niños', 2, 4, 8, 16], ['Gana', '!1', '!1', '!1', '!1']] }] },
+    { say: 'Con diez niños: en cuanto salen dos, el dos y el cuatro, quedan ocho, y el siguiente en contar es el cinco. ¡Con ocho gana el que empieza: el cinco!', show: [{ t: 'svg', vb: '0 0 300 280', h: '52%', x: corro([2, 4], [5]) }, { t: 'eq', x: '10 − 2 = 8 → empieza el **5** → gana el **5**' }] },
+    { clear: true, say: 'La idea clave: prueba con pocos niños y busca el patrón.', show: [{ t: 'ans', x: 'El 5' }, { t: 'idea', x: 'Prueba con **pocos** y busca el **patrón**: con 2, 4, 8, 16… gana el que empieza.' }] },
+  ] },
+
+{ id: 'polilla', level: 4, emoji: '📚', title: 'La polilla de la biblioteca', cat: 'Imaginar la situación',
+  q: 'En una estantería hay **3 tomos** de una enciclopedia, en orden: **tomo 1, tomo 2, tomo 3**, de izquierda a derecha, colocados como siempre: de pie, con el **lomo hacia ti**.\nCada tomo tiene **40 mm** de páginas y **dos tapas** de **5 mm** cada una.\n\nUna polilla empieza en la **primera página del tomo 1** y avanza en línea recta, comiendo, hasta la **última página del tomo 3**. ¿Cuántos **milímetros** recorre?\n(El dibujo es la estantería **vista desde arriba**.)',
+  qSay: 'En una estantería hay tres tomos de una enciclopedia, en orden: tomo uno, tomo dos, tomo tres, de izquierda a derecha, colocados como siempre: de pie, con el lomo hacia ti. Cada tomo tiene cuarenta milímetros de páginas y dos tapas de cinco milímetros cada una. Una polilla empieza en la primera página del tomo uno y avanza en línea recta, comiendo, hasta la última página del tomo tres. ¿Cuántos milímetros recorre? El dibujo es la estantería vista desde arriba.',
+  pic: `<svg viewBox="0 0 340 220">${tomos(0)}</svg>`,
+  ask: '¿Cuántos milímetros?', ph: 'Un número', ans: { num: 60, also: [5, 40, 50, 1, 2, 3, 6, 10] },
+  traps: [{ v: 150, m: 'Esa es la estantería entera. ¿Dónde está **de verdad** la primera página del tomo 1? Coge un libro, ponlo de pie con el lomo hacia ti y mira.' }, { v: 140, m: '¿Dónde está **de verdad** la primera página del tomo 1? Coge un libro, ponlo de pie con el lomo hacia ti y mira.' }, { v: 130, m: '¿Dónde está **de verdad** la primera página del tomo 1? Coge un libro, ponlo de pie con el lomo hacia ti y mira.' }, { v: 120, m: '¿Dónde está **de verdad** la primera página del tomo 1? Coge un libro, ponlo de pie con el lomo hacia ti y mira.' }, { v: 50, m: 'Eso es el tomo 2 entero. ¿La polilla no atraviesa nada más?' }, { v: 40, m: 'Esas son las páginas del tomo 2. ¿Y las tapas?' }, { v: 6, m: 'Escribe la respuesta en **milímetros**.' }, { v: 70, m: 'Revisa: ¿cuántas tapas atraviesa la polilla? Mira el dibujo.' }],
+  why: '¿Por qué?',
+  hints: ['Coge un libro de casa y ponlo de pie en una estantería, con el lomo hacia ti. ¿En qué lado queda la **primera página**: a la izquierda o a la derecha?',
+    'La tapa de delante queda a la **derecha**. Así que la primera página del tomo 1 está en su lado derecho, pegada al **tomo 2**.',
+    'Y la última página del tomo 3 queda en su lado **izquierdo**, también pegada al tomo 2.',
+    'La polilla atraviesa: una tapa del tomo 1, el tomo 2 entero y una tapa del tomo 3.'],
+  answer: '60 mm', idea: 'Antes de calcular, **mira la escena de verdad**: la primera página del tomo 1 está a su **derecha**, pegada al tomo 2.',
+  steps: ['Con el lomo hacia ti, la tapa de delante de un libro queda a la **derecha**.', 'La primera página del tomo 1 está a su derecha; la última del tomo 3, a su izquierda: las dos, junto al tomo 2.', 'La polilla atraviesa: tapa del tomo 1 (5) + tomo 2 entero (5 + 40 + 5) + tapa del tomo 3 (5).', '5 + 50 + 5 = **60 mm** (¡no 130 ni 150!).'],
+  film: [
+    { clear: true, say: 'Tres tomos en la estantería, vistos desde arriba, con el lomo hacia nosotros. Una polilla va de la primera página del tomo uno a la última del tomo tres. Parece que atraviesa casi todo… ¿O no?', show: [{ t: 'svg', k: 's', vb: '0 0 340 220', h: '58%', x: tomos(0) }] },
+    { say: 'Coge un libro y míralo. Con el lomo hacia ti, la tapa de delante queda a la derecha. Así que la primera página del tomo uno está a su derecha, ¡pegada al tomo dos!', show: [{ t: 'svg', k: 's', vb: '0 0 340 220', h: '58%', x: tomos(1) }] },
+    { say: 'Y la última página del tomo tres está a su izquierda, también pegada al tomo dos.', show: [{ t: 'svg', k: 's', vb: '0 0 340 220', h: '58%', x: tomos(2) }] },
+    { say: 'La polilla solo atraviesa la tapa del tomo uno, el tomo dos entero, y la tapa del tomo tres. Cinco, más cincuenta, más cinco: sesenta milímetros.', show: [{ t: 'svg', k: 's', vb: '0 0 340 220', h: '58%', x: tomos(3) }, { t: 'eq', x: '5 + (5 + 40 + 5) + 5 = **60 mm**' }, { t: 'ans', x: '60 mm' }] },
+    { clear: true, say: 'La idea clave: antes de calcular, mira la escena de verdad. Mejor aún: coge un libro y compruébalo.', show: [{ t: 'ans', x: '60 mm' }, { t: 'idea', x: 'Antes de calcular, **mira la escena de verdad**: ¿dónde está la primera página?' }] },
+  ] },
+
 ];
 })();
