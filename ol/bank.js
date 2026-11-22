@@ -176,6 +176,59 @@ function tomos(st) {        // three volumes seen from above, spines towards you
   if (st >= 3) s += `<line x1="109" x2="231" y1="110" y2="110" stroke="#e03131" stroke-width="5" stroke-dasharray="9 6"/><text x="104" y="106" font-size="22" text-anchor="end">🐛</text>`;
   return s + `<text x="170" y="210" font-size="14" font-weight="700" text-anchor="middle" fill="#495057">👀 Tú, mirando los lomos</text>`;
 }
+function edificio(lit, at) { // 9-floor building; stair flights from floor 1 up to floor `lit` drawn red and numbered; Lola on floor `at`
+  const y = f => 392 - (f - 1) * 40;
+  let s = `<polygon points="70,${y(9) - 40} 145,${y(9) - 70} 220,${y(9) - 40}" fill="#e8590c"/><rect x="80" y="${y(9) - 40}" width="130" height="${y(1) - y(9) + 40}" fill="#fff4e6" stroke="#7a4b12" stroke-width="4"/><rect x="10" y="392" width="285" height="8" rx="3" fill="#51cf66"/>`;
+  for (let f = 1; f <= 9; f++) s += `<line x1="80" x2="210" y1="${y(f)}" y2="${y(f)}" stroke="#7a4b12" stroke-width="2"/><rect x="96" y="${y(f) - 30}" width="22" height="18" fill="#a5d8ff"/><rect x="172" y="${y(f) - 30}" width="22" height="18" fill="#a5d8ff"/><text x="66" y="${y(f) - 12}" font-size="17" font-weight="800" text-anchor="end" fill="#495057">${f}</text>`;
+  for (let f = 1; f < 9; f++) {
+    const on = f < lit, x1 = f % 2 ? 228 : 272, x2 = f % 2 ? 272 : 228;
+    s += `<line x1="${x1}" y1="${y(f)}" x2="${x2}" y2="${y(f + 1)}" stroke="${on ? '#e03131' : '#ced4da'}" stroke-width="${on ? 6 : 4}" stroke-linecap="round"/>`;
+    if (on) s += `<circle cx="250" cy="${y(f) - 20}" r="11" fill="#fff" stroke="#e03131" stroke-width="2.5"/><text x="250" y="${y(f) - 15}" font-size="13" font-weight="900" text-anchor="middle" fill="#e03131">${f}</text>`;
+  }
+  return s + (at ? em('👧', 145, y(at) - 17, 30, 'pop') : '');
+}
+function ronda(n, a, b, half) { // n children in a ring, numbered clockwise from the top; a, b gold and joined; half: colour the children between a and b
+  const R0 = 115, r = n > 10 ? 14 : 22, fs = n > 10 ? 12 : 20;
+  const P = k => { const t = ((k - 1) * 360 / n - 90) * Math.PI / 180; return [+(150 + R0 * Math.cos(t)).toFixed(1), +(150 + R0 * Math.sin(t)).toFixed(1)]; };
+  let s = `<circle cx="150" cy="150" r="${R0}" fill="none" stroke="#dee2e6" stroke-width="4" stroke-dasharray="6 8"/>`;
+  if (a && b) s += `<line x1="${P(a)[0]}" y1="${P(a)[1]}" x2="${P(b)[0]}" y2="${P(b)[1]}" stroke="#e03131" stroke-width="4" stroke-dasharray="8 6"/>`;
+  for (let k = 1; k <= n; k++) {
+    const [x, y] = P(k), gold = k === a || k === b, side = half && k > a && k < b;
+    s += `<circle cx="${x}" cy="${y}" r="${r}" fill="${gold ? '#ffd43b' : side ? '#a5d8ff' : '#f1f3f5'}" stroke="#1d1442" stroke-width="2.5"/><text x="${x}" y="${y + fs * .36}" font-size="${fs}" font-weight="900" text-anchor="middle" fill="#1d1442">${k}</text>`;
+  }
+  return s;
+}
+function meses(per, extra) { // the 12 months as boxes with `per` people each; box `extra` (0-11) gets one more, in red
+  const M = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
+  let s = '';
+  M.forEach((m, k) => {
+    const x = 10 + (k % 4) * 97, y = 10 + Math.floor(k / 4) * 92, more = extra === k;
+    s += `<rect x="${x}" y="${y}" width="88" height="82" rx="10" fill="${more ? '#ffe3e3' : '#f8f9fa'}" stroke="${more ? '#e03131' : '#adb5bd'}" stroke-width="3"/><text x="${x + 44}" y="${y + 22}" font-size="16" font-weight="800" text-anchor="middle" fill="#495057">${m}</text>`;
+    for (let i = 0; i < per + (more ? 1 : 0); i++) s += em(i < per ? '🙂' : '😮', x + 22 + i * 22, y + 55, 22, i >= per ? 'pop' : '');
+  });
+  return s;
+}
+function piramide(rows) {   // number pyramid; rows from the bottom ([4], [3], [2], [1]); '' empty, '?' hidden, '!x' gold
+  let s = '';
+  rows.forEach((row, r) => row.forEach((v, k) => {
+    const x = 200 - (4 - r) * 45 + k * 90, y = 200 - r * 55; v = String(v);
+    const g = v[0] === '!' && v.length > 1, t = g ? v.slice(1) : v, q = t === '?';
+    s += `<rect x="${x + 2}" y="${y}" width="86" height="50" rx="6" fill="${g ? '#ffd43b' : q ? '#e5dbff' : '#ffc9a8'}" stroke="#a0522d" stroke-width="3"/><text x="${x + 45}" y="${y + 34}" font-size="26" font-weight="900" text-anchor="middle" fill="${q ? '#7048e8' : '#1d1442'}">${t}</text>`;
+  }));
+  return s;
+}
+function cuadrado(k) {      // 1+2+…+k (blue) and 1+2+…+(k−1) (orange) fitting together into a k × k square of dots
+  const c = 260 / k;
+  let s = '';
+  for (let i = 0; i < k; i++) for (let j = 0; j < k; j++) s += `<circle class="pop" cx="${(20 + c * (j + .5)).toFixed(1)}" cy="${(20 + c * (i + .5)).toFixed(1)}" r="${(c * .38).toFixed(1)}" fill="${j <= i ? '#4dabf7' : '#ffa94d'}" style="animation-delay:${(i * k + j) * 25}ms"/>`;
+  return s;
+}
+const chkP = v => ({ v, m: `Comprueba: pon el ${v} en el ladrillo **?** y calcula la pirámide hasta arriba. ¿Sale 36?` });
+const chkC = v => ({ v, m: `Comprueba con la casa ${v}: ¿cuánto suman las casas de **antes**? ¿Podrían sumar lo mismo las de **después**, con menos de 50 casas en la calle?` });
+const selT = v => { for (let b = 0; 5 * b <= v; b++) if ((v - 5 * b) % 3 === 0) return { v, m: `Comprueba: ${v} = ${[...Array((v - 5 * b) / 3).fill(3), ...Array(b).fill(5)].join(' + ')}. ¡Ese **sí** se puede pagar justo!` }; };
+const dadT = v => ({ v, m: `La suma ${v} sale de ${6 - Math.abs(v - 7)} ${6 - Math.abs(v - 7) === 1 ? 'manera' : 'maneras'}. ¿Hay alguna suma que salga de **más**?` });
+const puT = v => ({ v, m: [19, 20, 21, 23, 24, 25].includes(v) ? '¡Eso funciona! Pero se puede **más rápido**. Prueba otras parejas y apunta cada viaje.' : 'Comprueba viaje a viaje: ¿quién vuelve con la linterna cada vez? Escribe todos los viajes y súmalos.' });
+const dTab = hl => [['+', 1, 2, 3, 4, 5, 6], ...R(1, 6).map(b => [b, ...R(1, 6).map(a => (hl.includes(a + b) ? '!' : '') + (a + b))])];
 window.OL_BANK = [
 // ===================== NIVEL 1 · Pensador principiante =====================
 { id: 'calcetines', level: 1, emoji: '🧦', title: 'Calcetines a oscuras', cat: 'Pensar en el peor caso',
@@ -1446,6 +1499,261 @@ window.OL_BANK = [
     { say: 'Y la última página del tomo tres está a su izquierda, también pegada al tomo dos.', show: [{ t: 'svg', k: 's', vb: '0 0 340 220', h: '58%', x: tomos(2) }] },
     { say: 'La polilla solo atraviesa la tapa del tomo uno, el tomo dos entero, y la tapa del tomo tres. Cinco, más cincuenta, más cinco: sesenta milímetros.', show: [{ t: 'svg', k: 's', vb: '0 0 340 220', h: '58%', x: tomos(3) }, { t: 'eq', x: '5 + (5 + 40 + 5) + 5 = **60 mm**' }, { t: 'ans', x: '60 mm' }] },
     { clear: true, say: 'La idea clave: antes de calcular, mira la escena de verdad. Mejor aún: coge un libro y compruébalo.', show: [{ t: 'ans', x: '60 mm' }, { t: 'idea', x: 'Antes de calcular, **mira la escena de verdad**: ¿dónde está la primera página?' }] },
+  ] },
+
+// ===================== Batch 5 (22 Nov 2026): 3 more per level. Answers: verify5.py =====================
+// --- Nivel 1 ---
+{ id: 'pisos', level: 1, emoji: '🏢', title: 'Subiendo pisos', cat: 'Contar los tramos',
+  q: 'Lola sube andando las escaleras de su edificio. Del **piso 1** al **piso 3** tarda **2 minutos**.\n\nSi sube siempre al mismo ritmo, ¿cuántos minutos tarda del **piso 1** al **piso 9**?',
+  qSay: 'Lola sube andando las escaleras de su edificio. Del piso uno al piso tres tarda dos minutos. Si sube siempre al mismo ritmo, ¿cuántos minutos tarda del piso uno al piso nueve?',
+  pic: `<svg viewBox="0 0 300 405">${edificio(0, 1)}</svg>`,
+  ask: '¿Cuántos minutos?', ph: 'Un número', ans: { num: 8, also: [1, 2, 3, 9, 6] },
+  traps: [{ v: 6, m: '¿Seguro? Dibuja el edificio, pon a Lola en el piso 1 y mira bien lo que sube hasta el piso 3.' }, { v: 9, m: '¿Seguro? Dibuja el edificio, pon a Lola en el piso 1 y mira bien lo que sube hasta el piso 3.' }, { v: 18, m: '¡Eso es muchísimo! Comprueba: si tardara 18 minutos en total, ¿tardaría 2 minutos del piso 1 al 3?' }, { v: 4, m: 'Del piso 1 al 9 se sube mucho más que del 1 al 3. ¿De verdad tarda solo el doble?' }, { v: 16, m: 'Comprueba con los datos: a ese ritmo, ¿cuánto tardaría del piso 1 al piso 3?' }],
+  why: '¿Por qué no son 6 minutos?',
+  hints: ['**Dibuja** el edificio: piso 1, piso 2, piso 3… y pon a Lola en el piso 1.',
+    'Del piso 1 al piso 3, ¿cuántos **tramos** de escalera sube? (Un tramo = de un piso al siguiente.)',
+    'Sube 2 tramos en 2 minutos: **1 minuto** por tramo. ¿Cuántos tramos hay del piso 1 al 9?',
+    'Del piso 1 al 9 hay 8 tramos.'],
+  answer: '8 minutos', idea: 'Cuenta los **tramos**, no los pisos: del piso 1 al 3 solo hay **2** tramos.',
+  steps: ['Del piso 1 al 3 sube **2 tramos** (del 1 al 2 y del 2 al 3).', '2 tramos en 2 minutos → **1 minuto** por tramo.', 'Del piso 1 al 9 hay **8 tramos**.', '8 tramos × 1 minuto = **8 minutos** (no 6).'],
+  film: [
+    { clear: true, say: 'Lola sube del piso uno al tres en dos minutos. ¿Y del uno al nueve? Mucha gente piensa: el nueve es tres veces el tres, así que seis minutos. ¡Vamos a dibujarlo!', show: [{ t: 'svg', k: 's', vb: '0 0 300 405', h: '58%', x: edificio(0, 1) }] },
+    { say: 'Del piso uno al tres, Lola sube un tramo hasta el dos, y otro tramo hasta el tres. Solo dos tramos, en dos minutos: un minuto cada uno.', show: [{ t: 'svg', k: 's', vb: '0 0 300 405', h: '58%', x: edificio(3, 3) }, { t: 'eq', k: 'e', x: '2 tramos → 2 min → **1 min** por tramo' }] },
+    { say: 'Del piso uno al nueve: uno, dos, tres, cuatro, cinco, seis, siete, ¡ocho tramos! Ocho minutos.', show: [{ t: 'svg', k: 's', vb: '0 0 300 405', h: '58%', x: edificio(9, 9) }, { t: 'eq', k: 'e', x: '8 tramos × 1 min = **8 minutos**' }, { t: 'ans', x: '8 minutos' }] },
+    { clear: true, say: 'La idea clave: cuenta los tramos, no los pisos. Entre el piso uno y el tres solo hay dos tramos.', show: [{ t: 'ans', x: '8 minutos' }, { t: 'idea', x: 'Cuenta los **tramos**, no los pisos: del 1 al 3 solo hay **2**.' }] },
+  ] },
+
+{ id: 'adelantar', level: 1, emoji: '🏃', title: 'Adelantar al segundo', cat: 'Imaginar la situación',
+  q: 'Estás corriendo una carrera y **adelantas al corredor que va segundo**.\n\n¿En qué **puesto** vas ahora?',
+  qSay: 'Estás corriendo una carrera y adelantas al corredor que va segundo. ¿En qué puesto vas ahora?',
+  ask: '¿En qué puesto vas?', ph: 'Solo el número de tu puesto', ans: { num: 2, also: [1, 3] },
+  traps: [{ v: 1, m: '¡Hazlo de verdad! Poneos tres en fila, como en una carrera, y prueba a adelantar al segundo. ¿Dónde acabas?' }, { v: 3, m: 'Después de adelantar a alguien, ¿vas **mejor** o peor que antes?' }],
+  why: '¿Y si adelantaras al **último**? ¿En qué puesto irías?',
+  hints: ['**Imagínalo** con 3 corredores: Ana va 1.ª, Bea va 2.ª… ¿y tú?',
+    'Justo antes de adelantar a Bea, ¿en qué puesto ibas tú?',
+    'Pasas a Bea: ahora ella va detrás de ti. ¿Has pasado también a Ana?',
+    'Ana sigue delante de ti.'],
+  answer: '2.º puesto (segundo)', idea: '**Imagina la escena**: si adelantas al segundo, te quedas con **su** puesto. El primero sigue delante.',
+  steps: ['Para adelantar al 2.º, tú ibas justo detrás de él: **3.º**.', 'Al adelantarlo, te pones en **su** sitio.', 'El 1.º sigue delante → vas **2.º** (¡no primero!).', '¿Y adelantar al último? ¡Imposible! Para adelantarlo tendrías que ir **detrás** de él.'],
+  film: [
+    { clear: true, say: 'Vas corriendo y adelantas al que va segundo. ¿En qué puesto vas? Casi todo el mundo dice: ¡primero! Vamos a verlo con tres corredores.', show: [{ t: 'tbl', k: 't', head: true, rows: [['Puesto', '1.º', '2.º', '3.º'], ['Antes', '🏃 Ana', '🏃 Bea', '!🏃 Tú']] }] },
+    { say: 'Para adelantar a Bea, tenías que ir justo detrás de ella. Eras el tercero.', show: [{ t: 'eq', k: 'e', x: 'Antes: **3.º** puesto' }] },
+    { say: 'Pasas a Bea. Ahora ella va detrás de ti… pero Ana sigue delante. ¡Vas segundo!', show: [{ t: 'tbl', k: 't', head: true, rows: [['Puesto', '1.º', '2.º', '3.º'], ['Antes', '🏃 Ana', '🏃 Bea', '🏃 Tú'], ['Después', '🏃 Ana', '!🏃 Tú', '🏃 Bea']] }, { t: 'eq', k: 'e', x: 'Ocupas **su** puesto: **2.º**' }, { t: 'ans', x: '2.º puesto' }] },
+    { say: '¿Y si adelantas al último? ¡Imposible! Para adelantarlo, tendrías que ir detrás de él.', show: [{ t: 'p', x: '¿Adelantar al último? 🤔 ¡Nadie va detrás de él!' }] },
+    { clear: true, say: 'La idea clave: imagina la escena. Si adelantas al segundo, te quedas con su puesto. El primero sigue delante.', show: [{ t: 'ans', x: '2.º puesto' }, { t: 'idea', x: '**Imagina la escena**: adelantas al 2.º → te quedas con **su** puesto.' }] },
+  ] },
+
+{ id: 'tortitas', level: 1, emoji: '🥞', title: 'Las tortitas', cat: 'No dejar huecos',
+  q: 'En la sartén caben **2 tortitas** a la vez. Cada tortita se hace por **los dos lados**, y cada lado tarda **1 minuto**.\n\n¿Cuántos **minutos como mínimo** tardas en hacer **3 tortitas**?',
+  qSay: 'En la sartén caben dos tortitas a la vez. Cada tortita se hace por los dos lados, y cada lado tarda un minuto. ¿Cuántos minutos como mínimo tardas en hacer tres tortitas?',
+  ask: '¿Cuántos minutos?', ph: 'Solo el número de minutos', ans: { num: 3, also: [1, 2] },
+  traps: [{ v: 4, m: '¡Funciona, pero se puede **más rápido**! Apunta minuto a minuto qué hay en la sartén.' }, { v: 6, m: 'Cuidado: en la sartén caben **2** tortitas a la vez. Apunta minuto a minuto qué hay en la sartén.' }, { v: 2, m: 'Apunta minuto a minuto: después de 2 minutos, ¿están las 3 tortitas hechas por los **dos** lados?' }, { v: 5, m: '¡Se puede más rápido! Apunta minuto a minuto qué hay en la sartén.' }],
+  why: '¿Por qué no hacen falta 4 minutos?',
+  hints: ['Llama a las tortitas **A**, **B** y **C**, y apunta **minuto a minuto** qué hay en la sartén.',
+    'Lo normal: A y B por un lado, A y B por el otro, y luego C sola… ¿Hay algún minuto con un **sitio libre** en la sartén?',
+    '¿Y si en el minuto 2 sacas una tortita **a medias** y metes la C?',
+    'Minuto 1: A y B. Minuto 2: A (por el otro lado) y C.'],
+  answer: '3 minutos', idea: '**No dejes huecos**: hay 6 lados que hacer y en cada minuto se hacen 2 → 3 minutos.',
+  steps: ['Hay que hacer **6 lados** (3 tortitas × 2 lados).', 'Cada minuto, la sartén hace **2 lados**.', 'Minuto 1: A y B · Minuto 2: A (vuelta) y C · Minuto 3: B (vuelta) y C (vuelta).', '6 lados ÷ 2 por minuto = **3 minutos**, sin ningún sitio libre.'],
+  film: [
+    { clear: true, say: 'En la sartén caben dos tortitas, y cada lado tarda un minuto. ¿Cuánto tardas en hacer tres? Casi todo el mundo dice: cuatro minutos.', show: [{ t: 'row', items: ['🥞 A', '🥞 B', '🥞 C'] }] },
+    { say: 'Así se hace normalmente: A y B por un lado, luego por el otro. Y después, C sola, por un lado y por el otro. Cuatro minutos… ¡pero con un sitio vacío dos veces!', show: [{ t: 'tbl', k: 't', head: true, rows: [['', 'Sitio 1', 'Sitio 2'], ['Min 1', 'A lado 1', 'B lado 1'], ['Min 2', 'A lado 2', 'B lado 2'], ['Min 3', 'C lado 1', '!vacío'], ['Min 4', 'C lado 2', '!vacío']] }] },
+    { clear: true, say: 'Mejor así. Minuto uno: A y B. Minuto dos: le damos la vuelta a A, y sacamos B a medio hacer para meter la C.', show: [{ t: 'tbl', k: 't', head: true, rows: [['', 'Sitio 1', 'Sitio 2'], ['Min 1', 'A lado 1', 'B lado 1'], ['Min 2', 'A lado 2', '!C lado 1']] }] },
+    { say: 'Minuto tres: B vuelve a la sartén por su otro lado, y C también se da la vuelta. ¡Tres tortitas en tres minutos!', show: [{ t: 'tbl', k: 't', head: true, rows: [['', 'Sitio 1', 'Sitio 2'], ['Min 1', 'A lado 1', 'B lado 1'], ['Min 2', 'A lado 2', 'C lado 1'], ['Min 3', '!B lado 2', '!C lado 2']] }, { t: 'eq', x: '6 lados ÷ 2 a la vez = **3 minutos**' }, { t: 'ans', x: '3 minutos' }] },
+    { clear: true, say: 'La idea clave: no dejes huecos. Hay seis lados que hacer, y en cada minuto se hacen dos.', show: [{ t: 'ans', x: '3 minutos' }, { t: 'idea', x: '**No dejes huecos**: 6 lados, 2 por minuto → **3 minutos**.' }] },
+  ] },
+
+// --- Nivel 2 ---
+{ id: 'enfrente', level: 2, emoji: '⭕', title: 'Sentados en círculo', cat: 'Probar con pocos',
+  q: 'Unos niños se sientan **en círculo**, a la misma distancia unos de otros, y se numeran **1, 2, 3…** en orden, uno detrás de otro alrededor del círculo.\n\nEl niño número **6** está **justo enfrente** del número **17**. ¿Cuántos niños hay en el círculo?',
+  qSay: 'Unos niños se sientan en círculo, a la misma distancia unos de otros, y se numeran uno, dos, tres, en orden, uno detrás de otro alrededor del círculo. El niño número seis está justo enfrente del número diecisiete. ¿Cuántos niños hay en el círculo?',
+  ask: '¿Cuántos niños?', ph: 'Un número', ans: { num: 22, also: [11, 2, 6, 17, 10, 5, 1] },
+  traps: [{ v: 11, m: 'Comprueba: si en el círculo hubiera 11 niños, ¿existiría el niño número 17?' }, { v: 23, m: 'Comprueba: dibuja un círculo con 23 niños. ¿Quedan el 6 y el 17 **justo** enfrente?' }, { v: 21, m: 'Comprueba: dibuja un círculo con 21 niños. ¿Quedan el 6 y el 17 **justo** enfrente?' }, { v: 24, m: 'Comprueba: dibuja un círculo con 24 niños. ¿Quedan el 6 y el 17 **justo** enfrente?' }, { v: 34, m: 'Comprueba: dibuja un círculo con 34 niños. ¿Quedan el 6 y el 17 **justo** enfrente?' }, { v: 12, m: 'Comprueba: si hubiera 12 niños, ¿existiría el niño número 17?' }, { v: 20, m: 'Comprueba: dibuja un círculo con 20 niños. ¿Quedan el 6 y el 17 **justo** enfrente?' }],
+  hints: ['Prueba con un círculo **pequeño**: dibuja 6 niños en círculo. ¿Quién está enfrente del 1?',
+    'Con 6 niños, el 1 está enfrente del 4. ¿Cuántos pasos hay del 1 al 4? ¿Y cuántos tiene la vuelta entera?',
+    'Ir hasta el que tienes enfrente es dar **media vuelta**. Del 6 al 17, ¿cuántos pasos hay?',
+    'Del 6 al 17 hay 11 pasos: media vuelta.'],
+  answer: '22 niños', idea: '**Enfrente = media vuelta.** Del 6 al 17 hay 11 pasos, así que la vuelta entera tiene 22.',
+  steps: ['Del 6 al 17 hay 17 − 6 = **11** pasos.', 'Ir de un niño al que tiene enfrente es dar **media vuelta**.', 'Media vuelta = 11 → vuelta entera = **22** niños.', 'Comprueba por el otro lado: del 17 al 22 hay 5 pasos, del 22 al 1 uno, y del 1 al 6 otros 5 → **11** ✓.'],
+  film: [
+    { clear: true, say: 'Niños en círculo, numerados en orden. El seis está justo enfrente del diecisiete. ¿Cuántos hay? Probemos primero con un círculo pequeño, de seis niños.', show: [{ t: 'svg', k: 's', vb: '0 0 300 300', h: '62%', x: ronda(6) }] },
+    { say: 'Con seis niños, el uno está justo enfrente del cuatro. Del uno al cuatro hay tres pasos: media vuelta. Y la vuelta entera, seis.', show: [{ t: 'svg', k: 's', vb: '0 0 300 300', h: '62%', x: ronda(6, 1, 4, true) }, { t: 'eq', k: 'e', x: '1 → 4: **3** pasos = media vuelta → vuelta entera **6**' }] },
+    { clear: true, say: 'Ahora el nuestro. Del seis al diecisiete hay once pasos. Y eso es media vuelta.', show: [{ t: 'eq', k: 'e', x: '17 − 6 = **11** pasos = media vuelta' }] },
+    { say: 'La vuelta entera es el doble: veintidós niños. Y por el otro lado, del diecisiete al seis, ¡también once pasos!', show: [{ t: 'svg', k: 's', vb: '0 0 300 300', h: '62%', x: ronda(22, 6, 17, true) }, { t: 'eq', k: 'e', x: '11 × 2 = **22**' }, { t: 'ans', x: '22 niños' }] },
+    { clear: true, say: 'La idea clave: prueba primero con pocos. Enfrente quiere decir media vuelta.', show: [{ t: 'ans', x: '22 niños' }, { t: 'idea', x: '**Enfrente = media vuelta**: 11 pasos → la vuelta entera, **22**.' }] },
+  ] },
+
+{ id: 'sellos', level: 2, emoji: '✉️', title: 'Sellos de 3 y de 5', cat: 'Hacer una lista',
+  q: 'En correos solo quedan sellos de **3 céntimos** y de **5 céntimos** (muchos de cada).\n\nAlgunos precios se pueden pagar **justos**, como 8 (3 + 5) o 9 (3 + 3 + 3). Otros, no.\n¿Cuál es el **precio más alto** que **no** se puede pagar justo?',
+  qSay: 'En correos solo quedan sellos de tres céntimos y de cinco céntimos, muchos de cada. Algunos precios se pueden pagar justos, como ocho, que es tres más cinco, o nueve, tres más tres más tres. Otros, no. ¿Cuál es el precio más alto que no se puede pagar justo?',
+  ask: '¿Qué precio?', ph: 'Un número (céntimos)', ans: { num: 7, also: [1, 2, 4, 3, 5, 6, 8, 9, 10] },
+  traps: [{ v: 4, m: 'Es verdad que 4 no se puede… pero sigue probando precios más altos, uno a uno.' }, { v: 2, m: 'Es verdad que 2 no se puede… pero sigue probando precios más altos, uno a uno.' }, { v: 1, m: 'Es verdad que 1 no se puede… pero sigue probando precios más altos, uno a uno.' },
+    ...[3, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 26, 29].map(selT)],
+  why: '¿Cómo sabes que a partir de 8 se pueden pagar **todos**?',
+  hints: ['Haz una **lista**: 1, 2, 3, 4… y al lado de cada precio apunta si se puede pagar justo o no.',
+    '¿Cuándo dejan de salir los "no"? Fíjate en cuántos "sí" seguidos consigues.',
+    'Cuando tienes **3 precios seguidos** que sí, ya salen todos los siguientes: basta con añadir un sello de 3.',
+    '8, 9 y 10 se pueden pagar. El último "no" está antes.'],
+  answer: '7 céntimos', idea: 'Haz la lista hasta encontrar **3 seguidos** que sí: a partir de ahí, añadiendo sellos de 3, salen **todos**.',
+  steps: ['Lista: 1 ✗, 2 ✗, 3 ✓, 4 ✗, 5 ✓, 6 ✓, **7 ✗**, 8 ✓, 9 ✓, 10 ✓.', '8, 9 y 10 se pueden: **3 seguidos**.', 'Añadiendo un sello de 3: 11, 12, 13; otro más: 14, 15, 16… ¡todos!', 'El precio más alto que no se puede pagar: **7**.'],
+  film: [
+    { clear: true, say: 'Sellos de tres y de cinco céntimos. ¿Qué precios se pueden pagar justos? Hagamos la lista.', show: [{ t: 'grid', k: 'g', n: 20, cols: 10, stagger: 30 }] },
+    { say: 'El uno y el dos, no. El tres, sí. El cuatro, no. El cinco y el seis, sí. Y el siete… no hay manera.', show: [{ t: 'grid', k: 'g', n: 20, cols: 10, hl: [3, 5, 6], off: [1, 2, 4, 7] }] },
+    { say: 'Ocho: tres más cinco. Nueve: tres más tres más tres. Diez: cinco más cinco. ¡Tres seguidos!', show: [{ t: 'grid', k: 'g', n: 20, cols: 10, hl: [3, 5, 6, 8, 9, 10], off: [1, 2, 4, 7] }, { t: 'eq', k: 'e', x: '8 = 3 + 5 · 9 = 3 + 3 + 3 · 10 = 5 + 5' }] },
+    { say: 'Y ahora, el truco: añadiendo un sello de tres, salen el once, el doce y el trece. Otro más, y el catorce, el quince y el dieciséis. ¡Ya salen todos!', show: [{ t: 'grid', k: 'g', n: 20, cols: 10, hl: [3, 5, 6, ...R(8, 20)], off: [1, 2, 4, 7] }, { t: 'eq', k: 'e', x: '+3 → 11, 12, 13 · +3 → 14, 15, 16 · …' }] },
+    { say: 'Así que el precio más alto que no se puede pagar es siete céntimos.', show: [{ t: 'ans', x: '7 céntimos' }] },
+    { clear: true, say: 'La idea clave: haz la lista hasta encontrar tres seguidos. A partir de ahí, sumando sellos de tres, salen todos.', show: [{ t: 'ans', x: '7 céntimos' }, { t: 'idea', x: 'Busca **3 seguidos** que sí: sumando sellos de 3 salen **todos** los demás.' }] },
+  ] },
+
+{ id: 'dados', level: 2, emoji: '🎲', title: 'La suma de dos dados', cat: 'Hacer una tabla',
+  q: 'Lanzas **dos dados**, uno **rojo** y uno **azul**, y **sumas** los puntos.\n\n¿Qué **suma** puede salir de **más maneras distintas**?',
+  qSay: 'Lanzas dos dados, uno rojo y uno azul, y sumas los puntos. ¿Qué suma puede salir de más maneras distintas?',
+  ask: '¿Qué suma?', ph: 'Un número', ans: { num: 7, also: [1, 2, 3, 4, 5, 6, 36, 12] },
+  traps: [{ v: 36, m: 'Esas son **todas** las tiradas posibles. ¿Qué suma sale en más de ellas?' }, ...[2, 3, 4, 5, 6, 8, 9, 10, 11, 12].map(dadT)],
+  why: '¿Por qué rojo 3 + azul 4 y rojo 4 + azul 3 cuentan como **dos** maneras?',
+  hints: ['Haz una **tabla**: el dado rojo arriba (del 1 al 6), el azul a la izquierda (del 1 al 6), y en cada casilla, la suma.',
+    'Rojo 3 + azul 4 y rojo 4 + azul 3 son tiradas **distintas** (por eso los dados tienen colores).',
+    'En la tabla, las sumas iguales forman **diagonales**. ¿Cuál es la diagonal más larga?',
+    'La diagonal más larga va de la esquina de arriba a la derecha a la de abajo a la izquierda: 6 casillas.'],
+  answer: '7 (sale de 6 maneras)', idea: 'Haz la **tabla de todas las tiradas**: 36 casillas. El 7 está en la diagonal más larga: **6 veces**.',
+  steps: ['Hay 6 × 6 = **36** tiradas distintas.', 'Suma 2: solo 1 + 1. Suma 12: solo 6 + 6.', 'Suma 7: 1+6, 2+5, 3+4, 4+3, 5+2, 6+1 → **6 maneras**.', 'Ninguna otra sale tanto: el 6 y el 8 salen de 5 maneras; el 2 y el 12, de una.'],
+  film: [
+    { clear: true, say: 'Dos dados, uno rojo y uno azul. ¿Qué suma sale de más maneras? Hagamos la tabla de todas las tiradas: el rojo arriba, el azul a la izquierda.', show: [{ t: 'tbl', k: 't', head: true, rows: dTab([]) }] },
+    { say: 'Treinta y seis casillas. El dos solo sale una vez: uno y uno. El doce, también una: seis y seis.', show: [{ t: 'tbl', k: 't', head: true, rows: dTab([2, 12]) }] },
+    { say: 'Y mira la diagonal del siete: uno y seis, dos y cinco, tres y cuatro, cuatro y tres, cinco y dos, seis y uno. ¡Seis casillas! Es la diagonal más larga.', show: [{ t: 'tbl', k: 't', head: true, rows: dTab([7]) }] },
+    { say: 'El seis y el ocho salen cinco veces cada uno. El siete, seis. ¡Gana el siete!', show: [{ t: 'eq', x: '6 → 5 maneras · **7 → 6 maneras** · 8 → 5 maneras' }, { t: 'ans', x: '7' }] },
+    { clear: true, say: 'La idea clave: haz la tabla de todas las tiradas, y cuenta.', show: [{ t: 'ans', x: '7 (6 maneras)' }, { t: 'idea', x: 'Haz la **tabla de todas las tiradas**: el 7 sale **6 veces** de 36.' }] },
+  ] },
+
+// --- Nivel 3 ---
+{ id: 'relojdigital', level: 3, emoji: '⏰', title: 'El reloj digital', cat: 'Construir el mejor número',
+  q: 'Un reloj digital marca las horas de **00:00** a **23:59**.\nA las 10:25, por ejemplo, la **suma de sus cifras** es 1 + 0 + 2 + 5 = 8.\n\n¿Cuál es la **suma más grande** que puede salir en el reloj en todo el día?',
+  qSay: 'Un reloj digital marca las horas desde las cero horas hasta las veintitrés cincuenta y nueve. A las diez y veinticinco, por ejemplo, la suma de sus cifras es uno más cero más dos más cinco: ocho. ¿Cuál es la suma más grande que puede salir en el reloj en todo el día?',
+  ask: '¿Qué suma?', ph: 'Un número', ans: { num: 24, also: [19, 59, 1, 9, 5, 10, 14] },
+  traps: [{ v: 19, m: 'Prueba la suma con muchas otras horas del día. ¿Alguna pasa de 19?' }, { v: 59, m: '¡Buena elección de minutos! Ahora completa la hora y **suma** todas sus cifras.' }, { v: 36, m: 'El reloj no puede marcar 99:99. ¿Qué cifras puede tener **cada** posición?' },
+    { v: 23, m: 'Casi. Revisa cada cifra, una a una: ¿alguna podría ser más grande?' }, { v: 22, m: 'Casi. Revisa cada cifra, una a una: ¿alguna podría ser más grande?' }, { v: 20, m: 'Revisa cada cifra, una a una: ¿alguna podría ser más grande?' },
+    { v: 27, m: 'Comprueba que tu hora existe: las horas van de 00 a 23 y los minutos de 00 a 59.' }, { v: 25, m: 'Comprueba que tu hora existe: las horas van de 00 a 23 y los minutos de 00 a 59.' }, { v: 28, m: 'Comprueba que tu hora existe: las horas van de 00 a 23 y los minutos de 00 a 59.' }],
+  why: '¿Por qué las 23:59 no es la hora que más suma?',
+  hints: ['Mira **cada posición** del reloj por separado: ¿qué cifras puede tener cada una?',
+    'Los minutos: la primera cifra llega como mucho a **5**, y la segunda a **9**.',
+    'Las horas: ¿suma más 23, o una hora que empiece por 1 y tenga un **9** detrás?',
+    'La mejor hora es 19, y los mejores minutos, 59.'],
+  answer: '24 (a las 19:59)', idea: 'Piensa **cada cifra por separado** y no te fíes de la hora "más alta": las 23:59 solo suman 19.',
+  steps: ['Minutos: lo mejor es **59** (5 + 9 = 14).', 'Horas: 23 suma 5, 09 suma 9… y **19** suma **10**, ¡lo máximo!', '19:59 → 1 + 9 + 5 + 9 = **24**.', 'No se puede más: ninguna hora suma más de 10, ni ningunos minutos más de 14.'],
+  film: [
+    { clear: true, say: '¿A qué hora suman más las cifras del reloj? Mucha gente dice: la última del día, las veintitrés cincuenta y nueve. Suma diecinueve.', show: [{ t: 'eq', k: 'c', x: '⏰ **23:59**' }, { t: 'eq', k: 'e', x: '2 + 3 + 5 + 9 = 19' }] },
+    { say: 'Miremos cada parte por separado. En los minutos, lo mejor es cincuenta y nueve: cinco más nueve, catorce.', show: [{ t: 'tbl', k: 'm', head: true, rows: [['Minutos', 'Suma'], ['30', 3], ['45', 9], ['!59', '!14']] }] },
+    { say: 'En las horas, las veintitrés suman solo cinco. Las nueve suman nueve. ¡Y las diecinueve suman diez!', show: [{ t: 'cols', k: 'm', items: [{ t: 'tbl', head: true, rows: [['Minutos', 'Suma'], ['59', 14]] }, { t: 'tbl', head: true, rows: [['Horas', 'Suma'], ['23', 5], ['09', 9], ['!19', '!10']] }] }] },
+    { say: 'Así que la mejor hora es las diecinueve cincuenta y nueve. Uno, más nueve, más cinco, más nueve: veinticuatro.', show: [{ t: 'eq', k: 'c', x: '⏰ **19:59**' }, { t: 'eq', k: 'e', x: '1 + 9 + 5 + 9 = **24**' }, { t: 'ans', x: '24' }] },
+    { clear: true, say: 'La idea clave: para construir el mejor número, piensa cada cifra por separado. La hora más alta no es la que más suma.', show: [{ t: 'ans', x: '24 (a las 19:59)' }, { t: 'idea', x: 'Piensa **cada cifra por separado**: las 23:59 solo suman 19.' }] },
+  ] },
+
+{ id: 'meses', level: 3, emoji: '🎂', title: 'Cumpleaños en el mismo mes', cat: 'Pensar en el peor caso',
+  q: '¿Cuántas personas tiene que haber **como mínimo** en un grupo para estar **completamente seguros** de que **al menos 3** cumplen años **el mismo mes**?',
+  qSay: '¿Cuántas personas tiene que haber como mínimo en un grupo para estar completamente seguros de que al menos tres cumplen años el mismo mes?',
+  ask: '¿Cuántas personas?', ph: 'Un número', ans: { num: 25, also: [12, 2, 24, 1, 3] },
+  traps: [{ v: 24, m: 'Comprueba: ¿puedes repartir los cumpleaños de 24 personas de forma que **ningún** mes tenga 3?' }, { v: 36, m: 'Con 36 seguro que sí… pero ¿hacen falta **tantas**? Busca el número más pequeño.' }, { v: 37, m: 'Con 37 seguro que sí… pero ¿hacen falta **tantas**? Busca el número más pequeño.' }, { v: 13, m: 'Comprueba: ¿puedes repartir los cumpleaños de 13 personas de forma que **ningún** mes tenga 3?' }, { v: 3, m: 'Con 3 personas, ¿no podrían cumplir en enero, febrero y marzo?' }, { v: 4, m: 'Con 4 personas, ¿no podrían cumplir cada una en un mes distinto?' }, { v: 26, m: 'Comprueba con una persona menos: ¿podrían repartirse sin que ningún mes tenga 3?' }, { v: 12, m: 'Con 12 personas, ¿no podría cumplir cada una en un mes distinto?' }],
+  hints: ['Piensa en el **peor caso**: los cumpleaños repartidos de la forma más "mala" posible.',
+    'Imagina 12 cajas, una por mes. Mete a las personas una a una intentando que **ninguna** caja llegue a 3.',
+    '¿Cuántas personas caben como mucho sin que ningún mes tenga 3? Con 2 en cada mes…',
+    '2 en cada mes son 24 personas, y ningún mes tiene 3.'],
+  answer: '25 personas', idea: '**Peor caso**: 2 personas en cada uno de los 12 meses son 24, y ningún mes tiene 3. La persona número **25** lo consigue seguro.',
+  steps: ['Hay **12 meses**.', 'Peor caso: **2 personas en cada mes** → 12 × 2 = 24, y ningún mes tiene 3.', 'La persona 25 tiene que caer en algún mes… que ya tiene 2 → ¡**3**!', 'Con 24 no es seguro; con **25**, sí.'],
+  film: [
+    { clear: true, say: 'Doce meses. ¿Cuántas personas hacen falta para estar seguros de que tres cumplen años el mismo mes? Pensemos en el peor caso: los cumpleaños lo más repartidos posible.', show: [{ t: 'svg', k: 's', vb: '0 0 400 290', h: '58%', x: meses(0) }] },
+    { say: 'Una persona en cada mes: doce personas, y nadie coincide.', show: [{ t: 'svg', k: 's', vb: '0 0 400 290', h: '58%', x: meses(1) }, { t: 'eq', k: 'e', x: '12 × 1 = 12' }] },
+    { say: 'Dos en cada mes: veinticuatro personas, y todavía ningún mes tiene tres.', show: [{ t: 'svg', k: 's', vb: '0 0 400 290', h: '58%', x: meses(2) }, { t: 'eq', k: 'e', x: '12 × 2 = **24** → ningún mes con 3' }] },
+    { say: 'Llega la persona veinticinco. Caiga en el mes que caiga, ya hay dos. ¡Tres, seguro!', show: [{ t: 'svg', k: 's', vb: '0 0 400 290', h: '58%', x: meses(2, 3) }, { t: 'eq', k: 'e', x: '24 + 1 = **25**' }, { t: 'ans', x: '25 personas' }] },
+    { clear: true, say: 'La idea clave: piensa en el peor caso. Con veinticuatro, todavía puede fallar. Con veinticinco, es imposible.', show: [{ t: 'ans', x: '25 personas' }, { t: 'idea', x: '**Peor caso**: 2 por mes = 24 sin ningún 3. La **25** lo asegura.' }] },
+  ] },
+
+{ id: 'piramide', level: 3, emoji: '🧱', title: 'La pirámide de números', cat: 'Probar y mejorar',
+  q: 'En esta pirámide, cada ladrillo vale la **suma de los dos** que tiene **justo debajo**.\nEn la fila de abajo están el **2**, un número escondido **?**, el **4** y el **1**. Arriba del todo sale **36**.\n\n¿Qué número es **?**',
+  qSay: 'En esta pirámide, cada ladrillo vale la suma de los dos que tiene justo debajo. En la fila de abajo están el dos, un número escondido, el cuatro y el uno. Arriba del todo sale treinta y seis. ¿Qué número está escondido?',
+  pic: `<svg viewBox="0 0 400 255">${piramide([[2, '?', 4, 1], ['', '', ''], ['', ''], [36]])}</svg>`,
+  ask: '¿Qué número es?', ph: 'Un número', ans: { num: 7, also: [2, 4, 1, 3, 6, 9, 11, 5, 20, 16, 36, 15, 18, 33, 21] },
+  traps: [{ v: 36, m: 'El 36 es el de **arriba**. ¿Qué número va en el ladrillo **?**?' }, ...[29, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 18, 21].map(chkP)],
+  why: '¿Por qué el número de arriba sube de 3 en 3?',
+  hints: ['**Prueba** un número en el **?**, por ejemplo el 1, y calcula la pirámide hasta arriba.',
+    'Prueba ahora con el 2. ¿Cuánto **ha subido** el número de arriba?',
+    'Cada vez que el **?** sube 1, el de arriba sube **3**. ¿Cuánto le falta para llegar a 36?',
+    'Con el 1, arriba sale 18. Faltan 18, y cada 1 de más suma 3.'],
+  answer: '7', idea: 'Prueba y **fíjate en cuánto cambia**: cada 1 que añades abajo suma 3 arriba, porque el **?** llega arriba por **3 caminos**.',
+  steps: ['Con el 1, arriba sale **18**. Con el 2, **21**. ¡Sube de 3 en 3!', 'Para llegar a 36 faltan 36 − 18 = **18**, y 18 ÷ 3 = **6** pasos más.', '1 + 6 = **7**.', 'Comprueba: 2, 7, 4, 1 → 9, 11, 5 → 20, 16 → **36** ✓.'],
+  film: [
+    { clear: true, say: 'Cada ladrillo es la suma de los dos de abajo. Abajo: dos, uno escondido, cuatro y uno. Arriba, treinta y seis. ¿Qué número se esconde?', show: [{ t: 'svg', k: 's', vb: '0 0 400 255', h: '56%', x: piramide([[2, '?', 4, 1], ['', '', ''], ['', ''], [36]]) }] },
+    { say: 'Probemos con un uno. Dos más uno, tres. Uno más cuatro, cinco. Cuatro más uno, cinco. Luego, ocho y diez. Y arriba, dieciocho. ¡Muy poco!', show: [{ t: 'svg', k: 's', vb: '0 0 400 255', h: '56%', x: piramide([[2, '!1', 4, 1], [3, 5, 5], [8, 10], [18]]) }, { t: 'eq', k: 'e', x: 'con 1 → arriba **18**' }] },
+    { say: 'Probemos con un dos. Arriba sale veintiuno. ¡Ha subido tres!', show: [{ t: 'svg', k: 's', vb: '0 0 400 255', h: '56%', x: piramide([[2, '!2', 4, 1], [4, 6, 5], [10, 11], [21]]) }, { t: 'eq', k: 'e', x: 'con 2 → arriba **21** (+3)' }] },
+    { say: '¿Por qué tres? Porque el número escondido llega hasta arriba por tres caminos distintos. Cada uno que sumas abajo son tres más arriba.', show: [{ t: 'eq', k: 'e', x: '+1 abajo → **+3** arriba' }] },
+    { say: 'De dieciocho a treinta y seis faltan dieciocho. Dieciocho entre tres: seis pasos más. Uno más seis: ¡siete!', show: [{ t: 'svg', k: 's', vb: '0 0 400 255', h: '56%', x: piramide([[2, '!7', 4, 1], [9, 11, 5], [20, 16], ['!36']]) }, { t: 'eq', k: 'e', x: '36 − 18 = 18 · 18 ÷ 3 = 6 · 1 + 6 = **7**' }, { t: 'ans', x: '7' }] },
+    { clear: true, say: 'La idea clave: prueba, y fíjate en cuánto cambia el resultado. Así sabes cuánto te falta.', show: [{ t: 'ans', x: '7' }, { t: 'idea', x: 'Prueba y **fíjate en cuánto cambia**: +1 abajo es **+3** arriba.' }] },
+  ] },
+
+// --- Nivel 4 ---
+{ id: 'puente', level: 4, emoji: '🔦', title: 'El puente y la linterna', cat: 'Estrategia',
+  q: 'Es de noche. **Cuatro amigos** tienen que cruzar un puente viejo con **una sola linterna**.\n• En el puente caben **como mucho 2** a la vez, y siempre hay que llevar la linterna.\n• La linterna no se puede lanzar: alguien tiene que **volver** con ella.\n• Ana tarda **1 minuto**, Bea **2**, Carlos **5** y Dani **10**. Si van dos juntos, van al paso del **más lento**.\n\n¿Cuántos **minutos como mínimo** tardan en cruzar los cuatro?',
+  qSay: 'Es de noche. Cuatro amigos tienen que cruzar un puente viejo con una sola linterna. En el puente caben como mucho dos a la vez, y siempre hay que llevar la linterna. La linterna no se puede lanzar: alguien tiene que volver con ella. Ana tarda un minuto, Bea dos, Carlos cinco y Dani diez. Si van dos juntos, van al paso del más lento. ¿Cuántos minutos como mínimo tardan en cruzar los cuatro?',
+  ask: '¿Cuántos minutos?', ph: 'Un número', ans: { num: 17, also: [1, 2, 5, 10, 19] },
+  traps: [...[19, 18, 20, 21, 22, 23, 24, 25, 16, 15, 14, 13, 12].map(puT)],
+  why: '¿Por qué conviene que Carlos y Dani crucen **juntos**?',
+  hints: ['Apunta **cada viaje** en una tabla: quién va, quién vuelve con la linterna, y cuántos minutos.',
+    'Lo primero que se le ocurre a todo el mundo: Ana, la más rápida, acompaña a cada uno y vuelve. ¿Cuánto sale? ¿Dónde se pierde más tiempo?',
+    '¿Y si Carlos y Dani, los dos lentos, cruzan **juntos**? Así sus minutos lentos se gastan **una sola vez**.',
+    'Primero cruzan Ana y Bea, y vuelve Ana. Luego cruzan Carlos y Dani… ¿quién vuelve ahora con la linterna?'],
+  answer: '17 minutos', idea: 'Que **los dos lentos crucen juntos**: los 10 minutos de Dani ya tapan los 5 de Carlos.',
+  steps: ['Ana y Bea cruzan → **2** min. Vuelve Ana → **1** min.', 'Carlos y Dani cruzan juntos → **10** min. Vuelve Bea → **2** min.', 'Ana y Bea cruzan → **2** min.', '2 + 1 + 10 + 2 + 2 = **17** minutos (si Ana acompaña a todos, salen 19).'],
+  film: [
+    { clear: true, say: 'Cuatro amigos, un puente y una linterna. Ana tarda uno, Bea dos, Carlos cinco y Dani diez. Lo primero que se nos ocurre: que Ana, la más rápida, acompañe a todos.', show: [{ t: 'row', items: ['#d3f9d8|Ana 1', '#d0ebff|Bea 2', '#fff3bf|Carlos 5', '#ffe3e3|Dani 10'] }] },
+    { say: 'Ana y Bea cruzan: dos minutos. Ana vuelve: uno. Ana y Carlos: cinco. Ana vuelve: uno. Ana y Dani: diez. Total, diecinueve.', show: [{ t: 'tbl', k: 't', head: true, rows: [['Viaje', 'Min'], ['➡️ Ana + Bea', 2], ['⬅️ Ana', 1], ['➡️ Ana + Carlos', 5], ['⬅️ Ana', 1], ['➡️ Ana + Dani', 10], ['Total', '!19']] }] },
+    { clear: true, say: 'El problema: los minutos de Carlos y los de Dani se gastan por separado. ¿Y si los dos lentos cruzan juntos? Solo gastan diez.', show: [{ t: 'eq', x: 'Por separado: 5 + 10 = 15 · Juntos: solo **10**' }] },
+    { clear: true, say: 'Primero cruzan Ana y Bea: dos minutos. Vuelve Ana: uno. Ahora, Carlos y Dani juntos: diez.', show: [{ t: 'tbl', k: 't', head: true, rows: [['Viaje', 'Min'], ['➡️ Ana + Bea', 2], ['⬅️ Ana', 1], ['➡️ Carlos + Dani', '!10']] }] },
+    { say: 'Bea, que estaba al otro lado, vuelve con la linterna: dos. Y Ana y Bea cruzan juntas: dos. ¡Diecisiete minutos!', show: [{ t: 'tbl', k: 't', head: true, rows: [['Viaje', 'Min'], ['➡️ Ana + Bea', 2], ['⬅️ Ana', 1], ['➡️ Carlos + Dani', 10], ['⬅️ Bea', 2], ['➡️ Ana + Bea', 2], ['Total', '!17']] }, { t: 'ans', x: '17 minutos' }] },
+    { clear: true, say: 'La idea clave: que los dos lentos crucen juntos. Los diez minutos de Dani ya tapan los cinco de Carlos.', show: [{ t: 'ans', x: '17 minutos' }, { t: 'idea', x: 'Que **los dos lentos crucen juntos**: los 10 min de Dani tapan los 5 de Carlos.' }] },
+  ] },
+
+{ id: 'pesas', level: 4, emoji: '⚖️', title: 'Tres pesas mágicas', cat: 'Restar también',
+  q: 'Tienes una balanza de dos platillos y solo **tres pesas**: de **1 g**, de **3 g** y de **9 g**.\nPuedes poner las pesas en **cualquiera de los dos platillos**, también **al lado** de lo que quieres pesar.\n\n¿Cuántos pesos distintos (1 g, 2 g, 3 g…) puedes medir?',
+  qSay: 'Tienes una balanza de dos platillos y solo tres pesas: de un gramo, de tres gramos y de nueve gramos. Puedes poner las pesas en cualquiera de los dos platillos, también al lado de lo que quieres pesar. ¿Cuántos pesos distintos, un gramo, dos gramos, tres gramos, puedes medir?',
+  pic: `<svg viewBox="0 0 600 380">${scale(['F'], [], 0, ['1', '3', '9'])}</svg>`,
+  ask: '¿Cuántos pesos distintos?', ph: 'Solo cuántos pesos (un número)', ans: { num: 13, also: [1, 3, 9, 2, 4, 5, 6, 8] },
+  traps: [{ v: 7, m: 'Revisa el enunciado: las pesas pueden ir en **los dos** platillos. ¿Salen más pesos así?' }, { v: 12, m: 'Casi. Revisa tu lista, uno a uno, desde 1 g hasta el más pesado que puedes medir.' }, { v: 11, m: 'Revisa tu lista, uno a uno, desde 1 g hasta el más pesado que puedes medir.' }, { v: 10, m: 'Revisa tu lista, uno a uno, desde 1 g hasta el más pesado que puedes medir.' }, { v: 26, m: 'Cuidado: cuenta solo pesos de verdad, 1 g, 2 g, 3 g… ¿Cuál es el más pesado que puedes medir?' }, { v: 14, m: 'Revisa tu lista: ¿cuál es el peso más grande que puedes medir con las tres pesas?' }, { v: 27, m: 'Revisa tu lista: ¿cuál es el peso más grande que puedes medir con las tres pesas?' }, { v: 3, m: 'Con 3 pesas salen muchos más pesos. Empieza: ¿cuáles salen con las pesas en un solo platillo?' }],
+  why: '¿Cómo mides **2 gramos** con pesas de 1, 3 y 9?',
+  hints: ['Primero, con las pesas **en un solo platillo**: ¿qué pesos salen? (1, 3, 4…)',
+    '¿Cómo medirías **2 g**? Pon la pesa de 3 en un platillo, y el objeto con la pesa de 1 en el otro.',
+    'Una pesa **al lado del objeto** es como **restarla**: 2 = 3 − 1. Haz la lista del 1 al 13.',
+    'Por ejemplo, 5 = 9 − 3 − 1 y 11 = 9 + 3 − 1. El más pesado es 1 + 3 + 9.'],
+  answer: '13 pesos (todos, del 1 g al 13 g)', idea: 'Una pesa **al lado del objeto** cuenta como una **resta**: 2 = 3 − 1. ¡Así se llenan todos los huecos hasta 13!',
+  steps: ['En un solo platillo salen 1, 3, 4, 9, 10, 12 y 13: solo **7** pesos.', 'Con una pesa al lado del objeto, se **resta**: 2 = 3 − 1, 5 = 9 − 3 − 1, 6 = 9 − 3, 7 = 9 − 3 + 1, 8 = 9 − 1, 11 = 9 + 3 − 1.', 'Así salen **todos**, del 1 g al 13 g.', 'El más pesado es 1 + 3 + 9 = 13 → **13** pesos distintos.'],
+  film: [
+    { clear: true, say: 'Pesas de uno, tres y nueve gramos. Si las pesas van siempre en el otro platillo, nunca al lado del objeto, salen siete pesos: uno, tres, cuatro, nueve, diez, doce y trece. Faltan huecos.', show: [{ t: 'grid', k: 'g', n: 13, cols: 7, hl: [1, 3, 4, 9, 10, 12, 13] }] },
+    { say: '¿Y el dos? Ponemos la pesa de tres en un platillo, y el objeto con la pesa de uno en el otro. ¡Equilibrio! El objeto pesa tres menos uno: dos.', show: [{ t: 'svg', k: 's', vb: '0 0 600 380', h: '52%', x: scale(['F', '1'], ['3'], 0) }, { t: 'eq', k: 'e', x: '? + 1 = 3 → ? = 3 − 1 = **2**' }] },
+    { say: 'Una pesa al lado del objeto cuenta como una resta. El cinco: nueve menos tres, menos uno.', show: [{ t: 'svg', k: 's', vb: '0 0 600 380', h: '52%', x: scale(['F', '3', '1'], ['9'], 0) }, { t: 'eq', k: 'e', x: '? + 3 + 1 = 9 → ? = **5**' }] },
+    { clear: true, say: '¡Así se llenan todos los huecos! Seis es nueve menos tres. Siete, nueve menos tres más uno. Ocho, nueve menos uno. Y once, nueve más tres menos uno.', show: [{ t: 'grid', k: 'g', n: 13, cols: 7, hl: [1, 3, 4, 9, 10, 12, 13], hl2: [2, 5, 6, 7, 8, 11] }, { t: 'eq', x: '6 = 9 − 3 · 7 = 9 − 3 + 1 · 8 = 9 − 1 · 11 = 9 + 3 − 1' }] },
+    { say: 'Y el más pesado, las tres juntas: trece. Del uno al trece, todos. Trece pesos distintos.', show: [{ t: 'ans', x: '13 pesos' }] },
+    { clear: true, say: 'La idea clave: una pesa al lado del objeto cuenta como una resta. Sumando y restando, salen todos.', show: [{ t: 'ans', x: '13 pesos' }, { t: 'idea', x: 'Una pesa **al lado del objeto** cuenta como una **resta**: 2 = 3 − 1.' }] },
+  ] },
+
+{ id: 'calle', level: 4, emoji: '🏘️', title: 'La casa de Leo', cat: 'Empezar por lo pequeño',
+  q: 'En una calle, las casas están numeradas **1, 2, 3, 4…** seguidas, todas en la misma acera. Hay **más de 10** casas y **menos de 50**.\n\nLeo vive en una casa muy especial: si **sumas** los números de todas las casas que hay **antes** de la suya, da **lo mismo** que si sumas los de todas las casas que hay **después**.\n\n¿Qué **número** tiene la casa de Leo?',
+  qSay: 'En una calle, las casas están numeradas uno, dos, tres, cuatro, seguidas, todas en la misma acera. Hay más de diez casas y menos de cincuenta. Leo vive en una casa muy especial: si sumas los números de todas las casas que hay antes de la suya, da lo mismo que si sumas los de todas las casas que hay después. ¿Qué número tiene la casa de Leo?',
+  ask: '¿Qué número tiene su casa?', ph: 'Un número', ans: { num: 35, also: [49, 595, 1225, 34, 36, 8, 6, 15, 1, 2] },
+  traps: [{ v: 49, m: 'Ese sería el número de **casas** de la calle. ¿Y el de la casa de Leo?' }, { v: 6, m: 'Eso funciona en una calle de **8** casas. Pero esta calle tiene **más de 10**.' }, { v: 595, m: 'Esa es la suma de un lado. ¿Qué número tiene la **casa** de Leo?' }, { v: 1225, m: 'Esa es la suma de **todas** las casas. ¿Qué número tiene la casa de Leo?' },
+    ...[24, 25, 30, 33, 34, 36, 40, 20, 12, 14].map(chkC)],
+  why: '¿Por qué la suma de **todas** las casas es el número de Leo multiplicado por sí mismo?',
+  hints: ['Empieza con **calles pequeñas**. En una calle de 8 casas, ¿hay alguna casa especial?',
+    'Con 8 casas, la casa 6 funciona: 1 + 2 + 3 + 4 + 5 = 15 y 7 + 8 = 15. Ahora **suma todas** las casas de esa calle. ¿Qué tiene de especial ese número?',
+    'La suma de **todas** las casas es 36 = **6 × 6**: el número de la casa por sí mismo. Busca una calle más larga cuya suma total sea un número **× sí mismo**.',
+    'Suma las casas de 11, 12, 13… (o usa el truco de Gauss) y compara con 11 × 11, 12 × 12, 13 × 13… Con 49 casas, la suma es 1225.'],
+  answer: 'La casa 35 (la calle tiene 49 casas)', idea: '**Empieza por lo pequeño**: con 8 casas la especial es la 6, y la suma total es 36 = 6 × 6. Busca otra calle cuya suma sea un número × sí mismo: 1225 = 35 × 35.',
+  steps: ['Calle de 8 casas: la casa **6** → 1+2+3+4+5 = 15 = 7+8 ✓. Suma total: 36 = **6 × 6**.', 'Siempre pasa: la suma de **todas** las casas = número de Leo × número de Leo.', 'Sumas totales: 11 casas → 66, 12 → 78, 13 → 91… ninguna es un número × sí mismo hasta **49 casas → 1225 = 35 × 35**.', 'Comprueba: 1 + 2 + … + 34 = **595** y 36 + 37 + … + 49 = **595** ✓.'],
+  film: [
+    { clear: true, say: 'Leo vive en una casa donde las casas de antes suman lo mismo que las de después. Empecemos por lo pequeño: una calle de ocho casas.', show: [{ t: 'row', k: 'r', label: '🏘️', items: R(1, 8).map(String) }] },
+    { say: 'En esta calle, la casa seis funciona. Antes: uno, dos, tres, cuatro y cinco suman quince. Después: siete y ocho, quince también.', show: [{ t: 'row', k: 'r', label: '🏘️', items: ['1', '2', '3', '4', '5', '!6', '7', '8'] }, { t: 'eq', k: 'e', x: '1 + 2 + 3 + 4 + 5 = **15** · 7 + 8 = **15**' }] },
+    { say: 'Ahora sumemos todas las casas de la calle: treinta y seis. ¡Seis por seis! El número de la casa, por sí mismo.', show: [{ t: 'eq', k: 'e', x: '1 + 2 + … + 8 = **36** = 6 × 6' }] },
+    { clear: true, say: '¿Por qué? Las casas de después suman lo mismo que las de antes. Así que el total es: de la uno a la seis, en azul, y otra vez de la uno a la cinco, en naranja. ¡Juntas forman un cuadrado de seis por seis!', show: [{ t: 'svg', k: 's', vb: '0 0 300 300', h: '56%', x: cuadrado(6) }, { t: 'eq', x: '(1 + … + 6) + (1 + … + 5) = 6 × 6' }] },
+    { clear: true, say: 'Así que buscamos una calle de más de diez casas cuya suma total sea un número por sí mismo. Sumamos casa a casa… y con cuarenta y nueve casas: mil doscientos veinticinco. ¡Treinta y cinco por treinta y cinco!', show: [{ t: 'tbl', k: 't', head: true, rows: [['Casas', 'Suma total', '¿n × n?'], [11, 66, '✗'], [12, 78, '✗'], [13, 91, '✗'], ['…', '…', ''], [49, '!1225', '!35 × 35 ✓']] }] },
+    { say: 'Comprobemos. Antes de la treinta y cinco, las casas suman quinientos noventa y cinco. Después, también quinientos noventa y cinco. ¡Leo vive en la casa treinta y cinco!', show: [{ t: 'eq', k: 'e', x: '1 + … + 34 = **595** · 36 + … + 49 = **595**' }, { t: 'ans', x: 'Casa 35' }] },
+    { clear: true, say: 'La idea clave: empieza por lo pequeño y busca lo que siempre pasa. Un problema parecido se lo leyeron al gran matemático indio Ramanujan mientras removía la verdura en una sartén, ¡y dictó la solución sin dejar de cocinar!', show: [{ t: 'ans', x: 'Casa 35' }, { t: 'idea', x: '**Empieza por lo pequeño**: con 8 casas, 36 = 6 × 6. Con 49 casas, 1225 = **35 × 35**.' }] },
   ] },
 
 ];
