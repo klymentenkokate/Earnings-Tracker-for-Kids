@@ -229,6 +229,81 @@ const selT = v => { for (let b = 0; 5 * b <= v; b++) if ((v - 5 * b) % 3 === 0) 
 const dadT = v => ({ v, m: `La suma ${v} sale de ${6 - Math.abs(v - 7)} ${6 - Math.abs(v - 7) === 1 ? 'manera' : 'maneras'}. ¿Hay alguna suma que salga de **más**?` });
 const puT = v => ({ v, m: [19, 20, 21, 23, 24, 25].includes(v) ? '¡Eso funciona! Pero se puede **más rápido**. Prueba otras parejas y apunta cada viaje.' : 'Comprueba viaje a viaje: ¿quién vuelve con la linterna cada vez? Escribe todos los viajes y súmalos.' });
 const dTab = hl => [['+', 1, 2, 3, 4, 5, 6], ...R(1, 6).map(b => [b, ...R(1, 6).map(a => (hl.includes(a + b) ? '!' : '') + (a + b))])];
+function jardin(hl) {        // square garden, 5 trees per side (16 in all); hl: corner trees on gold discs
+  const P = [40, 95, 150, 205, 260];
+  let s = `<rect x="40" y="40" width="220" height="220" fill="#d3f9d8" stroke="#2b8a3e" stroke-width="3" stroke-dasharray="8 6"/>`;
+  P.forEach(x => P.forEach(y => {
+    if (!(x === 40 || x === 260 || y === 40 || y === 260)) return;
+    const c = (x === 40 || x === 260) && (y === 40 || y === 260);
+    if (hl && c) s += `<circle cx="${x}" cy="${y}" r="25" fill="#ffd43b" stroke="#e03131" stroke-width="3"/>`;
+    s += em('🌳', x, y, 34);
+  }));
+  return s;
+}
+function tunel(x) {          // 400 m tunnel; 200 m train whose front is at metre x (0 = tunnel mouth); last wagon red, engine yellow
+  const P = m => 40 + (m + 200) * .65;
+  let s = `<rect x="0" y="150" width="600" height="6" fill="#868e96"/><path d="M140,150 L170,80 Q300,10 430,80 L460,150 Z" fill="#c08552"/><rect x="170" y="92" width="260" height="58" fill="#343a40"/><text x="300" y="62" font-size="20" font-weight="900" text-anchor="middle" fill="#fff">túnel 400 m</text>`;
+  for (let k = 0; k < 4; k++) {
+    const a = P(x - 200 + k * 50) + 2, w = 50 * .65 - 4;
+    s += `<rect x="${a}" y="104" width="${w}" height="38" rx="6" fill="${k === 3 ? '#fab005' : k === 0 ? '#e03131' : '#4dabf7'}" stroke="#1d1442" stroke-width="2"/><circle cx="${a + 8}" cy="146" r="5" fill="#1d1442"/><circle cx="${a + w - 8}" cy="146" r="5" fill="#1d1442"/>`;
+  }
+  return s + `<text x="${(P(x - 200) + P(x)) / 2}" y="182" font-size="17" font-weight="800" text-anchor="middle" fill="#495057">tren 200 m</text>`;
+}
+function cuerda(st) {        // 0 straight rope · 1 folded in half + cut line · 2 folded and cut (3 colours) · 3 unfolded: 3 pieces
+  const L = (x1, y1, x2, y2, c) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${c}" stroke-width="10" stroke-linecap="round"/>`;
+  const cut = `<line x1="210" y1="40" x2="210" y2="165" stroke="#e03131" stroke-width="3" stroke-dasharray="8 6"/>` + em('✂️', 210, 26, 30);
+  if (st === 0) return L(30, 100, 370, 100, '#a0522d');
+  if (st === 1) return `<path d="M330,70 H90 A30,30 0 0 0 90,130 H330" fill="none" stroke="#a0522d" stroke-width="10" stroke-linecap="round"/>` + cut;
+  if (st === 2) return `<path d="M200,70 H90 A30,30 0 0 0 90,130 H200" fill="none" stroke="#40c057" stroke-width="10" stroke-linecap="round"/>` + L(222, 70, 330, 70, '#fd7e14') + L(222, 130, 330, 130, '#4dabf7') + cut;
+  const T = (x, t) => `<text x="${x}" y="70" font-size="22" font-weight="900" text-anchor="middle" fill="#1d1442">${t}</text>`;
+  return L(30, 100, 105, 100, '#fd7e14') + L(130, 100, 270, 100, '#40c057') + L(295, 100, 370, 100, '#4dabf7') + T(67, 1) + T(200, 2) + T(332, 3);
+}
+function tableta(r, c, sep, done) { // r × c chocolate; sep: rows pulled apart; done: how many rows are split into single squares
+  let s = '';
+  for (let i = 0; i < r; i++) for (let j = 0; j < c; j++) {
+    const x = 20 + j * 52 + (i < done ? j * 10 : 0), y = 20 + i * 52 + (sep ? i * 12 : 0);
+    s += `<rect x="${x}" y="${y}" width="50" height="50" rx="5" fill="#8b5a2b" stroke="#5c3a1a" stroke-width="3"/><rect x="${x + 8}" y="${y + 8}" width="34" height="34" rx="4" fill="#a0693a"/>`;
+  }
+  return s;
+}
+function ruedas(spin) {      // 12-tooth gear meshed with a 36-tooth gear; one red tooth each; spin: both turn (big at 1/3 speed)
+  const gear = (cx, cy, r, n, fill, to, lab) => {
+    let g = '';
+    for (let k = 0; k < n; k++) g += `<rect x="${cx - 5}" y="${cy - r - 11}" width="10" height="15" rx="2" fill="${k ? '#868e96' : '#e03131'}" transform="rotate(${(k * 360 / n).toFixed(2)} ${cx} ${cy})"/>`;
+    g += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}" stroke="#495057" stroke-width="3"/><circle cx="${cx}" cy="${cy - r + 12}" r="6" fill="#e03131"/>`;
+    const anim = spin ? `<animateTransform attributeName="transform" type="rotate" from="0 ${cx} ${cy}" to="${to} ${cx} ${cy}" dur="4s" repeatCount="indefinite"/>` : '';
+    return `<g>${g}${anim}</g><text x="${cx}" y="${cy + 9}" font-size="${r > 60 ? 26 : 20}" font-weight="900" text-anchor="middle" fill="#1d1442">${lab}</text>`;
+  };
+  return gear(80, 150, 45, 12, '#ffe8cc', 360, '12') + gear(268, 150, 135, 36, '#d0ebff', -120, '36 dientes');
+}
+function barras(m) {         // bar model: Bea 1 bar, Ana 2 bars; m 1: Ana's extra bar halved, half goes to Bea (6); m 2: bars = 12
+  const B = (x, y, w, f, t, dash) => `<rect x="${x}" y="${y}" width="${w}" height="50" rx="6" fill="${f}" stroke="#1d1442" stroke-width="2.5"${dash ? ' stroke-dasharray="7 5"' : ''}/>` + (t ? `<text x="${x + w / 2}" y="${y + 33}" font-size="22" font-weight="900" text-anchor="middle" fill="#1d1442">${t}</text>` : '');
+  let s = `<text x="70" y="63" font-size="20" font-weight="800" text-anchor="end" fill="#1d1442">Bea</text><text x="70" y="143" font-size="20" font-weight="800" text-anchor="end" fill="#1d1442">Ana</text>`;
+  s += B(80, 30, 130, '#a5d8ff', m >= 2 ? '12' : '') + B(80, 110, 130, '#ffc9c9', m >= 2 ? '12' : '');
+  return s + (m === 0 ? B(210, 110, 130, '#ffc9c9', '') : B(210, 110, 65, '#ffc9c9', '6') + B(275, 110, 65, '#ffd43b', '6') + B(210, 30, 65, '#fff3bf', '+6', true));
+}
+function reloj(h, m) {       // analogue clock at h:m (m may have decimals); hour hand dark, minute hand red
+  const hand = (deg, L, w, c) => { const a = deg * Math.PI / 180; return `<line x1="150" y1="150" x2="${(150 + L * Math.sin(a)).toFixed(1)}" y2="${(150 - L * Math.cos(a)).toFixed(1)}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`; };
+  let s = `<circle cx="150" cy="150" r="135" fill="#fff" stroke="#1d1442" stroke-width="6"/>`;
+  for (let k = 1; k <= 12; k++) { const a = k * 30 * Math.PI / 180; s += `<text x="${(150 + 108 * Math.sin(a)).toFixed(1)}" y="${(158 - 108 * Math.cos(a)).toFixed(1)}" font-size="24" font-weight="900" text-anchor="middle" fill="#495057">${k}</text>`; }
+  return s + hand(((h % 12) + m / 60) * 30, 68, 11, '#1d1442') + hand(m * 6, 108, 6, '#e03131') + `<circle cx="150" cy="150" r="9" fill="#1d1442"/>`;
+}
+function jarras(b, sm) {     // 5-litre and 3-litre jugs holding b and sm litres
+  const J = (x, w, cap, v, lab) => `<rect x="${x}" y="${230 - v * 36}" width="${w}" height="${v * 36}" fill="#74c0fc"/><path d="M${x},${230 - cap * 36 - 8} V230 H${x + w} V${230 - cap * 36 - 8}" fill="none" stroke="#1d1442" stroke-width="5" stroke-linejoin="round"/><text x="${x + w / 2}" y="${230 - cap * 36 - 18}" font-size="24" font-weight="900" text-anchor="middle" fill="#1971c2">${v} L</text><text x="${x + w / 2}" y="255" font-size="16" font-weight="800" text-anchor="middle" fill="#495057">${lab}</text>`;
+  return J(50, 110, 5, b, 'jarra de 5 L') + J(210, 90, 3, sm, 'jarra de 3 L');
+}
+function piedras(row) {      // stones in a row: 'G' green frog, 'B' brown frog, '_' empty  (width 70 + 58 per extra stone)
+  let s = '';
+  [...row].forEach((ch, i) => {
+    const x = 35 + i * 58;
+    s += `<ellipse cx="${x}" cy="78" rx="26" ry="13" fill="#adb5bd" stroke="#495057" stroke-width="2"/>`;
+    if (ch !== '_') s += `<circle cx="${x}" cy="48" r="23" fill="${ch === 'G' ? '#8ce99a' : '#d9a066'}" stroke="#1d1442" stroke-width="2.5"/>` + em('🐸', x, 48, 32);
+  });
+  return s;
+}
+const jaT = v => ({ v, m: v > 7 ? '¡Eso funciona! Pero se puede con **menos** movimientos. ¿Sobra algún movimiento? ¿Y si empiezas por la **otra** jarra?' : 'Comprueba movimiento a movimiento en una tabla: ¿cuántos litros hay en cada jarra después de cada uno?' });
+const raT = v => ({ v, m: 'Prueba primero con **pocas** ranas: 1 verde y 1 marrón, luego 2 y 2. Cuenta los movimientos y busca cómo crecen.' });
+
 window.OL_BANK = [
 // ===================== NIVEL 1 · Pensador principiante =====================
 { id: 'calcetines', level: 1, emoji: '🧦', title: 'Calcetines a oscuras', cat: 'Pensar en el peor caso',
@@ -1621,7 +1696,7 @@ window.OL_BANK = [
     { clear: true, say: 'Dos dados, uno rojo y uno azul. ¿Qué suma sale de más maneras? Hagamos la tabla de todas las tiradas: el rojo arriba, el azul a la izquierda.', show: [{ t: 'tbl', k: 't', head: true, rows: dTab([]) }] },
     { say: 'Treinta y seis casillas. El dos solo sale una vez: uno y uno. El doce, también una: seis y seis.', show: [{ t: 'tbl', k: 't', head: true, rows: dTab([2, 12]) }] },
     { say: 'Y mira la diagonal del siete: uno y seis, dos y cinco, tres y cuatro, cuatro y tres, cinco y dos, seis y uno. ¡Seis casillas! Es la diagonal más larga.', show: [{ t: 'tbl', k: 't', head: true, rows: dTab([7]) }] },
-    { say: 'El seis y el ocho salen cinco veces cada uno. El siete, seis. ¡Gana el siete!', show: [{ t: 'eq', x: '6 → 5 maneras · **7 → 6 maneras** · 8 → 5 maneras' }, { t: 'ans', x: '7' }] },
+    { say: 'El seis y el ocho salen cinco veces cada uno. El siete, seis. ¡Gana el siete!', show: [{ t: 'eq', x: '6 → 5 · **7 → 6 maneras** · 8 → 5' }, { t: 'ans', x: '7' }] },
     { clear: true, say: 'La idea clave: haz la tabla de todas las tiradas, y cuenta.', show: [{ t: 'ans', x: '7 (6 maneras)' }, { t: 'idea', x: 'Haz la **tabla de todas las tiradas**: el 7 sale **6 veces** de 36.' }] },
   ] },
 
@@ -1754,6 +1829,261 @@ window.OL_BANK = [
     { clear: true, say: 'Así que buscamos una calle de más de diez casas cuya suma total sea un número por sí mismo. Sumamos casa a casa… y con cuarenta y nueve casas: mil doscientos veinticinco. ¡Treinta y cinco por treinta y cinco!', show: [{ t: 'tbl', k: 't', head: true, rows: [['Casas', 'Suma total', '¿n × n?'], [11, 66, '✗'], [12, 78, '✗'], [13, 91, '✗'], ['…', '…', ''], [49, '!1225', '!35 × 35 ✓']] }] },
     { say: 'Comprobemos. Antes de la treinta y cinco, las casas suman quinientos noventa y cinco. Después, también quinientos noventa y cinco. ¡Leo vive en la casa treinta y cinco!', show: [{ t: 'eq', k: 'e', x: '1 + … + 34 = **595** · 36 + … + 49 = **595**' }, { t: 'ans', x: 'Casa 35' }] },
     { clear: true, say: 'La idea clave: empieza por lo pequeño y busca lo que siempre pasa. Un problema parecido se lo leyeron al gran matemático indio Ramanujan mientras removía la verdura en una sartén, ¡y dictó la solución sin dejar de cocinar!', show: [{ t: 'ans', x: 'Casa 35' }, { t: 'idea', x: '**Empieza por lo pequeño**: con 8 casas, 36 = 6 × 6. Con 49 casas, 1225 = **35 × 35**.' }] },
+  ] },
+
+// ===================== Batch 6 (24 Nov 2026): 3 more per level. Answers: verify6.py =====================
+// --- Nivel 1 ---
+{ id: 'arboles', level: 1, emoji: '🌳', title: 'Árboles en el jardín', cat: 'No contar dos veces',
+  q: 'Un jardín tiene forma de **cuadrado**. El jardinero planta árboles en el borde, de forma que en **cada lado** hay **5 árboles**, contando los de las **esquinas**.\n\n¿Cuántos árboles planta **en total**?',
+  qSay: 'Un jardín tiene forma de cuadrado. El jardinero planta árboles en el borde, de forma que en cada lado hay cinco árboles, contando los de las esquinas. ¿Cuántos árboles planta en total?',
+  ask: '¿Cuántos árboles?', ph: 'Un número', ans: { num: 16, also: [4, 5, 20, 3, 12] },
+  traps: [{ v: 20, m: '¡Dibújalo! Pon 5 árboles en cada lado. El árbol de una esquina, ¿en cuántos lados está?' }, { v: 24, m: 'Dibuja el jardín con 5 árboles en cada lado y cuenta los árboles uno a uno.' }, { v: 12, m: 'Dibuja el jardín con 5 árboles en cada lado y cuenta los árboles uno a uno. ¿Has contado las esquinas?' }, { v: 15, m: 'Casi. Dibuja el jardín y cuenta los árboles uno a uno.' }, { v: 18, m: 'Dibuja el jardín con 5 árboles en cada lado y cuenta los árboles uno a uno.' }],
+  why: '¿Por qué no son 4 × 5 = 20?',
+  hints: ['**Dibuja** el cuadrado y pon 5 árboles en el lado de arriba.',
+    'Ahora el lado de la derecha: el árbol de la esquina **ya está puesto**. ¿Cuántos árboles nuevos añades?',
+    'Cada árbol de una esquina está en **dos lados** a la vez. Si haces 4 × 5, ¿cuántas veces cuentas cada esquina?',
+    '4 × 5 = 20, pero los 4 árboles de las esquinas se han contado dos veces.'],
+  answer: '16 árboles', idea: '**No cuentes dos veces**: cada árbol de una esquina está en **dos lados** a la vez.',
+  steps: ['4 lados × 5 árboles = 20… ¡pero cuidado!', 'Cada árbol de una esquina está en **dos lados**: lo has contado **dos veces**.', 'Hay 4 esquinas → sobran 4: 20 − 4 = **16**.', 'Otra forma: 3 árboles en el medio de cada lado (3 × 4 = 12) más las 4 esquinas = **16**.'],
+  film: [
+    { clear: true, say: 'Un jardín cuadrado, con cinco árboles en cada lado, contando las esquinas. ¿Cuántos árboles hay? Mucha gente hace cuatro por cinco: veinte. ¡Vamos a contarlos!', show: [{ t: 'svg', k: 's', vb: '0 0 300 300', h: '60%', x: jardin(false) }] },
+    { say: 'Mira el árbol de esta esquina: está en el lado de arriba, y también en el de la izquierda. Si cuentas lado por lado, ¡lo cuentas dos veces! Y lo mismo pasa en las cuatro esquinas.', show: [{ t: 'svg', k: 's', vb: '0 0 300 300', h: '60%', x: jardin(true) }, { t: 'eq', k: 'e', x: '4 × 5 = 20 → las **4 esquinas**, contadas **dos veces**' }] },
+    { say: 'Así que quitamos las cuatro esquinas repetidas. Veinte menos cuatro: dieciséis árboles.', show: [{ t: 'eq', k: 'e', x: '20 − 4 = **16**' }, { t: 'ans', x: '16 árboles' }] },
+    { say: 'Otra forma: en el medio de cada lado hay tres árboles. Tres por cuatro, doce. Más las cuatro esquinas: dieciséis.', show: [{ t: 'eq', k: 'e', x: '3 × 4 + 4 = **16**' }] },
+    { clear: true, say: 'La idea clave: no cuentes dos veces. Los árboles de las esquinas están en dos lados a la vez.', show: [{ t: 'ans', x: '16 árboles' }, { t: 'idea', x: '**No cuentes dos veces**: cada esquina está en **dos lados**.' }] },
+  ] },
+
+{ id: 'tunel', level: 1, emoji: '🚆', title: 'El tren y el túnel', cat: 'Seguir el último vagón',
+  q: 'Un tren de **200 metros** de largo va a **200 metros por minuto**. Tiene que atravesar un túnel de **400 metros**.\n\n¿Cuántos **minutos** pasan desde que la **locomotora entra** en el túnel hasta que el **último vagón sale**?',
+  qSay: 'Un tren de doscientos metros de largo va a doscientos metros por minuto. Tiene que atravesar un túnel de cuatrocientos metros. ¿Cuántos minutos pasan desde que la locomotora entra en el túnel hasta que el último vagón sale?',
+  pic: `<svg viewBox="0 0 600 190">${tunel(0)}</svg>`,
+  ask: '¿Cuántos minutos?', ph: 'Solo el número de minutos', ans: { num: 3, also: [200, 400, 600, 2, 1] },
+  traps: [{ v: 2, m: 'A los 2 minutos sale la **locomotora**. ¿Dónde está en ese momento el **último vagón**?' }, { v: 600, m: 'Eso son **metros**. ¿Cuántos **minutos** tarda en recorrerlos?' }, { v: 1, m: 'En 1 minuto el tren avanza 200 metros. ¿Le da tiempo a cruzar un túnel de 400?' }, { v: 4, m: 'Dibuja el túnel y el tren. Fíjate en el **último vagón**: ¿cuántos metros recorre hasta salir?' }, { v: 6, m: 'Dibuja el túnel y el tren. Fíjate en el **último vagón**: ¿cuántos metros recorre hasta salir?' }],
+  why: '¿Por qué no bastan 2 minutos?',
+  hints: ['**Dibuja** el túnel y el tren. Fíjate solo en el **último vagón**: ¿dónde está cuando la locomotora entra?',
+    'Cuando la locomotora entra, el último vagón está **200 metros por detrás**, todavía fuera.',
+    'Para salir, el último vagón tiene que recorrer esos 200 metros **y además** los 400 del túnel.',
+    'El último vagón recorre 600 metros, a 200 metros por minuto.'],
+  answer: '3 minutos', idea: '**Sigue al último vagón**: el tren no ha salido hasta que sale **entero**.',
+  steps: ['Cuando la locomotora entra, el último vagón va **200 m** por detrás.', 'Para salir, el último vagón recorre 200 + 400 = **600 m**.', 'A 200 m por minuto: 600 ÷ 200 = **3 minutos**.', 'Ojo: a los 2 minutos sale la locomotora, pero el tren aún no ha salido entero.'],
+  film: [
+    { clear: true, say: 'Un tren de doscientos metros atraviesa un túnel de cuatrocientos, a doscientos metros por minuto. Mucha gente piensa: el túnel mide cuatrocientos, así que dos minutos.', show: [{ t: 'svg', k: 's', vb: '0 0 600 190', h: '48%', x: tunel(0) }] },
+    { say: 'A los dos minutos, la locomotora amarilla sale del túnel. Pero mira el último vagón, el rojo: ¡todavía está dentro!', show: [{ t: 'svg', k: 's', vb: '0 0 600 190', h: '48%', x: tunel(400) }, { t: 'eq', k: 'e', x: '2 min → sale la locomotora… ¡el último vagón sigue **dentro**!' }] },
+    { say: 'El último vagón empezó doscientos metros por detrás. Tiene que recorrer esos doscientos, más los cuatrocientos del túnel: seiscientos metros.', show: [{ t: 'svg', k: 's', vb: '0 0 600 190', h: '48%', x: tunel(600) }, { t: 'eq', k: 'e', x: '200 + 400 = **600 m**' }] },
+    { say: 'Seiscientos metros, a doscientos por minuto: tres minutos.', show: [{ t: 'eq', k: 'e', x: '600 ÷ 200 = **3 minutos**' }, { t: 'ans', x: '3 minutos' }] },
+    { clear: true, say: 'La idea clave: sigue al último vagón. El tren no ha salido del túnel hasta que sale entero.', show: [{ t: 'ans', x: '3 minutos' }, { t: 'idea', x: '**Sigue al último vagón**: el tren no ha salido hasta que sale **entero**.' }] },
+  ] },
+
+{ id: 'cuerda', level: 1, emoji: '✂️', title: 'La cuerda doblada', cat: 'Hacerlo de verdad',
+  q: 'Coges una cuerda, la **doblas por la mitad** y, con las dos partes bien juntas, das **un solo corte** con las tijeras justo **por el medio** de la cuerda doblada, a mitad de camino entre el doblez y las puntas.\n\n¿En cuántos **trozos** queda la cuerda?',
+  qSay: 'Coges una cuerda, la doblas por la mitad y, con las dos partes bien juntas, das un solo corte con las tijeras justo por el medio de la cuerda doblada, a mitad de camino entre el doblez y las puntas. ¿En cuántos trozos queda la cuerda?',
+  ask: '¿Cuántos trozos?', ph: 'Un número', ans: { num: 3, also: [1, 2] },
+  traps: [{ v: 2, m: '¡Pruébalo con un cordón o un hilo de verdad! Dobla, corta y **cuenta** los trozos.' }, { v: 4, m: '¡Pruébalo con un hilo de verdad! Después de cortar, ¿están **todos** los trozos sueltos?' }, { v: 1, m: '¡Pruébalo con un hilo de verdad! Dobla, corta y **cuenta** los trozos.' }],
+  why: '¿Por qué no salen 4 trozos?',
+  hints: ['**Hazlo de verdad** con un cordón o un trozo de lana (¡pide permiso para usar las tijeras!).',
+    'Si no tienes cuerda, **dibújala**: una línea doblada por la mitad, como una U tumbada. Marca dónde corta la tijera.',
+    'Con la cuerda doblada, la tijera corta la cuerda en **2 sitios** a la vez.',
+    'Al cortar por 2 sitios salen los dos extremos… y el trozo del medio, el del doblez.'],
+  answer: '3 trozos', idea: '**Hazlo de verdad** (o dibújalo): el corte pasa por 2 sitios de la cuerda, y el trozo del **doblez** queda de una pieza.',
+  steps: ['Al doblarla, la tijera corta la cuerda en **2 sitios** a la vez.', 'Una cuerda cortada en 2 sitios queda en **3 trozos**.', 'Los dos extremos sueltos y el trozo del **medio**, el que tiene el doblez.', 'No salen 4: el doblez mantiene unido el trozo del medio.'],
+  film: [
+    { clear: true, say: 'Doblas una cuerda por la mitad y das un corte justo por el medio. ¿Cuántos trozos salen? Mucha gente dice dos, o cuatro. ¡Vamos a verlo!', show: [{ t: 'svg', k: 's', vb: '0 0 400 190', h: '46%', x: cuerda(0) }] },
+    { say: 'La doblamos. Ahora la cuerda pasa dos veces por debajo de la tijera. El corte la corta por dos sitios a la vez.', show: [{ t: 'svg', k: 's', vb: '0 0 400 190', h: '46%', x: cuerda(1) }, { t: 'eq', k: 'e', x: '1 corte → la cuerda, cortada en **2 sitios**' }] },
+    { say: 'Cortamos. Salen dos extremos sueltos, el naranja y el azul… y el trozo verde del doblez, que sigue de una pieza.', show: [{ t: 'svg', k: 's', vb: '0 0 400 190', h: '46%', x: cuerda(2) }] },
+    { say: 'Si la estiramos, se ve claro: tres trozos.', show: [{ t: 'svg', k: 's', vb: '0 0 400 190', h: '46%', x: cuerda(3) }, { t: 'eq', k: 'e', x: 'Cortada en 2 sitios → **3 trozos**' }, { t: 'ans', x: '3 trozos' }] },
+    { clear: true, say: 'La idea clave: si puedes, hazlo de verdad. Y si no, dibújalo. El doblez mantiene unido el trozo del medio.', show: [{ t: 'ans', x: '3 trozos' }, { t: 'idea', x: '**Hazlo de verdad** (o dibújalo): el trozo del **doblez** queda de una pieza.' }] },
+  ] },
+
+// --- Nivel 2 ---
+{ id: 'chocolate', level: 2, emoji: '🍫', title: 'La tableta de chocolate', cat: 'Cada corte, un trozo más',
+  q: 'Una tableta de chocolate tiene **4 filas** de **6 onzas**: 24 onzas en total. Quieres separarla en **onzas sueltas**.\nCada vez, coges **un solo trozo** y lo partes **en dos** por una de sus rayas (sin poner trozos uno encima de otro).\n\n¿Cuántas veces tienes que partir, **como mínimo**?',
+  qSay: 'Una tableta de chocolate tiene cuatro filas de seis onzas: veinticuatro onzas en total. Quieres separarla en onzas sueltas. Cada vez, coges un solo trozo y lo partes en dos por una de sus rayas, sin poner trozos uno encima de otro. ¿Cuántas veces tienes que partir, como mínimo?',
+  pic: `<svg viewBox="0 0 370 250">${tableta(4, 6, false, 0)}</svg>`,
+  ask: '¿Cuántas veces?', ph: 'Un número', ans: { num: 23, also: [4, 6, 24, 1, 3, 5, 20] },
+  traps: [{ v: 8, m: 'Cuidado: cada vez partes **un solo trozo**. Prueba con una tableta pequeña, de 2 × 2, y cuenta.' }, { v: 24, m: 'Comprueba con una tableta muy pequeña: una de **2** onzas, ¿cuántas veces hay que partirla?' }, { v: 20, m: 'Casi. ¿Has contado también las veces que separas las **filas**?' }, { v: 18, m: 'Prueba con una tableta pequeña, de 2 × 2, y cuenta las veces que partes.' }, { v: 22, m: 'Casi. Prueba con una tableta pequeña, de 2 × 2, y cuenta las veces que partes.' }, { v: 12, m: 'Prueba con una tableta pequeña, de 2 × 2, y cuenta las veces que partes.' }, { v: 10, m: 'Cuidado: cada vez partes **un solo trozo**. Prueba con una tableta pequeña, de 2 × 2, y cuenta.' }],
+  why: '¿Por qué da igual **cómo** la partas?',
+  hints: ['Prueba con una tableta **pequeña**, de 2 × 2 onzas. ¿Cuántas veces la partes?',
+    'Fíjate en **cuántos trozos** tienes antes y después de cada partida.',
+    'Cada vez que partes, tienes **un trozo más**. Empiezas con 1 trozo y quieres llegar a 24.',
+    'De 1 trozo a 24 trozos hacen falta 23 "trozos más".'],
+  answer: '23 veces', idea: '**Cada partida, un trozo más**: de 1 trozo a 24 hacen falta **23** partidas, ¡la partas como la partas!',
+  steps: ['Al principio tienes **1 trozo**: la tableta entera.', 'Cada vez que partes un trozo en dos, tienes **un trozo más**.', 'Para llegar a **24** trozos hacen falta 24 − 1 = **23** partidas.', 'Por ejemplo: 3 partidas para separar las 4 filas, y 5 en cada fila: 3 + 4 × 5 = **23**.'],
+  film: [
+    { clear: true, say: 'Una tableta de veinticuatro onzas. ¿Cuántas veces hay que partirla para tener todas las onzas sueltas? Probemos primero con una pequeña, de dos por dos.', show: [{ t: 'svg', k: 's', vb: '0 0 160 160', h: '34%', x: tableta(2, 2, false, 0) }] },
+    { say: 'Una partida: dos trozos. Otra: tres. Otra: cuatro. Tres partidas para cuatro onzas. ¡Cada partida da un trozo más!', show: [{ t: 'svg', k: 's', vb: '0 0 160 160', h: '34%', x: tableta(2, 2, true, 2) }, { t: 'tbl', k: 't', head: true, rows: [['Partidas', 0, 1, 2, 3], ['Trozos', 1, 2, 3, '!4']] }] },
+    { clear: true, say: 'Con la grande: empiezas con un trozo y quieres veinticuatro. Cada partida, un trozo más. Así que veintitrés partidas.', show: [{ t: 'svg', k: 's', vb: '0 0 370 250', h: '46%', x: tableta(4, 6, false, 0) }, { t: 'eq', k: 'e', x: '1 trozo → 24 trozos: 24 − 1 = **23** partidas' }] },
+    { say: 'Comprobemos: tres partidas para separar las cuatro filas, y cinco en cada fila. Tres más veinte: veintitrés.', show: [{ t: 'svg', k: 's', vb: '0 0 420 290', h: '46%', x: tableta(4, 6, true, 4) }, { t: 'eq', k: 'e', x: '3 + 4 × 5 = **23**' }, { t: 'ans', x: '23 veces' }] },
+    { clear: true, say: 'La idea clave: cada partida da un trozo más. Da igual cómo la partas: siempre veintitrés.', show: [{ t: 'ans', x: '23 veces' }, { t: 'idea', x: '**Cada partida, un trozo más**: de 1 a 24 trozos, **23** partidas.' }] },
+  ] },
+
+{ id: 'engranajes', level: 2, emoji: '⚙️', title: 'Las ruedas dentadas', cat: 'Contar dientes',
+  q: 'Dos ruedas dentadas están **engranadas**: cuando una gira, empuja a la otra. La pequeña tiene **12 dientes** y la grande **36**.\n\nSi la rueda **pequeña** da **6 vueltas**, ¿cuántas vueltas da la **grande**?',
+  qSay: 'Dos ruedas dentadas están engranadas: cuando una gira, empuja a la otra. La pequeña tiene doce dientes y la grande treinta y seis. Si la rueda pequeña da seis vueltas, ¿cuántas vueltas da la grande?',
+  pic: `<svg viewBox="0 0 420 300">${ruedas(false)}</svg>`,
+  ask: '¿Cuántas vueltas?', ph: 'Un número', ans: { num: 2, also: [12, 36, 6, 72, 3] },
+  traps: [{ v: 18, m: 'La rueda grande, ¿gira **más** deprisa o más despacio que la pequeña?' }, { v: 6, m: '¿Dan las dos ruedas las mismas vueltas? Cuenta los **dientes** que pasan.' }, { v: 72, m: '72 son **dientes**. ¿Cuántas **vueltas** de la grande son?' }, { v: 3, m: 'Cuenta los dientes: en 6 vueltas de la pequeña, ¿cuántos dientes pasan?' }, { v: 4, m: 'Cuenta los dientes: en 6 vueltas de la pequeña, ¿cuántos dientes pasan?' }, { v: 1, m: 'Cuenta los dientes: en 6 vueltas de la pequeña, ¿cuántos dientes pasan?' }, { v: 24, m: 'La rueda grande, ¿gira **más** deprisa o más despacio que la pequeña?' }],
+  why: '¿Y si la pequeña diera **9** vueltas? ¿Cuántas daría la grande?',
+  hints: ['Mira el sitio donde se tocan las ruedas: cada vez que pasa **un diente** de la pequeña, pasa **un diente** de la grande.',
+    'En 6 vueltas de la pequeña, ¿cuántos dientes pasan? (12 en cada vuelta.)',
+    'Pasan 72 dientes de la pequeña… y también **72** de la grande.',
+    'Una vuelta de la grande son 36 dientes. ¿Cuántas vueltas son 72 dientes?'],
+  answer: '2 vueltas', idea: '**Cuenta los dientes que pasan**: por las dos ruedas pasan **los mismos**.',
+  steps: ['En cada vuelta de la pequeña pasan **12** dientes.', '6 vueltas → 6 × 12 = **72** dientes.', 'Por la grande pasan los mismos **72** dientes.', '72 ÷ 36 = **2 vueltas**.'],
+  film: [
+    { clear: true, say: 'Dos ruedas dentadas: la pequeña tiene doce dientes, la grande treinta y seis. Si la pequeña da seis vueltas, ¿cuántas da la grande?', show: [{ t: 'svg', k: 's', vb: '0 0 420 300', h: '56%', x: ruedas(false) }] },
+    { say: 'Fíjate donde se tocan: cada vez que pasa un diente de la pequeña, pasa también un diente de la grande. Uno y uno. Por eso la grande gira más despacio.', show: [{ t: 'svg', k: 's', vb: '0 0 420 300', h: '56%', x: ruedas(true) }] },
+    { say: 'En seis vueltas de la pequeña pasan seis por doce: setenta y dos dientes.', show: [{ t: 'eq', k: 'e', x: '6 vueltas × 12 dientes = **72** dientes' }] },
+    { say: 'Por la grande pasan los mismos setenta y dos dientes. Y cada vuelta suya son treinta y seis. Setenta y dos entre treinta y seis: ¡dos vueltas!', show: [{ t: 'eq', k: 'e', x: '72 ÷ 36 = **2 vueltas**' }, { t: 'ans', x: '2 vueltas' }] },
+    { clear: true, say: 'La idea clave: cuenta los dientes que pasan. Por las dos ruedas pasan los mismos.', show: [{ t: 'ans', x: '2 vueltas' }, { t: 'idea', x: '**Cuenta los dientes**: por las dos ruedas pasan **los mismos**.' }] },
+  ] },
+
+{ id: 'cromos', level: 2, emoji: '🃏', title: 'Los cromos de Ana y Bea', cat: 'Dibujar barras',
+  q: 'Ana tiene **el doble** de cromos que Bea. Si Ana le da **6 cromos** a Bea, las dos tienen **los mismos**.\n\n¿Cuántos cromos tienen **entre las dos**?',
+  qSay: 'Ana tiene el doble de cromos que Bea. Si Ana le da seis cromos a Bea, las dos tienen los mismos. ¿Cuántos cromos tienen entre las dos?',
+  ask: '¿Cuántos cromos entre las dos?', ph: 'Un número', ans: { num: 36, also: [6, 12, 24, 18, 2] },
+  traps: [{ v: 12, m: '¿12 cromos **entre las dos**? Comprueba con el enunciado: ¿cuántos tendría cada una?' }, { v: 24, m: '¿24 cromos **entre las dos**? Comprueba con el enunciado: ¿cuántos tendría cada una?' }, { v: 18, m: 'Comprueba: si Bea tuviera 6 y Ana 12, después de darle 6 cromos, ¿tendrían las mismas?' }, { v: 6, m: 'Comprueba: si tuvieran 6 entre las dos, ¿podría Ana darle 6 cromos a Bea?' }, { v: 30, m: 'Comprueba: ¿tiene Ana el doble que Bea? ¿Y después de darle 6, tienen las mismas?' }, { v: 48, m: 'Comprueba: ¿tiene Ana el doble que Bea? ¿Y después de darle 6, tienen las mismas?' }, { v: 9, m: 'Comprueba: ¿tiene Ana el doble que Bea? ¿Y después de darle 6, tienen las mismas?' }],
+  why: '¿Cómo compruebas que tu respuesta cumple **las dos** cosas que dice el enunciado?',
+  hints: ['**Dibuja** una barra para los cromos de Bea, y para Ana, **dos barras** iguales.',
+    'Ana tiene **una barra de más** que Bea. Para quedar iguales, ¿le da la barra entera?',
+    'Si Ana le diera la barra entera, ¡Bea tendría más! Le da **la mitad** de esa barra. Esa mitad son 6 cromos.',
+    'Media barra = 6 cromos, así que una barra entera = 12.'],
+  answer: '36 cromos (Ana 24, Bea 12)', idea: '**Dibuja barras**: para igualar, el que tiene más da **la mitad** de lo que le sobra.',
+  steps: ['Bea: **1 barra**. Ana: **2 barras**. Ana tiene 1 barra de más.', 'Para igualar, Ana da **media barra** (y se queda la otra media): media barra = 6.', 'Una barra = **12** cromos: Bea 12, Ana 24.', 'Entre las dos: 12 + 24 = **36**. Comprueba: Ana 24 − 6 = 18 y Bea 12 + 6 = 18 ✓.'],
+  film: [
+    { clear: true, say: 'Ana tiene el doble de cromos que Bea. Dibujemos barras: una para Bea, y dos iguales para Ana.', show: [{ t: 'svg', k: 's', vb: '0 0 360 180', h: '42%', x: barras(0) }] },
+    { say: 'Ana tiene una barra de más. Si le da a Bea la mitad de esa barra, ¡quedan iguales! Así que media barra son los seis cromos.', show: [{ t: 'svg', k: 's', vb: '0 0 360 180', h: '42%', x: barras(1) }, { t: 'eq', k: 'e', x: 'media barra = **6** cromos' }] },
+    { say: 'Una barra entera: doce. Bea tiene doce, y Ana, veinticuatro. Entre las dos, treinta y seis.', show: [{ t: 'svg', k: 's', vb: '0 0 360 180', h: '42%', x: barras(2) }, { t: 'eq', k: 'e', x: '12 + 24 = **36**' }, { t: 'ans', x: '36 cromos' }] },
+    { say: 'Comprobemos: Ana da seis y se queda con dieciocho. Bea recibe seis y tiene dieciocho. ¡Iguales!', show: [{ t: 'eq', k: 'e', x: 'Ana: 24 − 6 = **18** · Bea: 12 + 6 = **18** ✓' }] },
+    { clear: true, say: 'La idea clave: dibuja barras. Para igualar, el que tiene más da la mitad de lo que le sobra.', show: [{ t: 'ans', x: '36 cromos' }, { t: 'idea', x: '**Dibuja barras**: para igualar, se da **la mitad** de lo que sobra.' }] },
+  ] },
+
+// --- Nivel 3 ---
+{ id: 'grifos', level: 3, emoji: '🛁', title: 'Los dos grifos', cat: 'Mirar el mismo tiempo',
+  q: 'El grifo **grande** llena la bañera en **3 minutos**. El grifo **pequeño** la llena en **6 minutos**.\n\nSi abres **los dos a la vez**, ¿cuántos **minutos** tarda en llenarse la bañera?',
+  qSay: 'El grifo grande llena la bañera en tres minutos. El grifo pequeño la llena en seis minutos. Si abres los dos a la vez, ¿cuántos minutos tarda en llenarse la bañera?',
+  ask: '¿Cuántos minutos?', ph: 'Solo el número de minutos', ans: { num: 2, also: [3, 6] },
+  traps: [{ v: 9, m: 'Con los dos grifos abiertos, ¿tardará **más** o menos que con el grande solo?' }, { v: 3, m: 'Eso es lo que tarda el grande **solo**. Con el pequeño ayudando, ¿no irá más rápido?' }, { v: 4, m: 'Con los dos abiertos, ¿tardará más o menos que con el grande **solo** (3 minutos)?' }, { v: 5, m: 'Con los dos abiertos, ¿tardará más o menos que con el grande **solo** (3 minutos)?' }, { v: 1, m: 'Comprueba: en 1 minuto, ¿qué parte de la bañera llena cada grifo? ¿Se llena entera?' }, { v: 18, m: 'Con los dos grifos abiertos, ¿tardará **más** o menos que con el grande solo?' }],
+  why: '¿Por qué tiene que salir **menos** de 3 minutos?',
+  hints: ['Piensa en un tiempo en el que **los dos** grifos llenen bañeras **enteras**. Por ejemplo, **6 minutos** (con bañeras de sobra).',
+    'En 6 minutos, el grande llena **2** bañeras y el pequeño **1**.',
+    'Juntos, en 6 minutos llenan **3 bañeras**.',
+    '3 bañeras en 6 minutos. ¿Cuánto tardan en llenar una?'],
+  answer: '2 minutos', idea: '**Mira lo que hacen en el mismo tiempo**: en 6 minutos, los dos juntos llenan 3 bañeras → una cada 2 minutos.',
+  steps: ['Imagina **6 minutos** con los dos grifos abiertos (y bañeras de sobra).', 'El grande llena 6 ÷ 3 = **2** bañeras; el pequeño, 6 ÷ 6 = **1**.', 'Juntos: **3 bañeras en 6 minutos**.', 'Una bañera: 6 ÷ 3 = **2 minutos**.'],
+  film: [
+    { clear: true, say: 'El grifo grande llena la bañera en tres minutos; el pequeño, en seis. ¿Y los dos juntos? Mucha gente suma: nueve. ¡Pero con dos grifos tiene que ir más rápido!', show: [{ t: 'eq', k: 'e', x: 'Grande: **3 min** · Pequeño: **6 min** · ¿Juntos?' }] },
+    { say: 'El truco: imagina seis minutos, con bañeras de sobra. El grande llena dos bañeras. El pequeño, una.', show: [{ t: 'tbl', k: 't', head: true, rows: [['En 6 minutos', 'Bañeras'], ['Grifo grande', '🛁 🛁'], ['Grifo pequeño', '🛁']] }] },
+    { say: 'Juntos, tres bañeras en seis minutos. Así que una bañera, en dos minutos.', show: [{ t: 'tbl', k: 't', head: true, rows: [['En 6 minutos', 'Bañeras'], ['Grifo grande', '🛁 🛁'], ['Grifo pequeño', '🛁'], ['Los dos', '!🛁 🛁 🛁']] }, { t: 'eq', k: 'e', x: '3 bañeras en 6 min → 1 bañera en **2 min**' }, { t: 'ans', x: '2 minutos' }] },
+    { clear: true, say: 'La idea clave: mira lo que hacen en el mismo tiempo. En seis minutos, los dos grifos llenan tres bañeras.', show: [{ t: 'ans', x: '2 minutos' }, { t: 'idea', x: '**El mismo tiempo**: en 6 min llenan 3 bañeras → una cada **2 min**.' }] },
+  ] },
+
+{ id: 'fotos', level: 3, emoji: '📸', title: 'La foto de los cuatro', cat: 'Elegir al primero',
+  q: '**Cuatro amigos**, Ana, Bea, Carlos y Dani, se ponen **en fila** para hacerse una foto.\n\n¿Cuántas fotos **distintas** pueden hacerse, cambiando el **orden** de la fila?',
+  qSay: 'Cuatro amigos, Ana, Bea, Carlos y Dani, se ponen en fila para hacerse una foto. ¿Cuántas fotos distintas pueden hacerse, cambiando el orden de la fila?',
+  ask: '¿Cuántas fotos?', ph: 'Un número', ans: { num: 24, also: [4, 3, 2, 1, 6] },
+  traps: [{ v: 16, m: 'Comprueba con solo **3** amigos: haz la lista de todas las filas posibles. ¿Cuántas salen?' }, { v: 12, m: 'Hay más. ¿Quién puede ir **primero**? Para cada uno, ¿cuántas filas salen?' }, { v: 6, m: 'Hay más. Haz la lista de las filas que empiezan por **Ana**. ¿Y las que empiezan por los demás?' }, { v: 4, m: 'Hay muchas más. ¿Quién puede ir **primero**? Para cada uno, ¿cuántas filas salen?' }, { v: 8, m: 'Hay más. ¿Quién puede ir **primero**? Para cada uno, ¿cuántas filas salen?' }, { v: 10, m: 'Comprueba con solo **3** amigos: haz la lista de todas las filas posibles.' }, { v: 256, m: '¿Puede salir la misma persona **dos veces** en la foto?' }, { v: 64, m: '¿Puede salir la misma persona **dos veces** en la foto?' }, { v: 120, m: '¡Esas son las fotos de **5** amigos! Aquí son 4.' }],
+  why: '¿Y si fueran **5** amigos?',
+  hints: ['Empieza con **3** amigos: haz la lista de todas las filas. ¿Cuántas salen?',
+    'Con 4: ¿cuántos pueden ir **primero**? Si Ana va primera, quedan 3 para ordenar detrás.',
+    'Elijas a quien elijas como primero, los otros 3 se pueden ordenar de **6** maneras.',
+    '4 posibles primeros, y para cada uno, 6 filas.'],
+  answer: '24 fotos', idea: '**Elige al primero** y cuenta lo que queda: 4 primeros × 6 filas detrás = 24.',
+  steps: ['Con 3 amigos salen **6** filas: ABC, ACB, BAC, BCA, CAB, CBA.', 'Con 4, el primero puede ser cualquiera de los **4**.', 'Detrás, los otros 3 se ordenan de **6** maneras.', '4 × 6 = **24** fotos. (Es 4 × 3 × 2 × 1; con 5 amigos, 5 × 24 = 120.)'],
+  film: [
+    { clear: true, say: 'Cuatro amigos en fila para una foto. ¿Cuántas fotos distintas? Empecemos con solo tres: Ana, Bea y Carlos.', show: [{ t: 'row', k: 'r', items: ['#d3f9d8|Ana', '#d0ebff|Bea', '#fff3bf|Carlos'] }] },
+    { say: 'Si Ana va primera: Ana, Bea, Carlos; o Ana, Carlos, Bea. Dos filas. Y lo mismo si empieza Bea, o Carlos. Tres por dos: seis.', show: [{ t: 'tbl', k: 't', head: true, rows: [['Primero', 'Filas'], ['Ana', 'A B C · A C B'], ['Bea', 'B A C · B C A'], ['Carlos', 'C A B · C B A']] }, { t: 'eq', k: 'e', x: '3 × 2 = **6** filas' }] },
+    { clear: true, say: 'Ahora llega Dani. Hay cuatro que pueden ir primeros. Y detrás de cada uno, los otros tres se ordenan de seis maneras.', show: [{ t: 'row', k: 'r', items: ['#d3f9d8|Ana', '#d0ebff|Bea', '#fff3bf|Carlos', '#ffe3e3|Dani'] }, { t: 'tbl', k: 't', head: true, rows: [['Primero', 'Detrás', 'Filas'], ['Ana', 'B, C, D', 6], ['Bea', 'A, C, D', 6], ['Carlos', 'A, B, D', 6], ['Dani', 'A, B, C', 6]] }] },
+    { say: 'Cuatro por seis: veinticuatro fotos. Es cuatro, por tres, por dos, por uno.', show: [{ t: 'eq', k: 'e', x: '4 × 6 = 4 × 3 × 2 × 1 = **24**' }, { t: 'ans', x: '24 fotos' }] },
+    { clear: true, say: 'La idea clave: elige primero quién va delante, y luego cuenta lo que queda. Con cinco amigos serían cinco por veinticuatro: ¡ciento veinte fotos!', show: [{ t: 'ans', x: '24 fotos' }, { t: 'idea', x: '**Elige al primero** y cuenta lo que queda: 4 × 6 = **24**.' }] },
+  ] },
+
+{ id: 'revista', level: 3, emoji: '📰', title: 'La hoja de la revista', cat: 'Hacerlo de verdad',
+  q: 'Una revista de **20 páginas** está hecha con hojas de papel **dobladas por la mitad**, metidas **una dentro de otra** y grapadas en el doblez. Cada hoja lleva **4 páginas** de la revista.\n\nUna de las hojas lleva la **página 3**. ¿Cuánto **suman** los números de las **4 páginas** de esa hoja?',
+  qSay: 'Una revista de veinte páginas está hecha con hojas de papel dobladas por la mitad, metidas una dentro de otra y grapadas en el doblez. Cada hoja lleva cuatro páginas de la revista. Una de las hojas lleva la página tres. ¿Cuánto suman los números de las cuatro páginas de esa hoja?',
+  ask: '¿Cuánto suman?', ph: 'Un número', ans: { num: 42, also: [20, 4, 3, 17, 18, 21, 2, 5] },
+  traps: [{ v: 18, m: '¡Dobla unas hojas de papel y numera las páginas! ¿Están de verdad las páginas 3, 4, 5 y 6 en la misma hoja?' }, { v: 10, m: '¡Dobla unas hojas de papel y numera las páginas! ¿Están de verdad las páginas 1, 2, 3 y 4 en la misma hoja?' }, { v: 7, m: 'Has sumado solo **2** páginas. La hoja lleva **4**: ¿cuáles son las otras dos?' }, { v: 21, m: 'Has sumado solo **2** páginas. La hoja lleva **4**: ¿cuáles son las otras dos?' }, { v: 35, m: 'Has sumado solo **2** páginas. La hoja lleva **4**: ¿cuáles son las otras dos?' }, { v: 40, m: 'Casi. Dobla 5 hojas, mételas una dentro de otra y numera las páginas: ¿cuáles van con la 3?' }, { v: 44, m: 'Casi. Dobla 5 hojas, mételas una dentro de otra y numera las páginas: ¿cuáles van con la 3?' }, { v: 38, m: 'Dobla 5 hojas, mételas una dentro de otra y numera las páginas: ¿cuáles van con la 3?' }, { v: 46, m: 'Dobla 5 hojas, mételas una dentro de otra y numera las páginas: ¿cuáles van con la 3?' }],
+  why: '¿Qué páginas lleva la hoja **del centro**, la de las grapas?',
+  hints: ['**Hazlo de verdad**: dobla 5 hojas de papel, mételas una dentro de otra y numera las páginas del 1 al 20.',
+    'La hoja de **fuera** lleva las páginas 1 y 2… y también **las dos últimas**: 19 y 20.',
+    'La siguiente hoja, la que lleva la página 3, lleva también la 4… y **dos páginas del final** de la revista.',
+    'En cada hoja, una página del principio y una del final suman siempre **21** (1 + 20, 2 + 19…).'],
+  answer: '42 (páginas 3, 4, 17 y 18)', idea: '**Hazlo de verdad, y empareja**: en cada hoja, una página del principio va con una del final, y suman 21.',
+  steps: ['20 páginas ÷ 4 = **5 hojas**.', 'Hoja de fuera: **1, 2, 19, 20**. La siguiente: **3, 4, 17, 18**.', '3 + 4 + 17 + 18 = **42**.', 'Truco: 3 + 18 = 21 y 4 + 17 = 21 → 2 × 21 = 42. ¡Todas las hojas suman 42!'],
+  film: [
+    { clear: true, say: 'Una revista de veinte páginas, hecha con hojas dobladas, una dentro de otra. Cada hoja lleva cuatro páginas, así que hay cinco hojas. ¿Qué páginas van con la tres? ¡Coge papel y hazlo!', show: [{ t: 'row', label: '5 hojas:', items: ['📄', '📄', '📄', '📄', '📄'] }, { t: 'eq', x: '20 páginas ÷ 4 = **5 hojas**' }] },
+    { clear: true, say: 'La hoja de fuera es la portada y la contraportada. Lleva la página uno y la dos, al principio… y las dos últimas: la diecinueve y la veinte.', show: [{ t: 'tbl', k: 't', head: true, rows: [['Hoja', 'Páginas'], ['1.ª (fuera)', '1 · 2 · 19 · 20']] }] },
+    { say: 'La siguiente hoja, justo dentro, lleva la tres y la cuatro, y por el final, la diecisiete y la dieciocho.', show: [{ t: 'tbl', k: 't', head: true, rows: [['Hoja', 'Páginas'], ['1.ª (fuera)', '1 · 2 · 19 · 20'], ['2.ª', '!3 · 4 · 17 · 18']] }] },
+    { say: 'Sumamos: tres, más cuatro, más diecisiete, más dieciocho: cuarenta y dos.', show: [{ t: 'eq', k: 'e', x: '3 + 4 + 17 + 18 = **42**' }, { t: 'ans', x: '42' }] },
+    { clear: true, say: 'Y fíjate: tres más dieciocho, veintiuno. Cuatro más diecisiete, veintiuno. ¡Todas las hojas suman cuarenta y dos!', show: [{ t: 'tbl', head: true, rows: [['Hoja', 'Páginas', 'Suma'], ['1.ª', '1 · 2 · 19 · 20', 42], ['2.ª', '3 · 4 · 17 · 18', '!42'], ['3.ª', '5 · 6 · 15 · 16', 42], ['4.ª', '7 · 8 · 13 · 14', 42], ['5.ª', '9 · 10 · 11 · 12', 42]] }] },
+    { clear: true, say: 'La idea clave: hazlo de verdad, y empareja. En cada hoja, una página del principio va con una del final, y suman veintiuno.', show: [{ t: 'ans', x: '42' }, { t: 'idea', x: '**Empareja**: principio + final = **21** en cada hoja → 2 × 21 = 42.' }] },
+  ] },
+
+// --- Nivel 4 ---
+{ id: 'agujas', level: 4, emoji: '🕰️', title: 'Las agujas del reloj', cat: 'Contar adelantamientos',
+  q: 'A las **12 en punto del mediodía**, las dos agujas de un reloj están **una encima de la otra**.\n\nDespués de ese momento, ¿cuántas veces vuelven a ponerse **una encima de la otra** hasta las **12 de la noche**, contando también la de las 12 de la noche?',
+  qSay: 'A las doce en punto del mediodía, las dos agujas de un reloj están una encima de la otra. Después de ese momento, ¿cuántas veces vuelven a ponerse una encima de la otra hasta las doce de la noche, contando también la de las doce de la noche?',
+  pic: `<svg viewBox="0 0 300 300">${reloj(12, 0)}</svg>`,
+  ask: '¿Cuántas veces?', ph: 'Solo el número de veces', ans: { num: 11, also: [1] },
+  traps: [{ v: 12, m: '¿Se juntan entre las 11 y las 12? Mira dónde está la aguja de las horas a las 11:55… ¿y el minutero?' }, { v: 13, m: '¿Se juntan entre las 11 y las 12? Mira dónde está la aguja de las horas a las 11:55… ¿y el minutero?' }, { v: 22, m: 'Eso sería en **24** horas. Aquí, del mediodía a la medianoche, son 12.' }, { v: 24, m: 'Eso sería contando 24 horas. Aquí, del mediodía a la medianoche, son 12. ¿Y se juntan en **todas** las horas?' }, { v: 10, m: 'Revisa hora a hora: hacia la 1:05, hacia las 2:11… ¿Cuántas te salen hasta las 12 de la noche, incluida?' }, { v: 720, m: 'Eso son los **minutos** que hay en 12 horas. ¿Cuántas veces se juntan las agujas?' }],
+  why: '¿A qué hora, más o menos, se juntan entre las **5** y las **6**?',
+  hints: ['Mira un reloj de verdad (o dibújalo): después de la 1 en punto, ¿hacia qué hora se juntan las agujas?',
+    'Se juntan hacia la 1:05, hacia las 2:11, hacia las 3:16… cada vez un poco más tarde. ¿Pasa en **todas** las horas?',
+    'Piensa en una **carrera**: en 12 horas, el minutero da **12 vueltas** y la aguja de las horas solo **1**.',
+    'Cada vez que el minutero le saca **una vuelta** de ventaja a la aguja de las horas, la alcanza.'],
+  answer: '11 veces', idea: '**Es una carrera**: en 12 horas el minutero da 12 vueltas y la aguja de las horas 1. Le saca 11 vueltas → la alcanza **11 veces**.',
+  steps: ['En 12 horas, el minutero da **12 vueltas**, y la aguja de las horas, **1**.', 'Cada vez que el minutero le saca **una vuelta** de ventaja, la alcanza: se ponen una encima de la otra.', '12 − 1 = **11** vueltas de ventaja → **11 veces**.', 'Por eso no hay ninguna entre las 11 y las 12: la siguiente ya es a las 12.'],
+  film: [
+    { clear: true, say: 'A las doce, las agujas están una encima de la otra. ¿Cuántas veces vuelven a juntarse hasta las doce de la noche? Mucha gente dice: doce, una cada hora.', show: [{ t: 'svg', k: 's', vb: '0 0 300 300', h: '56%', x: reloj(12, 0) }] },
+    { say: 'A la una en punto no están juntas: el minutero tiene que ir a buscar a la aguja de las horas, que se ha movido un poco. La alcanza hacia la una y cinco.', show: [{ t: 'svg', k: 's', vb: '0 0 300 300', h: '56%', x: reloj(1, 60 / 11) }, { t: 'eq', k: 'e', x: 'hacia la 1:05 → **1.ª** vez' }] },
+    { say: 'Hacia las tres y dieciséis, otra vez. Cada vez, un poco más tarde: una y cinco, dos y once, tres y dieciséis…', show: [{ t: 'svg', k: 's', vb: '0 0 300 300', h: '56%', x: reloj(3, 180 / 11) }, { t: 'eq', k: 'e', x: '1:05 · 2:11 · **3:16** · 4:22 · …' }] },
+    { say: 'Pero entre las once y las doce, el minutero no llega a alcanzarla antes de las doce. A las once y cincuenta y cinco, la aguja de las horas ya está casi en el doce… y el minutero, todavía en el once.', show: [{ t: 'svg', k: 's', vb: '0 0 300 300', h: '56%', x: reloj(11, 55) }, { t: 'eq', k: 'e', x: '11:55 → ¡todavía no se han juntado!' }] },
+    { clear: true, say: 'Míralo como una carrera. En doce horas, el minutero da doce vueltas, y la aguja de las horas, una. El minutero le saca once vueltas de ventaja: la alcanza once veces.', show: [{ t: 'eq', x: 'Minutero: **12** vueltas · Horas: **1** vuelta' }, { t: 'eq', x: '12 − 1 = **11** veces' }, { t: 'ans', x: '11 veces' }] },
+    { clear: true, say: 'La idea clave: es una carrera. Cada vuelta de ventaja es un adelantamiento. Doce menos una: once.', show: [{ t: 'ans', x: '11 veces' }, { t: 'idea', x: '**Es una carrera**: 12 vueltas contra 1 → **11** adelantamientos.' }] },
+  ] },
+
+{ id: 'jarras', level: 4, emoji: '🫗', title: 'Las dos jarras', cat: 'Apuntar cada movimiento',
+  q: 'Tienes una jarra de **5 litros**, otra de **3 litros** (las dos **sin marcas**) y un grifo. Quieres tener **exactamente 4 litros** en la jarra de 5.\n\nCada **movimiento** es una de estas tres cosas:\n• **llenar** una jarra entera en el grifo,\n• **vaciar** una jarra entera en el fregadero,\n• **echar** agua de una jarra en la otra, hasta que la primera se vacía o la otra se llena.\n\n¿Cuántos movimientos necesitas **como mínimo**?',
+  qSay: 'Tienes una jarra de cinco litros, otra de tres litros, las dos sin marcas, y un grifo. Quieres tener exactamente cuatro litros en la jarra de cinco. Cada movimiento es una de estas tres cosas: llenar una jarra entera en el grifo, vaciar una jarra entera en el fregadero, o echar agua de una jarra en la otra, hasta que la primera se vacía o la otra se llena. ¿Cuántos movimientos necesitas como mínimo?',
+  pic: `<svg viewBox="0 0 340 265">${jarras(0, 0)}</svg>`,
+  ask: '¿Cuántos movimientos?', ph: 'Un número', ans: { num: 6, also: [5, 3, 4, 8, 1, 2] },
+  traps: [{ v: 4, m: 'Comprueba movimiento a movimiento en una tabla: ¿cuántos litros hay en cada jarra después de cada uno? Recuerda: las jarras **no tienen marcas**.' }, ...[2, 3, 5, 7, 8, 9, 10, 12].map(jaT)],
+  why: '¿Cómo sabes que **no** se puede con menos movimientos?',
+  hints: ['Haz una **tabla**: en cada fila, cuántos litros hay en la jarra de 5 y en la de 3.',
+    'Echar de una jarra a otra sirve para **medir**: si llenas la de 5 y la echas en la de 3, ¿cuánto queda en la de 5?',
+    'Con 2 litros en la jarra **pequeña**, solo le cabe 1 litro más. ¿Cómo podrías usar eso?',
+    'Empieza así: llenar la de 5, echarla en la de 3, vaciar la de 3, echar los 2 litros en la de 3…'],
+  answer: '6 movimientos', idea: '**Apunta cada movimiento** en una tabla: echar agua de una jarra a otra sirve para **medir** lo que sobra.',
+  steps: ['Llenar la de 5 → (5, 0). Echar en la de 3 → (**2**, 3).', 'Vaciar la de 3 → (2, 0). Echar los 2 litros en la de 3 → (0, 2).', 'Llenar la de 5 → (5, 2). Echar en la de 3 hasta llenarla: solo cabe **1 litro** → (**4**, 3).', '**6 movimientos**. (Empezando por la de 3 se puede, pero salen 8.)'],
+  film: [
+    { clear: true, say: 'Una jarra de cinco litros, otra de tres, y un grifo. ¿Cómo conseguimos cuatro litros justos? Hagamos una tabla, movimiento a movimiento.', show: [{ t: 'svg', k: 's', vb: '0 0 340 265', h: '46%', x: jarras(0, 0) }] },
+    { say: 'Uno: llenamos la de cinco. Dos: la echamos en la de tres. Caben tres, y en la grande quedan dos.', show: [{ t: 'tbl', k: 't', head: true, rows: [['', '5 L', '3 L'], ['1. Llenar la de 5', 5, 0], ['2. Echar en la de 3', '!2', 3]] }] },
+    { say: 'Tres: vaciamos la pequeña. Cuatro: echamos en ella los dos litros de la grande.', show: [{ t: 'tbl', k: 't', head: true, rows: [['', '5 L', '3 L'], ['1. Llenar la de 5', 5, 0], ['2. Echar en la de 3', 2, 3], ['3. Vaciar la de 3', 2, 0], ['4. Echar en la de 3', 0, '!2']] }] },
+    { say: 'Cinco: llenamos otra vez la grande. Seis: rellenamos la pequeña con ella. A la pequeña solo le cabe un litro… ¡y en la grande quedan cuatro!', show: [{ t: 'tbl', k: 't', head: true, rows: [['', '5 L', '3 L'], ['1 a 4. Lo de antes', 0, 2], ['5. Llenar la de 5', 5, 2], ['6. Echar en la de 3', '!4', 3]] }] },
+    { clear: true, say: 'Si empezamos llenando la pequeña, también se puede, pero hacen falta ocho movimientos. Seis es el mínimo.', show: [{ t: 'svg', vb: '0 0 340 265', h: '40%', x: jarras(4, 3) }, { t: 'eq', x: 'Empezando por la de 3: **8** · Empezando por la de 5: **6**' }] },
+    { clear: true, say: 'La idea clave: apunta cada movimiento en una tabla. Echar agua de una jarra a otra sirve para medir lo que sobra.', show: [{ t: 'ans', x: '6 movimientos' }, { t: 'idea', x: '**Apunta cada movimiento**: echar de una jarra a otra **mide** lo que sobra.' }] },
+  ] },
+
+{ id: 'ranas', level: 4, emoji: '🐸', title: 'Las ranas saltarinas', cat: 'Probar con pocos',
+  q: 'En una fila de **7 piedras** hay **3 ranas verdes** a la izquierda, una piedra **vacía** en el medio y **3 ranas marrones** a la derecha.\nLas verdes solo van hacia la **derecha**, y las marrones solo hacia la **izquierda**. En cada movimiento, **una** rana:\n• **pasa** a la piedra vacía de al lado, o\n• **salta** por encima de **una** rana hasta la piedra vacía.\n\n¿Cuántos movimientos hacen falta, **como mínimo**, para que las verdes y las marrones **cambien de lado**?',
+  qSay: 'En una fila de siete piedras hay tres ranas verdes a la izquierda, una piedra vacía en el medio y tres ranas marrones a la derecha. Las verdes solo van hacia la derecha, y las marrones solo hacia la izquierda. En cada movimiento, una rana pasa a la piedra vacía de al lado, o salta por encima de una rana hasta la piedra vacía. ¿Cuántos movimientos hacen falta, como mínimo, para que las verdes y las marrones cambien de lado?',
+  pic: `<svg viewBox="0 0 420 100">${piedras('GGG_BBB')}</svg>`,
+  ask: '¿Cuántos movimientos?', ph: 'Un número', ans: { num: 15, also: [7, 3, 1, 8, 9, 6, 2] },
+  traps: [...[6, 9, 12, 14, 16, 18, 21, 24, 10, 13].map(raT)],
+  why: '¿Y con **4** ranas de cada color, en 9 piedras?',
+  hints: ['Prueba con **pocas** ranas: 1 verde y 1 marrón, en 3 piedras. ¿Cuántos movimientos?',
+    'Con 1 y 1 salen **3** movimientos. Con 2 y 2 (en 5 piedras) salen **8**. Ahora cuenta **saltos** y **pasos** por separado.',
+    'Cada verde tiene que cruzarse con **cada** marrón, y para cruzarse una salta por encima de la otra: 3 × 3 = **9 saltos**.',
+    'Cada rana avanza **4 piedras**: 6 × 4 = 24 piedras en total. Cada salto avanza 2; cada paso, 1.'],
+  answer: '15 movimientos (9 saltos y 6 pasos)', idea: '**Prueba con pocas** y cuenta **saltos** y **pasos** por separado: 9 saltos (cada verde con cada marrón) + 6 pasos = 15.',
+  steps: ['Cada verde tiene que cruzarse con cada marrón: 3 × 3 = **9 saltos**.', 'Cada rana avanza **4 piedras**: 6 × 4 = **24** piedras en total.', 'Los 9 saltos avanzan 9 × 2 = 18; faltan 24 − 18 = **6 pasos**.', '9 saltos + 6 pasos = **15** movimientos. (Con 1 y 1 salen 3; con 2 y 2, 8.)'],
+  film: [
+    { clear: true, say: 'Tres ranas verdes, tres marrones, y una piedra vacía en el medio. ¿Cuántos movimientos para que cambien de lado? Probemos primero con una de cada.', show: [{ t: 'svg', k: 's', vb: '0 0 420 100', h: '22%', x: piedras('GGG_BBB') }] },
+    { clear: true, say: 'Con una de cada: la verde pasa. La marrón salta por encima. Y la verde pasa otra vez. Tres movimientos.', show: [{ t: 'tbl', k: 't', head: true, rows: [['Movimiento', 'Piedras'], ['Inicio', '🟢 ⬜ 🟤'], ['1. pasa la verde', '⬜ 🟢 🟤'], ['2. salta la marrón', '🟤 🟢 ⬜'], ['3. pasa la verde', '!🟤 ⬜ 🟢']] }] },
+    { clear: true, say: 'Con dos de cada, hacen falta ocho. ¿Y con tres? Contemos de otra forma: saltos y pasos por separado.', show: [{ t: 'tbl', k: 't', head: true, rows: [['Ranas de cada color', 'Movimientos'], [1, 3], [2, 8], [3, '?']] }] },
+    { say: 'Cada verde tiene que cruzarse con cada marrón, y para cruzarse, una salta por encima de la otra. Tres por tres: nueve saltos.', show: [{ t: 'eq', k: 'e', x: '3 verdes × 3 marrones = **9 saltos**' }] },
+    { say: 'Cada rana avanza cuatro piedras: seis ranas, veinticuatro piedras. Los nueve saltos avanzan dieciocho. Faltan seis: seis pasos.', show: [{ t: 'eq', k: 'f', x: '6 × 4 = 24 · 9 × 2 = 18 · 24 − 18 = **6 pasos**' }] },
+    { say: 'Nueve saltos y seis pasos: quince movimientos.', show: [{ t: 'eq', k: 'f', x: '9 saltos + 6 pasos = **15**' }, { t: 'ans', x: '15 movimientos' }] },
+    { clear: true, say: 'La idea clave: prueba con pocas y cuenta saltos y pasos por separado. Una de cada: tres. Dos: ocho. Tres: quince.', show: [{ t: 'svg', vb: '0 0 420 100', h: '16%', x: piedras('BBB_GGG') }, { t: 'ans', x: '15 movimientos' }, { t: 'idea', x: '**Prueba con pocas**: 9 saltos + 6 pasos = **15**.' }] },
   ] },
 
 ];
