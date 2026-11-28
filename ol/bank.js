@@ -2245,5 +2245,25 @@ window.OL_BANK = [
     { say: 'Comprobamos hacia delante: veinte, la mitad son diez, menos cuatro, seis. ¡Correcto!', show: [{ t: 'eq', k: 'e', x: '20 ➜ 10 ➜ **6** ✓' }] },
     { clear: true, say: 'La idea clave: piensa hacia atrás. Empieza por el final y haz lo contrario de cada paso: si restaba, sumas; si era la mitad, haces el doble.', show: [{ t: 'ans', x: '20 €' }, { t: 'idea', x: '**Piensa hacia atrás**: haz **lo contrario** de cada paso (restar → sumar, mitad → doble).' }] },
   ] },
+
+{ id: 'rapido', level: 2, emoji: '⚡', title: 'Cálculo relámpago', cat: 'Agrupar antes de calcular',
+  q: 'Calcula **sin calculadora**, y con el **menor esfuerzo** posible:\n\n**37 × 25 + 63 × 25**',
+  qSay: 'Calcula sin calculadora, y con el menor esfuerzo posible: treinta y siete por veinticinco, más sesenta y tres por veinticinco.',
+  ask: '¿Cuánto da?', ph: 'El resultado', ans: { num: 2500, also: [37, 25, 63, 100, 925, 1575] },
+  traps: [{ v: 925, m: 'Eso es solo **37 × 25**. Te falta la otra parte.' }, { v: 1575, m: 'Eso es solo **63 × 25**. Te falta la otra parte.' }, { v: 100, m: '37 + 63 = 100, ¡bien visto! Pero cada uno iba **multiplicado por 25**.' }, { v: 125, m: 'Cuidado: no se suman los 25. ¿Cuántas veces 25 hay en total?' }, { v: 2400, m: 'Revisa la cuenta. ¿Hay algún número que se repita en las dos multiplicaciones?' }, { v: 2600, m: 'Revisa la cuenta. ¿Hay algún número que se repita en las dos multiplicaciones?' }, { v: 2525, m: 'Revisa la cuenta. ¿Hay algún número que se repita en las dos multiplicaciones?' }],
+  why: '¿Cómo podrías **comprobar** el resultado de otra manera?',
+  hints: ['Mira bien: ¿qué número aparece en **las dos** multiplicaciones?',
+    '37 × 25 son 37 veces 25. Y luego sumas 63 veces 25 más. ¿Cuántas veces 25 hay **en total**?',
+    '37 + 63 = 100. Así que es lo mismo que **100 × 25**.',
+    '37 × 25 + 63 × 25 = (37 + 63) × 25 = 100 × 25.'],
+  answer: '2500', idea: '**Agrupa antes de calcular**: si un número se repite, júntalo. 37 × 25 + 63 × 25 = (37 + 63) × 25 (propiedad **distributiva**).',
+  steps: ['El **25** está en las dos multiplicaciones.', '37 veces 25 más 63 veces 25 son **100 veces 25**: es la propiedad distributiva.', '(37 + 63) × 25 = 100 × 25 = **2500**.', 'Haciendo las dos multiplicaciones también sale (925 + 1575 = 2500), pero se tarda mucho más.'],
+  film: [
+    { clear: true, say: 'Treinta y siete por veinticinco, más sesenta y tres por veinticinco. Se pueden hacer las dos multiplicaciones… pero hay un camino mucho más corto.', show: [{ t: 'eq', k: 'q', x: '37 × 25 + 63 × 25' }] },
+    { say: 'Imagínalas como dos rectángulos, los dos de veinticinco de alto. Uno de treinta y siete de ancho, y otro de sesenta y tres.', show: [{ t: 'eq', k: 'q', x: '37 × 25 + 63 × 25' }, { t: 'svg', k: 's', vb: '0 0 600 170', h: '40%', x: areas(0) }] },
+    { say: 'Los juntamos: un solo rectángulo de veinticinco de alto y, de ancho, treinta y siete más sesenta y tres: ¡cien!', show: [{ t: 'svg', k: 's', vb: '0 0 600 170', h: '40%', x: areas(1) }, { t: 'eq', k: 'q', x: '(37 + 63) × 25 = **100 × 25**' }] },
+    { say: 'Y cien por veinticinco es facilísimo: dos mil quinientos.', show: [{ t: 'eq', k: 'e', x: '100 × 25 = **2500**' }, { t: 'ans', x: '2500' }] },
+    { clear: true, say: 'La idea clave: agrupa antes de calcular. Si un número se repite, júntalo. Es la propiedad distributiva.', show: [{ t: 'ans', x: '2500' }, { t: 'idea', x: '**Agrupa antes de calcular**: 37 × 25 + 63 × 25 = (37 + 63) × 25.' }] },
+  ] },
 ];
 })();
