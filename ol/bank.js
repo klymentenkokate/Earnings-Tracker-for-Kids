@@ -2184,5 +2184,25 @@ window.OL_BANK = [
     { say: 'Cuatro delante, Ana, y siete detrás. Cuatro más uno más siete: doce niños.', show: [{ t: 'svg', k: 's', vb: '0 0 600 170', h: '40%', x: filacole(3) }, { t: 'eq', k: 'e', x: '4 + 1 + 7 = **12**' }, { t: 'ans', x: '12 niños' }] },
     { clear: true, say: 'La idea clave: dibuja la fila. Si sumas las dos posiciones, la persona del medio se cuenta dos veces.', show: [{ t: 'ans', x: '12 niños' }, { t: 'idea', x: '**Dibuja la fila**: si sumas 5 + 8, a Ana la cuentas **dos veces**.' }] },
   ] },
+
+{ id: 'redondeo', level: 1, emoji: '🎯', title: 'Redondear a 50', cat: 'Mirar los bordes',
+  q: 'Lucas piensa un número **entero**. Si lo **redondeas a las decenas**, sale **50**.\n(Recuerda: si la cifra de las unidades es **5 o más**, se redondea **hacia arriba**.)\n\n¿Cuántos números **distintos** puede haber pensado Lucas?',
+  qSay: 'Lucas piensa un número entero. Si lo redondeas a las decenas, sale cincuenta. Recuerda: si la cifra de las unidades es cinco o más, se redondea hacia arriba. ¿Cuántos números distintos puede haber pensado Lucas?',
+  ask: '¿Cuántos números?', ph: 'Un número', ans: { num: 10, also: [45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 1] },
+  traps: [{ v: 9, m: 'Escríbelos **todos** en una lista, del más pequeño al más grande, y cuéntalos uno a uno. ¿Has contado el **primero** y el **último**?' }, { v: 11, m: 'Comprueba el **55**: redondeado a las decenas, ¿da 50 o da 60?' }, { v: 5, m: 'Hay números **más pequeños** que 50 que también se redondean a 50. ¿Cuáles?' }, { v: 4, m: 'Hay números **más pequeños** que 50 que también se redondean a 50. ¿Cuáles?' }, { v: 6, m: 'Hay más: piensa en los números de **debajo** y de **encima** de 50.' }, { v: 20, m: 'Comprueba alguno: el 42, redondeado a las decenas, ¿da 50?' }],
+  why: '¿Y si al redondear a las **centenas** saliera **500**? ¿Cuántos números podrían ser?',
+  hints: ['Prueba con algunos: ¿el **52** se redondea a 50? ¿Y el **48**?',
+    'Busca el **más pequeño** que se redondea a 50. ¿El 44? ¿El 45?',
+    'Ahora el **más grande**: ¿el 54? ¿El 55?',
+    'Van del 45 al 54. Escríbelos todos y cuéntalos.'],
+  answer: '10 números', idea: '**Mira los bordes**: busca el primero y el último… y cuenta **los dos**.',
+  steps: ['El más pequeño es el **45** (el 44 se redondea a 40).', 'El más grande es el **54** (el 55 se redondea a 60).', 'Del 45 al 54: 45, 46, 47, 48, 49, 50, 51, 52, 53, 54 → **10** números.', 'Ojo: 54 − 45 = 9 cuenta los **saltos** entre ellos, no los números.'],
+  film: [
+    { clear: true, say: 'Lucas piensa un número, y redondeado a las decenas da cincuenta. ¿Qué números pueden ser? Miremos la recta numérica.', show: [{ t: 'svg', k: 's', vb: '0 0 600 150', h: '38%', x: recta(0) }] },
+    { say: 'Del cincuenta al cincuenta y cuatro se redondean hacia abajo, a cincuenta. Y del cuarenta y cinco al cuarenta y nueve, hacia arriba: ¡también a cincuenta!', show: [{ t: 'svg', k: 's', vb: '0 0 600 150', h: '38%', x: recta(1) }] },
+    { say: 'Ahora los bordes. El cuarenta y cuatro se va al cuarenta. Y el cincuenta y cinco se va al sesenta. Así que van del cuarenta y cinco al cincuenta y cuatro.', show: [{ t: 'svg', k: 's', vb: '0 0 600 150', h: '38%', x: recta(2) }, { t: 'eq', k: 'e', x: 'Del **45** al **54**' }] },
+    { say: 'Los contamos uno a uno: diez números. Cuidado: cincuenta y cuatro menos cuarenta y cinco da nueve, pero eso cuenta los saltos, no los números.', show: [{ t: 'svg', k: 's', vb: '0 0 600 150', h: '38%', x: recta(3) }, { t: 'eq', k: 'e', x: '54 − 45 = 9 saltos → 9 + 1 = **10** números' }, { t: 'ans', x: '10 números' }] },
+    { clear: true, say: 'La idea clave: mira los bordes. Busca el primero y el último, y no te olvides de contar los dos.', show: [{ t: 'ans', x: '10 números' }, { t: 'idea', x: '**Mira los bordes**: busca el primero y el último… y cuenta **los dos**.' }] },
+  ] },
 ];
 })();
