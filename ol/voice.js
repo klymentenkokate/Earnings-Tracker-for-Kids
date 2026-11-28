@@ -624,5 +624,11 @@ window.OL_VOICE = {
 "redondeo:1": "9870a3e04ce36e12.mp3",
 "redondeo:2": "71ec8b149c88025f.mp3",
 "redondeo:3": "1fd9ba3238c3b0ae.mp3",
-"redondeo:4": "01ad4ab19860a42a.mp3"
+"redondeo:4": "01ad4ab19860a42a.mp3",
+"movil:q": "23545c9e97b5e44e.mp3",
+"movil:0": "7a25445950664017.mp3",
+"movil:1": "36827ee092099554.mp3",
+"movil:2": "3ada1631c8162770.mp3",
+"movil:3": "7eda59a0113371ea.mp3",
+"movil:4": "c7243cdc65d5d840.mp3"
 };

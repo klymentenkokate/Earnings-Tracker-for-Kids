@@ -2204,5 +2204,26 @@ window.OL_BANK = [
     { say: 'Los contamos uno a uno: diez números. Cuidado: cincuenta y cuatro menos cuarenta y cinco da nueve, pero eso cuenta los saltos, no los números.', show: [{ t: 'svg', k: 's', vb: '0 0 600 150', h: '38%', x: recta(3) }, { t: 'eq', k: 'e', x: '54 − 45 = 9 saltos → 9 + 1 = **10** números' }, { t: 'ans', x: '10 números' }] },
     { clear: true, say: 'La idea clave: mira los bordes. Busca el primero y el último, y no te olvides de contar los dos.', show: [{ t: 'ans', x: '10 números' }, { t: 'idea', x: '**Mira los bordes**: busca el primero y el último… y cuenta **los dos**.' }] },
   ] },
+
+{ id: 'movil', level: 1, emoji: '🎐', title: 'El móvil de figuras', cat: 'Cada pieza cuenta',
+  q: 'Mira este móvil: tiene **cuadrados** y **círculos** colgados. Todos los cuadrados pesan lo mismo, y todos los círculos pesan lo mismo. El móvil entero pesa **640 gramos** (los hilos y las barras no pesan nada).\n\n¿Cuántos gramos pesan **un cuadrado y un círculo juntos**?',
+  qSay: 'Mira este móvil: tiene cuadrados y círculos colgados. Todos los cuadrados pesan lo mismo, y todos los círculos pesan lo mismo. El móvil entero pesa seiscientos cuarenta gramos, y los hilos y las barras no pesan nada. ¿Cuántos gramos pesan un cuadrado y un círculo juntos?',
+  pic: `<svg viewBox="0 0 600 230">${movil(0)}</svg>`,
+  ask: '¿Cuántos gramos?', ph: 'Solo el número de gramos', ans: { num: 320, also: [640, 2, 4, 1] },
+  traps: [{ v: 640, m: 'Eso pesa el móvil **entero**. Cuenta las figuras: ¿cuántos cuadrados y cuántos círculos hay?' }, { v: 160, m: 'Eso pesaría **una** figura si todas pesaran lo mismo. Pero te preguntan por un cuadrado **y** un círculo juntos.' }, { v: 1280, m: 'Al revés: el móvil entero pesa **más** que un cuadrado y un círculo, no menos.' }, { v: 213, m: 'Fíjate bien en el dibujo: ¿cuántas figuras hay de cada tipo?' }],
+  why: '¿Se puede saber cuánto pesa **solo** un cuadrado?',
+  hints: ['Cuenta las figuras: ¿cuántos cuadrados hay? ¿Y cuántos círculos?',
+    'Junta las figuras en **parejas**: un cuadrado con un círculo. ¿Cuántas parejas salen?',
+    'Las parejas son iguales, y entre todas pesan 640 g.',
+    'Hay 2 parejas iguales que pesan 640 g entre las dos.'],
+  answer: '320 gramos', idea: '**Cada pieza cuenta**: mira cuántas veces aparece cada figura antes de repartir.',
+  steps: ['En el móvil hay **2** cuadrados y **2** círculos.', 'Se juntan en **2 parejas** iguales: cuadrado + círculo, y cuadrado + círculo.', '2 parejas pesan 640 g → 1 pareja pesa 640 ÷ 2 = **320 g**.', 'Con estos datos **no** se sabe cuánto pesa cada figura sola (200 + 120, 250 + 70…), ¡solo la pareja!'],
+  film: [
+    { clear: true, say: 'Un móvil con dos cuadrados y dos círculos pesa seiscientos cuarenta gramos. ¿Cuánto pesan un cuadrado y un círculo juntos? Mucha gente contesta seiscientos cuarenta. ¡Pero mira bien el móvil!', show: [{ t: 'svg', k: 's', vb: '0 0 600 260', h: '50%', x: movil(0) }] },
+    { say: 'Cada lado del móvil tiene un cuadrado y un círculo. ¡Son dos parejas iguales!', show: [{ t: 'svg', k: 's', vb: '0 0 600 260', h: '50%', x: movil(1) }, { t: 'eq', k: 'e', x: '640 g = pareja + pareja' }] },
+    { say: 'Dos parejas pesan seiscientos cuarenta. Una pareja pesa la mitad: trescientos veinte gramos.', show: [{ t: 'svg', k: 's', vb: '0 0 600 260', h: '50%', x: movil(2) }, { t: 'eq', k: 'e', x: '640 ÷ 2 = **320 g**' }, { t: 'ans', x: '320 gramos' }] },
+    { say: '¿Y cuánto pesa solo el cuadrado? ¡No se puede saber! Podría ser doscientos y ciento veinte, o doscientos cincuenta y setenta. Solo sabemos la pareja.', show: [{ t: 'eq', k: 'e', x: '200 + 120 = 320 · 250 + 70 = 320 · … ¡solo sabemos la **pareja**!' }] },
+    { clear: true, say: 'La idea clave: cada pieza cuenta. Antes de repartir, mira cuántas veces aparece cada figura.', show: [{ t: 'ans', x: '320 gramos' }, { t: 'idea', x: '**Cada pieza cuenta**: mira cuántas veces aparece cada figura antes de repartir.' }] },
+  ] },
 ];
 })();
