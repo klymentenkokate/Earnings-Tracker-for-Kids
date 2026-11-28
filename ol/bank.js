@@ -2265,5 +2265,25 @@ window.OL_BANK = [
     { say: 'Y cien por veinticinco es facilísimo: dos mil quinientos.', show: [{ t: 'eq', k: 'e', x: '100 × 25 = **2500**' }, { t: 'ans', x: '2500' }] },
     { clear: true, say: 'La idea clave: agrupa antes de calcular. Si un número se repite, júntalo. Es la propiedad distributiva.', show: [{ t: 'ans', x: '2500' }, { t: 'idea', x: '**Agrupa antes de calcular**: 37 × 25 + 63 × 25 = (37 + 63) × 25.' }] },
   ] },
+
+{ id: 'parentesis', level: 2, emoji: '🧮', title: 'El paréntesis poderoso', cat: 'Probar todas las opciones',
+  q: 'Mira esta operación:\n\n**8 + 2 × 5 − 3**\n\nPuedes poner **un solo paréntesis** (un « ( » y un « ) ») rodeando dos o más números seguidos.\n\n¿Cuál es el **mayor resultado** que puedes conseguir?',
+  qSay: 'Mira esta operación: ocho más dos por cinco menos tres. Puedes poner un solo paréntesis, rodeando dos o más números seguidos. ¿Cuál es el mayor resultado que puedes conseguir?',
+  ask: '¿El mayor resultado?', ph: 'Un número', ans: { num: 47, also: [8, 2, 5, 3, 10, 50, 15, 12] },
+  traps: [{ v: 15, m: 'Ese es el resultado **sin** paréntesis (primero se multiplica). ¿Dónde podrías poner el paréntesis para que **cambie**?' }, { v: 12, m: 'Ese paréntesis hace el resultado **más pequeño**. Prueba en otros sitios.' }, { v: 20, m: 'Si has puesto (8 + 2) × (5 − 3), eso son **dos** paréntesis, y solo puedes poner **uno**. Si has puesto 8 + 2 × (5 − 3), recuerda: la multiplicación va **antes** que la suma.' }, { v: 50, m: '¡Casi! Pero no te olvides del **− 3** del final.' }, { v: 32, m: 'Repasa la cuenta paso a paso: primero lo de dentro del paréntesis, luego la multiplicación.' }, { v: 35, m: 'Repasa la cuenta paso a paso: primero lo de dentro del paréntesis, luego la multiplicación.' }],
+  why: '¿Dónde pondrías el paréntesis para conseguir el resultado **más pequeño**?',
+  hints: ['Primero calcula **sin** paréntesis. Recuerda: la multiplicación va **antes** que la suma y la resta.',
+    'Escribe **todos** los sitios donde puede ir el paréntesis. No son muchos.',
+    'Para que salga grande, conviene que el **× 5** multiplique a algo **grande**.',
+    'Prueba con (8 + 2) × 5 − 3.'],
+  answer: '47', idea: '**Prueba todas las opciones** con orden: así sabes **seguro** cuál es la mayor.',
+  steps: ['Sin paréntesis: 8 + 2 × 5 − 3 = 8 + 10 − 3 = **15**.', 'Probamos todos los sitios: (8 + 2) × 5 − 3 = **47** · 8 + 2 × (5 − 3) = **12** · los demás dan **15**.', 'El mayor es **47**: el paréntesis hace que el × 5 multiplique al 10.', 'Truco: para un resultado grande, haz que la multiplicación actúe sobre el número más grande posible.'],
+  film: [
+    { clear: true, say: 'Ocho más dos por cinco menos tres. Sin paréntesis, primero se multiplica: dos por cinco, diez. Ocho más diez menos tres: quince.', show: [{ t: 'eq', k: 'q', x: '8 + 2 × 5 − 3 = 8 + 10 − 3 = **15**' }] },
+    { say: 'Ahora probamos el paréntesis en todos los sitios posibles, con orden, empezando por la izquierda.', show: [{ t: 'tbl', k: 't', head: true, rows: [['Paréntesis', 'Resultado'], ['(8 + 2) × 5 − 3', '?'], ['(8 + 2 × 5) − 3', '?'], ['(8 + 2 × 5 − 3)', '?'], ['8 + (2 × 5) − 3', '?'], ['8 + (2 × 5 − 3)', '?'], ['8 + 2 × (5 − 3)', '?']] }] },
+    { say: 'Ocho más dos, diez, por cinco, cincuenta, menos tres: cuarenta y siete. Y con el paréntesis en cinco menos tres: cinco menos tres, dos; dos por dos, cuatro; y ocho más cuatro, doce. Y los demás no cambian nada: quince.', show: [{ t: 'tbl', k: 't', head: true, rows: [['Paréntesis', 'Resultado'], ['(8 + 2) × 5 − 3', '!47'], ['(8 + 2 × 5) − 3', 15], ['(8 + 2 × 5 − 3)', 15], ['8 + (2 × 5) − 3', 15], ['8 + (2 × 5 − 3)', 15], ['8 + 2 × (5 − 3)', 12]] }] },
+    { say: 'El mayor es cuarenta y siete: el paréntesis consigue que el por cinco multiplique a diez, en lugar de a dos.', show: [{ t: 'eq', k: 'q', x: '(8 + 2) × 5 − 3 = 10 × 5 − 3 = **47**' }] },
+    { clear: true, say: 'La idea clave: prueba todas las opciones con orden. Así sabes seguro cuál es la mayor, y no te dejas ninguna.', show: [{ t: 'ans', x: '47' }, { t: 'idea', x: '**Prueba todas las opciones** con orden: así sabes **seguro** cuál es la mayor.' }] },
+  ] },
 ];
 })();
