@@ -304,6 +304,84 @@ function piedras(row) {      // stones in a row: 'G' green frog, 'B' brown frog,
 const jaT = v => ({ v, m: v > 7 ? '¡Eso funciona! Pero se puede con **menos** movimientos. ¿Sobra algún movimiento? ¿Y si empiezas por la **otra** jarra?' : 'Comprueba movimiento a movimiento en una tabla: ¿cuántos litros hay en cada jarra después de cada uno?' });
 const raT = v => ({ v, m: 'Prueba primero con **pocas** ranas: 1 verde y 1 marrón, luego 2 y 2. Cuenta los movimientos y busca cómo crecen.' });
 
+// --- batch 7 helpers (28 Nov 2026) ---
+function filacole(st) {     // 12 children, front (left) to back (right); Ana = 5th (gold). st 1: front count 1-5 · 2: + back count 1-8 · 3: brackets 4 | Ana | 7
+  const X = i => 30 + i * 49;
+  let s = `<text x="8" y="22" font-size="15" font-weight="800" fill="#495057">⬅ delante</text><text x="592" y="22" font-size="15" font-weight="800" text-anchor="end" fill="#495057">detrás ➡</text>`;
+  for (let i = 0; i < 12; i++) {
+    const ana = i === 4;
+    s += `<circle cx="${X(i)}" cy="85" r="21" fill="${ana ? '#ffd43b' : '#e9ecef'}" stroke="${ana && st === 2 ? '#e03131' : '#868e96'}" stroke-width="${ana && st === 2 ? 4 : 2}"/>` + em(ana ? '👧' : '🧒', X(i), 85, 30);
+    if (st >= 1 && st < 3 && i <= 4) s += `<text x="${X(i)}" y="55" font-size="19" font-weight="900" text-anchor="middle" fill="#1971c2">${i + 1}</text>`;
+    if (st === 2 && i >= 4) s += `<text x="${X(i)}" y="133" font-size="19" font-weight="900" text-anchor="middle" fill="#e8590c">${12 - i}</text>`;
+  }
+  if (st < 2) s += `<text x="${X(4)}" y="133" font-size="17" font-weight="900" text-anchor="middle" fill="#1d1442">Ana</text>`;
+  if (st === 3) {
+    const br = (a, b, t, c) => `<path d="M${X(a) - 18},120 v10 H${X(b) + 18} v-10" fill="none" stroke="${c}" stroke-width="3"/><text x="${(X(a) + X(b)) / 2}" y="155" font-size="18" font-weight="900" text-anchor="middle" fill="${c}">${t}</text>`;
+    s += br(0, 3, '4 delante', '#1971c2') + `<text x="${X(4)}" y="133" font-size="17" font-weight="900" text-anchor="middle" fill="#1d1442">Ana</text>` + br(5, 11, '7 detrás', '#e8590c');
+  }
+  return s;
+}
+function recta(st) {         // number line 40-60. st 1: 45-54 green (round to 50) · 2: + 44 and 55 red with where they go · 3: + brace "10 números"
+  const X = n => 20 + (n - 40) * 28;
+  let s = `<line x1="10" y1="90" x2="590" y2="90" stroke="#495057" stroke-width="3"/>`;
+  for (let n = 40; n <= 60; n++) {
+    const g = st >= 1 && n >= 45 && n <= 54, r = st >= 2 && (n === 44 || n === 55), big = n % 10 === 0;
+    if (g || r) s += `<circle cx="${X(n)}" cy="90" r="12" fill="${g ? '#8ce99a' : '#ffc9c9'}" stroke="${g ? '#2b8a3e' : '#e03131'}" stroke-width="2.5"/>`;
+    s += `<line x1="${X(n)}" y1="${big ? 76 : 83}" x2="${X(n)}" y2="${big ? 104 : 97}" stroke="#495057" stroke-width="${big ? 4 : 2}"/>`;
+    s += `<text x="${X(n)}" y="${big ? 132 : 125}" font-size="${big ? 20 : 14}" font-weight="${big ? 900 : 700}" text-anchor="middle" fill="${big ? '#1d1442' : '#495057'}">${n}</text>`;
+  }
+  if (st >= 2) s += `<text x="${X(44)}" y="66" font-size="15" font-weight="800" text-anchor="middle" fill="#e03131">→ 40</text><text x="${X(55)}" y="66" font-size="15" font-weight="800" text-anchor="middle" fill="#e03131">→ 60</text>`;
+  if (st >= 3) s += `<path d="M${X(45) - 10},50 v-10 H${X(54) + 10} v10" fill="none" stroke="#2b8a3e" stroke-width="3"/><text x="${X(49.5)}" y="28" font-size="19" font-weight="900" text-anchor="middle" fill="#2b8a3e">10 números</text>`;
+  return s;
+}
+function movil(st) {         // hanging mobile ■ ● ● ■ ; st 1: the two ■● pairs boxed · 2: each box labelled 320 g
+  const sq = x => `<rect x="${x - 24}" y="150" width="48" height="48" rx="4" fill="#4dabf7" stroke="#1d1442" stroke-width="3"/>`;
+  const ci = x => `<circle cx="${x}" cy="174" r="25" fill="#ff8787" stroke="#1d1442" stroke-width="3"/>`;
+  const th = (x1, y1, x2, y2) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#495057" stroke-width="2.5"/>`;
+  let s = th(300, 0, 300, 40) + `<rect x="140" y="38" width="320" height="8" rx="4" fill="#868e96"/>` + th(150, 46, 150, 92) + th(450, 46, 450, 92);
+  s += `<rect x="80" y="90" width="140" height="7" rx="3" fill="#868e96"/><rect x="380" y="90" width="140" height="7" rx="3" fill="#868e96"/>`;
+  s += th(90, 97, 90, 150) + th(210, 97, 210, 149) + th(390, 97, 390, 149) + th(510, 97, 510, 150);
+  s += sq(90) + ci(210) + ci(390) + sq(510);
+  if (st >= 1) s += `<rect x="55" y="80" width="190" height="135" rx="16" fill="none" stroke="#f08c00" stroke-width="4" stroke-dasharray="10 7"/><rect x="355" y="80" width="190" height="135" rx="16" fill="none" stroke="#f08c00" stroke-width="4" stroke-dasharray="10 7"/>`;
+  if (st >= 2) s += `<text x="150" y="250" font-size="27" font-weight="900" text-anchor="middle" fill="#e8590c">320 g</text><text x="450" y="250" font-size="27" font-weight="900" text-anchor="middle" fill="#e8590c">320 g</text>`;
+  return s;
+}
+function areas(st) {         // 37 × 25 (blue) and 63 × 25 (orange) as rectangles; st 1: pushed together into 100 × 25
+  const k = 4.6, gap = st ? 0 : 24, y = 50, h = 100, x0 = 50, w1 = 37 * k, w2 = 63 * k;
+  let s = `<text x="${x0 - 10}" y="${y + h / 2 + 8}" font-size="22" font-weight="900" text-anchor="end" fill="#1d1442">25</text>`;
+  s += `<rect x="${x0}" y="${y}" width="${w1}" height="${h}" fill="#a5d8ff" stroke="#1d1442" stroke-width="3"/><text x="${x0 + w1 / 2}" y="${y + h / 2 + 8}" font-size="20" font-weight="900" text-anchor="middle" fill="#1d1442">37 × 25</text>`;
+  s += `<rect x="${x0 + w1 + gap}" y="${y}" width="${w2}" height="${h}" fill="#ffd8a8" stroke="#1d1442" stroke-width="3"/><text x="${x0 + w1 + gap + w2 / 2}" y="${y + h / 2 + 8}" font-size="20" font-weight="900" text-anchor="middle" fill="#1d1442">63 × 25</text>`;
+  if (!st) s += `<text x="${x0 + w1 / 2}" y="${y - 14}" font-size="18" font-weight="800" text-anchor="middle" fill="#1971c2">37</text><text x="${x0 + w1 + gap + w2 / 2}" y="${y - 14}" font-size="18" font-weight="800" text-anchor="middle" fill="#e8590c">63</text>`;
+  else s += `<path d="M${x0},${y - 10} v-10 H${x0 + w1 + w2} v10" fill="none" stroke="#2b8a3e" stroke-width="3"/><text x="${x0 + (w1 + w2) / 2}" y="${y - 28}" font-size="20" font-weight="900" text-anchor="middle" fill="#2b8a3e">37 + 63 = 100</text>`;
+  return s;
+}
+function arbol(n) {          // the secret spreading: Nora on top, then n levels of 3, 9, 27 people
+  const L = [[300], [100, 300, 500]];
+  L.push(R(0, 8).map(i => 40 + i * 65)); L.push(R(0, 26).map(i => 14 + i * 21.7));
+  const Y = [28, 95, 165, 228], rr = [20, 17, 13, 7];
+  let s = '';
+  for (let l = 1; l <= n; l++) L[l].forEach((x, i) => { s += `<line x1="${L[l - 1][Math.floor(i / 3)]}" y1="${Y[l - 1]}" x2="${x}" y2="${Y[l]}" stroke="#adb5bd" stroke-width="2"/>`; });
+  for (let l = 0; l <= n; l++) L[l].forEach(x => { s += `<circle cx="${x}" cy="${Y[l]}" r="${rr[l]}" fill="${['#ffd43b', '#a5d8ff', '#b2f2bb', '#ffc9c9'][l]}" stroke="#1d1442" stroke-width="2"/>`; });
+  s += em('👧', 300, 28, 26);
+  return s;
+}
+function platos(per, extra, miss) { // 3 plates with `per` cookies each; `extra` loose cookies on the right; miss: last cookie of the last plate is missing (dashed)
+  let s = '';
+  for (let p = 0; p < 3; p++) {
+    const cx = (extra ? 80 : 145) + p * 155;
+    s += `<ellipse cx="${cx}" cy="110" rx="70" ry="22" fill="#f1f3f5" stroke="#868e96" stroke-width="3"/>`;
+    for (let c = 0; c < per; c++) {
+      const x = cx - (per - 1) * 15 + c * 30;
+      if (miss && p === 2 && c === per - 1) s += `<circle cx="${x}" cy="92" r="14" fill="none" stroke="#e03131" stroke-width="3" stroke-dasharray="5 4"/><text x="${x}" y="68" font-size="18" font-weight="900" text-anchor="middle" fill="#e03131">?</text>`;
+      else s += em('🍪', x, 92, 30);
+    }
+    s += em('🧒', cx, 150, 30);
+  }
+  if (extra) { s += `<text x="555" y="58" font-size="15" font-weight="800" text-anchor="middle" fill="#2b8a3e">sobran</text>`; for (let e = 0; e < extra; e++) s += em('🍪', 540 + e * 30 - (extra - 1) * 0, 92, 30); }
+  return s;
+}
+const huT = v => ({ v, m: `Comprueba: empieza con ${v} €, gasta **la mitad** y luego **4 €**. ¿Te quedan justo 6 €?` });
+const gaT = v => ({ v, m: `Comprueba con ${v} galletas: al dar 3 a cada nieto, ¿sobran justo 2? Y al dar 4, ¿falta justo 1?` });
 window.OL_BANK = [
 // ===================== NIVEL 1 · Pensador principiante =====================
 { id: 'calcetines', level: 1, emoji: '🧦', title: 'Calcetines a oscuras', cat: 'Pensar en el peor caso',
@@ -2086,5 +2164,25 @@ window.OL_BANK = [
     { clear: true, say: 'La idea clave: prueba con pocas y cuenta saltos y pasos por separado. Una de cada: tres. Dos: ocho. Tres: quince.', show: [{ t: 'svg', vb: '0 0 420 100', h: '16%', x: piedras('BBB_GGG') }, { t: 'ans', x: '15 movimientos' }, { t: 'idea', x: '**Prueba con pocas**: 9 saltos + 6 pasos = **15**.' }] },
   ] },
 
+
+{ id: 'filacole', level: 1, emoji: '🏫', title: 'La fila del cole', cat: 'Dibujar la fila',
+  q: 'Los niños de la clase hacen **una fila** para salir al patio. **Ana** es la **5.ª** empezando por **delante**, y la **8.ª** empezando por **detrás**.\n\n¿Cuántos niños hay en la fila?',
+  qSay: 'Los niños de la clase hacen una fila para salir al patio. Ana es la quinta empezando por delante, y la octava empezando por detrás. ¿Cuántos niños hay en la fila?',
+  ask: '¿Cuántos niños?', ph: 'Un número', ans: { num: 12, also: [5, 8, 4, 7, 1] },
+  traps: [{ v: 13, m: '¡Dibuja la fila! Cuenta 5 desde delante y 8 desde detrás. ¿Hay alguien a quien hayas contado **dos veces**?' }, { v: 14, m: 'Dibuja la fila: los niños de delante de Ana, Ana, y los de detrás. Cuéntalos uno a uno.' }, { v: 11, m: 'Casi. ¿Has contado a **Ana**?' }, { v: 3, m: 'Esa es la diferencia entre 8 y 5. Dibuja la fila y cuenta **todos** los niños.' }, { v: 15, m: 'Dibuja la fila: los niños de delante de Ana, Ana, y los de detrás. Cuéntalos uno a uno.' }],
+  why: '¿Por qué no son 5 + 8 = 13?',
+  hints: ['**Dibuja** la fila: un palito por niño. Empieza por Ana.',
+    'Si Ana es la 5.ª por delante, ¿cuántos niños tiene **delante** de ella?',
+    'Si es la 8.ª por detrás, ¿cuántos niños tiene **detrás**?',
+    'Delante de Ana hay 4 niños y detrás hay 7… ¡y no te olvides de Ana!'],
+  answer: '12 niños', idea: '**Dibuja la fila**: si sumas 5 + 8, a Ana la cuentas **dos veces**.',
+  steps: ['Ana es la 5.ª por delante → tiene **4** niños delante.', 'Es la 8.ª por detrás → tiene **7** niños detrás.', '4 + 1 (Ana) + 7 = **12**.', 'Otra forma: 5 + 8 = 13, pero Ana está contada dos veces: 13 − 1 = **12**.'],
+  film: [
+    { clear: true, say: 'Ana es la quinta por delante y la octava por detrás. ¿Cuántos niños hay en la fila? Mucha gente suma cinco más ocho: trece. ¡Vamos a dibujar la fila!', show: [{ t: 'svg', k: 's', vb: '0 0 600 170', h: '40%', x: filacole(0) }] },
+    { say: 'Contamos desde delante: uno, dos, tres, cuatro… y cinco: ¡Ana! Delante de ella hay cuatro niños.', show: [{ t: 'svg', k: 's', vb: '0 0 600 170', h: '40%', x: filacole(1) }, { t: 'eq', k: 'e', x: 'Delante de Ana: **4** niños' }] },
+    { say: 'Ahora desde detrás: uno, dos, tres… hasta ocho, que vuelve a ser Ana. ¡Ana tiene dos números! Si sumamos cinco más ocho, la contamos dos veces.', show: [{ t: 'svg', k: 's', vb: '0 0 600 170', h: '40%', x: filacole(2) }, { t: 'eq', k: 'e', x: '5 + 8 = 13 → ¡Ana, contada **dos veces**!' }] },
+    { say: 'Cuatro delante, Ana, y siete detrás. Cuatro más uno más siete: doce niños.', show: [{ t: 'svg', k: 's', vb: '0 0 600 170', h: '40%', x: filacole(3) }, { t: 'eq', k: 'e', x: '4 + 1 + 7 = **12**' }, { t: 'ans', x: '12 niños' }] },
+    { clear: true, say: 'La idea clave: dibuja la fila. Si sumas las dos posiciones, la persona del medio se cuenta dos veces.', show: [{ t: 'ans', x: '12 niños' }, { t: 'idea', x: '**Dibuja la fila**: si sumas 5 + 8, a Ana la cuentas **dos veces**.' }] },
+  ] },
 ];
 })();

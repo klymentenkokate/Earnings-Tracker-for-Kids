@@ -612,5 +612,11 @@ window.OL_VOICE = {
 "ranas:3": "bf5e9f9bdcfbbf44.mp3",
 "ranas:4": "86f8245155ffea4d.mp3",
 "ranas:5": "0229a1f8718b7bae.mp3",
-"ranas:6": "f4d692ee5fde5e2f.mp3"
+"ranas:6": "f4d692ee5fde5e2f.mp3",
+"filacole:q": "b8cbda22a74e26fc.mp3",
+"filacole:0": "214bcb0dd7b8882e.mp3",
+"filacole:1": "e7feb151003ab88f.mp3",
+"filacole:2": "759157ecc5400674.mp3",
+"filacole:3": "dd182a4a96ca68e1.mp3",
+"filacole:4": "e333a96aedcf28a3.mp3"
 };
