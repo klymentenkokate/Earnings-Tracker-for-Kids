@@ -2285,5 +2285,25 @@ window.OL_BANK = [
     { say: 'El mayor es cuarenta y siete: el paréntesis consigue que el por cinco multiplique a diez, en lugar de a dos.', show: [{ t: 'eq', k: 'q', x: '(8 + 2) × 5 − 3 = 10 × 5 − 3 = **47**' }] },
     { clear: true, say: 'La idea clave: prueba todas las opciones con orden. Así sabes seguro cuál es la mayor, y no te dejas ninguna.', show: [{ t: 'ans', x: '47' }, { t: 'idea', x: '**Prueba todas las opciones** con orden: así sabes **seguro** cuál es la mayor.' }] },
   ] },
+
+{ id: 'mensajes', level: 2, emoji: '🤫', title: 'El secreto que vuela', cat: 'Multiplicar una y otra vez',
+  q: 'El **lunes**, Nora cuenta un secreto a **3 amigos**. El **martes**, **cada uno** de esos amigos se lo cuenta a **3 amigos nuevos**. El **miércoles**, cada uno de los que se enteraron el martes se lo cuenta a **3 amigos nuevos**, y así cada día.\n\n¿Cuántas personas **nuevas** se enteran del secreto **el jueves**?',
+  qSay: 'El lunes, Nora cuenta un secreto a tres amigos. El martes, cada uno de esos amigos se lo cuenta a tres amigos nuevos. El miércoles, cada uno de los que se enteraron el martes se lo cuenta a tres amigos nuevos, y así cada día. ¿Cuántas personas nuevas se enteran del secreto el jueves?',
+  ask: '¿Cuántas personas?', ph: 'Un número', ans: { num: 81, also: [3, 4, 9, 27] },
+  traps: [{ v: 120, m: 'Eso son **todas** las personas que se enteran de lunes a jueves. ¿Cuántas se enteran **solo el jueves**?' }, { v: 121, m: 'Eso son todas, contando a Nora. ¿Cuántas se enteran **solo el jueves**?' }, { v: 12, m: 'Cuidado: no se enteran 3 más cada día. **Cada** persona nueva se lo cuenta a 3. Dibuja el lunes y el martes.' }, { v: 27, m: 'Ese es el **miércoles**. Te falta un día.' }, { v: 9, m: 'Ese es el **martes**. Sigue hasta el jueves.' }, { v: 243, m: 'Te has pasado un día. Haz una tabla: lunes, martes, miércoles, jueves.' }, { v: 36, m: 'Cuidado: cada día se **multiplica** por 3. Haz una tabla: lunes, martes, miércoles, jueves.' }, { v: 64, m: 'Cada persona se lo cuenta a **3**, no a 4. Haz una tabla: lunes, martes, miércoles, jueves.' }],
+  why: '¿Cómo se escribe ese número como una **potencia**?',
+  hints: ['Haz una tabla con los días: lunes, martes, miércoles, jueves.',
+    'El lunes se enteran 3. El martes, **cada uno** de esos 3 se lo cuenta a 3 personas. ¿Cuántas son?',
+    'Cada día se entera el **triple** de gente que el día anterior: 3, 9, …',
+    '3 × 3 × 3 × 3.'],
+  answer: '81 personas', idea: '**Multiplica una y otra vez**: cada día es el triple, 3 × 3 × 3 × 3 = 3⁴ = 81.',
+  steps: ['Lunes: **3** personas.', 'Martes: 3 × 3 = **9**. Miércoles: 9 × 3 = **27**.', 'Jueves: 27 × 3 = **81**.', 'Es una **potencia**: 3 × 3 × 3 × 3 = 3⁴ = 81.'],
+  film: [
+    { clear: true, say: 'Nora cuenta un secreto a tres amigos el lunes. Y cada día, cada persona nueva se lo cuenta a tres más. Vamos a dibujarlo.', show: [{ t: 'svg', k: 's', vb: '0 0 600 245', h: '50%', x: arbol(1) }, { t: 'tbl', k: 't', head: true, rows: [['Lunes', 'Martes', 'Miércoles', 'Jueves'], ['!3', '', '', '']] }] },
+    { say: 'El martes, cada uno de esos tres se lo cuenta a tres: tres por tres, nueve.', show: [{ t: 'svg', k: 's', vb: '0 0 600 245', h: '50%', x: arbol(2) }, { t: 'tbl', k: 't', head: true, rows: [['Lunes', 'Martes', 'Miércoles', 'Jueves'], [3, '!9', '', '']] }] },
+    { say: 'El miércoles, cada uno de los nueve se lo cuenta a tres: veintisiete. ¡Ya casi no caben!', show: [{ t: 'svg', k: 's', vb: '0 0 600 245', h: '50%', x: arbol(3) }, { t: 'tbl', k: 't', head: true, rows: [['Lunes', 'Martes', 'Miércoles', 'Jueves'], [3, 9, '!27', '']] }] },
+    { say: 'Y el jueves, veintisiete por tres: ochenta y una personas. Es tres por tres por tres por tres: ¡tres elevado a cuatro!', show: [{ t: 'tbl', k: 't', head: true, rows: [['Lunes', 'Martes', 'Miércoles', 'Jueves'], [3, 9, 27, '!81']] }, { t: 'eq', k: 'e', x: '3 × 3 × 3 × 3 = 3⁴ = **81**' }] },
+    { clear: true, say: 'La idea clave: cuando cada día se multiplica por tres, el número crece muy deprisa. Eso es una potencia.', show: [{ t: 'ans', x: '81 personas' }, { t: 'idea', x: '**Multiplica una y otra vez**: 3 × 3 × 3 × 3 = 3⁴ = 81.' }] },
+  ] },
 ];
 })();
