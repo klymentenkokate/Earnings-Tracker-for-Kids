@@ -654,5 +654,11 @@ window.OL_VOICE = {
 "mensajes:1": "e3aa21878c7459a7.mp3",
 "mensajes:2": "3896bef9e78b0e49.mp3",
 "mensajes:3": "ad80c56362501e9c.mp3",
-"mensajes:4": "3531399480f9a2c0.mp3"
+"mensajes:4": "3531399480f9a2c0.mp3",
+"galletas:q": "bcf33a1abbf18f66.mp3",
+"galletas:0": "55a0922305a17fb4.mp3",
+"galletas:1": "33f89c2027ed0850.mp3",
+"galletas:2": "f00a65394e3fe1e5.mp3",
+"galletas:3": "516ed29f0b36808e.mp3",
+"galletas:4": "b791abbeb7fc453f.mp3"
 };

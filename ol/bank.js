@@ -2305,5 +2305,25 @@ window.OL_BANK = [
     { say: 'Y el jueves, veintisiete por tres: ochenta y una personas. Es tres por tres por tres por tres: ¡tres elevado a cuatro!', show: [{ t: 'tbl', k: 't', head: true, rows: [['Lunes', 'Martes', 'Miércoles', 'Jueves'], [3, 9, 27, '!81']] }, { t: 'eq', k: 'e', x: '3 × 3 × 3 × 3 = 3⁴ = **81**' }] },
     { clear: true, say: 'La idea clave: cuando cada día se multiplica por tres, el número crece muy deprisa. Eso es una potencia.', show: [{ t: 'ans', x: '81 personas' }, { t: 'idea', x: '**Multiplica una y otra vez**: 3 × 3 × 3 × 3 = 3⁴ = 81.' }] },
   ] },
+
+{ id: 'galletas', level: 2, emoji: '🍪', title: 'Las galletas de la abuela', cat: 'Comparar los dos repartos',
+  q: 'La abuela reparte galletas entre sus nietos. Si da **3 galletas** a cada nieto, le **sobran 2**. Pero si quiere dar **4 galletas** a cada nieto, le **falta 1**.\n\n¿Cuántas **galletas** tiene la abuela?',
+  qSay: 'La abuela reparte galletas entre sus nietos. Si da tres galletas a cada nieto, le sobran dos. Pero si quiere dar cuatro galletas a cada nieto, le falta una. ¿Cuántas galletas tiene la abuela?',
+  ask: '¿Cuántas galletas?', ph: 'Un número', ans: { num: 11, also: [3, 4, 2, 1, 9] },
+  traps: [{ v: 3, m: '¿3 **galletas**? Comprueba: ¿podría dar 3 a cada nieto y que aún le sobraran 2? ¿Qué has encontrado con ese 3?' }, gaT(8), gaT(10), gaT(12), gaT(13), gaT(14), gaT(9), gaT(5), gaT(7), gaT(15), gaT(17)],
+  why: '¿Cuántos **nietos** tiene la abuela? ¿Cómo lo sabes?',
+  hints: ['Prueba con pocos nietos: si tuviera **2** nietos, ¿cuántas galletas tendría? ¿Funciona el segundo reparto?',
+    'Del primer reparto al segundo, cada nieto recibe **1 galleta más**.',
+    'Para darle esa galleta de más a cada nieto, usa las 2 que sobraban… y aún le falta 1. ¿Cuántas galletas de más hacen falta?',
+    'Hacen falta 3 galletas más, una por nieto: hay 3 nietos.'],
+  answer: '11 galletas', idea: '**Compara los dos repartos**: la diferencia (2 que sobran + 1 que falta) te dice cuántos nietos hay.',
+  steps: ['Pasar de 3 a 4 galletas por nieto = **1 galleta más** para cada uno.', 'Para eso usa las **2** que sobran y le falta **1**: hacen falta 2 + 1 = **3** galletas → hay **3 nietos**.', 'Galletas: 3 nietos × 3 + 2 = **11** (11 : 3 = 3 y sobran 2).', 'Comprobación: 3 × 4 = 12, y 12 − 11 = **1** que falta ✓.'],
+  film: [
+    { clear: true, say: 'Con tres galletas a cada nieto sobran dos; con cuatro, falta una. Vamos a comparar los dos repartos.', show: [{ t: 'svg', k: 's', vb: '0 0 600 175', h: '40%', x: platos(3, 2, false) }, { t: 'eq', k: 'e', x: '3 a cada uno → **sobran 2**' }] },
+    { say: 'Para dar cuatro, cada nieto necesita una galleta más. Usamos las dos que sobraban… y aún falta una para el último.', show: [{ t: 'svg', k: 's', vb: '0 0 600 175', h: '40%', x: platos(4, 0, true) }, { t: 'eq', k: 'e', x: '4 a cada uno → **falta 1**' }] },
+    { say: 'Así que dar una galleta más a cada nieto necesita tres galletas: las dos que sobraban y la que falta. Una por nieto: ¡hay tres nietos!', show: [{ t: 'eq', k: 'e', x: '2 que sobran + 1 que falta = **3** → **3 nietos**' }] },
+    { say: 'Tres nietos con tres galletas, nueve, más las dos que sobran: once galletas. Comprobamos: para dar cuatro a cada uno harían falta doce, y falta una. ¡Correcto!', show: [{ t: 'eq', k: 'e', x: '3 × 3 + 2 = **11** · 3 × 4 = 12 → falta 1 ✓' }, { t: 'ans', x: '11 galletas' }] },
+    { clear: true, say: 'La idea clave: compara los dos repartos. Lo que sobra más lo que falta te dice cuántos nietos hay.', show: [{ t: 'ans', x: '11 galletas' }, { t: 'idea', x: '**Compara los dos repartos**: 2 que sobran + 1 que falta = **3 nietos**.' }] },
+  ] },
 ];
 })();
