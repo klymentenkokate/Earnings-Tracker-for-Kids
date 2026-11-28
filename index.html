@@ -1690,6 +1690,9 @@
 <script src="ol/bank.js?v=14"></script>
 <script src="ol/voice.js?v=14"></script>
 <script src="ol/ol.js?v=14"></script>
+<script src="mi/bank.js?v=1"></script>
+<script src="mi/voice.js?v=1"></script>
+<script src="mi/mi.js?v=1"></script>
 <script src="school/fr/data.js?v=7"></script>
 <script src="school/ma/data.js?v=7"></script>
 <script src="school/en/data.js?v=13"></script>
@@ -6444,7 +6447,7 @@ function buildCategoryScreen() {
   buildQuizHistory();
   const grid = document.getElementById('quiz-category-grid');
   if (!grid) return;
-  grid.innerHTML = QUIZ_CATEGORIES.map(cat => {
+  grid.innerHTML = (typeof miCard === 'function' ? miCard() : '') + QUIZ_CATEGORIES.map(cat => {
     const quizzes = QUIZ_BANK.filter(q => q.section === cat.key);
     const totalQ = quizzes.reduce((sum, q) => sum + q.pairs.length, 0);
     const totalPlayed = quizzes.reduce((sum, q) => {
