@@ -2225,5 +2225,25 @@ window.OL_BANK = [
     { say: '¿Y cuánto pesa solo el cuadrado? ¡No se puede saber! Podría ser doscientos y ciento veinte, o doscientos cincuenta y setenta. Solo sabemos la pareja.', show: [{ t: 'eq', k: 'e', x: '200 + 120 = 320 · 250 + 70 = 320 · … ¡solo sabemos la **pareja**!' }] },
     { clear: true, say: 'La idea clave: cada pieza cuenta. Antes de repartir, mira cuántas veces aparece cada figura.', show: [{ t: 'ans', x: '320 gramos' }, { t: 'idea', x: '**Cada pieza cuenta**: mira cuántas veces aparece cada figura antes de repartir.' }] },
   ] },
+
+{ id: 'hucha', level: 1, emoji: '🐷', title: 'La hucha de Lía', cat: 'Pensar hacia atrás',
+  q: 'Lía abre su hucha. Primero gasta **la mitad** de su dinero en un libro. Después gasta **4 €** en un helado. Al final le quedan **6 €**.\n\n¿Cuántos euros tenía en la hucha **al principio**?',
+  qSay: 'Lía abre su hucha. Primero gasta la mitad de su dinero en un libro. Después gasta cuatro euros en un helado. Al final le quedan seis euros. ¿Cuántos euros tenía en la hucha al principio?',
+  ask: '¿Cuántos euros?', ph: 'Solo el número de euros', ans: { num: 20, also: [6, 4, 10, 2] },
+  traps: [{ v: 10, m: 'Eso es lo que tenía **después de comprar el libro**. ¿Y antes del libro?' }, huT(16), huT(8), huT(14), huT(12), huT(24), huT(22), huT(18), huT(26), huT(5)],
+  why: '¿Cómo puedes **comprobar** tu respuesta?',
+  hints: ['Empieza por el **final**: le quedan 6 €. ¿Cuánto tenía **justo antes** del helado?',
+    'Antes del helado tenía 6 + 4 = 10 €.',
+    'Esos 10 € son **la mitad** que le quedó después del libro. Si 10 es la mitad, ¿cuánto es todo?',
+    'Si la mitad es 10, el total es el doble de 10.'],
+  answer: '20 €', idea: '**Piensa hacia atrás**: empieza por el final y haz **lo contrario** de cada paso (restar → sumar, mitad → doble).',
+  steps: ['Empezamos por el final: **6 €**.', 'Deshacemos el helado: 6 + 4 = **10 €**.', 'Deshacemos el libro: 10 € era la mitad → 10 × 2 = **20 €**.', 'Comprobación: 20 → la mitad, 10 → menos 4 → **6** ✓.'],
+  film: [
+    { clear: true, say: 'Lía gasta la mitad de su dinero, luego cuatro euros, y le quedan seis. ¿Cuánto tenía? No sabemos el principio… ¡pero sí sabemos el final!', show: [{ t: 'row', k: 'r', items: ['?', '½ ➜', '…', '− 4 € ➜', '!6 €'] }] },
+    { say: 'Vamos hacia atrás. Antes del helado tenía cuatro euros más: seis más cuatro, diez euros.', show: [{ t: 'row', k: 'r', items: ['?', '½ ➜', '!10 €', '− 4 € ➜', '6 €'] }, { t: 'eq', k: 'e', x: '6 + 4 = **10 €**' }] },
+    { say: 'Esos diez euros eran la mitad de lo que tenía. Si la mitad es diez, el total es el doble: veinte euros.', show: [{ t: 'row', k: 'r', items: ['!20 €', '½ ➜', '10 €', '− 4 € ➜', '6 €'] }, { t: 'eq', k: 'e', x: '10 × 2 = **20 €**' }, { t: 'ans', x: '20 €' }] },
+    { say: 'Comprobamos hacia delante: veinte, la mitad son diez, menos cuatro, seis. ¡Correcto!', show: [{ t: 'eq', k: 'e', x: '20 ➜ 10 ➜ **6** ✓' }] },
+    { clear: true, say: 'La idea clave: piensa hacia atrás. Empieza por el final y haz lo contrario de cada paso: si restaba, sumas; si era la mitad, haces el doble.', show: [{ t: 'ans', x: '20 €' }, { t: 'idea', x: '**Piensa hacia atrás**: haz **lo contrario** de cada paso (restar → sumar, mitad → doble).' }] },
+  ] },
 ];
 })();
